@@ -1,0 +1,2 @@
+VGO = "countries/VarangianOrder.txt"
+LAT = "countries/LatiniEmpire .txt"

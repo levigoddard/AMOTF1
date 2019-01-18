@@ -1,0 +1,20 @@
+march = {
+	first = BYZ
+	second = VGO
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the republic after a dissagreement
+}
+
+march = {
+	first = BYZ
+	second = FEO
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the republic after a dissagreement
+}
+
+vassal = {
+	first = LAT
+	second = CYP
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the republic after a dissagreement
+}
