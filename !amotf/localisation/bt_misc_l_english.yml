@@ -122,8 +122,6 @@
  desc_bt_prussian_blue:0 "If there is anything Berlin was famous for during the 18th Century, it was the city from which Prussian Blue originated. Being produced and sold all of Europe all the way to Japan used by artists, the recipe was kept secret for a good 20 years until it was published in 1724, effectively creating a monopoly on the dye and thus, a great industry."
  bt_forests_of_cadore:0 "Forests of Cadore"
  desc_bt_forests_of_cadore:0 "The rugged and heavily forested area of Cadore in the eastern Alps is well known as an excellent source of wood, nearly single-handedly supplying the Venetian Navy's rigorous need of high quality ship lumber for hundreds of years."
- bt_violated_league_war_treaty:0 "Violated the Peace of Westphalia"
- desc_bt_violated_league_war_treaty:0 "This nation has violated the concession agreed upon at the Peace of Westphalia, namely that all imperial claims over Italy and Switzerland must be abandoned."
  
  bt_guelph_nation:0 "Guelph Nation"
  desc_bt_guelph_nation:0 "In the longstanding rivalry between the Emperor and the Pope for control of the fragmented Italian city states, this nation traditionally supports the Pope. The Guelphs were generally rich and well established Italian merchant families who resented the German Emperor's interference in Italian matters and saw the Pope a key in resisting the Emperor's intrusions."
@@ -140,6 +138,8 @@
  desc_bt_emperors_approval:0 "The Holy Roman Emperor speaks well of our nation in public, improving our renown and prestige throughout the Empire!"
  
  #Triggered Province Modifiers
+ bt_conquest_of_the_great_fire:0 "Great Fire"
+ desc_bt_conquest_of_the_great_fire:0 "Great Fire Temples where significant inaugural sites in pre-Muslim Persian tradition, as well as being the holiest sites of the Zoroastrian religion. Recapturing these sites is crucial to the restoration of Zoroastrianism as a major religion!"   #This is horrible, but whatever... I wasn't feeling inspired   Draiocht
  bt_guelph_province_in_guelph_state:0 "Guelph Province"
  desc_bt_guelph_province_in_guelph_state:0 "In the longstanding rivalry between the Emperor and the Pope for control of the fragmented Italian city states, this province traditionally supports the Pope, much to the delight of its Guelph rulers. Unrest is likely to be lower, and more young men tend to volunteer for the army in defense of the Guelph cause."
  bt_guelph_province_in_ghibelline_state:0 "Guelph Province"
@@ -347,7 +347,7 @@
  
  #BtPLegacy Cultures
  brythonic:0 "Brythonic"
- gotlander:0 "Gotlander"
+ gotlander:0 "Geatish"          #Changed from Gotlander on Siny'arin's suggestion.
  gallgaidheil:0 "Gall-Ghaeil"   #Hundred different spellings for this, going for MI standard plural nom noun, for now -id est, Norse Gaels
  faroese:0 "Faroese"
  cappadocian:0 "Cappadocian"
@@ -395,6 +395,28 @@
  friulian_culture:0 "Friulian"
  ladin_culture:0 "Ladin"
  yotvingian_culture:0 "Yotvingian"
+ 
+#Mughal government bonuses, majority of the work here courtesy of Imperatrix Helena, except the Brythonic & Celtic ones, and the vanilla ones. Note to translators, this is a very low priority & rarely seen unless during a world conquest run as Mughals.
+ mughal_government_turkish_g_assimilated:0 "Ottoman Bombards"
+ mughal_government_turkish_g_assimilated_desc:0 "Super-sized bombards had been used through Western Europe since the 15th century but specifically the Great Turkish Bombard, cast in bronze in 1464 by Munir Ali, proved to be much more capable than any other, being able of firing stone balls up to 0.63 m diameter. Learning such designs and patterns will greatly improve our cannons."
+ mughal_government_miao_g_assimilated:0 "Agricultural Expertise"
+ mughal_government_miao_g_assimilated_desc:0 "The Miao people have a long and proud history of agriculture. This tradition and expertise could be easily turned to our benefit."
+ mughal_government_brythonic_assimilated:0 "Proudly Independent"
+ mughal_government_brythonic_assimilated_desc:0 "The Brythonic people represent the last remnants of an ancient culture that formerly covered an immense swath of land across Europe. While much of their richer lands have since been taken by Germanic tribes and Romans, the remaining Britons have been hammered into a resilient and strongly indepedent people prepared to face all comers and defend their last bastions. We can make use of this proud resolve."
+ mughal_government_unified_celtic_group_assimilated:0 "Proudly Independent"
+ mughal_government_unified_celtic_group_assimilated_desc:0 "The Celtic people represent the last remnants of an ancient culture that formerly covered an immense swath of land across Europe. While much of their richer lands have since been taken by Germanic tribes and Romans, the remaining Celts have been hammered into a resilient and strongly indepedent people prepared to face all comers and defend their last bastions. We can make use of this proud resolve."
+ mughal_government_illyrian_assimilated:0 "Brilliant Leadership"
+ mughal_government_illyrian_assimilated_desc:0 "Despite their small numbers, the Albanian people have produced some of the most renowned commanders throughout history. Brilliant military minds such as Muhammad Ali of Egypt or Skanderbeg have achieved notorious feats many times in difficult situations. Having such people to lead our armies will grant us a tactical advantage over our adversaries even when losing footing. "
+ mughal_government_aquitanian_assimilated:0 "Guerrilla Tactics"
+ mughal_government_aquitanian_assimilated_desc:0 "The Basque people have usually been the last of Iberia to be conquered, if conquered at all, by the many empires and kingdoms that have come to the peninsula. If we learn of such knowledge of irregular terrain and use of guerrilla tactics, we will make sure our enemies feel what we felt when conquering the Basque people."
+ mughal_government_dacian_assimilated:0 "Draculesti Legacy"
+ mughal_government_dacian_assimilated_desc:0 "\"... Turkish messengers came [to Vlad] to pay respects, but refused to take off their turbans, according to their ancient custom, whereupon he strengthened their custom by nailing their turbans to their heads with three spikes, so that they could not take them off.\"\n— Antonio Bonfini.\n\nThis is just one of the examples of the well spread legacy of Vlad the Impaler. Let our enemies know that we shall not hesitate to apply the same fate to those who dare oppose our rule."
+ mughal_government_egyptian_assimilated:0 "Ethnoreligious People"
+ mughal_government_egyptian_assimilated_desc:0 "The Copts, Christian indigenous people to Northeast Africa, were once the majority group in Egypt. After the Arab conquest their fate changed quickly, but to their surprise under the Mamluk sultanate they found a more lenient attitude towards them. Copts then lived in relative peace and stability for some centuries. This situation improved more when Muhammad Ali came to rule Egypt. He repealed special taxes on copts, permitted their military service, and introduced many other integration policies."
+ mughal_government_saharan_group_assimilated:0 "A Simple Life"
+ mughal_government_saharan_group_assimilated_desc:0 "Fur people are a relatively small group consisting of mostly semi-nomadic cattle herd families and small agricultural towns. Being a fairly simple society governed by village elders and known for their Muslim piety, we can learn from them how to better administer our lands at a local level."
+ mughal_government_berber_group_assimilated:0 "The Barbary Pirates"
+ mughal_government_berber_group_assimilated_desc:0 "The Maghrebi cover the northern coast of Africa. They have a long experience of pirating the rich trade brought in by the Italian states. We should enlist them into our navy by making them Privateers."
  
  #Other Cultures
  unified_celtic_group:0 "Celtic"
@@ -504,3 +526,6 @@
  #Various Fixes to missing vanilla localisations
  ALLREADY_IN_WAR_WITH:0 "Already at war with the target"
  
+ #Temp bugfix, no need to translate
+ reevaluate_priorities_title:0 "Reevaluate Goals"
+ reevaluate_priorities_desc:0 "For a long time, our ambitions were limited but short sightedness and the laziness of our advisors. Now, we can transcend their petty oversights and realize our true potential!"

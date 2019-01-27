@@ -5,7 +5,7 @@
 1234 = "Kasiri Ibirami" #Ibrim
 1205 = "Mokudisho" #Mogudishu
 1099 = "Sokora" #Socotra
-1211 = "?areri" #Harer
+1211 = "Hareri" #Harer
 388 = "Adeni" #Adin
 385 = "Mekaka" #Makkah
 2331 = "Jadida" #Jidda

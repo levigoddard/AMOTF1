@@ -11536,7 +11536,13 @@ irish_ideas = {
 	trigger = {
 		OR = {
 			tag = IRE
-			primary_culture = irish
+			AND = {
+				primary_culture = irish
+				NOT = {
+					tag = CEL
+					tag = TNA
+				}
+			}
 		}
 	}
 	free = yes

@@ -13,7 +13,7 @@ trade_goods = glass
 base_manpower = 7 
 capital = "Venezia" 
 is_city = yes	# Estimated 
-shipyard = yes
+#shipyard = yes
 add_core = VEN
 
 

@@ -90,6 +90,9 @@
 1306 = "San Tommaso"
 1095 = "Isole Maluine"
 
+#Couple early 2019 fixes
+7063 = "Mondovì"
+2981 = "Monferrato"
 
 
 #Arga's Work

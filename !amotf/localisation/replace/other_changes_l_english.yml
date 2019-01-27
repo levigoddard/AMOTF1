@@ -524,6 +524,7 @@
  obj_huge_capital_desc:0 "At least 80 development in the capital."
  obj_30_development_city_tooltip:0 "Cored Province with §Y50§! development\n"
  eoc_nomadic_border_tooltip:0 "Total Development at least §Y500§!"
+ break_the_rus_mission_tooltip:0 "No independent country with §YEast Slavic§! culture and a capital in the §YRussia§! region has §Y200§! or more Total Development"
  
  #Idea Changes
  ire_abundant_harvests:0 "Abundant Harvests"
@@ -599,8 +600,6 @@
  emilia_in_hre_tooltip:0 "Romagna Area is in the Empire or a vassal of the Emperor."
  merchant_republic_desc:1 "A governmental form where the nation is governed as a republic but with a heavy reliance on trade and commerce.\nIf a Merchant Republic has more than 50 Provinces in §YStates§!, they will suffer a penalty to their §YRepublican Tradition§!."
  CANT_PRESS_SAILORS_TOO_FEW:0 "You can't press sailors from a subject nation, if they have less than $NEED|Y$ of their sailors. They currently have $CURR|Y$."
- religious_leagues.4.d:0 "The War of Religion in the Empire has ended inconclusively and the two sides have assembled in the city of Münster in Westphalia to sign a compromise peace. According to the terms of the Peace of Westphalia, the confessional faith of each state shall be determined by its ruler, according to the principle of 'Whose realm, his religion'. Additionally, long-standing de-jure claims by the emperor over Italy and Switzerland are to be reexamined."
-
  
  #Mission Corrections (probably temporary, no real need to translate)
  fra_carib_colony.tooltip:0 "§Y[Root.GetName]§! or their subjects own at least §Y5§! fully colonized provinces in the Colonial Lesser Antilles"

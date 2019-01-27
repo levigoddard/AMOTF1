@@ -486,6 +486,85 @@
 
 
 
+#2018 December
+
+#morocco
+2465 = "Wiegë"
+
+#scandies
+4114 = "Samië"
+
+#atlantic
+370 = "Zuidijsland"
+371 = "Noordijsland"
+1979 = "Schaap Eilanden"
+3114 = "Westijsland"
+3115 = "Oostijsland"
+
+#grünland
+3112 = "Walvis Eiland"
+
+#borealia
+1005 = "Bonthaven"
+1813 = "Nieuwe Krain"
+5057 = "Hoofdpad"
+5595 = "Kariboe Bul"
+
+#canada
+986 = "Nieuwe Voerde"
+990 = "Pet"
+995 = "Totuskë"
+1001 = "Santa Maria"
+2574 = "Nainë"
+2578 = "Hemelvaart Eylandt"
+2583 = "Drierivieren"
+2586 = "Ketelpunt"
+2671 = "Nieuwe Minden"
+5007 = "Vredebaai"
+5015 = "Onsland"
+5039 = "Michaëlsbaai"
+5060 = "Sint Franciscus"
+
+#neufundland
+980 = "Catherine"
+2573 = "Friesehaven"
+4974 = "Mariebaai"
+5019 = "Sint Peter"
+5058 = "Lijkenbaai"
+5059 = "Nieuwe Haven"
+
+#acadia
+985 = "Brandrivier"
+5046 = "Sint Anna"
+
+#US east
+930 = "Dennenberg"
+931 = "Perzikboom"
+935 = "Cherokees Dal"
+936 = "Transbergë"
+958 = "Nieuw Hamburg"
+668 = "Moerasveld"
+970 = "Nieuwe Kasteel"
+2525 = "Rijnland"
+2537 = "Bos Oosten"
+2539 = "Wendebaai"
+2554 = "Laagwater"
+2555 = "Leechburg"
+2564 = "Witjuk"
+
+#cuba
+2656 = "Prinshaven"
+
+#brasil-bolivia border
+800 = "Camodal"
+2882 = "Buschland"
+2900 = "Rhodonië"
+2901 = "Cerasus" #latin
+2902 = "Fort Beira"
+
+#argentine
+2842 = "Sint Jakob"
+
 
 
 #Correction from Geo

@@ -177,7 +177,7 @@
  PROV5093:0 "Desolation Islands"
  PROV5094:0 "Pultí"
  PROV5095:0 "Pityuses"
- PROV5096:0 "Tenerife"
+ PROV5096:0 "Tamarán"
  PROV5097:0 "Pomeralia"
  PROV5098:0 "Menorca"
  #PROV5099:0 "Inner Hebrides"
@@ -875,7 +875,7 @@
  PROV7032:0 "Rimini"
  PROV7033:0 "Portico"
  PROV7034:0 "Carpegna"
- PROV7035:0 "Citta"         # di Castello, doesn't fit with full name, though. Only major problem with localisations in the new 10.0 tiny provinces.
+ PROV7035:0 "Città"         # di Castello, doesn't fit with full name, though. Only major problem with localisations in the new 10.0 tiny provinces.
  PROV7036:0 "Foligno"
  PROV7037:0 "Fermo"
  PROV7038:0 "Bonifacio"

@@ -74,6 +74,8 @@
 3111 = "Esperanza de Cristián"	# Amerloq									
 3112 = "Esperanza Buena"	# Kikertarsocitsiak						
 3113 = "Esperanza de Federico"	# Mellembygden							
+5096 = "Gran Canaria"
+4565 = "Tenerife"
 	
 #BT500 New Provinces
 5067 = "Lago Baker"	# Qamanituaq								
@@ -192,6 +194,17 @@
 #2018 Sep 5
 #colombia
 2815 = "Puerto Carreño"
+
+
+
+#2018 December
+748 = "Belén"
+2894 = "San Juan del Rei"
+
+
+#2019 January
+#indian ocean
+574 = "Islas Andamán"
 
 
 

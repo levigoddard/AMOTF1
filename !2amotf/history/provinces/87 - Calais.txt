@@ -5,13 +5,13 @@
 owner = ENG
 controller = ENG 
 capital = "Calais"
-culture = english
+culture = flemish
 religion = catholic
 hre = no
 base_tax = 10
-base_production = 5 
+base_production = 4 
 trade_goods = fish
-base_manpower = 5 
+base_manpower = 4 
 add_core = ENG
 center_of_trade = 1
 

@@ -76,14 +76,6 @@
  bt_bunch_o_vassals_tooltip:0 "Is the overlord of three or more subjects requiring a Diplomatic Relation slot"
  bt_really_a_bunch_o_vassals_tooltip:0 "Is the overlord of five or more subjects requiring a Diplomatic Relation slot"
  #bt_marcher_lord_tooltip:0 "Is the overlord of three or more marches"
- bt_italy_removed_from_hre:0 "The Kingdom of Italy is removed from the Holy Roman Empire"
- bt_switzerland_removed_from_hre:0 "Switzerland is removed from the Holy Roman Empire"
- bt_lobby_to_remain_in_the_hre:0 "[Root.GetName] lobbies the Emperor to remain within the Holy Roman Empire"
- bt_allow_italy_to_reamain_in_hre:0 "All elibigle nations wishing to remain within the Holy Roman Empire will be allowed to do so"
- bt_release_all_of_italy_from_hre:0 "All nations in Italy and Switzerland will be removed from the Holy Roman Empire, per the Peace of Westphalia concession"
- bt_enforce_imperial_influence_over_italy:0 "All provinces in contental Northern Italy are either:\nA) Under [Root.GetName] or a subject of [Root.GetName]\nB) Under the Papal States or a subject of the Papal States\nC) Within the Holy Roman Empire and not owned by a Guelph nation"
- bt_enforce_imperial_influence_over_italy_success_part_one:0 "All provinces in Northern Italy not within the Empire immediately join the Empire."
- bt_enforce_imperial_influence_over_italy_success_part_two:0 "The Pope and all papal subjects in Italy are forced to accept imperial protection and immediately join the Holy Roman Empire."
  #Election changes moved to Misc addon
  
  #Beyond Typus and BTPL Europe Stuff
@@ -272,26 +264,6 @@
  BtPLegacyItalianFlavour.EVTDESC17:0 "Our mighty nation has wrested control of autonomous Papal states from the Pope's grasp! While their autonomy, virtually to the point of independence, may have once suited the Holy See, we must centralize if our nation is to succeed! With only some effort, we should be able to unify the various tiny little states into a single subject entity, or at least establish firmer control over them."
  BtPLegacyItalianFlavour.EVTOPTA17:0 "We will reorganize the Pope's lands for him!"
  BtPLegacyItalianFlavour.EVTOPTB17:0 "Our best bet is to establish clearer control!"
- BtPLegacyItalyHRE.EVTNAME1:0 "Cession of the Kingdom of Italy"
- BtPLegacyItalyHRE.EVTDESC1:0 "Italy, long claimed by the emperor to be part of the Holy Roman Empire, has gradually slipped more and more from the Empire's control. Though occasionally emperors have been able to exercise some influence over the succession and laws in Northern Italy and there are many circles which pledge loyalty to the Empire, this politicking has become, more than anything else, a way to avoid the temporal power of the Pope, and a long string of coalitions and alliances designed to resist imperial influence have arisen, starting with the Lombard League in 1167.  Though the Empire's de-facto control over Italy was tenuous at points, it wasn't until the Peace of Westphalia in 1648 that imperial power was formally broken and all claims over Italy retracted by the emperor as a concession of the treaty to end the Thirty Years' War."
- BtPLegacyItalyHRE.EVTOPTA1:0 "Finally an end to the meddlesome emperor's control!"
- BtPLegacyItalyHRE.EVTOPTB1:0 "Let us lobby the emperor to remain within the Empire!"
- BtPLegacyItalyHRE.EVTNAME2:0 "Italian Loyalists"
- BtPLegacyItalyHRE.EVTDESC2:0 "Through the Peace of Westphalia, the Holy Roman Empire was force to release all claims over Italy, but it would appear that several imperial holdings on the peninsula don't wish to leave! We have received delagates from several Italian cities requesting our support to remain within the Empire and retain the full advantages that being a member of our noble Empire provides. We could easily accept these pledges of loyalty, but it might be seen as a violation of the treaty."
- BtPLegacyItalyHRE.EVTOPTA2:0 "We can't turn our backs to these imperial brothers."
- BtPLegacyItalyHRE.EVTOPTB2:0 "We gave our word. Send the delegates away!"
- BtPLegacyItalyHRE.EVTNAME3:0 "Imperial Loyalists"
- BtPLegacyItalyHRE.EVTDESC3:0 "The emperor has accepted our pledge of loyalty and has allowed us to retain the status of full members within the Holy Roman Empire! Ghibellines are rejoicing in the streets!"   #Note to people poking around & translators - I welcome better ideas, and if you want to rewrite when translating, that is fine!
- BtPLegacyItalyHRE.EVTOPTA3:0 "For the emperor!"
- BtPLegacyItalyHRE.EVTNAME4:0 "Removed from the Empire"
- BtPLegacyItalyHRE.EVTDESC4:0 "The emperor is either unwilling or unable to accept our pledge of loyalty, and has turned our delagates away. Italy is henceforth no longer an imperial holding and our nation losses all rights as an imperial fief, effective immediately."
- BtPLegacyItalyHRE.EVTOPTA4:0 "So it goes."
- BtPLegacyItalyHRE.EVTNAME5:0 "The Kingdom of Italy and the Peace of Westphalia"
- BtPLegacyItalyHRE.EVTDESC5:0 "Through the Peace of Westphalia, the Holy Roman Empire was force to renounce all claims over Italy, and many nearby countries have suddenly been removed from the Empire!"
- #Option text from vanilla shadow kingdom events
- BtPLegacyItalyHRE.EVTNAME6:0 "Cession of the Switzerland"
- BtPLegacyItalyHRE.EVTDESC6:0 "Switzerland, long a central part of the Holy Roman Empire but in recent years increasing autonomous and discontented with imperial rule, was formally ceeded from the Empire as a concession of the Peace of Westphalia. All imperial claims have been withdrawn, and effective immediately Switzerland is to be considered a fully independent region."
- BtPLegacyItalyHRE.EVTOPTA6:0 "Interesting."
  
  #Beyond Typus and BTPL Decisions
  sweads_and_geats_one_big_happy_family_title:0 "Unify Swedish Culture"

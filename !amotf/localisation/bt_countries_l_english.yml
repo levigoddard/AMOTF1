@@ -402,6 +402,8 @@
  XXM_ADJ:0 "Penobscott"
  WWG:0 "Ciboney"
  WWG_ADJ:0 "Ciboney"
+ HDS:0 "Crow"
+ HDS_ADJ:0 "Crow"
  
  #New World Countries - New Beyond Typus tags
  STL:0 "Stólo"
@@ -889,30 +891,6 @@
  pmo_our_lands:0 "Beacon of Civilization"
  pmo_our_lands_desc:0 "Our people have been hunting and fishing in this land for generations. We know it better than anyone else, and are thus able to navigate faster than any foreigner ever could. We can use this to our advantage to worsen their attrition."
  
- #Dub's Work
- #Morocco
- MOR_ideas:0 "Moroccan Ideas"
- MOR_ideas_start:0 "Moroccan Traditions"
- MOR_ideas_bonus:0 "Moroccan Ambition"
- mor_qasbah:0 "Qasbah"
- mor_qasbah_desc:0 "In order to show off their wealth, noblemen of Morocco would construct large citadels surrounded by great fortifications known as Qasbah. As a bonus, these fortifications also proved to be great defensive positions to wear out invaders. The fact that these fortifications received recognition in foreign languages is testimony enough of their greatness and shall inspire our citizens to contribute to our cause."
- mor_protect_transsaharan_trade:0 "Protect Trans-Saharan Trade"
- mor_protect_transsaharan_trade_desc:0 "The trans-Saharan trade routes, where merchants riding camels would transport salt from the Maghreb in exchange for slaves and gold, were a historically important part of Moroccan economy. The Portuguese however seem to think they can wrestle our control away from us using ships. This cannot do. As such, we need to move to secure the trade for ourselves!"
- mor_madrassa:0 "Madrasa"
- mor_madrassa_desc:0 "In Fez, there exists centers of learning known as Madrasas, the first of which is said to have been built in 859. Comparable to that of a university, these Madrasas are said to have been responsible for the city's reputation as that of an important intellectual centre, especially in the 14th century where several more Madrasae were built by the Marinids."
- mor_sharif_dynasties:0 "Sharif Dynasties"
- mor_sharif_dynasties_desc:0 "While the 15th century marked a long decline of the Moroccan state, the Arab Saadi dynasty would mark the beginning of a ruler period known as the Sharifian dynasties, with Sharif meaning noble-born. The Saadis claimed to be descendants of Muhammad and managed to repel both Portuguese and Ottomans alike, marking the start of a Moroccan golden age."
- mor_legacy_of_ibn_battuta:0 "Legacy of Ibn-Battuta"
- mor_legacy_of_ibn_battuta_desc:0 "Ibn-Battuta was a renowned Moroccan explorer who voyaged much of the known world in the 14th century, travelling to distant places such as Zanzibar, Constantinople, Timbuktu, Delhi and Beijing. If a single man such as this can explore the world, then there is little doubt that we can, as well."
- mor_jewel_of_the_maghreb:0 "Jewel of the Maghreb"
- mor_jewel_of_the_maghreb_desc:0 "Positioned in the fertile norwestern corner of Africa, our land is a lush oasis in an otherwise arid region and long the traditional center of Berber and Maghrebi Arab culture. We should take full advatage of this blessing and grow our cities into shining examples for the rest of the continent!"
- mor_loyal_friends:0 "Strategic Alliances"
- mor_loyal_friends_desc:0 "On the 20th of December, 1777, Morocco became the first foreign nation to recognise the independence and sovereignty of the fledgling United States of America and offered protection from Barbary Pirates in the Atlantic, a gesture later formalised by an enduring friendship treaty. We shall follow this legacy and make it known that we make loyal friends, and terrifying enemies! In this manner we shall destabilize our rivals and strengthen our nation!"
- #mor_sale_corsairs:0 "Salé Corsairs"
- #mor_sale_corsairs_desc:0 "When King Philip III expulsed the Moriscos from Spain, they sought refuge in the town of Salé. Due to cultural difference however, these Moriscos settled on the other side of the Bou Regreg in Rabat. Using Rabat as a seat of operations they raided the shipping routes of the Atlantic, seizing ships for goods and captives. The corsairs become known as the Salé Rovers, with Rabat becoming known as \"New Salé\" by the English."
- #mor_restore_almohad_caliphate:0 "Restore the Almohad Caliphate"
- #mor_restore_almohad_caliphate_desc:0 "Once, the Almohads ruled a Berber caliphate that controlled much of al-Andalus. Then the Iberian Kingdoms began their Reconquista, reducing Muslim rule in al-Andalus to what came to be the Emirate of Granada. While many attempts at re-establishing rule over al-Andalus have been unsuccessful, we shall make sure to succeed where others have failed and let Islamic rule return to Iberia and beyond!"
- 
  #Nikicaga, Dub and JP's Italian ideas, all credit to Nikicaga, Dub, and JP (As I understand it, Nikicaga wrote them, Dub balanced them, JP did some editting?)
  #Ravenna
  RAV_ideas:0 "Ravennan Ideas"
@@ -966,7 +944,7 @@
  anc_staunch_guelphs_desc:0 "Ancona never had any love for lords, but it never had any love for the emperor either. The city always supported the Pope, and was well rewarded by protection from it's ambitious neighbours."
  EST_VAL_ANC_STAUNCH_GUELPHS:0 "Staunch Guelphs: $VAL|Y$"
  anc_cosmopolitan_city:0 "Cosmopolitan City"
- anc_cosmopolitan_city_desc:0 "Ancona was always a diverse city, ever since it founding by Greek colonists from Syracuse in Picenii lands in 387 BC. A Greek community has remained in the city, with as many as 200 families in the 16th century. It was an important destination for Ottoman merchants in Italy as well. Ancona was also the only city in the Papal states bar Rome and Avignon themselves that was alowed to keep a Jewish community within it's walls."
+ anc_cosmopolitan_city_desc:0 "Ancona was always a diverse city, ever since its founding by Greek colonists from Syracuse in Picenii lands in 387 BC. A Greek community has remained in the city, with as many as 200 families in the 16th century. It was an important destination for Ottoman merchants in Italy as well. Ancona was also the only city in the Papal states bar Rome and Avignon themselves that was alowed to keep a Jewish community within its walls."
  anc_trade_metropol:0 "Trade Metropol"
  anc_trade_metropol_desc:0 "The city's many communities and alliance with Ragusa both went a long way in making it a trade metropol, and the largest Adriatic port south of Venice. The long history as a maritime republic also helps our merchants around the world."
  anc_constructions_clement_xii:0 "Constructions of Clement XII"

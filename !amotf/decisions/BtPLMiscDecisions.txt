@@ -64,4 +64,42 @@ country_decisions = {
 		}
 	}
 	
+	#Temporary fix for 11.0.1 oversight
+	reevaluate_priorities = {
+		potential = {
+			OR = {
+				AND = {
+					has_dlc = "Golden Century"
+					tag = SPA
+				}
+				AND = {
+					has_dlc = "Golden Century"
+					tag = CAS
+				}
+				
+				tag = POL
+			}
+			NOT = { has_country_flag = bt_eleven_o_one_oversight_hotfix }
+			4637 = {
+				culture = yokuts
+				is_city = no
+			}			#Check for if BT version. 11.0.0 had yokuts, later versions were corrected to proper utian culture
+		}
+		allow = {
+			ai = no
+			is_nomad = no
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		effect = {
+			swap_non_generic_missions = yes
+			hidden_effect  = { set_country_flag = bt_eleven_o_one_oversight_hotfix }
+			add_prestige = 5
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 }

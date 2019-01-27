@@ -88,7 +88,7 @@
 230 = "Shilb"
 231 = "Burtuqal"
 333 = "Mayurqa"
-965 = "Garnatah al-Jadida"
+#965 = "Garnatah al-Jadida"
 1747 = "El-Belat"
 1746 = "Qila"
 1748 = "Jayyan"
@@ -790,6 +790,139 @@
 5426 = "Khalij Ghurayb"
 
 
+
+#2018 December
+
+#greece
+7126 = "Zakinthus"
+
+#france
+198 = "Rawdiz"
+3084 = "Fuu"
+
+#teneriffa
+5096 = "Qenet"
+
+#greenland
+1104 = "Al-Abyad"
+
+#caribbean
+487 = "'Ard Al-Masadir"
+497 = "Jas mak Murtafie" #Ja????, steam censors that
+498 = "Madininah"
+1881 = "Al'Afeaa"
+5578 = "Awra 'Abaw"
+
+#haiti
+489 = "Alraas Hayti"
+490 = "Hayth Tushriq Al-Shams" #or "Shams", "Higuey"
+2659 = "Qibaw"
+
+#canada
+944 = "Mudiq"
+988 = "Hayth Ytm Fasl Alma'"
+2575 = "Khalij Allaaji"
+2576 = "Madinat Al-Muhjir"
+2577 = "Washah"
+2578 = "Maqbarat Al-Jazira"
+2583 = "Thlath 'Anhar"
+2584 = "Easifat Thaljia"
+4995 = "Jazirat Tuniq"
+5015 = "Nunafut"
+
+#tejas
+2499 = "Wadi Nahr Eazim"
+
+#us
+919 = "Tshykasaw"
+920 = "Tshaktaw"
+923 = "Al-Naas Mae Shaear Tawil"
+924 = "Al-Baamaha"
+925 = "Tawskiji"
+929 = "Al-Saafana"
+935 = "Ardu Al-Shayruki"
+936 = "Wadi Jarah"
+958 = "Al-Synika"
+959 = "Shaeb Kayugha"
+960 = "Al-Uwnundagha"
+961 = "Al-Uwnida"
+963 = "Al-Mahikan"
+964 = "Muhuk"
+2530 = "Tanaq Haya"
+2539 = "Muqam"
+
+#florida
+926 = "Sahil Al-Nakhil"
+927 = "Al-Naas Fi Al-Miah Aleadhba"
+928 = "Al'Ablash"
+2533 = "Khalij Al-Mulihi"
+2534 = "Yustaqa" #or "Potanu"
+2535 = "'Ashkhas Eanifun"
+2536 = "Khalij Al-Marjan"
+
+#mexico
+852 = "Maksiku"
+2641 = "Tuqpahn"
+2657 = "Kualimana"
+
+#uruguay and la plata
+773 = "Al-Mintaqat Al-Sharqia"
+775 = "Sueud"
+782 = "Ard Al-Naar"
+2852 = "Takwarymbuty"
+2869 = "Al-Wurud Al-Bayda"
+2870 = "Qurtubah Al-Jadidah"
+2875 = "Khatwatan Min Alhnwd"
+2876 = "Al-Nahr Aleali"
+
+#brazil
+746 = "Al-Qalih'na"
+2921 = "Shamal Al-Misab"
+2935 = "Suq 'Akhdar"
+
+#gran colombia
+742 = "Tadyiq Uwrinuku"
+825 = "Baghwata"
+826 = "Al-Kakaw"
+828 = "Bahair"
+2804 = "Qalaw"
+2806 = "Balad Al-Wayun"
+2819 = "Kuayfanaan"
+
+#chile
+787 = "Piqun"
+
+#colombia
+873 = "Jurf Al-Nasir"
+874 = "Al-Dwymish" #could even experiment on settlement growth over time by making it change localization to "Duwamiyyah" 1792 upwards
+972 = "Jazirat Jur"
+973 = "Samakat Hamra"
+2484 = "Zil"
+2485 = "Shati Shuruq Al-Shams"
+4940 = "Ard Sanyq"
+5733 = "Suqash"
+5736 = "Khinzir Farawi"
+5739 = "Shallal Dafi"
+5747 = "Wadi Al-Azraq"
+5781 = "Suq Quim"
+5801 = "Samur Al-Qarn"
+5807 = "Manzil Tawil"
+
+#namibia and SA
+1174 = "Sahil Al-Nama"
+2856 = "Nafurat Zahra"
+5387 = "Sahil San"
+
+#papua
+1236 = "Jazirat Al-Hilal"
+2719 = "Aleayn"
+2722 = "Nahr Al-Dhubab"
+2723 = "Alraas Al-Khati"
+
+#change from already existing naming
+965 = "Suq Al-Manahahtaan"
+
+7192 = "Aqmescit" #or "Ak-Mesdzit"
 
 
 

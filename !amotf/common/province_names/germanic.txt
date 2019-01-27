@@ -75,7 +75,7 @@
 #268 = "Jassy" #BTP
 269 = "Podlachien"
 270 = "Traken"
-271 = "Schemaiten"
+#271 = "Schemaiten"
 273 = "Lettgallen"
 279 = "Wolhynien"
 281 = "Podolien"
@@ -256,7 +256,7 @@
 345 = "Abten"
 2470 = "Mauren"
 5212 = "Saus"			#Or "Süssen"
-342 = "Salen"			#Or "Rabat"
+#342 = "Salen"			#Or "Rabat"
 #"Tadla" - "Kasben"
 2464 = "Quarzburg"			#Or "Quarzerate"
 346 = "Talifat"
@@ -541,8 +541,8 @@
 
 
 #Macronesia
-5096 = "Teneriffa"
-366 = "Grosskanarien"
+#5096 = "Teneriffa"
+#366 = "Grosskanarien"
 368 = "Madera"
 367 = "Habichtinseln"
 
@@ -1361,7 +1361,7 @@
 2806 = "Gachirholm"
 2810 = "Apurien"
 2815 = "Achagualand"
-2819 = "Zapfenhafen"
+#2819 = "Zapfenhafen"
 2931 = "Neu-Arina"
 2937 = "Pokigron"
 2939 = "Sankt Miguel"
@@ -2479,6 +2479,196 @@
 7143 = "Musachien"
 
 
+
+#2019 December
+
+#german morocco fix 
+342 = "Ksar el Kebir"
+366 = "Lanzarote"
+4561 = "Tittawin"
+4563 = "Salen"
+4565 = "Teneriffa"
+4568 = "Demnate"
+5096 = "Grosskanarien"
+5221 = "Bechar"
+5222 = "Tabelballa"
+5223 = "Zinnduff"
+5226 = "Chikauen"
+
+#german colombia fixes
+834 = "Neubirkenfeld" #or "Huttenburg" named after Philipp von Hutten
+2819 = "Mettetien"
+4587 = "Schelachu"
+4593 = "Lakei"
+4595 = "David"
+4596 = "Neu-Orient"
+4597 = "Zitronen"
+4599 = "Neuafrika"
+4607 = "Tal der Speere"
+4608 = "Yopal"
+4612 = "Neuvalentz"
+4613 = "Federmann"
+4616 = "Neukatalonien"
+
+#balkans
+4174 = "Durrach" 
+7112 = "Naupactum"
+
+#scandies
+20 = "Tröndelag"
+
+#samogitia
+7210 = "Mednick"
+7211 = "Weyze"
+7212 = "Georgenburg" #or "Judenburg"
+
+#change on implemented names
+271 = "Rossienie" #"Schemaiten" was used in previous game version for bigger area
+
+#brasil-bolivia border
+800 = "Camotal"
+2882 = "Buschland"
+2900 = "Rhodonien"
+2901 = "Cerasus" #latin
+2902 = "Fort Beira"
+
+#argentine
+2842 = "Sankt Jakob"
+
+#bolivia
+2831 = "Friedensburg"
+
+#columbia (the other one)
+5733 = "Susquäsch"
+
+
+
+#2019 January
+
+#overhaul for american westcoast
+871 = "Meyertal"
+873 = "Astorien" #or "Megler", "Frankfurt"
+2003 = "Meachen"
+2019 = "Altes Fort"
+2020 = "Schiller"
+2021 = "Sankt Franziskus"
+2504 = "Luzern"
+2506 = "Schoschonenland"
+4635 = "Sankt Rafael"
+4636 = "Amsterdam"
+4637 = "Sankt Martin"
+4638 = "Wintuntal" #or "Teutschtal"
+4947 = "Württemberg Talsee"
+4950 = "Weinland"
+4952 = "Schwanensee"
+4961 = "Reubensland"
+4962 = "Dornburg"
+4965 = "Torgerson"
+4967 = "Schoschonen-Neuhäusel"
+4975 = "Salzbergen"
+5017 = "Schafshügel"
+5030 = "Goldenes Tor"
+5032 = "Kern"
+5613 = "Schwefelsburg"
+5743 = "Kootenei"
+5746 = "Wagnersburg"
+5750 = "Bremerstein"
+5756 = "Hornbütt"
+5757 = "Hagermann"
+5758 = "Egin"
+5759 = "Waldport"
+5760 = "Eugen" #or "Coburg"
+5761 = "Goldküste"
+5762 = "Weiser"
+5763 = "Fort Bragg"
+5764 = "Zinfandel"
+5765 = "Schweizerhügel"
+5766 = "Augustusbucht"
+5767 = "Rumsien"
+5768 = "Britzburg"
+5792 = "Schau"
+5794 = "Pfeiffertal" #or "Schweizertal"
+5795 = "Westhaven"
+5796 = "Pollock"
+5797 = "Stegeman"
+5798 = "Lutherstal"
+5803 = "Ruch"
+5802 = "Sichelmond Bucht"
+5804 = "Roseburg"
+5805 = "Metzger"
+5806 = "Quartz"
+5809 = "Vonberg"
+5810 = "Portland"
+5814 = "Thamien"
+5815 = "Elburz"
+5816 = "Ritz"
+5819 = "Genf"
+5820 = "Silberseen"
+5824 = "Maiertal"
+5825 = "Tepeetal"
+5833 = "Peter-Schmitt"
+5834 = "Zimmermann"
+5846 = "Schulersbürgen"
+5848 = "Klamath"
+5849 = "Zeiglerpunkt"
+5850 = "Steinertal"
+5851 = "Van Duzen"
+5852 = "Healdsburg"
+5853 = "Ükiah"
+5854 = "Seenland"
+5856 = "Tullin"
+
+#Trans-Rockies
+906 = "Kloze"
+2004 = "Schwarzfussmarkt"
+2007 = "Töpferburg" #or "Herreid"
+2501 = "Dünkirch"
+2502 = "Ziegele"
+2505 = "Ajax"
+2507 = "Otto-Speer"
+2598 = "Elchskiefer"
+2602 = "Albert"
+2608 = "Bleistadt"
+4939 = "Gätz"
+4959 = "Östliche Grassländer" #or "Aurarien"
+5034 = "Goldspur" #or "Ebenau"
+5616 = "Reiner"
+5617 = "Heidemann"
+5619 = "Tal des Hungertodes"
+5626 = "Enderlin"
+5627 = "Benzien"
+5631 = "Kaskadien"
+5632 = "Konrad"
+5633 = "Vandalien"
+5635 = "Schantzenfeld" #lots of german settlements irl for names here
+5783 = "Strachan" #or "Horburg", "Ullin"
+5784 = "Banff" #or "Lüllen"
+5785 = "Skandien"
+5786 = "Sagathun"
+5837 = "Nyberg"
+
+#mississippi river region
+900 = "Sankt Ludwig"
+904 = "Oelwein"
+905 = "Polkaburg"
+913 = "Spaulding"
+916 = "Tilden"
+917 = "Meredosien"
+2513 = "Wilhelmsburg"
+5621 = "Minne"
+
+#gulf of california
+862 = *Pittich"
+4650 = "Sankt Nikolas"
+5859 = "Sankt Anita"
+5860 = "Engelsbucht"
+5861 = "Lindas"
+5862 = "Kap St.Lukas"
+
+#canada
+5071 = "Die Lücke"
+5073 = "Bebensee" 
+5074 = "Bedzia"
 
 
 #Beyond Typus 10.0 major localised naming contribution from multiple people, credit to everyone but Draiocht. Integrated 2018-11-16

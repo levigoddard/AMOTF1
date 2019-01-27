@@ -386,3 +386,13 @@
 4240 = "Weszprem" #Uses nearby Veszprem instead of Fejerhervar.
 135 = "Szopron"
 1772 = "Preszburg" #Question is whether this is better than current Pozon, which seems to be based on the origin of the name, instead of the German version?
+
+
+#2018 December
+
+#italy
+101 = "Liguria"
+
+#germany
+1857 = "Lebork"
+4141 = "Ditmarski" #dolnoserbski

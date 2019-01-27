@@ -1,6 +1,6 @@
 # No previous file for Ohlone
 
-culture = yokuts
+culture = utian
 religion = totemism
 capital = "Ohlone" 
 trade_goods = unknown 

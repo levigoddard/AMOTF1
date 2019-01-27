@@ -537,6 +537,8 @@ spa_iberia_convert = {
 			tag = CAS
 			tag = SPA
 		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Golden Century" }
 	}
 	has_country_shield = yes
 	
@@ -809,6 +811,8 @@ spa_reconquista_por = {
 			tag = CAS
 			tag = SPA
 		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_dlc = "Golden Century" }
 	}
 	has_country_shield = yes
 	

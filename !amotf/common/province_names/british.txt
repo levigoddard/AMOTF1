@@ -100,7 +100,7 @@
 
 #2003 = "Kootenai"					#BT
 2007 = "Les Cedres"
-2012 = "Memphremagog"
+#2012 = "Memphremagog"
 2013 = "Casco"
 #2016 = "Great Forks"					#BT
 #2017 = "Edmonton"					#BT
@@ -174,72 +174,6 @@
 373 = "The Pale"
 4379 = "King's County"
 4369 = "Pembroke"
-
-
-
-#By Reddbane, unoverhauled areas
-2639 = "East Jersey"
-962 = "West Jersey"
-
-
-
-#Arga's Work
-
-#2017 Jun 5
-
-#europe
-12 = "Sealand"
-15 = "West Jutland"
-37 = "Livonia" #or "Livland" (could remain technically)
-41 = "Kingsberg"   #Or King's Hill
-49 = "Newmarch"
-52 = "Maidensburg"
-60 = "Upper Lusatia"
-73 = "Tyrol"
-82 = "Westphalia"
-85 = "Cologne"
-100 = "Frisia"
-132 = "Styria"
-134 = "Vienna"
-264 = "Breslow"
-295 = "Moscow"
-1758 = "Hanover" #note (only a single n)
-1763 = "Lower Lusatia"
-1769 = "Gorizia"
-1770 = "Eastmarch"
-2960 = "New Sadec"
-2964 = "Oldmarch"
-2993 = "Uckermarch"   #Or "Ukranimarch"
-3048 = "Southern Tyrol"
-4383 = "The Hague"
-3135 = "Northfrisia"   #Or "Northern Frisia"
-3243 = "Nikopol"
-3273 = "Old Russia"   #Or "Oldenrussia"
-3276 = "Saint Sergius"
-4142 = "East Jutland"
-
-#china
-2113 = "Port Arthur"
-2139 = "Weihai"
-
-
-
-#JP's Work (with some tweals from Draiocht)
-
-#Caribbean
-4619 = "Port o' Peace"			#translation
-489 = "French Cape"			#English name of Cap-Francais
-#4618 = "Artibonite Valley"			#wanted something english-y, so whilst Gonaibo would good too, this was the name of the valley and river in the province
-488 = "Prince's Port"			#or Hospital. first is direct translation whilst second is translation of the name of the area around Port-au-Prince
-5563 = "New Gloucester"			#totally made up, 100%. It's just a name, I can't find another alternative after half an hour of research
-2659 = "St. James"			#Santiago, would be Saint James of the Thirty Knights
-5567 = "St. John"			#Maguana means the first stone, or the only stone. Thought it would be fitting
-5565 = "Cross Peninsula"			#Barahona full name is Santa Cruz de Barahona. Cruz means cross. The province is a peninsula. Alt history name anyway
-2658 = "South Durham"			#totally made up, their are south places like Orkney and Shetland near Antartica, why not a South Durham
-#4620 = "Gold Plain"			#similar reasoning to Maguana. Named after the Magua chiefdom
-490 = "Sunrise Point"			#Higuey means place where sun is first seen in Taino
-4621 = "St. Dominic"			#from Santo Domingo
-
 
 
 
@@ -464,12 +398,12 @@
 991 = "Renfrew" # Ottawa										#Anglophone name
 992 = "Outaouais"	# Algonquin								#Francophone name from Native name
 993 = "Laurentides"	# Hochelega							#Francophone name 
-994 = "Québec"	# Stadacona										#Francophone name from Native name
+#994 = "Québec"	# Stadacona										#Francophone name from Native name
 995 = "Tadoussac"	# Atiamekw								#Francophone name from Native name
 1001 =  "Sault Ste. Marie" # Sault								#Francophone name 
 1002 = "Abitibi"	#Abitibi											#Native name
 1007 =  "Thunder Bay" # Ojibwa								#Anglophone name
-2012 = "Arthabaska"	# Arsigantegok						#Generic name
+#2012 = "Arthabaska"	# Arsigantegok						#Generic name
 2015 =  "Wawa" # Nipigon										#Unknown name
 2566 = "Machias"	# Passamaquoddy						#Native name
 2567 = "Aroostook"	# Aroostook							#Native name
@@ -486,7 +420,7 @@
 2581 = "Obadjiwan"	# Timiskaming						#Native name
 2582 = "Rimouski"	# Maliseet									#Native name
 2583 = "Trois-Rivières"	# Etchemins						#Francophone name 
-2584 = "Montréal"	# Loup										#Francophone name 
+#2584 = "Montréal"	# Loup										#Francophone name 
 2585 =  "Glengarry" # Kichesipi								#Gaelic name used by Anglophone
 2586 =  "Sarnia" # Tionontate									#Generic name 
 2587 =  "Collingwood" # Odawa								#Anglophone name
@@ -638,7 +572,7 @@
 5593 = "Fort Mackenzie"	# Caniapiscau								
 #5594 = "Nitchequon"	# Nitchequon								#No localised naming used	
 5595 = "Cumberland"	# Panniqtuuq								
-5596 "Clyde River"	# Kanngiqtugaapik						
+5596 = "Clyde River"	# Kanngiqtugaapik						
 
 #BT800  Overhaul Vanilla renaming
 #Note from Draiocht - Some of these are really crap. Eventually I'm hoping to find the time to come back and fix some of these with more period appropriate names and historical settlements, but the historical situation here is rather a mess and there is more heresay and legends than scholarly research, so I'm 
@@ -939,6 +873,184 @@
 
 
 
+#By Reddbane, unoverhauled areas
+2639 = "East Jersey"
+962 = "West Jersey"
+
+
+
+#Arga's Work
+
+#2017 Jun 5
+
+#europe
+12 = "Sealand"
+15 = "West Jutland"
+37 = "Livonia" #or "Livland" (could remain technically)
+41 = "Kingsberg"   #Or King's Hill
+49 = "Newmarch"
+52 = "Maidensburg"
+60 = "Upper Lusatia"
+73 = "Tyrol"
+82 = "Westphalia"
+85 = "Cologne"
+100 = "Frisia"
+132 = "Styria"
+134 = "Vienna"
+264 = "Breslow"
+295 = "Moscow"
+1758 = "Hanover" #note (only a single n)
+1763 = "Lower Lusatia"
+1769 = "Gorizia"
+1770 = "Eastmarch"
+2960 = "New Sadec"
+2964 = "Oldmarch"
+2993 = "Uckermarch"   #Or "Ukranimarch"
+3048 = "Southern Tyrol"
+4383 = "The Hague"
+3135 = "Northfrisia"   #Or "Northern Frisia"
+3243 = "Nikopol"
+3273 = "Old Russia"   #Or "Oldenrussia"
+3276 = "Saint Sergius"
+4142 = "East Jutland"
+
+#china
+2113 = "Port Arthur"
+2139 = "Weihai"
+
+
+
+#2018 December
+
+#patagonia
+782 = "Firelands"
+2869 = "Whiteflower" #or "Whitebloom"
+2874 = "Western Patagonia"
+
+#france
+170 = "Brest"
+180 = "Upper Poitou"
+187 ="Bar"
+193 = "Free-County"
+201 = "Province"
+3046 = "Upper Savoy"
+
+#Deutschland
+189 = "Lotharingia"
+3198 = "Saarbridge"
+
+#Ch
+1869 = "Zurich"
+1870 = "Saint Gall"
+
+#lithuania
+3223 = "Whiteslope"
+
+#kurland
+39 = "Goldingia"
+3227 = "Pilten"
+
+#Spain
+224 = "Seville"
+5446 = "Malaga"
+
+#kärnten
+7082 = "Middleburg"
+
+#russia
+33 = "St. Petersburg"
+34 = "Koporia"
+
+#scandies
+11 = "Westrobothnia"
+19 = "Ostrobothnia"
+31 = "Savonia"
+315 = "Finnmarch"
+4114 = "East Lappland"
+4123 = "Birchlands"
+
+#algeria
+338 = "Algeria"
+
+#guinea
+2241 = "Conakry"
+
+#westafrica
+1113 = "Saint Louis"
+1114 = "Guinea-Bissau"
+1116 = "Diourbel"
+2239 = "The Gambia"
+
+#ghana
+1138 = "Coomassie"
+1139 = "Fort James"
+1141 = "Newport"
+2257 = "Ashantiland"
+
+#namibia
+5426 = "Namibe"
+
+#cuba
+2654 = "Bay of Honey"
+
+#haiti
+4619 = "Isle of Turtles"
+
+#florida
+926 = "Melbourne"
+928 = "Tallahassee"
+2533 = "Floriopolis"
+2534 = "Gainesville"
+2535 = "Fort Myers"
+2536 = "Miami"
+4625 = "Orlando"
+4626 = "Tampa"
+
+#louisiana
+2516 = "Charleston"
+
+#tejas
+883 = "San Antonio"
+888 = "Houston"
+2498 = "El Paso County"
+2666 = "Del Rio"
+2667 = "Piedras Negras"
+4627 = "Austin"
+4629 = "Ector County"
+
+#columbia
+827 = "Antioch"
+2596 = "Acandia"
+2807 = "Cabimas"
+4599 = "Turbo"
+
+#germany
+75 = "Alsace"
+1760 = "Coblenz"
+1761 = "Palatinate"
+
+#argentine
+2842 = "Saint James"
+
+
+
+#JP's Work (with some tweaks from Draiocht)
+
+#Caribbean
+4619 = "Port o' Peace"			#translation
+489 = "French Cape"			#English name of Cap-Francais
+#4618 = "Artibonite Valley"			#wanted something english-y, so whilst Gonaibo would good too, this was the name of the valley and river in the province
+488 = "Prince's Port"			#or Hospital. first is direct translation whilst second is translation of the name of the area around Port-au-Prince
+5563 = "New Gloucester"			#totally made up, 100%. It's just a name, I can't find another alternative after half an hour of research
+2659 = "St. James"			#Santiago, would be Saint James of the Thirty Knights
+5567 = "St. John"			#Maguana means the first stone, or the only stone. Thought it would be fitting
+5565 = "Cross Peninsula"			#Barahona full name is Santa Cruz de Barahona. Cruz means cross. The province is a peninsula. Alt history name anyway
+2658 = "South Durham"			#totally made up, their are south places like Orkney and Shetland near Antartica, why not a South Durham
+#4620 = "Gold Plain"			#similar reasoning to Maguana. Named after the Magua chiefdom
+490 = "Sunrise Point"			#Higuey means place where sun is first seen in Taino
+4621 = "St. Dominic"			#from Santo Domingo
+
+
 
 #Beyond Typus 10.0 major localised naming contribution from multiple people, credit to everyone but Draiocht. Integrated 2018-11-16
 #Help from Arga
@@ -965,3 +1077,56 @@
 
 # Thrace
 149 = "Adrianople"
+
+
+#Imagine's Work
+
+#newzealand
+1107 = "Wellington"
+2737 = "Napier"
+5604 = "Palmerston North"
+5605 = "New Plymouth"
+2739 = "Hamilton"
+5609 = "Auckland"
+1106 = "Northland"
+5608 = "Thames"
+1108 = "Tauranga"
+5607 = "Gisborne"
+2738 = "Nelson"
+5603 = "Westport"
+5601 = "Greymouth"
+5600 = "Christchurch"
+5598 = "Timaru"
+1109 = "Dunedin"
+1246 = "Invercargill"
+5597 = "Queenstown"
+
+#australia
+1085 = "Tasmania"
+1087 = "Melbourne"
+2734 = "Canberra"
+2735 = "Millicent"
+1088 = "Mildura"
+1089 = "Narrandera"
+1090 = "Sydney"
+1092 = "Brisbane"
+1091 = "Moree"
+1094 = "Bundaberg"
+1093 = "Monto"
+2733 = "Mackay"
+2732 = "Townsville"
+2731 = "Cooktown"
+2730 = "Weipa"
+1086 = "Adelaide"
+2736 = "Whyalla"
+2727 = "Albany"
+1084 = "Perth"
+2726 = "Geraldton"
+2729 = "Barunga"
+2728 = "Darwin" 
+5610 = "Masterton"
+
+#canada
+994 = "Quebec" #Without the "è" for english
+2012 = "Victoriaville"
+2584 = "Montreal" #Without the "è" for English

@@ -125,16 +125,20 @@ country_event = {
 			OR = {
 				culture_group = scandinavian			#Scandinavia went with Protestantism and stuck with it
 				primary_culture = english			#Anglicanism entrenched in England
-				culture_group = south_slavic			#Had a few more Reformed Catholics than some others, especially in the 16th century, but generally remained mostly Catholic.
+				culture_group = south_slavic			#Had a few more Reformed  than some others, especially in the 16th century, but generally remained mostly Catholic.
+				primary_culture = polish			#Stayed mostly Catholic iirc.
 			}
 		}
 		modifier = {
 			factor = 8.0
 			OR = {
-				culture_group = latin			#Very Catholic
 				culture_group = iberian			#Very Catholic
 				culture_group = gaelic			#Very Catholic
 			}
+		}
+		modifier = {
+			factor = 32.0
+			culture_group = latin			#Very Catholic & the only overhauled area in question at the moment
 		}
 	}
 	

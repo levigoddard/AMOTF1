@@ -15,7 +15,7 @@ base_manpower = 8
 fort_15th = yes
 capital = "Lübeck"
 is_city = yes
-shipyard = yes
+#shipyard = yes
 
 discovered_by = eastern
 discovered_by = western

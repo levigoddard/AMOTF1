@@ -746,7 +746,7 @@ mughal_government = {
 			cavalry_power = 0.1
 		}
 		maghrebi = {
-			privateer_efficiency = 0.25
+			privateer_efficiency = 0.05			#Modifier reduced, as group basically unused.
 		}
 		malay = {
 			merchants = 1
@@ -782,7 +782,7 @@ mughal_government = {
 			development_cost = -0.05
 		}
 		tibetan_group = {
-			prestige_per_development_from_conversion = 0.5
+			prestige_per_development_from_conversion = 0.2
 		}
 		finno_ugric = {
 			prestige_decay = -0.01
@@ -795,6 +795,38 @@ mughal_government = {
 		}
 		western_aryan = {
 			trade_efficiency = 0.05
+		}
+		#BT culture groups
+		#Khoisan removed, as it is in a colonial region.
+		turkish_g = {
+			siege_ability = 0.1			#Current modifier courtesy of Imperatrix Helena
+		}
+		brythonic = { 
+			defensiveness = 0.10			#Current modifier courtesy of Imperatrix Helena
+		}
+		illyrian = {
+			recover_army_morale_speed = 0.05			#Current modifier courtesy of Imperatrix Helena
+		}
+		aquitanian = {
+			hostile_attrition = 0.5			#Current modifier courtesy of Imperatrix Helena
+		}
+		dacian = {
+			harsh_treatment_cost = -0.10			#Current modifier courtesy of Imperatrix Helena
+		}
+		egyptian = {
+			tolerance_heathen = 0.5			#Current modifier courtesy of Imperatrix Helena
+		}
+		saharan_group = {
+			stability_cost_modifier = -0.05			#Current modifier courtesy of Imperatrix Helena
+		}
+		berber_group = {
+			privateer_efficiency = 0.25
+		}
+		miao_g = {
+			global_trade_goods_size_modifier = 0.05
+		}
+		unified_celtic_group = {
+			defensiveness = 0.25
 		}
 	}
 }

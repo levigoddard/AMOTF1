@@ -91,11 +91,11 @@ TNA_ideas = {
 MOR_ideas = {
 	start = { 
 		num_accepted_cultures = 1
-		hostile_attrition = 1 #Desert & Mountain Warfare
+		hostile_attrition = 0.1 #Desert & Mountain Warfare
 	}
 
 	bonus = {
-		build_cost = -0.1
+		build_cost = -0.01
 	}
 
 	trigger = {
@@ -108,32 +108,26 @@ MOR_ideas = {
 	free = yes # will be added at load
 
 	mor_qasbah = { #Fortified castles built on top of hills to show off wealth, hence taxes
-		defensiveness = 0.1
-		prestige = 1
+		defensiveness = 0.01
 	}
 	mor_protect_transsaharan_trade = { #Morocco controlled trans-saharan trade, but Portugal found a way around it. To be fair, this is part of the vanilla berber set as well.
-		caravan_power = 0.2
+		caravan_power = 0.01
 	}
 	mor_madrassa = { #The Berber dynasties of Morocco built a great Madrassa (Religious school) in Fez.
-		technology_cost = -0.1
+		technology_cost = -0.01
 	}
 	mor_sharif_dynasties = { #The Sharif (noble-born) dynasties of Saadis and Alaouites, are seen as Morocco's golden age. Also, I feel this could be a cool way for Morocco to stay competitive.
-		land_morale = 0.15
+		land_morale = 0.01
 	}
 	mor_legacy_of_ibn_battuta = { #Ibn-Battuta was a Moroccan explorer famous for exploring Africa (And some other regions). It also seems very fitting for them in an alt-history sense to have this.
 		may_explore = yes
 	}
 	mor_jewel_of_the_maghreb = {
-		development_cost = -0.1
+		development_cost = -0.01
 	}
 	mor_loyal_friends = {
-		rebel_support_efficiency = 0.25
-		diplomatic_reputation = 1
+		rebel_support_efficiency = 0.01
 	}
-	#mor_sale_corsairs = { #
-	#}
-	#mor_restore_almohad_caliphate = {
-	#}
 }
 
 #Nikicaga, Dub and JP's Italian ideas, all credit to Nikicaga, Dub, and JP (As I understand it, Nikicaga wrote them, Dub balanced them, JP did some editting?)
