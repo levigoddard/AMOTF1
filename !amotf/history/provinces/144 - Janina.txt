@@ -1,7 +1,7 @@
 #144 - Epiros
 
-owner = LAT
-controller = LAT
+owner = TUR
+controller = TUR
 culture = greek
 religion = orthodox
 capital = "Ioannina"
@@ -11,9 +11,9 @@ base_tax = 5
 base_production = 5
 base_manpower = 3
 fort_15th = yes
-is_city = yes			#City surrendered in 1430 on a promise to respect local autonomy. Ideally, its own tag for a couple years, probably, but simplifying for now into just Ottoman rule.
+is_city = yes
+estate = estate_dhimmi			#City surrendered in 1430 on a promise to respect local autonomy. Ideally, its own tag for a couple years, probably, but simplifying for now into just Ottoman rule.
 add_core = EPI
-add_core = LAT
 add_local_autonomy = 60			#City surrendered in 1430 on a promise to respect local autonomy. Ideally, its own tag for a couple years, probably, but simplifying for now into just Ottoman rule.
 
 extra_cost = 16
@@ -29,7 +29,7 @@ discovered_by = ottoman
 discovered_by = eastern
 discovered_by = western
 
-1450.1.1 = { owner = TUR add_core = TUR controller = TUR capital = "Janina" }
+1430.1.1 = { owner = TUR add_core = TUR controller = TUR capital = "Janina" }
 1502.1.1 = { remove_core = BYZ remove_core = EPI }
 1555.1.1 = { unrest = 5 } # General discontent against the Janissaries' dominance
 1556.1.1 = { unrest = 0 }

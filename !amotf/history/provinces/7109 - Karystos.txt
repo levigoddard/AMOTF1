@@ -1,10 +1,9 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = VEN
+controller = VEN
 add_core = VEN
-culture = greek			#Exact timeline unclear, but this would become a centre of the Arvanites in later years
+culture = albanian			#Exact timeline unclear, but this would become a centre of the Arvanites in later years
 religion = orthodox
 capital = "Karystos"
 base_tax = 1

@@ -1,8 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = VEN
+controller = VEN
 add_core = VEN
 culture = greek
 religion = orthodox
@@ -13,7 +12,7 @@ base_manpower = 3
 trade_goods = dyes	#cochineal, very famous and major export
 is_city = yes
 hre = no
-fort_15th = no
+fort_15th = yes
 
 discovered_by = KAZ
 discovered_by = CRI

@@ -1,7 +1,7 @@
 #147 - Salonica
 
-owner = LAT
-controller = LAT
+owner = TUR
+controller = TUR
 culture = greek
 religion = orthodox
 capital = "Larissa"
@@ -11,7 +11,6 @@ base_tax = 3
 base_production = 3
 base_manpower = 3
 is_city = yes
-add_core = LAT
 add_core = TUR
 fort_15th = yes
 
@@ -25,11 +24,17 @@ discovered_by = ottoman
 discovered_by = eastern
 discovered_by = western
 
-
-1450.3.29 = {	owner = TUR
+1402.1.1 = { revolt = { type = nationalist_rebels size = 1 } controller = REB } # Interregnum
+1403.1.1 = { revolt = {} owner = BYZ controller = BYZ remove_core = TUR }
+1423.1.1 = {
+	owner = VEN
+	controller = VEN
+	add_core = VEN
+} # Sold to Venice
+1430.3.29 = {	owner = TUR
 	controller = TUR
 	add_core = TUR
-	remove_core = LTE
+	remove_core = VEN
 } # To the Ottoman Empire
 1502.1.1 = { remove_core = BYZ }
 1555.1.1 = { unrest = 5 } # General discontent with the Janissaries' dominance

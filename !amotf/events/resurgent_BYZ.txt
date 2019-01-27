@@ -240,16 +240,16 @@ country_event = { #4 The reintroduction of the Cataphract
 		is_byz_or_hellenic_rome_trigger = yes
 		is_free_or_tributary_trigger = yes
 		OR = {
-			MIL = 3
-			consort_mil = 1
+			MIL = 5
+			consort_mil = 5
 		}
 		army_tradition = 75
-		#cavalry_fraction = 0.1 #It's really funny actually, because I would hope this fraction would exclude the amount of artillery you have, meaning I could put something like 0.3. 
+		cavalry_fraction = 0.1 #It's really funny actually, because I would hope this fraction would exclude the amount of artillery you have, meaning I could put something like 0.3. 
 		#Basically there'd be no way to get this event late-game then if you don't use a LOT of cavalry. Example army stacks of 20/6/20, which are cav-heavy already, wouldn't do as that would be less than 15% (6/46)
 	}
 
 	mean_time_to_happen = {
-		years = 10
+		years = 50
 		modifier = {
 			factor = 0.75
 			MIL = 6
@@ -313,9 +313,9 @@ province_event = { #5 The Restoration of Constantinopolitan Manufactories
 				value = 100
 			}
 		}
-		change_trade_goods = bt_trade_good_books
+		change_trade_goods = glass
 		change_price = {
-			trade_goods = bt_trade_good_books
+			trade_goods = glass
 			key = byz_byzantine_glass
 			value = 0.15
 			duration = -1
@@ -518,7 +518,7 @@ province_event = { #8 Reestablishing the Tyrian Purple
 		
 		
 		center_of_trade = 2
-		change_culture = Imperial
+		change_culture = greek
 		if = {
 			limit = {
 				NOT = {
@@ -1710,18 +1710,13 @@ country_event = { #32 The city of Ailia and the Jews
 	option = {
 		name = "resurgent_BYZ.32.b" #Lift the ban and build a Third Temple
 		379 = {
-			change_religion = orthodox		
-			change_culture = Semetic 
+			change_religion = jewish
 			add_province_modifier = {
 				name = "built_third_temple"
 				duration = -1
 			} #To counteract Tolerance True Faith -> Tolerance Heathen, whose difference is likely to be this high for the Byzantines even without religious ideas
 			add_province_modifier = {
 				name = "religious_center"
-				duration = -1
-			}
-			add_province_modifier = {
-				name = "motf_jewish_return"
 				duration = -1
 			}
 			add_base_tax = 2

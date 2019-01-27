@@ -1,0 +1,6 @@
+# Dacia
+DAC = {
+    color1= { 205 17 38  } #Red
+    color2= { 251 208 22 } #Yellow
+    color3= { 0 43 126 } #Blue
+}

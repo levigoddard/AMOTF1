@@ -1,13 +1,14 @@
 #BT GDL reoverhaul
 
-owner = VGO
-add_core = VGO
-culture = Varangian
+owner = GZR
+controller = GZR
+add_core = GZR
+culture = pontic_greek
 religion = orthodox
 capital = "Cembalo"
 base_tax = 4 
 base_production = 4 
-base_manpower = 6 
+base_manpower = 2 
 trade_goods = slaves
 is_city = yes
 hre = no

@@ -1,8 +1,7 @@
 # No previous file for Beyond Typus or Beyond the Pale Legacy province
 
-owner = LAT
-controller = LAT
-add_core = LAT
+owner = GEN
+controller = GEN
 add_core = CYP
 add_core = ROC
 add_core = GEN

@@ -1,11 +1,10 @@
 #BT Balkans reoverhaul
 
-owner = LAR
-controller = LAT
-add_core = LAT
+owner = TUR
+controller = TUR
 add_core = TUR
 add_core = EPI
-culture = Slaviko 			#Major Aromanian centre
+culture = romanian			#Major Aromanian centre
 religion = orthodox
 capital = "Metsovo"
 base_tax = 1

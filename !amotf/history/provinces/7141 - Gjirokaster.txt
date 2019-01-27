@@ -1,8 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = ALB
-controller = ALB
-add_core = LAT
+owner = TUR
+controller = TUR
 add_core = TUR
 add_core = ALB
 add_core = EPI

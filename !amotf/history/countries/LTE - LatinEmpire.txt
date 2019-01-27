@@ -1,15 +1,13 @@
-﻿government = monarchy
-
-add_government_reform = grand_duchy_reform
-set_legacy_government = roman_autocracy_legacy
+government = monarchy
+add_government_reform = feudalism_reform
 government_rank = 3
-primary_culture = Latinika #Not sure what to represent "Old French" with otherwise.
+primary_culture = cosmopolitan_french #Not sure what to represent "Old French" with otherwise.
 religion = catholic
 technology_group = western
-national_focus = DIP
 historical_rival = BYZ
 historical_friend = VEN
 capital = 151 # Constantinople
+fixed_capital = 151 # Cannot move capital away from this province & no power cost to move to it
 
 #Below follows history for the Latin Empire, in case it is that Draiocht goes back in time, so I did it for him.
 #Hopefully it is as complete as it could possibly be.
@@ -151,19 +149,6 @@ capital = 151 # Constantinople
 		#Unremarkable in every way, according to history. Did however seek allies in Italy, but never started any war. Was asleep when Constantinople got invaded. Damn dude sold his son at one point.
 		adm = 1
 		dip = 2
-		mil = 1 
-	}
-}
-
-1437.3.23 = { #Baldwin sole ruler.
-	monarch = {
-		name = "Baudouin III"
-		dynasty = "de Valois"
-		birth_date = 1417.8.25 #Only year is actually known - rest is improvised. Said to be late 1217.
-		death_date = 1473.10.16 #Improvised day. The Empire fell in 1261 however.
-		#Unremarkable in every way, according to history. Did however seek allies in Italy, but never started any war. Was asleep when Constantinople got invaded. Damn dude sold his son at one point.
-		adm = 1
-		dip = 1
 		mil = 1 
 	}
 }

@@ -1,9 +1,9 @@
 #BT Balkans reoverhaul
 
-owner = LAT
-controller = LAT
-add_core = LAT
-culture = greek			#A major centre of Vlachs, or Aromanians, apparently was eastern Thessaly, and much of the region even came to be known as Vlachia
+owner = TUR
+controller = TUR
+add_core = TUR
+culture = romanian			#A major centre of Vlachs, or Aromanians, apparently was eastern Thessaly, and much of the region even came to be known as Vlachia
 religion = orthodox
 capital = "Farsala"
 base_tax = 2
@@ -12,7 +12,7 @@ base_manpower = 2
 trade_goods = cotton			#Or livestock. 
 is_city = yes
 hre = no
-add_core = TUR
+estate = estate_dhimmi
 
 discovered_by = KAZ
 discovered_by = CRI

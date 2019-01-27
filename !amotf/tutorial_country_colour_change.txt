@@ -1,0 +1,19 @@
+Hello! If you happen to be reading this, you must be wanting to change the colour of Byzantium that I adjusted in 1.1.4! If so, these are the steps you need to do:
+
+1. Navigate into the common/countries/ folder in this mod file. Open up the ByzantineEmpire.txt
+2. Put a square (#), in front of "color = { 102 2 60 }"
+3. Remove the square that is in front of "color = { 121 28 144 }"
+
+This changes your country colour from the Tyrian Purple into a more purplish purple.
+
+If you wish to also adjust the country flag to the old purple, this is what you do:
+
+1. Navigate into the gfx/flags/ folder in this mod file. You will find two files "old_BYZ.tga" and "BYZ.tga"
+2. Either delete or temporaily rename the "BYZ.tga" file
+3. Rename the "old_BYZ.tga" to "BYZ.tga"
+
+This changes your country flag from using the Tyrian Purple into the original purplish one.
+
+That's it! Happy conquering!
+
+//Dub, creator of Byzantine Resurgence

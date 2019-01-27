@@ -1,7 +1,7 @@
 #3181 - BtP Province repurposed by Draiocht due to 1.19 changes
 
-owner = ALB
-controller = ALB
+owner = TUR
+controller = TUR
 culture = albanian
 religion = orthodox
 capital = "Vlora"
@@ -23,7 +23,7 @@ discovered_by = ottoman
 discovered_by = eastern
 discovered_by = western
 
-1457.1.1 = { owner = TUR controller = TUR add_core = TUR }
+1417.1.1 = { owner = TUR controller = TUR add_core = TUR }
 1520.1.1 = { religion = sunni } # Predominant religion under Turkish rule
 1555.1.1 = { unrest = 5 } # General discontent against the Janissaries' dominance
 1556.1.1 = { unrest = 0  }

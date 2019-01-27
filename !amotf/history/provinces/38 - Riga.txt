@@ -5,7 +5,7 @@
 owner = RIG
 controller = RIG
 add_core = RIG
-culture = baltendeutsch #(Prussian no longer fit)
+culture = prussian
 religion = catholic
 hre = no
 base_tax = 10 
@@ -15,7 +15,6 @@ base_manpower = 4
 capital = "Riga"
 is_city = yes
 fort_15th = yes
-center_of_trade = 2  #A valuable Baltic port
 
 discovered_by = KAZ
 discovered_by = CRI

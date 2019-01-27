@@ -1,8 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = LAT
-controller = LAT
-add_core = LAT
+owner = TUR
+controller = TUR
 add_core = TUR
 add_core = BYZ
 culture = greek
@@ -14,6 +13,7 @@ base_manpower = 2
 trade_goods = grain			#known for cotton, wool, wheat, fruit, and vegetables today, and these are plausible products for our period as well.
 is_city = yes
 hre = no
+estate = estate_dhimmi
 
 discovered_by = KAZ
 discovered_by = CRI

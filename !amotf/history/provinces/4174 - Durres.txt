@@ -1,7 +1,7 @@
 #4174 - repurposed by Draiocht
 
-owner = ALB
-controller = ALB
+owner = VEN
+controller = VEN
 culture = albanian
 religion = orthodox
 capital = "Durrës"			#Durazzo in Venetian Italian

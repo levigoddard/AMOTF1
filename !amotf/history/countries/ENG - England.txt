@@ -1,6 +1,6 @@
-﻿government = monarchy
+government = monarchy
 add_government_reform = english_monarchy
-#mercantilism = 35			#Other changes in BT made England far too powerful with a mercantilism bonus. Also, does this really apply historical in 1444 anyway?
+#mercantilism = 25			#Other changes in BT made England far too powerful with a mercantilism bonus. Also, does this really apply historical in 1444 anyway?
 technology_group = western
 primary_culture = english
 add_accepted_culture = gascon
@@ -9,7 +9,7 @@ add_accepted_culture = northumbrian
 religion = catholic
 capital = 236 # London
 national_focus = DIP
-historical_friend = BYZ		#Made to fix the rivalling system 
+
 
 #Plantagenets
 

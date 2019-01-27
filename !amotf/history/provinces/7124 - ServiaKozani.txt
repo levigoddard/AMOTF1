@@ -1,8 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = LAT
-controller = LAT
-add_core = LAT
+owner = TUR
+controller = TUR
 add_core = TUR
 culture = greek
 religion = orthodox
@@ -13,6 +12,7 @@ base_manpower = 1
 trade_goods = wool			#mildly rugged area, generic good.
 is_city = yes
 hre = no
+estate = estate_dhimmi
 
 discovered_by = KAZ
 discovered_by = CRI

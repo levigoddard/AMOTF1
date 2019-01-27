@@ -4,17 +4,18 @@ owner = BYZ
 controller = BYZ
 add_core = MOE
 add_core = BYZ
-culture = greek			#Exact timeline unclear, but this would become a centre of the Arvanites in later years
+culture = albanian			#Exact timeline unclear, but this would become a centre of the Arvanites in later years
 religion = orthodox
 capital = "Korinthos"
 base_tax = 3
 base_production = 3
 base_manpower = 2
-trade_goods = silk			#Semi-generic for rich, recognisable city.
+trade_goods = cloth			#Semi-generic for rich, recognisable city.
 is_city = yes
 hre = no
+estate = estate_nobles
 fort_15th = yes
-
+add_local_autonomy = 25
 
 discovered_by = KAZ
 discovered_by = CRI

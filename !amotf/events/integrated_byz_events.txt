@@ -17,6 +17,7 @@ country_event = {
 		has_global_flag = integrated_byz_events_used
 		tag = BYZ
 		government = monarchy
+		dynasty = "Palaiologos"
 		NOT = { has_country_modifier = integrated_palaiologan_renaissance }
 		NOT = { is_year = 1475 }
 	}
@@ -31,7 +32,7 @@ country_event = {
 		add_years_of_income = -2
 		add_country_modifier = {
 			name = integrated_palaiologan_renaissance
-			duration = -1
+			duration = 18250
 		}
 	}
 	option = { #Do not
@@ -280,8 +281,8 @@ country_event = {
 		7137 = { #Selymbria
 			spawn_rebels = {
 				type = pretender_rebels
-				size = 2
-				leader = "Demetrios von Komnenos kai Palaiologos"
+				size = 3
+				leader = "Demetrios Palaiologos"
 			}
 		}
 	}
@@ -386,17 +387,17 @@ country_event = {
 		has_global_flag = integrated_byz_events_used
 		tag = BYZ
 		#Byz Resurgence altered: It would make sense if you can only get this event if Constantinople is not blockaded.
-		#151 = {
-		#is_blockaded = no
-		#}
+		151 = {
+			is_blockaded = no
+		}
 		NOT = { has_country_modifier = integrated_ally_supplies } #Cannot have the modifier this event grants.
 		defensive_war_with = TUR
 		NOT = { army_size = TUR	} #Added to make sure it doesn't proc in a stupid war.
-		#151 = { #Does not proc if Byzantium owns all provinces around Constantinople.
-			#NOT = {
-				#any_neighbor_province = {
-					#NOT = { owned_by = ROOT }
-				#}
+		151 = { #Does not proc if Byzantium owns all provinces around Constantinople.
+			NOT = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
 			}
 		}
 	}
@@ -445,13 +446,13 @@ country_event = {
             manuever = 1
         }
 		#I don't particularly like when you have the same name for an advisor and a general.
-         define_advisor = {
-             type = statesman
-             name = "Louka Notaras"
-             location = 151
-             skill = 1
-             discount = yes
-         }
+        # define_advisor = {
+            # type = statesman
+            # name = "Loukas Notaras"
+            # location = 151
+            # skill = 1
+            # discount = yes
+        # }
     }
 }
 
@@ -498,6 +499,8 @@ country_event = {
                     size = 2
                     leader = "Orhan Osmanoglu"
                     friend = BYZ
+					religion = TUR
+					culture = TUR
                 }
             }
         }
@@ -724,7 +727,7 @@ country_event = {
     }
     
     mean_time_to_happen = {
-        months = 3
+        months = 6
     }
     
     option = {
@@ -801,7 +804,7 @@ country_event = {
         define_consort = {
             name = "Helena"
             country_of_origin = BYZ
-            dynasty = "von Komnenos kai Palaiologos"
+            dynasty = "Palaiologos"
             adm = 5
             dip = 4 
             mil = 1
@@ -861,7 +864,7 @@ country_event = {
         }
         define_heir = {
             claim = 100
-            dynasty = "von Komnenos kai Palaiologos"
+            dynasty = "Palaiologos"
             adm = 3
             dip = 3
             mil = 3

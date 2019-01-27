@@ -18,11 +18,6 @@ add_core = ATH
 extra_cost = 16
 center_of_trade = 2
 
-add_permanent_province_modifier = {
-	name = motf_gran_city
-	duration = -1
-}
-
 discovered_by = KAZ
 discovered_by = CRI
 discovered_by = GOL

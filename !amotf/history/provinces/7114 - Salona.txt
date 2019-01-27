@@ -1,9 +1,9 @@
 #BT Balkans reoverhaul
 
-owner = ATH
-controller = ATH			#Some lobbying for Byzantine ownership on the basis of Galaxidi, but I'm giving Salona precedence for now, as a more important centre.
+owner = TUR
+controller = TUR			#Some lobbying for Byzantine ownership on the basis of Galaxidi, but I'm giving Salona precedence for now, as a more important centre.
 add_core = TUR
-add_core = ATH
+add_core = BYZ
 culture = greek
 religion = orthodox
 capital = "Salona"			#Ancient and modern Amfissa

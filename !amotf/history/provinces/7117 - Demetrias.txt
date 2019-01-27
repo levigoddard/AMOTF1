@@ -1,7 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
+owner = TUR
+controller = TUR
 add_core = TUR
 add_core = BYZ
 culture = greek
@@ -10,10 +10,10 @@ capital = "Volos"			#Demetrias in earlier starts, possibly, but Volos really had
 base_tax = 3
 base_production = 3
 base_manpower = 1
-trade_goods = cloth			#No real reason
+trade_goods = fish			#No real reason
 is_city = yes
 hre = no
-
+estate = estate_dhimmi
 
 discovered_by = KAZ
 discovered_by = CRI

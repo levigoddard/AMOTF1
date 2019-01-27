@@ -5,10 +5,10 @@ controller = TUR
 culture = greek
 religion = orthodox
 capital = "Thessaloniki"
-trade_goods = silk			#Major trade hub, could be any number of things
+trade_goods = cloth			#Major trade hub, could be any number of things
 hre = no
 base_tax = 6
-base_production = 8			#For a long period, one of the greatest ports in the Mediterranean, and only slightly diminished under Ottoman rule.
+base_production = 6			#For a long period, one of the greatest ports in the Mediterranean, and only slightly diminished under Ottoman rule.
 base_manpower = 4
 is_city = yes
 fort_15th = yes
@@ -28,15 +28,11 @@ discovered_by = western
 
 extra_cost = 10
 
-center_of_trade = 1
+center_of_trade = 2
 
-add_permanent_province_modifier = {
-	name = motf_gran_city_byz2
-	duration = -1
-}
-
-1444.1.1 = { owner = BYZ controller = BYZ } # Restored to the Byzantines
-1460.3.29 = { owner = TUR controller = TUR } # Finally conquered by Murad II 
+1405.1.1 = { owner = BYZ controller = BYZ } # Restored to the Byzantines
+1423.1.1 = { owner = VEN controller = VEN } # Sold to Venice by the weakening Byzantines
+1430.3.29 = { owner = TUR controller = TUR } # Finally conquered by Murad II 
 1502.1.1 = { remove_core = BYZ }
 1555.1.1 = { unrest = 5 } # General discontent with the Janissaries' dominance
 1556.1.1 = { unrest = 0 }

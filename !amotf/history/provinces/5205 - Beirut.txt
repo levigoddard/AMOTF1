@@ -1,10 +1,9 @@
 # No previous file for Beyond Typus or Beyond the Pale Legacy province
 
-owner = LAT
-controller = LAT
-add_core = LAT
+owner = MAM
+controller = MAM
 add_core = MAM
-culture = Latinika
+culture = syriac_culture
 religion = catholic			#Maronite Catholics
 capital = "Beirut"
 trade_goods = naval_supplies			#Cedar trees of Lebanon			
@@ -13,6 +12,7 @@ base_tax = 4
 base_production = 6
 base_manpower = 2 
 is_city = yes
+estate = estate_dhimmi
 add_core = LEB
 add_core = SYR
 

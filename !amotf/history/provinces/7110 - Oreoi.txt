@@ -1,8 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = VEN
+controller = VEN
 add_core = VEN
 culture = greek
 religion = orthodox

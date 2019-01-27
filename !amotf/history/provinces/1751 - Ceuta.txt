@@ -1,19 +1,19 @@
 #1751 - Ceuta
 
-owner = BYZ
-controller = BYZ
-culture = Apoik1iakos 
-religion = orthodox
+owner = MOR
+controller = MOR 
+culture = moroccan
+religion = sunni
 capital = "Ceuta"
-trade_goods = cloth
+trade_goods = fish
 hre = no
 base_tax = 5
 base_production = 5
 base_manpower = 4
 is_city = yes
-fort_15th = no
+fort_15th = yes
 add_core = MOR
-add_core = BYZ
+
 
 
 discovered_by = western
@@ -22,6 +22,8 @@ discovered_by = ottoman
 discovered_by = eastern
 
 
+#1415.8.21 = { controller = POR add_core = POR }
+1415.9.1 = { controller = POR add_core = POR owner = POR capital = Ceuta }
 1500.1.1 = { religion = catholic }
 1640.1.1 = {
 	owner = SPA
