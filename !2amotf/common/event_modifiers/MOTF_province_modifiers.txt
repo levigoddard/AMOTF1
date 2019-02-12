@@ -2,12 +2,12 @@ diplo_reach = {
 
 	diplomatic_reputation = 1
 	improve_relation_modifier = 0.10
-	diplomatic_upkeep = 2
+	diplomatic_upkeep = 3
 	vassal_forcelimit_bonus = 0.2
 	vassal_income = 0.25 
 	unjustified_demands = -0.25
 	max_states = 4 
-	merchants = 1 
+	merchants = 2 
 	
 }
 
@@ -35,10 +35,10 @@ motf_jewish_return = {
 motf_gran_city_byz = {
 
 	local_unrest = -2
-	local_development_cost = -0.5
-	province_trade_power_value = 10
-	trade_goods_size = 1.5
-	local_defensiveness = 0.1
+	local_development_cost = -0.45
+	province_trade_power_value = 15
+	trade_goods_size = 2.5
+	local_defensiveness = 0.5
 }
 
 motf_gran_city_wien = {

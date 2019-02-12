@@ -13,3 +13,11 @@ dependency = { #Murad's treaty with the Byzantines after a failed siege on Const
 	start_date = 1424.2.1 #Some time in February, according to Wikipedia. The source itself does not exist in e-book form and I don't feel like picking it up at the university library to find a more exact date.
 	end_date = 1443.4.06
 }
+
+dependency = { 
+	subject_type = "tributary_state"
+	first = BYZ
+	second = KNI
+	start_date = 1414.1.1 
+	end_date = 1449.4.06
+}
