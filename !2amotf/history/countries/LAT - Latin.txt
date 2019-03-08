@@ -46,4 +46,4 @@ fixed_capital = 151 # Cannot move capital away from this province & no power cos
 	}
 }
 
-1444.1.1 = { leader = {	name = "Ioannes II von Haburg"	type = general	fire = 5	shock = 4	manuever = 6	siege = 4	death_date = 1453.5.29 } }
+1444.1.1 = { leader = {	name = "Joannes I de Bauda"	type = general	fire = 3	shock = 4	manuever = 1	siege = 1	death_date = 1453.5.29 } }

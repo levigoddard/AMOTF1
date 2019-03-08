@@ -5,19 +5,18 @@ controller = BYZ
 culture = Slaviko 
 religion = orthodox
 capital = "Shkodra"
-trade_goods = fish
+trade_goods = cloth
 hre = no
-base_tax = 3
-base_production = 3
-base_manpower = 1 
+base_tax = 2
+base_production = 4
+base_manpower = 4 
 #fort_15th = yes			#Moving this fort to Kotor
 is_city = yes
-add_core = ALB
 add_core = VEN
 add_core = BYZ
 
 extra_cost = 8
-center_of_trade = 1
+
 
 discovered_by = KAZ
 discovered_by = CRI

@@ -1,8 +1,8 @@
-﻿#BT Italy reoverhaul
+#BT Italy reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = LAT
+controller = LAT
+add_core = LAT
 add_core = CTG
 culture = Latinika
 religion = orthodox
@@ -21,41 +21,14 @@ discovered_by = ottoman
 discovered_by = eastern
 
 
-#Province history completed by - Nikicaga
-#First Shattering not used
-1370.1.1 = {
- owner = CTG
- controller = CTG
- remove_core = SIE
-}
-1404.1.1 = {
-	controller = LAN
-	owner = LAN
-	add_core = LAN
-}
 
-1432.1.1 = {
-  owner = SIE
-  controller = SIE
-  remove_core = LAN
- }
-1433.1.1 = {
- owner = CTG
- controller = CTG
-}
-1440.1.1 = {
- owner = BYZ
- controller = BYZ
- add_core = BYZ
-}
 
 #Second Shattering not used
 
-1449.1.1 = {
+1459.1.1 = {
  owner = PIO
  controller = PIO
  add_core = PIO
- remove_core = BYZ
 }
 1460.1.1 = {
   owner = SIE

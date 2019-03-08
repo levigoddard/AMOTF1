@@ -1,5 +1,59 @@
 byzantine = {
 	graphical_culture = easterngfx
+		Varangian = {
+		primary = VGO
+
+		male_names = {
+			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
+			Andreas Andrew Andronikos Andronicus Anthemios Anthimos Antiochos Antonios Antonius Apollonios
+			Arsenios Artemios Athanasios Athanasius Bardas
+			Bartholomaios Bartolomeus Basileios Basil Belisarios Belisarius Boethios Bosporios
+			Christophoros Christopher Chrysanthos Chrysogonos Damianos Daniel Daniel David David Demetrios
+			Demetrius Diogenes Dionysios Dionysus Dorotheos Eirenaios Eudoxios Eustratios
+			Eugenios Euphemios Eusebios Eustathios Eustace Evangelos Gabriel Gabriel Gennadios Georgios
+			George Gerasimos Germanos Germanus Gregoras Gregory Gregorios Gregory Hektorios Helias
+			Herakleios Heracles Hierotheos Himerios
+			Georgios Alexandros Konstantinos Pavlos Andreas Nikolaos Aineias Alexeios Ambrosios
+			Chrysanthos David Demetrios Diogenes Dionysos Eirenaios Elpidios Gregorios Hektor Herakles
+			Kastor Manuel Matthaios Nestor Nikomedes Orestes Palaemon Pelagios Petros Philemon Philippos
+			Skantarios Stefanos Theodoros Thomas Basileios Prokopios Ioannes Iason Bartholomaios
+		}
+		female_names = {
+			Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia
+			Anna Anthe Anthousa Antipatra Antonia Apollonia Athanasia Barbara Basillike
+			Chrysogone Damiane Demetra Dionysia Dorothea Dorothy Aigidia Eirene Irene Elaiodora Epiphania
+			Eudokia Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne Euphrosyne
+			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
+			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
+			Konstantine Constantina Kyra Kyriake Hypatia Zoe
+		}
+		dynasty_names = {
+			"Bonde" "Vasa" "Tre Rosor" "Oxenstierna" "Sparre" "Sture" "Tott" "Trolle" "Bielke" "Brahe"
+			"Horn" "Ribbing" "Skytte" "Ban�r" "Fleming" "Gyllenstierna" "de la Gardie" "Leijonhufvud"
+			"Natt och Dag" "Grip" "Stenbock" "Bure" "Drake" "Hand" "Burensk�ld"
+			"B�llja" "Cruus" "Geete" "Grubbenhielm" "Soop" "Ekeblad" "Svinhufvud"
+			"H�rd" "Forstena" "Kurck" "Eka" "Hjort" "J�gerhorn" "Lillieh��k"
+			"Porse" "Palme" "B��t" "Ulv" "Sj�blad" "L�ma" "Posse" "Rosenstr�le" "Thott" "Bagge"
+			"Bese" "G�dda" "Hatt" "Marsvin" "Oxhufvud" "Stake" "Tre Rutor" "H�stesko"
+			"Ulfsax" "Tre Sj�blad" "Bratt" "Munk" "Eketr�" "Gera"
+			"Gylta" "Lillie" "Puke" "Slatte"  "Stiernkors" "Fincke" "Dufva" "Cronstedt"
+			"Hvide" "Galen" "Due" "Saltensee" "Urup" "Neb" "Brahe" "G�ye" "Trolle" "Rantzau"
+			"Friis" "Gyllenstierna" "Bille" "Adeler" "Arenstorff" "Brockenhuus"
+			"Beck" "Brock" "Grubbe" "Holck" "Huitfeldt" "Juel" "Kaas" "Krabbe"
+			"Lindenov" "Lykke" "Marsvin" "Mule" "Munk" "Oxe" "Reedtz" "Rodsteen"
+			"Rosenkrantz" "Skeel" "Skram" "Urne" "Vind" "Ahlefeldt"
+			"Frille" "R�nnow" "Porse" "Glysing" "Banner" "Thott" "Ulfstand" "Gr�n" "Daa"
+			"Reventlow" "Juul" "Ulfeldt" "Bang" "H�rfagre�tta" "Bielke" "Bildt" "Galte" "Paus" "Sm�r"
+			"Benkestok" "Kane" "Bonde" "Drake" "av Hafrsfjord" "Ytra" "Koss"
+			"av Nordland" "Hylling" "Alfr" "Herja" "Vans�" "Flod" "af Vendel" "av Alfheim" "Bille"
+			"Iuel" "Kaas" "Rosenkrantz" "Urne" "Adeler" "Blixenskiold" "Gyldenpalm" "Holberg"
+			"Rosenheim" "Schouboe" "Tordenskiold" "Wessel" "Westervick" "Falsen" "Knagenhjelm"
+			"Galtung" "Heubsch" "Kl�cker" "Rosenvinge" "Werenskiold" "Kruckow"
+			"Mowat" "Handingmann" "Skaktavl" "Tordenstierne" "Skanke" "Bolt" "Giske"
+			"Brockenhuus" "Adelsw�rd" "Kane" "Blixen" "L�vendal" "Balke"
+			"Vedel" "Bjelke" "Galle" "Griis"
+		}
+	}
 	goths = {
 		primary = FEO
 		dynasty_names = {
@@ -9,18 +63,18 @@ byzantine = {
 	greek = {
 		primary = GRE
 	}
-	pontic_greek = {
-		primary = TRE
+	#BtPLegacy Culture
+	cypriot = {
+		graphical_culture = easterngfx
+		primary = ROC
 	}
 	#BtPLegacy Culture
 	cappadocian = {
 		graphical_culture = easterngfx
 		primary = CAP
 	}
-	#BtPLegacy Culture
-	cypriot = {
-		graphical_culture = easterngfx
-		primary = ROC
+	pontic_greek = {
+		primary = TRE
 	}
 	#BtPLegacy Culture
 	griko = {
@@ -183,7 +237,7 @@ byzantine = {
 
 		}
 	}
-		Slaviko = {
+		Semetic = {
 		graphical_culture = easterngfx
 		male_names = {
 			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
@@ -214,7 +268,7 @@ byzantine = {
 
 		}
 	}
-		Semetic = {
+		Slaviko = {
 		graphical_culture = easterngfx
 		male_names = {
 			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
@@ -276,113 +330,6 @@ byzantine = {
 
 		}
 	}
-		Apoik1iakos = {
-
-		male_names = {
-			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
-			Andreas Andrew Andronikos Andronicus Anthemios Anthimos Antiochos Antonios Antonius Apollonios
-			Arsenios Artemios Athanasios Athanasius Bardas
-			Bartholomaios Bartolomeus Basileios Basil Belisarios Belisarius Boethios Bosporios
-			Christophoros Christopher Chrysanthos Chrysogonos Damianos Daniel Daniel David David Demetrios
-			Demetrius Diogenes Dionysios Dionysus Dorotheos Eirenaios Eudoxios Eustratios
-			Eugenios Euphemios Eusebios Eustathios Eustace Evangelos Gabriel Gabriel Gennadios Georgios
-			George Gerasimos Germanos Germanus Gregoras Gregory Gregorios Gregory Hektorios Helias
-			Herakleios Heracles Hierotheos Himerios
-			Georgios Alexandros Konstantinos Pavlos Andreas Nikolaos Aineias Alexeios Ambrosios
-			Chrysanthos David Demetrios Diogenes Dionysos Eirenaios Elpidios Gregorios Hektor Herakles
-			Kastor Manuel Matthaios Nestor Nikomedes Orestes Palaemon Pelagios Petros Philemon Philippos
-			Skantarios Stefanos Theodoros Thomas Basileios Prokopios Ioannes Iason Bartholomaios
-		}
-		female_names = {
-			Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia
-			Anna Anthe Anthousa Antipatra Antonia Apollonia Athanasia Barbara Basillike
-			Chrysogone Damiane Demetra Dionysia Dorothea Dorothy Aigidia Eirene Irene Elaiodora Epiphania
-			Eudokia Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne Euphrosyne
-			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
-			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
-			Konstantine Constantina Kyra Kyriake Hypatia Zoe
-		}
-		dynasty_names = {
-			"Bonde" "Vasa" "Tre Rosor" "Oxenstierna" "Sparre" "Sture" "Tott" "Trolle" "Bielke" "Brahe"
-			"Horn" "Ribbing" "Skytte" "Ban�r" "Fleming" "Gyllenstierna" "de la Gardie" "Leijonhufvud"
-			"Natt och Dag" "Grip" "Stenbock" "Bure" "Drake" "Hand" "Burensk�ld"
-			"B�llja" "Cruus" "Geete" "Grubbenhielm" "Soop" "Ekeblad" "Svinhufvud"
-			"H�rd" "Forstena" "Kurck" "Eka" "Hjort" "J�gerhorn" "Lillieh��k"
-			"Porse" "Palme" "B��t" "Ulv" "Sj�blad" "L�ma" "Posse" "Rosenstr�le" "Thott" "Bagge"
-			"Bese" "G�dda" "Hatt" "Marsvin" "Oxhufvud" "Stake" "Tre Rutor" "H�stesko"
-			"Ulfsax" "Tre Sj�blad" "Bratt" "Munk" "Eketr�" "Gera"
-			"Gylta" "Lillie" "Puke" "Slatte"  "Stiernkors" "Fincke" "Dufva" "Cronstedt"
-			"Hvide" "Galen" "Due" "Saltensee" "Urup" "Neb" "Brahe" "G�ye" "Trolle" "Rantzau"
-			"Friis" "Gyllenstierna" "Bille" "Adeler" "Arenstorff" "Brockenhuus"
-			"Beck" "Brock" "Grubbe" "Holck" "Huitfeldt" "Juel" "Kaas" "Krabbe"
-			"Lindenov" "Lykke" "Marsvin" "Mule" "Munk" "Oxe" "Reedtz" "Rodsteen"
-			"Rosenkrantz" "Skeel" "Skram" "Urne" "Vind" "Ahlefeldt"
-			"Frille" "R�nnow" "Porse" "Glysing" "Banner" "Thott" "Ulfstand" "Gr�n" "Daa"
-			"Reventlow" "Juul" "Ulfeldt" "Bang" "H�rfagre�tta" "Bielke" "Bildt" "Galte" "Paus" "Sm�r"
-			"Benkestok" "Kane" "Bonde" "Drake" "av Hafrsfjord" "Ytra" "Koss"
-			"av Nordland" "Hylling" "Alfr" "Herja" "Vans�" "Flod" "af Vendel" "av Alfheim" "Bille"
-			"Iuel" "Kaas" "Rosenkrantz" "Urne" "Adeler" "Blixenskiold" "Gyldenpalm" "Holberg"
-			"Rosenheim" "Schouboe" "Tordenskiold" "Wessel" "Westervick" "Falsen" "Knagenhjelm"
-			"Galtung" "Heubsch" "Kl�cker" "Rosenvinge" "Werenskiold" "Kruckow"
-			"Mowat" "Handingmann" "Skaktavl" "Tordenstierne" "Skanke" "Bolt" "Giske"
-			"Brockenhuus" "Adelsw�rd" "Kane" "Blixen" "L�vendal" "Balke"
-			"Vedel" "Bjelke" "Galle" "Griis"
-		}
-	}
-		Varangian = {
-		primary = VGO
-
-		male_names = {
-			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
-			Andreas Andrew Andronikos Andronicus Anthemios Anthimos Antiochos Antonios Antonius Apollonios
-			Arsenios Artemios Athanasios Athanasius Bardas
-			Bartholomaios Bartolomeus Basileios Basil Belisarios Belisarius Boethios Bosporios
-			Christophoros Christopher Chrysanthos Chrysogonos Damianos Daniel Daniel David David Demetrios
-			Demetrius Diogenes Dionysios Dionysus Dorotheos Eirenaios Eudoxios Eustratios
-			Eugenios Euphemios Eusebios Eustathios Eustace Evangelos Gabriel Gabriel Gennadios Georgios
-			George Gerasimos Germanos Germanus Gregoras Gregory Gregorios Gregory Hektorios Helias
-			Herakleios Heracles Hierotheos Himerios
-			Georgios Alexandros Konstantinos Pavlos Andreas Nikolaos Aineias Alexeios Ambrosios
-			Chrysanthos David Demetrios Diogenes Dionysos Eirenaios Elpidios Gregorios Hektor Herakles
-			Kastor Manuel Matthaios Nestor Nikomedes Orestes Palaemon Pelagios Petros Philemon Philippos
-			Skantarios Stefanos Theodoros Thomas Basileios Prokopios Ioannes Iason Bartholomaios
-		}
-		female_names = {
-			Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia
-			Anna Anthe Anthousa Antipatra Antonia Apollonia Athanasia Barbara Basillike
-			Chrysogone Damiane Demetra Dionysia Dorothea Dorothy Aigidia Eirene Irene Elaiodora Epiphania
-			Eudokia Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne Euphrosyne
-			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
-			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
-			Konstantine Constantina Kyra Kyriake Hypatia Zoe
-		}
-		dynasty_names = {
-			"Bonde" "Vasa" "Tre Rosor" "Oxenstierna" "Sparre" "Sture" "Tott" "Trolle" "Bielke" "Brahe"
-			"Horn" "Ribbing" "Skytte" "Ban�r" "Fleming" "Gyllenstierna" "de la Gardie" "Leijonhufvud"
-			"Natt och Dag" "Grip" "Stenbock" "Bure" "Drake" "Hand" "Burensk�ld"
-			"B�llja" "Cruus" "Geete" "Grubbenhielm" "Soop" "Ekeblad" "Svinhufvud"
-			"H�rd" "Forstena" "Kurck" "Eka" "Hjort" "J�gerhorn" "Lillieh��k"
-			"Porse" "Palme" "B��t" "Ulv" "Sj�blad" "L�ma" "Posse" "Rosenstr�le" "Thott" "Bagge"
-			"Bese" "G�dda" "Hatt" "Marsvin" "Oxhufvud" "Stake" "Tre Rutor" "H�stesko"
-			"Ulfsax" "Tre Sj�blad" "Bratt" "Munk" "Eketr�" "Gera"
-			"Gylta" "Lillie" "Puke" "Slatte"  "Stiernkors" "Fincke" "Dufva" "Cronstedt"
-			"Hvide" "Galen" "Due" "Saltensee" "Urup" "Neb" "Brahe" "G�ye" "Trolle" "Rantzau"
-			"Friis" "Gyllenstierna" "Bille" "Adeler" "Arenstorff" "Brockenhuus"
-			"Beck" "Brock" "Grubbe" "Holck" "Huitfeldt" "Juel" "Kaas" "Krabbe"
-			"Lindenov" "Lykke" "Marsvin" "Mule" "Munk" "Oxe" "Reedtz" "Rodsteen"
-			"Rosenkrantz" "Skeel" "Skram" "Urne" "Vind" "Ahlefeldt"
-			"Frille" "R�nnow" "Porse" "Glysing" "Banner" "Thott" "Ulfstand" "Gr�n" "Daa"
-			"Reventlow" "Juul" "Ulfeldt" "Bang" "H�rfagre�tta" "Bielke" "Bildt" "Galte" "Paus" "Sm�r"
-			"Benkestok" "Kane" "Bonde" "Drake" "av Hafrsfjord" "Ytra" "Koss"
-			"av Nordland" "Hylling" "Alfr" "Herja" "Vans�" "Flod" "af Vendel" "av Alfheim" "Bille"
-			"Iuel" "Kaas" "Rosenkrantz" "Urne" "Adeler" "Blixenskiold" "Gyldenpalm" "Holberg"
-			"Rosenheim" "Schouboe" "Tordenskiold" "Wessel" "Westervick" "Falsen" "Knagenhjelm"
-			"Galtung" "Heubsch" "Kl�cker" "Rosenvinge" "Werenskiold" "Kruckow"
-			"Mowat" "Handingmann" "Skaktavl" "Tordenstierne" "Skanke" "Bolt" "Giske"
-			"Brockenhuus" "Adelsw�rd" "Kane" "Blixen" "L�vendal" "Balke"
-			"Vedel" "Bjelke" "Galle" "Griis"
-		}
-	}
 	Imperial = {
 	graphical_culture = easterngfx
 	male_names = {
@@ -399,6 +346,12 @@ byzantine = {
 		Chrysanthos David Demetrios Diogenes Dionysos Eirenaios Elpidios Gregorios Hektor Herakles
 		Kastor Manuel Matthaios Nestor Nikomedes Orestes Palaemon Pelagios Petros Philemon Philippos
 		Skantarios Stefanos Theodoros Thomas Basileios Prokopios Ioannes Iason Bartholomaios
+		Albrecht Friedrich August Emil Ferdinand Karl Ludwig Karl Wilhelm Adolf Alfred Anton Benedikt 
+		Benjamin Denis Diederick Eckbert Erwin Florian Franz Gebhard Gottfried Hartmann Heinrich Helmut 
+		Horst Joachim Kaspar Kurt Leo Ludwig Lukas Manfred Michael Nikolaus Oskar Otto Philipp Reiner Rudolf 
+		Rupprecht Siegfried Siegmund Thomas Urs Viktor Werner Alvydas Arelis Auctune Bajoras Beidras Budo Dagonis 
+		Ekkelis Galindas Galindo Gauronas Gerdautas Glande Golding Jauguttis Karatas Klukis Kugis Milzas Nomedas 
+		Prusas Sergonis Ulinniks Ulitis Dagon Dagonis
 	}
 	female_names = {
 		Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia Anna
@@ -408,10 +361,68 @@ byzantine = {
 		Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
 		Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
 		Konstantine Constantina Kyra Kyriake Hypatia Zoe
+		Raphaela Sabine Vera Betten Dagas Gelennis Gerkus Grasus Gulbis Mila Milyuns Weslikan Ziedas
 	}
 	dynasty_names = {
-		von Komnenos, Doukas, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiogos
+		von Komnenos, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiologos
 
+		}
+	}
+	Apoik1iakos = {
+
+		male_names = {
+			Abraham Aaron Alexander Atticus August Andrew Anthony Angus Allen Asa Alvin Albert Ambrose Arthur
+			Buford Benjamin Benedict Bernard Bartholomew Brigham Braxton Barnabas
+			Cyrus Charles Cyril Christopher Casey Clarence Clark Calvin Chester
+			David Donald Daniel Duncan
+			Elihu Elias Eric Ebenezer Elbridge Eugene Eustace Ernest Edmund Ephraim Earl Ezra Emory
+			Francis Frederick Ferdinand
+			George Gregory Gideon Gerald Grover Gouveneur Gordon
+			Humphrey Howard Hector Harold Horatio Henry Isaac Israel Ian Irving
+			Joseph Jeffrey Jubal John Jebediah James Jacob Julius Julian Justin Josiah Joshua
+			Leonard Louis Lawrence Leland Luke Lionel Lorenzo Lamont Lyman
+			Moses Michael Mark Martin Milton Merriweather
+			Nathaniel Noah Nehemiah Nicholas
+			Oliver Obadiah Orville Owen Philip Peter Paul Patrick
+			Rutherford Robert Richard Ronald Reuchlin Rufus Rhett
+			Samuel Stephen Sampson Sylvester
+			Theodore Thomas Timothy Upton Ulysses Victor Vincent
+			William Walter Winfield Wilbur Wallace Walker Zachary	
+		}
+		female_names = {
+			Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia
+			Anna Anthe Anthousa Antipatra Antonia Apollonia Athanasia Barbara Basillike
+			Chrysogone Damiane Demetra Dionysia Dorothea Dorothy Aigidia Eirene Irene Elaiodora Epiphania
+			Eudokia Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne Euphrosyne
+			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
+			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
+			Konstantine Constantina Kyra Kyriake Hypatia Zoe
+		}
+		dynasty_names = {
+			"Bonde" "Vasa" "Tre Rosor" "Oxenstierna" "Sparre" "Sture" "Tott" "Trolle" "Bielke" "Brahe"
+			"Horn" "Ribbing" "Skytte" "Ban�r" "Fleming" "Gyllenstierna" "de la Gardie" "Leijonhufvud"
+			"Natt och Dag" "Grip" "Stenbock" "Bure" "Drake" "Hand" "Burensk�ld"
+			"B�llja" "Cruus" "Geete" "Grubbenhielm" "Soop" "Ekeblad" "Svinhufvud"
+			"H�rd" "Forstena" "Kurck" "Eka" "Hjort" "J�gerhorn" "Lillieh��k"
+			"Porse" "Palme" "B��t" "Ulv" "Sj�blad" "L�ma" "Posse" "Rosenstr�le" "Thott" "Bagge"
+			"Bese" "G�dda" "Hatt" "Marsvin" "Oxhufvud" "Stake" "Tre Rutor" "H�stesko"
+			"Ulfsax" "Tre Sj�blad" "Bratt" "Munk" "Eketr�" "Gera"
+			"Gylta" "Lillie" "Puke" "Slatte"  "Stiernkors" "Fincke" "Dufva" "Cronstedt"
+			"Hvide" "Galen" "Due" "Saltensee" "Urup" "Neb" "Brahe" "G�ye" "Trolle" "Rantzau"
+			"Friis" "Gyllenstierna" "Bille" "Adeler" "Arenstorff" "Brockenhuus"
+			"Beck" "Brock" "Grubbe" "Holck" "Huitfeldt" "Juel" "Kaas" "Krabbe"
+			"Lindenov" "Lykke" "Marsvin" "Mule" "Munk" "Oxe" "Reedtz" "Rodsteen"
+			"Rosenkrantz" "Skeel" "Skram" "Urne" "Vind" "Ahlefeldt"
+			"Frille" "R�nnow" "Porse" "Glysing" "Banner" "Thott" "Ulfstand" "Gr�n" "Daa"
+			"Reventlow" "Juul" "Ulfeldt" "Bang" "H�rfagre�tta" "Bielke" "Bildt" "Galte" "Paus" "Sm�r"
+			"Benkestok" "Kane" "Bonde" "Drake" "av Hafrsfjord" "Ytra" "Koss"
+			"av Nordland" "Hylling" "Alfr" "Herja" "Vans�" "Flod" "af Vendel" "av Alfheim" "Bille"
+			"Iuel" "Kaas" "Rosenkrantz" "Urne" "Adeler" "Blixenskiold" "Gyldenpalm" "Holberg"
+			"Rosenheim" "Schouboe" "Tordenskiold" "Wessel" "Westervick" "Falsen" "Knagenhjelm"
+			"Galtung" "Heubsch" "Kl�cker" "Rosenvinge" "Werenskiold" "Kruckow"
+			"Mowat" "Handingmann" "Skaktavl" "Tordenstierne" "Skanke" "Bolt" "Giske"
+			"Brockenhuus" "Adelsw�rd" "Kane" "Blixen" "L�vendal" "Balke"
+			"Vedel" "Bjelke" "Galle" "Griis"
 		}
 	}
 }

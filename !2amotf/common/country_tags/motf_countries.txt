@@ -1,2 +1,4 @@
 VGO = "countries/VarangianOrder.txt"
 LAT = "countries/Latin.txt"
+ARV = "countries/Arav.txt"
+PTS = "countries/Portus.txt"

@@ -16,7 +16,7 @@ dependency = { #Murad's treaty with the Byzantines after a failed siege on Const
 
 dependency = { 
 	subject_type = "tributary_state"
-	first = BYZ
+	first = VEN
 	second = KNI
 	start_date = 1414.1.1 
 	end_date = 1449.4.06

@@ -1,18 +1,17 @@
 #2299 - Bolu
 
-owner = BYZ
-controller = BYZ
+owner = VGO
+controller = VGO
 add_core = GZR
-add_core = BYZ
+add_core = VGO
 culture = Latinika			#Relgion and culture difficult to determine here. Was clearly Greek and Orthodox until around 1210, when the Seljuks took it, but they stayed only for about 50 years. At this point, province under Genoa for 160 years. Used Hybrid culture here.
 religion = orthodox
 capital = "Amastris"
 trade_goods = grain			#Speros Vryonis states that in the 9th century a 'combination of local industry, trade, and the produce of its soil made Amastris one of the more prosperous towns on the Black Sea.'
 hre = no
-base_tax = 3
-
-base_production = 3
-base_manpower = 3 
+base_tax = 4
+base_production = 4
+base_manpower = 4
 is_city = yes
 
 

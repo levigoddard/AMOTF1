@@ -1,8 +1,8 @@
 #1751 - Ceuta
 
-owner = BYZ
-controller = BYZ
-culture = Aravas
+owner = PTS
+controller = PTS
+culture = Aravas      #Apoik1iakos
 religion = orthodox
 capital = "Ceuta"
 trade_goods = bt_trade_good_books
@@ -14,6 +14,7 @@ is_city = yes
 fort_15th = no
 add_core = MOR
 add_core = BYZ
+add_core = PTS
 
 
 discovered_by = western
@@ -21,6 +22,7 @@ discovered_by = muslim
 discovered_by = ottoman
 discovered_by = eastern
 
+center_of_trade = 2
 
 1500.1.1 = { religion = catholic }
 1640.1.1 = {

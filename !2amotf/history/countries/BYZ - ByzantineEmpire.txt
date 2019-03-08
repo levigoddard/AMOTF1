@@ -11,7 +11,6 @@ historical_rival = LAT		#Latin Empire surely should be a historical rival, no?
 historical_rival = VEN	
 historical_friend = TRE		
 historical_friend = SER		#Made to fix the rivalling system 
-historical_rival = HUN
 historical_rival = HAB
 historical_friend = ENG		#Made to fix the rivalling system 
 historical_rival = LIT		#Made to fix the rivalling system 
@@ -55,12 +54,12 @@ set_global_flag = byz_resurgence_loaded
 
 1425.7.21 = {
 	monarch = {
-		name = "Ioannes VIII"
+		name = "Dagonis VIII"
 		dynasty = "von Komnenos kai Palaiologos"
-		birth_date = 1392.12.18
-		adm = 2
-		dip = 4 #Buffed this, John VIII was quite diplomatic.
-		mil = 2
+		birth_date = 1402.12.18
+		adm = 4
+		dip = 6 #Buffed this, John VIII was quite diplomatic.
+		mil = 4
 	}
 	#To add ruler trait to Ioannes VIII
 	add_ruler_personality = tolerant_personality
@@ -68,15 +67,15 @@ set_global_flag = byz_resurgence_loaded
 
 1425.7.21 = {
 	heir = {
-		name = "Konstantinos"
-		monarch_name = "Konstantinos XI"
+		name = "Dagon"
+		monarch_name = "Dagon X"
 		dynasty = "von Komnenos kai Palaiologos"
-		birth_date = 1405.2.8
+		birth_date = 1425.2.8
 		death_date = 1453.5.29
 		claim = 95
-		adm = 3
+		adm = 5
 		dip = 4
-		mil = 4 
+		mil = 6
 	}
 	#To add ruler trait to Konstantinos XI
 	add_heir_personality = well_connected_personality

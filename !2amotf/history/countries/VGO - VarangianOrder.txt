@@ -70,3 +70,4 @@ add_army_professionalism = 0.45
 		mil = 5
 	}
 }
+1444.1.1 = { leader = {	name = "Ioan IX von Haburg"	type = general	fire = 4	shock = 2	manuever = 4	siege = 3	death_date = 1458.5.29 } }
