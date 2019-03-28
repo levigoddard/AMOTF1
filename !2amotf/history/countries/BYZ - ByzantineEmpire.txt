@@ -26,7 +26,11 @@ set_global_flag = byz_resurgence_loaded
 			name = diplo_reach 
 			duration = -1
 		}
-		
+		add_country_modifier = {
+			name = diplo_reach2 
+			duration = -1
+		}		
+
 1391.2.16 = {
 	monarch = {
 		name = "Manuel II"

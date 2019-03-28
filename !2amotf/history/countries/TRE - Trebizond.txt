@@ -1,5 +1,6 @@
 government = monarchy
 add_government_reform = autocracy_reform
+set_legacy_government = roman_autocracy_legacy
 primary_culture = pontic_greek
 add_accepted_culture = greek
 add_accepted_culture = laz_culture

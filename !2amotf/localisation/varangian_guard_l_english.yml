@@ -45,7 +45,6 @@
  colonyBYZ.2.d:0 "People from the Capitol and countryside are flooding into our newly won Teritory in the east. This has caused a hybrid culture to appear in the largest reigonal city. This Arabic Hellenic culture should make the region easier to control"
  colonyBYZ.2.a:0 "Glory to Rhomaion!"
 
- resurgent_BYZ.5.a:0 "Favor The Book Writers!"
  motf_gran_city:0 "Gran City Europa"
  desc_motf_gran_city:0 "This is one of the major cities of Europa and, as such, is granted bonuses accordingly."
  motf_jewish_return:0 "Returned Jewish Population"
@@ -59,5 +58,7 @@
 
  diplo_reach:0 "Our Joined Dynasty With House von Komnenos"
  desc_diplo_reach:0 "When the German Side of our dynasty joined, we gained connections to the West. We also benifit from the skills and gifts the Germanic Barbarians give."
+ diplo_reach2:0 "Our Joined Dynasty With House Plagiosoi"
+ desc_diplo_reach2:0 "When the Hellenic Side of our dynasty joined, we gained connections to the East. We also benifit from the skills and gifts the Romans give."
  latin_bad:0 "We are still outsiders"
  desc_latin_bad:0 "After the failed Council of Florence, The fourth Crusade and the fact we still have not fully been recognized by the populace, we are not able to manage much in the way of conversion."

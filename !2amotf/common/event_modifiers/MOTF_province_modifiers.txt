@@ -3,10 +3,18 @@ diplo_reach = {
 	diplomatic_reputation = 0.50
 	diplomatic_upkeep = 4
 	vassal_forcelimit_bonus = 0.50
-	siege_ability = 0.25
+	siege_ability = 0.15
 	vassal_income = 0.25 
 	unjustified_demands = -0.50
 	merchants = 3 
+	
+}
+
+diplo_reach2 = {
+
+	years_of_nationalism = -10
+	unjustified_demands = -0.1
+	max_absolutism = 5
 	
 }
 
