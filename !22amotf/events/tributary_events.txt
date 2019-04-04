@@ -1,0 +1,50 @@
+country_event = 
+{
+	id = tribute.event.1
+	title = "tribute.event.1_title"
+	desc = "tribute.event.1_desc"
+	picture = BUDDHA_eventPicture
+	immediate = 
+	{
+		hidden_effect = 
+		{
+			crimea_area = 
+			{
+				add_core = VGO
+			}
+			2410 =
+			{
+				culture = varangian
+			}
+			release = VGO
+			BYZ =
+			{
+				create_march = VGO
+			}
+				VGO = 
+				{
+					capital_scope = 
+					{
+						build_to_forcelimit = 
+						{
+							infantry = 1
+							cavalry = 0.5
+						}
+					}
+					random_owned_province = 
+					{
+						limit = 
+						{
+							has_port = yes
+						}
+						build_to_forcelimit =
+						{
+							galley = 1
+							light_ship = 1
+							transport = 1
+						}
+					}
+				}
+		}		
+	}
+}

@@ -1,0 +1,80 @@
+diplo_reach = {
+
+	diplomatic_upkeep = 5
+	vassal_forcelimit_bonus = 0.50
+	siege_ability = 0.15
+	vassal_income = 0.25 
+	unjustified_demands = -0.50
+	merchants = 3 
+	
+}
+
+diplo_reach2 = {
+
+	years_of_nationalism = -10
+	unjustified_demands = -0.1
+	max_absolutism = 5
+	
+}
+
+latin_bad = {
+	
+	local_missionary_strength = -0.25
+}
+
+motf_gran_city = {
+
+	local_unrest = -2
+	local_development_cost = -0.5
+	regiment_recruit_speed = -0.1
+	province_trade_power_value = 15
+}
+
+motf_jewish_return = {
+
+	local_unrest = -2
+	trade_goods_size = 1.5
+	local_development_cost = -0.4
+}
+
+motf_gran_city_byz = {
+
+	local_unrest = -2
+	local_development_cost = -0.50
+	province_trade_power_value = 15
+	trade_goods_size = 2.5
+	local_defensiveness = 0.5
+}
+
+motf_gran_city_wien = {
+
+	local_unrest = -2
+	local_development_cost = -0.5
+	province_trade_power_value = 10
+	trade_goods_size = 1.5
+	local_defensiveness = 0.1
+}
+
+motf_gran_city_byz2 = {
+
+	local_unrest = -1
+	local_development_cost = -0.25
+	province_trade_power_value = 5
+	trade_goods_size = 1.0
+}
+
+patriarch_antioch = {
+	global_missionary_strength = 0.01
+}
+
+patriarch_jeruselem = {
+	global_missionary_strength = 0.01
+}
+
+patriarch_egypt = {
+	global_missionary_strength = 0.01
+}
+
+gran_patriarch_roma = {
+	global_missionary_strength = 0.75
+}

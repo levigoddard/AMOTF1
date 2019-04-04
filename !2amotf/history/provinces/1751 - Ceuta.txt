@@ -2,7 +2,7 @@
 
 owner = PTS
 controller = PTS
-culture = Aravas      #Apoik1iakos
+culture = Portan      #Apoik1iakos
 religion = orthodox
 capital = "Ceuta"
 trade_goods = bt_trade_good_books

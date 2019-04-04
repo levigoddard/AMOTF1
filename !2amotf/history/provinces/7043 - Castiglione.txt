@@ -1,15 +1,15 @@
 #BT Italy reoverhaul
 
-owner = LAT
-controller = LAT
-add_core = LAT
+owner = ETZ
+controller = ETZ
+add_core = ETZ
 add_core = CTG
 culture = Latinika
 religion = orthodox
 capital = "Castiglione della Pescaia"
 base_tax = 3
-base_production = 3
-base_manpower = 3
+base_production = 5
+base_manpower = 4
 trade_goods = naval_supplies # major port, and has rich pine woods around it, so Lumber once introduced
 is_city = yes
 hre = yes

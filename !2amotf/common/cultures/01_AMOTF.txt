@@ -57,7 +57,7 @@ byzantine = {
 	goths = {
 		primary = FEO
 		dynasty_names = {
-			"of Gothia"
+			"vo Gothia"
 		}
 	}
 	greek = {
@@ -368,7 +368,7 @@ byzantine = {
 
 		}
 	}
-	Apoik1iakos = {
+	Portan = {
 
 		male_names = {
 			Abraham Aaron Alexander Atticus August Andrew Anthony Angus Allen Asa Alvin Albert Ambrose Arthur

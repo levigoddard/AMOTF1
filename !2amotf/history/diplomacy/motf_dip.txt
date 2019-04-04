@@ -1,11 +1,11 @@
-march = {
+vassal = {
 	first = BYZ
 	second = VGO
 	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
 	end_date = 1599.2.4 #Dissilusion of the republic after a disagreement
 }
 
-vassal = {
+march = {
 	first = BYZ
 	second = FEO
 	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
@@ -27,9 +27,30 @@ vassal = {
 }
 
 vassal = {
+	first = BYZ
+	second = ETZ
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the state after a dissagreement over land rights
+}
+
+vassal = {
 	first = LAT
 	second = CYP
 	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
 	end_date = 1599.2.4 #Dissilusion of the state after a dissagreement over land rights
 }
 
+
+vassal = {
+	first = SER
+	second = MKD
+	start_date = 1443.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1542.1.22
+}
+
+march = {
+	first = BYZ
+	second = KMG
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the republic after a disagreement
+}
