@@ -1,0 +1,13 @@
+DAC = "countries/Dacia.txt"
+#Imported from Shattered Europa
+ALN = "countries/Alans.txt"
+
+#Exarchates
+HSP = "countries/Hesperia.txt"
+GLT = "countries/Galatia.txt"
+KCD = "countries/Karchidon.txt"
+ATL = "countries/Anatolia.txt"
+PSI = "countries/Persis.txt"
+RVN = "countries/Ravenna.txt"
+ABN = "countries/Albion.txt"
+AEG = "countries/Aegyptus.txt"
