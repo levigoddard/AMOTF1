@@ -2,7 +2,7 @@
 
 owner = ATH
 controller = ATH
-add_core = TUR
+add_core = LAT
 add_core = ATH
 culture = greek
 religion = orthodox

@@ -12,6 +12,7 @@ base_production = 10			# In 1453, when the Ottoman Turks captured the city, it c
 base_manpower = 5
 is_city = yes
 fort_15th = yes 
+shipyard = yes
 add_core = BYZ
 
 discovered_by = western

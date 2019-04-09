@@ -2,7 +2,7 @@
 
 owner = BYZ
 controller = BYZ
-add_core = TUR
+add_core = LAT
 add_core = BYZ
 culture = greek
 religion = orthodox

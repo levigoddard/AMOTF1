@@ -3,7 +3,7 @@
 owner = LAR
 controller = LAT
 add_core = LAT
-add_core = TUR
+add_core = LTE
 add_core = EPI
 culture = Slaviko 			#Major Aromanian centre
 religion = orthodox

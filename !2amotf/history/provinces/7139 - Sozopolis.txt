@@ -3,7 +3,6 @@
 owner = BYZ
 controller = BYZ
 add_core = BYZ
-add_core = BUL
 culture = Slaviko 
 religion = orthodox
 capital = "Sozopolis"

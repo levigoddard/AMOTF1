@@ -3,7 +3,7 @@
 owner = LAT
 controller = LAT
 add_core = LAT
-add_core = TUR
+add_core = LTE
 add_core = BYZ
 culture = greek
 religion = orthodox

@@ -2,7 +2,7 @@
 
 owner = ALB
 controller = ALB
-add_core = TUR
+add_core = LAT
 add_core = ALB
 culture = albanian
 religion = orthodox

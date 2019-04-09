@@ -8,8 +8,8 @@ technology_group = western
 national_focus = DIP
 historical_rival = LAT
 historical_friend = BYZ		
-capital = 378
-fixed_capital = 3040
+capital = 3040
+
 
 #Below follows history for the Latin Empire, in case it is that Draiocht goes back in time, so I did it for him.
 #Hopefully it is as complete as it could possibly be.

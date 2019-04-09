@@ -2,7 +2,7 @@
 
 owner = LAT
 controller = LAT
-culture = greek			#A major centre of Vlachs, or Aromanians, apparently was eastern Thessaly, and much of the region even came to be known as Vlachia
+culture = greek			
 religion = orthodox
 capital = "Trikala"
 trade_goods = wine			#known for wine
