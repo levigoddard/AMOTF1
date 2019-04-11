@@ -1,0 +1,8 @@
+#HR's original Denmark-Norway Scotland relations from BtP
+
+motf_rejected_independence = {
+	opinion = -50
+	years = 20
+	yearly_decay = 2.5
+}
+

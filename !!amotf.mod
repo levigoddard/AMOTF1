@@ -1,5 +1,5 @@
-name="!!-A Addon BT: A March of the Fallen"
-archive="mod/!!amotf"
+name="!!0-A March of the Fallen"
+path="mod/!!amotf"
 dependencies={
 	"[Beyond Typus 10.0]"
 }

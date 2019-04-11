@@ -1,6 +1,0 @@
-automatic_government_idea_group_change = {
-
-	### Currently not working
-
-
-}

@@ -1,50 +1,132 @@
-country_event = 
-{
-	id = tribute.event.1
-	title = "tribute.event.1_title"
-	desc = "tribute.event.1_desc"
-	picture = BUDDHA_eventPicture
-	immediate = 
-	{
-		hidden_effect = 
-		{
-			crimea_area = 
-			{
-				add_core = VGO
-			}
-			2410 =
-			{
-				culture = varangian
-			}
-			release = VGO
-			BYZ =
-			{
-				create_march = VGO
-			}
-				VGO = 
-				{
-					capital_scope = 
-					{
-						build_to_forcelimit = 
-						{
-							infantry = 1
-							cavalry = 0.5
-						}
-					}
-					random_owned_province = 
-					{
-						limit = 
-						{
-							has_port = yes
-						}
-						build_to_forcelimit =
-						{
-							galley = 1
-							light_ship = 1
-							transport = 1
-						}
-					}
-				}
-		}		
+
+
+namespace = flavor_motf
+##Lesbos revolt##
+country_event = {
+    id = flavor_motf.1
+    title = "flavor_motf.t"
+    desc = "flavor_motf.d"
+    picture = BAD_WITH_MONARCH_eventPicture
+    
+    immediate = {
+        every_province = {
+            limit = {
+                owned_by = LES
+            }
+            set_province_flag = les_lands_modifier_to_apply
+        }
+    }
+    
+    trigger = {
+        is_year = 1455
+	tag = BYZ
+	overlord_of = LES
+    }
+    
+    mean_time_to_happen = {
+        days = 30
+    }
+
+    option = { #Lowered Autonomy#
+        name = "flavor_motf.EVTOPTA"
+       
+        inherit = LES
+        every_province = {
+            limit = {
+                has_province_flag = les_lands_modifier_to_apply
+            }
+            add_province_modifier = {
+                name = "latin_byz"
+                duration = -1
+            }
+            clr_province_flag = les_lands_modifier_to_apply
+        }
+        ATH = {
+            add_opinion = {
+                who = BYZ
+                modifier = motf_rejected_independence
+            }
+        }
+    }
+    option = { #Surrender#
+        name = "flavor_motf.EVTOPTB"
+        
+        add_prestige = -10
+        create_march = LES
+      } 
+}
+
+
+##Athens Union##
+country_event = {
+    id = flavor_motf.2
+    title = "flavor_motf.t2"
+    desc = "flavor_motf.d2"
+    picture = BAD_WITH_MONARCH_eventPicture
+    
+    immediate = {
+        every_province = {
+            limit = {
+                owned_by = ATH
+            }
+            set_province_flag = ath_lands_modifier_to_apply
+        }
+    }
+    
+    trigger = {
+        is_year = 1475
+	tag = BYZ
+	overlord_of = ATH
+    }
+    
+    mean_time_to_happen = {
+        days = 30
+    }
+
+    option = { #Lowered Autonomy#
+        name = "flavor_motf2.EVTOPTA"
+       
+        inherit = ATH
+        every_province = {
+            limit = {
+                has_province_flag = ath_lands_modifier_to_apply
+            }
+            add_province_modifier = {
+                name = "latin_byz_ath"
+                duration = -1
+            }
+            clr_province_flag = ath_lands_modifier_to_apply
+        }
+    }
+}
+
+country_event = { #1 Colonization of Bagdad
+    id = flavor_motf.3
+    title = "flavor_motf.t3"
+    desc = "flavor_motf.d3"
+	picture = JERUSALEM_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		is_byz_or_hellenic_rome_trigger = yes
+		religion = orthodox
+		410 = { owned_by = ROOT }
+	}
+	
+	mean_time_to_happen = { 
+		days = 50
+	}
+
+	option = {
+		name = "flavor_motf3.EVTOPTA" #Accept the Migration
+		410 = {
+			change_religion = orthodox		
+			change_culture = Aravas 
+			add_base_tax = 2
+			add_base_production = 2
+		}
+		add_patriarch_authority = 0.10
+		set_country_flag = byz_colonized_arab #For follow-up events or such	
 	}
 }

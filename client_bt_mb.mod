@@ -1,5 +1,5 @@
-name="!!-A Addon BT/MOTF: Client States and More Buildings"
-archive="mod/client_bt_mb"
+name="!!-A Addon BT/BR/MOTF: Client States and More"
+path="mod/client_bt_mb"
 dependencies={
 	"[Beyond Typus 10.0]"
 	"[Byzantine Resurgance]"

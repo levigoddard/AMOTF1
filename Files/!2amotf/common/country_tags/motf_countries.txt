@@ -1,7 +1,0 @@
-VGO = "countries/VarangianOrder.txt"
-LAT = "countries/Latin.txt"
-ARV = "countries/Arav.txt"
-PTS = "countries/Portus.txt"
-MKD = "countries/Makadon.txt"
-ETZ = "countries/Etruskan.txt"
-KMG = "countries/Maltan.txt"
