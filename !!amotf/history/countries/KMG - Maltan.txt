@@ -1,5 +1,5 @@
 government = theocracy
-add_government_reform = monastic_order
+add_government_reform = monastic_order_reform
 government_rank = 1
 mercantilism = 55
 primary_culture = goths
