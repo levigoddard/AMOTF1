@@ -91,7 +91,7 @@ exarchate_legacy = {
 #Reforms
 viceroy_reform = {
 	icon = "peasants"
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
 	lock_level_when_selected = yes
 
 	maintain_dynasty = yes
@@ -104,10 +104,33 @@ viceroy_reform = {
 	}
 	
 	modifiers = {
-		years_of_nationalism = -10
+		years_of_nationalism = -20
 		unjustified_demands = -0.1
 		global_tax_modifier = 0.10
 		max_absolutism = 5
+		culture_conversion_cost = -0.15
+	}
+}
+
+viceroy_sub_reform = {
+	icon = "exarchate"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+
+	maintain_dynasty = yes
+
+	potential = {
+		OR = {
+			culture_group = byzantine
+			culture = roman
+			is_subject = yes
+		}
+	}
+	
+	modifiers = {
+		years_of_nationalism = -15
+		administrative_efficiency = 0.10
+		culture_conversion_cost = -0.85
 	}
 }
 

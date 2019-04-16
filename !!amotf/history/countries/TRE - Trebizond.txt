@@ -6,6 +6,7 @@ add_accepted_culture = greek
 add_accepted_culture = laz_culture
 religion = orthodox
 technology_group = eastern
+historical_friend = GEO
 historical_friend = FEO
 historical_friend = BYZ
 capital = 330	# Trebizond

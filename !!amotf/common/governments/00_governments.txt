@@ -42,6 +42,7 @@ monarchy = {
 				anglo_irish_monarchy_reform
 				tanistry_reform
 				viceroy_reform 
+				viceroy_sub_reform 
 			}
 		}
 		hereditary_vs_nobility = {

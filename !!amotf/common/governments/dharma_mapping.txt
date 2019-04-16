@@ -35,6 +35,7 @@ monarchy = { #Taken from BT. What a fucking mess this system is mod compatibilit
 				#BR Added:
 				exarchate_reform
 				viceroy_reform 
+				viceroy_sub_reform 
 			}
 		}
 		hereditary_vs_nobility = {

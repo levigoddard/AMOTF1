@@ -46,6 +46,8 @@
 
  viceroy_reform:0 "Imperial Autocracy - Viceroyalty"
  viceroy_reform_desc:0 "WIP"
+ viceroy_sub_reform:0 "Imperial Viceroyal Exarch"
+ viceroy_sub_reform_desc:0 "WIP"
  vgo_merchants_reform:0 "Varangian Republic"
  vgo_merchants_reform:0 "WIP"
 
