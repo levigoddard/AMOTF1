@@ -1,0 +1,47 @@
+government = monarchy
+add_government_reform = feudalism_reform  
+set_legacy_government = roman_autocracy_legacy
+government_rank = 1
+primary_culture = Aravas
+#Apoik1iakos
+religion = orthodox
+technology_group = western
+national_focus = DIP
+historical_rival = ARV
+historical_friend = BYZ		
+capital = 1751
+fixed_capital = 1751
+
+#Below follows history for the Latin Empire, in case it is that Draiocht goes back in time, so I did it for him.
+#Hopefully it is as complete as it could possibly be.
+
+
+
+1427.3.23 = { #Baldwin sole ruler.
+	monarch = {
+		name = "Kainas III"
+		dynasty = "von Komnenos kai Palaiologos"
+		birth_date = 1407.8.25 #Only year is actually known - rest is improvised. Said to be late 1217.
+		death_date = 1473.10.16 #Improvised day. The Empire fell in 1261 however.
+		#Unremarkable in every way, according to history. Did however seek allies in Italy, but never started any war. Was asleep when Constantinople got invaded. Damn dude sold his son at one point.
+		adm = 1
+		dip = 1
+		mil = 1 
+	}
+}
+
+1435.7.21 = {
+	heir = {
+		name = "Kainas IV"
+		monarch_name = "Kainas IV"
+		dynasty = "von Komnenos kai Palaiologos"
+		birth_date = 1435.2.8
+		death_date = 1453.5.29
+		claim = 75 #Was not Ligitamate
+		adm = 3
+		dip = 4
+		mil = 4 
+	}
+}
+
+1444.1.1 = { leader = {	name = "Joannes IX de Bain"	type = general	fire = 3	shock = 4	manuever = 1	siege = 1	death_date = 1459.5.29 } }

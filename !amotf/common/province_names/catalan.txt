@@ -1,0 +1,39 @@
+#Arga's Work
+
+#2017 Aug 1
+
+#lower france
+173 = "Lapurdi"
+174 = "Bordeus"
+176 = "Bearn"
+197 = "Rosselló"
+2991 = "Toló"
+
+#Aragon
+211 = "Pirineus"
+214 = "Saragossa"
+
+#northern spain
+206 = "La Corunya"
+207 = "Astúries"
+208 = "Lleó"
+209 = "Biscaia"
+
+#milano
+104 = "Milà"
+
+#liguria
+101 = "Gènova"
+
+
+
+
+#Beyond Typus 10.0 major localised naming contribution from multiple people, credit to everyone but Draiocht. Integrated 2018-11-16
+# Naples
+123 = "Regols" # Reggio Calabria
+
+# Greece
+146 = "Cetines"
+3003 = "Negropont"
+7108 = "Neopàtria"
+7113 = "El Cito"
