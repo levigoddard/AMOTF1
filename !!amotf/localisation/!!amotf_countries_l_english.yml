@@ -2,7 +2,7 @@
 
  #BYZ:0 "Basileia von Rhomaion"
  #BYZ:0 "Basileia Rhoma" Basileia Imperial Rhomaion
- BYZ:0 "Basileia Megália Romaíon"
+ #BYZ:0 "Basileia Megália Romaíon"
  BYZ_ADJ:0 "Rhomaion"
  BYZ_ADJ2:0 "Byzantine"
  LAT:0 "Duchy di Latin"
@@ -25,37 +25,12 @@
  VGO:0 "Varangian Order"
  VGO_ADJ:0 "Varangian"
  VGO_ADJ2:0 "Varangian"
+ HGR:0 "Germanic Confederation"
+ HGR_ADJ:0 "German"
 
  #Name fixes to native language v:0.0.1
  #TUR:0 "Devlet-i Alīye-i Osmānīye"
- TUR:0 "Devlet-i Aliye-i Osmaniye"
- SER:0 "Srbija"
- BOS:0 "Bosna"
- HUN:0 "Magyarország"
- EPI:0 "Ipeiros"
- ATH:0 "Athina"
- TRE:0 "Aftokratoria Komninou"
- ALB:0 "Alvania"
- FEO:0 "Gothia"
 
- HAB:0 "Archdukal Österreich"
- SAX:0 "Sachsen"
-
- PAP:0 "Stati Pontifici"
- VEN:0 "Veneziana di Repubblica"
- LAN:0 "Firenze di Repubblica"
- NAP:0 "Napoli di Regno"
-
- CAS:0 "Castilla y Leon"
- ARA:0 "Aragón"
- GRA:0 "Gharnata"
-
- FRA:0 "Royaume de France"
- BUR:0 "Bourgogne"
- BRI:0 "Bretagne"
-
- MOS:0 "Moskva"
- RUS:0 "Rossiyskaya Imperiya"
 
  varangian:0 "Varangian"
  Portan:0 "Visagothian"

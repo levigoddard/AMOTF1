@@ -1,7 +1,7 @@
 #3183 - Bitola
 
-owner = TUR
-controller = TUR
+owner = MKD
+controller = MKD
 culture = Slaviko 
 religion = orthodox
 capital = "Vitolia"			#Monastir in Ottoman Turkish
@@ -11,7 +11,8 @@ base_tax = 4
 base_production = 4
 base_manpower = 2
 is_city = yes
-add_core = TUR
+add_core = MKD
+add_core = LAT
 fort_15th = yes
 
 extra_cost = 8

@@ -43,6 +43,7 @@ monarchy = {
 				tanistry_reform
 				viceroy_reform 
 				viceroy_sub_reform 
+				viceroy_sub_hge_reform
 			}
 		}
 		hereditary_vs_nobility = {

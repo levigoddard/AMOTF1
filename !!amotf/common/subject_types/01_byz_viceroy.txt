@@ -2,7 +2,7 @@ byz_viceroy = {
 	copy_from = default
 	
 	# Graphics:
-	sprite = GFX_court_union
+	sprite = GFX_icon_march
 	diplomacy_overlord_sprite = GFX_diplomacy_leadclients
 	diplomacy_subject_sprite = GFX_diplomacy_areclients
 
@@ -14,21 +14,20 @@ byz_viceroy = {
 	gets_help_with_rebels = yes
 	press_sailors = yes
 	forcelimit_bonus = 5.0
-	base_liberty_desire = -15.0
+	base_liberty_desire = -10.0
 	can_be_annexed = no
 
 	max_government_rank = 2
 	
 	liberty_desire_development_ratio = 0.25
-	base_liberty_desire = -25.0
+	base_liberty_desire = -10.0
 	pays_overlord = 1.0
 	military_focus = 1.5
-	cities_required_for_bonuses = 10
 	military_focus = 0.75
 
 	relative_power_class = 1
 	
-	cities_required_for_bonuses = 20
+	cities_required_for_bonuses = 10
 	
 	# Subject Interactions:
 	place_relative_on_throne = yes

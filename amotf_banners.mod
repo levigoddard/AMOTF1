@@ -1,4 +1,4 @@
-name="!!-A Addon BT/BR/MOTF: Banner Mod"
+name="ZZ-A Addon BT/BR/MOTF: Banner Mod"
 path="mod/amotf_banners"
 dependencies={
 	"[Beyond Typus 10.0]"

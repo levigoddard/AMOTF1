@@ -1,6 +1,6 @@
 diplo_reach = {
 
-	diplomatic_upkeep = 5
+	diplomatic_upkeep = 2
 	vassal_forcelimit_bonus = 0.50
 	siege_ability = 0.15
 	vassal_income = 0.25 
@@ -9,16 +9,30 @@ diplo_reach = {
 
 diplo_reach2 = {
 
-	years_of_nationalism = -10
+	years_of_nationalism = -15
 	unjustified_demands = -0.50
-	max_absolutism = 5
-	merchants = 2 
+	diplomats = 1
+	merchants = 3 
 	
 }
 
 latin_bad = {
 	
-	local_missionary_strength = -0.25
+	global_missionary_strength = -0.55
+}
+
+hg_defence = {
+
+	local_defensiveness = 0.5
+	local_institution_spread = 0.05
+	local_development_cost = -0.10
+	regiment_recruit_speed = -0.25
+}
+
+holy_germany = {
+	
+	global_missionary_strength = 0.15
+	years_of_nationalism = -15
 }
 
 motf_gran_city = {
@@ -33,7 +47,7 @@ motf_gran_city = {
 
 motf_jewish_return = {
 
-	local_unrest = -2
+	local_unrest = 2
 	trade_goods_size = 1.5
 	local_development_cost = -0.4
 }
@@ -100,3 +114,22 @@ slav_byz= {
 	picture = "province_trade_power_value"
 }
 
+motf_ger= {
+
+	local_institution_spread = 0.05
+	local_tax_modifier = 0.05
+}
+
+motf_jew= {
+	
+	local_build_time = -0.25
+	local_tax_modifier = 0.05
+	local_unrest = 2
+}
+
+komnenos_home= {
+	
+	local_unrest = -4
+	local_development_cost = -0.10
+
+}

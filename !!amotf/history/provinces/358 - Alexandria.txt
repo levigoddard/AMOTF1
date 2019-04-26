@@ -42,7 +42,16 @@ add_permanent_province_modifier = {
 	duration = -1
 }
 
-
+1444.1.1 = {
+	owner = KEM
+	controller = KEM
+	add_core = BYZ
+} # Conquered by Coptic rebellion troops
+1452.1.1 = {
+	owner = MAM
+	controller = MAM
+	remove_core = BYZ
+} # Conquered by Mamluk troops
 #1477.1.1 = { } #Citadel of Qaitbay
 1517.1.1 = {
 	owner = TUR

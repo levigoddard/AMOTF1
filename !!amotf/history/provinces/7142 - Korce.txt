@@ -1,7 +1,7 @@
 #BT Balkans reoverhaul
 
-owner = MKD
-controller = MKD
+owner = ALB
+controller = ALB
 add_core = MKD
 add_core = ALB
 add_core = EPI

@@ -9,6 +9,14 @@ dependency = {
 dependency = {
 	subject_type = "byz_viceroy"
 	first = BYZ
+	second = HGR
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the republic after a disagreement
+}
+
+dependency = {
+	subject_type = "byz_viceroy"
+	first = BYZ
 	second = FEO
 	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
 	end_date = 1599.2.4 #Death of the March system
@@ -38,21 +46,6 @@ dependency = {
 	end_date = 1599.2.4 #Dissilusion of the state after a dissagreement over land rights
 }
 
-vassal = {
-	first = LAT
-	second = CYP
-	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
-	end_date = 1599.2.4 #Dissilusion of the state after a dissagreement over land rights
-}
-
-
-vassal = {
-	first = SER
-	second = MKD
-	start_date = 1443.11.18 #BeyondTypus batch edit shortcut second performance start ends
-	end_date = 1542.1.22
-}
-
 dependency = {
 	subject_type = "byz_viceroy"
 	first = BYZ
@@ -60,3 +53,18 @@ dependency = {
 	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
 	end_date = 1599.2.4 #Dissilusion of the republic after a disagreement
 }
+
+vassal = {
+	first = LAT
+	second = CYP
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the state after a dissagreement over land rights
+}
+
+march = {
+	first = SER
+	second = MKD
+	start_date = 1443.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1542.1.22
+}
+
