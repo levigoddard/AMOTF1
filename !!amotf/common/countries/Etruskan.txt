@@ -3,7 +3,7 @@
 graphical_culture = westerngfx
 
 #Some blue colour found online. We'll see how this looks in-game.
-color = { 112 107 99 }
+color = { 124 9 9 }
 
 historical_idea_groups = {
 	maritime_ideas
