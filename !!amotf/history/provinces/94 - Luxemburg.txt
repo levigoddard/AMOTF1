@@ -6,13 +6,13 @@ latent_trade_goods = {
 	coal
 }
 
-owner = HHR
+owner = HGR
 controller = HGR
 add_core = HGR
 add_core = BUR 
 capital = "Luxemburg"
 is_city = yes
-culture = goths
+culture = anglo_germani
 religion = catholic 
 hre = yes
 base_tax = 10
@@ -20,7 +20,6 @@ base_production = 10
 trade_goods = iron
 base_manpower = 6
 add_core = LUX
-fort_15th = yes
 center_of_trade = 1
 
 discovered_by = western

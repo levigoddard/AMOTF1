@@ -9,6 +9,14 @@ dependency = {
 dependency = {
 	subject_type = "byz_viceroy"
 	first = BYZ
+	second = CPT
+	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1599.2.4 #Dissilusion of the republic after a disagreement
+}
+
+dependency = {
+	subject_type = "byz_viceroy"
+	first = BYZ
 	second = HGR
 	start_date = 1430.1.1 #BeyondTypus batch edit shortcut second performance start ends
 	end_date = 1599.2.4 #Dissilusion of the republic after a disagreement

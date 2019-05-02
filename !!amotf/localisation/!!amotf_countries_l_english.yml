@@ -3,6 +3,8 @@
  #BYZ:0 "Basileia von Rhomaion"
  #BYZ:0 "Basileia Rhoma" Basileia Imperial Rhomaion
  #BYZ:0 "Basileia Megália Romaíon"
+  #ETZ:0 "Etruskany"
+  #ETZ_ADJ:0 "Etruskan"
  BYZ_ADJ:0 "Rhomaion"
  BYZ_ADJ2:0 "Byzantine"
  LAT:0 "Duchy di Latin"
@@ -14,8 +16,8 @@
  PTS_ADJ:0 "Portan"
  MKD:0 "Makadon"
  MKD_ADJ:0 "Makadonian"
- ETZ:0 "Etruskany"
- ETZ_ADJ:0 "Etruskan"
+ ETZ:0 "Regnium Italica"
+ ETZ_ADJ:0 "Italiae"
  KMG:0 "Pheonix Knights"
  KMG_ADJ:0 "Knights"
  byzantine:0 "Rhomaion"
@@ -25,8 +27,10 @@
  VGO:0 "Varangian Order"
  VGO_ADJ:0 "Varangian"
  VGO_ADJ2:0 "Varangian"
- HGR:0 "Germanic Confederation"
- HGR_ADJ:0 "German"
+ HGR:0 "Vestrýa Ænglia"
+ HGR_ADJ:0 "Vestrýan"
+ CPT:0 "Æygýptios Faraó"
+ CPT_ADJ:0 "Æygýptiosi"
 
  #Name fixes to native language v:0.0.1
  #TUR:0 "Devlet-i Alīye-i Osmānīye"
@@ -34,8 +38,10 @@
 
  varangian:0 "Varangian"
  Portan:0 "Visagothian"
- Imperial:0 "Basileian"
+ Imperial:0 "Imperiya"
  greek:0 "Hellenic"
+ roma_egyptian:0 "Æygýptios"
+ anglo_germani:0 "Anglo-Germanic"
 
  varangian_ideas:0 "Varangian Ideas"
  varangian_ideas_start:0 "Varangian Traditions"

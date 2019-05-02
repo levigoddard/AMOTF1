@@ -2,7 +2,7 @@
 
 graphical_culture = easterngfx
 
-color = { 149 45 102 }
+color = { 102 2 60 }
 
 revolutionary_colors = { 3  8  3 }
 
@@ -22,18 +22,19 @@ historical_units = {
 	eastern_knights
 	slavic_stradioti
 	eastern_militia
-	ottoman_spahi
-	ottoman_sekban
-	ottoman_reformed_spahi
-	ottoman_reformed_janissary
-	ottoman_toprakli_hit_and_run
-	ottoman_nizami_cedid
-	ottoman_toprakli_dragoon
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
 	eastern_skirmisher
 	eastern_uhlan
 	eastern_carabinier
-	ottoman_new_model
-	ottoman_lancer
+	napoleonic_square
+	napoleonic_lancers
 }
 
 monarch_names = {

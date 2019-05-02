@@ -2,16 +2,18 @@ government = monarchy
 add_government_reform = viceroy_sub_hge_reform
 set_legacy_government = roman_autocracy_legacy
 government_rank = 1
-primary_culture = goths
+primary_culture = anglo_germani
 add_accepted_culture = dutch 
-religion = orthodox
+add_accepted_culture = english
+add_accepted_culture = goths
+religion = catholic
 technology_group = western
 national_focus = DIP
 historical_rival = LAT
 historical_friend = BYZ		#Made to fix the rivalling system 
 historical_friend = PAP		#Made to fix the rivalling system 
-capital = 7041 # Constantinople
-fixed_capital = 151 # Cannot move capital away from this province & no power cost to move to it
+capital = 97 # Constantinople
+fixed_capital = 97 # Cannot move capital away from this province & no power cost to move to it
 
 #Below follows history for the Latin Empire, in case it is that Draiocht goes back in time, so I did it for him.
 #Hopefully it is as complete as it could possibly be.

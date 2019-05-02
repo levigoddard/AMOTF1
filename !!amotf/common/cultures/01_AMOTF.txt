@@ -240,31 +240,14 @@ byzantine = {
 		Semetic = {
 		graphical_culture = easterngfx
 		male_names = {
-			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
-			Andreas Andrew Andronikos Andronicus Anthemios Anthimos Antiochos Antonios Antonius Apollonios
-			Arsenios Artemios Athanasios Athanasius Bardas
-			Bartholomaios Bartolomeus Basileios Basil Belisarios Belisarius Boethios Bosporios
-			Christophoros Christopher Chrysanthos Chrysogonos Damianos Daniel Daniel David David Demetrios
-			Demetrius Diogenes Dionysios Dionysus Dorotheos Eirenaios Eudoxios Eustratios
-			Eugenios Euphemios Eusebios Eustathios Eustace Evangelos Gabriel Gabriel Gennadios Georgios
-			George Gerasimos Germanos Germanus Gregoras Gregory Gregorios Gregory Hektorios Helias
-			Herakleios Heracles Hierotheos Himerios
-			Georgios Alexandros Konstantinos Pavlos Andreas Nikolaos Aineias Alexeios Ambrosios
-			Chrysanthos David Demetrios Diogenes Dionysos Eirenaios Elpidios Gregorios Hektor Herakles
-			Kastor Manuel Matthaios Nestor Nikomedes Orestes Palaemon Pelagios Petros Philemon Philippos
-			Skantarios Stefanos Theodoros Thomas Basileios Prokopios Ioannes Iason Bartholomaios
+			Abiatar Ahijah Akabon Alon Amit Amram Ananelus Ananias Aretas Aristobulus Azrikam Barak Baruch Belshazar 			Costobarus Deror Dori Eiran Eleazar Erotimus Ezra Hadasa Herod Hillel Hyrkanus Jannaeus Joazar Yosef 				Josiada Kahana Hillel Hodaviah Honio Meir Nahum Nathan Nehemiah Nikanor Nir Obadiah  Ofer Omri Pinchas 				Phannias Phasael Raanan Malichus Manasseh Nahum Nogah Shamgar Shammai Shaul Shemaiah Shemida Silas 				Simeon Sosa Talmon Tarfon Tovia Yair Yochanan Zadok
 		}
 		female_names = {
-			Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia Anna
-			Anna Anthe Anthousa Antipatra Antonia Antonia Apollonia Athanasia Barbara Basillike
-			Chrysogone Damiane Demetra Dionysia Dorothea Dorothy Aigidia Eirene Irene Elaiodora Epiphania
-			Eudokia Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne Euphrosyne
-			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
-			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
-			Konstantine Constantina Kyra Kyriake Hypatia Zoe
+			AAdena Adi Adva Ahuva Alexandra Aliza Alte Arieh Asher Basia Boaz Chanah Cypros Danya Dara Dina Doris 				Dov Dvora Elisheva Esther Galia Galit Leah Liat Liora Machla Mariamne Marni Maya Meital Menahem Milka 				Naamah Nahal Nava Nissa Orah Orit Osher Rachel Raisa Rivka Salampsio Sarah Shayna Tamar Tirtza Yael 				Yocheved
+
 		}
 		dynasty_names = {
-			von Komnenos, Doukas, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiogos
+			von Komnenos, Doukas, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiogos biatarid Akabonid 			Amitid Amramid Boazid Dorid Dovid Eiranid Eleazid Heroid Honioid Hillelid Joazid Kahanid Nahumid Nirid 				Nogahid Oferid Omrid Pinchasid Raananid Shemidid Shemidid Yairid
 
 		}
 	}
@@ -302,19 +285,17 @@ byzantine = {
 		Latinika = {
 		graphical_culture = easterngfx
 		male_names = {
-			Adrianos Adrian Akakios Alexandros Alexander Alexios Alexis Anastasios Anastasius Anatolios
-			Andreas Andrew Andronikos Andronicus Anthemios Anthimos Antiochos Antonios Antonius Apollonios
-			Arsenios Artemios Athanasios Athanasius Bardas
-			Bartholomaios Bartolomeus Basileios Basil Belisarios Belisarius Boethios Bosporios
-			Christophoros Christopher Chrysanthos Chrysogonos Damianos Daniel Daniel David David Demetrios
-			Demetrius Diogenes Dionysios Dionysus Dorotheos Eirenaios Eudoxios Eustratios
-			Eugenios Euphemios Eusebios Eustathios Eustace Evangelos Gabriel Gabriel Gennadios Georgios
-			George Gerasimos Germanos Germanus Gregoras Gregory Gregorios Gregory Hektorios Helias
-			Herakleios Heracles Hierotheos Himerios
-			Georgios Alexandros Konstantinos Pavlos Andreas Nikolaos Aineias Alexeios Ambrosios
-			Chrysanthos David Demetrios Diogenes Dionysos Eirenaios Elpidios Gregorios Hektor Herakles
-			Kastor Manuel Matthaios Nestor Nikomedes Orestes Palaemon Pelagios Petros Philemon Philippos
-			Skantarios Stefanos Theodoros Thomas Basileios Prokopios Ioannes Iason Bartholomaios
+			Appius Aulus Caelus Decimus Decius Drusus Faustus Gaius Gnaeus Lucius Mamercus Manius Marcus Mettius 
+			Numerius Publius Quintus Secundus Septimus Servius Sextus Spurius Tertius Titus Tiberius Titus
+			Albinus Albus Agricola Agrippa Aratus Asina Auspex Balbus Barbatus Bibulus Brutus Bubo Buteo 
+			Caesar Calvus Calvinus Cato Catulus Cethegus Cicero Cinna Cotta Crispian Curio Dama Damasus Dentatus 
+			Dives Dolabella Donatus DracoEmeritus Eugenius Euphemius Falco Falx Felix Fimbria Flaccus Florus Fronto 
+			Gala Galerus Gemellus Gorgonius Gracchus Gracilis Habitus Herma Hilarius Horatius
+			Ignatius Iuba Labeo Laenas Lepidus Leptis Lentulus Libo Longinus Longus Lucan Lucullus Lupius
+			Macro Martialis Marullus Maximus Memmius Mercator Messalla Montanus Murena Mus Nasica Oceanus Octavianus 
+			Opis Optatus Otho Paenula Pantera Pavo Peregrinus Pertinax Petronax Pictor Pilatus Polus Prisca Primus Procyon Pulcher 
+			Quarto Quiricus Regillus Remus Romanus Romulus Rufus Ruso Sabinus Salinator Scaevola Scipio Scrofa Seneca Senna Severus Sorex Statius Strabo Super Superbus Tacitus
+ 			Tertulus Trebonius Tibullus Tullius Ursinus Ursus Valens Varro Varus Vergilius Viator Victor Vindex Virilis Vitalis Vitus Zeno Zoilus Zosimus
 		}
 		female_names = {
 			Alexandra Adriane Adriana Agathe Agatha Agne Agnes Aikaterine Alexeia Anastasia Anastasia Anna
@@ -322,11 +303,16 @@ byzantine = {
 			Chrysogone Damiane Demetra Dionysia Dorothea Dorothy Aigidia Eirene Irene Elaiodora Epiphania
 			Eudokia Eudocia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne Euphrosyne
 			Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene Helen
-			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia
-			Konstantine Constantina Kyra Kyriake Hypatia Zoe
+			Ioanna Joan Ioulia Julia Iouliana Juliana Ioustina Justina Kale Konstantia Constantia Prima Secunda 
+			Tertia Quarta Quinta Septa Septima Octava Nona Decima Undecima Duodecima Konstantine Constantina Kyra Kyriake Hypatia Zoe
 		}
 		dynasty_names = {
-			von Komnenos, Doukas, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiogos
+			von Komnenos, Doukas, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiogos Aemilia Antonia 
+			Atilia Atia Aufidia Aurelia Caecilia Calpurnia Cassia Claudia
+			Clodia Cornelia Domitia Fabia Flavia Fulvia Furia Gabinia Galeria Horatia Julia
+			Junia Licinia Livia Lucia Mamilia Manlia Maria Memmia Nigidia Octavia Papiria Plinia 
+			Postumia Pompeia Rabiria Quinctia Salvia Scribonia Sempronia Sertoria Silia Titia
+			Tullia Ulpia Valeria Vesuvia Vinicia Viridia Vitellia
 
 		}
 	}
@@ -399,30 +385,71 @@ byzantine = {
 			Konstantine Constantina Kyra Kyriake Hypatia Zoe
 		}
 		dynasty_names = {
-			"Bonde" "Vasa" "Tre Rosor" "Oxenstierna" "Sparre" "Sture" "Tott" "Trolle" "Bielke" "Brahe"
-			"Horn" "Ribbing" "Skytte" "Ban�r" "Fleming" "Gyllenstierna" "de la Gardie" "Leijonhufvud"
-			"Natt och Dag" "Grip" "Stenbock" "Bure" "Drake" "Hand" "Burensk�ld"
-			"B�llja" "Cruus" "Geete" "Grubbenhielm" "Soop" "Ekeblad" "Svinhufvud"
-			"H�rd" "Forstena" "Kurck" "Eka" "Hjort" "J�gerhorn" "Lillieh��k"
-			"Porse" "Palme" "B��t" "Ulv" "Sj�blad" "L�ma" "Posse" "Rosenstr�le" "Thott" "Bagge"
-			"Bese" "G�dda" "Hatt" "Marsvin" "Oxhufvud" "Stake" "Tre Rutor" "H�stesko"
-			"Ulfsax" "Tre Sj�blad" "Bratt" "Munk" "Eketr�" "Gera"
-			"Gylta" "Lillie" "Puke" "Slatte"  "Stiernkors" "Fincke" "Dufva" "Cronstedt"
-			"Hvide" "Galen" "Due" "Saltensee" "Urup" "Neb" "Brahe" "G�ye" "Trolle" "Rantzau"
-			"Friis" "Gyllenstierna" "Bille" "Adeler" "Arenstorff" "Brockenhuus"
-			"Beck" "Brock" "Grubbe" "Holck" "Huitfeldt" "Juel" "Kaas" "Krabbe"
-			"Lindenov" "Lykke" "Marsvin" "Mule" "Munk" "Oxe" "Reedtz" "Rodsteen"
-			"Rosenkrantz" "Skeel" "Skram" "Urne" "Vind" "Ahlefeldt"
-			"Frille" "R�nnow" "Porse" "Glysing" "Banner" "Thott" "Ulfstand" "Gr�n" "Daa"
-			"Reventlow" "Juul" "Ulfeldt" "Bang" "H�rfagre�tta" "Bielke" "Bildt" "Galte" "Paus" "Sm�r"
-			"Benkestok" "Kane" "Bonde" "Drake" "av Hafrsfjord" "Ytra" "Koss"
-			"av Nordland" "Hylling" "Alfr" "Herja" "Vans�" "Flod" "af Vendel" "av Alfheim" "Bille"
-			"Iuel" "Kaas" "Rosenkrantz" "Urne" "Adeler" "Blixenskiold" "Gyldenpalm" "Holberg"
-			"Rosenheim" "Schouboe" "Tordenskiold" "Wessel" "Westervick" "Falsen" "Knagenhjelm"
-			"Galtung" "Heubsch" "Kl�cker" "Rosenvinge" "Werenskiold" "Kruckow"
-			"Mowat" "Handingmann" "Skaktavl" "Tordenstierne" "Skanke" "Bolt" "Giske"
-			"Brockenhuus" "Adelsw�rd" "Kane" "Blixen" "L�vendal" "Balke"
-			"Vedel" "Bjelke" "Galle" "Griis"
+			 von Komnenos, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiologos
+		}
+	}
+
+	anglo_germani = { #CK2
+		dynasty_names = {
+			Godhelming Beorming Eorling ∆bbing HÊsting ∆lling Eadricing Eadwulfing Leodwalding
+			∆thelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
+			Beorning Iceling Wuffing Wihtgilsing Ross Ciesla Rowe Borthwick
+			Plantagenet Lancaster York Tudor Dudley Mowbray Beaufort Neville Percy Howard Seymour Holland 
+			Talbot Stanley Courtenay "de la Pole" "de Vere" Stafford Grey Mortimer "le Despenser" "de Camoys"
+			"Oglethorpe" Hyde
+			# CKII
+			"Turberville" "Butler" "Montagu" "Beauchamp" "Raleigh" "Stratford"
+			von Komnenos, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiologos
+			
+		}
+		male_names = {
+			Arncytel Balthere Beorhtfrith Beorhthelm BeorhtmÊr Beorhtnoth Beorhtric Beorhtsige Beorhtwine_Beorhtwine Beorn_Beorn BeornrÊd Beornwulf
+			Burgheard Byrhtnoth Cearl Cenfus CenrÊd Cenwulf Ceolwulf Cerdic Copsige
+			Cuthberht CuthrÊd Cynehelm Cynewulf Cytelbearn Eadberht Eadfrith Eadgar Eadmund EadmÊr Eadric
+			EadrÊd Eadsige Eadulf Eadweald Eadweard Eadwig Eadwine Eadwulf Ealdhun Ealdmund EaldrÊd Ealdwine
+			Ealdwulf Eanberht Eanfrith Eanhere Eardwulf Eastmund Ecgberht Ecgfrith Gamall Godwine Gospatric Guthfrith Guthmund
+			Gyrth Hacon Harold Heahberht Hereberht Hereweald Hereweard Hlothere Hrodberht InwÊr Leofheah Leofhelm
+			Leofric Leofweald Leofwine Maccus Morcar MÊrleswegn Offa Onlaf Ordgar
+			Oscytel Oshere Osmund Osric OsrÊd Osulf Osweald Oswine Oswulf Peter RÊdwulf_Ralph RÊgenweald Scule
+			Henry Edward Charles James William Richard Philip Henry Frederick Arthur Charles James Edgar Thomas Edmund 
+			George John Jacob Humphrey Robert Stephen Adam Alexander Albert Alfred Ambrose Andrew Anthony Archibald 
+			Benjamin Christopher Daniel David Ernest Francis Geoffrey Guy Horatio Hugh Isaac Jeremy Jonathan Joseph 
+			Lawrence Matthew Nehemiah Oliver Samuel Sydney
+			Adam Alan Albert Alexander Alfred Andrew Anselm Arnold Arthur Aubrey Christopher David 		
+			Edmund Edward Eric Erik Eustace Fulk Folke Geoffrey George Gerald Gilbert Godfrey Gregory Guy 
+			Henry Hugh Humphrey Jocelyn John Jordan Laurence Lionel Mark Marcus Martin Matthew Maurice 
+			Michael Nicholas Paul Peter Philip Ralph Randolph Reginald Richard Robert Roger Simon Stephen 
+			Theobald Thomas Waleran Walter William Jacob Ambrose Anthony Archibald Benjamin Daniel Ernest 
+			Francis Horatio Isaac Jeremy Jonathan Joseph Lawrence Nehemiah Oliver Samuel Sydney 
+			wijde Hendrik Henry Herman Herman Hubert
+			Hugo Hugh Ijsbrand Ijsbrecht Jacco Jacob Jan John Karel Charles Koenraad Konrad
+			Kristof Christopher Lambert Lambert Lodewijk Louis Ludewijn Lutbert Luthard Maertijn Martin
+			Marquart Niclaes Nicholas
+			Olivier Oliver Otto Otto Otwin Onno Pieter Peter Reinaerd Reinoud Reinhold Reginar Robrecht
+			Robert Robert Robert Rodulf 
+		}
+		female_names = {
+			Agatha Balthild BeorhtflÊd Beorhtgifu Beorhtgyth Beorhtwaru Beorhtwynn BeornflÊd Beorngyth BlÊja BurgflÊd CeolflÊd Cristina
+			Cuthburg Cwenburg Cyneburg Cynegyth Cynehild Cyneswith Cynethryth Eadburg EadflÊd Eadgifu Eadgyth Eadhburh Eadhild Ealdgyth
+			EalhflÊd Ealhswith Eanswith Ecgfrida Ecgwyn Godgifu Gunhilda Gytha Helga Heregyth Hereswith Hextilda Hungifu Judith
+			LeofflÊd Leofgifu Leofrun Leofwaru Leofwynn Margaret_Margaret Maud Matilda Mildrith Octreda SifflÊd Sigrid SÊthryth WulfflÊd Wulfgifu
+			Wulfgyth Wulfhild Wulfrun Wulfthryth Wulfwaru Wulfwynn WynnflÊd WÊrburg ∆bba ∆lfflÊd ∆lfgifu ∆lfgyth ∆lflÊda_∆lflÊda ∆lfrida
+			∆lfswith ∆lfthryth ∆lfwynn ∆thelburg ∆thelflÊd ∆thelgifu ∆thelhild ∆thelrÊda_∆thelreda ∆thelswith ∆thelthryth
+			∆thelburh Seaxburh Wihtburh 
+		}
+	}
+	roma_egyptian = {
+		dynasty_names = {
+			Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais von Komnenos, Komnenos, Palaiologos, von Komnenos kai Palaiogos, von Palaiologos
+		}
+		male_names = {
+			Seka Khayu Tiu Thesh Neheb Wazner Mekh "Iry-Hor" Sekhen Serqer Narmer "Hor-Aha" Djer Djet Den Semerkhet "Qa'a" Sneferka Raneb Nynetjer Senedj Neferkara Hudjefa 
+			Djoser Sekhemkhet Sanakht Khaba Huni Sneferu Khufu Khafre Djdefre Menkaure Thamphtis Userkaf Sahure Neferefre Shepseskare Nyuserre Unas Teti "Dejkadre Shemai" 
+			Neferkare Merenhor Nikare Intef "Sankhkare Mentuhotep" Menkare Segerseni Senusret Nerikare Sonbef Sebkay Sobekhotep Dedumose Sheeshi Nehesy Sheneh Semenre Rahotep 
+			"Nebpehtire Ahmose" Amenhotep Thutmose  "Awybre Hor" Akhenaten Tutankhamun Ramesses Herihor Piankh Pinedjem Masaharta Menkheperre Smendes Pinedjem
+		}
+		female_names = {
+			"Sobekkare Sobekneferu" Hatshepsut Tentamun Nitocris Neit Cleopatra Neferneferuaten Nefertiti 
 		}
 	}
 }

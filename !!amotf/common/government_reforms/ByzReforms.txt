@@ -122,7 +122,6 @@ viceroy_sub_reform = {
 	potential = {
 		OR = {
 			culture_group = byzantine
-			culture = roman
 			is_subject = yes
 		}
 	}
@@ -135,7 +134,7 @@ viceroy_sub_reform = {
 }
 
 viceroy_sub_hge_reform = {
-	icon = "exarchate"
+	icon = "elective_monarchy"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
 
@@ -144,7 +143,6 @@ viceroy_sub_hge_reform = {
 	potential = {
 		OR = {
 			culture_group = byzantine
-			culture = roman
 			culture = dutch
 			is_subject = yes
 		}
