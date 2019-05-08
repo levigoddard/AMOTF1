@@ -131,5 +131,11 @@ komnenos_home= {
 	
 	local_unrest = -4
 	local_development_cost = -0.10
+}
 
+komnenos_tolerance= {
+
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+	female_advisor_chance = 0.1
 }

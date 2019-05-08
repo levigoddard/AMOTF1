@@ -1,0 +1,162 @@
+arav_ideas = {
+	start = {
+		core_creation = -0.1
+		enemy_core_creation = 0.2
+	}
+	bonus = {
+		missionaries = 1
+	}
+	trigger = {
+		tag = ARV
+		tag = CPT
+	}
+	free = yes
+	arav_tax_system = {
+		global_tax_modifier = 0.15
+		war_taxes_cost_modifier = -0.1
+	}
+	arav_manpower = {
+		global_manpower_modifier = 0.25
+		defensiveness = 0.25
+	}
+	arav_armies = {
+		land_morale = 0.20
+		discipline = 0.15
+	}
+	aravian_trade = {
+		trade_efficiency = 0.15
+		caravan_power = 0.2
+	}
+	growth_of_coast = {
+		development_cost = -0.15
+	}
+	build_production = {
+		build_time = -0.25
+		build_cost = -0.1
+	}
+	sunni_conversion = {
+		global_missionary_strength = 0.25
+	}
+}
+
+visagoth_ideas = {
+	start = {
+		colonists = 1
+		culture_conversion_cost = -0.1
+	}
+	bonus = {
+		missionaries = 1
+	}
+	trigger = {
+		tag = PTS
+	}
+	free = yes
+	women_rights = {
+		female_advisor_chance = 0.05
+		heir_chance = 0.25
+	}
+	pts_colonies = {
+		range = 0.5
+		global_colonial_growth = 10
+	}
+	port_trade = {
+		trade_efficiency = 0.05
+		global_trade_power = 0.1
+	}
+	expel_invaders = {
+		expel_minorities_cost = -0.1
+	}
+	pts_manpower = {
+		global_manpower_modifier = 0.20
+	}
+	pts_corruption = {
+		yearly_corruption = -0.1
+	}
+	sunni_conversion = {
+		global_missionary_strength = 0.25
+	}
+}
+
+hgr_ideas = {
+	start = {
+		discipline = 0.10
+		global_manpower_modifier = 0.33
+	}
+	bonus = {
+		global_institution_spread = 0.1
+	}
+	trigger = {
+		tag = HGR
+	}
+	free = yes
+	inheritance_law = {		
+		heir_chance = 0.33
+		global_unrest = -1
+	}
+	trade_advancements = {
+		merchants = 1
+		trade_range_modifier = 0.10
+	}
+	german_trade = {
+		trade_efficiency = 0.15
+		development_cost = -0.10
+	}
+	german_loot = {
+		loot_amount = 1
+		siege_ability = 0.10
+	}
+	greek_manpower = {
+		global_manpower_modifier = 0.20
+		fire_damage = 0.10
+	}
+	dutch_production = {
+		production_efficiency = 0.15
+		global_tax_modifier = 0.1
+		yearly_corruption = -0.01
+	}
+	humanist_ideals = {
+		tolerance_heretic = 2
+	}
+}
+
+etz_ideas = {
+	start = {
+		discipline = 0.10
+		defensiveness = 0.15
+	}
+	bonus = {
+		all_power_cost = -0.1
+	}
+	trigger = {
+		tag = ETZ
+	}
+	free = yes
+	varangian_tax = {
+		army_tradition = 0.5
+		yearly_army_professionalism = 0.1
+	}
+	rome_inheritance_law = {		
+		heir_chance = 0.33
+		global_unrest = -1
+	}
+	rome_build = {
+		development_cost = -0.20
+		build_cost = -0.15
+	}
+	rome_control = {
+		global_autonomy = -0.05
+		harsh_treatment_cost = -0.2
+	}
+	rome_manpower = {
+		global_manpower_modifier = 0.20
+		reinforce_speed = 0.1
+	}
+	rome_production = {
+		production_efficiency = 0.15
+		build_cost = -0.1
+	}
+	western_conversion = {
+		global_missionary_strength = 0.05
+		missionaries = 1
+	}
+}

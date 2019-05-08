@@ -10,25 +10,31 @@ varangian_ideas = {
 		tag = VGO
 	}
 	free = yes
-	varangian_tax = {
-		global_tax_modifier = 0.15
+	varangian_arsenal = {
+		naval_forcelimit_modifier = 0.25
+		galley_cost = -0.20
 	}
-	varangian_morale = {
-		land_morale = 0.20
+	defend_the_traders = {
+		land_morale = 0.10
+		land_forcelimit = 1
+		naval_forcelimit = 1
 	}
-	varangian_trade = {
-		trade_efficiency = 0.15
+	varangian_printing_industry = {
+		merchants = 1
 	}
-	varangian_loot = {
-		loot_amount = 1
+	the_east_trade = {
+		trade_efficiency = 0.10
 	}
-	varangian_manpower = {
-		global_manpower_modifier = 0.20
+	the_state_inquisition = {
+		army_tradition = 0.5
 	}
-	varangian_production = {
-		production_efficiency = 0.15
+	naval_conscription = {
+		naval_maintenance_modifier = -0.2
+		sailor_maintenance_modifer = -0.05
 	}
-	varangian_conversion = {
-		global_missionary_strength = 0.04
+	defend_our_law = {
+		stability_cost_modifier = -0.1
+		jyearly_corruption = -0.1
 	}
+
 }

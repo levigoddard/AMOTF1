@@ -104,6 +104,7 @@ new_BYZ_ideas = { #The new Byzantine ideas 2.1.Initially from Resurgance.
 	bureau_of_barbarians = { #Adjusted from Renovatio Imperii's diplomatic relations +1 to 20% improve relations. The bureau of barbarians was used to do diplomacy well, which doesn't translate into diplo relations in my opinion.
 		improve_relation_modifier = 0.2
 		diplomats = 1
+		idea_claim_colonies = yes
 	}
 	reinstitute_the_pronoia = { #I feel Byzantium needs a Russia vibe. Also, direct army quality does not make too much sense in their idea set, unless we're discussing Komnenos army. Even so, I'd argue that was because of capable warrior emperors, not good Byzantine units.
 		infantry_cost = -0.20
@@ -136,51 +137,6 @@ LTE_ideas = { #Latin Empire Ideas.
 	
 	trigger = {
 		tag = LTE
-	}
-	free = yes
-	
-	lte_adapt_greek_administrators = {
-		global_tax_modifier = 0.1
-	}
-	
-	lte_the_city_of_cities = {
-		prestige = 1
-	}
-	
-	lte_invite_italian_merchants = {
-		global_trade_power = 0.15
-	}
-	
-	lte_induct_knightly_orders = {
-		land_morale = 0.1
-		vassal_forcelimit_bonus = 1
-	}
-	
-	lte_bastion_of_christendom = {
-		fort_maintenance_modifier = -0.25
-		rival_border_fort_maintenance = -1
-	}
-	
-	lte_reform_east_latin_rites = {
-		global_heretic_missionary_strength = 0.01
-	}
-	
-	lte_eternal_crusade = {
-		extra_manpower_at_religious_war = yes
-	}
-}
-
-LAT_ideas = { #Latin Empire Ideas.
-	start = {
-		tolerance_own = 2
-		vassal_income = 0.5
-	}
-	
-	bonus = {
-		liberty_desire_from_subject_development = -0.15
-	}
-	
-	trigger = {
 		tag = LAT
 	}
 	free = yes
