@@ -1,22 +1,19 @@
-#3167 - Pirin
-
-latent_trade_goods = {
-	coal
-}
+#150 - Bulgaria
 
 owner = BYA
 controller = BYA
-culture = Slaviko 			#Clearly Christian in the early period per Ottoman documents, but not clear if the Christians were Greek, Bulgarian, or both. Either is quite plausible.
+culture = bulgarian
 religion = orthodox
-capital = "Nevrokop"
-trade_goods = iron
+capital = "Tarnovo"
+trade_goods = bt_trade_good_beer			#was formerly iron, which Nikicaga said made no sense, suggesting grain instead. Today appears to produce a lot of beer & soft drinks, so going with anachronisity here, because what does it hurt?
 hre = no
-base_tax = 2
-base_production = 2
-base_manpower = 2
+base_tax = 3
+base_production = 3
+base_manpower = 3
 is_city = yes
 add_core = BYA
 add_core = BUL
+fort_15th = yes
 
 discovered_by = KAZ
 discovered_by = CRI
@@ -28,6 +25,8 @@ discovered_by = ottoman
 discovered_by = eastern
 discovered_by = western
 
+#Country breaks
+#1402.1.1 = { revolt = { type = pretender_rebels size = 0 } controller = REB } # Interregnum
 1404.1.1 = { revolt = { type = pretender_rebels size = 0 } controller = REB }
 1413.1.1 = { revolt = {} controller = BYA }
 1555.1.1 = { unrest = 5 } # General discontent against the Janissaries' dominance

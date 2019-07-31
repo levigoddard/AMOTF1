@@ -7,8 +7,11 @@ arav_ideas = {
 		missionaries = 1
 	}
 	trigger = {
+		OR = {
 		tag = ARV
 		tag = CPT
+		tag = MKD
+		}
 	}
 	free = yes
 	arav_tax_system = {

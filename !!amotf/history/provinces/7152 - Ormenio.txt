@@ -1,15 +1,16 @@
 #BT Balkans reoverhaul
 
-owner = TUR
-controller = TUR
-add_core = TUR
+owner = BYZ
+controller = BYZ
+add_core = BYZ
+add_core = BYA
 add_core = BUL
-culture = Slaviko 			#Tough call... could just as easily be greek or turkish.
+culture = Slaviko			#Tough call... could just as easily be greek or turkish.
 religion = orthodox
 capital = "Çirmen"
 base_tax = 3
 base_production = 3
-base_manpower = 2
+base_manpower = 3
 trade_goods = cloth			#Major provincial centre under the Ottomans, so a generic rich city good.
 is_city = yes
 hre = no

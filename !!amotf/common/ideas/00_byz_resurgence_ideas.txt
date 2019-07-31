@@ -136,8 +136,10 @@ LTE_ideas = { #Latin Empire Ideas.
 	}
 	
 	trigger = {
+		OR = {
 		tag = LTE
 		tag = LAT
+		}
 	}
 	free = yes
 	

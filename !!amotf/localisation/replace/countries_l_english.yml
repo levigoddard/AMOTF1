@@ -1,6 +1,8 @@
 ﻿l_english:
  BYZ_ADJ:0 "Rhomaion"
  BYZ_ADJ2:0 "Byzantine"
+ BYA:0 "Bulgarskoto Tsarstvo"
+ BYA_ADJ:0 "Bulgariyan"
  LAT:0 "Duchy di Latin"
  LAT_ADJ:0 "Latins"
  LAT_ADJ2:0 "Latin"
@@ -26,7 +28,7 @@
  CPT:0 "Æygýptios Faraó"
  CPT_ADJ:0 "Æygýptiosi"
  EPI:0 "Ipeiros"
- BYZ:0 "Basileia Oströmisches Reich"
+ BYZ:0 "Basileia Oströmisches"
  ADA:0 "Adal"
  ADE:1 "Aden"
  AKK:0 "Aq Qoyunlu"

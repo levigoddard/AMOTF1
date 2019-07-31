@@ -5,13 +5,13 @@ controller = BYZ
 add_core = BYZ
 add_core = BYA
 add_core = BUL
-culture = Slaviko
+culture = greek			#Per wiki 'The town was inhabited predominantly by Greeks up to the post-World War I population exchanges between Bulgaria and Greece.'. Normally I'm dubious about claims like this, but Greeks were definitely the dominant power throughout the region at Ottoman conquest, so I'm going with it.
 religion = orthodox
-capital = "Yambol"
+capital = "Stenimachos"			#Asenovgrad
 base_tax = 3
 base_production = 3
 base_manpower = 3
-trade_goods = grain			#major agricultural region
+trade_goods = wine			#Might just be a modern thing, but why not? Not too many wine provinces yet.
 is_city = yes
 hre = no
 

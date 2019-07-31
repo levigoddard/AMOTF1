@@ -1,17 +1,16 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = BYA
+controller = BYA
 add_core = BYA
 add_core = BUL
-culture = Slaviko
+culture = bulgarian
 religion = orthodox
-capital = "Yambol"
+capital = "Karvuna"
 base_tax = 3
 base_production = 3
-base_manpower = 3
-trade_goods = grain			#major agricultural region
+base_manpower = 4
+trade_goods = grain			#major centre of the Bulgarian empire, and a major centre of commerce in the early Ottoman period, so could be many things, but become famous in the Ottoman period as a Christain port exporting grain, so going with that.
 is_city = yes
 hre = no
 

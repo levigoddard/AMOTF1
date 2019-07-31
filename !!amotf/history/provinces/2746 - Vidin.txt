@@ -1,0 +1,27 @@
+#2746 - Vidin
+
+owner = BYA
+controller = BYA
+culture = bulgarian
+religion = orthodox
+capital = "Vidin"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 3
+is_city = yes
+add_core = BYA
+add_core = BUL
+
+
+discovered_by = KAZ
+discovered_by = CRI
+discovered_by = GOL
+discovered_by = AST
+discovered_by = QAS
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+

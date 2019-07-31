@@ -1,17 +1,20 @@
 #BT Balkans reoverhaul
 
+latent_trade_goods = {
+	coal
+}
 owner = BYZ
 controller = BYZ
 add_core = BYZ
 add_core = BYA
 add_core = BUL
-culture = Slaviko
+culture = greek
 religion = orthodox
-capital = "Yambol"
-base_tax = 3
-base_production = 3
-base_manpower = 3
-trade_goods = grain			#major agricultural region
+capital = "Drama"
+base_tax = 4
+base_production = 4
+base_manpower = 4
+trade_goods = paper			#Might be slightly anachronistic, but placing paper is very hard, so going with it where I can.
 is_city = yes
 hre = no
 

@@ -1,17 +1,16 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = BYA
+controller = BYA
 add_core = BYA
 add_core = BUL
-culture = Slaviko
+culture = bulgarian
 religion = orthodox
-capital = "Yambol"
+capital = "Razgrad"
 base_tax = 3
 base_production = 3
-base_manpower = 3
-trade_goods = grain			#major agricultural region
+base_manpower = 2
+trade_goods = naval_supplies			#the mad forest implies trees
 is_city = yes
 hre = no
 

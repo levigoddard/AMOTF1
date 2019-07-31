@@ -15,7 +15,7 @@ byz_viceroy = {
 	press_sailors = yes
 	forcelimit_bonus = 5.0
 	base_liberty_desire = -10.0
-	can_be_annexed = no
+	can_be_annexed = yes
 
 	max_government_rank = 2
 	

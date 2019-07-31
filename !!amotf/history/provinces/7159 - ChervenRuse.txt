@@ -1,17 +1,16 @@
 #BT Balkans reoverhaul
 
-owner = BYZ
-controller = BYZ
-add_core = BYZ
+owner = BYA
+controller = BYA
 add_core = BYA
 add_core = BUL
-culture = Slaviko
+culture = bulgarian
 religion = orthodox
-capital = "Yambol"
+capital = "Cherven"			#Would decline in favour of Ruse later, but in 1444 it appears to have remained the Ottoman admin centre for the area.
 base_tax = 3
 base_production = 3
 base_manpower = 3
-trade_goods = grain			#major agricultural region
+trade_goods = livestock			#For no real reason
 is_city = yes
 hre = no
 

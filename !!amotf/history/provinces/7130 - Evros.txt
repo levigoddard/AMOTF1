@@ -5,13 +5,13 @@ controller = BYZ
 add_core = BYZ
 add_core = BYA
 add_core = BUL
-culture = Slaviko
+culture = greek
 religion = orthodox
-capital = "Yambol"
+capital = "Didymoteicho"
 base_tax = 3
 base_production = 3
 base_manpower = 3
-trade_goods = grain			#major agricultural region
+trade_goods = livestock			#Favoured hunting grounds of the early Ottoman aristocracy, so.... lets say livestock, because I have no idea what to do with that other than fur, which doesn't fit in this area.
 is_city = yes
 hre = no
 
