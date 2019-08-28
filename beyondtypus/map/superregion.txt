@@ -14,11 +14,16 @@ east_indies_superregion = {
 	moluccas_region	
 	indonesia_region	
 	indo_china_region
+	borneo_region
+	sumatran_region
+	celebes_region
+	philippines_region
 }
 
 oceania_superregion = {
 	oceanea_region
 	australia_region
+	new_zealand_region
 }
 
 china_superregion = {

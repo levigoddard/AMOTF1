@@ -7,14 +7,12 @@ religion = sunni
 capital = "Johor"
 trade_goods = chinaware
 hre = no
-base_tax = 10
-base_production = 10
+base_tax = 7
+base_production = 7
 base_manpower = 4
 is_city = yes
 add_core = MLC
 add_core = JOH
-
-
 
 discovered_by = chinese
 discovered_by = indian

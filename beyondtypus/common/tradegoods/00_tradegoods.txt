@@ -271,7 +271,7 @@ wine = {
 			NOT = { area = central_valley_area }
 			NOT = { area = sacramento_valley_area }
 			NOT = { area = san_francisco_bay_area }
-			NOT = { area = lost_cost_area }
+			NOT = { area = lost_coast_area }
 			NOT = { area = columbia_river_area }
 			NOT = { area = macaronesia_area }
 			NOT = { province_id = 2607 }		# Okanogan
@@ -321,7 +321,7 @@ wine = {
 		modifier = { #West coast wine common
 			factor = 1.5
 			OR = {
-				area = lost_cost_area
+				area = lost_coast_area
 				area = california_area
 			}
 		}
@@ -525,7 +525,9 @@ fish = {
 		modifier = { #Really want Avalon to have fish
 			factor = 30.0
 			OR = {
-				area = avalon_area
+				province_id = 5059			#Avalon
+				province_id = 5058			#Avalon
+				province_id = 5013			#Avalon
 				province_id = 5019			#St Pierre et Miquelon
 				province_id = 4974			#Grand Banks
 			}
@@ -555,7 +557,7 @@ fish = {
 			factor = 3.0
 			OR = {
 				area = oregon_area
-				area = lost_cost_area
+				area = lost_coast_area
 				area = columbia_river_area
 				area = polynesia_area
 				area = micronesia_area
@@ -902,7 +904,7 @@ naval_supplies = {
 			OR = {
 				area = salish_sea_area
 				area = oregon_area
-				area = lost_cost_area
+				area = lost_coast_area
 			}
 		}
 		modifier = { #Fantastic wood in the rainforests of the Pacific Coast
@@ -1210,6 +1212,15 @@ gold = {
 			is_random_new_world = yes
 			has_terrain = mountain
 			continent = new_world #Always in RNW
+		}
+		modifier = {
+			factor = 2
+			FROM = {
+				OR = {
+					has_country_flag = por_bandeirantes_flag
+					colonial_parent = { has_country_flag = por_bandeirantes_flag }
+				}
+			}
 		}
 		modifier = { #too much gold in Glacial areas due to few other options
 			factor = 0.5

@@ -316,7 +316,7 @@
 167 = "Rowaan"
 
 #Bosnia
-1831 = "Travunië"
+7721 = "Travunië"
 
 #serbia
 141 = "Servië"
@@ -576,3 +576,8 @@
 
 #2017 Dec 31
 5019 = "Barbatos" #Johannes Ruysch
+
+#Arga Feb 2019
+
+#colombia
+2810 = "Apurië"

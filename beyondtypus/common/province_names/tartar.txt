@@ -261,3 +261,38 @@
 #kamchatka
 1034 = "Kamçatka"
 
+#Arga Feb 2019
+
+#moldavia and romania
+7278 = "Akkerman" #or "Akkirmän" tatarça
+
+#siberia
+171 = "Qizil Tura" #changes 1500 to "Qashliq"
+1075 = "çinki-Tura" #"Tömän" tatarça
+2441 = "Melekes"
+
+#bashkiria
+475 = "Bashqirtistan" #crimean tatar, or "Bashkortstan" tatarça
+
+#russia
+302 = "Tambu"
+3268 = "Elets" #tatarça
+
+#ruthenia
+261 = "Galiç"
+7273 = "Kolomiya"
+
+#transoxania
+441 = "Xivä"
+442 = "Boxara"
+454 = "Sämärqand"
+
+#Arga Mar 2019
+
+#russia using tatarça
+301 = "Räzän"
+308 = "Yarislau"
+1753 = "Kasmrama"
+
+#crimea
+7193 = "Içki"

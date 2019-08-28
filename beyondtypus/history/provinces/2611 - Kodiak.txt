@@ -1,6 +1,6 @@
 # No previous file for Kodiak
 
-culture = yupik
+culture = sugpiat
 religion = totemism
 capital = "Sun'aq"
 trade_goods = unknown

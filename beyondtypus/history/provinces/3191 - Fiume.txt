@@ -2,19 +2,19 @@
 #Region - Germany
 #Area - Carniola
 
-owner = HAB
-controller = HAB
+owner = RIJ
+controller = RIJ
 culture = croatian
 religion = catholic
-capital = "Pflaum"
+capital = "Rijeka"
 trade_goods = cloth
-hre = no
-base_tax = 6 
-base_production = 6
+hre = yes
+base_tax = 7
+base_production = 7
 base_manpower = 4
 is_city = yes
 estate = estate_nobles
-add_core = HAB
+add_core = RIJ
 add_core = CRO
 
 discovered_by = KAZ
@@ -27,16 +27,16 @@ discovered_by = eastern
 discovered_by = muslim
 discovered_by = ottoman
 
-extra_cost = 8
-center_of_trade = 1
+extra_cost = 20
+center_of_trade = 2
 
-#1466.1.1 = {
-#	owner = HAB
-#	controller = HAB
-#	add_core = HAB
-#	remove_core = HUN
-#	capital = "Pflaum"
-#} # Purchased by the Habsburg emperor Frederick III, Archduke of Austria in 1466.
+1466.1.1 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = HUN
+	capital = "Pflaum"
+} # Purchased by the Habsburg emperor Frederick III, Archduke of Austria in 1466.
 1573.1.20 = { revolt = { type = anti_tax_rebels size = 1 } controller = REB } # Peasant uprising against Habsburg rule & the feudal system
 1671.1.1 = { unrest = 5 } # Conspiracy against Habsburg rule uncovered
 1671.5.1 = { unrest = 0 } # Estimated, the conspirators are executed

@@ -92,6 +92,20 @@ hun_north_group = {
 				}
 				add_permanent_claim = ROOT
 			}
+			oltenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_muntenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			moldavia_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -115,12 +129,24 @@ hun_north_group = {
 		position = 3
 		
 		provinces_to_highlight = {
-			area = wallachia_area
+			OR = {
+				area = wallachia_area
+				area = oltenia_area
+				area = upper_muntenia_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		
 		trigger = {
 			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oltenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_muntenia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -141,6 +167,13 @@ hun_north_group = {
 				}
 				add_permanent_claim = ROOT
 			}
+			syrmia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			bosnia_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -148,7 +181,14 @@ hun_north_group = {
 				}
 				add_permanent_claim = ROOT
 			}
-			croatia_area = {
+			krajina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			herzegovina_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { owned_by = ROOT }
@@ -167,6 +207,7 @@ hun_north_group = {
 			OR = {
 				area = serbia_area
 				area = rascia_area
+				area = syrmia_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -177,6 +218,10 @@ hun_north_group = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			rascia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syrmia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -191,6 +236,12 @@ hun_north_group = {
 				}
 			}
 			rascia_area = {
+				add_province_modifier = {
+					name = "hun_moldavia_mod"
+					duration = 10950
+				}
+			}
+			syrmia_area = {
 				add_province_modifier = {
 					name = "hun_moldavia_mod"
 					duration = 10950
@@ -258,7 +309,8 @@ hun_south_group = {
 		provinces_to_highlight = {
 			OR = {
 				area = bosnia_area
-				area = croatia_area
+				area = krajina_area
+				area = herzegovina_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -268,7 +320,11 @@ hun_south_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			croatia_area = {
+			krajina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			herzegovina_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -282,7 +338,13 @@ hun_south_group = {
 					duration = 10950
 				}
 			}
-			croatia_area = {
+			krajina_area = {
+				add_province_modifier = {
+					name = "hun_moldavia_mod"
+					duration = 10950
+				}
+			}
+			herzegovina_area = {
 				add_province_modifier = {
 					name = "hun_moldavia_mod"
 					duration = 10950
@@ -301,6 +363,7 @@ hun_south_group = {
 				area = bulgaria_area
 				area = danubian_plain_area
 				area = lower_danube_area
+				area = vidin_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -318,6 +381,10 @@ hun_south_group = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
+			vidin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		
 		effect = {
@@ -331,13 +398,6 @@ hun_south_group = {
 				add_permanent_claim = ROOT
 			}
 			upper_thrace_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			western_thrace_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { owned_by = ROOT }
@@ -420,13 +480,6 @@ hun_ottoman_group = {
 				}
 				add_permanent_claim = ROOT
 			}
-			western_macedonia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 			bulgaria_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -448,6 +501,13 @@ hun_ottoman_group = {
 				}
 				add_permanent_claim = ROOT
 			}
+			vidin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	
@@ -461,7 +521,6 @@ hun_ottoman_group = {
 				area = macedonia_area
 				area = northern_macedonia_area
 				area = eastern_macedonia_area
-				area = western_macedonia_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -476,10 +535,6 @@ hun_ottoman_group = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			eastern_macedonia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			western_macedonia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

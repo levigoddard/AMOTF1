@@ -1130,3 +1130,44 @@
 994 = "Quebec" #Without the "è" for english
 2012 = "Victoriaville"
 2584 = "Montreal" #Without the "è" for English
+
+#Cinnamon Ryce Jan 2019
+
+#Indonesia & Malaya
+597 = "Johore"
+617 = "Lambri"
+621 = "Bencoolen"
+623 = "Talangboang"
+624 = "Bantam"
+631 = "Bally"
+633 = "Floris"
+639 = "Benjar"
+641 = "Macassar"
+659 = "Ligan"
+2392 = "Salangor" #Or Salengore
+2639 = "Lomboc" #Or Lombock
+2673 = "Pacem"
+2678 = "Banca" #Or Banka
+2679 = "Billiton"
+2860 = "Moco-Moco"
+2686 = "Bintang"
+2706 = "Succadana" #Or just with a single c
+
+#Burma
+579 = "Mrohaung"
+1815 = "Bassein"
+4399 = "Rangoon"
+
+#Indochina
+592 = "Ratpri"
+593 = "Ligor"
+600 = "Ayuthia"
+2377 = "Camao"
+2387 = "Pripri"
+2388 = "Phitsalok"
+2391 = "Junkceylon" #Or Jungceylon
+
+#Chairman Meow 11.5
+
+#Latvia
+38 = "Rie" #Name from Richard Hakylut in 1589

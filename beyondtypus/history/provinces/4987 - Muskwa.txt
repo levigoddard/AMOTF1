@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = slavey
+culture = nahanni
 religion = totemism 
 capital = "Muskwa" 
 trade_goods = unknown

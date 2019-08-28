@@ -4,14 +4,15 @@ owner = WAL
 controller = WAL 
 culture = romanian
 religion = orthodox
-capital = "Bucuresti"
+capital = "Bucharest"
 trade_goods = grain
 hre = no
-base_tax = 6
-base_production = 6
-base_manpower = 4 
+base_tax = 2 
+base_production = 2 
+base_manpower = 1 
 is_city = yes
 add_core = WAL
+fort_15th = yes
 
 discovered_by = KAZ
 discovered_by = CRI
@@ -22,6 +23,9 @@ discovered_by = western
 discovered_by = eastern
 discovered_by = muslim
 discovered_by = ottoman
+
+extra_cost = 8
+center_of_trade = 1
 
 1593.1.1 = { unrest = 7 } # Wallachian rising, the Turks & Tatars are expelled
 1595.1.1 = { unrest = 0 } # The Turks take control of most of Wallachia again

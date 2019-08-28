@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = athabascan
+culture = nahanni
 religion = totemism 
 capital = "Tthenáágó" 
 trade_goods = unknown

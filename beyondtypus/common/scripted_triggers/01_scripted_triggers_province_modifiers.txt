@@ -196,6 +196,8 @@ province_with_special_goods_produced_trigger = {
 		has_province_modifier = perfume_capital
 		#Added special goods in BT
 		has_province_modifier = grand_banks_of_newfoundland
+		has_province_modifier = bt_forests_of_cadore
+		has_province_modifier = bt_weaker_spice_islands_modifier
 	}
 }
 
@@ -220,6 +222,8 @@ province_without_special_goods_produced_trigger = {
 		has_latent_trade_goods = coal
 		#Added special goods in BT
 		has_province_modifier = grand_banks_of_newfoundland
+		has_province_modifier = bt_forests_of_cadore
+		has_province_modifier = bt_weaker_spice_islands_modifier
 	}
 }
 

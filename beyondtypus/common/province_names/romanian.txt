@@ -44,7 +44,7 @@
 #2017 Jul 11
 #Carpathia
 153 = "Pesta"
-268 = "Iasi"
+#268 = "Iasi"
 #explanation: Moldova is a whole region not a province
 1954 = "Torontal"
 1953 = "Dobritîn"
@@ -55,7 +55,7 @@
 146 = "Atena"
 147 = "Tesalia"
 151 = "Constantinopol"
-152 = "Varazdin"
+#152 = "Varazdin"
 159 = "Dârstor"
 #explanation, yes, Silistria does sound romanian, but its romanian name is Dârstor, which is said to have come from latin Durostorum.
 320 = "Rodos"

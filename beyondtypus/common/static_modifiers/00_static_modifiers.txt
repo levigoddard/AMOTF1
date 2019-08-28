@@ -790,14 +790,14 @@ emperor = {
 }
 
 states_in_hre = {							#bonuses for each non-free city with capital in HRE.. as emperor
-	land_forcelimit	= 0.3					#BTP adjusted to 0.35, then BT further adjusts it due to European reworks
-	global_manpower = 0.3					#BTP adjusted to 0.35, then BT further adjusts it due to European reworks
+	land_forcelimit	= 0.2					#BTP adjusted to 0.35, then BT further adjusts it due to European reworks
+	global_manpower = 0.2					#BTP adjusted to 0.35, then BT further adjusts it due to European reworks
 }
 
 free_cities_in_hre = {							#bonuses for each free city in the HRE.. as emperor
-	global_tax_income = 1					#BTP
-	global_manpower = 0.5					#BTP
-	land_forcelimit	= 0.25					#BTP
+	global_tax_income = 0.5					#BTP, then BT further adjusts it due to European reworks
+	global_manpower = 0.15					#BTP, then BT further adjusts it due to European reworks
+	land_forcelimit	= 0.15					#BTP, then BT further adjusts it due to European reworks
 }
 
 free_city_in_hre = {

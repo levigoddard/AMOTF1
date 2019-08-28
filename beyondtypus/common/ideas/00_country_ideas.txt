@@ -4101,7 +4101,10 @@ BOS_ideas = {
 	}
 	
 	trigger = {
-		tag = BOS
+		OR = {
+			tag = BOS
+			tag = DSS
+		}
 	}
 	free = yes
 	
@@ -11568,7 +11571,7 @@ irish_ideas = {
 		manpower_recovery_speed = 0.20			#Draiocht changed from shock_damage_received and switched with unconquerable
  	}
 	ire_gallowglasses = {
-		discipline = 0.05			#Yeah... this isn't bad at all, either. Bit OPed with my other idea changes, but ah well, Ireland rarely survives anyway.
+		discipline = 0.03			#Yeah... this isn't bad at all, either. Bit OPed with my other idea changes, but ah well, Ireland rarely survives anyway.
 	}
 }
 
@@ -12642,7 +12645,7 @@ MOR_ideas = {
 		hostile_attrition = 1
 	}
 	trigger = {
-		always = no			#Disabled in BT to let old BT ones take precedence
+		tag = MOR
 	}
 	free = yes
 	mor_powerful_viziers = {
@@ -12680,7 +12683,7 @@ TUN_ideas = {
 		naval_forcelimit_modifier = 0.25
 	}
 	trigger = {
-		always = no			#Disabled in BT to let old BT ones take precedence
+		tag = TUN
 	}
 	free = yes
 	tun_catalan_guard = {

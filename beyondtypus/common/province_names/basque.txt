@@ -292,3 +292,11 @@
 5064 = "Durango" # Hisatsinom								#Iberian name
 5065 = "Pueblo" # Muache										#Iberian name
 5066 = "Temblón" # Taveewachii								#Iberian name BeyondTypusInvention
+
+#Chrysocyon 31st May 2019
+112 = "Venezia"
+236 = "Londres"
+333 = "Mallorca"
+2989 = "Errioxa"
+4559 = "Menorca"
+4560 = "Pitiusak"

@@ -1258,7 +1258,7 @@ country_event = {
 		trigger = {
 			2030 = {
 				owner = {
-					ai = no
+					ai = yes
 				}
 			}
 		}
@@ -1284,6 +1284,13 @@ country_event = {
 	}
 	option = {		# Glorious!
 		name = "flavor_por.EVTOPTB11"
+		trigger = {
+			2030 = {
+				owner = {
+					ai = no
+				}
+			}
+		}
 		ai_chance = { factor = 10 }
 		add_claim = 2030
 		add_prestige = 10

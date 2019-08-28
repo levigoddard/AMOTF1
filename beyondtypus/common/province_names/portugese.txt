@@ -452,3 +452,380 @@
 #2018 Sep 5
 #colombia
 2815 = "Porto Carreño"
+
+#Arga Feb 2019
+
+#filling gaps in SA
+763 = "Rio de Janeiro"
+
+#Crysocyon 24th May 2019
+
+#| Iberia |
+
+209 = "Biscaia"
+211 = "Huesca" #Would need to change again if alt-hist is taken into acount
+212 = "Gerunda" #Rarely used portuguese name
+214 = "Saragoça"
+221 = "Múrcia"
+225 = "Córdova"
+333 = "Maiorca"
+2754 = "Mancha" #See portuguese wikipedia entry for Castilla-la-Mancha
+2755 = "Sória"
+2987 = "Urgel"
+2989 = "Rioxa"
+3100 = "Plasência" #found occasionally online like in this link: http://ajidanha.com/1/novidades/
+4549 = "Guadalaxara"
+4550 = "Castelhão" #Simple portuguesation, I could make more alt-hist ones if you'd like
+4552 = "Segóvia"
+4553 = "Samora"
+4558 = "Ourense" #Also the Galician name
+4559 = "Minorca"
+
+#| France |
+
+89 = "Picardia"
+167 = "Ruão"
+174 = "Gironda" # or alternatively, "Aquitânia"
+175 = "Armanhaque"
+176 = "Bearne"
+184 = "Orleanês"
+190 = "Borbobês"
+193 = "Franco-Condado"
+195 = "Limusino"
+196 = "Tolosa"
+199 = "Auvérnia"
+200 = "Mompilher"
+201 = "Provença"
+202 = "Avinhão"
+203 = "Lionês"
+204 = "Granobra"
+1247 = "Ajácio"
+2753 = "Narbona"
+3056 = "Genebra"
+3068 = "Cornualha" #Has the same name as Cornwall in Portuguese
+3089 = "Valença"
+
+#| Morocco |
+
+2465 = "Ujda"
+2469 = "Mazagão" #For some reason, this was labelled as Anafé, rather than Anfa 4564
+4561 = "Tetuão"
+4562 = "Nadroma"
+4564 = "Anafé"
+
+#| England |
+
+233 = "Cornualha" #Has the same name as Cornouaille in Portuguese
+
+#brazil or brazilian only
+217 = "Madri"
+
+#| Iberia |
+
+211 = "Oesca"
+2751 = "Quenca" with optional ü, as that letter became extinct from Portuguese very recently
+2999 = "Teruel"
+4548 = "Oelva"
+
+#| France |
+
+87 = "Calês"
+88 = "Artosa" #or "Artésia"
+97 = "Ansterdão"
+169 = "Caém"
+173 = "Laborde"
+177 = "Mena"
+178 = "Anju"
+179 = "Berri"
+185 = "Nemures"
+186 = "Remes"
+191 = "Nivernês"
+192 = "Dijão"
+194 = "Perigorde"
+198 = "Ruérgue"
+1080 = "Alto Potu"
+1247 = "Ajácio"
+1744 = "Ânveres"
+1877 = "Charolês"
+1879 = "Alenção"
+2991 = "Tolão"
+3065 = "Lilha"
+3071 = "Chalões"
+3075 = "Dunosa"
+3076 = "Evreus"
+3077 = "Partené"
+3081 = "Agenês"
+3083 = "Albrete"
+3085 = "Nimas"
+3087 = "Aurilaque"
+3090 = "Forcalqueiro"
+3092 = "Vesul"
+3109 = "Marcha"
+4111 = "Áunis"
+4112 = "Querci"
+4385 = "Cotentino"
+4386 = "Fontené"
+4389 = "Torânia"
+4390 = "Troias"
+4391 = "Velé"
+4392 = "Macão"
+
+#| Italy |
+
+102 = "Niça"
+127 = "Galura"
+2986 = "Calher"
+5090 = "Arbórea"
+5091 = "Logudouro"
+5092 = "Bástia"
+7038 = "Bonifácio"
+7095 = "Sulces"
+7097 = "Nouro"
+7099 = "Olhiastra"
+
+#| England |
+
+4367 = "Iorque" #From 'Nova Iorque' (New York)
+
+#Iberia
+4557 = "Calataiú" #or "Calataiude"
+218 = "Badalhouce"
+
+#France and Low Countries
+91 = "Henau"
+93 = "Lieja"
+98 = "Utreque"
+99 = "Velávia"
+100 = "Frísia"
+169 = "São Brioco"
+170 = "Finistera"
+171 = "Vanetês"
+172 = "Nantês"
+181 = "Retel"
+182 = "Valosa"
+185 = "Nemures"
+187 = "Barrosa"
+188 = "Meça"
+189 = "Lorena"
+190 = "Borbonês" #Correction
+1742 = "Alto Gueldres"
+1743 = "Cambré"
+1865 = "Gande"
+1867 = "Vado"
+1871 = "Valês"
+1931 = "Frísia Oriental"
+2974 = "Loão"
+3046 = "Genebrosa"
+3058 = "Drenta"
+3060 = "Batávia"
+3061 = "Bosque do Duque"
+3066 = "Arlão"
+3069 = "Verdum"
+3070 = "Ladão"
+3110 = "Ilhas da Mancha"
+4381 = "Alenissel"
+4382 = "Omelândia"
+4383 = "Gravenaia"
+4384 = "Renas"
+
+#Germany
+65 = "Munique"
+75 = "Alsácia"
+76 = "Salisburgo"
+128 = "Caríntia"
+129 = "Carníola"
+132 = "Estíria"
+1869 = "Zurique"
+1873 = "Récia"
+1878 = "Az-a-Capela"
+1880 = "Sondegau"
+3048 = "Tirol do Sul"
+3050 = "Marburgo"
+
+#Italy
+103 = "Piemonte"
+106 = "Módena"
+107 = "Bréscia"
+109 = "Mântua"
+110 = "Trento"
+111 = "Friul"
+113 = "Ferrária"
+114 = "Romanha"
+119 = "Âncona"
+120 = "Áquila"
+123 = "Calábria"
+130 = "Ístria"
+173 = "Crémona"
+1768 = "Agunto"
+1769 = "Gorícia"
+1875 = "Cuneu"
+1933 = "Bares"
+1934 = "Lucânia"
+2976 = "Úmbria"
+2978 = "Areço"
+2980 = "Luca"
+2982 = "Siracusa"
+2984 = "Cosença"
+2985 = "Capitanada"
+3037 = "Agrigento"
+3039 = "Cápua"
+3041 = "Bolonha"
+3043 = "Pávia"
+3044 = "Saluço"
+3191 = "Flume"
+3294 = "Valtelina"
+7000 = "Trápanes"
+7001 = "Caltanisseta"
+7002 = "Catânia"
+7003 = "Catançaro"
+7004 = "Meteira"
+7005 = "Leice"
+7006 = "Bríndises"
+7007 = "Barleta"
+7008 = "Melfes"
+7010 = "Avelino"
+7011 = "São Sévero"
+7013 = "Quietes"
+7020 = "Campanha"
+7022 = "Ternes"
+7023 = "Espoleto"
+7024 = "Nórcia"
+7028 = "Faença"
+7029 = "Gúbio"
+7030 = "Macerada"
+7031 = "Forles"
+7032 = "Rimines"
+7034 = "Carpenha"
+7035 = "Cidade do Castelo"
+7036 = "Folinho"
+7039 = "Quiuses"
+7041 = "Orbetelo"
+7042 = "Groseto"
+7043 = "Castilhão"
+7045 = "Bardes"
+7053 = "Finais"
+7055 = "Espécia"
+7058 = "Alexandria"
+7054 = "Onelha"
+7057 = "Placência"
+7060 = "Bóbio"
+7061 = "Áques"
+7063 = "Môndoves"
+7065 = "Quivasso"
+7067 = "Régio"
+7068 = "Guastala"
+7071 = "Pineroulo"
+7075 = "Verceles"
+7076 = "Quiógia"
+7077 = "Pádua"
+7078 = "Lodes"
+7079 = "Biela"
+7081 = "Polesim"
+7082 = "Pisino"
+7083 = "Vale Camônica"
+7085 = "Vicença"
+7086 = "Pordenão"
+7087 = "Cêneda"
+7090 = "Rovinho"
+7092 = "Merão"
+7093 = "Bressanão"
+7094 = "Beluno"
+7098 = "Tolmeço"
+7099 = "Olhastra" #Correction
+
+#British Isles
+241 = "Glamorgão"
+242 = "Guínede"
+144 = "Lancastre"
+246 = "Nortúmbria"
+247 = "Cúmbria"
+248 = "Lodião"
+373 = "Dublim"
+3036 = "Cardigão"
+4366 = "Poiz"
+4369 = "Divé"
+4373 = "Devão"
+4375 = "Chestre"
+
+#Greece
+146 = "Atenas"
+151 = "Constantinopla"
+
+#Maghreb
+347 = "Tantão"
+349 = "Figui"
+350 = "Laguate"
+351 = "Bisquira"
+352 = "Gáfesa"
+353 = "Medenim"
+354 = "Trípoles"
+355 = "Sirte"
+356 = "Bengaze"
+357 = "Darná"
+1305 = "Gelves"
+2451 = "Mesurata"
+2453 = "Esfaques"
+2456 = "Togurte"
+2457 = "Aglão"
+2459 = "Titerim"
+2460 = "Temegrute"
+2461 = "Mostagão"
+2462 = "Tiarete"
+2463 = "Alnama"
+2464 = "Uarzazate"
+2466 = "Drá"
+2468 = "Quenifra"
+2472 = "Uareglão"
+2473 = "Susa"
+4566 = "Hebira"
+4567 = "Gadamés"
+4568 = "Demenate"
+5212 = "Suz"
+5220 = "Talsinte"
+5221 = "Bechar"
+5223 = "Tindufe"
+5224 = "Nabel"
+5225 = "Mádia"
+5226 = "Xixaua"
+5229 = "Debedu"
+5274 = "Asdabia"
+5306 = "Misda"
+5309 = "Garião"
+5311 = "Cões"
+5312 = "Gabés"
+5313 = "Casserim"
+5314 = "Bejá"
+5315 = "Alcafe"
+5316 = "Tozer"
+5317 = "Tabarca"
+5318 = "Cuco"
+5319 = "Setife"
+5320 = "Ainbeida"
+5322 = "Mitija"
+5324 = "Jelfa"
+5325 = "Bátena"
+5327 = "Saida"
+5328 = "Albaiá"
+5329 = "Luadim"
+
+#Sub-Saharan Africa
+1096 = "Ilhas do Cabo Verde"
+1113 = "Cabo Verde"
+1114 = "Cacheu"
+1196 = "Quíloa"
+2239 = "Rio Gâmbia"
+2242 = "Cabo Mesurado"
+
+#By Ajsieg
+#2019 May 30
+#Horn of Africa
+1205 = "Magadoxo" #Mogadishu
+1211 = "Arar" #Harer
+1213 = "Xaoa" #Shewa 
+1223 = "Goiam" #Gojjam
+2757 = "Cafa" #Kaffa
+2764 = "Auça" #Aussa 
+2768 = "Anguat" #Angot 
+2770 = "Agao" #Agew
+2774 = "Dos Fuegos" #Kismayo (Name of the Juba River)
+2794 = "Brava" #Barawa

@@ -317,9 +317,10 @@ elective_monarchy = {
 	}
 	modifiers = {
 		vassal_income = 0.25
-		global_unrest = -1
+		tolerance_heretic = 3			#New in BT. Yeah, I know Lithuanian trads & Polish ambitions both give this, but Heretic unrest is a serious issue in this little corner of land.
+		#global_unrest = -1			#Replacing -1 global unrest with tolerance to heretics. PLC has a pretty spectacular amount of land and dev, and most of it is Orthodox.
 		max_absolutism = -30
-		max_states = 4
+		max_states = 8			#from 4 in vanilla. PLC is some pretty massive land area
 	}
 
 	conditional = {
@@ -416,6 +417,7 @@ ottoman_government = {
 	modifiers = {
 		unjustified_demands = -0.1
 		fort_maintenance_modifier = -0.25
+		land_maintenance_modifier = -0.25
 		max_absolutism = 5
 		max_states = 8
 	}

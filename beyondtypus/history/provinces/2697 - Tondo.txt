@@ -8,11 +8,13 @@ religion = animism
 capital = "Tondo"
 trade_goods = spices
 hre = no
-base_tax = 10
-base_production = 10
-base_manpower = 4
+base_tax = 3
+base_production = 3
+base_manpower = 2
 is_city = yes
+
 discovered_by = chinese
+
 
 1521.1.1 = { discovered_by = SPA } # Ferdinand Magellan 
 1570.5.1 = {

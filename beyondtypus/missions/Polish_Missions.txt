@@ -16,10 +16,7 @@ polish_missions_main_slot = {
 		required_missions = { }
 		completed_by = 1466.10.19
 		provinces_to_highlight = {
-			OR = {
-				area = west_prussia_area
-				area = pomerelia_area
-			}
+			area = west_prussia_area
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -27,10 +24,6 @@ polish_missions_main_slot = {
 		trigger = {
 			OR = {
 				west_prussia_area = {
-					type = all
-					country_or_non_sovereign_subject_holds = ROOT	
-				}
-				pomerelia_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT	
 				}
@@ -62,23 +55,8 @@ polish_missions_main_slot = {
 				custom_tooltip = vassalize_danzig_tooltip
 			}
 			else_if = {
-				limit = {
-					any_subject_country = {
-						any_owned_province = {
-							OR = {
-								area = west_prussia_area
-								area = pomerelia_area
-							}
-						}
-					}
-				}
+				limit = { any_subject_country = { any_owned_province = { area = west_prussia_area } } }
 				west_prussia_area = {
-					limit = {
-						NOT = { is_core = ROOT	}
-					}
-					add_core = ROOT
-				}
-				pomerelia_area = {
 					limit = {
 						NOT = { is_core = ROOT	}
 					}
@@ -87,13 +65,6 @@ polish_missions_main_slot = {
 			}
 			else = {
 				west_prussia_area = {
-					limit = {
-						NOT = { is_permanent_claim = ROOT	}
-						NOT = { is_core = ROOT	}
-					}
-					add_permanent_claim = ROOT
-				}
-				pomerelia_area = {
 					limit = {
 						NOT = { is_permanent_claim = ROOT	}
 						NOT = { is_core = ROOT	}
@@ -120,7 +91,6 @@ polish_missions_main_slot = {
 			OR = {
 				area = west_prussia_area
 				area = kuyavia_area
-				area = pomerelia_area
 			}
 			NOT = {
 				owned_by = ROOT
@@ -134,11 +104,6 @@ polish_missions_main_slot = {
 				is_core = ROOT
 			}
 			kuyavia_area = {
-				type = all
-				owned_by = ROOT
-				is_core = ROOT
-			}
-			pomerelia_area = {
 				type = all
 				owned_by = ROOT
 				is_core = ROOT

@@ -62,7 +62,28 @@ romanian_missions_1 = {
 				name = "order_of_the_dragon_restored"
 				duration = 7300
 			}
+			vidin_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 			bulgaria_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_thrace_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_thrace_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
@@ -130,7 +151,7 @@ romanian_missions_1 = {
 						NOT = { is_core = ROOT	}
 						owned_by = TUR
 					}
-					add_claim = ROOT
+					add_permanent_claim = ROOT
 				}
 			}
 			hidden_effect = {
@@ -140,7 +161,7 @@ romanian_missions_1 = {
 						NOT = { is_core = ROOT	}
 						owned_by = TUR
 					}
-					add_claim = ROOT
+					add_permanent_claim = ROOT
 				}
 			}
 		}
@@ -151,9 +172,7 @@ romanian_missions_1 = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					area = bulgaria_area
-					area = macedonia_area
-					area = thrace_area
+					rmn_drive_out_the_turks_provinces = yes
 					NOT = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -163,19 +182,13 @@ romanian_missions_1 = {
 					owned_by = TUR
 				}
 			}
+			
 		}
 		trigger = {
-			macedonia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			thrace_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			bulgaria_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			has_fulfiled_province_requirement_for_mission_trigger = {
+				TOOLTIP=country_holds_or_non_sovereign_subject_holds_highlighted 
+				PROVINCES=rmn_drive_out_the_turks_provinces
+				OWNER_TYPE=country_or_non_sovereign_subject_holds
 			}
 			balkan_region = {
 				type = all
@@ -187,31 +200,24 @@ romanian_missions_1 = {
 		effect = {
 			add_prestige = 25
 			add_mil_power = 100
-			northern_greece_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
+			custom_tooltip = rmn_heir_of_rome_claims
+			hidden_effect = {
+				every_province = {
+					limit = {
+						rmn_heir_of_rome_provinces = yes
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
-			}
-			morea_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
+			}	
 		}
 	}
 	rmn_heir_of_rome = {
 		icon = mission_monarch_in_throne_room
 		required_missions = { rmn_drive_out_the_turks }
 		provinces_to_highlight = {
-			region = balkan_region
-			OR = {
-				owned_by = BYZ
-				province_id = 151
-			}
+			rmn_heir_of_rome_provinces = yes
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -220,14 +226,11 @@ romanian_missions_1 = {
 			NOT = {
 				exists = BYZ
 			}
-			balkan_region = {
-				type = all
-				OR = {
-					NOT = { owned_by = BYZ }
-					country_or_non_sovereign_subject_holds = ROOT
-				}
+			has_fulfiled_province_requirement_for_mission_trigger = {
+				TOOLTIP=country_holds_or_non_sovereign_subject_holds_highlighted 
+				PROVINCES=rmn_heir_of_rome_provinces
+				OWNER_TYPE=country_or_non_sovereign_subject_holds
 			}
-			151 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
 			add_adm_power = 100
@@ -258,28 +261,17 @@ romanian_missions_5 = {
 		icon = mission_noble_council
 		required_missions = { }
 		provinces_to_highlight = {
-			OR = {
-				area = wallachia_area
-				area = moldavia_area
-				area = western_moldovia
-			}
+			unite_the_voivodes_provinces = yes
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		trigger = {
 			is_subject = no
-			wallachia_area = {
-				type = all
-				owned_by = ROOT
-			}
-			moldavia_area = {
-				type = all
-				owned_by = ROOT
-			}
-			western_moldovia = {
-				type = all
-				owned_by = ROOT
+			has_fulfiled_province_requirement_for_mission_trigger = {
+				TOOLTIP=country_holds_or_non_sovereign_subject_holds_highlighted 
+				PROVINCES=unite_the_voivodes_provinces
+				OWNER_TYPE=country_or_non_sovereign_subject_holds
 			}
 		}
 		effect = {
@@ -287,16 +279,26 @@ romanian_missions_5 = {
 				name = "united_voivodes"
 				duration = 7300
 			}
+			if = { #To fix Ottoman danube border forts.
+				limit = {
+					OR = {
+						tag = MOL
+						tag = TRA
+					}
+				}
+				4531 = { add_core = ROOT }
+				7754 = { add_core = ROOT }
+			}
 		}
 	}
 	found_bucharest = {
 		icon = mission_eastern_european_city
 		required_missions = { unite_the_voivodes }
 		provinces_to_highlight = {
-			province_id = 4531
+			province_id = 3160
 		}
 		trigger = {
-			4531 = {
+			3160 = {
 				owned_by = ROOT
 				NOT = { devastation = 1 }
 				NOT = { unrest = 1 }
@@ -311,54 +313,45 @@ romanian_missions_5 = {
 			}
 		}
 		effect = {
-			4531 = {
+			3160 = {
 				move_capital_effect = yes
 				change_province_name = "Bucuresti" 
 				rename_capital = "Bucuresti"
-				add_base_tax = 1
-				add_base_production = 1
-				add_base_manpower = 1
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 2
 				add_province_modifier = {
 					name = "bucharest_summer_capital"
 					duration = -1
 				}
 			}
-			transylvania_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
+			custom_tooltip = rmn_conquer_transylvania_claims
+			hidden_effect = {
+				every_province = {
+					limit = {
+						rmn_conquer_transylvania_provinces = yes
+						NOT = { is_core = ROOT }
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
-			}
-			southern_transylvania_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
+			}	
 		}
 	}
 	rmn_conquer_transylvania = {
 		icon = mission_impaled_soldies
 		required_missions = { found_bucharest }
 		provinces_to_highlight = {
-			OR = {
-				area = transylvania_area
-				area = southern_transylvania_area
-			}
+			rmn_conquer_transylvania_provinces = yes
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		trigger = {
-			transylvania_area = {
-				type = all
-				owned_by = ROOT
-			}
-			southern_transylvania_area = {
-				type = all
-				owned_by = ROOT
+			has_fulfiled_province_requirement_for_mission_trigger = {
+				TOOLTIP=country_holds_or_non_sovereign_subject_holds_highlighted 
+				PROVINCES=rmn_conquer_transylvania_provinces
+				OWNER_TYPE=country_or_non_sovereign_subject_holds
 			}
 		}
 		effect = {
@@ -372,9 +365,9 @@ romanian_missions_5 = {
 		icon = mission_conquer_50_development
 		required_missions = { rmn_conquer_transylvania }
 		trigger = {
-			num_of_owned_provinces_with = {
-				fort_level = 4
-				value = 4
+			num_of_owned_provinces_with = { #Adjusted from 4/4 to 2/8. You're likely to have a lot more provinces in which to put forts, but since BT adjusted the fort levels, you cannot get level 4 easily.
+				fort_level = 2
+				value = 8
 			}
 		}
 		effect = {

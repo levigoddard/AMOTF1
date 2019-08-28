@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = interior_salish
+culture = okanagan
 religion = totemism 
 capital = "Umák"
 trade_goods = unknown

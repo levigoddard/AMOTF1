@@ -2,14 +2,14 @@
 
 owner = LXA
 controller = LXA
-culture = lao
+culture = tai
 religion = buddhism
-capital = "Muang Khoun"
+capital = "Xieng Khouang"
 trade_goods = grain
 hre = no
-base_tax = 4  
+base_tax = 4
 base_production = 4
-base_manpower = 4
+base_manpower = 3
 is_city = yes
 add_core = LXA
 add_core = MPH

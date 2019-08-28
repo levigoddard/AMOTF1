@@ -12,7 +12,7 @@
 149 = "Jedrinje"
 150 = "Nikopolj"
 151 = "Tsarigrad"
-152 = "Varazdin"
+#152 = "Varazdin"
 156 = "Temisvar"
 159 = "Silistra"
 160 = "Oltenija"

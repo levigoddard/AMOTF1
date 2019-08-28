@@ -1,17 +1,16 @@
 #1826 - Lika
 
-owner = HUN
-controller = HUN
+owner = CRO
+controller = CRO
 culture = croatian
 religion = catholic
-capital = "Senj"
-trade_goods = bt_trade_good_beer
+capital = "Kaseg"
+trade_goods = naval_supplies
 hre = no
-base_tax = 4
-base_production = 4
-base_manpower = 4
+base_tax = 1
+base_production = 1
+base_manpower = 1
 is_city = yes
-add_core = HUN
 add_core = CRO
 
 discovered_by = KAZ

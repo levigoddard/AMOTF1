@@ -4,14 +4,14 @@
 
 owner = HUN
 controller = HUN 
-culture = romanian
-religion = orthodox
+culture = hungarian
+religion = catholic
 capital = "Timisoara"
-trade_goods = livestock
+trade_goods = grain		#Rich floodplain
 hre = no
 base_tax = 4 
 base_production = 4 
-base_manpower = 2 
+base_manpower = 3 
 is_city = yes
 add_core = HUN
 add_core = TRA

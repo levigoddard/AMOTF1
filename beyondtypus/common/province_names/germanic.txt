@@ -5,7 +5,7 @@
 14 = "Fünen"
 15 = "Arenhusen" #BTP
 29 = "Tawastland"
-37 = "Liefland"
+#37 = "Liefland"
 42 = "Ermland"
 57 = "Braunschweig"
 61 = "Sachsen"
@@ -76,7 +76,7 @@
 269 = "Podlachien"
 270 = "Traken"
 #271 = "Schemaiten"
-273 = "Lettgallen"
+#273 = "Lettgallen"
 279 = "Wolhynien"
 281 = "Podolien"
 
@@ -95,8 +95,8 @@
 1773 = "Achaia"
 #1174 = "Walfischbucht"
 1827 = "Raschka"
-1831 = "Travunien"
-1834 = "Dörpt"
+7721 = "Travunien"
+#1834 = "Dörpt" #eh 
 1842 = "Narwa"
 1859 = "Kulm"
 1862 = "Kremun"
@@ -168,10 +168,10 @@
 3220 = "Tschenstochau"
 4538 = "Kulm"
 3226 = "Polangen"
-3227 = "Pilten"
-4241 = "Wolmar"
+#3227 = "Pilten"
+#4241 = "Wolmar"
 3229 = "Fellin"
-3230 = "Wiek"
+#3230 = "Wiek" #Changed location
 3231 = "Dagö"
 3294 = "Veltlin"
 3296 = "Tabor"
@@ -1466,7 +1466,7 @@
 1942 = "Schitomir"
 1944 = "Tscherkassy"
 2407 = "Perejaslaw"
-3293 = "Oberlettland"			#Or "Selen" (as "Selonia" is latin)
+#3293 = "Oberlettland"			#Or "Selen" (as "Selonia" is latin)
 4537 = "Naugardukas"
 3241 = "Winniza"
 3242 = "Neuserbien"
@@ -2658,7 +2658,7 @@
 5621 = "Minne"
 
 #gulf of california
-862 = *Pittich"
+862 = "Pittich"
 4650 = "Sankt Nikolas"
 5859 = "Sankt Anita"
 5860 = "Engelsbucht"
@@ -2719,3 +2719,216 @@
 
 # Greece
 146 = "Athen"
+
+#Arga Feb 2019
+
+#eastern europe
+7213 = "Rokischken"
+
+#Arga Mar 2019
+
+#adjustment fixes and fix for id mismatch
+882 = "Hagermann"
+895 = "Arkensaw"
+1174 = "Walfischbucht"
+2484 = "Elwha"
+2520 = "Shawanos"
+5387 = "Lüderitz"
+5748 = "Ölstadt"
+5830 = "Apachental"
+
+#namibia overhaul
+5386 = "Karasburg" #or "Kalkfontein"
+5388 = "Aroab"
+5389 = "Mariental" #hardap is the entire region
+5390 = "Sandveld" #Omaheke is about as big as austria, the province is the southern half
+5391 = "Rehoboth Gebiet" #maybe
+5394 = "Otjiwarongo"
+5395 = "Uis" #or "Damaraland"
+5396 = "Welwitschia"
+5399 = "Kamanjab" #unchanged
+5402 = "Ondangua"
+5405 = "Hereroland"
+
+#south africa and betschuanaland
+1179 = "Swellendam"
+2864 = "Lutzburg"
+5343 = "Bergrivier" #municipality, or "Piketberg"
+5363 = "Kuruman"
+5408 = "Betschuanaland"
+5409 = "Kalahari-Wüste" #or "Hukuntsi"
+5410 = "Kung-Veld"
+5424 = "Sekoma"
+
+#eastern europe
+7253 = "Kamin"
+7267 = "Saanig"
+7271 = "Trembowla" #austro-hungarian district
+
+#canada
+1002 = "Kolumburg"
+1009 = "Sankt Georg"
+2581 = "Sankt Eugen"
+2590 = "Engelhart"
+2591 = "Halleburg"
+5056 = "Kichesipirini" #unchanged
+5067 = "Pitz-See"
+5788 = "Ost-Steinbach"
+
+#cascadia and northwest
+2017 = "Sankt Michael"
+2018 = "Sphinxberge"
+2600 = "Sklavensee"
+2603 = "Heinrichsberg"
+2604 = "Frühlingsberge"
+2606 = "Drachenberge"
+4982 = "Zweibärensee"
+4988 = "Vanderhoof"
+5000 = "Alexandertal"
+5033 = "Walhalla"
+5035 = "Kaltensee"
+5636 = "Fort Pitt"
+5729 = "Van-Dijk-Tal"
+5730 = "Papstberge"
+5744 = "Bossburg"
+5745 = "Van-Brunt Berge"
+5747 = "Genf"
+5749 = "Neulondon"
+5751 = "Sieler"
+5752 = "Zumwalt"
+5755 = "Proebstel"
+5781 = "Karlsburg"
+5790 = "Jura"
+5801 = "Shishi-Küste"
+5807 = "Breidablick"
+5811 = "Bunker"
+5812 = "Berg der Wache"
+
+#eastCoast half of US
+885 = "Pampa"
+889 = "Odysseus"
+892 = "Chikaschaland"
+902 = "Plattsburg"
+907 = "Nordsiouxland"
+2008 = "Hettinger"
+2009 = "Nenzeltal"
+2496 = "Nordost-Apachenland"
+2497 = "Odessa"
+2503 = "Ulm"
+2512 = "Neu Ulm"
+2519 = "Kampagne"
+2551 = "Monogahela Wälder"
+2625 = "Phillipsburg" #or "Große Grassländer"
+2669 = "Keller"
+4627 = "Walburg"
+4629 = "Winklertal"
+5065 = "Walsenburg"
+5614 = "Baronenland"
+5615 = "Kalypso"
+5618 = "Wendte"
+5628 = "Holstein"
+5629 = "Erwin"
+
+#westCoast half of US
+875 = "Hopiland"
+878 = "Anasaziland"
+879 = "Lindenland"
+880 = "Neumexiko"
+2489 = "Neuparma"
+2491 = "Östlicher Großcanyon"
+2493 = "Amtz-Steinwald"
+4631 = "Weiße Eich"
+4634 = "Agassiz"
+4966 = "Westlicher Großcanyon"
+4979 = "Tal der Monumente"
+5044 = "Gold-Veld"
+5064 = "Stollsteimer"
+5066 = "Alamosa"
+5770 = "Boyer"
+5771 = "Palmenthal" #1886 name
+5773 = "Hesperida"
+5774 = "Sankt Rosagebirge"
+5791 = "Mekka"
+5821 = "Dämmertal"
+5826 = "Tuas"
+5835 = "Titus"
+5838 = "Navahoberg"
+5841 = "Sobaipuri"
+5843 = "Hidalgo"
+5858 = "Winterhaven"
+
+#brazil
+2905 = "Steinental"
+2919 = "Luzianien"
+
+#vietnam
+1022 = "Turon"
+2373 = "Sinoa"
+
+#Chairman Meow 11.5
+
+#Latvia
+37 = "Kreutzburg"
+38 = "Riga"
+39 = "Goldingen"
+273 = "Dünaburg"
+1935 = "Mitau"
+3227 = "Pilten"
+3293 = "Ascheraden"
+4241 = "Lemsal"
+7838 = "Grobin"
+7839 = "Windau"
+7841 = "Bauske"
+7840 = "Kandau"
+7843 = "Wenden"
+7844 = "Kokenhusen"
+7845 = "Ronneburg"
+7846 = "Rositten"
+7847 = "Marienhausen"
+7848 = "Marienburg"
+7849 = "Wolmar"
+7854 = "Hasenpoth"
+
+#Estonia
+35 = "Ösel"
+36 = "Reval"
+1834 = "Dorpat"
+1842 = "Narwa"
+3229 = "Fellin"
+3230 = "Alt-Pernau"
+3231 = "Dagö"
+7850 = "Neu-Pernau"
+7851 = "Neuhausen"
+7852 = "Oberpahlen"
+7853 = "Wesenberg"
+7855 = "Weissenstein"
+7856 = "Rappel"
+7857 = "Hapsal"
+
+#Prussia
+40 = "Memel"
+41 = "Königsberg"
+42 = "Ermland"
+43 = "Danzig"
+767 = "Lyck"
+1841 = "Marienburg"
+1859 = "Kulmerland"
+2958 = "Osterode"
+2997 = "Tuchel"
+3224 = "Stalluponen"
+5097 = "Stargard"
+7825 = "Lauenburg"
+7826 = "Bütow"
+7827 = "Schlochau"
+7828 = "Putzig"
+7829 = "Marienwerder"
+7830 = "Löbau"
+7831 = "Ortelsburg"
+7832 = "Rhein"
+7833 = "Samland"
+7834 = "Neuhausen"
+7835 = "Angerburg"
+7836 = "Georgenburg"
+7837 = "Tilsit"
+7862 = "Bartenstein"
+

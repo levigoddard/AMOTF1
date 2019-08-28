@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = halkomelem
+culture = salish
 religion = totemism 
 capital = "Iswhoymalth"
 trade_goods = unknown

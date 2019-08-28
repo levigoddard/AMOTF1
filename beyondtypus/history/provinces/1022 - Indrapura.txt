@@ -7,9 +7,9 @@ religion = hinduism
 capital = "Indrapura"
 trade_goods = incense
 hre = no
-base_tax = 8 
-base_production = 8
-base_manpower = 4
+base_tax = 5
+base_production = 5
+base_manpower = 3
 is_city = yes
 estate = estate_nobles
 add_core = CHA
@@ -37,7 +37,7 @@ discovered_by = ottoman
 	remove_core = TOK
 } # The Nguyen Lords were independent from the Trinh Lords
 1600.1.1 = {
-	religion = buddhism
+	religion = mahayana
 	culture = vietnamese
 } # Vietnamese Assimilation
 1692.1.1 = { unrest = 6 } # Rebellion against Vietnamese rule

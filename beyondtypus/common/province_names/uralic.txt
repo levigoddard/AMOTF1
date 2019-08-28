@@ -15,3 +15,11 @@
 19 = "Pohjanmaa"
 27 = "Varsinais-Suomi" #or "Turku" city name of Abo
 31 = "Savo"
+
+#Arga Feb 2019
+
+#russia
+305 = "Yegoshikha" #changes 1781 to "Perem"
+1964 = "Syktyv"
+4129 = "Yemdyn"
+5676 = "Kulömdin"

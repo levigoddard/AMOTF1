@@ -1,19 +1,17 @@
 #2710 - Berau
 
-owner = KUT
-controller = KUT
-culture = bornean
+owner = BEU
+controller = BEU
+culture = kutainese
 religion = hinduism
 capital = "Berau"
 trade_goods = fish
 hre = no
-base_tax = 4  
-base_production = 4
-base_manpower = 4
+base_tax = 5 
+base_production = 5
+base_manpower = 2
 is_city = yes
-add_core = KUT
-
-
+add_core = BEU
 
 discovered_by = chinese
 discovered_by = indian
@@ -22,4 +20,4 @@ discovered_by = ottoman
 
 1521.1.1 = { discovered_by = POR }
 
-1700.1.1 = { religion = sunni }
+1675.1.1 = { religion = sunni }

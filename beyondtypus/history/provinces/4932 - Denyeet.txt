@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = koyukon
+culture = kutchin
 religion = totemism 
 capital = "Ts’aahudaaneekk’onh Denh" 
 trade_goods = unknown

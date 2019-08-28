@@ -39,7 +39,7 @@ confirm_thalassocracy = {
 					is_strongest_trade_power = ROOT
 				}
 				
-				4346 = { #Gulf of Aden
+				1331 = { #Gulf of Aden
 					is_strongest_trade_power = ROOT
 				}
 				504 = { #Indus
@@ -94,7 +94,7 @@ confirm_thalassocracy = {
 					}
 				}
 				AND = {
-					4346 = { #Gulf of Aden
+					1331 = { #Gulf of Aden
 						is_strongest_trade_power = ROOT
 					}
 					504 = { #Indus

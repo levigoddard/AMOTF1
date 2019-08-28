@@ -1,19 +1,17 @@
 #2709 - Tarakan
 
-owner = KUT
-controller = KUT
-culture = bornean
+owner = BEU
+controller = BEU
+culture = kutainese
 religion = hinduism
 capital = "Tarakan"
 trade_goods = fish
 hre = no
-base_tax = 4  
+base_tax = 4
 base_production = 4
-base_manpower = 4
+base_manpower = 2
 is_city = yes
-add_core = KUT
-
-
+add_core = BEU
 
 discovered_by = chinese
 discovered_by = indian
@@ -22,9 +20,9 @@ discovered_by = ottoman
 
 1521.1.1 = { discovered_by = POR }
 
-1700.1.1 = { religion = sunni }
+1674.1.1 = { religion = sunni }
 1703.1.1 = {	owner = SUL
 	controller = SUL
 	add_core = SUL
-	remove_core = KUT
+	remove_core = BEU
 } # Ceded to the Sultanate of Sulu

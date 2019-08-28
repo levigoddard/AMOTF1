@@ -181,7 +181,7 @@
 167 = "Rowaan"
 
 #Bosnia
-1831 = "Travunië"
+7721 = "Travunië"
 
 #serbia
 141 = "Servië"

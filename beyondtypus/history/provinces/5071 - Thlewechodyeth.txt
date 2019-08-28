@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = slavey			#Yellowknives
+culture = chipewyan
 religion = totemism 
 capital = "Thlewechodyeth"			#Not really ideal, as it is simply the name of the river marking the Yellowknives' eastern border, but I could find no other named settlements
 trade_goods = unknown

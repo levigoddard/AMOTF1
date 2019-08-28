@@ -8,14 +8,13 @@ owner = SER
 controller = SER
 culture = serbian
 religion = orthodox
-capital = "Pristina"
-trade_goods = gold #Novo Brdo and other Silver mines in this area
+capital = "Novo Brdo"
+trade_goods = gold #Silver, Novo Brdo and other Silver mines in this area
 hre = no
 base_tax = 3 
-base_production = 3
+base_production = 4
 base_manpower = 2 
 is_city = yes
-estate = estate_church
 add_core = SER
 
 discovered_by = KAZ

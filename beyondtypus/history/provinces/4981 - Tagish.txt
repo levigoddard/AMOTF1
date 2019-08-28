@@ -4,7 +4,7 @@ latent_trade_goods = {
 	coal
 }
 
-culture = athabascan
+culture = nahanni
 religion = totemism 
 capital = "Tagish" 
 trade_goods = unknown

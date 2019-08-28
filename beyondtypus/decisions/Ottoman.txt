@@ -101,6 +101,7 @@ country_decisions = {
 					add_base_manpower = 2
 				}
 			}
+			149 = { set_estate = estate_dhimmi }
 			set_government_rank = 3
 			anatolia_region = {
 				limit = {

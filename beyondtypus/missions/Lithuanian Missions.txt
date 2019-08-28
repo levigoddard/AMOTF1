@@ -512,6 +512,20 @@ lithuanian_missions_slot = {
 				}
 				add_permanent_claim = ROOT
 			}
+			latgallia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			north_livonia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
@@ -524,6 +538,8 @@ lithuanian_missions_slot = {
 				area = livonia_area
 				area = estonia_ingria_area
 				area = curonia_area
+				area = latgallia_area
+				area = north_livonia_area
 			}
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
@@ -539,6 +555,14 @@ lithuanian_missions_slot = {
 				country_or_non_sovereign_subject_holds = ROOT	
 			}
 			curonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			latgallia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			north_livonia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT	
 			}
@@ -662,6 +686,20 @@ lithuanian_missions_slot = {
 					}
 					add_permanent_claim = ROOT
 				}
+				pskov_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT	}
+					}
+					add_permanent_claim = ROOT
+				}
+				toropets_area = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT	}
+					}
+					add_permanent_claim = ROOT
+				}
 			}
 		}
 	}
@@ -669,7 +707,11 @@ lithuanian_missions_slot = {
 		icon = mission_assemble_an_army
 		required_missions = { defeat_the_livonian_order }
 		provinces_to_highlight = {
-			area = novgorod_area
+			OR = {
+				area = novgorod_area
+				area = pskov_area
+				area = toropets_area
+			}
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -677,6 +719,14 @@ lithuanian_missions_slot = {
 		trigger = {
 			OR = {
 				novgorod_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT	
+				}
+				pskov_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT	
+				}
+				toropets_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT	
 				}

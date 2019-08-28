@@ -32,7 +32,6 @@ country_decisions = {
 						culture_group = berber_group
 					}
 					OR = {
-						capital_scope = { area = algiers_area }
 						capital_scope = { area = hautes_plaines_area }
 						capital_scope = { area = ouled_nail_area }
 						capital_scope = { area = kabylia_area }
@@ -45,7 +44,6 @@ country_decisions = {
 			}
 			any_owned_province = {
 				OR = {
-					area = algiers_area
 					area = hautes_plaines_area
 					area = ouled_nail_area
 					area = kabylia_area
@@ -58,7 +56,6 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = algiers_area
 				area = hautes_plaines_area
 				area = ouled_nail_area
 				area = kabylia_area
@@ -82,7 +79,6 @@ country_decisions = {
 				all_owned_province = {
 					is_core = ROOT
 					OR = {
-						area = algiers_area
 						area = hautes_plaines_area
 						area = ouled_nail_area
 						area = kabylia_area
@@ -107,10 +103,6 @@ country_decisions = {
 			add_country_modifier = {
 				name = centralization_modifier
 				duration = 7300
-			}
-			algiers_area = {
-				limit = { NOT = { owned_by = ROOT } }
-				add_permanent_claim = ALG
 			}
 			north_saharan_area = {
 				limit = { NOT = { owned_by = ROOT } }
@@ -315,15 +307,6 @@ country_decisions = {
 				limit = {
 					mission_completed = gra_restore_faith_in_the_throne
 					has_dlc = "Golden Century"
-				}
-				algiers_area = {
-					limit = {
-						NOT = {
-							owned_by = ROOT
-							is_core = ROOT
-						}
-					}
-					add_permanent_claim = ROOT
 				}
 				hautes_plaines_area = {
 					limit = {
@@ -1689,6 +1672,134 @@ country_decisions = {
 		}
 		ai_importance = 400 #
 	}
+
+###################################################################################################
+################################			Jerusalem			 ##############################################			#Not actually done, other than to prevent end-game tags from forming it
+###################################################################################################
+	kingdom_of_jerusalem = {
+		major = yes
+		potential = {
+			bt_generic_can_form_potential_check = yes
+			NOT = { has_country_flag = formed_jerusalem }
+			NOT = { exists = KOJ }
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			religion = catholic
+			NOT = { government = republic }
+			NOT = { has_reform = celestial_empire }
+			OR = {
+				owns = 379
+				AND = {
+					ai = no
+					tag = KNI
+				}
+				AND = {
+					ai = no
+					tag = CYP
+				}
+				AND = {
+					ai = no
+					tag = PRO
+				}
+			}
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 364 #Gazzah
+				province_id = 379 #Jerusalem
+				province_id = 1854 #Jaffa
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns_core_province = 364 #Gazzah
+			owns_core_province = 379 #Jerusalem
+			owns_core_province = 1854 #Jaffa
+			379 = {
+				is_state = yes
+			}
+		}
+		effect = {
+			add_prestige = 25
+			every_province = {
+				limit = {
+					OR = {
+						area = trans_jordan_area
+						area = palestine_area
+						province_id = 378 #County of Tripoli
+						province_id = 1855 #Sayda
+						province_id = 4268 #Aqaba
+					}
+				}
+				add_core = KOJ
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							NOT = { tag = KNI }
+							NOT = { tag = CYP }
+							NOT = { tag = PRO }
+						}
+						was_never_end_game_tag_trigger = no
+					}
+				}
+				release = KOJ
+				KOJ = { change_primary_culture = ROOT }
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = KNI
+						tag = CYP
+						tag = PRO
+					}
+					was_never_end_game_tag_trigger = yes
+				}
+				change_tag = KOJ
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+			if = {
+				limit = { tag = KNI }
+				set_country_flag = knights_formed_jerusalem
+			}
+			KOJ = {
+				set_capital = 379 #Jerusalem
+				change_religion = catholic
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+					}
+					change_government = monarchy
+					set_legacy_government = feudal_monarchy
+				}
+				if = {
+					limit = {
+						NOT = { government_rank = 2 }
+					}
+					set_government_rank = 2
+				}
+				set_country_flag = formed_jerusalem
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 	
 ###################################################################################################
 ################################			Morocco			 ##############################################
@@ -1702,6 +1813,7 @@ country_decisions = {
 			NOT = { tag = TUN }
 			NOT = { tag = TLC }
 			NOT = { tag = ALG }
+			NOT = { tag = ADU }
 			NOT = { tag = TRP }
 			NOT = { tag = OTN }
 			OR = {
@@ -2090,7 +2202,7 @@ country_decisions = {
 			add_prestige = 25
 			change_primary_culture = prussian
 			PRU = {
-				every_owned_province = {
+				random_owned_province = {
 					limit = { 
 						OR = {
 							culture = saxon
@@ -2286,7 +2398,7 @@ country_decisions = {
 			add_prestige = 25
 			change_primary_culture = prussian
 			PRU = {
-				every_owned_province = {
+				random_owned_province = {
 					limit = { 
 						OR = {
 							culture = saxon

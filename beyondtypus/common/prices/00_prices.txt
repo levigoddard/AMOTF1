@@ -43,7 +43,7 @@ copper = {
 
 gold = {
 	base_price = 0
-	goldtype = yes
+	goldtype = yes			#Functionally 20 price.
 }
 
 iron = {

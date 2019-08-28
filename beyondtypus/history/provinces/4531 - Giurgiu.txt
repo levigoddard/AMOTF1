@@ -1,18 +1,18 @@
 # Giurgiu
 
-owner = WAL
-controller = WAL  
+owner = TUR
+controller = TUR  
 culture = romanian
 religion = orthodox
 capital = "Giurgiu"
 trade_goods = livestock
 hre = no
-base_tax = 7
-base_production = 7
-base_manpower = 4
+base_tax = 1
+base_production = 1
+base_manpower = 2
 is_city = yes
 add_core = WAL
-fort_15th = yes
+add_core = TUR
 discovered_by = KAZ
 discovered_by = CRI
 discovered_by = GOL

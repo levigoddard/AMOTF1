@@ -1,6 +1,6 @@
 # No previous file for Kesagami
 
-culture = cree
+culture = anishinabe
 religion = totemism
 capital = "Kapuskasing"
 trade_goods = fur

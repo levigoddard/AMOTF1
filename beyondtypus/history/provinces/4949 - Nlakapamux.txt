@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = interior_salish			#Both Thompson River and Okanogan here... Okanogan looks better.
+culture = okanagan			#Both Thompson River and Okanogan here... Okanogan looks better.
 religion = totemism 
 capital = "Metxwú" 
 trade_goods = unknown

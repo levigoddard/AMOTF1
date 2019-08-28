@@ -6,6 +6,7 @@ country_decisions = {
 			owns = 345
 			owns = 2470
 			345 = { province_has_center_of_trade_of_level = 1 }
+			NOT = { 2470 = { province_has_center_of_trade_of_level = 1 } }
 			num_of_owned_provinces_with = {
 				value = 5
 				AND = {

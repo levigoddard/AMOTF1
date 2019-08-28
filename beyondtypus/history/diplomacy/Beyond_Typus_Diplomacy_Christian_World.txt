@@ -179,13 +179,13 @@ union = {
 	first = ARA
 	second = SIC
 	start_date = 1409.7.26
-	end_date = 1444.11.16 #BeyondTypus batch edit shortcut second performance start begins
+	end_date = 1442.3.3	#Naples temporary annexes Sicily. Actually more complicated, but that is what we're saying for now.
 }
 
 union = {
 	first = ARA
 	second = SIC
-	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	start_date = 1458.6.27 #Resplit.
 	end_date = 1516.1.22
 }
 
@@ -216,6 +216,20 @@ union = {
 	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
 	end_date = 1453.1.1			#Bank of Saint George takes posession of the island, and the weak Aragonese influence is broken.
 } #Counts of Cinarca, a personal union under the Crown of Aragon... sort of.
+
+guarantee = {
+	first = ARA
+	second = DSS
+	start_date = 1444.1.1
+	end_date = 1444.11.13 #BeyondTypus batch edit shortcut the second shattering begins
+}
+
+guarantee = {
+	first = ARA
+	second = DSS
+	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1483.1.1
+}
 
 
 
@@ -858,7 +872,97 @@ vassal = {
 ############################################################
 ############################################################
 
+vassal = {
+	first = TEU
+	second = PMS
+	start_date = 1291.5.19 #BeyondTypus batch edit shortcut Start Date
+	end_date = 1291.5.21 #BeyondTypus batch edit shortcut the first shattering begins
+}
 
+vassal = {
+	first = TEU
+	second = PMS
+	start_date = 1291.5.26 #BeyondTypus batch edit shortcut first performance start ends
+	end_date = 1444.11.13 #BeyondTypus batch edit shortcut the second shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = PMS
+	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1525.1.1
+}
+
+vassal = {
+	first = TEU
+	second = KUL
+	start_date = 1291.5.19 #BeyondTypus batch edit shortcut Start Date
+	end_date = 1291.5.21 #BeyondTypus batch edit shortcut the first shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = KUL
+	start_date = 1291.5.26 #BeyondTypus batch edit shortcut first performance start ends
+	end_date = 1444.11.13 #BeyondTypus batch edit shortcut the second shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = KUL
+	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1525.1.1
+}
+
+vassal = {
+	first = TEU
+	second = SMB
+	start_date = 1291.5.19 #BeyondTypus batch edit shortcut Start Date
+	end_date = 1291.5.21 #BeyondTypus batch edit shortcut the first shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = SMB
+	start_date = 1291.5.26 #BeyondTypus batch edit shortcut first performance start ends
+	end_date = 1444.11.13 #BeyondTypus batch edit shortcut the second shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = SMB
+	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1525.1.1
+}
+
+vassal = {
+	first = TEU
+	second = WRM
+	start_date = 1291.5.19 #BeyondTypus batch edit shortcut Start Date
+	end_date = 1291.5.21 #BeyondTypus batch edit shortcut the first shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = WRM
+	start_date = 1291.5.26 #BeyondTypus batch edit shortcut first performance start ends
+	end_date = 1444.11.13 #BeyondTypus batch edit shortcut the second shattering begins
+}
+
+vassal = {
+	first = TEU
+	second = WRM
+	start_date = 1444.11.18 #BeyondTypus batch edit shortcut second performance start ends
+	end_date = 1466.1.1
+}
+
+# Polish vassal
+vassal = {
+	first = POL
+	second = WRM
+	start_date = 1479.1.1
+	end_date = 1512.1.1
+}
 
 
 ############################################################
@@ -1304,3 +1408,9 @@ vassal = {
 	end_date = 1461.1.1
 }	#Evidence I found says feo was a vassal state of the empire of Trebizond, and Trenizond's last remaining holding before the Ottomans completely took over.
 
+union = {
+	first = HUN
+	second = CRO
+	start_date = 1444.1.1
+	end_date = 1526.1.1
+}

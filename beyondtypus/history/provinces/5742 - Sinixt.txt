@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = interior_salish
+culture = okanagan
 religion = totemism 
 capital = "Qepitles" 			#iffy spelling and source, but works for now. Near Castlegar
 trade_goods = unknown

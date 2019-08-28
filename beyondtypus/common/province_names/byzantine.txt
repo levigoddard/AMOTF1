@@ -361,7 +361,7 @@
 138 = "Tribalia"
 1766 = "Dardania"
 1827 = "Ras"
-1831 = "Tervunia"
+7721 = "Tervunia"
 3165 = "Odessos"			#note (ancient name)
 3184 = "Ascrivos"
 

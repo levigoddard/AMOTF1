@@ -1,19 +1,19 @@
 #659 - Lingga
 
-owner = SAK
-controller = SAK
-culture = sumatran
+owner = MLC
+controller = MLC
+culture = malayan
 religion = sunni
-capital = "Lingga"
+capital = "Daik"
 trade_goods = fish
 hre = no
-base_tax = 2  
-base_production = 2 
-base_manpower = 2 
+base_tax = 3
+base_production = 3
+base_manpower = 2
 is_city = yes
-add_core = SAK
-
-
+add_core = MLC
+add_core = JOH
+add_core = RIA
 
 discovered_by = chinese
 discovered_by = indian
@@ -24,3 +24,7 @@ discovered_by = ottoman
 1509.1.1 = { discovered_by = POR }
 1521.1.1 = { discovered_by = SPA }
 
+1528.1.1 = {
+	owner = JOH
+	controller = JOH
+}

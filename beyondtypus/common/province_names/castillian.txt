@@ -13,6 +13,7 @@
 232 = "Braganza"
 #333 = "Baleares"			#BT removed
 367 = "Azores"
+1747 = "Cáceres"
 1748 = "Jaén"
 1749 = "Cádiz"
 1750 = "Alicante"
@@ -44,6 +45,7 @@
 205 = "Saboya"
 1247 = "Córcega"
 1875 = "Cúneo"
+2986 = "Cáller"
 
 173 = "Labort"
 

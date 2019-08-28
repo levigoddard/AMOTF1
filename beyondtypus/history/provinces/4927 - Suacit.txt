@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = yupik
+culture = sugpiat
 religion = totemism 
 capital = "Suacit" 
 trade_goods = unknown

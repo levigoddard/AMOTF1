@@ -980,3 +980,194 @@
 7155 = "Dinibouli"
 7158 = "Shimeonis"
 
+# Arga Feb 2019
+
+#arabia yemen
+388 = "'Adan"
+5239 = "'Ibb"
+
+#Bab el mandeb
+1212 = "Zayla"
+1215 = "Tajurah" #"Tachurah"
+
+#barbary coast
+4566 = "Habira"
+5224 = "Nabil"
+5225 = "Al-Mahdiiya"
+
+#greece
+145 = "Lakunia" #or "Mestras"
+1773 = "'Iilia"
+3179 = "'Arghulidha" #Argolitha
+7100 = "Kuruni"
+7101 = "Maysinia"
+7102 = "'Arkadia"
+7103 = "Kalafrita"
+7104 = "Kurunth"
+7135 = "Kalibuli"
+7163 = "Al-Wusul Faqat"
+
+#sudan
+2797 = "Šandi"
+2800 = "Kusti"
+5287 = "Sinjah"
+
+#somalia
+1205 = "Maqadišu"
+1207 = "Ogadeniya"
+2778 = "Wardair"
+
+#East african coast
+1197 = "Dar Es Salaam"
+1199 = "Kaole"
+1201 = "Zanjibaar"
+2796 = "Siyu"
+5382 = "Gaza"
+
+#brasil
+2910 = "Minqar Al-Tawqan"
+2923 = "Al-Maraei Al-Jayida"
+2924 = "Taymun"
+2926 = "Manhawtat"
+2929 = "Haql"
+2930 = "Tupajus"
+2934 = "Qaleat Al-Sawda'"
+
+#the thing next to venezuela + venezuela
+830 = "Qanat Al-Khadra'"
+2807 = "Sahil Al-Rahban"
+2808 = "Nuqtat Thabita"
+
+#caribbean
+2656 = "Mina' Al-Sultan"
+5581 = "Tadkhin"
+
+#South Afrika
+1180 = "Umtata"
+5362 = "Maeiz"
+5384 = "Al-Thiqa"
+5391 = "Nafwrat Al-Jamus"
+5392 = "Usaquš"
+5393 = "Rbye Harin"
+5425 = "Hamam Dafi"
+
+#north american east coast
+970 = "Aldhura"
+
+#indonesia
+624 = "Bintan"
+633 = "Zuhur"
+635 = "Taymur Al-Gharbia"
+
+#australia
+2726 = "Marajan Al'Ahmar"
+
+#Arga Feb 2019
+
+#south africa
+5349 = "Nafurat Al-Darar"
+5361 = "Hadba"
+
+#middle east
+5293 = "'Ain Warda"
+
+#Arga Mar 2019
+
+#name adjustment
+366 = "Al-Djezir Al-Khalida"
+
+#al-andalus
+4557 = "Qal'at 'Ayyub"
+
+#france
+167 = "Rawan"
+168 = "Kayn"
+169 = "Shant Bariuk"
+170 = "Fanastir"
+171 = "Fa'ïn"
+172 = "Nant"
+177 = "Mayn"
+178 = "'Anju"
+184 = "Urlianash"
+195 = "Liamuzan"
+201 = "Marsiliyyah"
+3068 = "Kambar"
+3110 = "Juzur Al-Qinal"
+4384 = "Rin"
+4385 = "Al-Manish"
+4389 = "Hisn Al-Rahmin"
+
+#italy
+1247 = "Ajaksiu"
+2980 = "Luka"
+7038 = "Bunifasyu"
+7040 = "Kursika Al-Eulya"
+
+#hre
+96 = "'Arad Al-Bahr"
+
+#atlantic
+4565 = "Tanrif"
+
+#guinea
+2258 = "Axim" #not arabic name
+
+#colonial cali
+866 = "Dhïb Al-Syf"
+870 = "'Ardu Al-Nabidh"
+2021 = "Al-Bawwabat Al-Dhahabia"
+2476 = "Tlal Al-Jana"
+2490 = "Buhayrat Maliha"
+4959 = "Al-Suhul Al-Sharqia"
+5018 = "Mina' Al-Malayika"
+5043 = "Hududia"
+5066 = "Shajarat Hur"
+5758 = "Madinat Al-Sukar"
+5774 = "Nakhlat Al-Sahra"
+5833 = "Hadayiq"
+5837 = "Bayt Al-Tiyn"
+5857 = "Nafwrat Al-Wadi"
+5859 = "Al-Miah Al-Khadra"
+
+#colombia and venezuela
+831 = "Karaqus"
+832 = "Buayaka"
+4597 = "Al'Atraju"
+
+#colonial eastcoast
+930 = "Ghania"
+931 = "Tlal Al-Kahna"
+946 = "Dayirat Al-Muqid"
+967 = "Al-Jazirat Al-Hamra"
+968 = "Min Al-Talal Al-Zurqa'"
+971 = "Aš-Šaam"
+2010 = "Nahr Eamiq"
+2013 = "Mina' Hurin"
+2537 = "Dimashq Al-Jadidah" #there are damascus and cairo in the area irl
+2639 = "Fare Tawil"
+
+#colonial canada
+989 = "Hisn Al-Dhiyb"
+
+#colonial newfoundland
+980 = "Shajarat Al-Btula"
+5059 = "Dayq"
+
+#colonial haiti
+488 = "Mina' Al-Warith"
+4619 = "Jazirat Al-Salhfa"
+
+#colonial brazil
+759 = "Almas"
+2934 = "Manaws"
+
+#pacific
+1995 = "Myat Al-Juzur"
+
+#Dub Apr 2019
+
+4557 = "Qalat Ayyub"
+4550 = "Qastalayun" #I believe I saw a city in Andalusia that was named this, which translates into the same thing. Sadly I cannot find the source any more. 
+2987 = "Larida" #Not the right city, but it was an important one in the vicinity during the Caliphate of Cordoba
+4552 = "Siqubiyyah"
+232 = "Barayansiyyah" #I believe. I cannot remember what I identified it as on my old computer.

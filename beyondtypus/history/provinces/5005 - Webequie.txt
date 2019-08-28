@@ -1,6 +1,6 @@
 # No previous file for Beyond Typus province
 
-culture = cree
+culture = ojicree
 religion = totemism 
 capital = "Webequie" 
 trade_goods = unknown

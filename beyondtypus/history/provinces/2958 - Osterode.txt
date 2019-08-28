@@ -9,11 +9,11 @@ culture = prussian
 religion = catholic
 trade_goods = naval_supplies
 hre = no
-base_tax = 4 
-base_production = 4 
-base_manpower = 6
+base_tax = 6 
+base_production = 6 
+base_manpower = 3
 is_city = yes
-#fort_15th = yes			#Removing fort, TO lost 17 extra dev, most of it taxes and production, when I brought dev back to 1.19 vanilla levels, so it can barely afford the upkeep and it is within Marienburg's ZoC
+#fort_15th = yes
 add_core = TEU
 
 discovered_by = western
