@@ -3,7 +3,7 @@
 owner = LAT
 controller = LAT
 add_core = LAT
-culture = greek
+culture = m_spartan 
 religion = orthodox
 capital = "Parga"
 base_tax = 2

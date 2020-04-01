@@ -2,14 +2,14 @@
 
 owner = VEN
 controller = VEN
-culture = greek
+culture = m_athenian 
 religion = orthodox
 capital = "Athens"
 trade_goods = dyes			#a major city, could have any number of goods including cloth, fish, books, glass, salt, or even silk, though it appears its soaps, dyes, and beauty products were some of the best known.
 hre = no
-base_tax = 7
-base_production = 7
-base_manpower = 5
+base_tax = 12
+base_production = 12
+base_manpower = 10
 #fort_15th = yes
 is_city = yes
 add_core = VEN

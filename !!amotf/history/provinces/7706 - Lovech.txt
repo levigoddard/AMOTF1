@@ -25,7 +25,12 @@ discovered_by = ottoman
 discovered_by = eastern
 discovered_by = western
 
-
+1443.5.21 = { 
+	owner = BYA
+	controller = BYA
+	add_core = BYA
+	remove_core = TUR
+}
 #Province history completed by - Draiocht
 #1291.5.21 = { #BeyondTypus batch edit shortcut the first shattering begins
 #	owner = XXX

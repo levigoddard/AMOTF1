@@ -2,7 +2,7 @@
 
 owner = VGO
 add_core = VGO
-culture = Varangian
+culture = o_varangoi
 religion = orthodox
 capital = "Cembalo"
 base_tax = 6

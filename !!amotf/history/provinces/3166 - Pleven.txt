@@ -34,3 +34,9 @@ discovered_by = western
 1689.1.1 = { unrest = 0 } # Brutally suppressed by Janissaries
 1793.1.1 = { unrest = 5 } # Pasvanoglu Rebellion
 1798.1.1 = { unrest = 0 }
+
+1443.5.21 = { 
+	owner = BUL
+	controller = BUL
+
+}

@@ -2,7 +2,7 @@
 
 owner = LAT
 controller = LAT
-culture = greek
+culture = m_athenian 
 religion = orthodox
 capital = "Larissa"
 trade_goods = grain

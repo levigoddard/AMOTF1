@@ -2,7 +2,7 @@
 
 owner = BYZ
 controller = BYZ
-culture = greek
+culture = m_athenian 
 religion = orthodox
 capital = "Negroponte"
 trade_goods = fish

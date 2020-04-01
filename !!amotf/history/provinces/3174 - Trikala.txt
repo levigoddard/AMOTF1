@@ -2,7 +2,7 @@
 
 owner = LAT
 controller = LAT
-culture = greek			
+culture = m_athenian 
 religion = orthodox
 capital = "Trikala"
 trade_goods = wine			#known for wine

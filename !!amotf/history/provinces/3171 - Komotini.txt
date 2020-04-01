@@ -2,7 +2,7 @@
 
 owner = BYZ
 controller = BYZ
-culture = greek
+culture = makadoni 
 religion = orthodox
 capital = "Komotini"
 trade_goods = grain

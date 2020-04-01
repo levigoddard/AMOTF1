@@ -25,3 +25,7 @@ discovered_by = eastern
 discovered_by = muslim
 discovered_by = ottoman
 
+1443.5.21 = { 
+	owner = BUL
+	controller = BUL
+}

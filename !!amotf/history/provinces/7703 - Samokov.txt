@@ -3,7 +3,7 @@
 owner = BUL
 controller = BUL
 add_core = BUL
-culture = bulgarian
+culture = Slaviko 
 religion = orthodox
 capital = "Samokov"
 base_tax = 1

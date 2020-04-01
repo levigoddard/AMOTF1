@@ -2,7 +2,7 @@
 
 owner = BYZ
 controller = BYZ
-culture = bulgarian
+culture = Slaviko 
 religion = orthodox
 capital = "Varna"
 trade_goods = grain

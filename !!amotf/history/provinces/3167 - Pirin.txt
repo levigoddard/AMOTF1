@@ -29,7 +29,13 @@ discovered_by = eastern
 discovered_by = western
 
 1404.1.1 = { revolt = { type = pretender_rebels size = 0 } controller = REB }
-1413.1.1 = { revolt = {} controller = BYA }
+1413.1.1 = { revolt = {} controller = BYA 
+}
+1443.5.21 = { 
+	owner = BUL
+	controller = BUL
+
+}
 1555.1.1 = { unrest = 5 } # General discontent against the Janissaries' dominance
 1556.1.1 = { unrest = 2 }
 1598.1.1 = { unrest = 6 } # Oppositions around Tarnovo

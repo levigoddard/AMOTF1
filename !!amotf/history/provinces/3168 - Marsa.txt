@@ -2,7 +2,7 @@
 
 owner = BYZ
 controller = BYZ
-culture = greek			#uncertain, but appears a large Greek presence continued here for a little while after Ottoman conquest. It is right in Byzantine-Bulgarian contested territory.
+culture = makadoni #uncertain, but appears a large Greek presence continued here for a little while after Ottoman conquest. It is right in Byzantine-Bulgarian contested territory.
 religion = orthodox
 capital = "Marsa"			#modern Haskovo
 trade_goods = grain

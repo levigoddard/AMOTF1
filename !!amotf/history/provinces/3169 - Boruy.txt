@@ -2,7 +2,7 @@
 
 owner = BYA
 controller = BYA
-culture = bulgarian
+culture = Slaviko 
 religion = orthodox
 capital = "Boruy"			#modern Stara Zagora
 trade_goods = copper

@@ -3,7 +3,7 @@
 owner = MKD
 controller = MKD
 add_core = MKD
-culture = bulgarian
+culture = makadoni 
 religion = orthodox
 capital = "Shtip"
 base_tax = 1

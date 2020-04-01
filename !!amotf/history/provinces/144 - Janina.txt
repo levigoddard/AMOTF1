@@ -2,7 +2,7 @@
 
 owner = LAT
 controller = LAT
-culture = greek
+culture = m_athenian 
 religion = orthodox
 capital = "Ioannina"
 trade_goods = wool

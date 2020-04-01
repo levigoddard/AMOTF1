@@ -7,9 +7,9 @@ religion = coptic
 capital = "Eskendereya"
 trade_goods = silk			#spices in vanilla... what spices? or Even what trade route for others' spices? This was a major port, but the spice trade was elsewhere after Arab conquest
 hre = no
-base_tax = 10
-base_production = 10
-base_manpower = 8
+base_tax = 12
+base_production = 12
+base_manpower = 12
 is_city = yes
 estate = estate_burghers
 add_core = MAM
@@ -42,11 +42,11 @@ add_permanent_province_modifier = {
 	duration = -1
 }
 
-1444.1.1 = {
+1442.1.1 = {
 	owner = CPT
 	controller = CPT
 	add_core = CPT
-} # Conquered by Coptic rebellion troops
+} # Conquered by Coptic rebellion troops under the ERE
 1452.1.1 = {
 	owner = MAM
 	controller = MAM

@@ -3,7 +3,7 @@
 owner = BYZ
 controller = BYZ
 add_core = BYZ
-culture = Slaviko 
+culture = Imperial 
 religion = orthodox
 capital = "Sozopolis"
 base_tax = 3
