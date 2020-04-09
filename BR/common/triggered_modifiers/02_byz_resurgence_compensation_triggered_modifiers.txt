@@ -1,0 +1,63 @@
+# br_byz_subject_controlled_jerusalem = {
+	# potential = {
+		# normal_or_historical_nations = yes
+		# OR = {
+			# religion_group = christian
+			# religion_group = muslim
+			# religion = jewish
+		# }
+		# has_discovered = 379	# Judea
+		# NOT = { owns = 379 } # Judea
+		# owns_or_non_sovereign_subject_of = 379 # Judea
+	# }
+
+	# trigger = {
+		# NOT = { owns = 379 } # Judea
+		# owns_or_non_sovereign_subject_of = 379 # Judea
+	# }
+
+	# prestige = 0.5
+	# missionaries = 1
+	# global_heretic_missionary_strength = 0.02
+# }
+
+# br_byz_subject_controlled_rome = {
+	# potential = {
+		# normal_or_historical_nations = yes
+		# NOT = { religion = catholic }
+		# OR = {
+			# religion_group = christian
+			# religion_group = muslim
+		# }
+		# has_discovered = 118	# Rome
+		# NOT = { owns = 118 } # Rome
+		# owns_or_non_sovereign_subject_of = 118 # Rome
+	# }
+	
+	# trigger = {
+		# NOT = { owns = 118 } # Rome
+		# owns_or_non_sovereign_subject_of = 118 # Rome
+	# }
+
+	# prestige = 0.5
+	# missionaries = 1	
+# }
+
+# br_byz_subject_controlled_mecca = {
+	# potential = {
+		# normal_or_historical_nations = yes
+		# religion_group = christian
+		# has_discovered = 385	# Mecca
+		# NOT = { owns = 385 } # Mecca
+		# owns_or_non_sovereign_subject_of = 385 #Mecca
+	# }
+
+	# trigger = {
+		# NOT = { owns = 385 } # Mecca
+		# owns_or_non_sovereign_subject_of = 385 #Mecca
+	# }
+
+	# prestige = 0.5
+	# missionaries = 1
+	# tolerance_own = 1
+# }

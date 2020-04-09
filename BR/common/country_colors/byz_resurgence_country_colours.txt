@@ -1,0 +1,11 @@
+# Dacia
+DAC = {
+    color1= { 205 17 38  } #Red
+    color2= { 251 208 22 } #Yellow
+    color3= { 0 43 126 } #Blue
+}
+TRE = {
+    color1 = { 40  164  157 }  #Teal
+    color2= { 248 196 32 } #Yellow
+    color3= { 40  164  157 } #Teal
+}

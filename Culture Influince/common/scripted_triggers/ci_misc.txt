@@ -1,0 +1,71 @@
+has_idea_to_settle_faster = {
+	OR = {
+		has_idea = german_settlers #SIL
+		has_idea = viking_settlements #SCA
+		has_idea = GRP_german_settlers #GRP
+		has_idea = celts_resettle #CEL & GAU
+		has_idea = more_than_irish #IRE
+		has_idea = koi_urban_culture #ANI
+		has_idea = citizen_speak_turkish #TRK
+	}
+}
+
+latin_languages_trigger = {
+	OR = {
+		culture_group = french
+		culture_group = francoprovencal
+		culture_group = occitano_romance
+		culture_group = iberian
+		culture_group = rhaetian
+		culture_group = dacian
+		culture_group = latin
+		culture_group = gallo_italic
+		culture_group = island_romance
+	}
+}
+
+native_american_trigger = { #West->East
+	OR = {
+		#North
+		culture_group = eskaleut
+		culture_group = northern_na_dene #Na Dene
+		culture_group = mosan_culture_group #Haida
+		culture_group = penutian
+		culture_group = wakashan_group
+		culture_group = salish_group #Salishan
+		culture_group = chimakuan
+		culture_group = pacific_na_dene #Pacific Athabaskan
+		culture_group = pacific_algonquian_group
+		culture_group = sonoran #Numic
+		culture_group = hokan
+		culture_group = chumash_group
+		culture_group = central_algonquian #Algonquian
+		culture_group = apachean #Peubloan
+		culture_group = siouan
+		culture_group = caddoan
+		culture_group = southern_uto_aztecan #Aztecan
+		culture_group = aridoamerican
+		culture_group = central_american
+		culture_group = otomanguean
+		culture_group = maya
+		culture_group = chibchan
+		culture_group = muskogean
+		culture_group = iroquoian
+		culture_group = eastern_algonquian
+		culture_group = dorset
+		#Caribbean
+		culture_group = carribean #Waroid
+		culture_group = arawakan_g
+		#South
+		culture_group = cariban_g
+		culture_group = maranon
+		culture_group = andean_group
+		culture_group = je_tupi #Tupi
+		culture_group = araucanian
+		culture_group = mataco
+		culture_group = je
+		#Pacific
+		culture_group = polynesian
+		culture_group = aboriginal
+	}
+}

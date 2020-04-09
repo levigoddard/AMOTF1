@@ -1,0 +1,2322 @@
+namespace = cultural_influence_celtic
+#(Something in Celtic!)
+
+country_event = { #Merges Gaelic and Brythonic groups
+	id = cultural_influence_celtic.1
+	title = goidelic_brythonic_merger.title
+	desc = goidelic_brythonic_merger.desc
+	picture = GREAT_BUILDING_eventPicture
+
+	major = yes
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			culture_group = gaelic
+			culture_group = brythonic
+		}
+		total_development = 400 #2/3 England at game start
+	}
+
+	immediate = {
+		hidden_effect = {
+			merge_celtic = yes
+			set_global_flag = gaels_and_britons_reunited_into_one_group
+		}
+	}
+
+	option = {
+		name = goidelic_brythonic_merger.a
+
+		custom_tooltip = goidelic_brythonic_merger.tooltip
+	}
+}
+
+province_event = { #Irish reclamation
+	id = cultural_influence_celtic.2
+	title = irish_reclamation.title
+	desc = irish_reclamation.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = gaelic }
+			owner = { culture_group = celtic }
+		}
+		NOT = { culture = irish }
+		NOT = { culture = celtic_irish }
+		NOT = { culture = goidhealach }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = gaelic
+							culture_group = celtic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		gaelic_irish_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = celtic
+				culture_group = gaelic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = irish_reclamation.a
+
+		if = {
+			limit = {
+				has_global_flag = gaels_and_britons_reunited_into_one_group
+			}
+			change_culture = celtic_irish
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = gaels_and_britons_reunited_into_one_group }
+			}
+			change_culture = irish
+		}
+	}
+}
+
+province_event = { #Highlander reclamation
+	id = cultural_influence_celtic.3
+	title = highlander_reclamation.title
+	desc = highlander_reclamation.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = gaelic }
+			owner = { culture_group = celtic }
+		}
+		NOT = { culture = highland_scottish }
+		NOT = { culture = celtic_highlander }
+		NOT = { culture = goidhealach }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = gaelic
+							culture_group = celtic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		gaelic_scottish_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = celtic
+				culture_group = gaelic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = highlander_reclamation.a
+
+		if = {
+			limit = {
+				has_global_flag = gaels_and_britons_reunited_into_one_group
+			}
+			change_culture = celtic_highlander
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = gaels_and_britons_reunited_into_one_group }
+			}
+			change_culture = highland_scottish
+		}
+	}
+}
+
+province_event = { #Manx reclamation
+	id = cultural_influence_celtic.4
+	title = manx_reclamation.title
+	desc = manx_reclamation.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = gaelic }
+			owner = { culture_group = celtic }
+		}
+		NOT = { culture = manx }
+		NOT = { culture = celtic_manx }
+		NOT = { culture = goidhealach }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = gaelic
+							culture_group = celtic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		manx_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = celtic
+				culture_group = gaelic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = manx_reclamation.a
+
+		if = {
+			limit = {
+				has_global_flag = gaels_and_britons_reunited_into_one_group
+			}
+			change_culture = celtic_manx
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = gaels_and_britons_reunited_into_one_group }
+			}
+			change_culture = manx
+		}
+	}
+}
+
+province_event = { #Cornish Expansion
+	id = cultural_influence_celtic.5
+	title = cornish_expansion.title
+	desc = cornish_expansion.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = brythonic }
+			owner = { culture_group = celtic }
+		}
+		NOT = { culture = cornish }
+		NOT = { culture = celtic_cornish }
+		NOT = { culture = brythonaidd }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = brythonic
+							culture_group = celtic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		briton_cornish_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = celtic
+				culture_group = brythonic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = cornish_expansion.a
+
+		if = {
+			limit = {
+				has_global_flag = gaels_and_britons_reunited_into_one_group
+			}
+			change_culture = celtic_cornish
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = gaels_and_britons_reunited_into_one_group }
+			}
+			change_culture = cornish
+		}
+	}
+}
+
+province_event = { #Welsh Expansion
+	id = cultural_influence_celtic.6
+	title = welsh_expansion.title
+	desc = welsh_expansion.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = brythonic }
+			owner = { culture_group = celtic }
+		}
+		NOT = { culture = welsh }
+		NOT = { culture = celtic_welsh }
+		NOT = { culture = brythonaidd }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = brythonic
+							culture_group = celtic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		briton_welsh_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = celtic
+				culture_group = brythonic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = welsh_expansion.a
+
+		if = {
+			limit = {
+				has_global_flag = gaels_and_britons_reunited_into_one_group
+			}
+			change_culture = celtic_welsh
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = gaels_and_britons_reunited_into_one_group }
+			}
+			change_culture = welsh
+		}
+	}
+}
+
+province_event = { #Cwmbraic settlements and assimilation (Only Celts)
+	id = cultural_influence_celtic.7
+	title = cwmbraic_spread.title
+	desc = cwmbraic_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = celtic }
+		NOT = { culture = cwmbraic }
+		NOT = { culture = brythonaidd }
+		NOT = { culture = goidhealach }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = celtic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		cwmbraic_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			culture_group = celtic
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = cwmbraic_spread.a
+
+		change_culture = cwmbraic
+	}
+}
+
+province_event = { #Corieltauvi settlements and assimilation (Only Celts)
+	id = cultural_influence_celtic.8
+	title = corieltauvi_spread.title
+	desc = corieltauvi_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = celtic }
+		NOT = { culture = corieltauvi }
+		NOT = { culture = brythonaidd }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = celtic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		corieltauvi_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			culture_group = celtic
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = corieltauvi_spread.a
+
+		change_culture = corieltauvi
+	}
+}
+
+province_event = { #Cantiaci settlements and assimilation (Only Celts)
+	id = cultural_influence_celtic.9
+	title = cantiaci_spread.title
+	desc = cantiaci_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = celtic }
+		NOT = { culture = cantiaci }
+		NOT = { culture = brythonaidd }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = celtic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		cantiaci_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			culture_group = celtic
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = cantiaci_spread.a
+
+		change_culture = cantiaci
+	}
+}
+
+province_event = { #Breton Expansion
+	id = cultural_influence_celtic.10
+	title = brezhoneg_spread.title
+	desc = brezhoneg_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = brythonic }
+			owner = { culture_group = celtic }
+		}
+		NOT = { culture = breton }
+		NOT = { culture = celtic_breton }
+		NOT = { culture = galianeg }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = brythonic
+							culture_group = celtic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		brezhoneg_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = celtic
+				culture_group = brythonic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = brezhoneg_spread.a
+
+		if = {
+			limit = {
+				has_global_flag = gaels_and_britons_reunited_into_one_group
+			}
+			change_culture = celtic_breton
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = gaels_and_britons_reunited_into_one_group }
+			}
+			change_culture = breton
+		}
+	}
+
+}
+
+country_event = { #Isles Reclaimed (Enables Goidelic Brythonic in-fighting)
+	id = cultural_influence_celtic.11
+	title = isles_reclaimed.title
+	desc = isles_reclaimed.desc
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		culture_group = celtic
+		british_isles_region = {
+			type = all
+			culture_group = celtic
+			country_or_vassal_holds = ROOT
+		}
+		ireland_area = {
+			type = all
+			culture_group = celtic
+			country_or_vassal_holds = ROOT
+		}
+	}
+
+	option = {
+		name = isles_reclaimed.a
+
+		add_prestige = 25
+		set_global_flag = goidelic_vs_brythonic_flag
+		if = {
+			limit = {
+				OR = {
+					primary_culture = celtic_cornish
+					primary_culture = celtic_welsh
+					primary_culture = cantiaci
+					primary_culture = corieltauvi
+					primary_culture = cwmbraic
+				}
+			}
+			set_country_flag = brythonaidd_nation_flag
+		}
+		if = {
+			limit = {
+				OR = {
+					primary_culture = celtic_irish
+					primary_culture = celtic_highlander
+					primary_culture = celtic_manx
+				}
+			}
+			set_country_flag = goidhealach_nation_flag
+		}
+	}
+} #Breton excluded due to them having their own mechanics to become Gaul
+
+#Brythonic Events
+
+country_event = { #Brythonaidd Spawned
+	id = cultural_influence_celtic.12
+	title = brythonaidd_spawn.title
+	desc = brythonaidd_spawn.desc
+	picture = GREAT_BUILDING_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		has_country_flag = brythonaidd_nation_flag
+		europe = { #Owned by ROOT, or not needed
+			OR = {
+				brythonaidd_culture_group = no
+				owned_by = ROOT
+			}
+			type = all
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_province = {
+				limit = {
+					brythonaidd_culture_group = yes
+				}
+				change_culture = brythonaidd
+			}
+			every_country = {
+				limit = {
+					OR = {
+						primary_culture = celtic_cornish
+						primary_culture = celtic_welsh
+						primary_culture = cantiaci
+						primary_culture = corieltauvi
+						primary_culture = cwmbraic
+					}
+				}
+				set_ruler_culture = brythonaidd
+				set_heir_culture = brythonaidd
+				if = {
+					limit = {
+						NOT = { has_foreign_consort = yes }
+					}
+					set_consort_culture = brythonaidd
+				}
+				change_primary_culture = brythonaidd
+			}
+		}
+	}
+
+	option = { #Cornwall
+		name = brythonaidd_spawn.a
+
+		233 = { #Cornwall
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Gwynedd
+		name = brythonaidd_spawn.b
+
+		242 = { #Gwynedd
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Gloucester
+		name = brythonaidd_spawn.c
+
+		239 = { #Gloucester
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #London
+		name = brythonaidd_spawn.d
+
+		236 = { #London
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+
+	option = { #York Dynasty
+		name = brythonaidd_spawn.e
+
+		trigger = {
+			dynasty = York
+		}
+
+		4367 = { #Yorkshire
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Lancaster Dynasty
+		name = brythonaidd_spawn.f
+
+		trigger = {
+			dynasty = Lancaster
+		}
+
+		244 = { #Lancashire
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Not Rose Dynasty
+		name = brythonaidd_spawn.g
+
+		trigger = {
+			NOT = { dynasty = Lancaster }
+			NOT = { dynasty = Yorkshire }
+		}
+
+		4376 = { #Leicestershire
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+}
+
+province_event = { #Brythonaidd Assimilation
+	id = cultural_influence_celtic.13
+	title = brythonaidd_spread.title
+	desc = brythonaidd_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		brythonaidd_culture_region = yes
+		OR = {
+			any_neighbor_province = {
+				culture = brythonaidd
+			}
+			is_island = yes
+		}
+		owner = { primary_culture = brythonaidd }
+		NOt = { culture = brythonaidd }
+	}
+
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = {
+				culture = brythonaidd
+			}
+		}
+		modifier = { #Rural communities reluctant to convert
+			factor = 1.2
+			NOT = { development = 10 }
+		}
+		modifier = { #More extreme rural communities
+			factor = 1.5
+			NOT = { development = 5 }
+		}
+		modifier = { #Townships more connected to capital
+			factor = 0.9
+			development = 10
+		}
+		modifier = { #Cities even more connected
+			factor = 0.8
+			development = 20
+		}
+		modifier = { #Larger city means more connection
+			factor = 0.7
+			development = 30
+		}
+		modifier = { #Stop developing pls. k thx
+			factor = 0.6
+			development = 40
+		}
+	}
+
+	option = {
+		name = brythonaidd_spread.a
+
+		change_culture = brythonaidd
+	}
+}
+
+#Goidelic Events
+
+country_event = { #Goidhealach Spawned
+	id = cultural_influence_celtic.14
+	title = goidhealach_spawn.title
+	desc = goidhealach_spawn.desc
+	picture = GREAT_BUILDING_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		has_country_flag = goidhealach_nation_flag
+		europe = { #Owned by ROOT, or not needed
+			OR = {
+				goidhealach_culture_group = no
+				owned_by = ROOT
+			}
+			type = all
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_province = {
+				limit = {
+					goidhealach_culture_group = yes
+				}
+				change_culture = goidhealach
+			}
+			every_country = {
+				limit = {
+					OR = {
+						primary_culture = celtic_irish
+						primary_culture = celtic_manx
+						primary_culture = celtic_highlander
+					}
+				}
+				set_ruler_culture = goidhealach
+				set_heir_culture = goidhealach
+				if = {
+					limit = {
+						NOT = { has_foreign_consort = yes }
+					}
+					set_consort_culture = goidhealach
+				}
+				change_primary_culture = goidhealach
+			}
+		}
+	}
+
+	option = { #Dublin
+		name = goidhealach_spawn.a
+
+		373 = { #Dublin
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+
+	option = { #Lothian
+		name = goidhealach_spawn.b
+
+		248 = { #Lothian
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+
+	option = { #Ulaidh
+		name = goidhealach_spawn.c
+
+		3006 = { #Ulaidh
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Mann (Why not)
+		name = goidhealach_spawn.d
+
+		4365 = { #Mann
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Cork
+		name = goidhealach_spawn.e
+
+		4118 = { #Cork
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_insular_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+}
+
+province_event = { #Goidhealach Assimilation
+	id = cultural_influence_celtic.15
+	title = goidhealach_spread.title
+	desc = goidhealach_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		goidhealach_culture_region = yes
+		OR = {
+			any_neighbor_province = {
+				culture = goidhealach
+			}
+			is_island = yes
+		}
+		owner = { primary_culture = goidhealach }
+		NOT = { culture = goidhealach }
+	}
+
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = {
+				culture = goidhealach
+			}
+		}
+		modifier = { #Rural communities reluctant to convert
+			factor = 1.2
+			NOT = { development = 10 }
+		}
+		modifier = { #More extreme rural communities
+			factor = 1.5
+			NOT = { development = 5 }
+		}
+		modifier = { #Townships more connected to capital
+			factor = 0.9
+			development = 10
+		}
+		modifier = { #Cities even more connected
+			factor = 0.8
+			development = 20
+		}
+		modifier = { #Larger city means more connection
+			factor = 0.7
+			development = 30
+		}
+		modifier = { #Stop developing pls. k thx
+			factor = 0.6
+			development = 40
+		}
+	}
+
+	option = {
+		name = goidhealach_spread.a
+
+		change_culture = goidhealach
+	}
+}
+
+#Galianeg Events
+
+province_event = { #Belgae settlements and assimilation
+	id = cultural_influence_celtic.16
+	title = belgae_spread.title
+	desc = belgae_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = celtic }
+		NOT = { culture = belgae }
+		NOT = { culture = galianeg }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = celtic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		belgae_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			culture_group = celtic
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = belgae_spread.a
+
+		change_culture = belgae
+	}
+}
+
+province_event = { #Pictone settlements and assimilation
+	id = cultural_influence_celtic.17
+	title = pictone_spread.title
+	desc = pictone_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = celtic }
+		NOT = { culture = pictone }
+		NOT = { culture = galianeg }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = celtic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		pictone_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			culture_group = celtic
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = pictone_spread.a
+
+		change_culture = pictone
+	}
+}
+
+province_event = { #Arverni settlements and assimilation
+	id = cultural_influence_celtic.18
+	title = arverni_spread.title
+	desc = arverni_spread.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = celtic }
+		NOT = { culture = arverni }
+		NOT = { culture = galianeg }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = celtic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		arverni_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			culture_group = celtic
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = arverni_spread.a
+
+		change_culture = arverni
+	}
+}
+
+country_event = { #Galianeg Formed
+	id = cultural_influence_celtic.19
+	title = galianeg_merger.title
+	desc = galianeg_merger.desc
+	picture = GREAT_BUILDING_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		OR = {
+			primary_culture = celtic_breton
+			primary_culture = belgae
+			primary_culture = pictone
+			primary_culture = arverni
+		}
+		NOT = {
+			any_province = {
+				galianeg_culture_region = yes
+				NOT = { culture_group = celtic }
+				NOT = { owned_by = ROOT }
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_province = {
+				limit = {
+					galianeg_culture_region = yes
+				}
+				change_culture = galianeg
+			}
+			change_primary_culture = galianeg
+			set_ruler_culture = galianeg
+			set_heir_culture = galianeg
+			if = {
+				limit = {
+					NOT = { has_foreign_consort = yes }
+				}
+				set_consort_culture = galianeg
+			}
+		}
+	}
+
+	option = { #Naoned
+		name = galianeg_merger.a
+
+		172 = { #Naoned
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_new_continental_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Bordel
+		name = galianeg_merger.b
+
+		174 = { #Bordel
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_new_continental_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Bibracte
+		name = galianeg_merger.c
+
+		192 = { #Bibracte
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_new_continental_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+
+	option = { #Dukark
+		name = galianeg_merger.d
+
+		87 = { #Dukark
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_new_continental_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+
+	option = { #Montpelhièr
+		name = galianeg_merger.b
+
+		200 = { #Montpelhièr
+			add_building = university
+			add_permanent_province_modifier = {
+				name = celtic_new_continental_centre_for_language_modifier
+				duration = -1
+			}
+			add_base_tax = 4
+			add_base_production = 2
+			add_base_manpower = 2
+			add_center_of_trade_level = 2
+		}
+	}
+}

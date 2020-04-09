@@ -1,0 +1,409 @@
+country_decisions = { #Areas not otherwise mentioned via another Decision are shown here.
+	serbo_croat_homelands = {
+		major = no
+		potential = {
+			culture_group = south_slavic
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				serbo_croat_culture_region = yes
+				serbo_croat_bulgarian_conflict_region = yes
+				serbo_croat_slovene_conflict_region = yes
+			}
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	bulgarian_homelands = {
+		major = no
+		potential = {
+			culture_group = south_slavic
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				bulgarian_culture_region = yes
+				serbo_croat_bulgarian_conflict_region = yes
+			}
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	slovene_homelands = {
+		major = no
+		potential = {
+			culture_group = south_slavic
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				slovene_culture_region = yes
+				serbo_croat_slovene_conflict_region = yes
+			}
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ruthenian_homelands = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			any_province = { culture = ruthenian }
+		}
+
+		provinces_to_highlight = {
+			russka_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	russian_homelands = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			any_province = { culture = russian }
+		}
+
+		provinces_to_highlight = {
+			russki_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	cossack_homelands = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+		}
+
+		provinces_to_highlight = {
+			cossack_rule_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ukrainian_homelands = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			NOT = { any_province = { culture = ruthenian } }
+		}
+
+		provinces_to_highlight = {
+			ukrainian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	belarussian_homelands = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			NOT = { any_province = { culture = ruthenian } }
+		}
+
+		provinces_to_highlight = {
+			belarussian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	northern_russian_dialect_area = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			NOT = { any_province = { culture = russian } }
+		}
+
+		provinces_to_highlight = {
+			northern_russian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	middle_russian_dialect_area = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			NOT = { any_province = { culture = russian } }
+		}
+
+		provinces_to_highlight = {
+			middle_russian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	southern_russian_dialect_area = {
+		major = no
+		potential = {
+			culture_group = east_slavic
+			NOT = { any_province = { culture = russian } }
+		}
+
+		provinces_to_highlight = {
+			southern_russian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	french_homelands = {
+		major = no
+		potential = {
+			culture_group = french
+		}
+
+		provinces_to_highlight = {
+			french_homeland = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	polish_homelands = {
+		major = no
+		potential = {
+			culture_group = west_slavic
+		}
+
+		provinces_to_highlight = {
+			polish_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	pomeransky_homelands = {
+		major = no
+		potential = {
+			culture_group = west_slavic
+		}
+
+		provinces_to_highlight = {
+			pomeransky_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	sorbian_homelands = {
+		major = no
+		potential = {
+			culture_group = west_slavic
+		}
+
+		provinces_to_highlight = {
+			sorbian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	silesian_homelands = {
+		major = no
+		potential = {
+			culture_group = west_slavic
+		}
+
+		provinces_to_highlight = {
+			silesian_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	nomadic_homelands = {
+		major = no
+		potential = {
+			is_nomad = yes
+		}
+
+		provinces_to_highlight = {
+			steppe_culture_region = yes
+		}
+
+		allow = {
+			always = no
+		}
+
+		effect = {
+			#Pass
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

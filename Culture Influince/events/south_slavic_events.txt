@@ -1,0 +1,1521 @@
+namespace = cultural_influence_south_slavic
+#Not too much going on here, but some fun interplay
+
+province_event = { #Croatian/Bosniak -> Serbian (Calling Croatian a Catholic Serbo-Croat dialect)
+	id = cultural_influence_south_slavic.1
+	title = serbian_assimilation.title
+	desc = serbian_assimilation.desc
+	picture = ARTWORK_eventPicture
+
+	trigger = {
+		OR = {
+			culture = croatian
+			culture = bosnian #Heal the Islamic divide
+			culture = slavic_croatian
+			culture = slavic_bosnian
+		}
+		religion = orthodox
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		years = 10
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+	}
+
+	option = {
+		name = serbian_assimilation.a
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+			}
+			change_culture = serbian
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = south_east_slavic_united_flag
+					has_global_flag = west_south_slavic_united_flag
+					has_global_flag = slavic_united_flag
+				}
+			}
+			change_culture = slavic_serbian
+		}
+	}
+}
+
+province_event = { #Serbian/Bosniak -> Croatian (Calling Serbian an Orthodox Serbo-Croat dialect)
+	id = cultural_influence_south_slavic.2
+	title = croatian_assimilation.title
+	desc = croatian_assimilation.desc
+	picture = ARTWORK_eventPicture
+
+	trigger = {
+		OR = {
+			culture = serbian
+			culture = bosnian #Heal the Islamic divide
+			culture = slavic_serbian
+			culture = slavic_bosnian
+		}
+		religion = catholic
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		years = 10
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+	}
+
+	option = {
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+			}	
+			change_culture = croatian
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = south_east_slavic_united_flag
+					has_global_flag = west_south_slavic_united_flag
+					has_global_flag = slavic_united_flag
+				}
+			}
+			change_culture = slavic_croatian
+		}
+	}
+}
+
+province_event = { #Serbian/Croatian -> Bosniak (Calling Bosniak an Islamic Serbo-Croat dialect)
+	id = cultural_influence_south_slavic.3
+	title = bosniak_assimilation.title
+	desc = bosniak_assimilation.desc
+	picture = ARTWORK_eventPicture
+
+	trigger = {
+		OR = {
+			culture = croatian
+			culture = serbian
+			culture = slavic_croatian
+			culture = slavic_serbian
+		}
+		religion_group = muslim
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		years = 10
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+	}
+
+	option = {
+		name = bosniak_assimilation.a
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+			}
+			change_culture = bosnian
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = south_east_slavic_united_flag
+					has_global_flag = west_south_slavic_united_flag
+					has_global_flag = slavic_united_flag
+				}
+			}
+			change_culture = slavic_bosnian
+		}
+	}
+}
+
+province_event = { #Serbo-Croat settlements and assimilation
+	id = cultural_influence_south_slavic.4
+	title = serbo_croat_settlements.title
+	desc = serbo_croat_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }
+		}	
+		NOT = { culture = serbian }
+		NOT = { culture = croatian }
+		NOT = { culture = bosnian }
+		NOT = { culture = slavic_serbian }
+		NOT = { culture = slavic_croatian }
+		NOT = { culture = slavic_bosnian }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = south_slavic
+							culture_group = unified_slavic
+						}	
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		serbo_croat_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic
+			}	
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = serbo_croat_settlements.a
+
+		if = { #Using religion of the province to determine what dialect to use
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+					OR = {
+						religion = orthodox
+					}
+				}
+			}
+			change_culture = serbian
+		}
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+					OR = {
+						religion = catholic
+					}
+				}
+			}
+			change_culture = croatian
+		}
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+					OR = {
+						religion_group = muslim
+					}
+				}
+			}
+			change_culture = bosnian
+		}
+		if = { 
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}
+					OR = {
+						religion = orthodox
+					}
+				}
+			}
+			change_culture = slavic_serbian
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}	
+					OR = {
+						religion = catholic
+					}
+				}
+			}
+			change_culture = slavic_croatian
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}
+					OR = {
+						religion_group = muslim
+					}	
+				}
+			}
+			change_culture = slavic_bosnian
+		}
+	}
+}
+
+province_event = { #Serbo-Croat settlements and assimilation (Skopje)
+	id = cultural_influence_south_slavic.5
+	title = serbo_croat_settlements.title
+	desc = serbo_croat_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }
+		}
+		OR = { #Is Serbo-Croat
+			owner = { primary_culture = serbian }
+			owner = { primary_culture = croatian }
+			owner = { primary_culture = bosnian }
+			owner = { primary_culture = slavic_serbian }
+			owner = { primary_culture = slavic_croatian }
+			owner = { primary_culture = slavic_bosnian }
+		}
+		NOT = { culture = serbian }
+		NOT = { culture = croatian }
+		NOT = { culture = bosnian }
+		NOT = { culture = slavic_serbian }
+		NOT = { culture = slavic_croatian }
+		NOT = { culture = slavic_bosnian }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				any_neighbor_province = {
+					OR = {
+						culture_group = south_slavic
+						culture_group = unified_slavic
+					}
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		serbo_croat_bulgarian_conflict_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = serbo_croat_settlements.a
+
+		if = { #Using religion of the province to determine what dialect to use
+			limit = {
+				AND = {
+						NOT = { has_global_flag = south_east_slavic_united_flag }
+						NOT = { has_global_flag = west_south_slavic_united_flag }
+						NOT = { has_global_flag = slavic_united_flag }
+					OR = {
+						religion = orthodox
+					}	
+				}
+			}
+			change_culture = serbian
+		}
+		if = {
+			limit = {
+				AND = {
+						NOT = { has_global_flag = south_east_slavic_united_flag }
+						NOT = { has_global_flag = west_south_slavic_united_flag }
+						NOT = { has_global_flag = slavic_united_flag }
+					OR = {
+						religion = catholic
+					}	
+				}
+			}
+			change_culture = croatian
+		}
+		if = {
+			limit = {
+				AND = {
+						NOT = { has_global_flag = south_east_slavic_united_flag }
+						NOT = { has_global_flag = west_south_slavic_united_flag }
+						NOT = { has_global_flag = slavic_united_flag }
+					OR = {
+						religion_group = muslim
+					}	
+				}
+			}
+			change_culture = bosnian
+		}
+		if = { 
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}	
+					OR = {
+						religion = orthodox
+					}	
+				}
+			}
+			change_culture = slavic_serbian
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}	
+					OR = {
+						religion = catholic
+					}	
+				}
+			}
+			change_culture = slavic_croatian
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}	
+					OR = {
+						religion_group = muslim
+					}	
+				}
+			}
+			change_culture = slavic_bosnian
+		}
+	}	
+}
+
+province_event = { #Serbo-Croat settlements and assimilation (Istria)
+	id = cultural_influence_south_slavic.6
+	title = serbo_croat_settlements.title
+	desc = serbo_croat_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }
+		}	
+		OR = { #Is Serbo-Croat
+			owner = { primary_culture = serbian }
+			owner = { primary_culture = croatian }
+			owner = { primary_culture = bosnian }
+			owner = { primary_culture = slavic_serbian }
+			owner = { primary_culture = slavic_croatian }
+			owner = { primary_culture = slavic_bosnian }			
+		}
+		NOT = { culture = serbian }
+		NOT = { culture = croatian }
+		NOT = { culture = bosnian }
+		NOT = { culture = slavic_serbian }
+		NOT = { culture = slavic_croatian }
+		NOT = { culture = slavic_bosnian }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						culture_group = south_slavic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		serbo_croat_slovene_conflict_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = serbo_croat_settlements.a
+
+		if = { #Using religion of the province to determine what dialect to use
+			limit = {
+				AND = {
+						NOT = { has_global_flag = south_east_slavic_united_flag }
+						NOT = { has_global_flag = west_south_slavic_united_flag }
+						NOT = { has_global_flag = slavic_united_flag }
+					}
+					OR = {
+						religion = orthodox
+					}
+				}
+			}
+			change_culture = serbian
+		}
+		if = {
+			limit = {
+				AND = {
+						NOT = { has_global_flag = south_east_slavic_united_flag }
+						NOT = { has_global_flag = west_south_slavic_united_flag }
+						NOT = { has_global_flag = slavic_united_flag }
+					}
+					OR = {
+						religion = catholic
+					}
+				}
+			}
+			change_culture = croatian
+		}
+		if = {
+			limit = {
+				AND = {
+						NOT = { has_global_flag = south_east_slavic_united_flag }
+						NOT = { has_global_flag = west_south_slavic_united_flag }
+						NOT = { has_global_flag = slavic_united_flag }
+					}
+					OR = {
+						religion_group = muslim
+					}
+				}
+			}
+			change_culture = bosnian
+		}
+		if = { 
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}
+					OR = {
+						religion = orthodox
+					}
+				}
+			}
+			change_culture = slavic_serbian
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}
+					OR = {
+						religion = catholic
+					}
+				}
+			}
+			change_culture = slavic_croatian
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+					}
+					OR = {
+						religion_group = muslim
+					}
+				}
+			}
+			change_culture = slavic_bosnian
+		}
+	}
+}
+
+province_event = { #Bulgarian settlements and assimilation
+	id = cultural_influence_south_slavic.7
+	title = bulgarian_settlements.title
+	desc = bulgarian_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }			
+		NOT = { culture = bulgarian }
+		NOT = { culture = slavic_bulgarian }		
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = south_slavic
+							culture_group = unified_slavic
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		bulgarian_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic
+			}	
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = bulgarian_settlements.a
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+				change_culture = bulgarian
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = south_east_slavic_united_flag
+					has_global_flag = west_south_slavic_united_flag
+					has_global_flag = slavic_united_flag
+				}
+				change_culture = slavic_bulgarian
+			}
+		}
+	}
+}
+
+province_event = { #Bulgarian settlements and assimilation (Skopje)
+	id = cultural_influence_south_slavic.8
+	title = bulgarian_settlements.title
+	desc = bulgarian_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }
+		AND = { #Isn't Serbo-Croat
+			NOT = { owner = { primary_culture = serbian } }
+			NOT = { owner = { primary_culture = croatian } }
+			NOT = { owner = { primary_culture = bosnian } }
+			NOT = { owner = { primary_culture = slavic_serbian } }
+			NOT = { owner = { primary_culture = slavic_croatian } }
+			NOT = { owner = { primary_culture = slavic_bosnian } }
+		}
+		NOT = { culture = bulgarian }
+		NOT = { culture = slavic_bulgarian }		
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = south_slavic
+							culture_group = unified_slavic	
+						}	
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		bulgarian_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = bulgarian_settlements.a
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+				change_culture = bulgarian
+			}
+		}
+		if = {
+			limit = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+				}
+				change_culture = slavic_bulgarian
+			}
+		}
+	}
+}
+
+province_event = { #Slovene settlements and assimilation
+	id = cultural_influence_south_slavic.9
+	title = slovene_settlements.title
+	desc = slovene_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }
+		NOT = { culture = slovene }
+		NOT = { culture = slavic_slovene }
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = south_slavic
+							culture_group = unified_slavic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		slovene_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic	
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = slovene_settlements.a
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+				change_culture = slovene
+			}
+		}
+		if = {
+			limit = {
+					OR = {
+						has_global_flag = south_east_slavic_united_flag
+						has_global_flag = west_south_slavic_united_flag
+						has_global_flag = slavic_united_flag
+				}
+				change_culture = slavic_slovene
+			}
+		}
+	}
+}
+
+province_event = { #Slovene settlements and assimilation (Istria)
+	id = cultural_influence_south_slavic.9
+	title = slovene_settlements.title
+	desc = slovene_settlements.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	trigger = {
+		OR = {
+			owner = { culture_group = south_slavic }
+			owner = { culture_group = unified_slavic }
+		}	
+		AND = { #Isn't Serbo-Croat
+			NOT = { owner = { primary_culture = serbian } }
+			NOT = { owner = { primary_culture = croatian } }
+			NOT = { owner = { primary_culture = bosnian } }
+			NOT = { owner = { primary_culture = slavic_serbian } }
+			NOT = { owner = { primary_culture = slavic_croatian } }
+			NOT = { owner = { primary_culture = slavic_bosnian } }
+		}
+		NOT = { culture = slovene }
+		NOT = { culture = slavic_slovene }		
+		OR = { #Permit AI to settle accepted cultures since they don't understand
+			has_owner_accepted_culture = no
+			owner = { ai = yes }
+		}
+		OR = {
+			AND = { #Improving dev via a colonist
+				has_colonist = yes
+				is_city = yes
+			}
+			AND = {
+				OR = { #AI uses this one
+					NOT = { has_dlc = "Dharma" }
+					owner = { ai = yes }
+				}
+				OR = {
+					any_neighbor_province = {
+						OR = {
+							culture_group = south_slavic
+							culture_group = unified_slavic
+						}
+					}
+					num_of_times_improved = 5
+				}
+			}
+		}
+		owner = { has_country_modifier = south_slavic_settlements }
+		slovene_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = {
+		#Template Settled MTTH
+		years = 10
+
+		modifier = { #Uncolonized land
+			factor = 0.1
+			OR = {
+				culture_group = south_slavic
+				culture_group = unified_slavic	
+			}	
+		}
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = { #Non-Dharma
+			factor = 3
+			OR = { #ai uses thiS one
+				NOT = { has_dlc = "Dharma" }
+				owner = { ai = yes }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			num_of_times_improved = 5
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.6
+			num_of_times_improved = 10
+			NOT = { has_dlc = "Dharma" }
+		}
+		modifier = {
+			factor = 0.8
+			has_idea_to_settle_faster = yes
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		#Ideal dev is around 30
+		modifier = {
+			factor = 1.2
+			development = 40
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+		}
+		modifier = {
+			factor = 1.2
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 0.9
+			adm = 4
+		}
+		modifier = {
+			factor = 0.9
+			adm = 5
+		}
+		modifier = {
+			factor = 0.9
+			adm = 6
+		}
+		modifier = {
+			factor = 0.75
+			national_focus = adm
+		}
+	}
+
+	option = {
+		name = slovene_settlements.a
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_global_flag = south_east_slavic_united_flag }
+					NOT = { has_global_flag = west_south_slavic_united_flag }
+					NOT = { has_global_flag = slavic_united_flag }
+				}
+				change_culture = slovene
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = south_east_slavic_united_flag
+					has_global_flag = west_south_slavic_united_flag
+					has_global_flag = slavic_united_flag
+				}
+				change_culture = slavic_slovene
+			}
+		}
+	}
+}

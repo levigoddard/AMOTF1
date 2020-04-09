@@ -1,0 +1,445 @@
+﻿Version 0.5.14
+ADDITIONS
+ - Reworked Generic Colonial event to actually work as intended (Converts Native languages to your primary when they cease to follow their native religions)
+ - Flavour event for the Char Bouba war. Converting Zenaga berbers to Hassaniya Arabs
+ - Berber events for North Africa, with Andalucia, Balearics, Sicily, Sardinia, Corsica, Crete, Ionian Islands, and the Peloponnese to come later
+ - Added more Pre-1492 Jews to the Maghreb
+CHANGES
+ - Changed a few colours to be less similar/jarring
+ - Prevented Arabic spreading to provinces with nationalism
+ - Slightly shifted MTTH on Iberian Assimilation
+ - Moved Aragonese proper to the Iberian group
+ - Overhauled Religious based Assimilation events MTTH and triggers, should now be more realistic, with provinces that are well integrated assimilating quicker, notably Universities are now critically important for assimilation, with high dev provinces no longer seeing MTTH penalties for their high dev.
+ - Removed gov. rank requirements for settlement/assimilation decisions
+ - Loosened requirements for Steppe city, mainly to enable the AI to actually get them
+ - Removed Khazar culture from Matrega
+BUGS
+ - Fixed Libyans defecting to Touggourt, now they'll defect to Tripoli
+ - Stopped event spam when colonising as an Arab
+ - Fixed Classical Greek ideas army tradition decay
+ - Fixed Czechoslovak settlement with unified Slavic
+ - Fixed typo in Plattduutsch Schlesisch region trigger
+ - Fixed missing brace in South Slavic events file
+ - Fixed change culture command being in wrong scope in West Slavic events
+ - Fixed incorrect trigger in Silesian event
+ - Fixed outdated modifier check on Slovak settlement
+ - Localized Flavour events
+ - Fixed impossible to validate triggers in Kurdish settlements
+ - Fixed British continental settlements plan being available after already taking it
+ - Fixed unlocalized steppe reform
+ - Fixed Dutch assimilation event continuing to fire even on already Dutch provinces
+ - Fixed Dutch (region) settlements always making provinces Nederfrankisch even if Dutch exists
+ - Fixed un-localized Dutch Assimilation event
+ - Fixed being able to anglicize the Cornish when not owning them, and made them be Northumbrian when done by Scots or Northumbrians
+ - Fixed colonial capital event continuing to fire on the same province
+ - Fixed Latin Languages trigger
+ - Fixed Anglo Frisian culture sharing an id with the Anglo-Frisian group
+ - Updated for latest BT Bugfixes
+
+Version 0.5.13
+ADDITIONS
+ - Added Arabic languages for Persia, Ethiopia, Northern Italy, Anatolia, and Greece
+ - Added united Slavic Group
+ - Redrew Berber languages
+ - Changed Timbuktu's Golden Age event to convert culture and trade goods
+CHANGES
+ - Allowed all British culture nations to form Anglo-Ireland, if their cap is in Ireland
+ - Sephardic Jews new exists as a modifer, rather than a culture
+BUGS
+ - Corrected name of French Creole province names file
+ - Fixed incorrect scope in Anglo-Irish formable
+ - Corrected province highlighting in South Germanic standardization decisions
+ - Fixed Assyria's primary culture
+ - Fixed incorrect trigger in MTTH of a few british events
+ - Fixed missing id on misc events
+ - Fixed LIV capital
+ - Fixed Anglo-Aquitanian trigger
+ - Fixed a few issues with Romain culture region
+ - Fixed Turkish settlements modifier raising dev cost instead of lowering
+ - Fixed southern indian islands area being unassigned
+ - Fixed Weissmeererdeutsch not recognising its own existence
+ - Fixed AI not receiving 3x MTTH penalty for colonist settlement
+ - Fixed encoding of culture file, that keeps randomly changing to 1252
+
+Version 0.5.12
+CHANGES
+ - Merged Veneto-Dalmatic into Italo-Dalmatian
+ - Updated a few formables for the Venetian culture changes
+ - Dalmatian nations can now form Illyria, instead of going for Lombardy-Venetia
+ - Updated Iberian assimilation events to ignore neighbour req. if province is capital
+ - Permitted GRN to form the Netherlands
+BUGS
+ - Updated 2469 (Mazagan)
+ - Fixed Ruler Language being called Religion
+ - Updated Prussia formation claims
+ - Updated Formation decisions for latest BT Bugfix
+ - Fixed Aragonese Restoration not converting a Navarra PU
+ - Fixed incorrect localization id for Dalmatian
+ - Fixed missing Saharadeutsch culture
+
+Version 0.5.11
+ADDITIONS
+ - Expanded Leonese and Aragonese at game start
+CHANGES
+ - Changed production eff. to goods produced for nomadic provinces
+ - Finally renamed culture to language
+BUGS
+ - Fixed a few culture names
+
+Version 0.5.10
+ADDITIONS
+ - Added Navarro-Aragonese and related decline and restoration events
+ - Added event for Christian Moors to latinize
+ - Reworked Iberian spread event to be for all cultures geographically in Iberia and can now fire immediatly but has been seriously slowed down
+CHANGES
+ - Restructured Iberian (Region) Cultures, Restoring Andalucian as a possible culture for a Christian Granada
+
+Version 0.5.9
+CHANGES
+ - Arabic spread now also allows provinces with high trade power as an alternative to bordering an arabic province
+ - Updated BT vanilla decisions file
+ - Updated Jerusalem formable
+ - Cut Occitan spread in preparation for real mechanics in a few days
+BUGS
+ - Fixed wrong culture on Celtic stragglers event
+ - Fixed incorrect scope in Colonial Capital Event
+ - Fixed English standardization firing even if not all English provinces were owned
+
+Version 0.5.8
+ADDITIONS
+ - Added Colonial capital event in trade companies. Requires the ADJ District investment, ADJ township investment, 40 dev, and a university in the province. Limited to one per Empire
+CHANGES
+ - Dutch formation now converts all of the Low Countries instantly
+ - Updated Afrikaner MTTH and adjusted event slightly
+ - Gave CEL a new set of ideas
+ - Updated Gaul's missions to be inline with other idea sets
+BUGS
+ - Fixed broken Sicilian Arabic conflict region
+ - Fixed broken triggers for Andalusian Spread
+ - Fixed conflict between Deutschthracian and Dinaridendeutsch
+ - Fixed hole in Steppe culture region
+ - Fixed localization Id for Novgorodian German
+ - Fixed double quotation mark in Dutch formation event localization
+ - Localized Dutch standardization
+ - Fixed a few bugs in CEL formation
+
+Version 0.5.7
+CHANGES
+ - Nomadic growth is now a hidden province level event that doesn't require manpower. Currently I feel that nomadic growth is too easy for large nations and far too difficult for rapidly expanding nations (That therefore have little manpower) which feels somewhat backwards to me, so hopefully these changes address that
+ - Stopped uploading 20Mb of junk files
+BUGS
+ - Fixed Nomadic province event
+ - Fixed missing comment in Steppe Region, causing a hole
+ - Fixed Ruthenian German using the wrong culture region
+
+Version 0.5.6
+BUGS
+ - Fixed Arabic merger events
+ - Fixed missing area in Masri culture region
+ - Fixed Mongol missions and a few provinces in Mongolia
+
+Version 0.5.5
+ADDITIONS
+ - Added events for the Kurds in Kurdistan
+ - Updated Dutch polders decision for new low countries (Expanded to the rest of Holland now that it is split)
+ - Added Kurdish Sanjaks and settlements for the Ottomans
+ - Added Kurdistan as a new formable
+CHANGES
+ - Added dev cost reduction to Ashkenazi Jews modifier
+ - Made Jews within Ashkenazi provinces a minority again
+ - Increased local tension caused by Ashkenazi jews (Won't actually increase unrest as the provinces are no longer heathen)
+BUGS
+ - Fixed missing provinces from French homelands
+ - Fixed missing area in Pictone
+
+Version 0.5.4
+ADDITIONS
+ - Added events to spread your primary culture through Iberia
+ - Added events to spread your primary culture through Occitania
+CHANGES
+ - Irish culture conversion idea now allows quicker conversion events
+ - Celtic formables now named in English
+ - Expanded French homeland slightly to form a nicer border
+ - Renamed Iberian group to Iberroromances
+ - Cleaned up culture requirements on formables and made a few adjustments
+ - Upped provinces needed for Continental settlements plan
+BUGS
+ - Updated Celtic ideas alongside BT nerfs
+ - Fixed Celtic merger events not updating primary culture
+ - Updated CEL formation to check for Ireland
+ - Fixed unsupported characters in Celtic localization
+ - Fixed missing province names for Tatars
+ - Fixed incorrect localization id for ENG-FRA formable
+ - Fixed Upper Emilia area being unassigned
+ - Fixed localization on Lombard
+ - Updated English missions for new France
+
+Version 0.5.3
+ADDITIONS
+ - Aramaic events for Mesopotamia and the Levant
+BUGS
+ - Corrected a few missing vowel sounds in Arabic localization
+ - Fixed some Free Cities history files
+ - Corrected an oversight preventing Irish nations from forming some Celtic tags
+
+Version 0.5.2
+ADDITIONS
+ - Added Coptic spread throughout the Nile
+CHANGES
+ - Renamed West Germanic to South Germanic
+BUGS
+ - Fixed missing picture for Dutch Standardization
+ - Fixed outdated history files for Iberia
+
+Version 0.5.1
+BUGS
+ - Fixed weird localization in Celtic merger
+ - Fixed broken Dutch formation event
+ - Fixed Impossible Spanish mission
+
+Version 0.5.0 (Overhaul)
+ADDITIONS
+ - Arabicization mechanics for the Sahel, Maghreb, and Mashriq
+ - Various decisions for an English victory in the 100 years war
+ - New formable: UEF, England-France
+ - Chagatai horde is now called Moghulistan and Chagatai is now a formable for Karluk nomads
+ - Massive redrawing of the culture map in Central Asia and the larger Steppe
+ - Crimean can shift into the Oghuz group if held by and Oghuz Turk
+ - Frisian now splinters into North and West Frisian if not held by a Frisian
+ - Sons of Barak khan's rebellion event for the Shaybanids
+ - Karluk Turkic now starts Chagatai and splinters into Uiyghur, Uzbek, and Mogul
+ - Added a new submod 'Steppe Improvement' as the name suggests to improve the steppe, this may later be pulled into it's own thing but for now it lives within CI
+ - German settlement expanded to all of Europe, Maghreb, Anatolia, and the Levant
+ - West Slavic settlements added up to the Elbe, and east to Lviv - approximately the interwar Polish borders
+ - Phanariote Greek events/decisions for TUR
+ - Thrace settlement for Turkish nations
+ - New formable: TRK, Turkey
+ - Added assimilation events in Anatolia for provinces that have been converted to Islam
+ - Religion-based mechanics for Serbo-Croat languages
+ - Greater Bulgarian settlement/assimilation for South Slavic Nations
+ - Greater Slovenian settlement/assimilation for South Slavic Nations
+ - Ruthenian reworked to actually be Ruthenian and not a renamed Ukrainian
+ - Anglo-Saxon province names for England
+ - Reworked Standard French to instead spread your primary culture throughout france over time
+ - Reworked British spread throughout British Isles to be decision based
+BUGS
+ - Fixed incorrect triggers on LTE formation
+ - Fixed OOD Galianeg triggers
+CHANGES
+ - Buffed British Central Parliament
+
+Version 0.4.1
+BUGS
+ - Fixed missing localization and incorrect triggers on UEF decision
+
+Version 0.4.0 (Anglophone & Surprise Celtic Update)
+ADDITIONS
+ - Overhauled dynamic and non-dynamic localization on the British Isles
+ - New formable: GRP, Greater Prussia, An Imperial Prussia, centered on the east
+ - New formable: GAU, Gaul, Celtic nation streatching from the Bay of Biscay to the Rhine
+ - Reworked formable: YYK, Albion, Celtic nation for Great Britain
+ - Reworked formable: TNA, Gaelic Nation, Celtic nation for Ireland & Scotland
+ - Reworked formable: CEL, Celtic UK, Celtic nation for the British Isles
+ - Reworked Celtic union to now fire when any Celtic country has 200 total development instead of on CEL forming
+ - Celtic revival cultures spanning the entirity of Gaul & British Isles (Not listing them all, consult images on workshop)
+ - British colonial cultures covering the entirity of the New World
+ - British continental cultures covering the British Ilses, France, Fennoscandia, Northern Germany and the Baltics (consult images on workshop)
+ - Devolution mechanic for GBR/UNK
+CHANGES
+ - Halved enforce culture cost (2-->1 per development) Enforcing culture upon a PU such as France or England may now be possible provided they are shrunk a little first (Revoking Elsaß-Lothringen and Ireland)
+ - Moved Defines.lua changes to /Defines
+ - Disabled Swiss converting to Hochdeutsch
+ - Reworking assimilation cultures to not be so confusing and convoluted, ONLY ON NEW ASSIMILATED CULTURES FOR NOW! will rework older cultures if new mechanic works better
+ - Changed Hochdeutsch forming event localization to use Argacyan's suggestion
+BUGS
+ - Fixed Afrikaner culture being removed
+ - Fixed Juten checking for non-existant trigger
+ - Fixed typo in Neunordisch MTTH
+ - Fixed AI trigger being used in province scope, thereby preventing settlement events from being disabled by accepting the culture
+ - Fixed Assimilation events converting the same provinces
+
+Version 0.3.5
+BUGS
+ - Fixed incorrect localization for various French settlement events
+ - Fixed missing Algerien culture
+
+Version 0.3.4 #Again really should be a new minor release but I've already reserved the next update for The Anglophone
+CHANGES
+ - Generally brought German events MTTH more in-line with the French ones to improve gameplay
+ - Finally respected the Sorbian people enough to add an event for German settlement
+ - Reduced every single development requirement down to one to aid gameplay (MTTH left alone since the potential reductions are now increased)
+ - Halved MTTH on assimilation related events
+ - Added large reduction to settlement MTTH if a neighbouring province already has the settled culture
+BUGS
+ - Fixed MTTH reductions on assimilated cultures (ROOT.development doesn't work)
+ - Fixed some weird capitalizations in the code comments
+
+Version 0.3.3
+BUGS
+ - Fixed defenestration of Paris firing repeatedly
+CHANGES
+ - Adjusted MTTH and triggers for cultural revolutionaries event to be more consistent
+
+Version 0.3.2
+BUGS
+ - Readded Exclamation mark many bugs should now be fixed related to load order
+
+Version 0.3.1
+BUGS
+ - Fixed Alpin decision potentials
+ - Added missing localization for Occitan Ceasing the Revolution
+ - Added missing MTTH for Occitan Revolts
+ - Added missing tooltips for half of the reeducation decisions
+ - Fixed broken Brittany reeducation events & decision
+
+Version 0.3.0 La Francophonie (Grab a snack, this is going to be a long one)
+BUGS
+ - Removed erroneous reference to Preußisch Baltendeutsch merger flag in Preußisch expands event
+ - Fixed Siebenbürger checking for either Ostsiedlung or primary culture of Pannoniendeutsch instead of Siebenbürger
+ - Added Bessarabiendeutsch!?! apparently was never properly implemented past localization
+ - Fixed Austrian settlement of Carniola to now point to the right area
+ - Fixed Austrian settlement event missing some equals signs
+ - Fixed Juten spawning in junior partner not granting province modifier
+ - Fixed stray curly bracket inside Ænglisch spawning inside JP event
+ - Fixed Ruthenisch still attempting to run away to Crimea
+ - Fixed Neunordisch settlement of Fennoscandia, would never fire due to incorrect triggers
+ - Fixed Langobardin JP event (Originally Created Fränkisch)
+ - Fixed many minor other bugs
+CHANGES
+ - Added bypass for the AI settled culture events to allow it to fire on accepted cultures since AI does not understand the existence of CI
+ - Shifted away from specifying the regions that cultures can inhabit multiple times and instead using scripted_triggers (Took a lot of work but should make future additions or changes significantly easier)
+ - Reworked Preußisch expansion to create Hochdeutsch instead if it only border Hochdeutsch provinces
+ - Lowered development requirement down to 1 from 3 for Neunordisch settlement of Fennoscandia
+ - Lowered development requirement for generic settlement events (Not Neunordisch, Österreichisch or Preußisch) and raised MTTH to 100 years with sharp decline for the first 3 extra development bringing the MTTH to happen down to ~32 years, this shouldn't affect balance too much but will make settling less painful
+ - Alongside the changes to German settlement there is a now a strong reduction of the MTTH for bordering the settled culture
+ - Permitted Standard Occitan to become Fränkisch
+ - Renamed vanilla French cultures
+ - Changed French standardisation event to create Occitan Larg if established in the Marseille or Bordeaux
+ - Changed the defines file so that cores are never lost if the culture of a province is in the culture group of the owner (May make HRE a mess but allows late-game empires in decline to Balkanize)
+ - Change the defines file so that the AI are unable to convert cultures
+ADDITIONS
+ - Added new formable for France, later updates bring it to ENG as well, England-France
+ - Added new crusader state for France to Create, ERO (Empire romain d'Orient), if BR is not enabled if it is then the Latin Empire from that is used instead; France can also create the Kingdom of Jerusalem in their own way
+ - Added the French re-educated culture of Franglais for the area of Britain
+ - Added the French re-educated culture of Gaélique for the area of Ireland
+ - Added the French re-educated culture of Bas-Français for the area of the Low Countries
+ - Added the French re-educated culture of Ibérique Central for the area of Central Iberia
+ - Added the French re-educated culture of Catalonien for the area of Eastern Iberia
+ - Added the French re-educated culture of Galicien for the area of Western Iberia
+ - Added the French re-educated culture of Rhin for the area surrounding the Rhine
+ - Added the French re-educated culture of Sud-Allemand for the area of South Germany
+ - Added the French re-educated culture of Nord-Allemand for the area of North-Eastern Germany
+ - Added the French re-educated culture of Ouest-Allemand for the area of North-Western Germany
+ - Added the French re-educated culture of Alpin for the area of the Central Alps
+ - Added the French re-educated culture of Nouveau Provençal for the area of Northern Italy
+ - Added the French re-educated culture of Apennine Central for the area of Central Italy
+ - Added the French re-educated culture of Sud-Apennine for the area of Southern Italy
+ - Added the French settled culture of Sarde for the area of Sardinia and Corsica
+ - Added the French settled culture of Tunisien for the area of Tunisia
+ - Added the French settled culture of Algérien for the area of Alegria
+ - Added the French settled culture of Marocain for the area of Morocco
+ - Added the French settled culture of Alexandre for the area of Alexandria
+ - Added the French settled culture of Tripolitaine for the area of Tripoli (North Africa, not Middle East)
+ - Added the French crusader cultures of Romain and Outre-Mer
+ - Added event to defenestrate the court of Paris (Occitan Larg only)
+ - Added events to move development from north to the south (Occitan Larg only)
+ - Added Advancement of Southern Centres event, which models economic migration from the north to the south
+ - Added Cultural Revolutionaries event, which changes the culture of provinces, removing development from particularly developed cities to simulate the resistance of Northern France 
+ - Added event to build the Citadel de Montpellier (Occitan Larg only)
+ - Added events to emulate the opening of mines, vineyards and cloth mills by the new court of Montpellier (Occitan Larg only)
+ - Added events to simulate Occitan and Gascon resistance to Français 
+
+Version 0.2.3 (Should probably be 0.3.0 but I've already reserved that for La Francophonie, so w/e)
+BUGS
+ - Corrected Sudeten German localization
+ - Fixed incorrect parsing of event ID 20 (Anglisch birth in JP)
+ - Fixed localization for Langobardin
+CHANGES
+ - Renamed many cultures to more accurate German names
+ - Renamed vanilla Germanic cultures
+ - Removed Prussian & Baltendeutsch merger events
+ - Readded ability to establish college in Prussia
+ - Reworked Swiss region, swiss assimilates incredibly slowly, and now spreads to occupy all of Switzerland and Romandie (Swiss March?)
+ - Moved events into separate files to make working on separate branches easier
+ - Pulled Frankisch out of Romandie
+ - Pulled Langobardin out of Switzerland & Carniola
+ADDITIONS
+ - Added event for Assimilation of provinces in Switzerland that are not Swiss
+ - Added event for Austrian settlement of Carniola
+ - Reworked Germany decision to allow Austrians and Hochdeutsch to use it
+
+Version 0.2.2
+BUGS
+ - Fixed mixing of Frankish and Frankisch inside events and localisation, leading to weird stuff occurring
+ - Fixed incorrect localization inside Schlesisch events
+ - Fixed mixing of Langobard and Langobardin inside events and localisation, leading to weird stuff occurring
+ - Fixed MTTH modifiers of Langobardin, to check for Langobardin instead of Frankisch rule
+
+Version 0.2.1
+BUGS
+ - Fixed issue where Pannonischdeutsch would never spread in an appropriate vassal due to incorrect culture check
+ - Fixed incorrect triggers for Birth of Anglisch from a junior partner (Checked for accepting of Scandinavian cultures, not English)
+
+Version 0.2.0 Lebensraum (Christ, I kept changing things so it took forever. sorry)
+BUGS
+ - Fixed spelling in some Localizations
+ - Fixed bug where some German Settled cultures would not convert all Germanic cultures inside the region
+ - Fixed bug where Rissian could never fire since the triggers checked that the province was both Estonian and Latvian
+ - Fixed bug where Sudetan could never fire due to same issue as above
+ - Fixed bug where New Norse would never spread as it checked for the wrong flag
+ - Fixed bug where Anglish would never spread as it checked for the wrong flag
+ - Fixed bug where Low Saxon would never spread as it checked for the wrong flag (Wow I never changed any of these flags. Oops)
+ - Fixed bug where Birth of Anglish checked for Danish province with a seat in parliament
+CHANGES
+ - Renamed many cultures so that they now use the native names for the culture, eg Hochdeutsch over Standard German. This change should help add some cultural flavour to the game, but may make things confusing if you do not speak the language, but I much prefer it like this and it's a minor change
+ - Allowed Settlement cultures to be established by any nation with the settled culture alongside all core germanic nation, This should permit things like German marches or vassals being established (Ostsiedlung not required since it doesn't make sense anymore)
+ - Pulled Sudeten back to just include Bohemia & Moravia to accommodate Pannonischdeutsch
+ - Changed primary culture of Livonian crusader states to Deutsch-Balten as Prussian was only used as no culture existed for the Baltic Region
+ - Minor changes to comments in code
+ - Removed BOH as the primary nation of Sudeten culture
+ - Adjusted Localisation to not use the deprecated $$ style of dynamic localisation
+ - Reduced scope of Posen to just Poland proper (May further reduce to Greater Poland)
+ - Increased development requirement for German Settlement to 5 from 1
+ - Side effect of raising MTTH of German Settlement as it is harder to achieve reductions as there are fewer now
+ - Reworked German settlement to using regions and areas as opposed to culture, since thematically it is more geographical anyways and it simplifies the process as exceptions should be less common now
+ - Reworked Assimilation to work with both cultures and regions and areas, should make understanding the events easier, as Ænglisch will now spread to all English provinces, AND all of the Britain region
+ - German settlement now requires the area to be connected via land to capital (Baltic region never germanicized historically for this reason)
+ - Prussian settlement of Pruthenia continues in much the same way as other settlement events but slightly easier, with only 3 development required and no ostsiedlung policy needed
+ - Standardization events now convert all relevant cultures to standard regardless of whether they are owned or not, should help with culture gore in the new world (Eventually I'll add colonial cultures but for now just ignore the new world)
+ - Removed requirement for no primary cultured nations of the cultures trying to be assimilated existing, as it got kind of strange with italian since the region is so large and diverse (Why couldn't venetian assimilate whilst naples exists exiled on Malta!?) these never worked as intended anyways since the point was to prevent assimilation of a culture whilst a strong force still exist within the region - but this is covered with the requirement to own large amounts of provinces with the relevant cultures anyways. (Also the Knights of Rhodes and Knights of Cyprus are French, thus some crappy little order in the mediterranean can prevent the French from assimilating?)
+ - Removed requirement of being a Kingdom for policy of Ostsiedlung
+ - Changed culture in Germanic Silesia to Schlesisch at game start (Wasn't really Saxon)
+ - Removed the ability for Prussian cultured nations to standardize, Instead they can culture shift to Saxon via an event when Prussian becomes Deutsch-Balten
+ADDITIONS
+ - Added Weißedeutsch as a regional dialect for Belarus
+ - Added Ruthenisch as a regional dialect for modern day Ukraine
+ - Added Wolgadeutsch for the Region North of the Caucasus Mountains, West of the Ural Mountains, and East of other Settled cultures (Do not fret I will continue east in later updates, but this is a natural stopping point for now)
+ - Added Schwarzmeererdeutsch as a regional dialect along the black sea
+ - Added Krimdeutsch as a regional dialect on the Crimean Peninsula
+ - Added Bessarabiendeutsch as a regional dialect for Moldavia
+ - Added Kaukasusdeutsch as a regional dialect for North of the Caucasus Mountains
+ - Added Pannonischdeutsch as a regional dialect for the Pannonian Basin
+ - Added Dinarischdeutsch as a regional dialect for the Dinaric Alps
+ - Added Siebenbürgen as a regional dialect for Transylvania
+ - Added Scheslisch for German Settled Silesia (Exists in saxon parts of Silesia as game start now)
+ - Added Deutsch-Balten for the Baltic Region (Renamed Rissian & Lussian) (Merges with Prussian later so that is encompasses the whole region)
+ - Added events for Prussian to assimilate into Deutsch-Balten instead of Standard German (Creates nicer cultural borders, and both regions very similar historically)
+ - Added events for Norse settlement of Scandinavia
+ - Added events for Expansion of Schlesisch and Prussian into Silesia and De Jure Pruthenia respectively
+ - Added Standard Dutch and settlement events for Walloon to become Standard Dutch
+
+Version 0.1.2
+BUGS
+ - Fixed Anglish localisation mentioning Danish provinces
+ - Added missing localisation for Bohemian (Now Sudetan)
+ - Fixed Launcher using incorrect mod name (Damn steam workshop)
+CHANGES
+ - Renamed Bohemian to Sudetan
+
+Version 0.1.1
+BUGS
+ - Fixed Austrian integration sharing an ID with Swiss integration
+
+Version 0.1.0
+ - Initial release
+

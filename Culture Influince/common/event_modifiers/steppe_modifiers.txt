@@ -1,0 +1,31 @@
+steppe_city = { #Locks the culture and prevents conversion
+	local_culture_conversion_cost = 10.00
+	province_trade_power_value = 5.0
+	trade_goods_size = 0.5
+	local_tax_modifier = 0.25 #Taxes on Merchants
+	local_development_cost = -0.15 #Dev here!
+}
+
+nomadic_province = { #Used as both a flag and modifier
+	local_culture_conversion_cost = -0.25
+	trade_goods_size_modifier = 0.30 #Trade of local produce
+	local_tax_modifier = -0.4 #Few things worth taxing
+	local_manpower_modifier = 0.25
+	local_defensiveness = -0.6 #Nomadic? literally no defences
+}
+
+non_nomadic_province = { #Debuff for nomads owning land that isn't suitable for horseys
+	#local_defensiveness = -0.6 #Cut as doesn't make too much sense and is really punishing
+	local_tax_modifier = -0.2 #Difficulty taxing
+	local_manpower_modifier = -10 #No manpower allowed
+}
+
+nomadic_growth_cooldown = { #Cooldown for when land grants refused
+	#pass
+}
+
+settled_steppe = {
+	local_development_cost = -0.35 #Matches Farmland
+	supply_limit = 1 #Puts this at 5, between Farmland and Grassland (Same as steppe for nomads)
+	local_manpower_modifier = 0.10 #Frontiersman traditions
+}

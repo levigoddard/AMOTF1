@@ -1,0 +1,96 @@
+country_decisions = { #Germans are removed via settlement
+	west_slavic_settlements_decision = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = west_slavic_settlements }
+			culture_group = west_slavic
+		}
+
+		allow = {
+			total_development = 800
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = west_slavic_settlements
+				duration = -1
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	propose_czech_slovak_unity = {
+		major = yes
+		potential = {
+			NOT = { has_global_flag = czechoslovak_created_flag }
+			OR = { #Only for Czechs and Slovaks
+				primary_culture = czech
+				primary_culture = slovak
+			}
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = erzgebirge_area
+				area = bohemia_area
+				area = slovakia_area
+			}
+			OR = {
+				NOT = { is_core = ROOT }
+				NOT = { culture_group = west_slavic }
+			}
+		}
+
+		allow = {
+			adm_power = 200
+			mil_power = 100
+			#Hardcoded and ugly but these borders are unlikely to be redrawn and it's a complete mess to do dynamically
+			erzgebirge_area = {
+				owned_by = ROOT
+				OR = { 
+					culture = czech
+					culture = slovak
+				}
+				type = all
+			}
+			bohemia_area = {
+				owned_by = ROOT
+				OR = { 
+					culture = czech
+					culture = slovak
+				}
+				type = all
+			}
+			slovakia_area = {
+				owned_by = ROOT
+				OR = { 
+					culture = czech
+					culture = slovak
+				}
+				type = all
+			}
+		}
+
+		effect = {
+			set_global_flag = czechoslovak_created_flag
+			add_adm_power = -200
+			add_mil_power = -100
+			every_province = {
+				limit = {
+					OR = {
+						culture = czech
+						culture = slovak
+					}
+				}
+				change_culture = ceskoslovensky
+			}
+			change_primary_culture = ceskoslovensky
+			266 = { add_base_tax = 2 } #Praha
+			265 = { add_base_tax = 2 } #Brno
+			1772 = { add_base_tax = 2 } #Bratislav
+		}
+	}
+}

@@ -1,0 +1,7 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = greek #This'll do for now. Should really be a Makoraban-type of culture, but I'll leave that to CI.
+religion = orthodox
+technology_group = eastern
+capital = 385 #Mecca
+fixed_capital = 385 # Cannot move capital away from this province & no power cost to move to it

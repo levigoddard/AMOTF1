@@ -1,0 +1,687 @@
+country_decisions = {
+	form_england_france_ENG_military = { #For ENG via conquest
+		major = yes
+		potential = {
+			bt_generic_can_form_potential_check = yes
+			NOT = { tag = UEF }
+			NOT = { exists = UEF }
+			NOT = { exists = UNK }
+			NOT = { exists = GBR }
+			NOT = { has_country_flag = formed_UEF_flag }
+			tag = ENG
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 236 #London
+				province_id = 239 #Gloucester
+				province_id = 243 #Lincolnshi
+				province_id = 244 #Lancashire
+				province_id = 238 #Essex
+				province_id = 183 #Paris
+				province_id = 177 #Maine
+				province_id = 178 #Anjou
+				province_id = 174 #Aquitaine
+				province_id = 184 #Orleanais
+			}
+			NOT = { is_core = ROOT }
+		}
+
+		allow = {
+			government_rank = 2
+			#adm_tech = 10 #Not needed
+			NOT = { exists = FRA }
+			#England
+			is_core = 236 #London
+			is_core = 239 #Gloucestershire
+			is_core = 243 #Lincolnshire
+			is_core = 244 #Lancashire
+			is_core = 238 #Essex
+			#France
+			is_core = 183 #Paris
+			is_core = 177 #Maine
+			is_core = 178 #Anjou
+			is_core = 174 #Aquitaine
+			is_core = 184 #Orleanais
+			total_development = 800
+		}
+
+		effect = {
+			change_tag = UEF
+			remove_non_electors_emperors_from_empire_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			set_country_flag = formed_UEF_flag
+			hidden_effect = {
+				complete_mission = vassalize_france
+			}
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+		}
+	}
+
+	form_england_france_ENG_diplomatic = { #For ENG via PU
+		major = yes
+		potential = {
+			bt_generic_can_form_potential_check = yes
+			NOT = { tag = UEF }
+			NOT = { exists = UEF }
+			NOT = { exists = UNK }
+			NOT = { exists = GBR }
+			NOT = { has_country_flag = formed_UEF_flag }
+			tag = ENG
+			exists = FRA
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 236 #London
+				province_id = 239 #Gloucester
+				province_id = 243 #Lincolnshi
+				province_id = 244 #Lancashire
+				province_id = 238 #Essex
+				province_id = 183 #Paris
+				province_id = 177 #Maine
+				province_id = 178 #Anjou
+				province_id = 174 #Aquitaine
+				province_id = 184 #Orleanais
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+
+		allow = {
+			government_rank = 2
+			adm_tech = 10 #An attempt at balancing
+			FRA = { #France must be a PU and /really/ like you
+				is_subject_of_type = personal_union
+				is_subject_of = ROOT
+				has_opinion = {
+					who = ROOT
+					value = 200
+				}
+				NOT = { liberty_desire = 10 }
+			}
+			#England
+			is_core = 236 #London
+			is_core = 239 #Gloucestershire
+			is_core = 243 #Lincolnshire
+			is_core = 244 #Lancashire
+			is_core = 238 #Essex
+			#France (Must be owned directly or via France, since this is a union of FRA & ENG, not ENG and whatever vassals they've made)
+			183 = { #Paris
+				OR = {
+					is_core = ROOT
+					is_core = FRA
+				}
+			}
+			177 = { #Maine
+				OR = {
+					is_core = ROOT
+					is_core = FRA
+				}
+			}
+			178 = { #Anjou
+				OR = {
+					is_core = ROOT
+					is_core = FRA
+				}
+			}
+			174 = { #Aquitaine
+				OR = {
+					is_core = ROOT
+					is_core = FRA
+				}
+			}
+			184 = { #Orleanais
+				OR = {
+					is_core = ROOT
+					is_core = FRA
+				}
+			}
+			total_development = 800
+		}
+
+		effect = {
+			inherit = FRA
+			change_tag = UEF
+			remove_non_electors_emperors_from_empire_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			set_country_flag = formed_UEF_flag
+			hidden_effect = {
+				complete_mission = vassalize_france
+			}
+			swap_non_generic_missions = yes
+		}
+	}
+
+	declare_greater_prussia = {
+		major = yes
+		potential = {
+			tag = PRU #Do not like this but I really don't want BRA to form this
+			NOT = { exists = GRP }
+			NOT = { has_country_flag = formed_GRP_flag }
+			bt_generic_can_form_potential_check = yes
+			OR = {
+				primary_culture = prussian
+				primary_culture = posen #Could also be described as South Prussian
+			}
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				posisch_culture_region = yes
+				preussisch_culture_region = yes
+				schlesisch_culture_region = yes
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+
+		allow = {
+			NOT = { exists = GRP }
+			is_at_war = no
+			capital_scope = { #Must be East centered
+				OR = {
+					posisch_culture_region = yes
+					preussisch_culture_region = yes
+					schlesisch_culture_region = yes
+				}
+			}
+			OR = { #Allow marches to form (Replacing free to conduct diplomacy trigger)
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_march = yes
+			}
+			is_nomad = no
+			owns_core_province = 41 #Königsberg
+			owns_core_province = 254 #Posen
+			owns_core_province = 257 #Warschau
+			custom_trigger_tooltip = {
+				tooltip = GRP_region_tooltip
+				calc_true_if = {
+					all_owned_province = {
+						is_core = ROOT
+						OR = {
+							posisch_culture_region = yes
+							preussisch_culture_region = yes
+							schlesisch_culture_region = yes
+						}
+					}
+					amount = 20 #At least ~1/2 of Großpreußen's 42 provinces (Borders are /very/ generous)
+				}
+			}
+			is_part_of_hre = yes #Since GRP is Empire centered as opposed to normal PRU
+			total_development = 200 #Decent development required
+			prestige = 25
+		}
+
+		effect = {
+			change_tag = GRP
+			#remove_non_electors_emperors_from_empire_effect = yes
+			#Doesn't remove from empire due to being tied to the empire
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 7300
+			}
+			every_province = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					posisch_culture_region = yes
+					preussisch_culture_region = yes
+					schlesisch_culture_region = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			swap_ideas = yes
+			set_country_flag = formed_GRP_flag
+		}
+	}
+
+	form_galia = {
+		major = yes
+		potential = {
+			NOT = { exists = GAU }
+			NOT = { has_country_flag = formed_GAU_flag }
+			bt_generic_can_form_potential_check = yes
+			OR = { #Allow Gaulish cultures
+				primary_culture = celtic_breton
+				primary_culture = belgae
+				primary_culture = pictone
+				primary_culture = arverni
+				primary_culture = galianeg
+			}
+		}
+
+		provinces_to_highlight = {
+			galianeg_culture_region = yes
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+
+		allow = {
+			NOT = { exists = GAU }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			capital_scope = { #Must be based in Gaul
+				galianeg_culture_region = yes
+			}
+			owns_core_province = 192 #Bibracte (Fixed capital) (Don't want to add more as it isn't my place to say where Gaul's centers should be since it is a revival)
+			government_rank = 2
+			custom_trigger_tooltip = {
+				tooltip = GAU_region_tooltip
+				calc_true_if = {
+					all_owned_province = {
+						is_core = ROOT
+						galianeg_culture_region = yes
+					}
+					amount = 82 #At least 2/3 of Gaul's 124(!) provinces
+				}
+			}
+			total_development = 750 #Gaul is Empire level
+			prestige = 50 #Discount from 75
+		}
+
+		effect = {
+			change_tag = GAU
+			remove_non_electors_emperors_from_empire_effect = yes
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 7300
+			}
+			if = {
+				limit = { NOT = { government_rank = 3 } }
+				set_government_rank = 3
+			}
+			every_province = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					galianeg_culture_region = yes
+				}
+				add_permanent_claim = GAU
+			}
+			add_prestige = 50
+			swap_ideas = yes
+			set_country_flag = formed_GAU_flag
+		}
+	}
+
+	actual_turkish_nation = {
+		major = yes
+		potential = {
+			##### BT generic formation guff, need to permit TUR
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 6			#3 is common in vanilla, but more provinces in BT
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			##### BT generic formation guff, need to permit TUR
+			NOT = { exists = TRK }
+			NOT = { has_country_flag = formed_turkey_flag }
+			culture_group = turkish_g
+		}
+		allow = {
+			NOT = { exists = TRK }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			primary_culture = turkish
+			owns_core_province = 326 #Ankara
+			calc_true_if = {
+				all_owned_province = {
+					region = anatolia_region
+				}
+				amount = 30
+			}
+			NOT = {
+				any_owned_province = {
+					AND = {
+						region = balkan_region
+						NOT = { turkish_settlement_region = yes }
+						NOT = { area = aegean_archipelago_area }
+					}
+				}
+			}
+			#capital_scope = { #No longer needed, as decision puts cap in Ankara anyways
+			#	region = anatolia_region
+			#}
+		}
+		effect = {
+			change_tag = TRK
+			remove_non_electors_emperors_from_empire_effect = yes
+			set_country_flag = formed_turkey_flag
+			swap_ideas = yes
+			change_government = republic
+			add_government_reform = oligarchy_reform
+			change_technology_group = western #Removes Dhimmi, so they convert Anatolia
+			change_unit_type = western
+			set_government_rank = 2
+			add_republican_tradition = 10
+			326 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+				move_capital_effect = yes
+			}
+			add_war_exhaustion = -10
+			add_stability = 4
+		}
+	}
+
+	form_chagatai_khanate = { #Old Chagatai is now Moghul
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_chagatai_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = JAG }
+			OR = {
+				culture_group = karluk
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			OR = {
+				ai = no
+				num_of_cities = 20
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					OR = {
+						province_id = 461 #Almaty
+						province_id = 2124 #Yarkand
+						province_id = 2118 #Urzhar
+						province_id = 457 #Tashkent
+						province_id = 441 #Khiva
+						province_id = 442 #Bukhara
+						province_id = 454 #Samarqand
+					}
+				}
+				AND = {
+					OR = {
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					OR = {
+						province_id = 451 #Kabul
+						province_id = 440 #Qaraqalpak
+						province_id = 446 #Herat
+						province_id = 476 #Kypshak
+					}
+				}
+			}
+		}
+		allow = {
+			NOT = { exists = JAG }
+			is_nomad = yes
+			owns_core_province = 461 #Almaty
+			owns_core_province = 2124 #Yarkand
+			owns_core_province = 2118 #Urzhar
+			owns_core_province = 457 #Tashkent
+			owns_core_province = 441 #Khiva
+			owns_core_province = 442 #Bukhara
+			owns_core_province = 454 #Samarqand
+			451 = { #Kabul
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			440 = { #Qaraqalpak
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			446 = { #Herat
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			476 = { #Kypshak
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_cities = 30
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		effect = {
+			change_tag = JAG
+			set_country_flag = formed_chagatai_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 3 } }
+				set_government_rank = 3
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			shanshan_area = {
+				add_permanent_claim = JAG
+			}
+			tarim_basin_area = { #Central Altishahr
+				add_permanent_claim = JAG
+			}
+			kashgaria_area = {
+				add_permanent_claim = JAG
+			}
+			ferghana_area = {
+				add_permanent_claim = JAG
+			}
+			termez_area = { #Khuttalan
+				add_permanent_claim = JAG
+			}
+			transoxiana_area = {
+				add_permanent_claim = JAG
+			}
+			khiva_area = {
+				add_permanent_claim = JAG
+			}
+			kyzylkum_area = {
+				add_permanent_claim = JAG
+			}
+			arys_area = {
+				add_permanent_claim = JAG
+			}
+			syr_darya_area = {
+				add_permanent_claim = JAG
+			}
+			jetysuu_area = {
+				add_permanent_claim = JAG
+			}
+			zungaria_area = { #South Zungaria
+				add_permanent_claim = JAG
+			}
+			north_zungaria = {
+				add_permanent_claim = JAG
+			}
+			turpan_kumul_area = {
+				add_permanent_claim = JAG
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	reform_mongol_khanate = { #Not always Nomadic
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_mongolia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = KHA }
+			OR = {
+				culture_group = mongolic
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			OR = {
+				ai = no
+				num_of_cities = 20
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2190 #Qaraqorum
+				province_id = 4222 #Ulaangom
+				province_id = 723 #Xilin Gol
+				province_id = 725 #Cicigar
+				province_id = 2122 #Hami
+			}
+			NOT = { is_core = ROOT }
+		}
+		allow = {
+			NOT = { exists = KHA }
+			#is_nomad = yes #Not needed? since Mongolia could be settled later
+			owns_core_province = 2190 #Qaraqorum
+			owns_core_province = 4222 #Ulaangom
+			owns_core_province = 723 #Xilin Gol
+			owns_core_province = 725 #Cicigar
+			owns_core_province = 2122 #Hami
+			NOT = { #No other Mongolic country exists (May need custom tooltip)
+				any_country = {
+					culture_group = mongolic
+					NOT = { tag = ROOT }
+				}
+			}
+			num_of_cities = 30
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		effect = {
+			change_tag = KHA
+			change_primary_culture = mongol
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			swap_ideas = yes
+			mongolia_region = {
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	form_kurdistan = {
+		major = yes
+		potential = {
+			NOT = { exists = KRD }
+			NOT = { has_country_flag = formed_KRD_flag }
+			bt_generic_can_form_potential_check = yes
+			primary_culture = kurdish
+		}
+
+		provinces_to_highlight = {
+			kurdish_culture_region = yes
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+
+		allow = {
+			NOT = { exists = KRD }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 411 #Mosul
+			owns_core_province = 2211 #Erdelan
+			owns_core_province = 4296 #Bidlis
+			calc_true_if = {
+				all_owned_province = {
+					is_core = ROOT
+					kurdish_culture_region = yes
+				}
+				amount = 18			#At least 2/3 of Greater Armenia's 24 provinces (approximate)
+			}
+			total_development = 250			#Normal requirement for rank 2 is 500 dev, so this is 50 percent discounted Note base in Greater Armenia alone is about 168.
+			prestige = 25			#Normal requirement for rank 2 is 50 prestige, so this is 50 percent discounted
+		}
+
+		effect = {
+			change_tag = KRD
+			remove_non_electors_emperors_from_empire_effect = yes
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 7300
+			}
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			every_province = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					kurdish_culture_region = yes
+				}
+				add_permanent_claim = KRD
+			}
+			add_prestige = 25
+			swap_ideas = yes
+			set_country_flag = formed_KRD_flag
+		}
+	}
+}
