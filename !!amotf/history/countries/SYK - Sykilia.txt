@@ -1,8 +1,8 @@
 government = monarchy
 add_government_reform = feudalism_reform
 government_rank = 1
-primary_culture = anubis
-add_accepted_culture = roma_egyptian
+primary_culture = punic
+add_accepted_culture = griko
 religion = coptic
 technology_group = western
 capital = 4319

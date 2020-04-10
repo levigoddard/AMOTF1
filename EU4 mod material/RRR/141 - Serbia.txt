@@ -2,7 +2,7 @@
 
 owner = SER
 controller = SER
-culture = serbian
+culture = w_imperial
 religion = orthodox
 capital = "Kragujevac"			#Also Rudnik
 trade_goods = livestock #stone or fruit
@@ -24,7 +24,11 @@ discovered_by = eastern
 discovered_by = muslim
 discovered_by = ottoman
 
-
+1441.1.1 = {
+	owner = RRR
+	controller = RRR
+	add_core = RRR
+}
 1459.6.20 = {
 	owner = TUR
 	controller = TUR

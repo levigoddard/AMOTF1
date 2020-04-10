@@ -1,0 +1,31 @@
+#BT Balkans reoverhaul
+
+owner = VEN
+controller = VEN
+add_core = VEN
+culture = w_imperial
+religion = catholic
+capital = "Nerežisca"
+base_tax = 1
+base_production = 1
+base_manpower = 1
+trade_goods = fish #stone. Niki calls this the most important marble mine in the world.
+is_city = yes
+hre = yes
+
+discovered_by = KAZ
+discovered_by = CRI
+discovered_by = GOL
+discovered_by = AST
+discovered_by = QAS
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = western
+
+
+1441.1.1 = {
+	owner = RRR
+	controller = RRR
+	add_core = RRR
+}

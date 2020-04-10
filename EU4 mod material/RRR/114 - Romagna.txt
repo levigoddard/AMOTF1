@@ -7,9 +7,9 @@ controller = RAV
 culture = w_imperial
 religion = catholic 
 hre = no 
-base_tax = 12
-base_production = 12
-base_manpower = 8
+base_tax = 14
+base_production = 14
+base_manpower = 12
 trade_goods = bt_trade_good_books
 capital = "Ravenna"
 is_city = yes	# Estimated #WTF Paradox
@@ -40,6 +40,10 @@ discovered_by = eastern
 	owner = RRR
 	controller = RRR
 	add_core = RRR
+}
+1443.1.1 = {
+	fort_15th = no
+	fort_16th = yes
 }
 1494.11.13 = { #BeyondTypus batch edit shortcut the second shattering begins
 	owner = RAV
