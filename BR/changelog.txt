@@ -1,0 +1,1121 @@
+Patch notes:
+
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+
+Byz Resurgence 4.0.12
+
+Tweaks:
+-Adjusted Galatia's main capital to be Bourdigala and not Treberon, as it blocked the player from stating provinces in North Germany instead of France as intended.
+
+Bugfixes:
+-Locked some splendor and quite possibly prosperity gains in missions behind the Mandate of Heaven DLC as Splendor is a DLC mechanic.
+
+###########################################
+
+Byz Resurgence 4.0.11
+
+Features:
+-Properly implemented a Latin Empire mission tree. This one is similar to the Byzantine tree in that it takes you all around the Roman Empire. The tree is however much smaller and may receive diversification later down the line.
+-Adjusted the Knightly Orders Autonomy revocation decision to settle the knightly orders in the province and as a result, convert the province to the knightly order's primary culture. This is to allow a bit of customisation for a mission in the Latin mission tree.
+-Added the Patriarchate of Mecca & Medina, a releasable nation for Byzantium through an event given as part of the Patriarch of Mecca & Medina decision, similar to the Mughal Deccan viceroyalty event.
+
+Tweaks:
+-Adjusted some decisions concerning Byzantium that required the Byzantine idea set despite not requiring a particular idea from their idea set.
+-Fixed some inconsistencies with Byzantine naming of ships.
+-Moved Latin Empire mission scripted triggers into a main file, renaming it to br_mission_triggers
+
+Bugfixes:
+-Fixed Trebizonder Lesser Armenia claims being broken due to the change last patch.
+-Fixed Cujik province (8017) not being part of the Rhenus border mission and associated bugs with it not being in the trigger.
+-Fixed Latin Empire revoke Knightly Orders Autonomy decision erroneously stating you require between 65 and 70 Latin Imperial Authority.
+
+###########################################
+
+Byz Resurgence 4.0.10
+
+Features:
+-Started work on Greek naming for new provinces in Iberia. Aragon, Andalusia, Extremadura & South Portugal is currently done.
+
+Tweaks:
+-Ecumenical Patriarch of Constantinople Muslim version now activates if Ottomans keep the Patriarchate in one of their flavour events.
+-Updated Trebizonder missions to use the new mission claim/core scripted effect.
+-Gave Raise Tourma Strategoi interaction a custom tooltip to avoid tooltip bloat.
+-Tweaked Tyrian Purple event to increase Silk price by 15%, up from 10%, and depletion event to decrease by -25%, up from -10%.
+
+Bugfixes:
+-Fixed Byzantine Resurgence Anatolia CB not activating if Ottomans owned parts of Wallachia.
+-Fixed only requiring 1k dev to pass emperor & autocrat of the Romans.
+-Fixed War of Two Romes giving twice the intended AE (30) and Prestige (50). Seems like BT doubled this somehow, or it being some other edge case bug I have no idea how to fix.
+-Fixed minor localisation bugs.
+-Fixed drafting Dacia or Alania from a subject resulting in a situation where they would keep their previous capital and not move to the new one.
+
+###########################################
+
+Byz Resurgence 4.0.9
+
+Features:
+-Added two new missions to the Byzantine mission tree:
+	-Fortify Armenia: Build at least 4 forts of fort level 2 in Lesser Armenia. Awards a defensiveness buff and +2 base manpower to those fort provinces.
+	-Restore Armenia: Own 300 development worth of Armenian-cultured provinces and accept Armenian. Awards Armenian Auxillaries, giving +0.25 Infantry Shock until the end of the game.
+
+Tweaks:
+-Minor tweak to the descriptor file to put the BT Addon Dynamic Province Names as a dependency, allowing Byzantine naming in this mod to pass through BT's otherwise erroneous naming.
+-Removed deprecated BT and BR on_actions as a result of work in BT Bugfixes.
+-Tweaked the mission coding syntax by adding scripted effects for claims in order to require less scripting in the file (Byz tree shrunk by 12%).
+-Tweaked decision to integrate Exarches & Knightly Orders to show up before the ages where absolutism is available.
+-Tweaked Anatolian Restoration mission to use new 1.29 development_in_provinces trigger. Instead of requiring 20 provinces to be developed 5 times, it now requires 750 owned development in Anatolia.
+
+Bugfixes:
+-Fixed some triggers not checking for dev-doubled numbers on vassalisation CBs from missions.
+-Fixed new 1.29 triggered modifiers concerning China not applying since BR had to overwrite the pentarchy trigmod.
+
+###########################################
+
+
+Byz Resurgence 4.0.8
+
+Tweaks:
+-Deprecated the Russian arty fix since 1.29 apparently fixed Russia's army composition incompetency.
+
+Bugfixes:
+-Fixed Dacia's highlighting and claims to be updated.
+
+###########################################
+
+Byz Resurgence 4.0.7
+
+Tweaks:
+-Adjusted the Culture Creole event to check for adm points instead of dip points, because the event-triggered culture conversion effect uses admin points instead of diplo points. Maybe an artifact from the early days?
+
+Misc:
+-Fixed BT Bugfixes not being a dependency
+
+###########################################
+
+Byz Resurgence 4.0.6
+
+Tweaks:
+-Rebalanced Exarch modifiers to make it a bit more valuable to revoke the Exarch autonomy:
+	-Exarch Territory modifier has been lowered to 20% autonomy floor.
+	-Exarch capital modifier has been adjusted from 3/5/8 max states at 10/20/30 dev to 4/9/18 states at 20/40/60 dev since regions have grown larger and areas are more plentiful.
+-Adjusted the Culture Creole events:
+	-Instead of instantly converting the culture, it starts a culture conversion by the Exarch state. 
+	-Event triggers have been adjusted to be the same as when the provinces can be culture-converted.
+	-The event is hidden and fires more frequently.
+	-To avoid point-starving of the Exarches, the event will not fire if the Exarch has less than 100 dip.
+	-Removed the 2nd event as it was made to counterbalance the instant conversions.
+-Tweaked pretender rebel stack composition down to 30% cav due to Misc adjusting cavalry support limits down to 30% from 50%, something now fixed in BT Bugfixes.
+
+Bugfixes:
+-Fixed extra quote marks on Subjugate the Pope claims string.
+-Fixed Rebellious Demetrios event not firing due to a missing flag that was removed in the integrated Byzantine events toggle removal.
+-Fixed a bug that hid two Exarches estate interactions due to requiring an outdated government type.
+
+###########################################
+
+Byz Resurgence 4.0.5
+
+Tweaks:
+-Adjusted the Latin Empire release mechanic to not require Constantinople to be in a state. It also now gives cores to the whole Thrace area if you are to release the Latin Empire.
+-Adjusted dependencies of Byzantine Resurgence to have my BT Bugfixing mod as one to prevent overwriting the Mount Athos province modifier in Chalcidice.
+
+Bugfixes:
+-Fixed Fall of Constantinople? event not requiring Aragon to not rival Byzantium, which the follow-up event does.
+-Bugfixed the event for Sufi shrine removal where it didn't set the shrine left alone flag to the province that it triggered for.
+
+###########################################
+
+Byz Resurgence 4.0.4
+
+Features:
+-Added some stray Greek localised naming for Arabia & India.
+
+Bugfixes:
+-Fixed EPR being unlocalised.
+-Fixed Knightly Order description not supporting dynamic localisation keys.
+-Fixed a bunch of mismatches on the tooltip of how Latin Imperial Authority is calculated.
+
+
+###########################################
+
+Byz Resurgence 4.0.3
+
+Bugfixes:
+-Fixed broken localisation on government reform tweaks.
+-Fixed edge-case Demetrios Palaiologos bug where Demetrios could spawn for Byzantium even if they didn't own Selymbria.
+-Fixed a bug with the disconnected Byzantine cores from 4.0.2
+
+Tweaks:
+-Removed 50 absolutism requirement for reduce exarch autonomy decision to appear and moved requirement for an exarch to exist to the potential instead.
+-Basileus Protostrategos requires ruler general to be enacted.
+-Tweaked some localisation strings for missions that were either poorly written or just downright incorrect.
+
+###########################################
+
+Byz Resurgence 4.0.2
+
+Bugfixes:
+-Fixed the Chariot races event being able to fire more than once at a time if you let the event stay up for a long time.
+-Fixed BT bug with disconnected Byzantine cores.
+
+Tweaks:
+-Adjusted Exarchate government reform & legacy government to have -5 accepted culture slots, thus resulting in situations where your Exarches cannot accept cultures, only convert them.
+-Tweaked government reforms to use reform mechanics like what Governments Expanded uses.
+-Tweaked chariot race events to be less punishing on the rebel front, reducing the rebel size after having seen 100+k pretender rebels spawn in Constantinople.
+-Additionally, bonuses granted from the chariot races have been buffed.
+-Adjusted Constantinople Recovers BT event to require your own religion and not specifically Orthodox. Also upped the dev bonus since the event has been neglected since dev doubling.
+
+###########################################
+
+Byz Resurgence 4.0.1
+
+Features:
+
+Bugfixes:
+-Fixed Genoa's special-case event where Genoese ruler is an Entrepreneur, in which Byzantium does not get Chios, despite losing their money.
+-Also fixed a similar issue in Trebizond's purchase of Amastris.
+-Fixed a tooltip error in the Tyrian Purple event.
+-Added a failsafe for resurgent_BYZ.7 where the event sometimes fires for Byzantium even if they control Constantinople.
+-Fixed the load order shenanigans because of the new Beyond Typus workshop mod.
+
+
+Tweaks:
+-Tweaked Exarches liberty desire to even lower values per development point.
+-Re-added the slim chance of the Ottomans still declaring on Byzantium even if they are allied to one of Ottoman's rivals (Pretty sure I disabled it just to test the trigger at one point and forgot to re-add it).
+
+###########################################
+
+Byz Resurgence 4.0
+
+Features:
+-Updated mission triggers plus startup screen to 1.29.
+
+###########################################
+
+Byz Resurgence 3.2.4.5
+
+Features:
+-Added two new Knightly Order estate interactions in a further attempt to complete the estate. Still missing and need ideas for:
+	- A colonial interaction
+	- One or two more interactions
+	- Estate events (Conflicts with nobility, clergy & burghers, disloyalty events, etc.)
+	- Estate disaster (Likely forcing independence)
+
+Bugfixes:
+-Fixed some missing stuff from Miscellanea's estates rebalancing.
+-Fixed broken localisation with Byzantine Bureaucracy
+-Added missing localisation for Knightly Orders
+-Fixed Knightly Orders having wrong icon
+-Fixed some other minor bugs with the Knightly Orders
+
+Tweaks:
+-Adjusted the Theme System province highlighter to only highlight provinces if you do not meet the requirements of owning 100 provinces in Balkans+Anatolia.
+-Adjusted the conversion missions in Anatolia to allow for a trigger that uses the same scripted trigger.
+-Adjusted the Bastion of Christendom Byzantine mission to also be triggered if you are catholic, papal controller, and the crusade target is Muslim.
+
+###########################################
+
+
+Byz Resurgence 3.2.4.4
+
+Tweaks:
+-Adjusted some Latin Empire orders from easterngfx to westerngfx.
+-Added Trebizonder country colours to interface better with the new BR Unit Pack update making units dynamic, and to allow the unit pack to avoid changing the checksum for MP compatibility.
+
+###########################################
+
+Byz Resurgence 3.2.4.3
+
+Bugfixes:
+-City of the World's Desire event was bugged once again and has now been fixed.
+-Fixed Trebizond having completed Restore the Empire mission not getting permaclaims on Foothold in Italy provinces.
+-Fixed some outdated estate files.
+-Fixed and added some minor Greek province naming.
+-Potential fix for the Succession Crisis not firing during a regency council. Seems that the disaster would disable and enable every monthly tick.
+-Fixed duplicate Pentarchy & Catholic Rome modifiers, at the expense of disabling mod compatibility with any mod that adjusts triggered modifiers.
+
+###########################################
+
+Byz Resurgence 3.2.4.2
+
+Bugfixes:
+-More bugfixes with Trebizonder mission tree.
+
+###########################################
+
+Byz Resurgence 3.2.4.1
+
+Bugfixes:
+-Fixed at least 4 different bugs with the Trebizonder mission tree.
+
+###########################################
+
+Byz Resurgence 3.2.4
+
+Bugfixes:
+-Fixed broken highlighting for missions Pentarchy & East Oriental Schism
+-Fixed non-updated mil-tech file to include Miscellanea's new ahead of time bonuses.
+
+###########################################
+
+Byz Resurgence 3.2.3
+
+Bugfixes:
+-Fixed 5 out of 6 faction events being broken since Dharma.
+-Fixed Holy Byzantine Empire granting Imperial Princes' lands to the Holy Roman Empire instead of the Roman Empire.
+
+###########################################
+
+Byz Resurgence 3.2.2
+
+Features:
+-Added more Greek province names to the Balkans
+-Adjusted Holy Orders such that all Catholic nations can use them, meaning Catholicism gets a slight buff compared to other Christian denominations.
+-Also adjusted the Andalusian Holy Orders so that any Sunni nation gets access to them. Considering some of them even had presence in India, I believe this is fair.
+-Added support for triggered modifiers for when your subjects control the holy cities of Rome, Jerusalem and Mecca, giving you the same modifiers as your subjects get.
+	-These are not specific to Byzantium either, but rather are allowed for anyone currently controlling them.
+	-These triggered modifiers are currently commented in a file, so if you wish to enable them, find 02_byz_resurgence_compensation_triggered_modifiers.txt and uncomment them.
+
+Tweaks:
+-Adjusted the Pentarchy modifier to not require you to own the provinces directly, however they must be Orthodox religion.
+-Removed the Byzantine startup event, finally removing the mess that was the unintegrated Byzantium Events by Nevik at this point.
+
+Bugfixes:
+-Fixed Byzantium being formable by end-game tags.
+-Fixed a bug where province 141 had no name.
+-Removed Ottoman claims to both Thrace areas since one was deprecated in BT 11.5
+-Fixed Foothold in Italy not being part of the Exarchate of Ravenna provinces.
+-Fixed a tag conflict between the Ravennan Exarchate and the trade city of Ravenna, with them using the same country file. Hopefully this doesn't break savegames.
+-Fixed Orhan being of no culture and no religion.
+
+###########################################
+
+Byz Resurgence 3.2.1
+
+Bugfixes:
+-Fixed Gotland not starting as a pirate republic.
+-Fixed Subjugate Serbia mission requiring a dutch province instead of Belgrade/Singidon.
+
+###########################################
+
+Byz Resurgence 3.2
+
+Features:
+-Updated missions and Latin Empire duchies for BT 11.5's new areas and provinces.
+-Minor updated naming for BT 11.5's balkans (More will come later)
+-Made some Byzantine government reforms available to Republic Byzantium/Rome, to allow for Theme System restoration under the Republic, however weird that may initially seem.
+	-Sadly, this increases incompatibility with any mod that attempts to add government reforms at all.
+-Added Trebizonder missions, sending them to conquer Anatolia, Cherson & Byzantium itself.
+	-The missions also include the ceding of Amastris to Trebizond as part of another trade deal, similar to the event granted to Byzantium for Chios.
+	-Depending on what missions have been completed, certain Byzantine missions will auto-complete upon forming Byzantium.
+-The Latin Imperial Authority modifier now shows the exact values for what increases and decreases Latin Imperial Authority, in addition to showing monthly gain and total.
+
+Tweaks:
+-Adjusted byz_chariot_race_events.3 to spawn peasants instead of particularists
+-Adjusted Byzantium formation requirements to better fit potential claimants, such as Trebizond with their new mission tree.
+-Removed BT bugfixes because they've now been fixed in BT proper. #Only Moroccan ideas fix left
+-Adjusted Theodoro and all references to them as 'of Gothia' to properly reference them as the Gabras dynasty, as they historically was.
+-Adjusted Exarch LD gain from development down to 0.15 from 0.25 and base liberty desire to 0%, down from -25%.
+	-This is an attempt at making it so that Exarches can control huge amounts of dev without going rebellious. A 3k+ development Galatia is impossible to get below 50% LD.
+
+Bugfixes:
+-Byzantine Succession Crisis can no longer fire if Byzantium is a republic.
+-Fixed missing claims in the Trentino area.
+-Fixed Bonifacio's dynamic name being used for non-existent province 6038 instead of its actual 7038 ID.
+-Attempted bugfix with the Succession Crisis randomly giving you one of your royal marriaged countries' dynasty upon accepting foreign rulers.
+-Fixed Thessaly highlighting Chersonese provinces.
+-Fixed granting Exarch lands giving free cores even if Byzantium lacked cores on them, and also disabled it during wartime. Also cleaned up their tooltip.
+
+###########################################
+
+Byz Resurgence 3.1.5.2
+
+Bugfixes:
+-Fixed a bug that prevented the City of the World's Desire event to fire.
+-Fixed 1.28 startup screens missing from BR.
+-Fixed BT bug of beer price change events not firing.
+-Fixed BT bug of Pittich spreading all over the world.
+
+###########################################
+
+Byz Resurgence 3.1.5.1
+
+Tweaks:
+-Adjusted LD gain from granting provinces to match the new values introduced in the last hotfix.
+-Fixed and adjusted some Byzantine names in North Africa.
+
+Bugfixes:
+-Fixed the BT bug of Moroccan ideas being doubled, restoring the previous values intended for them.
+
+
+
+
+############################################
+
+Byz Resurgence 3.1.5
+
+Features:
+-Finalised localised naming for Italy.
+
+Bugfixes:
+-Added hidden immediate effect to resurgent_BYZ.3
+-Fixed some BT bugs with regards to subject liberty desire.
+
+############################################
+
+Byz Resurgence 3.1.4.1
+
+Bugfixes:
+-Fixed only the Karchidon Exarch having its "ai=yes" trigger removed.
+-Fixed the culture conversion event being broken since Dharma because of an old government check trigger.
+
+############################################
+
+Byz Resurgence 3.1.4
+
+Features:
+-Finally added the Chariot Races event:
+	The Chariot Races are quadrennial, i.e, they fire once every 4 years, once the Triumphial Quadriga has been returned to Constantinople and the Hippodrome has been reconstructed. 
+	During each race, the game randomly chooses between 13 different outcomes for the races, slightly weighted towards different outcomes for gameplay or historical reasons.
+	Example gains could be that a particular faction wins, granting monarch points and certain estate influence, or a global unrest reduction from a favourite candidate winning.
+	Eventually this'll be extended to be replaced by Olympic Games when embracing the Enlightenment, but this feature is yet to be implemented.
+-Adjusted the AI cede events for Exarches to now appear in-game. Reason being is I figured out how to emulate the LD province gain modifier.
+	Note that BT has yet to lower the LD gain from granting provinces to a vassal, despite the dev doubling. Thus, this uses vanilla values for now.
+
+Bugfixes:
+-Fixed roman culture not being able to pick up the Byzantine Government Reforms
+-Fixed Exarchates not getting Exarchate government reform. This was due to the government reform changing just before they became an Exarch subject.
+
+
+############################################
+
+Byz Resurgence 3.1.3
+
+Features:
+-Added a Resettle Gallipoli modifier to the Byzantine mission "Deny Ottomans Access"
+-Added a 3-mission large Latin Minors mission tree.
+
+Tweaks:
+-Adjusted the first two Byzantine conquest of Greece missions to still fulfil if Ottomans do not control any lands in the Balkans. 
+	Reason being that I noticed the AI being way too derpy as it usually has alliances taking Ottoman provinces in the region, meaning the whole mission tree gets locked behind it.
+-Adjusted missions giving subjugation CBs to check for 200 development instead of 100.
+
+Bugfixes:
+-Fixed the pretenders.txt file being outdated since before Dharma.
+
+############################################
+
+Byz Resurgence 3.1.2
+
+Features:
+-Added naming for the new provinces in the Histria-Venetia area, Sardinia-Corsica, southern Piedmont, plus some missing names in other regions.
+
+
+Tweaks:
+-Adjusted the Russia Arty buff to come into effect at tech 7 already.
+-Merged the effects of the Pentarchy decision into the mission, while leaving the decision for non-Byzantium players so others can also restore the Pentarchy.
+-Also added a new mission to make the East-Oriental Schism functioning the same way. Also moved the Unite Orthodoxy mission to create symmetry.
+-Fixed some issues with Catholic Byzantium not being able to get Tyrian Purple events.
+
+Bugfixes:
+-Actually made the Ottomans out of Greece mission grant permanent claims for the mission Recover West Anatolia, as stated by the localisation.
+-Fixed a missing localisation that occured due to deleting unnecessary localisation strings accidentally slipping in a used line.
+-Fixed a potential issue with government reforms if having Golden Century installed.
+-Adjusted the 100 dev mark for Catholic/Coptic nations to convert to Orthodox to 200 to account for the dev doubling done in BT.
+-Fixed Vlad the Impaler event, Navarroese Succession, all Indian estates events, plus some other things related to on_actions, not happening or firing.
+
+############################################
+
+Byz Resurgence 3.1.1
+
+Tweaks:
+-De-deprecated the Russian Arty Buff events because apparently they did still have issues producing artillery, it seems.
+-Also adjusted the MTTH to the event so that it does not fire too often.
+
+Bugfixes:
+-Fixed culture creole events not firing.
+-Fixed a localisation bug that bugged all localised naming in Northern Italy and broke localisation in many regions.
+-Fixed a typo in integrated_byz_events.37.
+-Fixed Orhan spawning as Greek Orthodox in-game.
+
+############################################
+
+Byz Resurgence 3.1
+
+New computer means some WIP features are now lost. I may manage to reclaim them eventually, but basically this version is based off the 3.0.7 workshop version.
+Also, some developer notes: I do not know how to fix the Succession Crisis being able to start but will not tick up during regency.
+
+Features:
+-Updated to patch 1.28 properly
+-Updated localised naming for new 1.28 provinces
+-Continued work on Italian Byzantine province names (Still not done, Lombardy, Piedmont and Venetia are left).
+
+Tweaks:
+-Upped Succession Crisis number of provinces required to start up to 15.
+-Did a quick band-aid fix and readjusted Constantinople's trade good back to cloth, once more allowing the Constantinopolitan manufactories event to fire.
+-Deprecated the Russian Arty Buff events as Reddit reports Russia actually producing artillery now.
+
+Bugfixes:
+-Fixed the Burghers' admiral estate interaction being broken.
+-Fixed all references to centers of trade from pre-1.27
+
+Misc:
+-Removed a bunch of leftover Latin Empire files since Draiocht added them to BT proper
+
+
+############################################
+
+Byz Resurgence 3.0.7
+
+Features:
+- Added the Exarchate government reform (And re-added the legacy version).
+
+Bugfixes: 
+- Fixed the establishment of Exarches decisions not giving Exarchate ideas if they're drafted an already existing subject.
+- Also fixed said Exarches getting nogovernment as a result of this drafting.
+- Fixed the releasing of Dacia & Alania ending up with nogovernmentname and norulertitle.
+- Fixed non-Dharma's Roman Autocracy mission localisation.
+- Fixed LTE duchies not getting Monastic Order government reform, and also tweaked so that non-Dharma owners give the duchies the Monastic Order government.
+
+Tweaks:
+- Created a "swap_ideas" scripted trigger for simplicity.
+- Changed the factions' monarch skills to +1 free policy of their respective category.
+- Changed some mission icons about.
+
+
+############################################
+
+Byz Resurgence 3.0.6
+
+Features:
+- Byzantine Parliament is now known as the Senate.
+- Made Demetrios Palaiologos now properly spawn in Selymbria, as the description seems to hint at. Also prevents some AI derping.
+
+Bugfixes:
+- Fixed the Subjugate the Pope mission not granting any claims, and the Greater Greece mission granting claims to Central italy instead of the Pope mission.
+- Remedied the claims of Dacia to include the new provinces in Moldavia. Also moved some others around.
+- Fixed some claims of the Alania march as well.
+- Attempted fix at the norulertitle nogovernmentname bug that seemingly pops up for Alania by changing them into a monarchy at game start instead of a tribal federation.
+- Fixed the fort levels of the walls modifiers being broken by removing them outright again.
+- Fixed Exarches of Antioch & Alexandria not getting Exarchate ideas.
+
+############################################
+
+Byz Resurgence 3.0.5
+
+Bugfixes:
+- Fixed the Roman Empire formation decision being gone completely as a result of attempting to fix the formation decision disappearing as non-orthodox.
+- Fixed the issue of Latin Empire being released with no government.
+- Fixed the issue of Byzantium tagswitching into Morea getting no government.
+- Fixed the issue of being unable to establish Dacia & Alania if you had the Dharma DLC.
+- Fixed the issue of the new Crusader vassal tags not being recognised as crusader vassals by a trigger.
+- Fixed the issue of the Military Coup ending not being updated for Dharma government reforms.
+- Fixed the issue of the Tyrian Purple event chain not being updated for 1.26 centers of trade.
+
+Tweaks:
+- Added 5 absolutism to the Basileus Protostrategos reform.
+- Added +0.1 monthly militarisation to the Domestikoi faction.
+- Added +0.03 monthly militarisation to each province controlled by a loyal Strategoi estate.
+
+############################################
+
+Byz Resurgence 3.0.4
+
+Features:
+- Did some major updating on the Latin Empire's subjects' files.
+- Added two new Knightly Orders: Thessaly and Macedonia, bringing the total up to 35.
+- Overhauled the Latin Empire's subject liberty desire into a brand new mechanic: Latin Imperial Authority.
+	- Upon forming the Latin Empire, you now get a country modifier that shows you your current Latin Imperial Authority. It also shows the monthly change.
+	- Latin Imperial Authority affects mainly your subjects.
+		- If below 50, it increases their liberty desire.
+		- If above 50, it decreases their liberty desire, while also boosting their stats, meaning you get more troops to throw at your enemies.
+		- Latin Imperial Authority increases for each Knightly Order that is loyal, as well as with high legitimacy and absolutism.
+		- It decreases for each province owned by you, as well as each province owned by your Knightly Orders (Albeit by much less than your own provinces).
+		- The modifier ticks monthly through a hidden event.
+	- Upon reaching 100 Latin Imperial Authority, you can integrate your Knightly Orders by the start of the Age of Absolutism.
+
+
+Bugfixes:
+- Fixed the Roman Empire formation decision disappearing if you're not orthodox to requiring you to just be Christian instead.
+- 'Fixed' the bug of Militarisation appearing on top of the Iqta mechanic in the Government screen by making Pronoiar and Basileus Protostrategos mutually exclusive (Sorry, no proper way of fixing this unless I jumble with the whole interface).
+- Fixed a bug with the Latin Knightly Orders being assigned as monarchies.
+- Fixed the core not disappearing on a Knightly Order's capital.
+- Fixed event resurgent_BYZ.13 (Hippodrome of Constantinople) missing localisation if Venice has not been chastened (Accidentally had written 'da' instead of 'db' in localisation).
+- Fixed Exarch tags being granted non-existing reforms upon their creation.
+- Fixed Purple Phoenix faction events not firing for Dharma owners.
+- Fixed reforms and legacy government giving local goods produced instead of global goods produced modifier.
+
+Tweaks:
+- Thracesium Knightly Order now renamed to Philadelphia, to show off the historical planned duchy (And the now existing city in BT 10.0) granted to Stephen of Perche before he died in the Battle of Adrianople in 1205. They also get a new flag and crusader unit if you use my unit pack, as well.
+- Moved the Mount Athos modifier to the new Chalcidice province to better reflect its location. While whoever controlled Thessalonica technically also controlled the monks' allegiance, it's better to have it in the region.
+
+############################################
+
+Byz Resurgence 3.0.3
+
+Features:
+- Made Naples able to form the Latin Empire, as they were historically ruled by the Anjous.
+- Re-added the Hexamilion Wall event as BT now represents Corinth.
+- Byzantium (Or anyone of hellenic or roman culture) now has unique government reforms:
+	- Pronoiar: Tier 2. -0.1 global autonomy. Enables Iqta mechanics for Cradle of Civilisation owners. -10% Nobility influence, -20% Nobility loyalty.
+	- Roman Bureaucracy: Tier 3. +10% national tax modifier, +10% goods produced modifier, enables Byzantine factions.
+	- Theme System: Tier 4. +25% land forcelimit modifier, -10% Nobility influence. Enables the Strategoi estate.
+	- Basileus Protostrategos: Tier 5. +2 Monarch military skill, +20% Strategoi loyalty. Enables Militarisation. Forces the monarch to become a general upon succeeding to the throne.
+- Non-Dharma owners will get access to all the above except the Basileus Protostrategos mechanic through either decisions (Existing in the mod previously), or as part of the legacy government form Roman Autocracy.
+- Made the Strategoi & Exarchoi estates' events not require the Cossacks DLC.
+- Finished off Greek localisation of new provinces in Crimea & Crete, plus Neapolitan holdings and Latium/Rome. The rest will come in a future update.
+- Started working on a new mechanic for the Latin Empire (To be implemented properly).
+- Added an event chain that allows for Aragonese intervention in Ottoman conquest of Constantinople, however it very rarely actually happens if AI gets to pick, as happened historically. Call it reverse_local_noble.jpg.
+- Added estate support for new Italian city state ideas introduced in BT yet to be introduced in BT proper.
+
+Tweaks:
+- Removed the requirements to have the Theme System established to form Rome as Byzantium.
+- Re-added the core on Thessaloniki as Draiocht re-added some Byzantine cores in the vicinity.
+
+Bugfixes:
+- Fixed the permaclaim hole in Albania-Macedonia. Now these provinces are part of missions again.
+- Fixed a discrepancy with the Turkic Question mission's highlighting and actual requirements.
+- Fixed BR overwriting BT Candia files.
+- Fixed the March of Alania decision accidentally using an Italian minor tag.
+- Fixed Byzantine Silk event firing after having gotten Faceting. This currently blocks you out of the event chain entirely, but let's keep it that way for now.
+- Fixed the Latin Empire being formable as a subject, causing some funky issues.
+
+Things to do:
+- Fix the Latin Empire duchies/knightly orders' claims and add new duchies in regions where fitting. This shit is taking ages to do and is still not done.
+
+
+############################################
+
+Byz Resurgence 3.0.2
+
+Features:
+- Added compatibility for the Dharma Government Reform system for Byzantium. The system is currently not complete, and I'm planning a slightly different system in the future. For now, this'll do however.
+
+Tweaks:
+- Removed the permaclaims given from the Theme System decision.
+- Tweaked the Byz Resurgence CB to not work on provinces in Carpathia, now that Dobruja belongs to the Balkans instead. 
+
+Bugfixes:
+- Fixed the Roman Autocracy government form now showing up as a button in the Reform screen.
+- Fixed numerous bugs as a result of old files causing issues.
+
+############################################
+
+Byz Resurgence 3.0.1
+
+Bugfixes:
+- Actually updated the 3.0 changelog to more accurately represent what features are in the mod currently.
+- Fixed Thessalonica & Constantinople not having proper trade centers.
+
+
+############################################
+
+Byz Resurgence 3.0
+
+Updated to BT 10.0
+
+Features:
+- Once more readjusted the mission tree, courtesy of ZombiePowered for a brand new mission layout, which, hopefully, is less confusing and has less crossing arrows.
+- Added a bunch more mission modifiers in an attempt to diversify them, especially towards the late tree in order to get rid of the spammed Imperial Ambitions.
+- Due to popular demand, I have now made it so that once you conquer a whole region belonging to an Exarch, the specific capitals of provinces will switch to the specific culture of that region.
+- Added five new missions to the mission tree.
+	- One is a mission to cover all Mediterranean trade.
+	- Another one is a mission that deals with creating an Imperial Army, as that was sorely missing from the mission tree.
+	- The final one deals with a Byzantine Indian Trade Company, after integrating Mesopotamia.
+	- Split up Ottoman Greece mission to accomodate for the new provinces in the Balkans
+	- Split up Central Italy mission to accomodate for new provinces in Central Italy
+- FINALLY added a Persia mission tree, spanning Alexander the Great's conquests.
+- The Holy Byzantine Empire:
+	- If you are the emperor of the HRE, you can now enact the decision of Renovatio Imperii by passing Revoke the Privilegia, while also having 50 Imperial Authority.
+	- If you do, the decision fires an event that works similar to the Renovatio Imperii reform, integrating all HRE princes while tag-switching you to the Roman Empire instead of the Holy Roman Empire.
+	- NB: Please note that this feature is currently untested, however my eyes see no real bugs in the code. Tread lightly and report any bugs you notice!
+- Added a triggered province modifier that takes effect once an Orthodox province is owned by a Catholic nation known as "Schismatic Relations", giving -3% local missionary strength while also giving -4 local unrest (For balance).
+	- This modifier disappears at the end of the Age of Discovery, marking the start of the Age of Reformation.
+	- This modifier also does not apply for a Catholic Byzantium, for obvious reasons.
+- Added the ability for Achaea & Neopatria to restore the Latin Empire (For earlier start support).
+- Also added permanent claims for any Exarches established, as to allow the player to figure out what provinces are intended to be owned by said Exarch.
+- Added a 'Russia buff' that attempts to fix the broken army composition of Russia or whoever has the Russian government mechanics by railroading artillery recruitment through event if certain conditions are met.
+	- While it is intended for Russia, it does railroad any nation that has the Russian government mechanics.
+	- This particular mechanic also comes with a slight change to the Russian idea set, giving them -20% land maintenance modifier instead of +50% land force limit.
+- Added an event that allows the country to remove a sufi shrine within their borders if its province has been converted away from islam.
+- Added the Iqta mechanics to Byzantium's unique starting government, the Roman Autocracy (Also tweaked), as they historically employed Pronoiar, which were taxable land grants, much like the Iqta system.
+- Added some flavour events regarding the Triumphal Quadriga. The plan is to expand upon this and create quadrennial horse races, but due to time constraints, it has yet to happen.
+
+Tweaks:
+- Adjusted the advisor gain from the Strategoi estate to always grant a Provincial governor if you own more than 200 provinces, as it seemed that estate interactions cannot handle random_list.
+- Removed stability gain from re-establishing the Theme System.
+- Changed Northern Chersonese mission to require an East slavic-cultured country to either be allied OR a subject.
+- Added the requirement to the Varangian Guard decision from Renovatio Imperii to require the Basilics law idea.
+- Adjusted the Theme System modifier from 25% manpower modifier to 25% land forcelimit modifier. The Anatolian Restoration mission already gives enough manpower.
+- Removed power gains from Anatolian Restoration mission.
+- Adjusted the Roman Empire requirement so that the Holy Roman Empire tag also cannot exist in order for you to form the Roman Empire.
+- Adjusted the War of Two Romes CB so that it is not a one-time use, but rather is available once Byzantium has completed their mission to establish the Exarches (Or any other country who has the flag "byz_challenged_hremperor" set to them).
+	- This also makes it so that the CB is valid on whoever is currently the Emperor.
+	- Also adjusted the CB to give a -30 reluctance to peace out.
+- Adjusted so that the Exarches formation decisions use the "release" effect instead of ceding provinces, thus avoiding funky stuff such as the newly formed Exarch spawning without ideas or any part of the map explored.
+- Removed +1 tolerance of true faith from the Patriarch of Mecca & Medina modifier, as the Conquest of Mecca already gives +1 tolerance of true faith.
+- Adjusted LTE Knightly Orders Epirus (EPI) & Crete (CRT) to new tags Epirus (EPR) & Candia (CND), as to avoid weird conflicts with the new unit packs.
+- Sped up recruitment speed of the heavy ships spawned during the Incorporate Mesopotamia mission as to avoid the situation where the explorer dies before the ships can be finished.
+- Removed Byzantine startup cores in Anatolia. Reason being:
+	- It made AI Byzantium give away some of these cores to its vassal Lesbos due to Lesbos bordering the provinces and Byzantium did not.
+	- It basically gave Byzantium the ability to freely convert the provinces, as the provincial unrest would be 0 after being given to loyal Clergy and raised autonomy, which started at 0 anyway because it was a core.
+	- It allowed the Byzantines to directly reconquer the provinces with 0 nationalism, thus allowing direct culture conversion, assuming they could convert the provinces to Orthodox.
+	- It caused major prestige bleeding to Byzantium if they did not have a truce with the Ottomans.
+- Adjuted Recover Ottoman Greece mission to give permaclaims instead of cores on Western Anatolia to accomodate for the removal of the startup cores.
+- Tweaked the Succession Crisis:
+	- It now allows Komnenos or Gothia even if the countries don't exist. They do however require Byzantium to personally own their historical capitals.
+	- Changed Laskarids to rise from BT Nicaea instead of (vanilla) Prousa.
+- Adjusted Pentarchy decisions and mission to be allowed if the provinces were owned by a subject as well, like many missions.
+- Reduced some modifiers' legitimacy and prestige bonuses (Especially the permanent ones), because you'd literally get infinite amounts towards the end game.
+
+Bugfixes:
+- Fixed a bug with BT on_actions.
+- Fixed missing localisation on event integrated_byz_events.33.
+- Fixed missing localisation for modifier integrated_searching_for_better_allies.
+- Fixed mission "A Question of Schismatics" requiring having recovered West Anatolia instead of Ottoman Greece.
+- Fixed resurgent_BYZ.17 lacking an event picture.
+- Strategoi disaster now correctly applies -25% national manpower modifier instead of -250 manpower.
+- Fixed mission Protect Lesser Armenia not granting claims to Subjugate Lazica.
+- Fixed a potential bug with localisation past resurgent_BYZ.16. Whether it exists in the released version or cropped up while bugfixing, I don't know.
+- Fixed the March of Dacia being establishable if Dacia somehow was created without Byzantium passing the decision (Which happened in my test-game).
+	- Also configured the March of Alania to work similarily.
+- Fixed the March of Alania being establishable by the means of any subject nation, including a massive Muscovy PU. Let's just say it was funny to me.
+- Also fixed the March of Alania erroneously referring to Karchidon instead of Alania when trigger-checking.
+- Fixed Byzantine colonies being called Curopalates.
+- Fixed the Hajduk Infantry erroneously being spelled Hadjuk.
+- Fixed Estate advisors not implementing the new vanilla feature of having culture & religion from a random province that is owned by the Estate.
+	- Also tweaked the Strategoi & Exarches estate advisors to work similarily.
+- Fixed a localisation bug with an event where because the event was a province_event, the custom localisation would break if the culture of the province was not in the Hellenic culture group.
+- Fixed a similar localisation bug on the Exarches estate events if the player got the event before revoking Exarches' autonomy.
+- Fixed a broken localisation on the War of the Two Romes peacedeal.
+- Fixed a bug with Knightly Orders never becoming available.
+- Fixed European Ambitions lasting for 4 years and 290 days instead of 5 years.
+- Fixed Form Romanian Nation decision appearing twice.
+- Fixed Exarchate of Alexandria not being recognized as an Exarchate by a scripted trigger.
+- Fixed Major Exarch Seat Bonus province triggered modifier not showing up when it should.
+- Fixed missing localisation on several (Read: All) Exarches influence modifiers
+- Fixed a province highlighting bug for the mission "Convert Anatolia" if Byzantium was not Orthodox.
+- Fixed country colours of Alexandria & Anatolia from their identical pink colours that were leftover from a copy-paste.
+- Fixed Subjugate Lazica applying "military_expansionism", a now deprecated BT modifier.
+- Fixed African Ambitions erroneously giving "trade_range" instead of "trade_range_modifier".
+- Cleaned up a bunch in the country formation files as BT moved towards consolidating them instead, thus removing any potential duplicate country formation decisions.
+- Fixed Exarches seemingly being establishable from PU's.
+- Fixed an edge-case situation where Byzantium could tag-switch into Morea through event while at war, causing all sorts of vanilla bugs.
+- Fixed bug with LTE names and generals showing up with weird, incorrect characters.
+- Fixed the Strategoi disaster ending immediately if you had 3 stability upon it firing.
+- Also fixed the Succession Crisis that had a similar issue.
+- Fixed an edge-case situation where if a Byzantium that tag-switched to Roman Empire got their missions updated, they would lose their mission tree.
+
+Misc:
+- Did some minor restructuring of localisation files.
+- Made attempts at finally updating the Greek localisation for Persia.
+- Actually adjusted the startup event's title from age-old version 1.2.
+- Adjusted the loyalty modifier text for Strategoi for between 25-50 army tradition to state "below 50 army tradition" instead of "above 25 army tradition" as the modifier was negative.
+- Minor dynamic province name changes.
+- Created new tags for Epirus & Candia for the purposes of Latin Empire Knightly Orders.
+- Adjusted DYR's flag to the Anjou-Durazzo coat of arms.
+- Removed minor localisation for Romanian by request of Vlad, author of Romanian Awakening.
+
+############################################
+
+Byz Resurgence 2.1.4
+
+Bugfixes:
+- Fixed the Recover West Anatolia mission erroneously claiming rewarding cores on all of Anatolia.
+- Bugfixed a bit on the Genoese Purchase event as it was slightly broken in some ways. May still have some bugs I haven't ironed out, though.
+- Fixed the Schismatics decisions adding province triggered modifiers without hiding them, resulting in a vanilla localisation error.
+- Fixed the Alania decision's repeatability, erroneously disabling the March of Dacia decision instead.
+
+############################################
+
+Byz Resurgence 2.1.3
+
+Features:
+- Added a CB for Byzantium that dismantles the HRE for 80 WS upon establishing the Exarches.
+- Added the Knightly Orders estate, however lacks estate interactions, localisation as well as estate events.
+
+Bugfixes:
+- Removed the concept that granting a province to the Exarches would remove any provinces in the state from the strategoi as it apparently removed every single estate in the state.
+- Fixed the Anatolian Reclamation applying the province modifier to every province instead of only east Anatolia.
+- Fixed the Imperial Co-capital accidentally targetting Edirne instead of Thessalonica.
+- Fixed the Pentarchy mission granting the vanilla modifier instead of the mod's version of it.
+- Fixed the Ottoman Greece mission granting cores instead of permanent claims on the Safeguard the Balkan Border provinces.
+
+############################################
+
+Byz Resurgence 2.1.2
+
+Bugfixes:
+- Fixed the missing mission triggers for Mecca & Medina, Cyrenaica & Arabia.
+- Fixed the development modifier for the Anatolian Restoration modifier being global, resulting in 5 dev cost Constantinople.
+- Fixed the estate icons being off-center and removed the temporary declaration of the Knightly Orders estate until implemented (Apparently I seem to have missed saving the .dds file containing the Crusader Helmet... oh well).
+
+############################################
+
+Byz Resurgence 2.1.1
+
+Features:
+- Rush-coded in the March of Alania decision for Smartguy725 specifically that was mentioned in the changelog previously. A new game may have some issues here.
+
+Bugfixes:
+- Fixed a missing parenthesis in the Convert to Catholicism decision breaking it.
+- Fixed the Persis Exarchate scripted trigger to actually work. *
+- Fixed Aegyptus exarchate decision using same decision ID, plus an error regarding it that would change Alexandria to Antiochian culture.
+
+
+############################################
+
+Byz Resurgence 2.1.0
+
+Features:
+- Reoverhauled the Mission Tree once more, now featuring a bunch of missions that do not relate to Byzantine conquests. Especially the early missions have been split up. The old missions still exist.
+- Especially the tree concerning early Ottoman expansion and the one dealing with Venice have been expanded.
+- The mission system includes:
+	- Development missions for the provinces Constantinople, Thessalonica & all of Anatolia
+	- Diplomatic missions such as gathering allies at the start and befriending your Slavic religious brethren in the North.
+	- A trade mission to give Byzantium some merchants as they were sorely lacking them.
+	- Religious missions that include embracing either Catholicism or staying Orthodox and becoming the Defender of Faith to start crusading.
+	- A mission with what to do with the Turk - accept them and gain valuable Turkic Horse Archers, or culturally enrich them for other bonuses.
+- Added an event that allows Byzantium to purchase Chios off Genoa as Byzantium resurges (Triggered by mission). Whether Genoa goes ahead with the purchase depends on many factors, especially on ruler personalities.
+- Added the Exarchate of Alexandria, mysteriously missing from previous iterations of the mod.
+- Added a tooltip to the initialisation event that explicitly tells you which option is which, as the cynical option names could potentially cause confusion for the unknowing.
+- The Latin Empire has a specific type of vassal that calculates liberty desire independently of one another. These are allowed upon picking up the 5th idea.
+- This allows you to create a vassal-swarm state akin to that of the HRE.
+- Added decisions for the Latin Empire to establish historical and ahistorical crusader states/duchies as vassals. These include:
+	- Vanilla:
+	- Achaea, Athens, Epirus, Naxos, Corfu (Cephalonia), Candia, Cyprus, Jerusalem
+	- BT:
+	- Cilicia, Lesbos.
+	- Imported from Shattered Europa:
+	- Neopatria, Negroponte, Antioch, Edessa, Tripoli & Vaspurakania
+	- Brand new:
+	- Philippopolis, Thessalonica, Nicopolis, Varna, Nicaea, Dyrrachium, Armeniacum, Paphlagonia, Anatolia, Thracesium, Samus, Charsianum, Colonia, Cibyrraeum, Mesopotamia, Chaldea & Chersum
+	-... For a total of 33 (!) potential vassals that you can swarm the heathen with.
+	- Luckily, these vassals calculate their Liberty Desire independently of one another.
+	- However, to counterbalance this, each province owned by the Latin Empire increases liberty desire in subjects by an amount that is dependent on the total number of provinces directly owned by the Latin Empire.
+	- This is done to force the player into a very vassal-centric style of play.
+	- Eventually in the Age of Absolutism, it is possible to revoke this Crusader state authority, similar to that of Exarches, which integrates all the crusader states and removes this LD modifier.
+
+Tweaks:
+- Adjusted the requirements for Byzantium converting to Catholicism. For some weird reason, Byzantium would almost always do it on their own as AI.
+- Did MANY adjustments to the mission tree in an attempt to remove duplicate modifiers (Except past the Exarches - At that point, Imperial Ambitions is the only thing that matters and makes sense) and rebalance the tree.
+
+Bugfixes:
+- Fixed tooltip on Convert Asia Minor & Anatolia to properly indicate direct ownership is required.
+- Finally found out why the [Country] Sends Supplies always picked Byzantium and fixed it (Hint: It has to do with parentheses)
+- Fixed the Succession Crisis events allowing you to let more than one pretender take the throne.
+- Fixed a compatibility bug with BT where this mod would disable the Tanistry events for Ireland and hotfixes in BT.
+- Fixed Latin Empire being formable by Byzantium if they converted to Catholicism.
+
+Miscellaneous:
+- Changed Antiochian to Antiochene
+- Replaced the now-deprecated Religious Center permanent province modifier with that of a similar modifier applicable to Orthodox holy cities instead.
+- Did a hell of a lot of cleanup regarding duplicate names and similar in the country files.
+
+############################################
+
+Byz Resurgence 2.0.6
+
+Bugfixes:
+- Fixed being able to establish Exarchates after reducing Exarch autonomy (The decisions were checking for reduced_exarch_autonomy flag, not revoked_exarch_autonomy)
+- Fixed albian being misspelled "albiian" in Establish Exarchate of Albion decision, resulting in Londinion getting No Culture.
+
+Miscellaneous:
+- Integrated new 1.25 trigger for Exarch territory modifier.
+
+############################################
+
+Byz Resurgence 2.0.5
+
+Feature:
+- Adjusted Recover Albania's mission reward from Balkan Ambition to a new modifier that decreases recruitment time of ships and regiments for 5 years.
+- Added 50 prosperity to the Thrace and Macedonia areas as a mission reward for Safeguard the Balkan Border.
+
+Bugfixes:
+- Fixed Besarabia not being part of March of Dacia province highlighting
+- Fixed el-Arish/Rhinokoloura not being part of Lower Egypt mission.
+- Fixed Ottomans not actually declaring war if saying the city shall be theirs during the City of the World's Desire event.
+
+############################################
+
+Byz Resurgence 2.0.4
+
+Bugfixes:
+- Turn the Tide no longer gives claims to the Recover Albania mission. Instead, Recover Greece does, as intended.
+- byz_naval_ambition now has proper localisation.
+- Exarchate decisions now properly change the culture of their granted province.
+- The subject that is turned into the Exarchate if the province is controlled by them now has their primary culture changed to what it is supposed to be for the relevant Exarchate.
+- Fixed Protect Lesser Armenia not giving claims to Crusade for Syria.
+
+############################################
+
+Byz Resurgence 2.0.3
+
+Bugfixes:
+- Fixed some horrible bugs with regards to the Exarchates that had Byzantium release them as independent instead of as an Exarch.
+- Fixed a lot of other bugs with regards to Exarchates, ranging from liberty desire calculations to accidental use of adjective naming for Albion. Here's hoping they now behave as planned.
+- Fixed two provinces in France not being part of any mission.
+- Fixed the mission for Raetia-Noricum erroneously granting claims to Roman Galicia.
+- Fixed a localisation issue in the claims granted for Lower Egypt in Crusade for Palestine
+- Fixed event resurgent_BYZ.12 lacking localisation.
+- Probably fixed a lot of other bugs that I forgot to write down while frantically attempting to fix everything.
+
+############################################
+
+Byz Resurgence 2.0.2
+
+Features:
+- Added province highlighting to Reestablish the Theme System & Restore Byzantine Empire decisions.
+
+Bugfixes:
+- Fixed Convert Asia Minor & Convert Anatolia trigger
+
+############################################
+
+Byz Resurgence 2.0.1
+
+Features:
+- Added province highlighting to the Exarchate establishment decisions
+- Added province highlighting to the Latin Empire formation decision.
+
+Bugfixes:
+- Adjusted Latin Empire formation's claims not being given to the Latin Empire
+- Fixed some buggy Exarch decisions where a province scope was missing that could have unforeseen consequences.
+
+############################################
+
+Byz Resurgence 2.0
+
+Updated to 1.25 for BT 9.0
+
+General:
+- Completely overhauled Byzantine Ideas. The new ideas are a compromise of contemporary and medieval Byzantium. The full idea set is following:
+	- Traditions: +1 yearly legitimacy, +1 possible advisor
+	- Basilics Law: -20% core creation cost
+	- Byzantine Renaissance: -10% tech cost
+	- Bureau of Barbarians: Unchanged, +20% improve relations
+	- Reinstitute the Pronoia: -20% infantry cost
+	- Formalize Succession Laws: -10% stability cost, +25% heir chance
+	- Repopulation of the Countryside: -10% development cost, -20% culture conversion cost
+	- Byzantine Resurgence: +2 yearly prestige
+	- Ambitions: Unchanged. +5 max states
+- Due to adjusted ideas, the decisions inoorporated from Renovatio Imperii have had their requirements adjusted.
+- As the Ecumenical Patriarch idea is now gone, the event that granted the religious center modifier to Constantinople is now gone. In turn, Constantinople now starts as a religious center.
+- Added two province modifiers for Constantinople and Thessaloniki, with the first representing the Ecumenical Patriarch and the second one referencing Mount Athos. The modifiers change upon conquest by a muslim ruler and disappear completely upon the province being converted away from Orthodox. Any other religious denomination gets no modifier.
+- Overhauled the Byzantine start:
+	- Byzantium now start as a tributary to the Ottomans, as they did historically. This of course only works if you have the Mandate of Heaven DLC. Do note that the Ottomans AI is very quick on revoking the agreement, so do not expect it to last.
+	- Switched Byzantium's government form back to Feudal Monarchy, as the Empire was by every definition except hereditary rule a feudal moanrchy.
+	- This also results in the removal of the annoying Nobility Decadence.
+	- This also adjusts the Succession Crisis disaster to occur only if the idea "Formalize Succession Laws" has not been taken, unlike before where it simply required the government form.
+	- The previous Roman Monarchy government form is now available upon either controlling both Constantinople & Rome, or reaching the Age of Absolutism, as a mean to show a "return to form" Byzantium of the 8-11th centuries.
+		- The Roman Monarchy also has had its flavour text reworked as to indicate that non-hereditary rule is not a defining characteristic for the government form.
+	- The Roman Monarchy has had its bonuses reworked:
+		- -25% harsh treatment cost
+		- -25% autonomy change cooldown
+		- -0.10 monthly autonomy change
+		- +0.1 yearly absolutism
+		- +10 max absolutism
+		- Has logothete (Factions) and loses the Nobility/Dynatoi estate. The factions made little sense to Byzantium at game start anyway as they were barely influential.
+		- This of course causes the "Factions influence ruler" events to not pop up before this point.
+- Speaking of which, the Purple Phoenix DLC events have had a major rework:
+	- All of the monarch point gains have been removed entirely. In return, legitimacy and prestige (And in the case of "Turks driven from X" army tradition) is gained instead. Monarch points made no sense.
+	- The "Triumph for X" missions have been removed, as you can already hold a military parade as an estate interaction with the Strategoi. This should hopefully somewhat help the army tradition bloat that happens when playing as Byzantium.
+	- The "Civil War" event that could fire before has returned to requiring a formalization of succession laws. I also discovered a bug that if Byzantium got a regency, but had very high legitimacy, the event would fire without giving any options. I thus added the option of naming one of your generals as the ruler, or if no general exists, a random noble. This also happens to be the way the Palaiologoi made it onto the throne. Read more in the:
+- Added custom startup screen for Byzantium, detailing what has happened with Byzantium from the failed Battle of Mantzikert up until now. While doing this, I also discovered there is a character limit to the startup text.
+- Completely overhauled the mission tree (again) for 1.25.
+	- Most 1.24 missions can be found in this tree. Some have been merged or removed, however.
+		- This is due to the lack of ability to represent all the different paths in a 5 slot wide mission system.
+		- Some missions were also deemed superfluous, such as conquering Jerusalem when the Palestine mission already only covers that area.
+	- The Annihilate Venice mission has been integrated into the mission system as to allow for the new flavour event introduced in 1.25.
+	- The only other vanilla missions in the tree are Convert Asia Minor & Restore the Pentarchy. The rest are either old missions pre-1.25 or brand new ones.
+	- (Most) Missions that previously would grant a vassalize CB have had this CB included in the respective "Conquer X" mission.
+	- Some missions give a subjugation CB on a less-than-100-dev country that the mission concerns.
+		- Special case for the ones in Italy, where any country whose capital is in one of the provinces regarding the mission is a target for this.
+	- An additional mission chain that requires the establishment of the Exarches allows for further conquests, granting missions to restore the Roman Empire's borders.
+	
+- Added two new advisors currently unique to Byzantium, perhaps planning on allowing their recruitment from things such as the Byzantine Refugees event and similar:
+	- Added the Military General, which grants yearly army tradition. This is only recruitable from the Strategoi estate interaction "Recruit Minister" (80% chance).
+	- Added the Provincial Governor, which grants reduced core creation cost. This is recruitable from either the Strategoi estate interaction "Recruit Minister" (20% chance) or the new estate Exarches' similarly named interaction (Guaranteed).
+- Buffed Manuel II (Will never be seen in a 1444 start) to a 2/4/3 from a 1/2/1
+- Buffed Ioannes VIII to a 2/4/2 from a 2/2/2
+- Nerfed Konstantinos XI to a 3/4/4 from a 4/5/4
+- Changed both of the above rulers' religion to Catholic due to the ratification of the Council of Florence in 1439.
+	
+Decisions:
+- Adjusted the Schism decisions; Restoring either the Pentarchy or mending the Oriental Schism gives a religious center to the cities required for restoration/mending.
+- Nerfed the Theme system decision to only grant claims in Greece and Anatolia. It was deemed too powerful to get all the claims you did.
+- Added the option to reform the Latin Empire to the Knights, Cyprus, Provence, Athens, Lesbos, Naxos & Corfu, and an option for Venice & Genoa to establish it as a vassal if they control Constantinople.
+	- Added Latin Empire ideas, based heavily on using vassals:
+		Traditions: +2 Tolerance of the True Faith, +50% Vassal income
+		Adapt Greek Administrators: +10% National Tax Modifier
+		The City of Cities: +1 yearly Prestige
+		Invite Italian Merchants: +15% Global Trade Power
+		Induct Knightly Orders: +10% Morale of Armies, +300% Vassal Forcelimit Contribution
+		Modernizing the Themata: -10% Land Maintenance Modifier. Allows the Strategoi estate.
+		Reform East Latin Rites: +1% Missionary Strength against Heretics
+		Eternal Crusade: Triple manpower increase in religious wars
+		Ambitions: -15% subject liberty desire from development
+	
+Events:
+- Allowed the player to use un-integrated Purple Phoenix Events by a startup event. Be wary that the un-integrated events have not been tested for either balance or bugs, and may as such cause issues. I may fix these if bothered enough.
+- Added an event to expand the Tyrian Purple industry upon conquering Tyros. Your options are:
+	- Expand it further, changing Tyros' trade goods to Dyes, changing some provinces that produce cloth into producing Silk and changes some coastal provinces into producing Dyes. This runs the possibility of depleting the Murex snail supply in the future.
+	- Do not
+	- If your ruler is Calm or Careful, you can limit the expansion to Tyros. This does not risk the Murex snail depletion.
+- Added an event "City of the World's Desire", functioning very similar to that of the Surrender of Maine event. The event fires if Mehmet II is the ruler and the year is after 1450. Unless Byzantium has managed to ally one of Ottoman's rivals, this almost always ensures they declare war on them (80/20 chance).
+	- If Byzantium has allied someone that rivals the Ottomans, the chances are about reverted to a 16.7% (1/6) chance of declaring.
+- Adjusted Byzantine Greek Fire MTTH because it happened way too frequently in my test runs.
+- Added a repurposed Demetrios Palaiologos pretender event to the integrated byzantine events which fires upon the death of Ioannes VIII if before 1460.
+	- The event is currently very cheese-able to compensate for it spawning in Constantinople instead of Selymbria, which lacks representation currently. However, once the province gets added, which will probably be soon, you can bet the rebellion fires immediately.
+- Completely removed the Help from the Pope event chain as it was very ahistorical and stupidly scripted. I may intend to adjust this later on, but it served very little purpose.
+
+Strategoi estate:	
+- Tweaked Strategoi estate's influence gain to 1%/1% land instead of 1.5%/1%. You'll probably end up granting them close to 40% of your state development anyway
+- Adjusted Strategoi province revocation to only spawn rebels if Strategoi are not loyal (I.e below 60% loyalty).
+
+Exarches:
+- Added a brand new Exarch system:
+	- Becomes available upon Byzantium owning enough land outside of the Balkans and Anatolia. If you've played England in Beyond Typus and established the Kingdom of Ireland, this'll sound familiar. Establishing the Exarches grants a malus to max absolutism.
+	- At first, it allows for the establishment of Exarchates. Due to the inability to conditionally allow the creation of client states outside of dip tech, it enables a bunch of decisions for regions historically having had an exarch, or regions deemed far away from Constantinople.
+	- The exarch states are: Ravenna/Italy if capital is in Constantinople, Karchidon/Africa, Gallia/France, Hesperia/Iberia, Albion/England, Persis/Persia, Anatolia/Orient if capital is moved to Italy
+	- If desired, I may also add Exarches of Germania, Aegyptus/Egypt and Indus.
+	- The exarches are a unique subject type that is a mix of a vassal and a march, that at the same time calculates liberty desire like personal unions do, i.e individually.
+	- Each exarch also has a unique culture belonging to the Hellenic group. This is akin to that of a yet-to-be-implemented Colonial Culture system in BT. Essentially, it simulates the spread of Greek as a language to these areas, akin to the Hellenism of old.
+	- Beware! Once an Exarch has been established in the region, no areas in that region can be stated, thus encouraging you to grant the provinces to the Exarch instead.
+	- The exarch states also have access to a unique set of ideas:
+		- Traditions: +10% Trade Steering, +1 Naval leader manuever
+		- Protector of the Emperor: +10% Morale of Armies, +1 yearly Legitimacy
+		- Incorporate Far Lands: -10% Core Creation Cost, -15% State Maintenance modifier
+		- Ruler of Barbarians: -15% Culture Conversion Cost, No negative tolerance malus
+		- Exarchate Governor: +1 Diplomatic Reputation
+		- The Exarch's Standing Army: -10% Land Maintenance modifier
+		- Spread The Word: +2% missionary strength, +25% institution spread
+		- Exarch Themata: -10% Land Maintenance Modifier. Allows the Strategoi estate.
+		- Ambitions: +50% sailors
+	- The exarch states also get a unique monarchy type, the Exarchate, which grants +20% admin efficiency (Approximately 50 absolutism), to compensate for them spawning at 0 absolutism no matter that of its overlord and how incompetent the AI is at obtaining absolutism.
+		- The bonus is very powerful and depending on balance reports, I may nerf it. However I currently deem it very necessary.
+	- Upon re-establishing the Roman Empire, it is possible to integrate these Exarch lands via decision that reduces their autonomy. Doing so disables the establishment of further exarch states and allows for the new Exarches estate to appear.
+	- The Exarches estate has a simple system where any province in a region can be granted to the Exarches, but only one province. Depending on the province development (10/20/30) they grant +3/5/8 max states and a region-wide 33% autonomy floor.
+	- The Exarches estate has some new interactions:
+		- Grant local autonomy, which adds 10% autonomy to every province in the same region as that of a province controlled by the Exarches. In return, it grants a lot of loyalty and if Exarches influence is high, bonus stability.
+		- Place relative as Exarch, reducing their influence, sparking a revolt, but also allows for:
+		- Designating Exarch as heir, which grants a good heir if none exists.
+		- Drafting an Exarch's Eparch, granting a good general.
+		- Drafting Exarch troops, granting bonus manpower.
+		- Recruit Minister, granting a brand new provincial governor minister.
+	- The Exarches estate has 4 estate events that can occur. These can also occur if there are any Exarchates.
+	
+Bugfixes:
+- Did some minor province naming adjustments to certain cities.
+- Adjusted dynasty misspellings of Byzantine names (from vanilla).
+- Fixed flavor_BYZ.36 requiring a misspelled province modifier, thus never firing.
+- Fixed a Strategoi event that speaks of great Strategoi influence that does not actually require Strategoi influence to be high at all.
+- Fixed the decision of restoring Byzantium to granting claims to Byzantium instead of "ROOT", as ROOT was still referring to whatever country that formed it.
+- Attempted fix of a bug in the Succession Crisis disaster that disallowed it from firing if having a regency council.
+	
+Miscellaneous	
+- Reorganized a lot of the mod into different files.
+
+############################################
+
+Byzantine Resurgence 1.1.4 - The Tyrian Purple Patch
+
+Changelog:
+	- Adjusted Byzantium's colour and flag to that of Tyrian Purple due to a colour code I found actually looking really nice. If you prefer the old one, there is a tutorial file packed with the mod to teach you how to go back to the old colours.
+	- Bugfixed several issues with the Military Coup and Succession Crisis disasters, such as the latter being able to occur even when having another disaster and general tweaking of the requirements, as well as allowing Pretender rebels to end both disasters if enforcing demands.
+	- Bugfixed event flavor_BYZ.2: The Genoese Merchants to now actually granting provinces and actually having localized names.
+	- Added new event: Reestablishment of Tyrian Purple dye that, if having restored Byzantine Silk, gives the option of producing Dyes in Smyrna, as well as adding other related modifiers.
+	- Fixed opinion modifiers being missing from the previously integrated Byzantium Events mod
+	- Adjusted some government names for Byzantium and removed random piece of code accidentally left in since 1.1.3.
+
+############################################
+
+Byzantine Resurgence 1.1.3
+
+Changelog:
+	- Recover Greek Islands mission should now target the Aegean Islands area properly.
+	- The event chain of the Palaiologian Renaissance should now only pop up once.
+	- Small adjustment to Recover Mainland Greece mission to also target the Thrace area.
+
+############################################
+
+Byzantine Resurgence 1.1.2
+
+Changelog:
+	- Fixed some missing localisation.
+
+############################################
+
+Byzantine Resurgence 1.1.1
+
+Changelog:
+	- Added a trigger to most integrated events from Byzantium Events so that they do not occur past 1475, as to prevent issues arising when continuing mid-game.
+
+############################################
+
+Byzantine Resurgence 1.1
+
+Mind you, a lot of these changes are untested. Please submit bug reports if issues occur and I will hotfix as soon as possible!
+
+Changelog:
+	- Added dynamic province naming to Roman Britain
+	- Included integration of the Byzantium Events mod by Nevik, which includes events regarding the Palaiologian Renaissance, historical events and flavour advisors. Most events are heavily modified as to fit Beyond Typus and some personal adjustments that I feel was necessary. May somewhat affect old games by spamming a bunch of events, but that's something I'm willing to take.
+	- Added nobility decadence (Only effective in new campaigns)
+	- Added Theodosian Walls of Constantinople (Only effective in new campaigns)
+	- Added Eastern Units integration from the Renovatio Imperii mod by eva3071 with alt-history eastern tech units modified to fit the balance of BT Miscellanea.
+	- Added a new disaster: Succession Crisis
+	- General adjustment of certain mission factors to make them more likely to appear.
+	- Numerous bug fixes regarding obsolete area names and provinces in the mission code.
+	- Attempted fix at a bug regarding conversion to Orthodox that may have prevented countries to convert previously.
+
+... And probably other things I forgot to mention, but I think I got most of it.
+
+############################################
+
+Byzantine Resurgence 1.0.4
+
+Changelog:
+	- Added an event (flavor_BYZ.7) that upon Byzantium losing Constantinople to forcefully tag switch to the Despotate of Morea and lose all their vassals, instead getting an alliance to simulate the end of the Empire.
+
+############################################
+
+Byzantine Resurgence 1.0.3
+
+Changelog:
+	- Fixed .mod file stating mod was for 1.22
+	- Added a BUNCH of pictures showing people what the mod does.
+
+############################################
+
+Byzantine Resurgence 1.0.2
+
+Changelog:
+	- Fixed a bug where this mod would load after Beyond Typus, causing issues.
+
+############################################
+
+Byzantine Resurgence 1.0.1
+
+Changelog:
+	- Quick hotfix.
+
+############################################
+
+Byzantine Resurgence 1.0
+
+Updated to 1.24.1 with BT 8.0
+
+Changelog:
+	- Removed a lot of content that I deemed unnecessary: The Creole System, the set-in-stone installation of the Theme System I used previously, etc.
+	- Added all new province map changes in 8.0 to the Dynamic province names.
+	- Fixed numerous bugs and balance tweaks.

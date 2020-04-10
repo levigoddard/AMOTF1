@@ -1,0 +1,3 @@
+latin_languages_trigger = {
+	#Here to avoid error log issues. Will be overwritten by CI
+}

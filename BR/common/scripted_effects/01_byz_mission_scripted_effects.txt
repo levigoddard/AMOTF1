@@ -1,0 +1,50 @@
+#Usage:
+#give_permaclaims_for_mission = { MISSION=X }
+#Requires localisation of:
+#$MISSION$_claims: "Grants permanent claims on the provinces required for the mission §Y$MISSION$§!"
+give_permaclaims_for_mission = {
+	if = {
+		limit = {
+			any_province = {
+				$MISSION$_provinces = yes
+				NOT = { is_core = ROOT }
+			}
+		}
+		custom_tooltip = $MISSION$_claims
+		hidden_effect = {
+			every_province = {
+				limit = {
+					$MISSION$_provinces = yes
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+#Usage:
+#give_cores_for_mission = { MISSION=X }
+#Where X is the mission name, assuming the mission has a corresponding X_provinces scripted_trigger to check for the provinces.
+#Requires localisation of:
+#$MISSION$_claims: "Grants cores on the provinces required for the mission §Y$MISSION$§!"
+give_cores_for_mission = {
+	if = {
+		limit = {
+			any_province = {
+				$MISSION$_provinces = yes
+				NOT = { is_core = ROOT }
+			}
+		}
+		custom_tooltip = $MISSION$_claims
+		hidden_effect = {
+			every_province = {
+				limit = {
+					$MISSION$_provinces = yes
+					NOT = { is_core = ROOT }
+				}
+				add_core = ROOT
+			}
+		}
+	}
+}

@@ -1,0 +1,252 @@
+namespace = cultural_influence_aramaic
+#Christian Arabs
+
+province_event = { #Syriac spread in Mesopotamia
+	id = cultural_influence_aramaic.1
+	title = syriac_adoption.title
+	desc = syriac_adoption.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = aramaic }
+		NOT = { culture = syriac_culture }
+		NOT = { nationalism = 1 }
+		religion_group = christian #Maronite, Syriac, Orthodox, and Armenian
+		OR = {
+			development = 10 #To prevent Sahara converting
+			and = {
+				culture_group = aramaic
+				is_city = yes
+			}
+		}
+		OR = { #Influence check
+			any_neighbor_province = { culture_group = aramaic }
+			has_building = university
+			province_trade_power = 15
+			development = 30
+			is_island = yes
+			is_capital = yes
+		}
+		syriac_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = { #Generic Assimilation MTTH
+		years = 25
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = {
+			factor = 0.5
+			culture_group = aramaic
+		}
+
+		#Dev. factors
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		modifier = {
+			factor = 1.2
+			development = 30
+			NOT = { has_building = university }
+		}
+		modifier = {
+			factor = 1.4
+			development = 40
+			NOT = { has_building = university }
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+			NOT = { has_building = university }
+		}
+		modifier = { #This is now some 80 years, don't see much reason to increment further
+			factor = 1.4
+			development = 60
+			NOT = { has_building = university }
+		}
+
+		#Religion
+		modifier = {
+			factor = 1.4
+			NOT = { tolerance_to_this = 0 }
+		}
+		modifier = {
+			factor = 1.1
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 1.1
+			religion_group = OWNER
+		}
+
+		#Misc
+		modifier = {
+			factor = 1.2
+			unrest = 1
+		}
+		modifier = {
+			factor = 0.9
+			has_owner_accepted_culture = yes
+		}
+		modifier = {
+			factor = 0.8
+			has_building = university
+		}
+		modifier = {
+			factor = 0.9
+			has_colonist = yes
+		}
+		modifier = {
+			factor = 1.25
+			is_in_capital_area = yes
+		}
+	}
+
+	option = {
+		name =  syriac_adoption.a
+
+		change_culture = syriac_culture
+	}
+}
+
+province_event = { #Siryon spread in the Levant
+	id = cultural_influence_aramaic.2
+	title = siryon_adoption.title
+	desc = siryon_adoption.desc
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		owner = { culture_group = aramaic }
+		NOT = { culture = siryon }
+		NOT = { nationalism = 1 }
+		religion_group = christian #Maronite, Syriac, Orthodox, and Armenian
+		OR = {
+			development = 10 #To prevent Sahara converting
+			and = {
+				culture_group = aramaic
+				is_city = yes
+			}
+		}
+		OR = { #Influence check
+			any_neighbor_province = { culture_group = aramaic }
+			has_building = university
+			province_trade_power = 15
+			development = 30
+			is_island = yes
+			is_capital = yes
+		}
+		siryon_culture_region = yes
+		has_global_flag = CI_events_enabled
+	}
+
+	mean_time_to_happen = { #Generic Assimilation MTTH
+		years = 25
+
+		modifier = {
+			factor = 0.5
+			has_global_flag = 05_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 1.5
+			has_global_flag = 15_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 2.0
+			has_global_flag = 20_CI_MTTH_flag
+		}
+		modifier = {
+			factor = 4.0
+			has_global_flag = 40_CI_MTTH_flag
+		}
+
+		modifier = {
+			factor = 0.5
+			culture_group = aramaic
+		}
+
+		#Dev. factors
+		modifier = {
+			factor = 1.2
+			NOT = { development = 20 }
+		}
+		modifier = {
+			factor = 1.2
+			development = 30
+			NOT = { has_building = university }
+		}
+		modifier = {
+			factor = 1.4
+			development = 40
+			NOT = { has_building = university }
+		}
+		modifier = {
+			factor = 1.4
+			development = 50
+			NOT = { has_building = university }
+		}
+		modifier = { #This is now some 80 years, don't see much reason to increment further
+			factor = 1.4
+			development = 60
+			NOT = { has_building = university }
+		}
+
+		#Religion
+		modifier = {
+			factor = 1.4
+			NOT = { tolerance_to_this = 0 }
+		}
+		modifier = {
+			factor = 1.1
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 1.1
+			religion_group = OWNER
+		}
+
+		#Misc
+		modifier = {
+			factor = 1.2
+			unrest = 1
+		}
+		modifier = {
+			factor = 0.9
+			has_owner_accepted_culture = yes
+		}
+		modifier = {
+			factor = 0.8
+			has_building = university
+		}
+		modifier = {
+			factor = 0.9
+			has_colonist = yes
+		}
+		modifier = {
+			factor = 1.25
+			is_in_capital_area = yes
+		}
+	}
+
+	option = {
+		name =  siryon_adoption.a
+
+		change_culture = siryon
+	}
+}

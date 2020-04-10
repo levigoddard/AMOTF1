@@ -1,0 +1,314 @@
+defined_text = { #Because I initially thought I could refer to the Strategoi as [estate_strategoi.GetName], which simply is not possible.
+    name = GetGeneralsName
+
+    text = { #Because there is currently no specific such
+        localisation_key = estate_strategoi_string
+        trigger = {
+			OR = { #This is funny, apparently because one of the events is a province_event, it uses the province's culture to check, and if it isn't hellenic it bugs up and returns nothing.
+				culture_group = byzantine
+				owner = {
+					culture_group = byzantine
+				}
+			}
+        }
+    }
+	text = { #Because there is currently no specific such
+        localisation_key = estate_latin_strategoi_string
+        trigger = {
+			has_idea = lte_modernizing_the_themata
+        }
+    }
+}
+
+defined_text = { #See above
+    name = GetExarchesName
+
+    text = { #Because there is currently no specific such
+        localisation_key = estate_exarches_string
+        trigger = {
+			OR = {
+				has_estate = estate_exarches
+				any_country = {
+					is_exarch_tag_and_exarch_of_root_trigger = yes
+				}
+			}
+        }
+    }
+}
+
+defined_text = {
+	name = GetTourmaNumberInfCav
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.11
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 50
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.10
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 45
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.9
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 40
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.8
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 35
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.7
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 30
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.6
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 25
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.5
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 20
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.4
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 15
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.3
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 10
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.2
+		trigger = {
+			owner = {
+				num_of_owned_provinces_with = {
+					value = 5
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_infcav.1
+		trigger = {
+			owner = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 5
+						has_estate = estate_strategoi
+					}
+				}
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetTourmaNumberArt
+	text = {
+		localisation_key = estate_strategoi_tourma_art.12
+		trigger = {
+			owner = {
+				mil_tech = 32
+				num_of_owned_provinces_with = {
+					value = 50
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.11
+		trigger = {
+			owner = {
+				mil_tech = 29
+				num_of_owned_provinces_with = {
+					value = 45
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.10
+		trigger = {
+			owner = {
+				mil_tech = 25
+				num_of_owned_provinces_with = {
+					value = 40
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.9
+		trigger = {
+			owner = {
+				mil_tech = 22
+				num_of_owned_provinces_with = {
+					value = 35
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.8
+		trigger = {
+			owner = {
+				mil_tech = 20
+				num_of_owned_provinces_with = {
+					value = 30
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.7
+		trigger = {
+			owner = {
+				mil_tech = 16
+				num_of_owned_provinces_with = {
+					value = 25
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.6
+		trigger = {
+			owner = {
+				mil_tech = 14
+				num_of_owned_provinces_with = {
+					value = 20
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.5
+		trigger = {
+			owner = {
+				mil_tech = 13
+				num_of_owned_provinces_with = {
+					value = 15
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.4
+		trigger = {
+			owner = {
+				mil_tech = 11
+				num_of_owned_provinces_with = {
+					value = 15
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.3
+		trigger = {
+			owner = {
+				mil_tech = 9
+				num_of_owned_provinces_with = {
+					value = 10
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.2
+		trigger = {
+			owner = {
+				mil_tech = 7
+				num_of_owned_provinces_with = {
+					value = 10
+					has_estate = estate_strategoi
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_strategoi_tourma_art.1
+		trigger = {
+			NOT = {
+				owner = {
+					mil_tech = 7
+					num_of_owned_provinces_with = {
+						value = 10
+						has_estate = estate_strategoi
+					}
+				}
+			}
+		}
+	}
+}

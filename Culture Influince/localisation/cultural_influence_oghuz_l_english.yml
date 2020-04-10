@@ -1,0 +1,67 @@
+﻿l_english:
+  #Countries
+ TRK:0 "Turkey"
+ TRK_ADJ:0 "Turkish"
+
+
+  #Ideas
+ TRK_ideas:0 "Turkish Ideas"
+ TRK_ideas_start:0 "Turkish Traditions"
+ TRK_ideas_finish:0 "Turkish Ambition"
+ TRK_republicanism:0 "Republicanism"
+ TRK_republicanism_desc:0 "Cumhuriyetçilik - Republicanism, sees that the state can only truly be legitimate when it enjoys the confidence of the populace and acts within the framework of a constitution limiting its powers and ensuring liberty for the citizenry. "
+ TRK_statism:0 "Statism"
+ TRK_statism_desc:0 "Devletçilik - Statism, The state must be the supreme power in the economy and encourage the local production of resources via invenstments and economic growth."
+ citizen_speak_turkish:0 "Citizen Speak Turkish!"
+ citizen_speak_turkish_desc:0 "Milliyetçilik - Nationalism, The Ottoman empire has left beyond a patchwork of ethnicities and national identities owing to the failure of Ottomanism and the Millet system, we shall seek to establish a new Turkish identity around a common language, values, and belief in the guiding principles of the state."
+ TRK_populism:0 "Populism"
+ TRK_populism_desc:0 "Halkçılık - Populism, Seeks a revolution to transfer the political power to citizenship and ensure that the population are in support of the government and that class conflict, that could threaten the national unity, does not break out."
+ TRK_secularism:0 "Secularism"
+ TRK_secularism_desc:0 "Laiklik - Secularism, Following a french model we shall violently reject any and all religious influence that even possibly become involved in state affairs, strong regulating forces shall be imposed upon religion such that it does form a dominant role in the public discourse."
+ TRK_reformism:0 "Reformism"
+ TRK_reformism_desc:0 "Devrimcilik - Reformism, The old institutions should be replaced with more western styled systems with a Turkish character; Such reforms are irreversible and will be imprinted upon the Turkish national consciousness."
+ six_arrows:0 "Six Arrows"
+ six_arrows_desc:0 "Cumhuriyetçilik, Halkçılık, Milliyetçilik, Laiklik, Devletçilik, and Devrimcilik will bind together and unite the nation; Leading us into a new era of prosperity under a unified state."
+
+
+  #Modifiers
+ phanariote_greeks:0 "Phanariote Greeks"
+ desc_phanariote_greeks:0 "Under the Ottoman Millet system the wealthy educated Greeks hold a privileged position within the diplomatic cadre and wield significant power and as such are responsible for much of the trade within the Ottoman Empire."
+ growing_greek_influence:0 "Growing Greek Influence"
+ phanariote_greeks_scorned:0 "Phanariote Greeks Scorned"
+ turkish_settlements_modifier:0 "Turkish Settlements"
+
+
+  #Decisions
+ renounce_ecumenical_patriach_title:0 "Rencounce Ecumenical Patriachate"
+ renounce_ecumenical_patriach_desc:0 "The Patriach of Constantinople serves as an Ethnarch for the entire Orthodox Christian Community in the Ottoman empire and in particular the Greek subject; Whilst they are empowered by the state we have no power to do anything to curtail the Phanariote Greek's colonies encroaching into Anatolia. By rencouncing this position we can exert more direct rule over our Orthodox subjects."
+ settle_thrace_title:0 "Settle Thrace"
+ settle_thrace_desc:0 "The lands of thrace lay home to our mighty capital, but have been left in disarray following our conquest, many of the Greek populace have abandoned the land and left it fallow, with a strong state effort we can bring many Turkish citizens from every corner of our empire to settle the lands and make the area once again wealthy."
+ actual_turkish_nation_title:0 "Form Turkey"
+ actual_turkish_nation_desc:0 "The Turkish people have long been oppressed under the Ottoman-Persian rulership; it is time we declared a Turkish state following the ideals of self-determination!"
+
+
+  #Tooltips
+ enables_turkish_thrace_settlement:0 "Enables Turkish settlement in Thrace."
+
+
+  #Events
+ oghuz_crimean_merger.title:0 "Growing Oguz influence on Qirim"
+ oghuz_crimean_merger.desc:0 "Crimean Tatar has existed on the steppe for years, long before our great Empire came into existance, but in the short time it has been part of our domain we have come to influence the language to such a degree it can now be described as being an Oguz language."
+ oghuz_crimean_merger.a:0 "Mükemmel!"
+ oghuz_kurdistan_settlements.title:0 "Kurdish Settlements in Armenia"
+ oghuz_kurdistan_settlements.desc:0 "Using the special privileges granted to them, the Sanjak-beg of [Root.GetName] have established Kurdish towns within the depopulated valleys of Greater Armenia promoting [Root.Owner.Religion.GetName] values within the province and encouraging furher migration, Only time will see what come of these developments."
+ oghuz_kurdistan_settlements.a:0 "Let's see..."
+ oghuz_greek_traders.title:0 "Phanariote Greek Influence"
+ oghuz_greek_traders.desc:0 "The old Greek families and structures did not disappear when we conquered the Greeks and we instead assimilated these ancient bureaucracies into our own, Where they can fulfill roles within our diplomatic cadre whilst supporting domestic trade and economic development. Recently though we have been calling upon their aid much more frequently and as such their influence continues to grow and more Greek settlements are popping up along the Aegean coastlines. Should their power be permitted to grow further?"
+ oghuz_greek_traders.a:0 "Approve of the colonies"
+ oghuz_greek_traders.b:0 "Reject the phanariote's influence"
+ oghuz_greek_traders_leave.title:0 "Phanariote's influence waning"
+ oghuz_greek_traders_leave.desc:0 "Under Ottoman rulership the influence of Greek traders in [Root.GetName] has been pivotal for the provinces and many Greek colonies were established to serve as bases for the wealthy upper classes, however since the province has fallen into our hands their powers have been rapidly declining without the Millet system, however their many new Greek cities and increased wealth will remain in the province."
+ oghuz_greek_traders_leave.a:0 "Interesting"
+ turkish_settlement_of_thrace.title:0 "Turkish Settlement of Thrace"
+ turkish_settlement_of_thrace.desc:0 "Our colonists attempts to establish a Turkish presence in [Root.GetName] are proceeding successfully; The many disparate peoples shipped over are rapidly intermixing with the local populace causing widespread conversion and Turkish language spread."
+ turkish_settlement_of_thrace.a:0 "Mükemmel"
+ turkish_assimilation.title:0 "Turkish Assimilation"
+ turkish_assimilation.desc:0 "The people of [Root.GetName] do not speak Turkish yet follow Islam and consider themselves to be [Root.Owner.GetAdjective] subjects, With a little prodding these people have encouraged to adopt Turkish as a new language seeking its commercial and prestigious benefits."
+ turkish_assimilation.a:0 "Mükemmel!"

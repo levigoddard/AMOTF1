@@ -1,0 +1,140 @@
+#Reforms
+exarchate_reform = {
+	icon = "exarchate"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	legacy_equivalent = exarchate_legacy
+	valid_for_nation_designer = no
+	potential = {
+		OR = {
+			tag = KCD
+			tag = HSP
+			tag = GLT
+			tag = ATL
+			tag = PSI
+			tag = RVN
+			tag = ABN
+			tag = AEG
+		}
+		is_subject = yes
+	}
+	trigger = {
+		OR = {
+			tag = KCD
+			tag = HSP
+			tag = GLT
+			tag = ATL
+			tag = PSI
+			tag = RVN
+			tag = ABN
+			tag = AEG
+		}
+		is_subject = yes
+	}
+	modifiers = {
+		administrative_efficiency = 0.1
+		culture_conversion_cost = -0.8
+		#New idea: Exarchates should just convert cultures, not accept them.
+		num_accepted_cultures = -5
+	}
+}
+
+pronoiar_reform = {
+	icon = "basileus"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			culture_group = byzantine
+			primary_culture = roman
+		}
+	}
+	
+	modifiers = {
+		global_autonomy = -0.1
+		#-10% Nobility influence
+		#-20% Nobility loyalty
+	}
+
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		government_abilities = {
+			iqta_mechanic
+		}
+	}
+}
+
+roman_bureaucracy_reform = {
+	icon = "byzantine_court"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			culture_group = byzantine
+			primary_culture = roman
+		}
+	}
+	
+	modifiers = {
+		global_tax_modifier = 0.10
+		global_trade_goods_size_modifier = 0.10
+	}
+	
+	factions = {
+		logothete_military
+		logothete_postal
+		logothete_general
+	}
+}
+
+theme_system_reform = {
+	icon = "soldiers_3"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			culture_group = byzantine
+			primary_culture = roman
+		}
+	}
+	trigger = {
+		has_reform = roman_bureaucracy_reform
+	}
+	
+	modifiers = {
+		land_forcelimit_modifier = 0.25
+		#-10% Nobility influence
+	}
+	custom_attributes = {
+		enables_strategoi_estate = yes
+	}
+}
+
+basileus_protostrategos_reform = {
+	icon = "justinian"
+	allow_normal_conversion = yes	
+	potential = {
+		OR = {
+			culture_group = byzantine
+			primary_culture = roman
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = theme_system_reform
+			full_idea_group = quality_ideas
+		}
+		is_monarch_leader = yes
+	}
+	modifiers = {
+		monarch_military_power = 2
+		max_absolutism = 5
+		#Forced the ruler to become a general upon ascending to the throne
+	}
+	custom_attributes = {
+		forces_ruler_general = yes
+	}
+
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}

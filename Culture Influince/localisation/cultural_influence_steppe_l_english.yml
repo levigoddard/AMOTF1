@@ -1,0 +1,59 @@
+﻿l_english:
+  #Countries
+
+
+  #Modifiers
+ steppe_owned_by_nomad:0 "Steppe owned by nomad"
+ steppe_city:0 "Steppe City"
+ desc_steppe_city:0 "This province houses a significant city within the vast nomadic steppe and serves as a strong tax base to support our hordes."
+ nomadic_province:0 "Nomadic Province"
+ desc_nomadic_province:0 "Nomadic peoples roam free in this province and no significant cities exists with which control could be exerted."
+ non_nomadic_province:0 "Settled Province"
+ desc_non_nomadic_province:0 "Mountains, trees, or simple remoteness make this province unsuitable for Nomadic habitation, this land should be granted to a vassal who can better administer the cities."
+ nomadic_growth_cooldown:0 "Nomadic Land Grants Cooldown"
+ desc_nomadic_growth_cooldown:0 "Land Grants cannot be given whilst this modifier is in effect."
+ settled_steppe:0 "Settled Steppe"
+ desc_settled_steppe:0 "Over time the plow has conquered increasing amounts of the formerly nomadic lands, helping to turn arid steppe land into fertile plains, producing huge amounts of surplus food and makung future growth all but assured."
+
+
+  #Decisions
+ nomadic_homelands_title:0 "Nomadic Homelands"
+ nomadic_homelands_desc:0 "These provinces are subject to Nomadic events and will quickly convert but provinces outside of this are subject to penalties when owned by a Nomad."
+ form_chagatai_khanate_title:0 "Re-form the Chagatai Khanate"
+ form_chagatai_khanate_desc:0 "The Chagatai khanate was little more than a fief in its early years, establishing independence during the fragmentation of the Mongol Empire. But the traditions of the Great Khan have persisted strongest within the lands of Chagatai and we have now restored unity to the Eastern and Western halves of the Great Çagatay's Khanate we should proclaim ourselves as the true heirs of Çengiz!"
+ reform_mongol_khanate_title:0 "Reform Mongol Khanate"
+ reform_mongol_khanate_desc:0 "Just as Chinggis Khaan had done, we have united the Mongols and can now proclaim ourselves as the rightful rulers of all the Mongols!"
+
+
+  #Tooltips
+ land_grants_mingghan.effect:0 "Gain 1 development in 2 random nomadic provinces."
+ land_grants_tumen.effect:0 "Gain 1 development in 25 random nomadic provines."
+
+
+  #Events
+ nomadic_conquest_culture_change.title:0 "Rape and Pillage of [Root.GetName]!"
+ nomadic_conquest_culture_change_nomadic.desc:0 "[Root.GetName] has recently come under our control, now we should decide what to about the current [Root.Culture.GetName] inhabitants?"
+ nomadic_conquest_culture_change_settled.desc:0 "[Root.GetName] is full of cities, useless for our horses! but the land is worthwhile once cleared, but many taxable residents would be lost in the process."
+ nomadic_conquest_culture_change.a:0 "To the victor go the spoils!"
+ nomadic_conquest_culture_change.b:0 "Allow the survivors to stay... for now."
+ nomadic_growth.title:0 "Nomadic Growth"
+ nomadic_growth.desc:0 "We have large amounts of idle warriors and ample land to be given out in our holdings, and some of our prominent Noyons have requested to be given land to administer and migrate their men into. What should be done about this?"
+ nomadic_growth.a:0 "Grant land to a minor Mingghan"
+ nomadic_growth.b:0 "Massive grants to Tumen"
+ nomadic_growth.d:0 "We need the men"
+ rise_of_steppe_city.title:0 "Rise of Steppe City"
+ rise_of_steppe_city.desc:0 "Large numbers of merchants and artisans are establishing themselves within [Root.GetName] allowing us a much larger tax base, but cutting into grain supplies for our nomadic population, time will tell how this shift in demographics will affect [Root.GetName]."
+ rise_of_steppe_city.a:0 "Excellent"
+ decline_of_steppe_city.title:0 "Decline of Steppe City"
+ decline_of_steppe_city.desc:0 "Merchants are using [Root.GetName] less and less, causing local artisans to move to greener pastures and ultimately leading to the collapse of large scale cities within the province, although we do now have more grain and land for grazing livestock."
+ decline_of_steppe_city.a:0 "Upsetting News"
+ nomads_flee.title:0 "Nomads Flee"
+ nomads_flee.desc:0 "[Root.GetName] has until now been inhabited by the free peoples of the steppe, but our recent imposition of taxation and large-scale agriculture have driven out the majority of the nomadic population, leaving a barren and fertile land in their place. Maybe in time this will turn out to be a good thing?"
+ nomads_flee.a:0 "Good Riddance"
+ nomadic_capital_settlements.title:0 "Capital Migrations"
+ nomadic_capital_settlements.desc:0 "[Root.Capital.GetName] Currently serves as the capital of our [Root.GovernmentName] but does not share the same culture as our leadership, several Noyons have suggested giving land in the region to a Tumen to ensure its continued loyalty."
+ nomadic_capital_settlements.a:0 "[Root.Capital.GetName]'s loyalties cannot simply be relied upon."
+ nomadic_capital_settlements.b:0 "The province is just fine as-is!"
+ non_nomadic_land_event.title:0 "Settled populations resist rule"
+ non_nomadic_land_event.desc:0 "[Root.GetName] is simply too hostile for widespread grazing and the cities in the region are demanding old rights as we struggle to exert any real control in the region, and several members of our Kurultai have suggested granting the land to a settled vassal who can callect taxes on our behalf."
+ non_nomadic_land_event.a:0 "Troubling"

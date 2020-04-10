@@ -1,0 +1,24 @@
+country_decisions = {
+	south_slavic_settlements_decision = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = south_slavic_settlements }
+			culture_group = south_slavic
+		}
+
+		allow = {
+			total_development = 600 #Poor Yugoslavs
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = south_slavic_settlements
+				duration = -1
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,132 @@
+#1.30 ideas:
+-Varangian Guard decision should be made into a Byzantium-unique mercenary company. Heck, maybe even make it a mission?
+-Estates: Can no longer own provinces directly. How to solve?
+	-Exarches: Just abstractly increase government capacity scalable on influence.
+		-Their decisions (Establish/revoke authority) should be reworked into proper government reforms. Makes sense in a way and could interface quite well in late-game reforms, with possibly the final tier housing the revocation of authority.
+		-Will need their estate interactions reworked into privileges.
+	-Strategoi: Needs heavy reworking. Issue areas:
+		-No longer able to place a province under the estate and can thus no longer count themes. Can be replaced by checking for number of states. OR, check for states with a state edict of "establish theme" (Note, DLC-locked).
+		-Events such as flocking to theme capital needs to be adjusted from checking for any province owned by the estate. Will be changed to check for highest dev province in a state (With the edict).
+		-Will need their estate interactions reworked into privileges.
+	-Knightly Orders: Will allow for a unique type of mercenary company for the Latin Empire, but will otherwise be pretty much the same.
+		-Will need their estate interactions reworked into privileges.
+-Align Pentarchy/East Oriental Schism missions to the system the new Papal mission "Mend the Schism" mission will use.
+
+
+#####################
+#Things to implement#
+#####################
+
+Latin Empire's Knightly Orders:
+-------------------------------
+- Needs estate interactions
+	IMPLEMENTED:
+	- Donate to Orders (Copy Clergy estate)
+	- Recruit Minister
+	- Forceful Inquisition
+		- Converts one random province controlled by the Knightly Orders per 15 estate influence, lowers development by 1/1/1. NOTE: Province CANNOT have Religious Center modifier.
+		- Adds 10 estate influence for 10 years.
+		- Usable every 10 years.
+	- Establish New Order
+		- Adds 2/0/2 to a random province controlled by the Knightly Orders.
+		- Adds 15 estate influence for 15 years.
+		- Usable every 15 years.
+		- -5 Nobility loyalty.
+	MISSING:
+	- Some sort of new world interaction
+	- + 1 or 2 more, but what?
+- Needs estate events
+
+Decisions:
+----------
+Decision to form Dacia as a Romanian-cultured nation. Should rename Hunedoara to Sarmisegetusa.
+
+#######
+#Ideas#
+#######
+	
+Byzantine Succession Mechanics:
+-------------------------------
+Byzantine succession was non-hereditary, but was especially in the late Empire treated as if it was, with the firstborn son generally being expected to rule, being named co-emperor rather early. Generally, that is how it worked.
+Second sons and whatever were of course also granted land to govern, in the event that an emperor had no sons, meaning the rule would go to their younger brothers.
+This has led me to think that all Byzantium needs are flavour events to send your heirs to govern in a region.
+Akin to that of the Ottoman succession, there has been times where ambitious sons have attempted to exploit their position of governance being closer to Constantinople to overthrow whoever is next in line.
+Thus, this means we shall create an event where provincial governors that are second or third sons can rebel, spawning pretender rebels.
+
+Add event to pick heir to Byzantium before formalizing succession laws:
+-----------------------------------------
+This is difficult in many ways actually, because the heirs were essentially named emperors and technically speaking anyone could become emperor. 
+Let's also mention the fact that the Emperor would always want the Basileus title to stay in the family.
+Is it even right to put a whole idea towards formalizing succession laws? Is this really the way forward for Byzantium? Why is it forced upon the player as part of the idea set?
+To be fair, I'd much prefer a system that is fleshed out, gives you the ability to choose what monarch points you want, similar to republics, however has the disadvantage with a lot of rebels and civil war-like stuff.
+If I create that, I can then make two different paths - one is to formalize succession laws and stabilize the realm, disabling these rebellions to a greater extent, and the other one is to keep it, but cause issues.
+We could make a system similar to the Ottoman government, however the issue is that attempting to mess with the way vanilla generates heirs is... tough, and may cause very unforeseen consequences.
+To be fair, I'd really need to do a proper playthrough *as* the Ottomans to actually try to determine how their heir generation *actually* works - can they even get heirs not generated through event?
+I can report that no, Ottos do not get heirs generated through vanilla mechanics. That also causes issues for Byzantium because they cannot get PU'd if we do it that way.
+
+Potential succesion mechanics?
+------------------------------
+- The first event occurs when your ruler is 30.
+	- You can pick your firstborn son as your heir (90% chance of this occuring).
+	- It allows you to pick your favourite son or daughter (50% chance) if you have a firstborn son.
+		- This'll cause the firstborn to rebel as a pretender once your ruler dies.
+	- I would love to allow for advisors and generals to become heirs, but that is currently not possible within the EU4 engine.
+- The second event occurs when your ruler is 40.
+	- Here you have the chance of picking your firstborn child as your heir (50% chance of there being one)
+	- If you do not have a son here, your advisors express worry for you and contenders for the throne start to rise up.
+- You get your last chance if your ruler hits 50.
+	- Here's a 25% chance of producing a child.
+- If you do not have a child, it fires the Succession Crisis disaster upon your ruler dying?
+
+Disasters:
+----------
+A disaster for Byzantium that converts to Catholic, perhaps also applicable for a Byzantium whose ruler is still Catholic as well.
+
+Events:
+-------
+Events focusing on the Schism?  To be fair, not sure what to add to it. Maybe something to deal with the recovery from the Council of Florence? But I don't know what to implement...
+Events focusing on relations between Byzantine Empire & Holy Roman Empire? Should there be a border friction CB for either Empire if they border?
+Event that causes major uprising from Exarch seat if pretender rebels enforce demands? It did happen historically. Did I add this? I forgot.
+Event chain for Byzantium to assign heirs to govern in a certain area of the Empire. The area gets bonuses for being governed until the death of the ruler.
+- The heir can choose to rebel by random event.
+- If the heir has been assigned, a random event can occur that sends a second heir to another area of governance.
+- This heir will persist past the death of the ruler and will actually guarantee a new heir if you choose.
+- Should you decide against picking this guy as an heir, he'll rebel.
+- Another random event that can occur is making your heir a general.
+
+Compatibility:
+--------------
+Change it so that the mod modifies vanilla the_theme_system and pentarchy_mod instead of replacing them with a new version.
+^The pentarchy_mod is now being modified, but I have not looked into the theme system change that flogi suggested. Maybe it'll work, who knows?
+
+Government Forms:
+-----------------
+Note that generally these ideas are something I cannot or are very difficult to implement with the current Ruler/Heir mechanics
+NOTE: These'll probably be gone by 1.26.
+
+The Roman Republic:
+- Allows royal marriages (& personal unions)? Is there even a point to this?
+- Represented by two rulers. Thus, the idea is to use the consort system to elect two people. If the main ruler dies, consort replaces the main ruler and new consort is elected.
+- This will lock this particular government form behind Rights of Man.
+Elections yearly, will have the following (Preliminary and likely to change):
+- Re-election (Lose 2 rep. trad., no stat changes)
+	- Elect ruler of same dynasty (Lose 2 rep. trad., random ruler of same dynasty, maximum is same as current ruler's max, minimum is same as current ruler's min)
+	- Elect someone from the Senate (Random ruler (Max 3 in all stats but adm & dip, which is max 4), influence and loyalty for the Syntechnoi. Production efficiency goes up.)
+	- Elect someone from the Magistrates (Random ruler (Max 3 in all stats but mil, which is max 4), influence & loyalty for the Dynatoi. Discipline goes up.)
+	- Elect someone from the commonfolk (Random ruler (Max 3 in all stats), nobility & burghers lose loyalty, national unrest goes down & morale goes up.)
+
+########################################################################
+#Other things that can't/won't be done or that I do not know how to do:#
+########################################################################
+
+Units:
+-----------
+Much like what is now available since Third Rome with Streltsy & Cossack units as well as Banners in MoH, there should be a similar unique unit category that drafts from theme capitals.
+Maybe we can call them Tourma or Themata. Having more of these units similarly to Streltsy shall grant higher morale, however will increase Strategoi influence, meaning there is a soft cap on how many of these you can have.
+Alternatively some other sort of elite unit of the Empire.
+To my knowledge, this feature isn't fully moddable yet.
+
+Another thing could be the Cataphract unique unit. Preliminary, you'd be limited by a scale that depends on your total goods produced of the Iron trade good.
+
+In all honesty as a side note, making a mod for Ottoderp that allows them to draft Janissary regiments from Dhimmi provinces or just provinces that are not of turkish culture wouldn't be half bad either.
+It's funny I said that back in 1.22 because it did flippin' happen in 1.23. ^^

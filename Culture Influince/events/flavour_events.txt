@@ -1,0 +1,234 @@
+namespace = cultural_influence_flavour
+#Various events surrounding national awakening, akin to the Greek event
+
+country_event = { #Sons of Barak Khan's revolt (Kazakh revolts, pushes the Uzbeks out and creates Kazakh) (Kinda railroady, but then it's really grim for the Uzbeks to be in the wrong place and for the Kazakhs to not even have a chance at conquest)
+	id = cultural_influence_flavour.1
+	title = barak_khans_revolt.title
+	desc = barak_khans_revolt.desc
+	picture = NOMAD_ESTATE_eventPicture
+
+	major = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = SHY #Uzbek
+		any_owned_province = {
+			culture = khazak
+		}
+		NOT = { is_year = 1480 }
+		owns = 476
+	}
+
+	mean_time_to_happen = {
+		years = 15
+
+		modifier = {
+			factor = 0.01
+			is_year = 1475
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1465
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1460
+		}
+	}
+
+	option = { #Accept demands
+		name = barak_khans_revolt.a
+
+		custom_tooltip = barak_khans_sons_accept_demands
+		SHY = {
+			add_prestige = -25
+			khiva_area = { #Uzbeks head south
+				add_core = SHY
+			}
+			transoxiana_area = { #Uzbeks head south
+				add_core = SHY
+			}
+			hidden_effect = {
+				every_owned_province = { #Kazakhs get their land
+					limit = {
+						OR = {
+							region = west_siberia_region
+							region = ural_region
+							region = mongolia_region
+							area = balchasj_area
+							area = kazakhstan_area
+							area = syr_darya_area
+						}
+					}
+					remove_core = SHY
+					cede_province = KZH
+					add_core = KZH
+				}
+			}
+		}
+		KZH = {
+			hidden_effect = {
+				add_prestige = 10
+				add_army_tradition = 40
+				#10k of troops, to help them survive
+				infantry = 456 #Turkestan
+				infantry = 456 #Turkestan
+				infantry = 456 #Turkestan
+				infantry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+			}
+		}
+
+		ai_chance = {
+			factor = 90
+		}
+	}
+
+	option = { #Accept demands -Player, switch to Kazakh
+		name = barak_khans_revolt.b
+
+		trigger = {
+			SHY = { ai = no }
+		}
+
+		custom_tooltip = barak_khans_sons_accept_demands
+		SHY = {
+			add_prestige = -25
+			khiva_area = { #Uzbeks head south
+				add_core = SHY
+			}
+			transoxiana_area = { #Uzbeks head south
+				add_core = SHY
+			}
+			hidden_effect = {
+				every_owned_province = { #Kazakhs get their land
+					limit = {
+						OR = {
+							region = west_siberia_region
+							region = ural_region
+							region = mongolia_region
+							area = balchasj_area
+							area = kazakhstan_area
+							area = syr_darya_area
+						}
+					}
+					remove_core = SHY
+					cede_province = KZH
+					add_core = KZH
+				}
+			}
+		}
+		KZH = {
+			hidden_effect = {
+				add_prestige = 10
+				add_army_tradition = 40
+				#10k of troops, to help them survive
+				infantry = 456 #Turkestan
+				infantry = 456 #Turkestan
+				infantry = 456 #Turkestan
+				infantry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+				cavalry = 456 #Turkestan
+			}
+		}
+		
+		switch_tag = KZH
+	}
+
+	option = { #Resist, basically don't do this
+		name = barak_khans_revolt.c
+
+		custom_tooltip = barak_khans_sons_resist
+		SHY = {
+			add_prestige = -25
+			hidden_effect = {
+				every_owned_province = { #Kazakhs get their land
+					limit = {
+						OR = {
+							region = west_siberia_region
+							region = ural_region
+							region = mongolia_region
+							area = balchasj_area
+							area = kazakhstan_area
+							area = syr_darya_area
+						}
+					}
+					add_core = KZH
+					add_nationalism = 10
+				}
+			}
+		}
+
+		476 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				friend = KZH
+			}
+		}
+
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Mauritanian Jihad (Converts the Zenaga Berbers to Hassaniya Arabs)
+	id = cultural_influence_flavour.2
+	title = mauritanian_jihad.title
+	desc = mauritanian_jihad.desc
+	picture = NOMAD_ESTATE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 2237 #Tekrur
+		is_year = 1600
+		NOT = { #No Zenaga country exists
+			any_country = {
+				primary_culture = zenaga
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 40
+	}
+
+	option = { #Ok...
+		name = mauritanian_jihad.a
+
+		africa = {
+			limit = {
+				culture = zenaga
+				NOT = { province_id = 1132 } #Timbuktu
+			}
+			change_culture = hassaniya
+		}
+		1132 = { #If owned by a Berber, become Tuareg, otherwise become Songhai
+			if = {
+				limit = {
+					culture = zenaga
+					OWNER = { culture_group = berber_group }
+				}
+				change_culture = tuareg
+			}
+			if = {
+				limit = {
+					culture = zenaga
+					NOT = { OWNER = { primary_culture = tuareg } }
+				}
+				change_culture = songhai
+			}
+		}
+	}
+}
