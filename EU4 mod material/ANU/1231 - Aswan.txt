@@ -1,7 +1,8 @@
 #1231 - Ibrim
 
-owner = ANU
-controller = ANU
+owner = ANB
+controller = ANB
+add_core = ANB
 culture = anubis
 religion = coptic
 capital = "Aswan"

@@ -9,7 +9,7 @@ capital = 361
 
 1432.1.1 = {
 	monarch = {
-		name = "Ramesses XI"
+		name = "Ramesses XV"
 		dynasty = Bastid
 		birth_date = 1400.6.27	
 		adm = 0
@@ -18,10 +18,10 @@ capital = 361
 	}
 }
 
-1445.1.1 = {
+1420.1.1 = {
 	heir = {
 		name = "Djoser"
-		monarch_name = "Djoser II"
+		monarch_name = "Djoser VII"
 		dynasty = "Bastid"
 		birth_date = 1420.1.1
 		death_date = 1451.1.1

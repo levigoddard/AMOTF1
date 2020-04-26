@@ -1,7 +1,7 @@
 #New Province
 
-owner = KEM
-controller = KEM
+owner = LEV
+controller = LEV
 add_core = LEV
 capital = "El Giza"
 culture = coptic_culture

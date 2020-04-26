@@ -1,17 +1,17 @@
-# - Syracusa
+#3037 - Agrigento
 #Region - Italy
 #Area - Sicily
 
 owner = SIC
 controller = SIC
-culture = griko 
+culture = sicilian 
 religion = catholic 
 hre = no 
-base_tax = 3
-base_production = 3
-trade_goods = wine
-base_manpower = 2
-capital = "Syracusa"
+base_tax = 2
+base_production = 2
+trade_goods = sugar
+base_manpower = 1
+capital = "Girgenti"
 is_city = yes
 add_core = SIC
 
@@ -59,23 +59,12 @@ discovered_by = eastern
 	controller = NAP
 	add_core = NAP
 } # Alfonso V of Aragon conquers Naples and temporarily unites Sicily & Naples again into the Kingdom of Naples. Going with Paradox's 3-3 date instead of 6-2 in order to avoid changes to the diplomacy files
-1444.11.13 = { #BeyondTypus batch edit shortcut the second shattering begins
-	owner = SIC
-	controller = SIC
-	remove_core = NAP
-}
-1444.11.15 = { #BeyondTypus batch edit shortcut the second shattering ends
-	owner = NAP
-	controller = NAP
-	add_core = NAP
+1444.1.13 = { #BeyondTypus batch edit shortcut the second shattering begins
+	owner = SYK
+	controller = SYK
+	remove_core = SYK
 }
 #Second performance start unused
-1448.1.1 = { 
-	unrest = 5 
-} # Peasant revolt
-1449.1.1 = { 
-	unrest = 0 
-}
 1458.6.27 = {
 	owner = SIC
 	controller = SIC
@@ -88,8 +77,8 @@ discovered_by = eastern
 	remove_core = ARA
 } # Unification of Spain
 1656.1.1 = {
-	base_tax = 3
-	base_production = 3
+	base_tax = 1
+	base_production = 2
 } # 17th century had plagues and famine which effected the whole of Sicily, 1656 being outbreak of black death
 1713.4.1 = {
 	add_core = SAV
@@ -104,7 +93,7 @@ discovered_by = eastern
 	remove_core = SAV
 } # Treaty of the Hague
 1734.1.1 = {
-	base_tax = 5
+	base_tax = 3
 	base_production = 4
 } # Recovered from black death by Bourbon rule
 1734.5.15 = {

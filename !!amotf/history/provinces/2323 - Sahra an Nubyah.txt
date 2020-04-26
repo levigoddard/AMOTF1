@@ -1,9 +1,8 @@
 #2323 - Sahra an Nübyah
 
-owner = ANU
-controller = ANU
-add_core = KEM
-add_core = ANU
+owner = ANB
+controller = ANB
+add_core = ANB
 culture = anubis
 religion = coptic
 capital = "Al Shanka"

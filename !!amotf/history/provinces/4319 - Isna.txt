@@ -1,8 +1,8 @@
 #4319 - Isna
 
-owner = ANU
-controller = ANU
-add_core = ANU
+owner = ANB
+controller = ANB
+add_core = ANB
 capital = "Luxor"
 culture = anubis
 religion = coptic

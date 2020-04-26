@@ -1,8 +1,8 @@
 #1233 - Kargah
 
-owner = ANU
-controller = ANU #Local Badawin in control
-add_core = ANU
+owner = ANB
+controller = ANB #Local Badawin in control
+add_core = ANB
 culture = al_misr_arabic
 religion = sunni
 capital = "El Kharga"

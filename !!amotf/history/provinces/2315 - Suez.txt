@@ -3,7 +3,7 @@
 owner = LEV
 controller = LEV
 add_core = LEV
-culture = kemet
+culture = coptic_culture
 religion = coptic
 capital = "Suweis"			#Sure, why not. Many spelling variations, going with vanilla. Also appears Suez existed prior to the Suez Canal
 trade_goods = livestock			#why not

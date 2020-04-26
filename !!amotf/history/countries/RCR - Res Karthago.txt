@@ -1,17 +1,17 @@
 government = monarchy
 add_government_reform = feudalism_reform
 government_rank = 2
-primary_culture = phonician
+primary_culture = karthago
 add_accepted_culture = punic
-add_accepted_culture = karthago
+add_accepted_culture = phonas
 religion = coptic
 technology_group = western
-capital = 4319
+capital = 354
 
 1432.1.1 = {
 	monarch = {
-		name = "Ramesses XI"
-		dynasty = Anubasid
+		name = "Ramesses VI"
+		dynasty = Barkid
 		birth_date = 1400.6.27	
 		adm = 0
 		dip = 1
@@ -19,11 +19,11 @@ capital = 4319
 	}
 }
 
-1445.1.1 = {
+1420.1.1 = {
 	heir = {
-		name = "Djoser"
-		monarch_name = "Djoser II"
-		dynasty = "Anubasid"
+		name = "Hasdrubali"
+		monarch_name = "Hasdrubali XIII"
+		dynasty = "Barkid"
 		birth_date = 1420.1.1
 		death_date = 1471.1.1
 		claim = 95

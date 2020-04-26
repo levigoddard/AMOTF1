@@ -1,7 +1,8 @@
 #New Province
 
-owner = ANU
-controller = ANU
+owner = ANB
+controller = ANB
+add_core = ANB
 culture = anubis
 religion = coptic
 capital = "Medinet el Haras"

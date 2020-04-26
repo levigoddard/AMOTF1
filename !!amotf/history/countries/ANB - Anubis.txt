@@ -12,13 +12,14 @@ capital = 4319
 		name = "Ramesses XI"
 		dynasty = Anubasid
 		birth_date = 1400.6.27	
-		adm = 0
-		dip = 1
-		mil = 2
+		death_date = 1446.10.16 
+		adm = 4
+		dip = 5
+		mil = 3
 	}
 }
 
-1445.1.1 = {
+1420.1.1 = {
 	heir = {
 		name = "Djoser"
 		monarch_name = "Djoser II"
@@ -26,8 +27,8 @@ capital = 4319
 		birth_date = 1420.1.1
 		death_date = 1471.1.1
 		claim = 95
-		adm = 1
-		dip = 1
-		mil = 0
+		adm = 5
+		dip = 5
+		mil = 6
 	}
 }

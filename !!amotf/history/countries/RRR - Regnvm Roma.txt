@@ -10,16 +10,17 @@ capital = 114
 
 1432.1.1 = {
 	monarch = {
-		name = "Ramesi Avugustolovs XI"
+		name = "Ramesi Avgustolovs XI"
 		dynasty = Julian
 		birth_date = 1400.6.27	
+		death_date = 1471.1.1
 		adm = 4
 		dip = 6
 		mil = 4
 	}
 }
 
-1445.1.1 = {
+1420.1.1 = {
 	heir = {
 		name = "Flavivs"
 		monarch_name = "Julian"

@@ -1,8 +1,8 @@
-owner = ANU
-controller = ANU
+owner = ANB
+controller = ANB
+add_core = ANB
 culture = anubis
 religion = coptic
-religion = sunni
 capital = "Abrak"			#or Wadi Allaqi
 trade_goods = gold
 hre = no

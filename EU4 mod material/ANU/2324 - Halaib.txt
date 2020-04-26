@@ -1,13 +1,14 @@
 #2324 - Halaib
 
-owner = ANU
-controller = ANU
+owner = ANB
+controller = ANB
+add_core = ANB
 culture = anubis
 religion = coptic
 capital = "Hala'ib"
 is_city = yes
 base_manpower = 1 
-trade_goods = unknown
+trade_goods = slaves
 hre = no
 base_tax = 1  
 base_production = 1 
