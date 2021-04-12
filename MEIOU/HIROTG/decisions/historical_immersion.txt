@@ -1,0 +1,1472 @@
+country_decisions = {
+
+	#Netherlands
+	netherlands = {
+		potential = {
+			tag = NED
+			ai = no
+		}
+		allow = {	
+		}
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1327 days = 1 }
+					
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Portugal
+	portugal = {
+		potential = {
+			tag = POR
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1382 days = 1 }
+					
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Spice trade
+	spice_trade = {
+		potential = {
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1384 days = 1 }
+					
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Weather events
+	enable_historical_weather_events = {
+		potential = {
+			has_country_flag = is_host
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1585 days = 1 }
+					
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Current trade hub
+	current_global_trade_hub = {
+		potential = {
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = Venice_trade_capital
+				}
+				country_event = { id = flavor_Historical_Wars_event.1669 days = 1 }
+			}
+			if = {
+				limit = {
+					has_global_flag = Antwerp_trade_capital
+				}
+				country_event = { id = flavor_Historical_Wars_event.1668 days = 1 }
+			}
+			if = {
+				limit = {
+					has_global_flag = Amsterdam_trade_capital
+				}
+				country_event = { id = flavor_Historical_Wars_event.1667 days = 1 }
+			}
+			if = {
+				limit = {
+					has_global_flag = London_trade_capital
+				}
+				country_event = { id = flavor_Historical_Wars_event.1666 days = 1 }
+			}
+			if = {
+				limit = {
+					has_global_flag = Lisboa_trade_capital
+				}
+				country_event = { id = flavor_Historical_Wars_event.1377 days = 1 }
+			}
+		
+					
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+	#Dynamic trade hubs
+	global_dynamic_trade_hubs = {
+		potential = {
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1689 days = 1 }		
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	#Pizarro expedition
+	pizarro_expedition = {
+		potential = {
+			tag = SPA
+			is_at_war = no
+			NOT = { has_country_flag = inca_conquest_pizarro }
+		}
+		allow = {
+		is_year = 1531
+		exists = INC
+		NOT = { war_with = INC }
+		3408 = {
+		OR = {
+		is_empty = yes
+		owned_by = INC
+		}
+		}
+		NOT = {
+		colonial_peru = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = ROOT }
+		}
+		}
+		}
+		3507 = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = ROOT }
+		}
+		}
+		}
+		effect = {
+		hidden_effect = {
+					set_country_flag = inca_conquest_pizarro
+					country_event = { id = flavor_Historical_Wars_event.1801 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Pizarro conquest
+	conquest_of_the_inca_hw = {
+		potential = {
+			tag = PIZ
+		}
+		allow = {
+			ai = yes
+			is_year = 1531
+			stability = 0
+			manpower = 5
+			capital_scope = { controlled_by = ROOT }
+			NOT = {war_with = INC}
+			exists = INC
+		}
+		effect = {
+			hidden_effect = {
+				INC = {
+					every_owned_province = {
+						add_core = PIZ
+						discover_country = ROOT
+					}
+				}
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+			}	
+			declare_war_with_cb = {
+				who = INC
+				casus_belli = cb_historical_wars_superiority
+			}
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.5
+					cavalry = 0.3
+					artillery = 0.2
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swear_fealty_to_spain_inca = {
+		potential = {
+			NOT = { has_country_flag = swear_fealty_to_spain_inca }
+			tag = PIZ
+		}
+		allow = {
+			NOT = { exists = INC }			
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = swear_fealty_to_spain_inca
+			
+			south_america = {
+			kill_units = {
+			who = PIZ
+			}
+			
+			}
+			
+			SPA = {
+				inherit = PIZ
+				colonial_peru = {
+				limit = {
+				SPA = { ai = yes }
+				NOT = { owner = { technology_group = western } }
+				is_empty = no
+				}
+				add_permanent_claim = SPA
+				}
+				colonial_chile = {
+				limit = {
+				SPA = { ai = yes }
+				NOT = { owner = { technology_group = western } }
+				is_empty = no
+				}
+				add_permanent_claim = SPA
+				}
+				colonial_colombia = {
+				limit = {
+				SPA = { ai = yes }
+				NOT = { owner = { technology_group = western } }
+				is_empty = no
+				}
+				add_permanent_claim = SPA
+				}
+				colonial_bolivia = {
+				limit = {
+				SPA = { ai = yes }
+				NOT = { owner = { technology_group = western } }
+				is_empty = no
+				}
+				add_permanent_claim = SPA
+				}
+			}		
+			hidden_effect = {
+				SPA = {
+					every_owned_province = {
+						remove_core = PIZ
+					}
+				}
+				every_country = {
+					every_owned_province = {
+						remove_core = PIZ
+					}
+				}
+			}	
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Cortes expedition
+	cortes_expedition = {
+		potential = {
+			tag = SPA
+			NOT = { has_country_flag = aztec_conquest_cortes }
+		}
+		allow = {
+		is_at_war = no
+		is_year = 1519
+		exists = AZT
+		NOT = { war_with = AZT }
+		4040 = {
+		OR = {
+		is_empty = yes
+		owned_by = AZT
+		}
+		}
+		NOT = {
+		colonial_mexico = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = ROOT }
+		}
+		}
+		}
+		cuba_area = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = ROOT }
+		}
+		}
+		}
+		effect = {
+		hidden_effect = {
+					set_country_flag = aztec_conquest_cortes
+					country_event = { id = flavor_Historical_Wars_event.1815 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	#Cortes conquest
+	conquest_of_the_aztecs = {
+		potential = {
+			tag = CTZ
+		}
+		allow = {
+			has_country_flag = sought_allies
+			ai = yes
+			is_year = 1519
+			stability = 0
+			manpower = 5
+			capital_scope = { controlled_by = ROOT }
+			is_at_war = no
+			exists = AZT
+			NOT = {AZT = {is_subject_of = CTZ}}
+			NOT = { owns = 1471 }
+		}
+		effect = {
+			set_country_flag = conquest_of_the_aztecs
+			hidden_effect = {
+				AZT = {
+					every_owned_province = {
+						add_core = CTZ
+						discover_country = ROOT
+					}
+				}		
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+			}	
+			if = {
+			limit = {
+			NOT = {
+			is_neighbor_of = AZT
+			}
+			}
+			random_neighbor_country = {
+			limit = {
+			capital_scope = { colonial_region = colonial_mexico }
+			NOT = { technology_group =  western }
+			NOT = { truce_with = ROOT }
+			}
+			CTZ = {
+			declare_war_with_cb = {
+				who = PREV
+				casus_belli = cb_historical_wars_superiority
+			}
+			}
+			}
+			}
+			else = {
+			declare_war_with_cb = {
+				who = AZT
+				casus_belli = cb_historical_wars_superiority
+			}
+			}
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.5
+					cavalry = 0.3
+					artillery = 0.2
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swear_fealty_to_spain_aztecs = {
+		potential = {
+			NOT = { has_country_flag = swear_fealty_to_spain_aztecs }
+			tag = CTZ
+		}
+		allow = {
+		OR = {
+			owns = 1471
+			AZT = {is_subject_of = CTZ}
+		}	
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = swear_fealty_to_spain_aztecs
+			CTZ = {
+					every_owned_province = {
+						add_core = SPA
+						
+					}
+				}
+			AZT = {
+				every_owned_province = {
+						add_core = CTZ
+					}
+				release_all_subjects = yes
+					}
+
+			CTZ = {
+			inherit = AZT
+			}
+			
+			north_america = {
+			kill_units = {
+			who = CTZ
+			}
+			}
+
+			SPA = {
+				inherit = CTZ
+				colonial_mexico = {
+				limit = {
+				SPA = { ai = yes }
+				NOT = { owner = { technology_group = western } }
+				is_empty = no
+				}
+				add_permanent_claim = SPA
+				}
+			}
+			hidden_effect = {
+			SPA = {
+				every_owned_province = {
+					remove_core = CTZ
+				}
+			}
+			every_country = {
+				every_owned_province = {
+					remove_core = CTZ
+				}
+			}
+			}
+			
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	#Legazpi expedition
+	legazpi_expedition = {
+		potential = {
+			tag = SPA
+			NOT = { has_country_flag = philippines_conquest_legazpi }
+		}
+		allow = {
+		is_at_war = no
+		is_year = 1563
+		colonial_mexico = {
+		owner = { is_subject_of = ROOT }
+		}
+		NOT = {
+		philippines_region = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = ROOT }
+		}
+		}
+		}
+		2214 = {
+		is_empty = yes
+		}
+		}
+		effect = {
+		hidden_effect = {
+					set_country_flag = philippines_conquest_legazpi
+					country_event = { id = flavor_Historical_Wars_event.1985 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	#Legazpi conquest
+	conquest_of_the_philippines_hw = {
+		potential = {
+			tag = MGL
+		}
+		allow = {
+			ai = yes
+			is_year = 1564
+			stability = 0
+			manpower = 5
+			capital_scope = { controlled_by = ROOT }
+			philippines_region = {
+			owner = { capital_scope = { region = philippines_region is_island = no } NOT = { technology_group =  western } is_neighbor_of = ROOT NOT = { truce_with = ROOT } }
+			}
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				random_neighbor_country = {
+					limit = {
+					capital_scope = { region = philippines_region }
+					NOT = { technology_group =  western }
+					NOT = { truce_with = ROOT }
+					}
+					MGL = {
+					declare_war_with_cb = {
+						who = PREV
+						casus_belli = cb_historical_wars_superiority
+					}
+					}
+				}
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+			}	
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.6
+					cavalry = 0.2
+					artillery = 0.2
+				}
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	swear_fealty_to_spain_philippines = {
+		potential = {
+			NOT = { has_country_flag = swear_fealty_to_spain_philippines }
+			tag = MGL
+		}
+		allow = {
+			NOT = {
+			philippines_region = {
+			owner = { capital_scope = { region = philippines_region is_island = no } NOT = { technology_group =  western } }
+			}
+			}
+			NOT = {
+			philippines_region = {
+			AND = {
+			is_empty = yes
+			is_island = no
+			}
+			}
+			}
+			NOT = {
+			philippines_region = {
+			is_colony = yes
+			}
+			}
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = swear_fealty_to_spain_philippines
+			
+			philippines_region = {
+			remove_core = LUS
+			kill_units = {
+			who = MGL
+			}
+			}
+			
+			SPA = {
+				inherit = MGL
+			}			
+			hidden_effect = {
+				SPA = {
+					every_owned_province = {
+						remove_core = MGL
+					}
+				}
+				every_country = {
+					every_owned_province = {
+						remove_core = MGL
+					}
+				}
+			}	
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	#VOC
+	conquest_of_the_indies_hw = {
+		potential = {
+			tag = VOC
+		}
+		allow = {
+			ai = yes
+			stability = 0
+			manpower = 5
+			NOT = { war_exhaustion = 1 }
+			capital_scope = { controlled_by = ROOT }
+			east_indies_superregion = {
+			owner = { capital_scope = { superregion = east_indies_superregion } NOT = { technology_group =  western } is_neighbor_of = ROOT NOT = { truce_with = ROOT } }
+			}
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				random_neighbor_country = {
+					limit = {
+					capital_scope = { superregion = east_indies_superregion }
+					NOT = { technology_group =  western }
+					NOT = { truce_with = ROOT }
+					}
+					VOC = {
+					declare_war_with_cb = {
+						who = PREV
+						casus_belli = cb_historical_wars_superiority
+					}
+					}
+				}
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.6
+							cavalry = 0.2
+							artillery = 0.2
+						}
+					}							
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#VOC
+	nationalizing_the_voc = {
+		potential = {
+			tag = NED
+			VOC = {
+			exists = yes
+			is_subject_of = NED
+			}
+		}
+		allow = {
+			AND = {
+				is_year = 1720
+				exists = VOC
+				VOC = {is_subject_of = NED}
+				is_at_war = no
+				stability = 3
+				NOT = {has_country_flag = nationalizing_the_voc}
+			}
+		}
+		effect = {
+			hidden_effect = {
+					country_event = { id = flavor_Historical_Wars_event.1342 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	#Enabling or disabling historical wars
+	historical_wars = {
+		potential = {
+			has_country_flag = is_host
+			ai = no
+			has_global_flag = historical_wars_event_triggered
+		}
+		allow = {
+			
+		}
+		effect = {
+			hidden_effect = {
+					country_event = { id = flavor_Historical_Wars_event.1337 days = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Purchase copper
+	purchase_copper = {
+		potential = {
+		AND = {
+		is_colonial_nation = no
+		has_global_flag = sweden_copper_trade
+		capital_scope = {continent = europe}
+		NOT = {tag = SWE}
+		AND = {
+		OR = {
+		ai = no
+		AND = {
+		ai = yes
+		OR = {
+		AND = {
+		is_at_war = yes
+		NOT = {num_of_loans = 5}
+		NOT = {has_global_flag = copper_purchase_at_war}
+		}
+		AND = {
+		is_at_war = no
+		NOT = {has_global_flag = copper_purchase_at_peace}
+		NOT = {num_of_loans = 3}
+		is_in_deficit = no
+		}
+		AND = {
+		inflation = 40
+		check_variable = { which = minedCopperReserves  value = 4 }
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		allow = {
+		NOT = {war_with = SWE}
+		OR = {
+		AND = {
+		alliance_with = SWE
+		reverse_has_opinion = {
+		who = SWE
+		value = 100
+		}
+		SWE = {
+		reverse_has_opinion = {
+		who = ROOT
+		value = 100
+		}
+		}
+		NOT = {check_variable = { which = purchasedCopperReserves  value = 3 } }
+		}
+		NOT = {check_variable = { which = purchasedCopperReserves  value = 1 } }
+		}
+		hidden_effect = {
+		OR = {
+			AND = {
+			NOT = {has_global_flag = copper_purchase_at_peace}
+			is_at_war = no
+			}
+			AND = {
+			NOT = {has_global_flag = copper_purchase_at_war}
+			is_at_war = yes
+			}
+			ai = no
+		}
+		}
+			SWE = {check_variable = { which = minedCopperReserves  value = 1 } }
+			#SWE = {check_variable = { which = earningsThisYear  value = 0 } }
+		}
+		effect = {
+			#set_global_flag = copper_purchase_in_progress
+			if = { limit = { ai = yes is_at_war = no} set_global_flag = copper_purchase_at_peace }
+			if = { limit = { ai = yes is_at_war = yes} set_global_flag = copper_purchase_at_war }
+			country_event = { id = flavor_Historical_Wars_event.1314 days = 1 }
+					
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+	}
+	
+	#copper revenue report
+	copper_revenue_report = {
+		potential = {
+		tag = SWE
+		has_global_flag = sweden_copper_trade
+		OR = {
+		ai = no
+		AND = {
+		ai = yes
+		NOT = {has_global_flag = copper_trade_cooldown}
+		}
+		}
+		}
+		allow = {
+			4 = { owned_by = SWE }
+			SWE = {check_variable = { which = minedCopperReserves  value = 0 } }
+			SWE = {check_variable = { which = copperSellingPrice  value = 0 } }
+			SWE = {check_variable = { which = earningsThisYear  value = 0 } }
+		}
+		effect = {
+			set_global_flag = copper_trade_cooldown
+			country_event = { id = flavor_Historical_Wars_event.1316 days = 1 }
+					
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	
+	#letters of marque revoke
+	letters_of_marque_revoke = {
+		major = yes
+		potential = {
+		has_country_flag = letters_of_marque_issued
+		OR = {
+			AND = {
+			ai = yes
+			OR = {
+			is_bankrupt = yes
+			alliance_with = SPA
+			}
+			}
+			ai = no
+			}
+		}
+		allow = {
+		}
+		effect = {
+			clr_country_flag = letters_of_marque_issued		
+			remove_country_modifier = supporting_buccaneers
+			
+			add_trust = {
+			who = SPA
+			value = 10
+			mutual = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	
+	#letters of marque issue
+	letters_of_marque_issue = {
+		major = yes
+		potential = {
+		has_country_flag = letters_of_marque_event
+		NOT = { has_country_flag = letters_of_marque_issued }
+		NOT = { has_country_modifier = letters_of_marque_forcibly_revoked }
+		SPA = {has_country_modifier = treasure_fleets_enabled}
+			OR = {
+			AND = {
+			ai = yes
+			is_bankrupt = no
+			NOT = { alliance_with = SPA }
+			}
+			ai = no
+			}
+			NOT = { tag = SPA }
+		}
+		allow = {
+
+		}
+		effect = {
+			set_country_flag = letters_of_marque_issued
+			
+			add_country_modifier = {
+			name = supporting_buccaneers
+			duration = -1
+			}
+			
+			add_trust = {
+			who = SPA
+			value = -25
+			mutual = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	
+	
+	#Purchase basic wares
+	purchase_basic_wares = {
+		potential = {
+		OR = {
+		ai = no
+		AND = {
+		ai = yes
+		NOT = { num_of_loans = 10 }
+		NOT = { has_global_flag = basic_wares_purchase_in_progress }
+		}
+		}
+		AND = {
+		capital_scope = {continent = europe}
+		NED = {has_country_flag = moedernegotiee}
+		NOT = {has_global_flag = huaynaputina_eruption}
+		NOT = {tag = NED}
+		exists = NED
+		}
+		}
+		allow = {
+		capital_scope = {continent = europe}
+		hidden_effect = {
+		has_global_flag = exceptionally_cold_year
+		NOT = { NED = { has_country_flag = revenue_report_not_signed } }
+		}
+		NOT = {is_rival = NED}
+		NOT = { war_with = NED }
+		any_owned_province = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}
+		NOT = {has_country_modifier = purchased_dutch_basic_wares}
+		NOT = {has_country_modifier = stadtholder_veto}
+		NED = {check_variable = { which = basic_wares  value = 1} }
+		}
+		effect = {
+			if = { limit = { ai = yes } set_global_flag = basic_wares_purchase_in_progress }
+			if = { limit = { has_global_flag = maunder_minimum } country_event = { id = flavor_Historical_Wars_event.1458 days = 1 } }
+			else = { country_event = { id = flavor_Historical_Wars_event.1465 days = 1 } }	
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+	}
+	
+	#basic wares revenue report
+	moedernegotiee_revenue_report = {
+		potential = {
+		tag = NED
+		has_country_flag = moedernegotiee
+		ai = no
+		}
+		allow = {
+		NED = { check_variable = { which = basic_wares  value = 0 } }
+		NED = { check_variable = { which = num_of_goods_cargo_hold  value = 0 } }
+		}
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1220 days = 1 }		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	#mint copper coins
+	mint_copper_coins = {
+		major = yes
+		potential = {
+		has_global_flag = sweden_copper_trade
+		OR = {
+		ai = no
+		AND = {
+		ai = yes
+		check_variable = { which = estate_burghers_loyalty value = 0.20 }
+		inflation = 30
+		}
+		}
+		}
+		allow = {
+		NOT = { has_country_modifier = minted_copper_coins }
+		check_variable = { which = minedCopperReserves  value = 5 }
+		}
+
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1203 days = 0 }
+			add_inflation = -10
+			add_treasury = -225
+			add_country_modifier = {
+			name = minted_copper_coins
+			duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	vasco_de_gama = {
+		major = yes
+		potential = {
+			tag = POR
+			num_of_ports = 1
+			start_date = 1492.01.01
+			has_idea_group = exploration_ideas
+			NOT = { has_country_flag = vasco_de_gama_1492 }
+			NOT = {
+				indian_coast_group = {
+					has_discovered = POR
+				}
+			}
+		}
+		allow = {
+			dip_tech = 16
+			2881 = { has_discovered = POR }
+			has_idea = quest_for_the_new_world
+			num_of_explorers = 1
+			west_africa_region = { owned_by = POR }
+			treasury = 75
+		}
+		effect = {
+			set_country_flag = vasco_de_gama_1492
+			add_dip_power = -25
+			add_treasury = -50
+			hidden_effect = {
+				POR = { country_event = { id = flavor_por.11 days = 180 } }
+				POR = { country_event = { id = flavor_por.1175 days = 312 } }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Levee en masse
+	levee_en_masse = {
+		major = yes
+		potential = {
+		has_country_modifier = comite_de_salut_public
+		OR = {
+		ai = no
+		AND = {
+		ai = yes
+		NOT = { manpower = 25 }
+		}
+		}
+		}
+		allow = {
+		is_at_war = yes
+		NOT = { has_country_modifier = levee_en_masse }
+		is_revolution_target = yes
+		}
+
+		effect = {
+			country_event = { id = flavor_Historical_Wars_event.1142 days = 0 }
+			add_country_modifier = {
+			name = levee_en_masse
+			duration = 730
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	establish_dutch_india_trade_country = {
+		potential = {
+			tag = NED
+			NOT = { has_country_flag = formed_voc }
+		}
+		allow = {
+			calc_true_if = {
+				all_owned_province = {
+					region = java_region
+					is_colony = no
+					has_port = yes
+					is_island = no
+				}
+				amount = 1
+			}
+			has_idea_group = trade_ideas
+		}
+		effect = {
+			set_country_flag = formed_voc
+			country_event = { id = flavor_Historical_Wars_event.1138 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Inca conquest
+	conquest_of_the_andes_hw = {
+		potential = {
+			tag = INC
+		}
+		allow = {
+			ai = yes
+			stability = 0
+			manpower = 5
+			NOT = { war_exhaustion = 1 }
+			NOT = { exists = PIZ }
+			is_year = 1471
+			capital_scope = { controlled_by = ROOT }
+			colonial_peru = {
+			owner = { capital_scope = { colonial_region = colonial_peru } NOT = { technology_group =  western } is_neighbor_of = ROOT NOT = { truce_with = ROOT } }
+			}
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				random_neighbor_country = {
+					limit = {
+					capital_scope = { colonial_region = colonial_peru }
+					NOT = { technology_group =  western }
+					NOT = { truce_with = ROOT }
+					}
+					INC = {
+					declare_war_with_cb = {
+						who = PREV
+						casus_belli = cb_historical_wars_superiority
+					}
+					}
+				}
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+			}				
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	#Colonial nations conquer natives
+	conquest_of_natives_hw = {
+		potential = {
+			is_colonial_nation = yes
+			overlord = { ai = yes }
+			ai = yes
+			capital_scope = { OR = { continent = south_america continent = north_america } }
+		}
+		allow = {
+			land_forcelimit = 10
+			stability = 0
+			manpower = 5
+			NOT = { war_exhaustion = 1 }
+			capital_scope = { controlled_by = ROOT }
+			any_neighbour_country = { NOT = { any_ally = { capital_scope = { continent = europe } } } OR = { technology_group = south_american technology_group = north_american technology_group = mesoamerican } }
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				random_neighbor_country = {
+					limit = {
+					NOT = { any_ally = { capital_scope = { continent = europe } } }
+					OR = { technology_group = south_american technology_group = north_american technology_group = mesoamerican }
+					NOT = { truce_with = ROOT }
+					}
+					ROOT = {
+					declare_war_with_cb = {
+						who = PREV
+						casus_belli = cb_historical_wars_superiority
+					}
+					}
+				}
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Hollandic waterline
+	hollandic_waterline = {
+		major = yes
+		potential = {
+		has_country_flag = hollandic_water_line
+		99 = { NOT = { has_province_modifier = hollandic_water_line } }
+		2370 = { NOT = { has_province_modifier = hollandic_water_line } }
+		}
+		allow = {
+		europe = {
+		owner = {war_with = NED}
+        }
+		99 = { owned_by = NED controlled_by = NED has_siege = no }
+		2370 = { owned_by = NED controlled_by = NED has_siege = no }
+		}
+
+		effect = {
+		set_country_flag = hollandic_water_line_activated
+		add_treasury = -250
+		99 = {
+		hidden_effect = { remove_province_modifier = hollandsche_waterlinie }
+		add_province_modifier = {
+ 		name = hollandic_water_line
+ 		duration = -1  
+ 		hidden = no
+		}
+		}
+		
+		2370 = {
+		hidden_effect = { remove_province_modifier = hollandsche_waterlinie }
+		add_province_modifier = {
+ 		name = hollandic_water_line
+ 		duration = -1  
+ 		hidden = no
+		}
+		}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	hollandic_waterline_deactivate = {
+	potential = {
+	has_country_flag = hollandic_water_line
+	has_country_flag = hollandic_water_line_activated
+	99 = { has_province_modifier = hollandic_water_line }
+	2370 = { has_province_modifier = hollandic_water_line }
+	}
+	allow = {
+	99 = { controlled_by = NED }
+	2370 = { controlled_by = NED }
+	OR = {
+	ai = no
+	NOT = { europe = { owner = {war_with = NED} } }
+	}
+	}
+
+	effect = {
+	clr_country_flag = hollandic_water_line_activated
+	99 = {
+	remove_province_modifier = hollandic_water_line
+	hidden_effect = { 
+	add_province_modifier = {
+	name = hollandsche_waterlinie
+	duration = -1  
+	hidden = no
+	}
+	}
+	}
+	
+	2370 = {
+	remove_province_modifier = hollandic_water_line
+	hidden_effect = { 
+	add_province_modifier = {
+	name = hollandsche_waterlinie
+	duration = -1  
+	hidden = no
+	}
+	}
+	}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	ai_importance = 0.1
+		
+	}
+	
+	#Macau leasing
+	macau_leasing = {
+		potential = {
+		tag = POR
+		NOT = { has_country_flag = macau_leasing_agreement }
+		NOT = { 677 = { owned_by = POR } }
+		}
+		allow = {
+		has_country_modifier = spice_trade_duties
+		east_china_superregion = { has_discovered = ROOT }
+		southwest_china_superregion = { has_discovered = ROOT }
+		}
+
+		effect = {
+			set_country_flag = macau_leasing_agreement
+			country_event = { id = flavor_Historical_Wars_event.1822 days = 0 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	#Dejima leasing
+	dejima_leasing = {
+		potential = {
+		tag = POR
+		NOT = { has_country_flag = dejima_leasing_agreement }
+		NOT = { 1021 = { owned_by = POR } }
+		}
+		allow = {
+		has_country_modifier = spice_trade_duties
+		japan_superregion = { has_discovered = ROOT }
+		}
+
+		effect = {
+			set_country_flag = dejima_leasing_agreement
+			country_event = { id = flavor_Historical_Wars_event.1738 days = 0 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 0.1
+		
+	}
+	
+	
+	#De Houtman expedition
+	houtman_expedition = {
+		potential = {
+			tag = NED
+			is_at_war = no
+			NOT = {
+				east_indies_superregion = {
+					has_discovered = NED
+				}
+			}
+			NOT = { has_country_flag = de_houtman_expedition }
+		}
+		allow = {
+		2038 = { discover_country = ROOT }
+		num_of_ports = 1
+		has_idea_group = exploration_ideas
+		is_year = 1595
+		}
+		effect = {
+		hidden_effect = {
+					set_country_flag = de_houtman_expedition
+					country_event = { id = flavor_Historical_Wars_event.2028 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Van Neck expedition
+	van_neck_expedition = {
+		potential = {
+			tag = NED
+			is_at_war = no
+				east_indies_superregion = {
+					has_discovered = NED
+				}
+			NOT = { has_country_flag = van_neck_expedition }
+		}
+		allow = {
+		is_year = 1598
+		1103 = { is_empty = yes }
+		OR = {
+		ai = yes
+		java_region = {
+		owner = {
+		ROOT = {
+		reverse_has_opinion = {
+		who = PREV
+		value = 75
+		}
+		}
+		}		
+		}
+		}
+		}
+		effect = {
+		hidden_effect = {
+					set_country_flag = van_neck_expedition
+					country_event = { id = flavor_Historical_Wars_event.2029 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	#De Houtman expedition
+	houtman_expedition = {
+		potential = {
+			tag = NED
+			is_at_war = no
+			NOT = {
+				east_indies_superregion = {
+					has_discovered = NED
+				}
+			}
+			NOT = { has_country_flag = de_houtman_expedition }
+		}
+		allow = {
+		2038 = { discover_country = ROOT }
+		num_of_ports = 1
+		has_idea_group = exploration_ideas
+		is_year = 1595
+		}
+		effect = {
+		hidden_effect = {
+					set_country_flag = de_houtman_expedition
+					country_event = { id = flavor_Historical_Wars_event.2028 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Kalmar Union defensive pact
+	kalmar_union_defensive_pact = {
+		potential = {
+		has_country_flag = kalmar_union_monarch
+		}
+		allow = {
+		any_country = {
+		offensive_war_with = ROOT
+		}
+		any_subject_country = {
+		is_subject_of_type = kalmar_union
+		is_at_war = no
+		}
+		}
+		effect = {
+			every_subject_country = {
+			limit = {
+			is_subject_of_type = kalmar_union
+			is_at_war = no
+			}
+			set_country_flag = kalmar_union_defensive_pact_call_to_arms
+			country_event = { id = flavor_Historical_Wars_event.2039 days = 1 }
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	}
+	
+
+	

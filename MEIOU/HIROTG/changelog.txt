@@ -1,0 +1,1377 @@
+Version 1.1
+- Updated mod for M&T 1.27.5.
+
+Version 1.2
+- Added early protectionist trade wars for France.
+- Corrected a bug in the peace of Utrecht.
+- Tweaked the Dutch - Portugese war event to make earlier start possible.
+- Added historic leader to 80 year's war.
+
+Version 1.3
+- Added Catherine the great.
+- Added mid protectionist trade wars for France.
+- Corrected a bug in the invasion of the Commonwealth.
+- Expanded the greek war of independence.
+- Added invasion of Russia.
+- Added occupation of Moscow event.
+- Added sixth coalition.
+- Expanded on Napoleon abdication and treaty of Paris.
+- Changed France government to absolute monarchy if Napoleon takes power as they boot him out of office otherwise.
+- General bug fixing.
+- Started adding Spanish colonizing "helper" events to aid A.I's expansion.
+- Added Carlos V event for early starters.
+
+Version 1.4
+- Added colonial helper events for France, England and the Dutch.
+- Added alternative scenario for Brazil for kingdom status.
+- Added peace treaty for Seven year's war.
+- Added 16th century Russo - Swedish war.
+- added peace treaty for successful Spanish armada.
+- Added the last Habsburg event to better represent the decline of Spain.
+- Made Spanish succession war trigger only if Spain lacks heir. Would trigger every time otherwise.
+
+Version 1.5
+- Added events for Mary I, Elisabeth I to make House of Stuart union possible.
+- Added Portugese - Spanish war.
+- Added peace of Oliva to Second Northern War.
+- Added Uskok War.
+- Added -3 revolt risk to Ottomans as they are constantly destroyed by rebels.
+- Slightly decreased A.I revolt risk as some still struggle with rebels.
+- Few bug fixes.
+- Added event for Henry IV for France.
+- Added event for House of Stuart.
+- Gave Russia slight boost to autonomy reduction as they can't control it.
+- Added Portugese colonization helper event.
+- Expanded on Dutch - Portugese war to make it ongoing, better mimicking the actual war.
+- Made colonization helper events optional.
+- Added event giving Asian and Indian cultures increased tech cost and slightly lower morale if enough Europeans settle in their lands.
+
+Version 1.6
+- Added historical nerf events for Spain as the 1530 start have them overpowered. 
+- Added competition events for colonial powers to make A.I more interested in other player's colonies. 
+- Fixed a bug in Seven year's war peace treaty.
+- General balancing.
+- Added too much gold stockpiled event to make the economic simulator a big more realistic.
+
+Version 1.6.1
+- Fixed a bug with too much gold event.
+- Expanded the desciption on the inbred Habsburg event for Spain.
+- Added colonial bonus during Carlov V reign.
+
+Version 1.7
+- Added Nine years war.
+- Tweaked too much gold event.
+- Tweaked colonial competition event to avoid massive prestige loss. Only caribbean region give cores now.
+- Modified Habsburg inbred event to continue if they remain in power after Charles II.
+- Added French hegemony event for France.
+- Added Stormaktstiden event for Sweden.
+- Added Italian wars as well as treaty of Nice.
+- Added Louis XIV event.
+- Added Crimean invasion of Russia event.
+- Added end of Sforza rule event.
+- Added first Polish succession war with treaty of Byczyna event.
+- Added house of Vasa event.
+- Tweaked The last Habsburg event to slightly decrease chance of heir.
+- Increased amount of provices to grant the Dutch in east asia and added spawn army event.
+- Ddded spawn army event for England once they have colonized India.
+- Added Royal navy boost to A.I Britain as they never quite manage to master the seas and are frequently invaded.
+- Added colonist boost events to A.I Portugal and Britain.
+- Added Catalan revolt.
+- Added Franco - Spanish war of 1500's something!
+- Added optional overcrowded world event to reduce forcelimits mid game.
+- Fixed bug in Last habsburg event.
+- Added a new event for balancing Spain throughout the game
+- Reduced effect of Habsburg inbred event due to new balancing event. Gives Spain a reason to get rid of the Habsburgs.
+- Reduced amount of colonists granted by Carlos V.
+
+Version 1.7.1
+- Added custom Casus Bellis to extend conflict duration and prevent A.I from peacing out too quickly due to seperate wars.
+- Fixed a bug in Napoleonic Wars.
+
+Version 1.8
+- Moved balancing events out of ideas and make into seperate events to make them more compatible with 2.0.
+- Added several ruler events for Prussia.
+- Made Elisabeth event only trigger if Scotland hasn't already been conquered/vassalized/PU'ed.
+- Adjusted Portugese and Russian unrest reduction for balance.
+- Added event for Henry VIII requesting annullment.
+- Gave Elisabeth I a small boost in converting her peeps.
+- Removed foreign cores from Portugals trade nodes to avoid them being overrun everytime.
+- Nerfed the Pope a bit more, he is still OP.
+- increased the too much money event limit to 3500 gold.
+- Added stagnation of the Ottoman empire event. This can be avoided by controlling Oestmark before late 1600's to get western influence.
+- Removed Ming from too much gold event.
+- Added substantial price increase of fur event to simulate the lucrative fur trade in North America. 
+- Created event for changing trade good to fur in certain provinces to make North America more interesting to colonize.
+- Added sale of Louisiana event.
+- Added sale of Florida event.
+- Added Belgian revolution.
+- Fixed a bug in 7 years war peace treaty causing instant peace. Britain can now win if she either achieves a 50 percent warscore or blockades 40 ports.
+- Added Crimean war and treaty of Paris.
+- Added first Schlesweig war.
+- Created events for ai unrest reduction and reduce forcelimits to make the mod compatible with the upcoming 2.0.
+- Created event for slightly reduced defensiveness to avoid lengthy sieges with level 8+ fortresses.
+- Added great siege of Malta.
+- Added Northern Seven years' war.
+
+Version 1.8.1
+- Corrected some bugs.
+- General balancing.
+
+Version 1.8.2
+- Added balancing event for Brazil colony. They will now colonize Brazil mostly by themselves.
+- Added 17th century Ottoman - Persian war.
+- Modified A.I Spain and A.I Portugal start to give them access to colonisation from 1530, they were lacking this which was delaying their colonisation.
+- A.I Netherlands will now get naval idea after independence. Replaces logistics. 
+- Added 17th century Polish - Swedish war.
+- A.I Netherlands will now gain a colony in Guyana as they showed no interest in that region otherwise.
+- Fixed liberty desire for New Spain until M&T devs correct their POP.
+- Created event to remove Autonomy for Dutch provinces after independence, as they set for 100% after being released by Spain.
+- Added balancing event for Brandenburg as they were underperforming.
+- Added event for Austria to withstand initial Ottoman invasion.
+- Added event for Sweden to resist initial muscovian invasion.
+- Created event for Ferdinand I of Austria. 
+- Turned French hegenomy into a country modifier which lasts 100 years roughly.
+- Added war of Devolution and tripple alliance intervention.
+- France now reaps significant benefits from retaining the Valois dynasty until the Bourbon king is born.
+- Added balancing event for Netherlands.
+- A.I Netherlands have been tweaked and now post much more of a threat to England in terms of trade, to better balance the Anglo Dutch wars and recognise the Netherlands for the historical power they were. 
+- Corrected some more bugs.
+- General balancing.
+- Nerfed the Ottoman stagnation event to work better with new M&T version.
+- Fixed bug in Catherine the great event.
+- Added event for House of Romanov.
+- Created event to normalise relations between England and Portugal after the Dutch - Portugese wars.
+- Added event for Peter the great.
+- Reworked the balancing event for France to make it partially expire, since they tend
+to get overpowered by mid 1600's.
+- Added event for Scotland to withstand initial English incursions.
+- Toned down the French bonuses during revolution and Napoleonic wars to balance with M&T 2.0. 
+- Reworked treaty of Paris during seven years war. Treaty can now also trigger if Britain controls Havana and blockades 25 ports. Treaty also cedes Florida to Britain now.
+
+Version 1.8.3
+- NEW BOOKMARK! You can no choose to start at 1492 and the dawn of discovery. Experience the rise of Portugal and Spain as colonial powers and a chance to build your empire from scratch.
+- Created balancing events for the new bookmark.
+- Created new colonization events for the new bookmark.
+- Added new event for birth of Henry VIII.
+- Added new event for birth of Mary.
+- Created new event for italian war of 1503.
+- Added event for Pizarro expedition for earlier bookmark.
+- Created event for partition of Hungary.
+- Created new event for Portugese conquest of Malacca and Goa. 
+- Created new event for Portugese capture of Oman, Mollucas and Bombay. 
+- Created new event for Portugese trade posts in East Africa.
+- Added treaty of Lyon. France or the Papal states must capture the capital of Naples.
+- Changed CB for Crimean invasion of Russia to avoid Turkish-Russian union.
+- Changed the resist invasion events to only trigger in defensive wars.
+- Netherlands balancing event will now trigger even if vanilla independence event happens.
+- Slightly boosted the resisting_the_turks event as Austria was still getting crushed.
+- slight nerf to Sweden's dicipline and a slight buff to Denmark-Norway's to better balance them. 
+- Added golden age for Poland.
+- Created event for fall of Vienna. All christian nations will now suffer a moral drop if the Ottomans conquer Vienna.
+- Added Austria balancing event.
+- Increased Portugals diplomatic relations since they start with several vassals now and are unable to retain Alliance with England as a result, causing ahistorical gameplay.
+- Changed CB in Dutch-Portugese war Between Spain and the Netherlands.
+- Added correct culture to most provinces given to colonial powers by event.
+- Gave A.I France expansion idea to speed up their early colonization.
+- New "end of hostilities" event to normalise relations between England and Portugal.
+- Modified several country modifiers to better Balance france during hegemony period.
+- Added country modifier for Franco - Dutch war if declared directly without asking for bribe.
+- Modified the Spanish war of succession to ensure Habsburg dynasty lives on in Austria in case they were a junior partner to Spain.
+- Added ruler event for Austria's leopold I.
+- Added ruler event for Austria's Joseph I.
+- Reduced Spanish liberty desire at the start of the succession war.
+- Added new coalition modifier during spanish war of succession to give them a fighting chance.
+- Created new event if the coalition loses the spanish succession war. 
+- Revamped quadruple alliance to give Spain a greater incentive to retake its european holdings.
+- Added treaty of the Hague to war of quadruple alliance. Spain needs to hold the capitals of Sardinia, Naples, Sicily and Savoy for it to trigger.
+- Added optional boost to global technology and institution spread as it was lagging behind in the late start.
+- Started the overall revamping of all code to introduce if/else conditions. Work in progress! 
+- Changed incorrect Naples country tag.
+- Made Henry VIII conversion to protestantism forced so player and A.I can't convert back during his lifetime.
+- Created unique forcelimit reduction events for Ming.
+- Reworked the Carlos V events.
+- A.I Austria will now be given the crown of Bohemia if Carlos V becomes emperor, if they are still a subject of Hungary. He is the emperor after all. Only for early starts.
+- A.I Austria now gets a temporary buff after ceding the lowlands to compensate for the loss of territory.
+- Reworked Pizarro inca conquest event to trigger with the new Bookmark.
+- Added balancing event for New Castille.
+- Spain now needs a royal marriage with Austria before 1500 for Carlos V to be born.
+- Created fall of Tenochtitlan event for Aztecs.
+- Added new Age of discovery event which triggers if Spain is formed before 1500.
+- New event for Cortes return if the aztec empire falls before 1530.
+- Created unique reduce forcelimit modifier for the earlier bookmark.
+- Malacca and Lampung are now essential for controlling the spice trade. New event giving bonuses to controller of both provinces, including an annual tariff.
+- Portugal gets an additional bonus to the spice trade monopoly if they also control the ceylon trade node.
+- New event giving Spain the option of creating Spanish Netherlands, since the A.I always seem to lose control of the belgium region early.
+- Added event for glorious revolution, which only triggers if England is not catholic. England can choose to side against or for their catholic monarch and events will unfold accordingly.
+- Reworked the Spanish colonization of Philippines event.
+- Created event for birth and ascent to the throne for Felipe II, to usher in the Spanish golden age.
+- Created event for abdication of Carlos V. 
+ 
+ Version 1.8.4
+ - Corrected bug with missing province history.
+
+ Version 1.8.5
+ - Tweaked house of Vasa event to trigger for everyone, with the option to refuse the Vasa king.
+ - Fixed a bug in Spanish Netherlands not forming.
+ - Increased Spain's desire to maintain royal marriage with Austria.
+ - Fixed a bug where A.I Portugal would not gain control over Ceylon by event.
+ - Made Mary a woman.
+ - Fixed the reduce forcelimit modifiers to better balance them for 2.0.
+ - Added second balancing event for Netherlands to trigger ONLY for the vanilla independence event.
+
+  Version 1.8.6
+ - Included Great Britain in several 17th century English events, since A.I England tends to form earlier than historical date.
+ - Gave A.I Netherlands more merchants and reduced A.I Portugals slightly.
+ - Slight reduction to optional tech rebalance bonus.
+ - Added correct French culture to North american provinces ceded by event.
+ - Added opinion modifier between Pizarro and Spain to avoid a conflict.
+ - Fixed a bug in the POP temporary fix event for New Spain, to compensate for their overly large population causing early independence.
+ - Made a special event for France, for those of you who prefer to be a bit extra challenged.
+ - Changed Knights request new base event to trigger once they have lost Rhodes, not simply lost control.
+ - Made Austrias capital Oestmark at 1530 if they still own it.
+ - A.I Portugal will now discover Malacca strait and surrounding sea zones in order to properly engage in warfare against Malacca. 
+ - Added two east african states to A.I Portugal's vassal event that were missing.
+ - Merged golden age modifiers as only one is needed now.
+ - Increased the amount of merchants for A.I Britain and England slightly to better compete with the Dutch.
+ - Fixed a bug in Portugal not losing its spice trade bonus in India despite losing control over the spice trade monopoly.
+ - Made Swedish event Stormaktstiden only trigger is Sweden still controls Stockholm.
+ - Extended Ottoman balancing event to the 1530 start.
+ - Fixed bug in rev France event for control of northern Italy.
+ - Fixed bug where France inherits Spain in succesion war instead of PU'ing them.
+ - General balancing.
+
+ Version 1.8.7
+
+ - New optional feature: Treasure Fleets! Spain will now get scaling treasure from its colonies and either partake in economic warfare against its enemies or grab the gems for themselves. 
+ - Navarre must now exist for France to get the first Bourbon king in the 16th century.
+ - Britain now gets claims over Egypt if she joins the coalition.
+ - France gets claims instead of cores over Egypt.
+ - Increased coalition bonus during Spanish succession war to give them a fighting chance.
+ - Included Savoy in coalition.
+ - Reworked peace treaty for Spanish war of succession slightly.
+ - A.I Britain now gets claim over India once they form to motivate conquest.
+ - Added colonization event of Barbados and Guyana for England.
+ - Removed Brandenburg balancing bonus after Prussia forms. They already have their own balancing.
+ - Shortened the duration time for Polish golden age for the 1530 bookmark.
+ - Fixed French occupation of events during Napoleonic Wars. Tag was incorrect.
+ - Improved the kettle war event to fire more frequently.
+ - Added Spanish Netherlands to trigger for War of Devolution.
+ - New colonial event for Spain while Habsburgs remain in power.
+ - Fixed bug in treaty of Nice.
+ - Started the tedious task of updating all event pictures.
+ - Removed starting cores for France in belgium region.
+ - Fixed bug in province id for French colonization of Canada.
+ - Spain now gets cores in belgium region if joining the Dutch - Portugese war, if Spanish Netherlands no longer exist or the region has been lost.
+ - New event for Spain and the Ottomans jointly reducing their naval capacity to stabilize prices.
+ - A.I Netherlands will now vassalize Mahajapit in the 1492 bookmark if Demak does not exist.
+ - Reduced Spice trade goods bonus from 200% to 50%.
+ - Created event for end of Treasure fleets if Spain loses control over her colonies.
+ - New event depicting the marital union between Mary and Felipe II.
+ - Austria will now also cede provinces in the French region to Spain if Carlos V ascends to the throne.
+ - Cortes expedition event will not fire if Spain already has land in the region.
+ - Changed Treaty of Nice so that it only triggers if France occupies Milan historical capital still controlled by Milan, OR if they occupy all Milanese provinces.
+ - Added balancing event for Fez and Morocco and berbers resist christian invasion event.
+ - Spain will now also cede its french provinces to Spanish Netherlands if formed.
+ - Changed casus belli for Northern seven years war to encourage Denmark-Norway to reestablish the kalmar union as intended.
+ - Elisabeth I will now convert A.I England back to Protestantism when she ascends to the throne.
+ - A.I France will now guarantee Navarre from the start and France and Navarre will form a union if the house of Bourbon seizes power in France.
+ - Added his most christian majesty ruler modifier to first Bourbon king.
+ - Spains colonies will now fear France and Spain if the two countries join forces during the Spanish war of succession. 
+ - Dutch - Portugese wars will not trigger if Netherlands are a subject of Spain.
+ - Fixed incorrect province ID's for Swedish - Polish war. They now get claims in all of the livonia region.
+ - Catalunya now gets cores in its historical territory if the Catalan revolt happens.
+ - Louiv XIV is made heir now instead of Ruler, as his age is otherwise incorrectly set to 19.
+ - Changed area that England and The Netherlands gain claims on in first anglo-dutch war.
+ - Tweaked French hegemony modifier to give France a higher forcelimit.  
+ - Added Amsterdam tariff event for the Netherlands during the Dutch golden age, as long as they remain in control of the city itself.
+ - Updated and rewrote the code for Anglo-Dutch wars.
+ - Fixed bug that turned Spain protestant. Sorry about that!
+
+Version 1.8.8
+
+- Added balancing event for Commonwealth.
+- Removed Netherlands settler reduction as the effect was applied twice.
+- Tweaked forcelimit reduction for most countries as it was slightly too high late game.
+- Phillip the prudent can only be born during Carlos V's reign now.
+- Fixed Brandenburg inherit Prussian lands event.
+
+Version 1.8.9
+
+- Treaty of nice revamped so that Turkey doesnt get war reparations unless they participate in war.
+- Navarre must either be subject of France or independent for Bourbon dynasty event. For A.I France, in addition, conquering Navarre ensures the Bourbon event.
+- Restored treaty of nice to previous version. France must occupy Milan owned Lombardie to trigger treaty. 
+
+Version 1.9
+
+- Habsburg inbred modifier will not trigger for Carlos V and Felipe II.
+- Reduced Rey Emperador bonus slightly to compensate for the above.
+- Reduced the manpower depleted event for Spain and lowered their mercenary cost.
+- A.I France will now see its army restored between each italian wars.
+- Treaty of Utrecht and Spanish war of succession reworked. Spain will regain its independence if she and France wins the war, however at great risk of France inheriting the Spanish Crown. If the coalition wins, Spain also regains its independence but loses much of its european holdings, but gets a king and an heir.
+- Fixed a bug in the Spanish war of succession.
+- France will now get the Bourbon monarchy if the war of Spanish succession triggers, unless they are already Bourbon. They will, however, miss out on the Louis XIV modifiers received by becoming Bourbon in the 16th century.
+
+Version 1.9.1
+
+- Fixed a bug in the Portugese conquest of Bombay event.
+- A.I England now gets a conversion bonus once Henry VIII is ruler, to prevent them from converting back to Catholisism straight away. 
+- A.I Sweden and A.I England now gets a conversion bonus once Gustav Vasa is ruler, to prevent them from converting back to Catholisism straight away.
+
+Version 1.9.2
+
+- NEW FEATURE! Dynamic world trade hubs. The main port of global trade will change depending on conditions being met, starting historically with Venice. Controlling any of these cities grants a biennial tariff to its owner.
+- Italian wars will only trigger if there is no truce between Spain and France.
+- Austria now regains the imperial Crown when Charles V dies or abdicates.
+- New event for premature death of Carlos V.
+- Spain will now leave the empire once Carlos V dies or abdicates.
+- Spain will now inherit its subject Burgundy if Carlos V abdicates or Felipe II survives and becomes king.
+- New event for A.I Brandenburg to give the reformation a nudge. Only for 1492 start.
+- A.I Portugal now gets a forcelimit bonus while controlling the spice trade, to help them combat those pesky natives.
+- Portugal will now construct fortresses in the Malacca and Molucca spice provinces upon conquering them.
+- Oppressed Swedes will now trigger if Denmark-Norway conquers lower part of Sweden.
+- Tweaked forcelimit reduction modifiers for new M&T 2.01.
+- Changed Turkish CB to conquest for great siege of Malta event.
+- The Netherlands will now leave the HRE when rebelling.
+- Rebalanced France, Sweden and Denmark for new M&T version.
+- England can now hire Francis Drake and his fireships to help defeat the Spanish Armada.
+- England ruled by Elisabeth I and Scotland get united dynasty modifier to stop A.I England from declaring war constantly on them.
+- Events for failure of Cortes and Pizarro expedition. Failure will now grant the Aztec and Inca empire a research bonus for all the European technology they steal.
+- Lowered the privateering amounts to coincide with M&T 2.01.
+- New event depicting the uprising of the Dutch people, in the event of full scale occupation.
+- A.I countries no longer get negative stability from not acting on piracy. 
+- Reduced the prestige hit on refusing to act on piracy.-
+- Made A.I more likely to act on piracy. 
+- Added Bourbon monarch bonus to France.
+- New event to improve A.I Denmark-Norway control over its Norwegian land.
+- France and England will guarantee the Netherlands after the 80 years war.
+- Henry VIII annulment event will only trigger if England is still catholic.
+- Added balancing event for Milan. 
+- Removed production and tax bonus during Spanish golden age.
+- Fixed incorrect region in Polish - Swedish war.
+- Remade the oppressed Swedes, oppressed Danes events to better balance them.
+- New Empire overextended event for Spain to mimic the historical challenges of maintaining such a vast decentralised empire.
+- Spain will now inherit low countries directly instead of Burgundy.
+- A.I Portugal get renowned trader modifier if they discover malacca strait before 1520.
+- Lots of bug fixes.
+- Commonwealth golden age slightly boosted. 
+
+Version 1.9.3
+
+- NEW FEATURE! Slave trade. Portugal can sell slaves to other colonial powers at a profit if there are interested parties. Slaves boost productivity in colonies as well as colonial growth. Slave trade begins with the colonisation of Luanda, next to the kingdom of Kongo.
+- Non colonial powers who rely on slaves for their economies such as Mamluks, China and Mali will consider purchasing slaves once discovered.
+- Added birth and ruler event for Charles IX and modifier.
+- Added ruler event for Charles IX and modifier.
+- Added ruler event for Henry III and modifier.
+- New event depicting the St. Bartholomew's Day massacre.
+- France now needs to suffer through the religious wars to get the Bourbon dynasty.
+- New leasing fee for Portugal to retain the trade port of Macau.
+- Tweaked the spice trade tariff to give claims to other colonial powers to increase competition.
+- Added third Dutch - Portuguese war.
+- Nerfed the forcelimit reduction events.
+- Added Anglo - French war of 1627.
+- New event depicting the war of Mantuan succession.
+- Few general tweaks and improvements.
+- Reduced A.I Britain modifier slightly.
+- Fixed bug in End of Hostilities event.
+- Added event for English trade post in Surat.
+- Moved English conquest of India event to its rightful time.
+- New event for the decline of the spice trade.
+- Added Portuguese trading post in Japan event and rental agreement.
+- Changed Vasco de Gama tech requirement to 16 to allow Portugal to make the trip historically.
+- New events for Portuguese conquest of Musqat, Hormuz and Bahrain.
+- Controlling the three above provinces grants Portugal control over the Hormuz strait.
+- Added battle for Diu event.
+- Added battle for Aden event.
+- Controlling Aden now grants Portugal control over the guld of Aden, effectively blocking trade.
+- New event for Ottoman reconquest of Aden and other Portuguese fortresses in Arabia.
+- Ottomans can now instant annex the Mamluk Sultanate if they chose to betray them in the battle for Aden and conquers the Mamluk capital.
+- Added a few historical Ottoman and Portuguese admirals.
+- New event for Portuguese conquest of Aden.
+- New event for Somali - Portuguese conflicts.
+- Added Aceh - Portuguese war.
+- New balancing event for Mamluks.
+- Added several historical generals, courtesy of RituHala.
+- New event for Persian reconquest of Hormuz with English interference.
+- Added Aceh revolt.
+- Added Portuguese - Kongo wars.
+- Added The Battle of River Duyon between Portugal and Aceh.
+- Portugal now gets a bonus merchant and trade efficiency from controlling the harbor of Elmina on the ivory coast.
+- Information concerning global dynamic trade hubs can now be viewed as a decision.
+- Added second Portuguese conquest of Diu.
+- Reduced defensiveness by 30% on the "resisting the christians modifier".
+- A.I France will only be given the Indian east coast trade outposts not occupied by Portugal. They still get a claim however.
+- A.I English Surat will become English culture to help facilitate the A.I's spread in India.
+- New event if Habsburg dynasty in Austria becomes extinct.
+- A.I England gets autonomy reduction for 20 years if James I unites Scotland and England.
+- Scotland will now occasionally rise up against English occupation.
+
+Version 1.9.4
+
+- Rough wooing will not trigger if Scotland is a vassal of England.
+- Spanish war of succession will not trigger if Charles II dies young.
+- Fixed on monarch death name bug that was causing some major events not to trigger.
+- Slightly reduced Netherlands trade power as they were ruling the channel unopposed.
+- Glorious Revolution will only trigger if England is no longer under the rule of Cromwell and retains the Stuart dynasty.
+- Polished the localization a bit.
+- Dutch golden age only triggers if the Netherlands own least 7 provinces in the low countries.
+- Fixed bug in France not getting Bourbon ruler modifier.
+- New event that gives Portugal the option to refuse treasure fleets and instead invest the gold locally in its colony.
+- New event for depletion of Brazil gold mines.
+- Fixed incorrect province ID for Ouro Preto gold rush.
+- Expanded upon the Spanish war of succession, giving Portugal the option to attempt to remain neutral.
+- France no longer becomes Bourbon if Spanish war of succession triggers. They must become so a century before.
+- Increased cost of building ships over forcelimit.
+- Spain will also release Genoa, Milan, Mantua and Firenze if the treaty of Utrecht triggers.
+- New ruler event for Leopold VI of Austria.
+- New Catalan event for Spanish war of Succession.
+- Rise up Dutchmen event will also trigger if Spain or France manages to secure Dutch culture land in a peace treaty.
+- Fixed a bug in British conquest of India.
+- Started restructuring the mod as it has grown too large to manage in one file.
+- New info event for Spanish players to guide them through the Spanish war of Succession.
+- New event for negotiating the treaty of den Haag, in order to avoid the Spanish war of succession.
+- Charles II will struggle to produce a living heir once he is in his 30's.
+- Spain will get the same dynasty as France if the treaty of Utrecht is signed, but with an heir to minimize inheritence.
+- Minor army forcelimit balance tweak for England, Portugal and Sweden.
+- New decision that displays the current global trade hub.
+- Sweden will now break away from Denmark if Gustav Vasa takes the throne. A.I Sweden gets truce and Human Sweden gets to fight a independence war.
+- England can now choose to make Henry VIII the heir or have him take the throne immediately.  
+- Slightly boosted Milan balancing and also removed initial French cores from the 1492 start.
+- A.I Milan and A.I Netherlands will loose their balance modifiers if they manage to expand rapidly on the European continent.
+- Florida purchase no longer limited to A.I players.
+- Improved code for Florida purchase event.
+- Improved code for Louisiana purchase event.
+- Tweaked code for Prussia monarch events.
+- New events for Parma independence war.
+- New event for Denmark taking control over Norway.
+- Expanded upon Austria - Bohemia union event.
+- Added Spanish diasphoa event.
+- Added mass emigration to colonies event for France.
+- New religious event for Austria for resisting heresy.
+- New event for A.I Spanish subjugation of Utrecht.
+- Added event for France - Navarre solidifying relations to encourage Bourbon event firing.
+- New spreading the faith event for Spain.
+- New event for Portuguese emigration to Brazil during Gold rush.
+- Added Pilgrimage of Grace event For England.
+- New event depicting the Irish rebellion of 1641.
+- Adder event for Irish catholic revolt.
+- Netherlands, England and France are only given a North american province if it is empty.
+- New event for Marian persecutions.
+- New event giving England the option of joining Spain in the eighty year's war, provided that Mary and Philip remain married.
+- Boosted A.I Portugal sailors to prevent early Brazil independence war due to repeated sailor pressing.
+- New resist heresy event for Poland.
+- Emigration to colonies accelerates event for Spain added.
+- Francis Drake event now grants a temporary forcelimit bonus to allow event to work properly.
+- A.I England now gets a temporary increased range during the Dutch - Portuguese war in order to capture Portuguese colonies.
+
+Version 2.0
+
+- NEW FEATURE! North American colonial shipments. Colonial powers will receive shipments of natural resources, abundant in North America. They can choose how to
+use the shipments. Shipments scale with colonial nation size.
+- TRIAL! Reintroduced the "ages" mechanism from Paradox and started to tie it to the various features in the mod.
+- Added 30 year's war! Major conflict that can occur in the early 17th century, pulling most european countries into a long and bloody conflict.
+- England now gets a negative modifier with Portugal if it fights against them in the Dutch-Portuguese wars, to avoid instant allying after war ends.
+- Reduced the "resisting the turks" modifier slightly.
+- Fixed bug in Sound dues event for Denmark.
+- Boosted Dutch golden age manpower and forcelimit modifiers.
+- A.I France initial balancing slightly boosted.
+- Oppressed dutchmen now also triggers for Spanish Netherlands if they hold more than 2 dutch culture provinces.
+- Fixed bug in Kalmar war.
+- Surat event will now grant England a claim instead of nothing, to allow for later conquest.
+- Slightly reduced Spanish defensiveness.
+- Bourbon ruler modifier now grants 5% morale bonus.
+- Scandinavian balance of power will now happen more than once, with a 20 year cooldown.
+- Removed 1 colonist from  Spain colonial enthusiasm bonus, as they were still colonizing all over the place.
+- Polished code for Second northern war.
+- New forced conscription event for Portugal, to better represent their historical shortage of manpower.
+- Reduced Austria balancing boost they receive if Bohemia is inherited.
+- Improved upon Northern seven years war, as it was using mostly older code.
+- Slightly nerfed the Ottoman stagation event.
+- France A.I balance bonus now lasts for 200 years instead.
+- James II may now be born even if the English civil war does not happen.
+- Charles II will struggle to father children from the age of 20, reduced from 30.
+- Corrected a bug that waspreventing the Catalan revolt from triggering.
+- Optimised code for Treaty of Paris and Treaty of Utrecht.
+- Added event for French colonization of Guiana.
+- Updated redundant code for the colonial competition peaking events that were not triggering correctly.
+- Slightly increased size of oppressed danes and swedes revolts.
+- Austrias balancing bonus will be removed after 100 years, if they choose to instantly annex Bohemia.
+- New event for Mantuan uprising during the 30 years' war.
+- Added event for Napoleonic occupation and administrative reforms.
+- Added balancing event for Morocco.
+- Fixed Spain subjugates Utrecht bug.
+- Fixed bug in Charles II heir is stillborn event.
+- Fixed bug in Crimea war.
+- Fixed bug in First partition of Poland event.
+- Fixed release vassal bug in all occuring events.
+- Fixed bug in Austria cedes lowlands.
+- Fixed lots of incorrect bracket bugs.
+- Added The great migration event for England.
+- Added The Headright System event for England/Britain.
+- Mantua and Parma independence wars now trigger properly.
+- Most Migration events will now also add the equivelent of what is lost in Europe to colonial nation populations.
+- New decline of Ming dynasty event for China.
+- New casus belli for Ottoman invasion of Mamluk.
+- In an attempt to make the North American colonial region more interesting, colonial nations will now send regular shipments of natural resources to their overlords, who decides on how to spend it. The larger the colonies, the bigger the shipment.
+ - Reworked American war of independence.
+ - Countries supporting the American rebels will need to supply regular shipments of gold and men or forfeit on their promise.
+ - New event for Boston tea party.
+ - New trust event for Austria and Spain while remaining Habsburg.
+ - A.I Spain gets two more provinces in Philippines colonization event.
+ - Portugal now gets a event if their Nagasaki or Macau trade outpost are lost due to foreign invasion or rebel uprisings.
+ - New event for Isabel de Trastamara.
+ - Increased price of spices to compensate for loss of global trade volume in new M&T version.
+ - Catalan revolt only happens if Spain and Austria are both Habsburg.
+ - Slightly reduced Habsburg loyalty event effect.
+ - Portuguese slave trade now also starts if Portugal owns the province of Mpinda.
+ - Historical religion event added for Bohemia.
+ - New event for Treaty of Bärwalde. France can fund an expansion of the Swedish army in exchange for continued hostilities against the emperor.
+ - A.I Sweden received a population boost for the 1492 bookmark to even it out with Denmark and Norway.
+ - New event for Treaty of Venlo.
+ - Added death by autonomy for the A.I. For some reason they seem to end up with 100 autonomy in all provinces since the latest release. This event triggers to reduce the autonomy by 40% on these occasions.
+ - Several tweaks to autonomy to balance the mod after changes to estate system (still work in progress).
+
+ 2.0.1
+
+- Castille now starts at war with Granada to enable historical reconquista.
+- Cleaned up code for North American colonies check trigger. Courtesty of Gigau.
+
+2.0.2
+
+- Added new objective to "Ages" mechanism for countries who cannot control the global trade hub. They must own 6 provinces with provincial trade modifiers instead.
+- Austria's defensive bonus against the Ottomans now only applies to provinces in the greater Austrian area.
+- Every country with a European capital with either 150 population or a fully embraced trade idea can take control over the spice trade.
+- Fixed a bug in colonial shipments that was preventing it from working properly.
+- Fixed bug with spice trade that was adding modifiers incorrectly.
+
+2.0.3
+
+- Fixed bug that was preventing Isabel de Trastámara event from triggering. Also created new appropriate ruler modifier.
+- Treaty of Bärwälde now triggers for the correct country.
+- Added balancing event for Navarre.
+
+2.0.4
+
+- New event for Spain to trigger reformation, should Carlos V become emperor. Temporary solution as dei gracia events do not trigger for non germanic emperors.
+- Corrected "ages" u.i button.
+
+2.0.5
+
+- NEW FEATURE! Historical weather events. Exceptionally cold and warm years may trigger during historical periods, affecting supply limit and attrition and occasional starvation. Historical volcano eruptions that had an impact on the world may erupt, causing worldwide famine.
+- NEW FEATURE! English privateers. England ruled by Elisabeth I may now endorse privateering against Spain, attacking their shores for supplies as well as incur damage on the provinces of the Iberian peninsula.
+- New event for control over Calais strait. Retaining Calais now also grants a small trade power bonus in the channel node as well as a boost to rural goods production to represent historical importance of retaining control over the strait.
+- England can try to bribe France to retain control over the port of Calais up until 1558, when it was historically lost. 
+- English privateers will sometimes attack Portuguese fortresses if they are allied to or have a royal marriage with Spain.
+- The Dutch can now construct the Hollandic water line, which can used in times of crisis to shore up defences for a short time, at a significant cost.
+- Portugal can now temporarily monopolize the spice trade by also taking the port of Calicut in conjunction with Malacca and Lampung.
+- New Maunder minimum cold period added. During this period, weather event effects are more severe.
+- Added eruption of Huaynaputina.
+- Reworked death of Elisabeth I and Scotland - England union event. Scotland now needs to be ruled by the Stuarts in order to inherit the throne. Event can trigger any time after Elisabeth ascends to the throne.
+- England now gets Charles I as heir if England and Scotland unite.
+- Upgraded and reworked code for Second Northern war and accompaning Treaty of Oliva.
+- Added Battle of Mohács. Austrian or Ottoman victory is required in order to trigger the Austrian - Bohemian union event.
+- Refactored about a third of all code, bringing a lot of older events up to speed.
+- Added historical religions modifier to several events that changes religion.
+- A.I Sweden starts with one extra missionary.
+- Slightly increased the rebellion size for Pilgrimage of Grace.
+- Formation of Spanish Netherlands no longer force converts the whole country. Instead, the low countries is converted if historical religions are enabled.
+- Resisting the turks locally modifier is now also applied to Balkan provinces under Austria's control.
+- Resisting the turks locally modifier is now removed in provinces which the Ottomans have captured.
+- New event to nerf Spanish colonial forcelimits, as they were way out of proportion due to large south american population.
+- New Russian conquest of Sibir event.
+- Made colonial speed reduction optional.
+- Added Liberal wars for Portugal.
+- Rough wooing only triggers is Henry VIII is king.
+- Merged pirating colonial power events.
+- Revamped French conquest of India event. France no longer get provinces if already conquered by other colonial powers.
+- 80 years' war: Netherlands now only convert to protenstatism/reformed if the historical religions event is active.
+- Sun King modifier now grants cheaper land_maintenance for France, to compensate for numerical superiority of coalition.
+- Slightly boosted A.I Russia's colonial speed, as they never seem to expand east fast enough.
+- North American colonial shipments now correctly trigger after A.D 1600, not before.
+- Fixed incorrect syntax in British conquest of India event.
+- A.I France and Britain now get permanent claims over the Indian continent if colonial_help event is activated, to encourage the A.I to attempt conquest of India.
+- New colonial birth rates event.
+- Portuguese event defending the empire now also triggers for no A.I players. Bonus slightly lowered to compensate.
+- Added Singeing the King of Spain's Beard as prelude to Spanish invasion.
+- New event for construction of Spanish armada.
+- Added resisting heresy event for Venice.
+- Decreased prestige_decay for A.I for the 1492 start as they struggle with prestige throughout the game.
+- Reduced gold reward for successful Spanish conquistador expeditions to better balance Spain.
+- Oppressed Dutch event no longer triggers before historical revolt.
+- Spanish Netherlands event triggers earlier to minimize risk of vanilla Dutch revolt from triggering.
+- Expanded upon Spanish armada event.
+- Changed fire ships event for England to make it more balanced.
+- Netherlands now get a small population boost with the golden age modifier, to better balance them.
+- Slightly increased treasure fleet inflation for Spain.
+- New event to increase protestant population in northern Bohemia.
+- New event for late 16th century French Bourbon monetary reforms.
+- France now gains stability if the Bourbons gain power.
+- New heir and ruler event for Phillip IV of Spain.
+- New heir and ruler event for Ivan the terrible.
+- New heir and ruler event for Ivan Ivanovich.
+- Added event for death of Ivan Ivanovich.
+- New event for Russia eastern expansion.
+- New balancing event for Irish states.
+- New Irish rebellion event for England for historical immersion, making it a much more challenging experience to try to control the Irish states during the 16th century.
+- Third option added to Henry VIII divorce, should the Pope grant it.
+- Marian persecutions now only kill rural population, but also adds a local  unrest to affected provinces.
+- Marian persecutions may now trigger several times throughout her reign. Northern England will also remain true to the Catholic faith.
+- Spain subjugates Utrecht now also triggers for human Spain, with a third option added.
+- Corrected bug in the Eighty years' war forced truce event.
+- Added death of Mary I event.
+- Spain ruled by Carlos V now has to bribe to become HRE, or risk the throne being inherited by France or Austria instead, forsaking control over the low countries.
+- Slightly increased size of treasure fleet for A.I Spain, to compensate for new French economic events.
+- New event for Spain 16th century bankruptsy.
+- Portuguese west African starting provinces now have Portuguese culture and religion.
+- Added second localization option for treaty of Bärwalde and its renewal.
+- Reworked English civil war event to make it more likely to trigger.
+- Added ruler event for Charles I of England.
+- New event to slow down the Spanish colonization once their new world empire is established.
+- Slightly reduced Francis Drake stats for human player.
+- Reworked Ottoman balancing.
+- Enabled the English civil war and tied it to Charles I. For some reason it had been removed in M&T.
+
+2.0.6
+
+- Fixed bug in Spain colonial empire limit event that was causing event to fire too early.
+- Fixed bug in Portuguese slave trade event.
+
+2.0.7
+
+- NEW FEATURE! Pirates of the Caribbeean. Pirates may attack colonies in the Caribbean during the golden age of piracy.
+- Hollandic water line will only activate when a province in the low countries is under siege. 
+- England is now force converted if the Glorious Revolution is successful.
+- France can choose to postpone the treaty of Bärwälde funding if they find themselves at war with the Swedes upon renewal.
+- Added late game balancing event for Portugal.
+- Catalunya does no longer get white peace if the treaty of Utrecht triggers.
+- Oppressed Danes now triggers for all countries as long as Denmark or Denmark-Norway exists.
+- Maunder minimum events now only fire once.
+- Added missing localization for hollandic water line.
+- Added heir and ruler event for Gustav II Adolf.
+- Added the asiento treaty between Britain and Spain.
+- Seven year's war: A.I Britain needs 35% warscore against France in order for the treaty of Paris to trigger. Human Britain needs 50%.
+- England will now revert back to an English monarchy during the restoration.
+- Buying slaves from Portugal will also give population growth to Caribbean colonies, provided the player has any. This to represent the population increase by imported slaves.
+- Slightly increased the cost of buying slaves and slightly increased profit for Portugal.
+- New sugar trade event once there are at least 3 sugar producing provinces in the Caribbean and the year is at least 1660. This will start a chain of events, affecting
+prices and give the sugar crop its historical importance, as well as allow the player to replant its colonies for a price.
+- Added event for Spanish colonization of Trinidad, to encourage A.I Spain to focus on the caribeean instead of the North American east coast.
+- Fixed the namespace issues with the mod.
+- Changed cold year starvation to only affect provinces with at least 5 population.
+- Made cold year starvation less likely to trigger.
+- Reworked Spain colony balancing event to better balance Caribeean colonies.
+- New event for growth of Slave population in Caribeean colonies, to improve underperforming colonies and colonial nations in this region. 
+- Slightly reduced the liberty desire reduction by the Habsburg inspire loyalty event.
+- Increased costs of Pizarro and Cortes expeditions to improve Spain balancing. 
+- Slightly reduced forcelimit modifier for Cortes expedition but increased morale and discipline bonus.
+- Tweaks to oppressed Swedes, Danes and Scots events.
+- Made 30 years war more likely to trigger.
+- Changed incorrect culture assigned to starting Portuguese overseas provinces.
+- Portugal now only gets the renowned_trader modifier if they are the first Europeans to discover Malacca.
+- Added naval morale boost for Mamluk Sultanate.
+- Oppressed Danes now triggers for all countries as long as Sweden exists.
+- New Host event to determine the current host of the game. This to ensure historical weather events dont trigger too frequently in a MP game.
+- Changed empire overextended event so that only provinces outside of castile are affected by the autonomy increase.
+- Slightly boosted opinion modifiers for Portugal and Kongo when signing a slave trade treaty.
+- Corrected bug that only allowed Portugal to retain its spice trade monopoly for 3 years.
+- New event for sugar cultivation peak and price change.
+- Fixed bug in Franco - Dutch war.
+- New heir and ruler events for Frederick II, Frederick William and Frederick William II of Prussia.
+- Fixed localization bug in Spanish bankruptsy event.
+- SLightly lowered the bribe amount for Carlos V to become emperor.
+- Fixed unrest bug in Spanish bankruptsy event.
+- New coronation events for France and Austria should Carlos V decide not to become emperor.
+- Created colonization events for Guadelope and Martinuque.
+
+2.10
+
+- NEW FEATURE! Dutch Moedernegotie. The Dutch can now import large quantities of basic wares from the baltics and stockpile them in order to sell at a 
+higher rate during colder years. Requires the baltic states have a port. Rivals and enemies of the Netherlands cannot buy wares. The Moedernegotie requires the historical weather events to be enabled.
+- Dutch Stadtholder can temporarily veto trade in basic wares.
+- Stockpiled goods can be damaged or destroyed by weather.
+- Added new age of enlightenment, courtesy of Jorge D'Alessandro.
+- Province of Lampung replaced with Bantam for controlling spice trade.
+- New trade node for Portugal, giving them the historical ability to divert trade from brazil and Guinea.
+- European trade outposts on the Indian coastline now receive own province modifier, to make trade empire possible without complete conquest of India.
+- Trade can now be forwarded from Hormuz to Aden, no the other way around.
+- The spice trade tariff has been completly reworked. Player not gets a bonus to tax income.
+- Portugal instead monopolizes the spice trade by beating the other european powers to the east indies and controlling the spice trade.
+- Spice trade monopoloy now ends when more than one european power begins to trade with spices.
+- Country balancing modifiers are now optional, for those of you who prefer a bit more randomness.
+- Added information decisions for Enhanced Portuguese gameplay and Spice trade.
+- New event for Italian states to rally against any ottoman invasion of italy.
+- Reduced country balancing modifiers overall and started replacing them with historical events.
+- Forcelimit events have been nerfed to a minimum to compensate for the overall reduction in the new M&T version.
+- New formation, joining and dissolution event for Schmalkaldic League.
+- Tweaked balancing for most countries in regards to trade efficiency.
+- Added six Ottoman - Persian wars during the 16th and 17th century.
+- New events for Habsburg - Persian alliance for Spain and Austria.
+- Any european country can now discover the spice trade route and disrupt it, causing global trade to shift from Venice to Lisboa.
+- Lisboa can now become the leading trade city if Portugal reaches the spice islands first. 
+- New a.i France migration events for Ordance of Cardinal Richelieu and King's Daughters.
+- Added population control to New Spain, as their population always spirals out of control, causing early independence from Spain.
+- Reworked balancing for Austria, Ottomans, Poland, Spain, Portugal and France.
+- French hegemony modifier now removes 1 diplomatic relation from France.
+- New skilled worker migration event for the Netherlands during golden age.
+- Reworked glorious revolution. England will become a joint monarch with the Netherlands during the reign of William of Orange.
+- Created country for James II.
+- Slightly lowered the amount Charles V borrows to become emperor, as Spain kept going bankrupt.
+- a.i Spain, France and Austria are less likely to pick their golden age during the age of discovery in an attempt to get them to pick their historical time period.
+- Added loss of population during St: Bartholomew massacre so represent the thousands of people who were killed during the atrocities.
+- Added event for reestablishing the Denmark-Norway union.
+- Dutch merchants trading in bulk resources will increase their prices during the maunder minimum.
+- Russian winter effects nerfed for human player.
+- Continued to refactor older events.
+- Expanded upon the treaty of the Hague to end the War of the Quadruple alliance, should the war go badly for Spain.
+- Balancing events for Ak Koyunlu.
+- Boosted Calais export modifier.
+- Added fall of Ak Koyunlu event.
+- Added localization for all static modifiers.
+- New event for Carlos V proclaiming his brother the ruler of Austria.
+- Austria and Spain become a joint monarch if Ferdinand I is proclaimed archduke of Austria. The union ends with the emperors death.
+- a.i Portugal will make one final attempt to secure the strait of Hormuz if first attempt fails.
+- Removed a few trade outpost provinces from the South Africa colonial region to prevent colonial nations from forming in the 1500's.
+- Fixed a bug in the reward offered to Spain from the Cortes and Pizarro expeditions.
+- Fixed bug in Ivan the terrible event causing his father to be granted his bonuses.
+- Mary is now born a catholic, preventing her from getting excommunicated upon becoming Queen.
+- Elisabeth is now born a protestant if England is protestant.
+- New ruler and heir event for João III of Portugal.
+- Tweaked slave population increase due to similar effect added by Portuguese slave trade.
+- Treaty of Nice will trigger when Milanese capital is captured by France or the Ottomans, regardless of which province is capital.
+- New ruler and heir event for Sebastião I of Portugal.
+- New colonization event for Sweden.
+- England and Spain will form a joint reign during the Mary - Felipe union.
+- Felipe may propose to Elisabeth if he outlives Mary.
+- Reduced occurrence of exceptionally cold years, but increased chance of it happening during the maunder minimum.
+- Slight reduction to tax rate in spice trade tariff modifier.
+- The Netherlands now properly convert to either protestant or reformed during the eighty years war.
+- Spanish Netherlands will convert to catholicism during the eighty years war.
+- New events for Portuguese succession war that may trigger if Sebastião I has no heir before 1578.
+- Added iberian union event.
+- New event for Spain to press its claim if Felipe II is ruler.
+- Slight reduction in naval forcelimit reduction for great powers.
+- Added invention of the windpowered sawmill for the Netherlands.
+- Slight reduction in Prussia discipline bonus in balancing event.
+- Tweaked golden era bonus for Ages.
+- Changed some rewards during the Age of exploration and Reformation.
+- A.I Spain will always choose to accept treasure fleets if it has more than 5 loans.
+- Removed tax and production nerfs for Ottoman Stagnation event and increased tech cost.
+- Spain bankruptsy event gives a slight reduction in prestige decay.
+- Opportunity to purchase Dutch bulk resources increases by being allied to them.
+- Spain no longer gets disrupted treasure fleets from Singeing the King of Spain's Beard event.
+- Ottoman Empire now gets increased aggressive expansion if it conquers land in italy.
+- Added treaty of Granada. Requires Isabel de Trastámara as Queen of Castile.
+- Pizarro conquest modifier now expires after 10 years.
+- Reworked the Philippines expedition event to turn it into a conquistador expedition.
+- Expanded upon long Turkish war to include the serbian rebellion and some italian states missing from the war.
+- Globalised trade institution can also trigger for the country who controls the leading trade city of Amsterdam or Antwerp.
+- Added optional debt interest rate balancing event.
+- New event for the surrender of Calais.
+- Selling North American shipment resources in Europe now temporarily lowers the price of Lumber due to the abundant supply.
+- Spanish treasure fleets occur every 2.5 years instead of every 5th, in order to improve a.i performance and balancing as well as tie it into the privateering events.
+- Changed some rewards and conditions for the age of absolutism as some were outdated.
+- England will change to an absolute monarchy upon the ascension of James I.
+- Slightly boosted the relation boost between a.i Portugal and Kongo for the slave trade.
+- Boosted Aceh balancing.
+- Skilled worker migration event now grants a technology cost reduction.
+- Added additional conditions to stop the English Civil war disaster.
+- Reduced amount of diplomatic relations given to France during the hegenomy period.
+- Expanded upon English civil war.
+- Fixed a bug in the Ottoman - Austrian war of 1663.
+- Countries are more likely to join the Ottoman - Austrian war rather than offering supplies.
+- Austria now takes direct control over any Bohemian provinces in the royal bohemia area if choosing to PU them during the battle of Mohacs.
+- Added mission for conquering the Malacca and Molucas straits.
+- Slightly reworked Glorious revolution to end war if England looses.
+- Netherlands must either give up their claim on the English throne or continue the fight.
+- New Financial Revolution for England and Netherlands following the glorious revlution.
+- New event for creation of Dutch taxation system.
+- New event for English financial revolution.
+- Added colonial balancing events for North America.
+- Reworked colonial balancing events into one, covering all of the americas. Quick fix until M&T fixes north AND south american colonial population.
+- Added new objectives for Age of Enlightenment.
+- New sugar tax event to make sugar trade and establishing caribbean colonies more lucrative. Runs in the background.
+- New sugar act event once a colony has been established in the caribeean.
+- Made the sugar trade an optional feature.
+- Colonies attacked by pirates will now be overrun, unless a level 2 fortress or higher is present and the mother country ignores the plea for assistance.
+- Fixed bug in Der Haag treaty event that was causing it not to work properly.
+- Fixed bug in Joseph Ferdinand Dies young event that was causing it not to fire.
+- Updated Austrias balancing event to make it trigger on monthly income instead.
+- Controlling the leading trade city now gives controller a boost to global tax income, to simulate the increased local economic activity of the visiting merchants and sailors.
+- Golden age of piracy actually ends now.
+- Added treaty of Windsor to give inscentive for English players to maintain alliance with Portugal.
+- Same dynasty opinion modifier increased to 50 to encourage dynastic alliances.
+- New control over Malindi harbour event added for Portugal, to compensate for new M&T trade routes.
+- New control over Luanda harbour event added for Portugal, to compensate for new M&T trade routes.
+- Reworked ages objectives to make it possible for all countries to take control over the leading trade city.
+- Controlling the spice trade now also grants a merchant.
+
+2.1.1
+- England now only attempts to bribe for the return of Calais if she has less than 5 loans (ai only)
+- Fixed bug with Ottoman invasion of italy event, causing infinite loops for italian states unless joining the war.
+
+2.1.2
+- Fixed bug that was causing Lisboa to stay leading trade city.
+- Cortes event to conquer aztec can now trigger during a truce.
+- Added historical peace treaty to siege of Diu.
+- Fixed bug that was giving Portugal double trade modifiers in Elmina harbour.
+- Tweaked opinion modifiers for Portuguese slave trade to prevent it from ending directly after intial signing.
+- localized all opinion modifiers.
+- Added italian war of 1494 and the league of Venice.
+- New heir and ruler event for Charles VIII of France.
+- New ascencion event for duke of Milan.
+- Added more options to Porguguese expansion events.
+- Portugal must now pay to expand the port of Lisboa in order for it to become the leading trade city.
+- Reduced size of rebel uprisings during the oppressed Danes, Swedes, Irish and Scots events.
+- All the above oppressed citizens events will stop if the culture of the rebels becomes accepted by the occupying force.
+- Fixed issue with Pizarro conquest of Inca event not triggering on the 1356 start date.
+- Started localizing all cb and trade node events.
+- Portuguese blockade now correctly applies to middle eastern countries if the gulf of aden is blockaded.
+- General balancing changes to compensate for new war exhaustion modifiers.
+- Changed casus belli for Austria and The Ottomans for Ottoman conquest of Hungary event.
+- Defending the empire modifier now gives Portugal a temporary increase in manpower and manpower recovery speed.
+- Mamluks will now correctly cede its arabian peninsula area to the Ottomans, not all its land.
+- Mamluks can only cede its arabian peninsula territory if it holds more than 5 provinces in the region.
+- Treaty of Mohac trigger requirement reduced to 20% warscore.
+- Updated Trade nodes file to latest version.
+- Reduced the price increase in spices to better balance Portugal.
+
+2.1.3
+- France now gets claims in Naples during the 1494 Italian war.
+- Added new modifier for France 'Le Taille' during the 1494 Italian war.
+- French centralization efforts modifier now correctly applies to France and not to Spain.
+- Subject type permanent union no longer shares ruler to allow for Isabel and Ferran to rule together and seperately.
+- Carlos V can now be born even if Spain hasnt formed.
+- Florence now correctly joins (or not) the league of Venice, rather than Futa Jallon.
+- Portugals trade node makes a triumphant return.
+- New slave trade events for Portugal to help keep track of how successful the slave auction was.
+- Reworked Portuguese conquest of Malacca and Palbang.
+
+2.1.4
+- Fixed missing tag in 18th century events causing some events not to fire.
+- Reworked conditions for the formation of Spain to make it more historicial and challenging (only for 1492 start).
+- Fixed missing tag in Carlos takes power event causing some events not to fire.
+
+2.1.5
+- Added Schmalkaldic War.
+- New letter event for Ferdinand and Carlos during their joint reign. 
+- New event for Austria to join the 1503 italian war.
+- Fixed a few minor bugs.
+
+2.16
+- Updated all province history files.
+- New cb for Portuguese conquest of Bombay as well as historical peace treaty.
+- Reduced resisting the turks modifier as it was a bit OP.
+- Fixed incorrect province in age of reformation objective.
+- Updated treasure fleet regions to work with latest M&T update.
+- New ruler and heir event for João Manuel of Portugal.
+- Portugal can now buy slaves and have them trained to join their navy.
+- Portugal can train any unsold slaves into sailors for a price. Amount of sailors depend on amount of unsold slaves.
+- Fixed spanish netherlands event that was triggering an unlimited number of time.
+- Removed resisting the christian events and replaced with rebellions in non-historical provinces. 
+- It is now possible to hold historical trade outposts on the north african coast. Any other provinces will randomly spawn rebels until converted.
+- Portuguese war of succession can now trigger before 1578 if Sebastião I dies without heir and Felipe II rules Spain.
+- Battle for Aden now triggers despite the Mamluks not being at peace, as long as they arent fighting the Turks, Yemen or Portugal.
+- Expanded upon letter event to include multiple options and a.i logic.
+- Increased Scotland historical balancing forcelimit.
+- Francis Drake expedition now correctly triggers in 1577.
+- Replaced all occurances of Peru region since it no longer exists in M&T 2.5.
+- Changes to Philippines expedition.
+- Changed cb for countries joining the Northern Seven years war.
+- Changed Legazpi expedition trigger to prevent it from triggering until all natives are conquered.
+- Dutch revenue report now also shows number of customers.
+- Made St. Bartholomew's Day massacre more likely to happen.
+
+2.17
+- NEW FEATURE! Dutch East India Company. The Dutch presence in Asia event has been completly reworked. The Netherlands can sponsor the establishment of the VOC in the east indies,
+helping them to grow and eventually nationalize them or siphon their wealth.
+- The VOC will initially ask the Netherlands for help if they risk loosing against the Majahapit empire.
+- Started the tedious task of updating population increase/decrease events to make them work with M&T 2.5.
+- All Historically scripted conflicts are now optional and can be enabled/disabled via event. (courtesy of sirrobert1)
+- Historically scripted wars no longer trigger if the host country is bankrupt.
+- Continued to revamp older events.
+- Started removing unneccessary claims from the scripted wars.
+- Reduced occurance of Fire and flooding in Dutch storage facilities.
+- Fixed a bug in Portuguese succession war.
+- Pirate trade wars now creates a truce if no war breaks out, preventing it from triggering multiple times in a row.
+- Poland and Austria now get a opinion modifier if the treaty of Byczyna triggers, to prevent the alliance from ending automatically.
+- Moved Dutch golden age to its historical start.
+- Slight reduction in a.i persia morale balancing bonus.
+- Reworked war of Austrian succession.
+- Boosted a.i Ottoman Empire for Long Turkish war.
+- New heir event for Charles I of England. He is no longer defined heir during the succession of James I.
+- English civil war now correctly triggers only if England is an absolute monarchy or ruled by Charles I.
+- North american colonization helper events now give correct religion.
+- Increased tax gained for Amsterdam and London leading trade cities.
+- New event for Amsterdam golden age to encourage Dutch dominance over the atlantic trade node.
+- Further reduced Netherlands a.i balancing to compensate for new Amsterdam golden age modifier.
+- Reduced a.i England balancing as it is no longer needed.
+- Reduced Uskok war contributions and replaced manpower with prestige for declining to join the war.
+- Removed free trader from strategic trader modifier for Portugal as it was giving them too many merchants.
+- Uskok war now uses trade cb to prevent ahistorical conquest of Venice.
+- Further reduced forcelimit reduction modifiers.
+- Dutch mothertrade medium purchase now correctly sells to 4 customers (previously 3).
+- Fixed a bug in the Dutch mothertrade that was causing wrong information to be displayed in the revenue report.
+- New oppressed Norwegians event.
+- New Portuguese rebellion event.
+- Changed cb for Mantua succession war.
+- Further reduction to colonial balancing as it is no longer needed.
+- New cb for league of Venice.
+- New optional event to upgrade a.i fortresses, as they are not doing so themselves properly.
+- Fixed bug with Schmalkaldic League that was causing countries to join a league that does not exist.
+- Spain no longer inherits the armies of its expeditions.
+- The Ottomans can now capture Diu during the siege of Diu. War goal objectives added.
+- Lisboa is now correctly made the leading trade city if Portugal is first european power to discover the spice islands.
+- New event to nationalize the V.O.C.
+- Removed Ottoman - Spanish naval agreement event as it is no longer needed.
+- Slight increase to Spanish treasure fleets.
+- Reduced rebels during St:Bartholomew massacre for a.i France.
+- Optional change: Removed a-historical Konkan - East Africa trade node connection to increase the importance of controlling strait of Hormuz.
+- Expanded slightly upon the 30 years war and made the protestants the aggressors.
+- Reduced increase in sugar price during the sugar trade event since such a steep increase is no longer needed. (NA is profitable - yay!)
+- New event for Franco - Ottoman alliance. France and the Ottoman empire are now only likely to become kindred spirits if France is de Valois by 1536.
+- Reworked the Spanish Netherlands formation event. Spain can now also choose to give near full autonomy to the region.
+- During the battle for Aden, the Mamluks now surrender the whole arabian peninsula if they choose not to invite the ottomans to join the war.
+- Fixed bug in American revolutionary war.
+- French funding event now offers a flat tax bonus to Sweden instead of cash. France gets an equal amount reducted as well as a small reduction in forcelimits.
+
+2.18
+- English raid events now correctly affect population.
+- Protestant and Reformed countries no longer spawn catholic rebels during St:Bartholomew Massacre.
+- Expanded upon Francis Drake raid on South America.
+
+2.19
+- Cadiz raid now correctly affect population.
+- Fixed bug in Dutch mothertrade that was causing it to misfire.
+- A.I Spain is more likely to construct the smaller spanish armada if they have heavily indebited.
+- Spain bankruptsy event now gives Spain the option to either prioritize funding the navy or army.
+- The Netherlands now correctly distributes any stored bulk resources throughout the lowlands during the volcanic eruption of 1600.
+- Madeira and Azores now belong to the Portuguese trade node.
+
+2.20
+- Continued to revamp older events.
+- Reduced manpower giveaway for supporting nations during the 30 years war.
+- Adjusted VOC balancing and continued to reduce overall historical balancing.
+- Further reduced price increase in spice trade.
+- General bug fixing.
+- Russian conquest of Sibiria event will continue to trigger until they have successfully conqurered them, to aid a.i controlled Russia to expand east.
+
+2.21
+- Updated to M&T 2.51.
+- NEW FEATURE! Price revolution. Silver brought by the Spanish treasure fleets increase the overall silver supply of Europe. The price revolution may trigger as a result and can only be brought to and end by famine, plague or the passing of time. *requires spanish treasure fleets.
+- NEW FEATURE! European copper trade. Sweden controlled 2/3 of Europe's copper supply and can make its fortune by exploiting the riches of the great copper mine in Falun. The mine (and its workers) must be taken care of in order to profit from it. 
+Other countries can purchase copper and receive the benefits of its historical usages, alternatively find a supply of their own. Having a copper shortage puts your country at a slight disadvantage.
+- NEW FEATURE! Letters of marque. European colonial powers can issue letters of marque to buccaneers and have them raid spanish treasure fleets. *Requires Spanish treasure fleets.
+- NEW FEATURE! Austrian militärgrenze. Austria can grant near-full autonomy and religious freedom to its provinces along the Ottoman border in exhange for its inhabitants 'Grenzers' defending it with their lives. Pros: Free forts, added defence. Cons: Increased autonomy, less provincial manpower, no religious conversion possible in affected provinces.
+- Reworked treasure fleets and created a revenue report similar to the Dutch Moedernegotie.
+- New a.i event to reinforce Spanish claim over the low countries.
+- The Dutch Moedernegotie merchant fleet will now come to the assistance of the Netherlands, should their own fleet be compromised during times of war.
+- Slightly reduction in english rebel size during english civil war disaster.
+- Population is now correctly deducted during a pirate raid.
+- Updated localization.
+- New heir event for Louis XIV.
+- Portugal can now also turn unsold slaves into manpower.
+- New Dutch colonization event for Saint Martin.
+- New English colonization event for Saint Kitts and Antigua.
+- Reduced a.i Brandenburg and Prussia balancing.
+- Revamped war of devolution and reunion to make it more likely to trigger and give them purpose.
+- Reworked sugar trade event as it was no longer triggering due to M&T trade goods revamp.
+- The sugar act event now correctly stops triggering if event is declined.
+- Fixed bug in treaty of der Haag negotiations that was preventing it from failing sometimes when it ought to.
+- Reworked treaty of Der Haag negotiation to only trigger if Spain actually controls or has Mantua, Milan, Sicily and Naples as subjects.
+- Milan now gets partitioned between Austria and Savoy during the treaty of utrecht if they were a subject of Spain.
+- Reworked and updated treaty of utrecht and asiento agreement, so it only benefits countries that actually participate in the succession war.
+- Continued to update older code.
+- Sugar replantation no longer affect unfinished colonies, and should therefor not trigger until player/ai has 3 or more colonies in the caribeean.
+- New event for unification of manchu tribes to try and increase likelyhood of Qing invasion of Ming.
+- British nation can now be formed if England is a joint monarchy under the Netherlands.
+- Continued to tweak a.i balancing.
+- Expanded upon the Lisboa earth quake of 1755, causing historical destruction along the algarve and surrounding areas. *requires historical weather enabled.
+- Brazil migration event during gold rush now properly triggers.
+- Fixed bug that was causing the age of enlightenment to end prematurely.
+- Dutch - England union now correctly ends if England forms Great Britain during reign of William of Orange.
+- New event for Britain/England where thirteen colonies demand control over any east coast provinces, to encourage them to grow large and pose more of a challenge to British authority. *requires historical balancing enabled.
+- Updated age of enlightenment and made minor adjustments to other ages and localization.
+- Lowered cost of Dutch food import during maunder minimum as profit margins were too slim.
+- Expanded upon war of quadruple alliance peace treaties.
+- Reduced Austria light balancing.
+- Reworked Marian persecutions. Event will fire more often but is less cruel.
+- Fixed bug in fugger event causing the player to only see one option instead of two.
+- Reduced Spain hard balancing.
+- Reduced base liberty desire of the V.O.C.
+- New heir event for Elisabeth I.
+- Slightly reduction to a.i research bonus.
+- Fixed several missing brackets.
+- Removed the resisting the turks modifier and replaced it with an austrian Militärgrenze feature.
+- Fixed all migration events.
+- Added missions for Portugal for historical empire, as the a.i would get stuck on south african colony mission and underperform.
+- New heir event for Peter the great of Russia.
+- Increased value of spice trade control and monopoly to compensate for removal of Portuguese Monarchy.
+- Removed all province history files. Mod will now use 1356 POP data. As a result it is compatible with most mods now.
+- Increased attrition rate for winters and slightly reduced for cold years and russian winter to compensate for higher a.i fortress level.
+- New event for Cortes expedition in case the Aztec empire has collapsed before his arrival.
+- Fort upgrade event no longer affects primitives in the new world.
+- French war of revolution now only triggers is Austria is a great power.
+- Started revamping French war of revolution.
+- Started revamping Napoleonic wars.
+- New ruler event for Ferdinand the Catholic.
+- Reworked battle of Diu as a.i Portugal is utterly useless. Historical provinces along indian contient are now granted to a.i Portugal if they decimate the Gujarati fleet.
+- Spain can no longer release Portugal peacefully during the Portuguese restoration war if playing with the 'spain hard' modifier.
+- Reworked Henry VIII ascencion and added heir event.
+- Aragon must now pay remaining dowry to England, should Henry VIII marry Catherine of Aragon.
+- New ruler event for Henry VII.
+- Reworked Portugal missions slightly to incorporate them with this mod.
+- New event for death of isabel, should Juana still be heir.
+- New heir and ruler event for Juana of Castile.
+- Carlos V is no longer born unless Juana la loca is queen or Isabel is queen whilst Juana has passed away.
+- Treasure fleets can now be sunk by storms or captured by pirates if present in the caribbean.
+- Treasure fleets can now be captured by buccaneers under the protection of a european colonial power.
+- Pirates of the caribbean event is now an optional feature.
+- Reworked Swedish war of liberation.
+- New ruler event for Gustav Vasa once independence is achieved.
+- New reformation event for Sweden.
+- New heir and ruler event for Suleiman of the Ottoman empire.
+- Significantly reduced 1492 tech rebalance.
+- New heir and ruler for Erik XIV of Sweden.
+- Reworked russian winters events to make them more generic and historical. They are no longer tied to country but affect siberia, greater russia, finland region and norrland.
+- New marriage event between Henry VIII and Catherine of Aragon. Requires peace between both countries.
+2.2
+- Heir and ruler event for Mary of Scots.
+- Removed resist the english event.
+- Scotland can instead ambush english invaders in any defensive war, making it more challenging for England to take Scotland by force. *requires historical balancing.
+- Removed defines.lua as it was causing issues with liberty desire.
+2.3
+- NEW FEATURE! Historical Plagues. Certain historical plagues can trigger depending on certain conditions being met.
+- NEW FEATURE! Casa de contradadiction de Seville. Allowing its construction gives Spain benefits to colonial taxation and embargo, however a minimum taxation of 20% for all colonies must be maintained.
+- Revamped Dutch Moedernegotie. Netherlands must now sail a trade fleet around the baltic ports to purchase basic wares and bring them  back to Amsterdam. Prices and availability are now
+dynamic and events will also occur whilst at sea. The sound toll must also be paid to Denmark every time the merchant fleet sails through the sound. The selling countries now also get paid for the
+goods purchased by the Dutch. Trade harbours: Gotland, Öland, Riga, Danzig.
+- Cities visited by the Dutch merchant fleet will also get a share of the profits generated from selling basic wares.
+- Copper trade has been revamped and is now variable based. The more copper reserves a country has, the greater the benefits. 
+Copper reserves can be increased either by conquering provinces containing copper and build a mine, or purchasing from Sweden. By allying with Sweden and maintaining good relations, a country is able to purchase more copper
+from them.
+- Revamped Portuguese slave trade. Slaves are now auctioned and sold to the highest bidder. Only colonial powers will attend slave auctions. 
+- Added ability to mint copper coins if reserves are higher than 5.
+- Removed Habsburg colony loyalty event.
+- Reworked decline of Moedernegotie to make it more historical. Dutch players should make sure the trade harbours do not fall under the control of its great trade rivals, Sweden and Russia.
+- Updated old localization.
+- Removed merchant fleet support events.
+- Removed empire overextended event for Spain and replaced with minimum autonomy due to cortes.
+- Irish rebellion against England event will now stop triggering if England adds Irish as accepted culture.
+- New event depicting the first journey of Cristóbal Colón.
+- Spanish colonization of cuba moved to historical date of 1511.
+- Added event for Spanish colonization of Buenos Aires.
+- Revamped new world colonial nations balancing.
+- Reduced Russia balancing.
+- Portugal can now establish special trade outposts at Luanda, Malindi and Elmina harbour provided that they are the first european power to circumvent africa and discovers the spice islands.
+- Revamped pirate attacks on caribeean colonies. Pirates will now spawn in the province they are attacking. Preventing them from taking over the province prevents loss of population and money. 
+- Reinvesting north american colonial shipments to the colonies now has a random chance to construct a colonial fort.
+- St:Bartholomews massacre now kills a larger percentage of the French population in Europe.
+- Removed resisting the russians event as it is no longer needed.
+- A.I Portugal now wins battle of Diu if the war rages on more than 10 years to ensure portuguese expansion isnt halted.
+- Corrected spelling mistakes in 17th century causing two events not to fire.
+- Spain can now also be formed if centralization is higher than 70, as per M&T original mission.
+- Removed event causing white peace if Sweden breaks union with Denmark before 1523.
+- Reduced prestige_decay for copper supply/lack of copper modifier.
+- Cold year starvation now kills a small portion of the urban pop as well.
+- Removed tax boost from leading trade cities due to new dynamic customs duty.
+- Added colonization event for Grenada.
+- Ordance of Cardinal Richelieu migration event now only triggers if France has a colonial nation in Canada. The increased colonization speed now only applies to the colonial nation, not France.
+- Dutch Moedernegotie is now an optional feature.
+- Increased slave population event is now a province event and only triggers to provinces where slaves have recently been shipped to. 
+- Leading trade city tariffs are now dynamic and tied to owner's trade power in trade city node.
+- Fixed a critical bug that turned A.I Spain into host.
+- Added historical plagues to Aztecs and Inca upon the arrival of european powers. and removed OP modifiers for Cortez and Pizarro which are no longer needed as a result.
+- Added a few historical plagues to Europe.
+- Pilgrimage of Grace now correctly triggers for human England players.
+- Reduced Carlos ruling from afar autonomy modifier.
+- Malindi and Luanda now gets a european trade outpost regardless of which european power controls it (previously only portugal).
+- Reworked Spain Habsburg inbred modifier to grant a modifier that makes sense.
+- Decreased inca and aztec conqueror modifier as it is no longer needed due to plagues.
+- A.I Sweden no longer declares war on Denmark to achieve its independence. Instead, it falls upon Denmark to restore the union.
+- Added option to disable copper trade should Sweden cease to exist.
+- Conquest of Sibir event will only trigger if Russia/Muscowy neighbours Sibir.
+- Added option to remain neutral in the Eighty year's war.
+- Added event for construction of the Santa Creu wharf in Barcelona to increase its historical importance as a center of maritime comerce.
+- New event for construction of the Barcelona royal shipyards.
+- New event depicting the construction of the casa de contradadiction de Sevilla.
+2.4
+- Bug fixes.
+- Added Decline of Vijayanagar empire event.
+2.5
+- London now becomes leading trade city in 1710 if England/Britains economic power surpasses the Dutch.
+- London can also become leading trade city by 1675 if Antwerp is still the leading city and England/Britain is great power.
+- Lowered dip tech requirement for Vasco the Game journey.
+- New event for Portuguese capture of Goa, following its victory at the battle of Diu.
+- Cleaned up a few older events with redundant code.
+2.6
+- 1.29 patch compatability.
+- Added my very secret a.i support events as an optional feature as per request.
+- Portuguese unique age bonus now grants bonus to naval siege to make asian expansion more plausible.
+- Removed age of discovery for Castile which granted them 2 extra colonists.
+- Reduced occurance of buccaneer raids on treasure fleets.
+2.7
+- Fixed crucial bug in treasure fleets causing buccaneer raid to happen too frequently.
+- A.I fort upgrade now depends on achieving a certain mil tech level, effectively delaying fort upgrade for primitive countries.
+- Fixed bug in copper trade that was preventing colonial subjects copper supply from being added to their overlords supply.
+- Reintroduced the seventeen provinces feature from M&T and integrated the 80 years war into their successive declaration of independence.
+- Spain now gets the option to rebrand the remaining seventeen provinces into Spanish Netherlands or retain direct control following the Dutch seccesion. 
+- Added option to switch to the Netherlands if the Dutch revolt triggers.
+- Henry VIII must now pay a generous pension to Catherine should the pope grant him dispensation to divorce.
+- 80 years wars now starts immediately to prevent Spanish players from delaying the outbreak of the war until they are prepared.
+- Revamped letters of marque. Spain can now forcibly revoke letters of marque after an attack if a war is declared and a 25 percent war score is achieved.
+- Spain can now use diplomatic efforts to force a country to revoke its letters of marque after an attack. Requires ruler dip level 6.
+- Updated bookmark with relevant countries to play and accurate localization.
+- Updated static_modifiers.
+- Updated government_names.
+- Tweaked Portugals mission tree and events.
+- Rey_emperador modifier no longer gives a free colonist, since the a.i doesnt utilize it properly. Overall, M&T speed of colonization has been increased so it is no longer needed.
+- Removed all reduce forcelimit events.
+- Removed Ming balancing and decline of Ming dynasty as it is no longer needed after Manchu update.
+- Increased sailor and manpower for unsold Portuguese slaves. Also removed cost.
+- East african countries conquered by Portugal are now automatically turned into decentralised vassals.
+- Portugals eastern expansion has been revamped and is now fully integrated with its mission tree. 
+- Added easy, medium and hard modifiers to Portugal eastern expansion events.
+- Decreased rural good production during cold years to encourage investment in farming efficiency.
+- Revamped battle of Diu. It is easier to win and winning it grants claims to Goa and ceylon. 
+- Added new event for conquest of Goa (human player only). Sieging down the province cedes it to Portugal.
+- Reduced frequency of Scottish ambushes.
+- Spice trade control, hormuz and aden blockade, macau and nagasaki trade outpost are now province modifiers.
+- North american colonial shipments are now dynamic and pays dividence per province owned.
+- The Tudor dynasty events are now available for the 1356 start date.
+- New ruler event for James I of England and Scotland.
+- Moved weather and disaster events into its own event file.
+- Slightly reduced frequency of cold years.
+- Moved historical plagues and epidemics to seperate event file.
+- Added Estado de Goa province modifier for Portugal once Goa is captured.
+- Removed previously added european trade province bonuses to coastal indian provinces.
+- Slightly increased spain bonus for colonial taxation.
+- Expanded upon the notification system whenever a treasure fleet sinks in a storm.
+- Reworked cold years. The food shortage modifier will no longer be applied to every province. Instead the malus is added to the exceptionally cold year province modifier to improve performance.
+- Province supply limit is now also affected if a province suffers cold year starvation.
+- Cold year starvation is now more likely to trigger when the Dutch moedernegotiee feature is enabled.
+- Purchasing Dutch basic wares now prevents cold year starvation and removes current modifiers.
+- Adjusted risk of Dutch mothertrade spoilage as it was triggering too often for the a.i.
+- Collapse of silver currency now carries a greater penalty.
+- Increased penalty for not joining the 30 years' war.
+- Bohemia is now turned into a decentralized vassal if Austria grants them autonomy during the 30 years' war prelude.
+- Russia/Muscowy will now wage war against Poland/Commonwealth during the 30 years war if they do not own Smolensk and are at peace.
+- Slightly increased copper output for a.i sweden since they amount to nothing otherwise.
+- New economic reforms event for Sweden during the reign of Gustavus Adolphus.
+- Changed bonuses for lion of the north ruler modifier to be more historically accurate.
+- Reworked french funding of swedish army.
+- Increased value of spice trade monopoly.
+- Revamped Austrian militaergrenze. Affected provinces now have 2 modifiers, one for the grenzer population and one for their fort.
+- Grenzer controlled provinces now has a minimum autonomy of 75% but no longer increases autonomy.
+- A.I fort upgrade now also upgrades fort level for Austrian grenzer forts.
+- Doubled french funding for treaty of Bärwalde.
+- English civil war rebellion now takes a.i fort upgrade feature into consideration.
+- Hollandic water line now adds to fort level instead of a huge defensive bonus.
+- Increased value of sugar tax for Caribeean suger producing provinces.
+- Sugar provinces are now calculated yearly to improve performance.
+- Cristobal Colon now correctly dies directly so player doesnt get 2 of him.
+- Treaty of Lyon can now trigger throughout any italian war if France or the papal state control the capital of Spanish Naples.
+- Removed irish state balancing.
+- The seventeen provinces are now formed automatically from austrias territory in the low countries. Only for 1492 start date.
+- The Fugger bank will now only lend to Spain if they have 10 loans or more.
+- Reduced number of provinces granted to expeditions and adjusted cortes and pizarro balancing.
+- Fugger bank loans are now offered with a 1% interest and a temporary increase of state loans interest rate.
+- Reduced inflation cost for fugger loans.
+- Reduced fugger lending amount.
+- Forfeiting on the fugger loan now carries a penalty as other banks becomes less reluctant to lend.
+- Reduced migration from spain.
+- Leading trade cities now grant a bonus to local spread of institutions to symbolise the spread of knowledge and ideas from the great influx of merchants.
+- casa de contradadiction tariff regulation now correctly costs admin power.
+- Revamped all historical balancing and removed for some countries as they are no longer needed.
+2.8
+- Continued to optimize mod to speed up the game.
+- Spain now gets a PU with England if London falls during the spanish armada invasion.
+- Added custom cb for Spanish armada.
+- Spain now can decline the spanish invasion.
+- Added several historical plagues.
+- Expanded upon the Polish - Swedish union.
+- Provincial cold year starvation is now percentage based to prevent any development bugs due to province population becoming too low.
+- Provincial cold year starvation now kills 5% of province population and 10% during maunder minimum.
+- Increased unrest due to provincial cold year starvation.
+- France no longer gets colonial enthusiast upon the ascension of Henry IV.
+- Provincial cold year starvation can now happen globally.
+- Provincial cold year starvation is now less likely to trigger in smaller countries.
+- The harsh famine modifier during the Huaynaputina eruption is no longer applied. 
+- Huaynaputina eruption now only affects global food supply.
+- Increased Sweden historical balancing.
+- Spain can now opt out of the first and second Dutch - Portuguese war if Portugal is an iberian union subject of Spain.
+- Revamped Bourbon dynasty events.
+- Added war of three Henrys.
+- Added several events related to the war of three Henrys.
+- Removed commonwealth balancing as it is no longer needed.
+- Added Polish–Muscovite War of 1605.
+- Added Ingrian war.
+- Added Khmelnytsky Uprising.
+- Slightly reduced impact of cold years.
+- Added edict of Potsdam.
+- Hohenzollern ruler events now also trigger for Brandenburg.
+- Revamped some ruler events for Brandenburg/Prussia.
+- Increased Brandenburgs historical balancing.
+- Reworked Brandenburg inheritence of Prussia. Brandenburg can now form a union with Prussia whilst subject under Poland if they share dynasty and Prussia has no heir.
+- Added Albert of Prussia heir and ruler event.
+- European silver abundance will now build up faster.
+- Collapse of silver currency can now end if there is a plague in europe.
+- Reworked succession of Charles II of Spain.
+- Removed several background events no longer needed that were causing slowdown.
+- Sugar tax on caribeean colonies is no longer removed and recalculated to improve performance and avoid tax income fluctuating yearly.
+- Reduced occurance of pirate raids.
+- Reworked the great northern war.
+- Netherlands now correctly inherits the V.O.C.
+- England now gets a constitutional monarchy and the bill of rights if the James II is defeated during the glorious revolution.
+- Added Muscovian subjucation of Great Perm.
+- Treasure fleet silver looted by pirates no longer adds to the total european silver counter.
+2.9
+- Added decline of Casa de Contratación. 
+- Updated Portuguese treasure fleet mechanic.
+- Added heir and ruler event for first Romanov.
+- Added decline of Dehli sultanate to increase likelyhood of historical rise of the Mughal empire.
+- Removed dehli balancing.
+- Reworked second polish war of succession slightly.
+- Reworked Catherine the Great heir and ruler event.
+- Fixed bug with Great Perm event causing it to trigger for the wrong country.
+- European powers involved in the American revolutionary war now correctly supports the rebellion.
+- Added British colonization of Australia.
+- Added treaty of Paris for the American revolutionary war.
+- Added U.S.A historical balancing.
+- Britain can now invent the steam engine if it has a high education level, parliament or constitutional monarchy and colonies.
+- Added war of 1812.
+- Added Levée en masse during revolutionary wars. France can now mass conscript while remaining the revolutionary target.
+- Spain no longer fights with France during war of first coalition.
+- Added Committee of Public Safety for France during the revolutionary wars.
+- Fixed bug preventing the war of three henrys from triggering.
+- The V.O.C can no longer ally with foreign powers.
+- The United Provinces can no longer siphon income from the V.O.C, nor adjust tarrifs.
+- The V.O.C now uses the protectorate subject type to be able to utilize the M&T trade company expansion events.
+- The British east india company now actually expands with military force if granted full autonomy.
+- New event for coronation of Napoleon.
+- The V.O.C is now formed via decision instead of event, and required the Netherlands to own 1 province in the java region and 3 in the phillippines region.
+- Treaty of Lyon now triggers correctly.
+- Le Taille is now a ruler modifier.
+- Added spanish colonization of Panama.
+3.0
+- Pizarro's expedition now only triggers if the Inca Empire exists.
+- Fixed issue with Pizarro not swearing alliegence to Spain. Now requires the complete conquest of the Inca.
+3.1
+- Pizarros expedition can now trigger if Spain already owns 3408.
+- Static modifiers and institutions are no longer overwritten by this mod. Makes mod easier to update but also restores vanilla 'golden age' bonus and some institutions are no longer hard coded to spawn according to history.
+- Updated outdated files.
+3.2
+- Granada cannot exist for the Cristobal Colon journey to trigger.
+- Removed technology/institutions balancing as it is no longer needed.
+- Pizarro's expedition now also triggers if the Inca owns 3408.
+- Removed all static golden ages. Golden ages now only occur within the bounds of the 'ages' game mechanic.
+- Treasure fleets now correctly apply to A.I Spain.
+- Added Spanish colonization of Chile. Spain must have a colonial nation in Peru for this event to trigger.
+- Spanish colonization of Cuba no longer grants the whole island.
+- Reduced colonization speed balancing from -40 to -25.
+- Cortes expedition now requires a Spanish owned or subject province on Cuba to trigger.
+- Legazpi expedition to the Philippines now requires a colonial nation of Spain in the mexico region.
+- Legazpi expedition now gets one province only.
+- All Spanish expeditions now costs the same for the a.i. Cost also adjusted.
+- All Spanish expeditions are now decisions.
+- Legazpi expedition will now colonize the Philippines and conquer all non western provinces in The Philippines before swearing fealty to Spain. 
+- Utrecht now correctly cedes provinces to the seventeen provinces during the Spanish subjugation of Utrecht event.
+- The Inca empire will now try to conquer its neighbours from 1471. 
+- Reworked Brandenburg - Prussia union. Brandenburg now historically inherits the duchy of Prussia only if they participate in the second northern war and share the Hohenzollern dynasty with Prussia. Prussia must also remain subject of Poland/Commonwealth.
+- New event for Albert I secularizing teutonic order.
+- Treaty of Lyon revamped. Naples will now form a union with either France or the Papal States depending on whoever conquers the Neopolitan capital as well as the capital of Naples overlord.
+- Revamped Portugal historical balancing. Portugal now gets a trade power buff in trade nodes where they have the highest provincial trade power. Portugal also gets a bonus in nodes where a merchant is placed.
+- Revamped Netherlands historical balancing. The Netherlands now get a trade power in all foreign trade nodes. The Netherlands also get a trade power bonus to its trade ships.
+- Revamped England/Britain historical balancing. England now get a combat bonus for naval combat off its own coast. England/Britain also gets a prestige bonus from naval combat. In addition, Britain gets a blockade bonus.
+- Fixed localization bugs.
+- Carlos V abdication event now lowers the likelyhood of an early seventeen provinces rebellion.
+- A.I Portugal will no longer choose the 10 year leasing period for Macau and Nagasaki to avoid wars with Ming and Japan during the leasing period. (truce only lasts 5 years).
+- Stormaktstiden now only triggers if Gustav Adolphus has passed his reforms and grants Sweden permanent claims to the baltic region. Removed modififier and moved bonuses from stormaktstiden to ruler modifier 'lion of the north'. 
+- Leading trade cities tariff is now a province modifier. Institutions now spread faster to leading trade cities but no longer give trade value bonus.
+- New event for Portuguese renaissance to allow the early construction of a art centre in Lisbon.
+- Removed golden age of amsterdam.
+- North American fur trade event now increased the price of fur instead of applying a province bonus.
+- Added Ottoman conquest of Tunis.
+- Added Spanish conquest of tunis.
+- Dutch basic wares can now be purchased by any country that has its capital in europe.
+- New event for Dutch colonization of Guyana.
+- New event for Spanish colonization of Santa Maria.
+- Revamped Portugals colonization of Brazil to make it more historically accurate.
+- New event for Spanish colonization of Florida. Was previously granted when Carlos V became king.
+- Dutch East India company now correctly get manpower when asking the Netherlands for assistance.
+- Austria can now only make concessions to prevent the 30 years wars if bohemia is their subject or the royal bohemia area is already annexed by Austria.
+- New Spanish event for vicerealm of Naples. Spain can position Pedro Alvarez de Toledo as viceroy to centralize and modernize Naples. In return, Naples gets cheaper development during his reign at the expense of lower tax income and unrest.
+- Added Arauco war.
+- Colonial nations of A.I countries will now try to conquer the tribal nations of South and North America.
+- Historical rulers can now become immortal until they reach a certain age, ensuring a more historical playthrough for players who prefer it.
+- Removed oppressed Norwegians event.
+- A.I Portugal, Sweden, Norway, Scotland and Denmark will now build fortresses in strategic locations to ensure proper defence of their borders. All oppressed events will be removed if extra forts work as intended.
+- Revamped Scandinavian balance of power events. The Dutch will continue to interfere in wars between Denmark and Sweden to prevent a unified Scandinavia. If it unites, the toll for the Moedernegotie goes up. England no longer involved.
+- Revamped the sound toll. It will now be paid to Denmark, Sweden or Scandinavia if they have conquered one another.
+- Added Spanish and Dutch colonization of Formosa.
+- Added historical major european trade outpost modifier to taiwan(all provinces), macau and dejima. Modifier only applies to European powers. Portugal still retains its special rental agreements for Nagasaki and Macau.
+- Added mapuche revolt and the destruction of the seven cities.
+- Portugal now gets a free merchant for every special trade agreement it negotiates. (max 5 for owning Luanda, Malindi, Elmina, Macau and Dejima).
+- Added Galleon trade for Spain. Grants an extra merchant and trade power in the Philippines in exchange for divering the treasure fleet from mexico. Requires Mexico and philippines region under Spanish control.
+- Revamped Hollandic Waterline. It has also been turned into a decision.
+- Spanish expeditions are now a unique subject of Spain.
+- Dutch V.O.C and British East India Company now pay 20% of their income to their overlords instead of 50%.
+- Treaty of Venlo can now be declined.
+- Portugal leasing agreements are now decisions.
+- Added ruler event for William of Orange.
+- Removed Portugal conscription event since it is now possible to get sailors and manpower from the slave trade, especially early game.
+- Destruction of the Dutch baltic merchant fleet now destroys any stored cargo goods. 
+- Added province modifiers to Moedernegotie trade harbours.
+- Added emigration modifier to provinces from which skilled workers migrate to the United Provinces.
+3.3
+- European colonial powers can now obtain a historical monopoly on the silk trade between China and Japan by owning Macau and Dejima, incentivising other european powers to conquer the provinces from Portugal.
+- Galleon trade requires Spanish Treasure Fleets to be enabled.
+- Removed French hegemony modifier. Updated several ruler modifiers including Louis XIV.
+- Reduced galleon trade modifier trade power.
+- New events for Timurid conquest of Kabulistan and Dehli to make historical formation of Mughal empire more likely.
+- Provincial starvation now also slightly increases autonomy.
+- Fixed issue with sugar trade preventing it from applying sugar taxes properly.
+- Slight changes to indian trade nodes. Trade can now be forwarded from north east india (kutch) to east africa (zanzibar) to incentivise other european powers to disrupt Portugals India trade.
+- Removed fear of europeans event for India continent.
+- Added Galleon Trade beneficiary modifier for Spanish Philippines granting some unrest reduction.
+- Added yearly maintenance event for Dutch Waterline whilst deployed.
+- Removed Spain bankruptsy special events.
+- Added heir and ruler event for Zahir-ud-din 'Babur' Muhammed.
+- First Shah of Persia Ismail I Safavi and Ismail I Zahir-ud-din Muhammed are now able to instantly annex any controlled provinces owned by Ak koyunlu/on the Indian subcontinent.
+- Slighly reduced amount of Moedernegotie goods purchased by the a.i.
+- Removed oppressed Dutchmen events.
+- Added assasination of Henry III. Paris not be controlled by rebels and Henry IV the heir.
+- The Netherlands can now distribute stockpiled food during the Huaynaputina eruption throughout the low countries provided that they have a minimum of 10 stored goods. 
+- Added Dutch expeditions of Jacob Cornelius van Neck and Cornelis de Houtman.
+- Revamped spice trade. Malacca and Bantam are now two seperate trade ports with major european trade outposts modifiers regardless of spice trade control. This to encourage historical trade transfer via India.
+- Removed Santa Creu wharf construction for balancing reasons.
+- Removed oppressed irishmen event as it is no longer needed.
+- A.I Muscowy can now instantly annex any controlled Khanate provinces during the reign of Ivan the terrible.
+- Revamped Portuguese slave trade. Slaves now add colonists instead of speeding up colonization. Every colonial power can win several auctions instead of only 1.
+- Any country with an overseas colony(or overseas subject with a colony) and capital scope in europe can now purchase slaves from Portugal.
+- Protectorates (VOC and British east india company) will now pay tribute (dividence) to its mother country. Utilizing the tributary subject type as trial.
+- Increased value of monopolies.
+- China - Japan trade monopoly now also grants a free merchant. (There was little inscentive to conquer the provinces from Portugal).
+- Reworked fall of Ak koyunlu event to make it less railroady. Event only triggers if Ak koyunlu is fighting a losing war against the Ottoman empire.
+- Persian rebels now spawn in Ak koyunlu provinces with persian culture during the fall of ak koyunlu event.
+- New ruler event for first Shah of Persia. Also triggers a war against Ak koyunlu. 
+- Added Muscowy - Lithuanian wars of 1500, 1507 and 1512.
+- Increased A.I likelyhood of starting a war.
+- Added Polish - Ottoman war of 1485.
+3.4
+- Added additional conditions for Anglo - Dutch wars to trigger.
+- England is no longer force converted if the Pope refuses Henry VIII divorce. Instead, the M&T decision to declare independence from the vatican must be used.
+- Elisabeth I is no longer born unless Anne Boleyn becomes queen of England.
+- Doubled unrest for cold year.
+- Added Italian war of 1521.
+- Slight revamp to italian wars to include England.
+- New subject type: Kalmar Union. The lesser parts of the union now pay tribute to the King and no longer join offensive wars for greater historical accuracy. Union can not be broken upon ruler death. Change is optional.
+- Treasure fleets now correctly apply to colonial nations only.
+- Added first and second Desmond rebellion.
+- Added Tyrone's rebellion.
+- England is no longer converted by various Tudor rebels. It remains force converted, meaning the 16th century under Tudor rule is a more challenging experience for England.
+- Marian persecutions now have a chance to turn persecuted provinces catholic.
+- Northern England no longer turns catholic when Mary I takes the throne.
+- Colonial powers bidding for slaves now pay less if they are the only customer.
+- Added Russo - Astrakhani war of 1556.
+- Added Russo - Kazani war of 1552.
+- Added Russo–Crimean war of 1570.
+- Increased A.I agression.

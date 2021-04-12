@@ -1,0 +1,1282 @@
+		namespace = flavor_Historical_Wars_event
+
+		##############################
+		## Historical plagues event ##
+		##############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1215
+		title = "flavor_Historical_Wars_event.1215.title"
+		desc = "flavor_Historical_Wars_event.1215.desc"
+		picture = _PLAGUE_eventPicture
+		fire_only_once = yes
+		major = yes
+
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		NOT = { has_global_flag = historical_plagues_enabled }
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1215.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = historical_plagues_enabled
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1215.b"
+		ai_chance = { factor = 0 }
+
+		}
+
+		}
+
+
+
+		###################
+		## Aztec plague  ##
+		###################
+		country_event = {
+		id = flavor_Historical_Wars_event.1493
+		title = "flavor_Historical_Wars_event.1493.title"
+		desc = "flavor_Historical_Wars_event.1493.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		#has_global_flag = historical_plagues
+		tag = AZT
+		exists = AZT
+		mexico_region = {
+		owner = {
+		OR = {
+		capital_scope = {
+		continent = europe
+		}
+		tag = CTZ
+		}
+
+		}
+		}
+		}
+
+
+		immediate = {
+		
+		hidden_effect = {
+		
+		random_list = {
+			50 = {
+				set_global_flag = plague_imminent_doom
+			}
+			50 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+		}
+		}
+		
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1493.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 1200
+		}
+		}
+
+		capital_scope = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = new_world_plague }
+					}
+					set_global_flag = new_world_plague
+				}
+				save_global_event_target_as = plague_begun_target 
+				set_global_flag = plague_begun
+				add_permanent_province_modifier = {
+					name = plague_origin
+					duration = -1
+				}
+				
+				province_event = {
+					id = POP_Plague.003
+					days = 1
+				}
+			}
+			
+		every_province = {
+		limit = {
+		owned_by = AZT
+		}
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.75
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.5
+		}
+		remove_urban_population_DEVS = yes
+		}
+		
+		
+		
+		}
+
+		}
+
+		}
+
+
+
+
+		##################
+		## Inca plague  ##
+		##################
+		country_event = {
+		id = flavor_Historical_Wars_event.1219
+		title = "flavor_Historical_Wars_event.1219.title"
+		desc = "flavor_Historical_Wars_event.1219.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		#has_global_flag = historical_plagues
+		tag = INC
+		exists = INC
+		colonial_peru = {
+		owner = {
+		OR = {
+		capital_scope = {
+		continent = europe
+		}
+		tag = PIZ
+		}
+		}
+		}
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			50 = {
+				set_global_flag = plague_imminent_doom
+			}
+			50 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+		}
+		}
+		}
+
+		mean_time_to_happen = {        
+		months = 3  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1219.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 1200
+		}
+		}
+
+		capital_scope = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = new_world_plague }
+					}
+					set_global_flag = new_world_plague
+				}
+				save_global_event_target_as = plague_begun_target 
+				set_global_flag = plague_begun
+				add_permanent_province_modifier = {
+					name = plague_origin
+					duration = -1
+				}
+				
+				province_event = {
+					id = POP_Plague.003
+					days = 1
+				}
+			}
+
+		every_province = {
+		limit = {
+		owned_by = INC
+		}
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.75
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.50
+		}
+		remove_urban_population_DEVS = yes
+		}
+
+		
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		############################
+		## Great plague of Italy  ##
+		#############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1218
+		title = "flavor_Historical_Wars_event.1218.title"
+		desc = "flavor_Historical_Wars_event.1218.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1629
+		NOT = { is_year = 1631 }
+		OR = {
+		in_league = protestant
+		in_league = catholic
+		in_league = reformed
+		}
+		is_at_war = yes
+		has_global_flag = historical_plagues_enabled
+		num_of_owned_provinces_with = {
+		area = padan_area
+		value = 1
+		}
+		has_global_flag = thirty_years_war_started
+		}
+
+
+		immediate = {
+
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1218.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {	
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		random_owned_province = {
+				limit = {
+				area = padan_area
+				}
+				if = {
+					limit = {
+						NOT = { has_global_flag = new_world_plague }
+					}
+					set_global_flag = new_world_plague
+				}
+				save_global_event_target_as = plague_begun_target 
+				set_global_flag = plague_begun
+				add_permanent_province_modifier = {
+					name = plague_origin
+					duration = -1
+				}
+				
+				province_event = {
+					id = POP_Plague.003
+					days = 1
+				}
+			}
+			
+		
+		}
+		
+		}
+
+		}
+
+
+
+
+
+		############################
+		## Great plague of London  ##
+		#############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1217
+		title = "flavor_Historical_Wars_event.1217.title"
+		desc = "flavor_Historical_Wars_event.1217.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1665
+		NOT = { is_year = 1667 }
+		tag = ENG
+		exists = ENG
+		has_global_flag = historical_plagues_enabled
+		236 = { owned_by = ENG }
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1217.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		236 = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = new_world_plague }
+			}
+			set_global_flag = new_world_plague
+		}
+		save_global_event_target_as = plague_begun_target 
+		set_global_flag = plague_begun
+		add_permanent_province_modifier = {
+			name = plague_origin
+			duration = -1
+		}
+
+		province_event = {
+			id = POP_Plague.003
+			days = 1
+		}
+		}
+		
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+		################################
+		## Great plague of Marseille  ##
+		################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1216
+		title = "flavor_Historical_Wars_event.1216.title"
+		desc = "flavor_Historical_Wars_event.1216.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1720
+		NOT = { is_year = 1722 }
+		has_global_flag = historical_plagues_enabled
+		201 = { owned_by = ROOT }
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1216.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		201 = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = new_world_plague }
+			}
+			set_global_flag = new_world_plague
+		}
+		save_global_event_target_as = plague_begun_target 
+		set_global_flag = plague_begun
+		add_permanent_province_modifier = {
+			name = plague_origin
+			duration = -1
+		}
+
+		province_event = {
+			id = POP_Plague.003
+			days = 1
+		}
+		}
+		
+		}
+
+		}
+
+		}
+
+
+
+
+
+		##########################
+		## Cocoliztli Epidemic  ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1214
+		title = "flavor_Historical_Wars_event.1214.title"
+		desc = "flavor_Historical_Wars_event.1214.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1545
+		NOT = { is_year = 1549 }
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		has_global_flag = historical_plagues_enabled
+		num_of_owned_provinces_with = {
+		colonial_region = colonial_mexico
+		value = 3
+		}
+		is_colonial_nation = yes
+		}
+
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			50 = {
+				set_global_flag = plague_imminent_doom
+			}
+			50 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+		}
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 24  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1214.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 1200
+		}
+		}
+
+		capital_scope = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = new_world_plague }
+					}
+					set_global_flag = new_world_plague
+				}
+				save_global_event_target_as = plague_begun_target 
+				set_global_flag = plague_begun
+				add_permanent_province_modifier = {
+					name = plague_origin
+					duration = -1
+				}
+				
+				province_event = {
+					id = POP_Plague.003
+					days = 1
+				}
+			}
+
+		every_province = {
+		limit = {
+		is_empty = no
+		colonial_region = colonial_mexico
+		}
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.75
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.50
+		}
+		remove_urban_population_DEVS = yes
+		}
+		}
+
+		}
+
+		}
+
+
+
+
+		##################################
+		## Cocoliztli Epidemic of 1576  ##
+		##################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1210
+		title = "flavor_Historical_Wars_event.1210.title"
+		desc = "flavor_Historical_Wars_event.1210.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1576
+		NOT = { is_year = 1578 }
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		has_global_flag = historical_plagues_enabled
+		num_of_owned_provinces_with = {
+		colonial_region = colonial_mexico
+		value = 3
+		}
+		is_colonial_nation = yes
+		}
+
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			50 = {
+				set_global_flag = plague_imminent_doom
+			}
+			50 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+		}
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 24  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1210.a"
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 1200
+		}
+		}
+
+		capital_scope = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = new_world_plague }
+					}
+					set_global_flag = new_world_plague
+				}
+				save_global_event_target_as = plague_begun_target 
+				set_global_flag = plague_begun
+				add_permanent_province_modifier = {
+					name = plague_origin
+					duration = -1
+				}
+				
+				province_event = {
+					id = POP_Plague.003
+					days = 1
+				}
+			}
+			
+		every_province = {
+		limit = {
+		is_empty = no
+		colonial_region = colonial_mexico
+		}
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.50
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.25
+		}
+		remove_urban_population_DEVS = yes
+		}
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		#########################
+		## 1563 London plague  ##
+		#########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1164
+		title = "flavor_Historical_Wars_event.1164.title"
+		desc = "flavor_Historical_Wars_event.1164.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1563
+		NOT = { is_year = 1567 }
+		tag = ENG
+		exists = ENG
+		has_global_flag = historical_plagues_enabled
+		236 = { owned_by = ROOT }
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1164.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		236 = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = new_world_plague }
+			}
+			set_global_flag = new_world_plague
+		}
+		save_global_event_target_as = plague_begun_target 
+		set_global_flag = plague_begun
+		add_permanent_province_modifier = {
+			name = plague_origin
+			duration = -1
+		}
+
+		province_event = {
+			id = POP_Plague.003
+			days = 1
+		}
+		}
+		
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		#########################################
+		## The Great Castilian Plague of 1596  ##
+		#########################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1163
+		title = "flavor_Historical_Wars_event.1163.title"
+		desc = "flavor_Historical_Wars_event.1163.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1596
+		NOT = { is_year = 1600 }
+		tag = SPA
+		exists = SPA
+		has_global_flag = historical_plagues_enabled
+		1421 = { owned_by = ROOT }
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		
+		hidden_effect = {
+			set_variable = { 	which = nobles_loyalty_removed_a value = 10 }
+		}
+		
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1163.a"
+		ai_chance = { factor = 100 }
+		
+		add_inflation = 10
+
+		reduce_estate_all_nobles_loyalty_effect = { id=a }
+
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		1421 = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = new_world_plague }
+			}
+			set_global_flag = new_world_plague
+		}
+		save_global_event_target_as = plague_begun_target 
+		set_global_flag = plague_begun
+		add_permanent_province_modifier = {
+			name = plague_origin
+			duration = -1
+		}
+
+		province_event = {
+			id = POP_Plague.003
+			days = 1
+		}
+		}
+		
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		##############################
+		## Great Plague of Seville  ##
+		##############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1162
+		title = "flavor_Historical_Wars_event.1162.title"
+		desc = "flavor_Historical_Wars_event.1162.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1647
+		NOT = { is_year = 1651 }
+		tag = SPA
+		exists = SPA
+		has_global_flag = historical_plagues_enabled
+		2311 = { owned_by = ROOT }
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1162.a"
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		2311 = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = new_world_plague }
+			}
+			set_global_flag = new_world_plague
+		}
+		save_global_event_target_as = plague_begun_target 
+		set_global_flag = plague_begun
+		add_permanent_province_modifier = {
+			name = plague_origin
+			duration = -1
+		}
+
+		province_event = {
+			id = POP_Plague.003
+			days = 1
+		}
+		}
+		
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		##############################
+		## Great Plague of Vienna  ##
+		##############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1161
+		title = "flavor_Historical_Wars_event.1161.title"
+		desc = "flavor_Historical_Wars_event.1161.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		NOT = { has_country_modifier = plague_triggered }
+		NOT = { has_global_flag = plague_begun }
+		is_year = 1679
+		NOT = { is_year = 1684 }
+		tag = HAB
+		exists = HAB
+		has_global_flag = historical_plagues_enabled
+		83 = { owned_by = ROOT }
+		}
+
+
+		immediate = {
+		hidden_effect = {
+		random_list = {
+			20 = {
+				set_global_flag = plague_imminent_doom
+			}
+			20 = {
+				set_global_flag = plague_imminent_disastrous
+			}
+			20 = {
+				set_global_flag = plague_imminent_virulent
+			}
+			20 = {
+				set_global_flag = plague_imminent_moderate
+			}
+			20 = {
+				set_global_flag = plague_imminent_weak
+			}
+		}
+		
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 12  
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1161.a"
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+		every_country = {
+		limit = {
+		has_country_flag = center_of_universe
+		}
+		add_country_modifier = {
+			name = plague_triggered
+			duration = 365
+		}
+		}
+
+		83 = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = new_world_plague }
+			}
+			set_global_flag = new_world_plague
+		}
+		save_global_event_target_as = plague_begun_target 
+		set_global_flag = plague_begun
+		add_permanent_province_modifier = {
+			name = plague_origin
+			duration = -1
+		}
+
+		province_event = {
+			id = POP_Plague.003
+			days = 1
+		}
+		}
+		
+		}
+
+		}
+
+		}

@@ -1,0 +1,24 @@
+﻿l_english:
+ #National Modifiers
+egy_goth_union:1 "Union of three crowns"
+desc_egy_goth_union:1 "The crown of Gottikia, Makedon and Khemet are united under the leadership of Aai-Khemet. This union has led to a few advantages."
+roman_claimant:1 "Claim to the Roman Titles"
+city_state_of_naples:1 "The City of Neapolis"
+desc_city_state_of_naples:1 "*"
+
+khemetic_rising:1 "Khemetic center of faith"
+desc_khemetic_rising:1 "*"
+gothic_rising:1 "Chi Rho Center of faith"
+desc_gothic_rising:1 "*"
+
+#Silk Road additions
+palmyria_silk_road:1 "Palmyriene Stop on the Silk Road"
+desc_palmyria_silk_road:1 "Palmyra has historically been a significant stop along the trade routes between the West and the East."
+alexandria_silk_road:1 "Alexandrian Silk Road Port"
+desc_alexandria_silk_road:1 "Alexandria is a key and crucial port near the western end of the Silk Road."
+memphis_silk_road:1 "Trade Terminal at Memphis"
+desc_memphis_silk_road:1 "The Khemetic capital of Memphis acts as an important trading terminal where the Ethiopian and Red Desert trade routes meet the Silk Road."
+thd_silk_road:1 "Gottikian Trade Terminal"
+desc_thd_silk_road:1 "The Gothic Capital acts as an important terminal between the European trade and Silk Road trade routes."
+byz_silk_road:1 "The City of the Worlds Desire end node"
+desc_byz_silk_road:1 "Konstantanopolis, The Great City, is a vital end node between Asia and Europe."

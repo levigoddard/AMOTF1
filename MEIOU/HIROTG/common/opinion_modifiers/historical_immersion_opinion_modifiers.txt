@@ -1,0 +1,176 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+
+##########################################################################
+# HARD - DO NOT REMOVE OR RENAME ANY OF THESE
+##########################################################################
+
+##############
+# FIXED STATE
+##############
+
+nagasaki_trade_agreement = {
+	opinion = 200
+	years = 5
+	yearly_decay = 1
+}
+
+macau_trade_agreement = {
+	opinion = 200
+	years = 5
+	yearly_decay = 1
+}
+
+vetoed_trade = {
+	opinion = -75
+	years = 25
+	yearly_decay = 1
+}
+
+same_dynasty = {
+	opinion = 50
+}
+
+gave_us_freedom = {
+opinion = 200
+yearly_decay = 1
+}
+
+failed_to_deal_with_pirates = {
+opinion = -50
+yearly_decay = 1
+}
+
+united_kingdom = {
+	opinion = 200
+	yearly_decay = 1
+}
+
+missed_opportunity = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+gave_them_freedom = {
+	opinion = 200
+	yearly_decay = 1
+}
+
+aided_us = {
+	opinion = 50
+}
+
+joint_monarchy = {
+	opinion = 200
+	yearly_decay = 10
+}
+
+slave_trade_agreement_ratified = {
+	opinion = 100
+	years = 100
+	yearly_decay = 1
+}
+
+honored_slave_trade_agreement = {
+	opinion = 25
+	years = 10
+	yearly_decay = 2
+}
+
+honored_slave_trade_agreement_a.i = {
+	opinion = 50
+	years = 10
+	yearly_decay = 1
+}
+
+gave_us_the_low_countries = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+enemy_of_the_empire = {
+	opinion = -50
+	years = 25
+	yearly_decay = 1
+}
+
+new_customer = {
+	opinion = 150
+	years = 25
+	yearly_decay = 2
+}
+
+bleeding_us_dry = {
+	opinion = -100
+	years = 50	
+	yearly_decay = 1 
+}
+
+mismanaged_economy = {
+	opinion = -100
+	years = 50	
+	yearly_decay = 1 
+}
+
+betrayed_us = {
+	opinion = -100
+	years = 50
+	yearly_decay = 1
+}
+
+sided_against_ally = {
+	opinion = -50
+	years = 25
+	yearly_decay = 1
+}
+
+friendship_restored = {
+	opinion = 200
+	years = 50
+	yearly_decay = 1
+}
+
+initial_disappointment = {
+	opinion = -100
+	years = 50
+	yearly_decay = 1
+}
+
+common_enemy = {
+	opinion = 75
+	years = 50
+	yearly_decay = 2
+}
+
+beloved_overlord = {
+	opinion = 25
+	years = 10
+	yearly_decay = 1 
+}
+
+opinion_united_dynasties = {
+	opinion = 100
+	years = 10
+	yearly_decay = 5
+}
+
+sympathetic_towards_france = {
+	opinion = 100
+	years = 10
+	yearly_decay = 5
+}
+
+opinion_united_against_habsburgs = {
+	opinion = 100
+	years = 10
+	yearly_decay = 5
+}
+
+opinion_united_against_ottomans = {
+	opinion = 150
+	years = 50
+	yearly_decay = 5
+}
+#################

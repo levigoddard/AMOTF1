@@ -1,0 +1,581 @@
+		namespace = flavor_Historical_Wars_general
+
+
+
+		##############################
+		## Jacques II de La Palice  ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.1
+		title = "flavor_Historical_Wars_general.1.title"
+		desc = "flavor_Historical_Wars_general.1.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1488
+		NOT = {is_year = 1513}
+		tag = FRA
+		BOU = {vassal_of = ROOT}
+		war_with = KNP
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.1.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Jacques II de La Palice"
+  			shock = 2
+  			fire = 2
+  			manuever = 4
+  			siege = 1
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+		#######################
+		## Antonio de Leyva  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.2
+		title = "flavor_Historical_Wars_general.2.title"
+		desc = "flavor_Historical_Wars_general.2.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1502
+		NOT = {is_year = 1536}
+		tag = SPA
+		OR = {
+		war_with = FRA
+		war_with = GRA
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.2.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Antonio de Leyva"
+  			shock = 1
+  			fire = 3
+  			manuever = 3
+  			siege = 1
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+		#######################
+		## Fernando d'Avalos ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.3
+		title = "flavor_Historical_Wars_general.3.title"
+		desc = "flavor_Historical_Wars_general.3.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1512
+		NOT = {is_year = 1525}
+		tag = SPA
+		war_with = FRA
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.3.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Antonio de Leyva"
+  			shock = 0
+  			fire = 3
+  			manuever = 4
+  			siege = 2
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+		#######################
+		## Alfonso d'Avalos  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.4
+		title = "flavor_Historical_Wars_general.4.title"
+		desc = "flavor_Historical_Wars_general.4.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1525
+		NOT = {is_year = 1542}
+		tag = SPA
+		OR = {
+		war_with = FRA
+		war_with = VEN
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.4.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Alfonso d'Avalos"
+  			shock = 1
+  			fire = 1
+  			manuever = 2
+  			siege = 2
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+		########################################
+		## Heinrich V von Brunswick-Lüneburg  ##
+		########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.5
+		title = "flavor_Historical_Wars_general.5.title"
+		desc = "flavor_Historical_Wars_general.5.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1528
+		NOT = {is_year = 1553}
+		OR = {
+		tag = HAB
+		tag = BRU
+		}
+		war_with = FRA
+		religion = catholic
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.5.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Heinrich V von Brunswick-Lüneburg"
+  			shock = 3
+  			fire = 3
+  			manuever = 4
+  			siege = 1
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+
+		##############################
+		## Pierre Terrail de Bayard ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.6
+		title = "flavor_Historical_Wars_general.6.title"
+		desc = "flavor_Historical_Wars_general.6.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1493 
+		NOT = {is_year = 1524}
+		tag = FRA
+		OR = {
+		war_with = SPA
+		war_with = MLO
+		war_with = KNP
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.6.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Pierre Terrail de Bayard"
+  			shock = 1
+  			fire = 5
+  			manuever = 2
+  			siege = 2
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+		##############################
+		## Charles III de Bourbon ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.7
+		title = "flavor_Historical_Wars_general.7.title"
+		desc = "flavor_Historical_Wars_general.7.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1507 
+		NOT = {is_year = 1521}
+		tag = FRA
+		BOU = {vassal_of = FRA}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.7.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Charles III de Bourbon"
+  			shock = 2
+  			fire = 5
+  			manuever = 2
+  			siege = 1
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+
+		##############################
+		## Anne de Montmorency ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.8
+		title = "flavor_Historical_Wars_general.8.title"
+		desc = "flavor_Historical_Wars_general.8.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1512 
+		NOT = {is_year = 1525}
+		tag = FRA
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.8.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Anne de Montmorency"
+  			shock = 2
+  			fire = 4
+  			manuever = 4
+  			siege = 2
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+		##################################
+		## Gonzalo Fernández de Córdoba ##
+		##################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.9
+		title = "flavor_Historical_Wars_general.9.title"
+		desc = "flavor_Historical_Wars_general.9.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1482 
+		NOT = {is_year = 1504}
+		tag = SPA
+		OR = {
+		war_with = GRA
+		war_with = FRA
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.9.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Gonzalo Fernández de Córdoba"
+  			shock = 4
+  			fire = 2
+  			manuever = 5
+  			siege = 1
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+		##############################
+		## Albrecht Von Wallenstein ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.10
+		title = "flavor_Historical_Wars_general.10.title"
+		desc = "flavor_Historical_Wars_general.10.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1620 
+		NOT = {is_year = 1630}
+		tag = HAB
+		any_country = {
+		religion = protestant
+		war_with = HAB
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.10.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Albrecht Von Wallenstein"
+  			shock = 3
+  			fire = 3
+  			manuever = 3
+  			siege = 1
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}
+
+
+
+		#######################
+		## Ambrogio Spinola ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_general.11
+		title = "flavor_Historical_Wars_general.11.title"
+		desc = "flavor_Historical_Wars_general.11.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1601 
+		NOT = {is_year = 1603}
+		tag = SPA
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_general.11.a"
+		ai_chance = { factor = 100 }
+	
+		define_general = {
+  			name = "Ambrogio Spinola"
+  			shock = 3
+  			fire = 3
+  			manuever = 5
+  			siege = 4
+  			trait = glory_seeker_personality
+			}
+
+		}
+
+		}

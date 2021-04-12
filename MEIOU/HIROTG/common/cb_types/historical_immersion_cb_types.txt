@@ -1,0 +1,579 @@
+# Historical Immersion conquer capital
+cb_historical_wars_conquest = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion Italian wars
+cb_historical_wars_italian_wars_superiority = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+
+# Historical Immersion conquer capital
+cb_historical_wars_ottoman_mamluk_wars = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion conquer capital
+cb_historical_wars_italian_wars = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_become_vassal
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion conquer capital
+cb_historical_wars_spanish_succession_war = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_liberation
+}
+
+# Historical Immersion conquer capital glorious revolution
+cb_historical_wars_glorious_revolution = {
+	ai_peace_desire = -500
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion superiority
+cb_historical_wars_superiority = {
+	ai_peace_desire = -20
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+# Historical Immersion superiority
+cb_historical_wars_persian_conquest = {
+	ai_peace_desire = -100
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+# Historical Immersion superiority
+cb_historical_wars_portuguese_superiority = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+# Historical Immersion superiority
+cb_historical_wars_dutch_superiority = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+# Historical Immersion superiority
+cb_historical_wars_conquest_of_goa = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+# Historical Immersion superiority
+cb_historical_wars_Dutch_Portuguese_wars = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+# Historical Immersion superiority
+cb_historical_wars_Anglo_Dutch_wars = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+# Historical Immersion trade
+cb_historical_wars_trade = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = blockade_ports
+}
+
+# Historical Immersion trade
+cb_historical_wars_battle_of_diu = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = blockade_ports
+}
+
+# Historical Immersion seven years war
+cb_historical_wars_seven_years_war = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+		
+	war_goal = blockade_ports
+}
+
+cb_religious_league = {
+	league = yes
+	ai_peace_desire = -40
+	
+	
+
+	valid_for_subject = no
+
+	prerequisites = {
+		has_dlc = "Art of War"
+		is_in_league_war = no
+		FROM = {
+			is_emperor = yes
+			is_in_league_war = no
+		}
+		is_league_leader = yes
+		hre_heretic_religion = ROOT
+		is_league_enemy = FROM
+		is_revolution_target = no
+	}
+
+	war_goal = superiority_religious_league
+}
+
+
+cb_historical_immersion_conquest_of_aden = {
+	
+	ai_peace_desire = -25
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_trade_mutual
+}
+
+
+# Historical Immersion superiority
+cb_historical_wars_hungarian_conquest = {
+	ai_peace_desire = -30
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+
+
+# Historical Immersion conquest of bombay
+cb_historical_wars_conquest_of_bombay = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = blockade_ports
+}
+
+
+# Historical Immersion Portuguese succession crisis
+cb_historical_immersion_portuguese_succession_crisis = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_liberation
+}
+
+
+
+# Historical Immersion trade company expansion
+cb_historical_immersion_trade_company_superiority = {
+	ai_peace_desire = -10
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+
+# Historical Immersion league of venice
+cb_historical_immersion_league_of_venice = {
+	ai_peace_desire = -20
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult
+}
+
+# Historical Immersion revoke letters of marque
+cb_historical_immersion_remove_letters_of_marque = {
+	ai_peace_desire = -20
+	valid_for_subject = no
+	
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = blockade_ports
+}
+
+# Historical Immersion Iberian peninsula war
+cb_historical_immersion_iberian_peninsula_war = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion fifth coaliation
+cb_historical_immersion_fifth_coalition = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+# Historical Immersion finish war
+cb_historical_immersion_finish_war = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion irish rebellion
+cb_historical_immersion_irish_rebellion = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion conquest of Moscow
+cb_historical_immersion_conquest_of_moscow = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+# Historical Immersion third coaliation
+cb_historical_immersion_third_coalition = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+# Historical Immersion letters of marque
+cb_historical_immersion_remove_letters_of_marque = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = blockade_ports
+}
+
+cb_historical_immersion_spanish_armada = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+
+cb_historical_immersion_polish_war_of_succession = {
+	ai_peace_desire = -50
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+
+cb_historical_immerion_polish_muscovite_war = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = take_capital_throne
+}
+
+
+cb_historical_immerion_ingrian_war = {
+	ai_peace_desire = -25
+	valid_for_subject = no
+
+	attacker_disabled_po = {
+		po_form_personal_union
+		po_change_government
+		po_change_religion
+		po_become_vassal
+		po_become_tributary_state
+	}
+	
+	war_goal = superiority_insult_mutual
+}
+
+

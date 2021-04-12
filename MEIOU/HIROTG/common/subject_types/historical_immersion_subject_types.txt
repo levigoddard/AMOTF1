@@ -1,0 +1,502 @@
+joint_monarchy = {
+    copy_from = personal_union
+    count = personal_union
+	
+	# Graphics:
+	sprite = GFX_court_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+	
+	# Properties:
+	has_overlords_ruler = no
+	can_be_integrated = no
+	can_be_annexed = no
+	can_union_break = no
+	overlord_can_attack = no
+	has_power_projection = yes
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = yes
+	
+	restoration_cb = cb_restore_personal_union
+	
+	# Subject Interactions:
+	grant_core_claim = yes
+	placate_rulers = no
+	enforce_culture = no
+	siphon_income = no
+	support_loyalists = no
+	embargo_rivals = no
+	joins_overlords_wars = yes
+	takes_diplo_slot = yes
+	can_transfer_in_peace = no
+	base_liberty_desire = -100
+	bestow_gifts = yes
+	send_additional_troops = yes
+    
+    can_fight = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_rival = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_ally = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_marry = {
+        independent_nations = yes
+        other_overlord = all
+    }
+	
+	# Modifiers:
+	modifier_overlord = {
+		modifier = union_subject
+	}
+	
+	overlord_opinion_modifier = in_union
+	subject_opinion_modifier = in_union
+}
+
+
+joint_reign = {
+    copy_from = personal_union
+    count = personal_union
+	
+	# Graphics:
+	sprite = GFX_court_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+	
+	# Properties:
+	has_overlords_ruler = no
+	can_be_integrated = no
+	can_be_annexed = no
+	can_union_break = no
+	overlord_can_attack = no
+	has_power_projection = yes
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = yes
+	
+	restoration_cb = cb_restore_personal_union
+	
+	# Subject Interactions:
+	grant_core_claim = yes
+	divert_trade = no
+	placate_rulers = no
+	enforce_culture = no
+	siphon_income = no
+	support_loyalists = no
+	embargo_rivals = no
+	joins_overlords_wars = no
+	takes_diplo_slot = no
+	can_transfer_in_peace = no
+	base_liberty_desire = -50
+	bestow_gifts = yes
+	send_additional_troops = yes
+    
+    can_fight = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_rival = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_ally = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_marry = {
+        independent_nations = yes
+        other_overlord = all
+    }
+	
+	# Modifiers:
+	modifier_overlord = {
+		modifier = union_subject
+	}
+	
+	overlord_opinion_modifier = in_union
+	subject_opinion_modifier = in_union
+}
+
+
+iberian_union = {
+    copy_from = personal_union
+    count = personal_union
+	
+	# Graphics:
+	sprite = GFX_court_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+	
+	# Properties:
+	has_overlords_ruler = yes
+	can_be_integrated = no
+	can_be_annexed = no
+	can_union_break = no
+	overlord_can_attack = no
+	has_power_projection = yes
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = yes
+	overlord_protects_external = no
+	
+	restoration_cb = cb_restore_personal_union
+	
+	# Subject Interactions:
+	grant_core_claim = yes
+	placate_rulers = no
+	enforce_culture = no
+	siphon_income = yes
+	support_loyalists = no
+	embargo_rivals = no
+	joins_overlords_wars = yes
+	takes_diplo_slot = yes
+	can_transfer_in_peace = no
+	base_liberty_desire = -25
+	bestow_gifts = yes
+	send_additional_troops = yes
+    
+    can_fight = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_rival = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_ally = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_marry = {
+        independent_nations = no
+        other_overlord = all
+    }
+	
+	# Modifiers:
+	modifier_overlord = {
+		modifier = union_subject
+	}
+	
+	overlord_opinion_modifier = in_union
+	subject_opinion_modifier = in_union
+}
+
+permanent_union = {
+	copy_from = default
+	
+	# Graphics:
+	sprite = GFX_court_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+	
+	# Properties:
+	has_overlords_ruler = no
+	can_be_integrated = no
+	can_be_annexed = no
+	can_union_break = no
+	overlord_can_attack = no
+	has_power_projection = no
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = yes
+	
+	liberty_desire_negative_prestige = 0.1
+	military_focus = 0.66
+	
+	relative_power_class = 1
+	
+	restoration_cb = cb_restore_personal_union
+	
+	# Subject Interactions:
+	placate_rulers = no
+	#enforce_culture = yes
+	siphon_income = yes
+	support_loyalists = yes
+	
+	# Modifiers:
+	modifier_overlord = {
+		modifier = union_subject
+	}
+	
+	can_fight = {
+        independent_nations = yes
+        other_overlord = all
+    }
+	
+	overlord_opinion_modifier = in_union
+	subject_opinion_modifier = in_union
+}
+
+protectorate = {
+	copy_from = tributary_state
+	
+	# Graphics:
+	#sprite = GFX_icon_march
+	#diplomacy_overlord_sprite = GFX_diplomacy_leadmarch
+	#diplomacy_subject_sprite = GFX_diplomacy_weakmarch
+	sprite = GFX_subject_tributary_state
+	diplomacy_overlord_sprite = GFX_diplomacy_leadtributary
+	diplomacy_subject_sprite = GFX_diplomacy_amtributary
+	
+	# Properties:
+	transfer_trade_power = no
+	has_colonial_parent = no
+	overlord_can_attack = no
+	overlord_can_be_subject = yes
+	can_release_in_peace = no
+	overlord_enforce_peace_attacking = no
+	can_transfer_in_peace = no
+	forcelimit_bonus = 5
+	
+	#pays_overlord = 0
+	military_focus = 1.5
+	base_liberty_desire = -100
+	can_be_annexed = no
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = yes
+	overlord_protects_external = yes
+	
+	# Subject Interactions:
+	takes_diplo_slot = no
+	joins_overlords_wars = no
+	scutage = no
+	subsidize_armies = yes
+	send_additional_troops = yes
+	send_officers = yes
+	demand_artifacts = no
+	demand_additional_tribute = no
+	bestow_gifts = no
+	
+	# Modifiers:
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_overlord = {
+		modifier = march_subject
+	}
+	can_fight = {
+        independent_nations = yes
+        #other_overlord = all
+    }
+    can_rival = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_ally = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_marry = {
+        independent_nations = no
+        #other_overlord = all
+    }
+}
+
+
+rebellious_subjugated_tributary = {
+	copy_from = appanage_subject
+	count = vassal
+	is_potential_overlord = {
+		always = yes
+	}
+	
+	can_be_established = {
+		always = yes
+	}
+	
+	# Properties:
+	can_be_annexed = no
+	can_fight_independence_war = yes
+	gets_help_with_rebels = yes
+	separatists_become_subjects = yes
+	allows_taking_land_without_independence = no
+	can_have_subjects_of_other_types = yes
+	overlord_can_attack = yes
+	overlord_protects_external = yes
+	takes_diplo_slot = no
+	can_use_claims = yes
+	joins_overlords_wars = yes
+	can_release_in_peace = no
+	can_transfer_in_peace = no
+	pays_overlord = 0
+	forcelimit_bonus = 0
+	
+	trust_on_start = 10
+	
+	military_focus = 1.2
+	
+	relative_power_class = 1
+	
+	can_fight = {
+		independent_nations = yes
+		other_overlord = all
+	}
+	can_rival = {
+		independent_nations = yes
+		other_overlord = all
+	}
+	can_ally = {
+		other_overlord = all
+		independent_nations = no
+	}
+	can_marry = {
+		other_overlord = all
+		independent_nations = yes
+	}
+	
+	# Subject Interactions
+	#(disable)
+	scutage = no
+	grant_core_claim = yes
+	grant_province = yes
+	place_relative_on_throne = yes
+	enforce_religion = no
+	enforce_culture = no
+	seize_territory = no
+	
+	# Modifiers
+	
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = vassal_nation
+	}
+	modifier_overlord = {
+		modifier = vassal_subject
+	}
+	
+	overlord_opinion_modifier = is_vassal
+	subject_opinion_modifier = is_vassal
+}
+
+
+conquistador_expedition = {
+	copy_from = default
+	
+	# Graphics:
+	sprite = GFX_icon_march
+	diplomacy_overlord_sprite = GFX_diplomacy_leadmarch
+	diplomacy_subject_sprite = GFX_diplomacy_weakmarch
+	
+	# Properties:
+	transfer_trade_power = no
+	has_colonial_parent = yes
+	overlord_can_attack = no
+	overlord_can_be_subject = yes
+	can_release_in_peace = no
+	overlord_enforce_peace_attacking = no
+	can_transfer_in_peace = no
+	
+	pays_overlord = 0.0
+	military_focus = 1.5
+	base_liberty_desire = -100
+	can_be_annexed = no
+	gets_help_with_rebels = no
+	can_have_subjects_of_other_types = yes
+	overlord_protects_external = yes
+	
+	# Subject Interactions:
+	placate_rulers = no
+	takes_diplo_slot = no
+	joins_overlords_wars = no
+	scutage = no
+	subsidize_armies = no
+	embargo_rivals = no
+	send_additional_troops = yes
+	#fortify_march = yes
+	
+	send_officers = no
+	
+	# Modifiers:
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_overlord = {
+		modifier = march_subject
+	}
+	can_fight = {
+        independent_nations = yes
+        #other_overlord = all
+    }
+    can_rival = {
+        independent_nations = yes
+        other_overlord = all
+    }
+    can_ally = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_marry = {
+        independent_nations = no
+        #other_overlord = all
+    }
+}
+
+kalmar_union = {
+    copy_from = tributary_state
+    count = personal_union
+	
+	# Graphics:
+	sprite = GFX_court_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+	
+	# Properties:
+	has_overlords_ruler = yes
+	can_be_integrated = no
+	can_be_annexed = no
+	can_union_break = no
+	overlord_can_attack = no
+	has_power_projection = yes
+	gets_help_with_rebels = yes
+	can_have_subjects_of_other_types = no
+	overlord_protects_external = yes
+	
+	restoration_cb = cb_restore_personal_union
+	
+	# Subject Interactions:
+	grant_core_claim = yes
+	placate_rulers = no
+	enforce_culture = no
+	siphon_income = no
+	support_loyalists = no
+	embargo_rivals = yes
+	joins_overlords_wars = no
+	takes_diplo_slot = yes
+	can_transfer_in_peace = no
+	base_liberty_desire = -25
+	bestow_gifts = no
+	send_additional_troops = yes
+    
+    can_fight = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_rival = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_ally = {
+        independent_nations = no
+        other_overlord = all
+    }
+    can_marry = {
+        independent_nations = no
+        other_overlord = all
+    }
+	
+	# Modifiers:
+	modifier_overlord = {
+		modifier = union_subject
+	}
+	
+	overlord_opinion_modifier = in_union
+	subject_opinion_modifier = in_union
+}

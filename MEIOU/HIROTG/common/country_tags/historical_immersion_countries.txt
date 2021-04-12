@@ -1,0 +1,5 @@
+CTZ	= "countries/Cortes.txt"
+SPN	= "countries/SpanishNetherlands.txt"
+JTC	= "countries/JamesII.txt"
+MGL	= "countries/Legazpi.txt"
+VOC = "countries/DutchEastIndiaCompany.txt"

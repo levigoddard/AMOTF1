@@ -1,0 +1,15 @@
+on_monarch_death = {
+	country_event = { id = flavor_Historical_Wars_event.1777 }
+	country_event = { id = flavor_Historical_Wars_event.1961 }
+	country_event = { id = flavor_Historical_Wars_event.1694 }
+	country_event = { id = flavor_Historical_Wars_event.1684 }
+	country_event = { id = flavor_Historical_Wars_event.1672 }
+	country_event = { id = flavor_Historical_Wars_event.1671 }
+	country_event = { id = flavor_Historical_Wars_event.1642 }
+	country_event = { id = flavor_Historical_Wars_event.1960 }
+	country_event = { id = flavor_Historical_Wars_event.19601 }
+	country_event = { id = flavor_Historical_Wars_event.1482 }
+	country_event = { id = flavor_Historical_Wars_event.1444 }
+	country_event = { id = flavor_Historical_Wars_event.1442 }
+	country_event = { id = flavor_Historical_Wars_event.1355 }
+}

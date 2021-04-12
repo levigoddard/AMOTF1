@@ -1,0 +1,1004 @@
+		namespace = flavor_Historical_Wars_event
+
+		##########################
+		## Maunder minimum ends ##
+		##########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1562
+		title = "flavor_Historical_Wars_event.1562.title"
+		desc = "flavor_Historical_Wars_event.1562.desc"
+		picture = RUSSIANSREN_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1715
+		ai = no
+		has_country_flag = is_host
+		NOT = {has_global_flag = exceptionally_cold_year}
+		has_global_flag = historical_wars_weather_events
+		has_global_flag = maunder_minimum
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6 
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1562.a"
+		ai_chance = { factor = 100 }
+
+		clr_global_flag = maunder_minimum
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+		#####################
+		## Maunder minimum ##
+		#####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1563
+		title = "flavor_Historical_Wars_event.1563.title"
+		desc = "flavor_Historical_Wars_event.1563.desc"
+		picture = RUSSIANSREN_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1645
+		ai = no
+		NOT = {has_global_flag = exceptionally_cold_year}
+		has_global_flag = historical_wars_weather_events
+		NOT = {has_global_flag = maunder_minimum}
+		has_country_flag = is_host
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12 
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1563.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = maunder_minimum
+
+		change_price = {
+		trade_goods = lumber
+		key = lumber_shortage
+		value = 0.5
+		duration = 25550
+		}
+
+		change_price = {
+		trade_goods = wheat
+		key = wheat_shortage
+		value = 0.5
+		duration = 25550
+		}
+
+		hidden_effect = {
+
+		if = {
+		limit = {
+		exists = NED
+		has_global_flag = moedernegotiee
+		}
+		NED = {
+		country_event = { id = flavor_Historical_Wars_event.1459 days = 10 }
+		}
+		}
+
+		}
+
+		}
+
+		}
+
+
+
+
+		#############################
+		## Huaynaputina eruption   ##
+		#############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1584
+		title = "flavor_Historical_Wars_event.1584.title"
+		desc = "flavor_Historical_Wars_event.1584.desc"
+		picture = VOLCANOE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1600
+		NOT = {is_year = 1605}
+		ai = no
+		NOT = { has_global_flag = exceptionally_cold_year }
+		has_global_flag = historical_wars_weather_events
+		has_country_flag = is_host
+		is_month = 2
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6 
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1584.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = huaynaputina_eruption
+		
+		hidden_effect = {
+	
+		if = {
+		limit = {
+		NED = { has_country_flag = moedernegotiee }
+		}
+		NED = {country_event = { id = flavor_Historical_Wars_event.1463 days = 5 }}
+		}
+
+		every_province = {
+		limit = {
+		is_empty = no
+		is_colony = no
+		}
+		add_province_modifier = {
+		name = huaynaputina_eruption
+		duration = 1095  
+		hidden = no
+		}
+		}
+
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		############################################
+		## Historical Wars weather events decision##
+		############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1585
+		title = "flavor_Historical_Wars_event.1585.title"
+		desc = "flavor_Historical_Wars_event.1585.desc"
+		picture = RUSSIANSREN_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1585.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = historical_wars_weather_events
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1585.b"
+		ai_chance = { factor = 100 }
+
+		clr_global_flag = historical_wars_weather_events
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+		####################################
+		## Historical Wars weather events ##
+		####################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1586
+		title = "flavor_Historical_Wars_event.1586.title"
+		desc = "flavor_Historical_Wars_event.1586.desc"
+		picture = RUSSIANSREN_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		ai = no
+		NOT = {has_global_flag = historical_wars_weather_events}
+		has_country_flag = is_host
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3 
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1586.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = historical_wars_weather_events
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1586.b"
+		ai_chance = { factor = 100 }
+
+		clr_global_flag = historical_wars_weather_events
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		###################
+		## Clr cold year ##
+		###################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1587
+		title = "flavor_Historical_Wars_event.1587.title"
+		desc = "flavor_Historical_Wars_event.1587.desc"
+		picture = FARMING_eventPicture
+		major = yes
+
+
+		trigger = {
+		is_year = 1356
+		ai = no
+		has_global_flag = exceptionally_cold_year
+		is_month = 11
+		has_country_flag = is_host
+		}
+
+		mean_time_to_happen = {        
+		days = 20                                    
+		}
+
+
+
+		immediate = {
+
+		clr_global_flag = exceptionally_cold_year
+
+		hidden_effect = {
+
+		if = {
+		limit = {
+		NED = {
+		exists = yes
+		has_country_flag = moedernegotiee
+		}
+		}
+		NED = {
+		clr_country_flag = distribution_of_goods_low_countries
+		set_country_flag = sailing_to_baltic_region
+		country_event = { id = flavor_Historical_Wars_event.1397 days = 1 } 
+		}
+
+		}
+
+		every_province = {
+		limit = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		has_province_modifier = cold_year_provincial_starvation
+		}
+		}
+		remove_province_modifier = exceptionally_cold_year
+		remove_province_modifier = cold_year_provincial_starvation
+		remove_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}
+
+
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1587.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+
+		}
+
+
+
+
+
+
+		#############################
+		## Ecceptionally cold year ##
+		#############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1588
+		title = "flavor_Historical_Wars_event.1588.title"
+		desc = "flavor_Historical_Wars_event.1588.desc"
+		picture = RUSSIANSREN_eventPicture
+		major = yes
+
+
+		trigger = {
+		ai = no
+		is_month = 0
+		NOT = {
+		is_month = 2
+		}
+		NOT = { has_global_flag = exceptionally_cold_year }
+		has_global_flag = historical_wars_weather_events
+		NOT = {has_global_flag = huaynaputina_eruption}
+		has_country_flag = is_host
+		}
+
+
+		mean_time_to_happen = {        
+		months = 11
+
+		modifier = {
+		factor = 1.3
+		NOT = { has_global_flag = maunder_minimum }
+		} 
+
+		}
+
+
+		immediate = {
+
+
+		set_global_flag = exceptionally_cold_year
+
+		hidden_effect = {
+
+		if = {
+		limit = {
+		NED = { has_country_flag = moedernegotiee }
+		}
+		NED = {country_event = { id = flavor_Historical_Wars_event.1225 days = 5 }}
+
+		}
+
+		}
+
+		hidden_effect = {
+
+		every_province = {
+		limit = {
+		is_empty = no
+		is_colony = no
+		}
+		if = {
+		limit = {
+		has_global_flag = maunder_minimum
+		}
+		add_province_modifier = { 
+		name = exceptionally_cold_year_maunder_minimum
+		duration = -1  
+		hidden = no
+		}
+		}
+		else = {
+		add_province_modifier = { 
+		name = exceptionally_cold_year
+		duration = -1  
+		hidden = no
+		}
+		}
+		}
+		
+		}
+
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1588.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		###########################
+		## Siberian winter passes ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1589
+		title = "flavor_Historical_Wars_event.1589.title"
+		desc = "flavor_Historical_Wars_event.1589.desc"
+		picture = RUSSIANSREN_eventPicture
+		major = yes
+
+
+		trigger = {
+		is_year = 1356
+		has_country_flag = is_host
+		has_country_flag = siberian_winds
+		AND = {
+		is_month = 3
+		NOT = {is_month = 9}
+		}
+
+		}
+
+
+		mean_time_to_happen = {        
+		days = 5                                        
+		}
+
+
+		immediate = {
+
+		hidden_effect = {
+
+		clr_country_flag = siberian_winds
+
+		every_province = {
+		limit = {
+		OR = {
+		has_province_modifier = siberian_winds
+		has_province_modifier = strong_siberian_winds
+		}
+		}
+		remove_province_modifier = siberian_winds
+		remove_province_modifier = strong_siberian_winds
+		}
+
+		}
+
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1589.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+
+
+		#####################
+		## Siberian winter  ##
+		#####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1590
+		title = "flavor_Historical_Wars_event.1590.title"
+		desc = "flavor_Historical_Wars_event.1590.desc"
+		picture = RUSSIANSREN_eventPicture
+		major = yes
+
+
+		trigger = {
+		is_year = 1356
+		has_country_flag = is_host
+		OR = {
+		is_month = 9
+		NOT = {is_month = 1}
+		}
+		NOT = {has_country_flag = siberian_winds}
+		has_global_flag = historical_wars_weather_events
+		}
+
+
+		mean_time_to_happen = {        
+		months = 40 
+
+		modifier = {
+		factor = 0.5
+		has_global_flag = exceptionally_cold_year
+		} 
+
+		} 
+
+		 
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1590.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = siberian_winds
+
+		hidden_effect = {
+
+		every_province = {
+		limit = {
+		OR = {
+		superregion = siberia_superregion
+		superregion = greater_russia_superregion
+		region = finland_region
+		area = norrland_area
+		}
+		}
+
+		if = {
+		limit = {
+		has_winter = normal_winter
+		NOT = {has_winter = mild_winter}
+		NOT = {has_winter = severe_winter}
+		NOT = {has_province_modifier = siberian_winds}
+		}
+		add_province_modifier = { 
+		name = siberian_winds
+		duration = -1  
+		hidden = no
+		}
+		}
+
+		if = {
+		limit = {
+		has_winter = severe_winter
+		NOT = {has_winter = normal_winter}
+		NOT = {has_winter = mild_winter}
+		NOT = {has_province_modifier = strong_siberian_winds}
+		}
+		add_province_modifier = { 
+		name = strong_siberian_winds
+		duration = -1  
+		hidden = no
+		}
+		}
+
+		}
+
+		}
+
+		}
+
+		}
+
+
+
+
+		##############################################
+		#### Lisboa earthquake historical aftermath  #
+		##############################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1321
+		title = "flavor_Historical_Wars_event.1321.title"
+		desc = "flavor_Historical_Wars_event.1321.desc"
+		picture = EARTHQUAKE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+
+		trigger = {
+		exists = POR
+		tag = POR
+		is_year = 1700
+		NOT = { is_year = 1800 }
+		owns = 230
+		has_province_modifier = earthquake
+		has_global_flag = historical_wars_weather_events
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1321.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = earthquake_aftermath
+		duration = 9125
+		}
+
+		add_country_modifier = {
+		name = lisboa_reconstruction
+		duration = 365
+		}
+
+		230 = {
+		remove_building = fort_14th
+		remove_building = fort_15th
+		remove_building = fort_16th
+		remove_building = fort_17th
+		remove_building = fort_18th
+		remove_building = harbour_infrastructure_1
+		remove_building = harbour_infrastructure_2
+		remove_building = harbour_infrastructure_3
+		remove_building = harbour_infrastructure_4
+		remove_building = harbour_infrastructure_5
+		remove_building = military_harbour_1
+		remove_building = military_harbour_2
+		remove_building = military_harbour_3
+		remove_building = military_harbour_4
+		remove_building = military_harbour_5
+		remove_building = town_hall
+		remove_building = urban_infrastructure_1
+		remove_building = urban_infrastructure_2
+		remove_building = urban_infrastructure_3
+		remove_building = urban_infrastructure_4
+		remove_building = urban_infrastructure_5
+		remove_building = small_university
+		remove_building = medium_university
+		remove_building = big_university
+		remove_building = marketplace
+		remove_building = opera
+		remove_building = fine_arts_academy
+		remove_building = warehouse
+		remove_building = warehouse_district
+		remove_building = temple
+		remove_building = great_temple
+
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.5
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.5
+		}
+		remove_urban_population_DEVS = yes
+		}
+
+		2310 = {
+		remove_building = fort_14th
+		remove_building = fort_15th
+		remove_building = fort_16th
+		remove_building = fort_17th
+		remove_building = fort_18th
+		remove_building = harbour_infrastructure_1
+		remove_building = harbour_infrastructure_2
+		remove_building = harbour_infrastructure_3
+		remove_building = harbour_infrastructure_4
+		remove_building = harbour_infrastructure_5
+		remove_building = military_harbour_1
+		remove_building = military_harbour_2
+		remove_building = military_harbour_3
+		remove_building = military_harbour_4
+		remove_building = military_harbour_5
+		remove_building = town_hall
+		remove_building = urban_infrastructure_1
+		remove_building = urban_infrastructure_2
+		remove_building = urban_infrastructure_3
+		remove_building = urban_infrastructure_4
+		remove_building = urban_infrastructure_5
+		remove_building = small_university
+		remove_building = medium_university
+		remove_building = big_university
+		remove_building = marketplace
+		remove_building = opera
+		remove_building = fine_arts_academy
+
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.5
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.5
+		}
+		remove_urban_population_DEVS = yes
+		}
+
+		hidden_effect = {
+
+		every_province = {
+		limit = {
+		is_empty = no
+		NOT = {province_id = 230}
+		NOT = {province_id = 2310}
+		OR = {
+		area = alentejo_area
+		area = lower_guadalquivir_area
+		region = west_maghreb_region
+		province_id = 368
+		province_id = 367
+		}
+		has_port = yes
+		}
+		remove_building = fort_14th
+		remove_building = fort_15th
+		remove_building = fort_16th
+		remove_building = fort_17th
+		remove_building = fort_18th
+		remove_building = harbour_infrastructure_1
+		remove_building = harbour_infrastructure_2
+		remove_building = harbour_infrastructure_3
+		remove_building = harbour_infrastructure_4
+		remove_building = harbour_infrastructure_5
+		remove_building = military_harbour_1
+		remove_building = military_harbour_2
+		remove_building = military_harbour_3
+		remove_building = military_harbour_4
+		remove_building = military_harbour_5
+
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.5
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.5
+		}
+		remove_urban_population_DEVS = yes
+
+		}
+
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		###########################################
+		## Ecceptionally cold year causes deaths ##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1566
+		title = "flavor_Historical_Wars_event.1566.title"
+		desc = "flavor_Historical_Wars_event.1566.desc"
+		picture = FAMINE_eventPicture
+
+
+		trigger = {
+		has_global_flag = exceptionally_cold_year
+		any_owned_province = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		NOT = { has_province_modifier = cold_year_provincial_starvation }
+		}
+		NOT = { has_country_flag = distribution_of_goods_low_countries }
+		NOT = { has_country_modifier = purchased_dutch_basic_wares }
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6 
+		
+		modifier = {
+		factor = 0.75
+		NED = { has_country_flag = moedernegotiee }
+		}
+
+		modifier = {
+		factor = 1.5
+		NOT = {
+		num_of_owned_provinces_with = {
+		value = 3
+		}
+		}
+		} 
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1566.a"
+		ai_chance = { factor = 100 }
+
+		random_owned_province = {
+		limit = {
+		is_empty = no
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		NOT = {has_province_modifier = cold_year_provincial_starvation}
+		}
+		add_province_modifier = { 
+	    name = cold_year_provincial_starvation
+	    duration = 365  
+	    hidden = no
+		}
+		
+		if = {
+		limit = {
+		has_global_flag = maunder_minimum
+		}
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.1
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.1
+		}
+		remove_urban_population_DEVS = yes
+		}
+		else = {
+		set_variable = {
+		which = rural_percentage_removed
+		value = 0.05
+		}
+		remove_rural_population_DEVS = yes
+		set_variable = {
+		which = urban_percentage_removed
+		value = 0.05
+		}
+		remove_urban_population_DEVS = yes
+		}
+		}
+
+		
+
+		}
+		}
+		
+		
+		
+		
+		####################################
+		## Huaynaputina eruption passes   ##
+		####################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1561
+		title = "flavor_Historical_Wars_event.1561.title"
+		desc = "flavor_Historical_Wars_event.1561.desc"
+		picture = VOLCANOE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		has_country_flag = is_host
+		had_global_flag = {
+		flag = huaynaputina_eruption
+		days = 1100
+		}
+		ai = no
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1561.a"
+		ai_chance = { factor = 100 }
+
+		clr_global_flag = huaynaputina_eruption
+		
+		hidden_effect = {
+		
+		if = {
+		limit = {
+		NED = { has_country_flag = volcano_disrupts_moedernegotiee }
+		}
+		NED = {
+		country_event = { id = flavor_Historical_Wars_event.1462 days = 5 }
+		}
+
+		}
+		
+		}
+
+		}
+		
+		}

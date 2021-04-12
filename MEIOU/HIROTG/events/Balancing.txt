@@ -1,0 +1,3485 @@
+		namespace = flavor_Historical_Wars_event
+		
+		
+		
+		######################
+		## a.i fort upgrade ##
+		######################
+		country_event = {
+		id = flavor_Historical_Wars_event.1329
+		title = "flavor_Historical_Wars_event.1329.title"
+		desc = "flavor_Historical_Wars_event.1329.desc"
+		picture = COLONIZATION_eventPicture
+
+
+		trigger = {
+		is_at_war = no
+		ai = yes
+		OR = {
+		AND = {
+		NOT = { has_country_flag = ai_forts_upgraded }
+		mil_tech = 16
+		}
+		AND = {
+		has_country_flag = ai_forts_upgraded
+		is_year = 1625
+		NOT = { is_year = 1750 }
+		mil_tech = 30
+		}
+		AND = {
+		has_country_flag = ai_forts_upgraded_lvl2
+		is_year = 1750
+		mil_tech = 45
+		}
+		AND = {
+		capital_scope = { NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } NOT = { has_province_modifier = fort_is_building }  }
+		NOT = { is_year = 1650 }
+		mil_tech = 16
+		}
+		AND = {
+		capital_scope = { NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } NOT = { has_province_modifier = fort_is_building } }
+		is_year = 1625
+		NOT = { is_year = 1750 }
+		mil_tech = 30
+		}
+		AND = {
+		capital_scope = { NOT = { has_building = fort_17th } NOT = { has_province_modifier = fort_is_building } }
+		is_year = 1750
+		mil_tech = 45
+		}
+		}
+		has_global_flag = ai_fort_upgrade_enabled
+		}
+	
+		
+		
+		mean_time_to_happen = {
+		months = 6
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1329.a"
+		ai_chance = { factor = 100 }
+		
+		# non capital upgrade lvl1
+		
+		if = {
+		limit = {
+		NOT = { has_country_flag = ai_forts_upgraded }
+		}
+		set_country_flag = ai_forts_upgraded
+		every_owned_province = {
+		limit = {
+		is_capital = no
+		has_building = fort_14th
+		NOT = { has_province_modifier = fort_is_building }
+		}
+		province_event = { id = POP_MassBuilding.006 }
+		}
+		add_country_modifier = {
+		name = fort_maintenance_ai_balancing
+		duration = -1
+		}
+		}
+		
+		# non capital upgrade lvl2
+		
+		if = {
+		limit = {
+		has_country_flag = ai_forts_upgraded
+		is_year = 1625
+		NOT = { is_year = 1750 }
+		}
+		set_country_flag = ai_forts_upgraded_lvl2
+		every_owned_province = {
+		limit = {
+		is_capital = no
+		OR = {
+		has_building = fort_14th
+		has_building = fort_15th
+		}
+		NOT = { has_province_modifier = fort_is_building }
+		}
+		province_event = { id = POP_MassBuilding.006 }
+		}
+		remove_country_modifier = fort_maintenance_ai_balancing
+		add_country_modifier = {
+		name = fort_maintenance_ai_balancing_lvl2
+		duration = -1
+		}
+		}
+		
+		# non capital upgrade lvl3
+		
+		if = {
+		limit = {
+		has_country_flag = ai_forts_upgraded_lvl2
+		is_year = 1750
+		}
+		every_owned_province = {
+		limit = {
+		is_capital = no
+		OR = {
+		has_building = fort_14th
+		has_building = fort_15th
+		has_building = fort_16th
+		}
+		NOT = { has_province_modifier = fort_is_building }
+		}
+		province_event = { id = POP_MassBuilding.006 }
+		}
+		remove_country_modifier = fort_maintenance_ai_balancing
+		remove_country_modifier = fort_maintenance_ai_balancing_lvl2
+		add_country_modifier = {
+		name = fort_maintenance_ai_balancing_lvl3
+		duration = -1
+		}
+		}
+		
+		# capital upgrade lvl1
+		
+		if = {
+		limit = {
+		NOT = { is_year = 1650 }
+		mil_tech = 16
+		capital_scope = {
+		NOT = { has_building = fort_15th }
+		NOT = { has_building = fort_16th }
+		NOT = { has_building = fort_17th }
+		NOT = { has_province_modifier = fort_is_building }
+		}
+		}
+		capital_scope = {
+		province_event = { id = POP_MassBuilding.006 }
+		}
+		}
+		
+		# capital upgrade lvl2
+		
+		if = {
+		limit = {
+		is_year = 1625
+		NOT = { is_year = 1750 }
+		mil_tech = 30
+		capital_scope = {
+		NOT = { has_building = fort_16th }
+		NOT = { has_building = fort_17th }
+		NOT = { has_province_modifier = fort_is_building }
+		}
+		}
+		capital_scope = {
+		province_event = { id = POP_MassBuilding.006 }
+		}
+		}
+		
+		# capital upgrade lvl3
+		
+		if = {
+		limit = {
+		is_year = 1750
+		mil_tech = 45
+		capital_scope = {
+		NOT = { has_building = fort_17th }
+		NOT = { has_province_modifier = fort_is_building }
+		}
+		}
+		capital_scope = {
+		province_event = { id = POP_MassBuilding.006 }
+		}
+		
+		}	
+		
+		}
+		
+		}
+		
+
+	
+	
+		
+		
+		
+		
+		
+		
+		###########################
+		## Historical balancing  ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1391
+		title = "flavor_Historical_Wars_event.1391.title"
+		desc = "flavor_Historical_Wars_event.1391.desc"
+		picture = POLICY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1391.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = historical_balancing
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1391.b"
+		ai_chance = { factor = 0 }
+
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		###############################
+		## Remove Balancing colonies ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1564
+		title = "flavor_Historical_Wars_event.1564.title"
+		desc = "flavor_Historical_Wars_event.1564.desc"
+		picture = BIG_BOOK_eventPicture
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_colonial_nation = no
+		capital_scope = {
+		OR = {
+		continent = north_america
+		continent = south_america
+		}
+		}
+		has_country_flag = colony_balancing
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1564.a"
+		ai_chance = { factor = 100 }
+
+
+		remove_country_modifier = colony_forcelimit_balancing_increase
+		remove_country_modifier = colony_forcelimit_balancing_decrease
+		remove_country_modifier = capitanias_extra_funding 
+		clr_country_flag = colony_balancing
+
+		}
+
+		}
+
+	
+
+
+
+
+
+		########################
+		## Balancing colonies ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1565
+		title = "flavor_Historical_Wars_event.1565.title"
+		desc = "flavor_Historical_Wars_event.1565.desc"
+		picture = BIG_BOOK_eventPicture
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		capital_scope = {
+		OR = {
+		continent = north_america
+		continent = south_america
+		}
+		}
+		OR = {
+		AND = {
+		NOT = { land_forcelimit = 5 }
+		NOT = { has_country_modifier = colony_forcelimit_balancing_increase }
+		}
+		AND = {
+		land_forcelimit = 20
+		NOT = { has_country_modifier = colony_forcelimit_balancing_decrease }
+		}
+		}
+		is_colonial_nation = yes
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1565.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		NOT = { land_forcelimit = 5 }
+		NOT = { has_country_modifier = colony_forcelimit_balancing_increase }
+		}
+		remove_country_modifier = colony_forcelimit_balancing_decrease
+		add_country_modifier = {
+		name = colony_forcelimit_balancing_increase
+		duration = -1
+		}
+		}
+		
+		else_if = {
+		limit = {
+		land_forcelimit = 20
+		NOT = { has_country_modifier = colony_forcelimit_balancing_decrease }
+		}
+		remove_country_modifier = colony_forcelimit_balancing_increase
+		add_country_modifier = {
+		name = colony_forcelimit_balancing_decrease
+		duration = -1
+		}
+		}
+		
+		set_country_flag = colony_balancing
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		######################
+		## a.i helper event ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1501
+		title = "flavor_Historical_Wars_event.1501.title"
+		desc = "flavor_Historical_Wars_event.1501.desc"
+		picture = DEATH_OF_HEIR_eventPicture
+		hidden = yes
+		
+		trigger = {
+		has_global_flag = ai_helper_events_enabled
+		ai = yes
+		
+		OR = {
+		AND = {
+		NOT = { check_variable = { which = estate_burghers_loyalty value = 0.15 } }
+		NOT = { has_country_modifier = ai_help_estate_loyalty }
+		}
+		AND = {
+		NOT = { check_variable = { which = estate_greater_nobles_loyalty value = 0.15 } }
+		NOT = { has_country_modifier = ai_help_estate_loyalty }
+		}
+		AND = {
+		NOT = { check_variable = { which = estate_lesser_nobles_loyalty value = 0.15 } }
+		NOT = { has_country_modifier = ai_help_estate_loyalty }
+		}
+		AND = {
+		NOT = { stability = -1 }
+		NOT = { has_country_modifier = ai_help_stability }
+		}
+		AND = {
+		inflation = 40
+		NOT = { has_country_modifier = ai_help_inflation }
+		}
+		AND = {
+		war_exhaustion = 10
+		NOT = { has_country_modifier = ai_help_war_exhaustion }
+		}
+		AND = {
+		average_home_autonomy = 60
+		NOT = { has_country_modifier = ai_help_autonomy }
+		}
+		AND = {
+		is_at_war = no
+		NOT = {manpower = 1}
+		NOT = { has_country_modifier = ai_help_manpower }
+		}
+		AND = {
+		corruption = 30
+		NOT = { has_country_modifier = ai_help_corruption }
+		}
+		AND = {
+		NOT = { prestige = 25 }
+		NOT = {has_country_modifier = ai_help_prestige}
+		}
+		AND = {
+		average_unrest = 10
+		has_any_disaster = no
+		NOT = { has_country_modifier = ai_help_unrest }
+		}
+		AND = {
+		is_in_deficit = yes
+		num_of_loans = 5
+		num_of_owned_provinces_with = {
+		value = 5
+		}
+		is_colonial_nation = no
+		NOT = { has_country_modifier = ai_help_economy_large }
+		}
+		AND = {
+		is_in_deficit = yes
+		num_of_loans = 5
+		OR = {
+		NOT = {
+		num_of_owned_provinces_with = {
+		value = 5
+		}
+		}
+		is_colonial_nation = yes
+		}
+		NOT = { has_country_modifier = ai_help_economy_small }
+		}
+		AND = {
+		is_in_deficit = yes
+		num_of_loans = 5
+		is_colonial_nation = no
+		has_country_modifier = ai_help_economy_large
+		NOT = { has_country_modifier = ai_help_economy_meltdown }
+		}
+		}	
+		}
+		
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		
+		immediate = {
+		set_variable = { 	which = burghers_loyalty_added_a 	value = 15 }
+		set_variable = { 	which = greater_nobles_loyalty_added_a 	value = 15 }
+		set_variable = { 	which = lesser_nobles_loyalty_added_a 	value = 15 }
+		}
+		
+		
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1501.a"
+		ai_chance = { factor = 100 }
+		
+	
+		
+		if = {
+		limit = {
+		NOT = { check_variable = { which = estate_greater_nobles_loyalty value = 0.15 } }
+		NOT = { has_country_modifier = ai_help_estate_loyalty }
+		}
+		add_estate_greater_nobles_loyalty_effect = { id=a }
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_estate_loyalty
+		duration = 1095
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		NOT = { check_variable = { which = estate_lesser_nobles_loyalty value = 0.15 } }
+		NOT = { has_country_modifier = ai_help_estate_loyalty }
+		}
+		add_estate_lesser_nobles_loyalty_effect = { id=a }
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_estate_loyalty
+		duration = 1095
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		NOT = { check_variable = { which = estate_burghers_loyalty value = 0.15 } }
+		NOT = { has_country_modifier = ai_help_estate_loyalty }
+		}
+		add_estate_burghers_loyalty_effect = { id=a }
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_estate_loyalty
+		duration = 1095
+		}
+		}
+		}
+
+		
+		if = {
+		limit = {
+		NOT = { stability = -1 }
+		NOT = { has_country_modifier = ai_help_stability }
+		}
+		add_stability = 1
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_stability
+		duration = 1095
+		}
+		}
+		}
+
+		if = {
+		limit = {
+		num_of_loans = 5
+		is_in_deficit = yes
+		is_colonial_nation = no
+		num_of_owned_provinces_with = {
+		value = 5
+		}
+		NOT = { has_country_modifier = ai_help_economy_large }
+		}
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_economy_large
+		duration = 365		
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		num_of_loans = 5
+		is_in_deficit = yes
+		OR = {
+		NOT = {
+		num_of_owned_provinces_with = {
+		value = 5
+		}
+		}
+		is_colonial_nation = yes
+		}
+		NOT = { has_country_modifier = ai_help_economy_small }
+		}
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_economy_small
+		duration = 365		
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		NOT = { manpower = 1 }
+		NOT = { has_country_modifier = ai_help_manpower }
+		is_at_war = no
+		}
+		add_manpower = 10
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_manpower
+		duration = 1095
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		inflation = 40
+		NOT = { has_country_modifier = ai_help_inflation }
+		}
+		while = {
+		limit = {
+			inflation = 40
+		}
+		add_inflation = -5
+		}
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_inflation
+		duration = 1095
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		war_exhaustion = 10
+		NOT = { has_country_modifier = ai_help_war_exhaustion }
+		}
+		while = {
+		limit = {
+			war_exhaustion = 10
+		}
+		add_war_exhaustion = -1
+		}
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_war_exhaustion
+		duration = 1095
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		average_home_autonomy = 50
+		NOT = { has_country_modifier = ai_help_autonomy }
+		}
+		every_owned_province = {
+		limit = {
+		local_autonomy = 60
+		}
+		add_local_autonomy = -10
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_autonomy
+		duration = 1095
+		}
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		corruption = 30
+		NOT = { has_country_modifier = ai_help_corruption }
+		}
+		add_corruption = -10
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_corruption
+		duration = 1095
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		NOT = { prestige = 25 }
+		NOT = { has_country_modifier = ai_help_prestige }
+		}
+		add_prestige = 25
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_prestige
+		duration = 1095
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		average_unrest = 10
+		has_any_disaster = no
+		NOT = {has_country_modifier = ai_help_unrest}
+		}
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_unrest
+		duration = 1095
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		is_in_deficit = yes
+		num_of_loans = 5
+		is_colonial_nation = no
+		has_country_modifier = ai_help_economy_large
+		NOT = { has_country_modifier = ai_help_economy_meltdown }
+		}
+		hidden_effect = {
+		add_country_modifier = {
+		name = ai_help_economy_meltdown
+		duration = 365		
+		}
+		}
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		######################
+		## Persia balancing ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1687
+		title = "flavor_Historical_Wars_event.1687.title"
+		desc = "flavor_Historical_Wars_event.1687.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = PER
+		tag = PER
+		TUR = {
+		exists = yes
+		is_great_power = yes
+		}
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1687.a"
+		ai_chance = { factor = 100 }
+
+
+		add_country_modifier = {
+		name = persia_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		######################
+		## Habsburgs united ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1613
+		title = "flavor_Historical_Wars_event.1613.title"
+		desc = "flavor_Historical_Wars_event.1613.desc"
+		picture = DIPLOMACY_eventPicture
+		#major = yes
+
+		trigger = {
+		tag = SPA
+		exists = SPA
+		is_subject = no
+		dynasty = "von Habsburg"
+		ai = yes
+		HAB = { dynasty = "von Habsburg" }
+		HAB = { ai = yes }
+		HAB = { is_subject = no }
+		NOT = { has_country_modifier = habsburgs_united }
+		exists = HAB
+		NOT = { war_with = HAB }
+		NOT = { truce_with = HAB }
+		exists = FRA
+		exists = TUR
+		has_global_flag = historical_balancing
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1613.a"
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+		add_country_modifier = {
+		name = habsburgs_united
+		duration = 9125
+		}
+		}
+
+		add_opinion = {
+		who = HAB
+		modifier = opinion_united_dynasties
+		}
+
+		add_trust = {
+    	who = HAB
+    	value = 25
+    	mutual = yes
+		}
+
+		HAB = {
+		add_opinion = {
+		who = SPA
+		modifier = opinion_united_dynasties
+		}
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		######################
+		## Balancing mamluks ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1707
+		title = "flavor_Historical_Wars_event.1707.title"
+		desc = "flavor_Historical_Wars_event.1707.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = MAM
+		tag = MAM
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1707.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = mamluks_balancing
+		duration = -1
+		}
+
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		######################
+		## Balancing Savoy  ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1762
+		title = "flavor_Historical_Wars_event.1762.title"
+		desc = "flavor_Historical_Wars_event.1762.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = SAV
+		tag = SAV
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1762.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = savoy_balancing
+		duration = -1
+		}
+
+		}
+
+
+		}
+
+
+
+		######################
+		## Balancing Milan  ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1764
+		title = "flavor_Historical_Wars_event.1764.title"
+		desc = "flavor_Historical_Wars_event.1764.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = MLO
+		tag = MLO
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1764.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = milan_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		######################
+		## Balancing France ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1774
+		title = "flavor_Historical_Wars_event.1774.title"
+		desc = "flavor_Historical_Wars_event.1774.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = FRA
+		tag = FRA
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1774.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		ai = yes
+		}
+		add_country_modifier = {
+		name = france_balancing
+		duration = -1
+		}
+		}
+		
+		else = {
+		add_country_modifier = {
+		name = france_balancing_light
+		duration = -1
+		}
+		}
+		
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1774.b"
+		ai_chance = { factor = 0 }
+		
+		}
+		
+		}
+
+
+		
+		
+				
+		
+		
+		
+		#######################
+		## Fez balancing ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1791
+		title = "flavor_Historical_Wars_event.1791.title"
+		desc = "flavor_Historical_Wars_event.1791.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		tag = FEZ
+		exists = FEZ
+		ai = yes
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1791.a"
+		ai_chance = { factor = 100 }
+
+
+		add_country_modifier = {
+		name = fez_balancing
+		duration = -1
+		}
+
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		#####################
+		## Ottoman balancing ##
+		####################'
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1839
+		title = "flavor_Historical_Wars_event.1839.title"
+		desc = "flavor_Historical_Wars_event.1839.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		tag = TUR
+		exists = TUR
+		ai = yes
+		}
+		
+		
+		
+		mean_time_to_happen = {      
+		months = 6                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1839.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = ottoman_balancing
+		duration = -1
+		}
+
+		}
+		
+		}
+
+
+
+		#######################
+		## Balancing DEN   ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1840
+		title = "flavor_Historical_Wars_event.1840.title"
+		desc = "flavor_Historical_Wars_event.1840.desc"
+		picture = BIG_BOOK_eventPicture
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = DEN
+		tag = DEN
+		ai = yes
+		NOT = {exists = DAN}
+		NOT = {has_country_flag = denmark_balanced}
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1840.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = denmark_balanced
+		clr_country_flag = denmark_norway_balanced
+
+		remove_country_modifier = denmark_norway_balancing
+
+		add_country_modifier = {
+		name = denmark_balancing
+		duration = -1
+		}
+		}
+
+		}
+		
+		
+		
+		
+		
+		################
+		## technology ##
+		################
+		country_event = {
+		id = flavor_Historical_Wars_event.1842
+		title = "flavor_Historical_Wars_event.1842.title"
+		desc = "flavor_Historical_Wars_event.1842.desc"
+		picture = UNIVERSITY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		start_date = 1492.01.01
+		ai = no
+		has_country_flag = is_host
+		is_year = 2000
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1842.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = institution_technology_rebalance_enabled
+		
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1842.b"
+		ai_chance = { factor = 100 }
+
+		}
+
+
+		}
+
+
+
+
+		#######################
+		## Balancing Austria ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1844
+		title = "flavor_Historical_Wars_event.1844.title"
+		desc = "flavor_Historical_Wars_event.1844.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+		
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = HAB
+		tag = HAB
+		ai = yes
+		}
+		
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1844.a"
+		ai_chance = { factor = 100 }
+		
+		
+		add_country_modifier = {
+		name = austria_balancing
+		duration = -1
+		}
+		
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		#############################
+		## Scotland ambush english ##
+		#############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1859
+		title = "flavor_Historical_Wars_event.1859.title"
+		desc = "flavor_Historical_Wars_event.1859.desc"
+		picture = WOUNDED_SOLDIERS_eventPicture
+		major = no
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		exists = SCO
+		tag = SCO
+		defensive_war_with = ENG
+		scotland_region = {
+		owned_by = SCO
+		OR = {
+		infantry_in_province = ENG
+		cavalry_in_province = ENG
+		artillery_in_province = ENG
+		}
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12
+		
+		modifier = {
+			factor = 0.5
+			has_ruler_modifier = queen_of_scots
+		}
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1859.a"
+		ai_chance = { factor = 100 }
+
+		
+
+		random_list = {
+		50 = { 
+		random_province = {
+		limit = {
+		region = scotland_region
+		owned_by = SCO
+		OR = {
+		infantry_in_province = ENG
+		cavalry_in_province = ENG
+		artillery_in_province = ENG
+		}
+		}
+		kill_units = {
+		who = ENG
+		amount = 1
+		}
+		hidden_effect = {
+		SCO = {
+		change_variable = {
+		which = killed_by_ambush
+		value = 1
+		}
+		}
+		}
+		}
+		}
+		25 = { 
+		random_province = {
+		limit = {
+		region = scotland_region
+		owned_by = SCO
+		OR = {
+		infantry_in_province = ENG
+		cavalry_in_province = ENG
+		artillery_in_province = ENG
+		}
+		}
+		kill_units = {
+		who = ENG
+		amount = 2
+		}
+		hidden_effect = {
+		SCO = {
+		change_variable = {
+		which = killed_by_ambush
+		value = 2
+		}
+		}
+		}
+		}
+		}
+		25 = { 
+		random_province = {
+		limit = {
+		region = scotland_region
+		owned_by = SCO
+		OR = {
+		infantry_in_province = ENG
+		cavalry_in_province = ENG
+		artillery_in_province = ENG
+		}
+		}
+		kill_units = {
+		who = ENG
+		amount = 3
+		}
+		hidden_effect = {
+		SCO = {
+		change_variable = {
+		which = killed_by_ambush
+		value = 3
+		}
+		}
+		}
+		}
+		}
+		}
+		
+		ENG = {country_event = { id = flavor_Historical_Wars_event.1250 days = 1 }}
+	
+		}
+		
+		}
+
+
+
+
+		#######################
+		## Balancing England ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1862
+		title = "flavor_Historical_Wars_event.1862.title"
+		desc = "flavor_Historical_Wars_event.1862.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = ENG
+		tag = ENG
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1862.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = england_balancing
+		duration = -1
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		############################
+		## Balancing Brandenburg  ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1872
+		title = "flavor_Historical_Wars_event.1872.title"
+		desc = "flavor_Historical_Wars_event.1872.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = BRA
+		tag = BRA
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1872.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = brandenburg_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+		############################
+		## Balancing Netherlands ##
+		############################
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1873
+		title = "flavor_Historical_Wars_event.1873.title"
+		desc = "flavor_Historical_Wars_event.1873.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = NED
+		tag = NED
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1873.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = netherlands_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		#######################
+		## Balancing Muscowy ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1882
+		title = "flavor_Historical_Wars_event.1882.title"
+		desc = "flavor_Historical_Wars_event.1882.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = MOS
+		tag = MOS
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1882.a"
+		ai_chance = { factor = 100 }
+
+
+		add_country_modifier = {
+		name = muscowy_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+
+
+
+
+		#######################
+		## Balancing Britain ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1905
+		title = "flavor_Historical_Wars_event.1905.title"
+		desc = "flavor_Historical_Wars_event.1905.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = GBR
+		tag = GBR
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1905.a"
+		ai_chance = { factor = 100 }
+
+		remove_country_modifier = england_balancing
+
+		add_country_modifier = {
+		name = britain_balancing
+		duration = -1
+
+		}
+
+		indian_continent = {
+		add_permanent_claim = ROOT
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		#######################
+		## Balancing Scotland  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1907
+		title = "flavor_Historical_Wars_event.1907.title"
+		desc = "flavor_Historical_Wars_event.1907.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = SCO
+		tag = SCO
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1907.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = scotland_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		#######################
+		## Balancing Sweden  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1908
+		title = "flavor_Historical_Wars_event.1908.title"
+		desc = "flavor_Historical_Wars_event.1908.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = SWE
+		tag = SWE
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1908.a"
+		ai_chance = { factor = 100 }
+
+
+		add_country_modifier = {
+		name = sweden_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+
+
+
+
+
+		#######################
+		## Balancing DAN   ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1909
+		title = "flavor_Historical_Wars_event.1909.title"
+		desc = "flavor_Historical_Wars_event.1909.desc"
+		picture = BIG_BOOK_eventPicture
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = DAN
+		tag = DAN
+		ai = yes
+		NOT = {exists = DEN}
+		NOT = {has_country_flag = denmark_norway_balanced}
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1909.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = denmark_norway_balanced
+		clr_country_flag = denmark_balanced
+
+		remove_country_modifier = denmark_balancing
+
+		add_country_modifier = {
+		name = denmark_norway_balancing
+		duration = -1
+
+		}
+		
+		hidden_effect = {
+		
+		370 = {
+		remove_core = NOR
+		}
+		
+		371 = {
+		remove_core = NOR
+		}
+		
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		#######################
+		## Balancing Portugal  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1918
+		title = "flavor_Historical_Wars_event.1918.title"
+		desc = "flavor_Historical_Wars_event.1918.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = POR
+		tag = POR
+		}
+		
+		
+	
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1918.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		ai = no
+		}
+		add_country_modifier = {
+		name = portugal_balancing_light
+		duration = -1
+		}
+		}
+
+		else = {
+		add_country_modifier = {
+		name = portugal_balancing
+		duration = -1
+		}
+		
+		}
+		
+				
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1918.b"
+		ai_chance = { factor = 0 }
+
+		}
+		
+		}
+
+
+		
+		
+		
+		
+		
+		#######################
+		## Balancing Prussia  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1919
+		title = "flavor_Historical_Wars_event.1919.title"
+		desc = "flavor_Historical_Wars_event.1919.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = PRU
+		tag = PRU
+		NOT = {exists = BRA}
+		PRU = {is_subject = no}
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1919.a"
+		ai_chance = { factor = 100 }
+
+		remove_country_modifier = brandenburg_balancing
+
+		add_country_modifier = {
+		name = prussia_balancing
+		duration = -1
+		}
+
+
+		}
+
+		}
+
+
+
+
+
+		#######################
+		## Balancing Russia  ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1920
+		title = "flavor_Historical_Wars_event.1920.title"
+		desc = "flavor_Historical_Wars_event.1920.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = RUS
+		tag = RUS
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1920.a"
+		ai_chance = { factor = 100 }
+
+		remove_country_modifier = muscowy_balancing
+
+		add_country_modifier = {
+		name = russia_balancing
+		duration = -1
+		}
+
+		}
+		}
+		
+		
+		
+		
+		
+		
+		#####################
+		## Spain balancing ##
+		####################'
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1921
+		title = "flavor_Historical_Wars_event.1921.title"
+		desc = "flavor_Historical_Wars_event.1921.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		tag = SPA
+		exists = SPA
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1921.a"
+		ai_chance = { factor = 100 }
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		add_country_modifier = {
+		name = spain_balancing
+		duration = -1
+		}
+		}
+
+		else = {
+		add_country_modifier = {
+		name = spain_balancing_light
+		duration = -1
+		}
+		}
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1921.b"
+		ai_chance = { factor = 0 }
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		######################
+		## Remove balancing ##
+		######################
+		country_event = {
+		id = flavor_Historical_Wars_event.1351
+		title = "flavor_Historical_Wars_event.1351.title"
+		desc = "flavor_Historical_Wars_event.1351.desc"
+		picture = BIG_BOOK_eventPicture
+		#major = yes
+
+		trigger = {
+		is_at_war = no
+		OR = {
+		AND = {
+		tag = USA
+		exists = USA
+		monthly_income = 175
+		has_country_modifier = united_states_balancing
+		}
+		AND = {
+		tag = VOC
+		exists = VOC
+		monthly_income = 60
+		has_country_modifier = dutch_east_india_company_balancing
+		}
+		AND = {
+		tag = TIM
+		exists = TIM
+		monthly_income = 175
+		has_country_modifier = timurid_balancing
+		}
+		AND = {
+		tag = HAB
+		exists = HAB
+		monthly_income = 60
+		has_country_modifier = austria_balancing
+		}
+		AND = {
+		tag = TUR
+		exists = TUR
+		monthly_income = 175
+		has_country_modifier = ottoman_balancing
+		}
+		AND = {
+		tag = BRA
+		exists = BRA
+		monthly_income = 60
+		has_country_modifier = brandenburg_balancing
+		}
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 12                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1351.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { tag = USA } remove_country_modifier = united_states_balancing }
+		
+		if = { limit = { tag = TIM } remove_country_modifier = timurid_balancing }
+
+		if = { limit = { tag = VOC } remove_country_modifier = dutch_east_india_company_balancing }
+		
+		if = { limit = { tag = HAB } remove_country_modifier = austria_balancing }
+		
+		if = { limit = { tag = TUR } remove_country_modifier = ottoman_balancing }
+		
+		if = { limit = { tag = BRA } remove_country_modifier = brandenburg_balancing }
+
+		}
+
+		}
+		
+		
+		
+		################################################
+		#### Britain cede east coast to 13 colonies ####
+		################################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1320
+		title = "flavor_Historical_Wars_event.1320.title"
+		desc = "flavor_Historical_Wars_event.1320.desc"
+		picture = CITY_DEVELOPMENT_eventPicture
+
+		
+		trigger = {
+		
+		has_global_flag = historical_balancing
+		NOT = { has_country_flag = no_compromise }
+		
+		OR = {
+		AND = {
+		tag = ENG
+		exists = ENG
+		}
+		AND = {
+		tag = GBR
+		exists = GBR
+		}
+		}
+		
+		northeast_america_region = {
+		OR = {
+		owner = {is_colonial_nation_of = ENG}
+		owner = {is_colonial_nation_of = GBR}
+		}
+		owner = {culture_group = english}
+		owner = {capital_scope = {region = northeast_america_region}}
+		}
+		
+		OR = {
+		chesapeake_area = {
+		OR = {
+		owner = {tag = ENG}
+		owner = {tag = GBR}
+		owner = {is_colonial_nation_of = ENG}
+		owner = {is_colonial_nation_of = GBR}
+		}
+		NOT = {has_province_modifier = not_for_sale}
+		is_colony = no
+		NOT = {owner = {capital_scope = {region = northeast_america_region}}}
+		}
+		
+		carolinas_area = {
+		OR = {
+		owner = {tag = ENG}
+		owner = {tag = GBR}
+		owner = {is_colonial_nation_of = ENG}
+		owner = {is_colonial_nation_of = GBR}
+		}
+		NOT = {has_province_modifier = not_for_sale}
+		is_colony = no
+		NOT = {owner = {capital_scope = {region = northeast_america_region}}}
+		}
+		}
+		
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1320.a"
+		ai_chance = { factor = 80 }
+		
+		every_subject_country = {
+		limit = {
+		culture_group = english
+		capital_scope = {
+		region = northeast_america_region
+		}
+		OR = {
+		is_colonial_nation_of = GBR
+		is_colonial_nation_of = ENG
+		}
+		
+		}
+		
+		add_liberty_desire = -5
+		
+		every_province = {
+		limit = {
+		OR = {
+		area = carolinas_area
+		area = chesapeake_area
+		}
+		OR = {
+		owner = {tag = ENG}
+		owner = {tag = GBR}
+		owner = {is_colonial_nation_of = ENG}
+		owner = {is_colonial_nation_of = GBR}
+		}
+		NOT = {has_province_modifier = not_for_sale}
+		}
+		cede_province = PREV
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1320.b"
+		ai_chance = { factor = 10 }
+		
+		every_subject_country = {
+		limit = {
+		culture_group = english
+		capital_scope = {
+		region = northeast_america_region
+		}
+		OR = {
+		is_colonial_nation_of = GBR
+		is_colonial_nation_of = ENG
+		}
+		}
+		add_liberty_desire = 7.5
+		}
+		
+		hidden_effect = {
+		
+		every_province = {
+		limit = {
+		OR = {
+		area = carolinas_area
+		area = chesapeake_area
+		}
+		OR = {
+		owner = {tag = ENG}
+		owner = {tag = GBR}
+		owner = {is_colonial_nation_of = ENG}
+		owner = {is_colonial_nation_of = GBR}
+		}
+		NOT = {owner = {capital_scope = {region = northeast_america_region}}}
+		}
+		add_province_modifier = {
+		name = not_for_sale
+		duration = 3650  
+		hidden = yes
+		}
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1320.c"
+		ai_chance = { factor = 0 }
+		
+		every_subject_country = {
+		limit = {
+		culture_group = english
+		capital_scope = {
+		region = northeast_america_region
+		}
+		OR = {
+		is_colonial_nation_of = GBR
+		is_colonial_nation_of = ENG
+		}
+		}
+		add_liberty_desire = 15
+		}
+		
+		hidden_effect = {
+		
+		every_province = {
+		limit = {
+		OR = {
+		area = carolinas_area
+		area = chesapeake_area
+		}
+		OR = {
+		owner = {tag = ENG}
+		owner = {tag = GBR}
+		owner = {is_colonial_nation_of = ENG}
+		owner = {is_colonial_nation_of = GBR}
+		}
+		NOT = {owner = {capital_scope = {region = northeast_america_region}}}
+		}
+		add_province_modifier = {
+		name = not_for_sale
+		duration = -1  
+		hidden = yes
+		}
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1320.d"
+		ai_chance = { factor = 0 }
+		
+		set_country_flag = no_compromise
+		
+		}
+		
+		
+		}
+		
+		
+		
+		
+		
+		
+		###################
+		## Balancing USA ##
+		###################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1145
+		title = "flavor_Historical_Wars_event.1145.title"
+		desc = "flavor_Historical_Wars_event.1145.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = USA
+		tag = USA
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1145.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = united_states_balancing
+		duration = -1
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+				
+		
+		##############################
+		## Reducing colonial growth ##
+		##############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1181
+		title = "flavor_Historical_Wars_event.1181.title"
+		desc = "flavor_Historical_Wars_event.1181.desc"
+		picture = COLONIZATION_eventPicture
+		hidden = yes
+
+		trigger = {
+		has_global_flag = colonial_speed_reduce_enabled
+		NOT = { has_country_modifier = reduce_colonial_growth }
+		}
+		
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1181.a"
+		ai_chance = { factor = 100 }
+		
+		add_country_modifier = {
+		name = reduce_colonial_growth
+		duration = -1
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		################################################################
+		## Portugal/Sweden/Denmark/Austria/Spain/England fort building  ##
+		################################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1132
+		title = "flavor_Historical_Wars_event.1132.title"
+		desc = "flavor_Historical_Wars_event.1132.desc"
+		picture = BIG_BOOK_eventPicture
+
+
+		trigger = {
+		has_global_flag = historical_balancing
+		has_global_flag = ai_fort_upgrade_enabled
+		ai = yes
+		
+		OR = {
+		
+		AND = {
+		OR = {
+		AND = {
+		exists = ENG
+		tag = ENG
+		}
+		AND = {
+		exists = GBR
+		tag = GBR
+		}
+		}
+		OR = {
+		
+		1411 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		3859 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		3325 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+
+		}
+		}
+		
+		AND = {
+		exists = SPA
+		tag = SPA
+		OR = {
+		
+		654 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		2213 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		2534 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		3870 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+
+		2533 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+
+		2854 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+
+		
+		}
+		}
+		
+		AND = {
+		exists = HAB
+		tag = HAB
+		OR = {
+		
+		134 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		3379 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		2366 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		128 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		}
+		}
+		
+		AND = {
+		exists = SWE
+		tag = SWE
+		OR = {
+		
+		4 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		7 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		32 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1260 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		19 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		27 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		2 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1257 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		25 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		
+		}
+		}
+		
+		AND = {
+		exists = POR
+		tag = POR
+		OR = {
+		
+		228 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1423 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		2308 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		334 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1533 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1187 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		}
+		}
+		
+		AND = {
+		exists = SCO
+		tag = SCO
+		OR = {
+		
+		249 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		3336 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		250 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		253 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		369 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		}
+		}
+		
+		AND = {
+		OR = {
+		AND = {
+		exists = DEN
+		tag = DEN
+		}
+		AND = {
+		exists = DAN
+		tag = DAN
+		}
+		AND = {
+		exists = NOR
+		tag = NOR
+		}
+		}
+		OR = {
+		
+		6 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1428 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		67 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		21 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		1266 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		25 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		2754 = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } }
+		
+		
+		}
+		}
+		
+		}
+		
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+	
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1132.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		OR = {
+		tag = ENG
+		tag = GBR
+		}
+		}
+		
+		1411 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		3859 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		3325 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+
+		
+		}
+		
+		if = {
+		limit = {
+		tag = SPA
+		}
+		
+		654 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2213 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		3870 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2533 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+
+		2534 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2854 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+
+		}
+		
+		if = {
+		limit = {
+		tag = HAB
+		}
+		
+		134 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		3379 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2366 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		128 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		}
+		
+		if = {
+		limit = {
+		tag = SWE
+		}
+		
+		4 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		7 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		32 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1260 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		19 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		27 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1257 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		25 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		
+		}
+		
+		if = {
+		limit = {
+		tag = POR
+		}
+
+		228 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1423 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2308 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		334 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1533 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1187 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		}
+		
+		if = {
+		limit = {
+		tag = SCO
+		}
+
+		249 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		3336 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		250 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		253 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		369 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		}
+		
+		if = {
+		limit = {
+		OR = {
+		tag = DAN
+		tag = DEN
+		tag = NOR
+		}
+		}
+
+		6 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1428 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		67 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		21 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		1266 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		25 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		2754 = { if = { limit = { controlled_by = ROOT owned_by = ROOT OR = { AND = { NOT = { ROOT = { has_country_flag = ai_forts_upgraded } } NOT = { has_building = fort_14th } } AND = { ROOT = { has_country_flag = ai_forts_upgraded } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } NOT = { has_building = fort_17th } } } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } } } 
+		
+		
+		}
+				
+		}
+		
+		}
+		
+		
+		
+		
+		
+		#################################
+		## Historical rulers mortality ##
+		#################################
+		country_event = {
+		id = flavor_Historical_Wars_event.2002
+		title = "flavor_Historical_Wars_event.2002.title"
+		desc = "flavor_Historical_Wars_event.2002.desc"
+		picture = GOOD_WITH_MONARCH_eventPicture
+		#major = yes
+		hidden = yes
+		
+		
+
+		trigger = {
+		has_global_flag = historical_rulers_immortality
+		ruler_has_personality = immortal_personality
+		OR = {
+		AND = {
+		ruler_age = 25
+		has_global_flag = immortality_25
+		}
+		AND = {
+		ruler_age = 40
+		has_global_flag = immortality_40
+		}
+		AND = {
+		ruler_age = 60
+		has_global_flag = immortality_60
+		}
+		}
+		}
+		
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2002.a"
+		ai_chance = { factor = 100 }
+		
+		remove_ruler_personality = immortal_personality
+		
+		}
+
+		}
+		
+		
+		
+		
+		################################
+		## Immortal historical rulers ##
+		################################
+		country_event = {
+		id = flavor_Historical_Wars_event.2005
+		title = "flavor_Historical_Wars_event.2005.title"
+		desc = "flavor_Historical_Wars_event.2005.desc"
+		picture = GOOD_WITH_MONARCH_eventPicture
+		major = yes
+		
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		NOT = { has_global_flag = historical_rulers_immortality }
+		}
+		
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2005.a"
+		ai_chance = { factor = 0 }
+		
+		set_global_flag = historical_rulers_immortality
+		set_global_flag = immortality_25
+		
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2005.b"
+		ai_chance = { factor = 0 }
+		
+		set_global_flag = historical_rulers_immortality
+		set_global_flag = immortality_40
+		
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2005.c"
+		ai_chance = { factor = 0 }
+		
+		set_global_flag = historical_rulers_immortality
+		set_global_flag = immortality_60
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2005.d"
+		ai_chance = { factor = 0 }
+		
+		}
+
+		}
+		
+		
+		
+		
+		####################################
+		## Historical wars event decision ##
+		####################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1337
+		title = "flavor_Historical_Wars_event.1337.title"
+		desc = "flavor_Historical_Wars_event.1337.desc"
+		picture = _BATTLE_eventPicture
+		is_triggered_only = yes
+		major = yes
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1337.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = historical_wars_enabled
+		
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1337.b"
+		ai_chance = { factor = 0 }
+		
+		clr_global_flag = historical_wars_enabled
+		
+		}
+
+		}
+		
+		
+		
+	
+	
+		############################
+		## Historical wars event ##
+		############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1338
+		title = "flavor_Historical_Wars_event.1338.title"
+		desc = "flavor_Historical_Wars_event.1338.desc"
+		picture = _BATTLE_eventPicture
+		fire_only_once = yes
+		major = yes
+		
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		NOT = {has_global_flag = historical_wars_enabled}
+		}
+
+		
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1877.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = historical_wars_enabled
+		set_global_flag = historical_wars_event_triggered
+		
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1877.b"
+		ai_chance = { factor = 0 }
+		
+		set_global_flag = historical_wars_event_triggered
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		################
+		## host check ##
+		################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.100
+		title = "flavor_Historical_Wars_event.100.title"
+		desc = "flavor_Historical_Wars_event.100.desc"
+		picture = BIG_BOOK_eventPicture
+		major = yes
+		
+
+		trigger = {
+		ai = no
+		NOT = {has_country_flag = decided}
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.100.a"
+		ai_chance = { factor = 100 }
+		
+		every_country = {
+		limit = {
+		has_country_flag = is_host
+		}
+		clr_country_flag = is_host
+		}
+		
+		set_country_flag = is_host
+		set_country_flag = decided
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.100.b"
+		ai_chance = { factor = 0 }
+
+		set_country_flag = decided
+		clr_country_flag = is_host
+
+		}
+	
+		}
+		
+		
+		
+		##################################
+		## a.i fort upgrade start event ##
+		##################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1344
+		title = "flavor_Historical_Wars_event.1344.title"
+		desc = "flavor_Historical_Wars_event.1344.desc"
+		picture = SIEGE_eventPicture
+		fire_only_once = yes
+		major = yes
+		
+
+		trigger = {
+		is_year = 1492
+		ai = no
+		has_country_flag = is_host
+		start_date = 1492.01.01
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1344.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = ai_fort_upgrade_enabled
+				
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1344.b"
+		ai_chance = { factor = 0 }
+	
+	
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		####################
+		## migraton event ##
+		####################
+		country_event = {
+		id = flavor_Historical_Wars_event.1405
+		title = "flavor_Historical_Wars_event.1405.title"
+		desc = "flavor_Historical_Wars_event.1405.desc"
+		picture = UNIVERSITY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1405.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = migration_events_enabled
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1405.b"
+		ai_chance = { factor = 100 }
+		
+		clr_global_flag = migration_events_enabled
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		###########################
+		## Historical religions  ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1633
+		title = "flavor_Historical_Wars_event.1633.title"
+		desc = "flavor_Historical_Wars_event.1633.desc"
+		picture = RELIGION_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		}
+		
+		
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1633.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = historical_religions
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1633.b"
+		ai_chance = { factor = 0 }
+
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		
+		###################
+		## colonial help ##
+		###################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1951
+		title = "flavor_Historical_Wars_event.1951.title"
+		desc = "flavor_Historical_Wars_event.1951.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		}
+		
+		
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1951.a"
+		ai_chance = { factor = 100 }
+
+		set_global_flag = colonial_help
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1951.b"
+		ai_chance = { factor = 0 }
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		########################
+		## a.i support events ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1177
+		title = "flavor_Historical_Wars_event.1177.title"
+		desc = "flavor_Historical_Wars_event.1177.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+		
+
+		trigger = {
+		has_country_flag = is_host
+		ai = no
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1177.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = ai_helper_events_enabled
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1177.b"
+		ai_chance = { factor = 0 }
+		
+		clr_global_flag = ai_helper_events_enabled
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		######################
+		## Timurid balancing ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2031
+		title = "flavor_Historical_Wars_event.2031.title"
+		desc = "flavor_Historical_Wars_event.2031.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+
+		trigger = {
+		has_global_flag = historical_balancing
+		is_year = 1492
+		exists = TIM
+		tag = TIM
+		ai = yes
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2031.a"
+		ai_chance = { factor = 100 }
+
+
+		add_country_modifier = {
+		name = timurid_balancing
+		duration = -1
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		#############################
+		## Historical kalmar union ##
+		#############################
+		country_event = {
+		id = flavor_Historical_Wars_event.2038
+		title = "flavor_Historical_Wars_event.2038.title"
+		desc = "flavor_Historical_Wars_event.2038.desc"
+		picture = GOOD_WITH_MONARCH_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		ai = no
+		has_country_flag = is_host
+		OR = {
+		AND = { senior_union_with = NOR senior_union_with = DEN }
+		AND = { senior_union_with = NOR senior_union_with = SWE }
+		AND = { senior_union_with = SWE senior_union_with = DEN }
+		}
+		}
+		
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2038.a"
+		ai_chance = { factor = 0 }
+		
+		if = { limit = { senior_union_with = NOR senior_union_with = DEN } create_subject = { subject_type = kalmar_union subject = DEN } create_subject = { subject_type = kalmar_union subject = NOR } }
+		if = { limit = { senior_union_with = NOR senior_union_with = SWE } create_subject = { subject_type = kalmar_union subject = SWE } create_subject = { subject_type = kalmar_union subject = NOR } }
+		if = { limit = { senior_union_with = SWE senior_union_with = DEN } create_subject = { subject_type = kalmar_union subject = SWE } create_subject = { subject_type = kalmar_union subject = DEN } }
+		
+		set_country_flag = kalmar_union_monarch
+		
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2038.b"
+		ai_chance = { factor = 0 }
+
+		
+		}
+
+
+		}
+		
+
+		
+		
+
+		

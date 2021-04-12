@@ -1,0 +1,70 @@
+#SYR - Syria
+
+government = monarchy
+add_government_reform = competitive_inheritance
+add_government_reform = delegated_rulers
+add_government_reform = hereditary_elite
+government_rank = 1
+mercantilism = 0.0
+primary_culture = syriac 
+religion = chaldean
+technology_group = muslim
+capital = 4058	#382
+
+1000.1.1 = {
+	add_country_modifier = { name = title_3 duration = -1 }
+	set_country_flag = title_3
+	#set_variable = { which = "centralization_decentralization" value = 5 }
+	add_absolutism = -100
+	add_absolutism = 0
+	set_legacy_government = despotic_monarchy
+}
+
+1380.5.6 = {
+	monarch = {
+		name = "Hor-Thutmohept"  #Stepan Surogski
+		dynasty = "sid Hórus"
+		culture = gothic_e
+		birth_date = 1340.1.1
+		death_date = 1403.2.12
+		ADM = 6
+		DIP = 5
+		MIL = 6
+	}
+	define_ruler_to_general = {
+		fire = 6
+		shock = 4
+		manuever = 6
+		siege = 6
+	}
+	queen = {
+		country_of_origin = BYZ
+		name = "Theodóra Justinia"
+		dynasty = "Palaiológos"
+		culture = greek
+		birth_date = 1365.1.1 #dates approximate at best
+		death_date = 1400.7.1
+		female = yes
+		ADM = 5
+		DIP = 6
+		MIL = 6
+	}
+	heir = {
+		name = "Néfertiti"
+		monarch_name = "Neit-Néfertiti XV"
+		dynasty = "sid Hórus"
+		culture = gothic_e
+		birth_date = 1385.1.1
+		death_date = 1402.10.29
+		claim = 95
+		female = yes
+		ADM = 6
+		DIP = 6
+		MIL = 6
+	}
+	set_country_flag = native_greek_state
+	clear_scripted_personalities = yes
+	add_ruler_personality = charismatic_negotiator_personality
+	add_ruler_personality = pious_personality
+	add_ruler_personality = forgiving_personality
+}

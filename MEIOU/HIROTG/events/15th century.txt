@@ -1,0 +1,5640 @@
+		namespace = flavor_Historical_Wars_event
+		
+	
+		
+		
+		
+		################
+		## test event ##
+		################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1111
+		title = "flavor_Historical_Wars_event.1111.title"
+		desc = "flavor_Historical_Wars_event.1111.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+		
+
+		trigger = {
+		is_year = 2000
+		REB = {
+		check_variable = {
+		which = dutch_rebellion_desire
+		value = 1
+		}
+		}
+		1867 = { has_province_flag = holland_flag }
+		1866 = { has_province_flag = helgoland_flag } 
+		1875 = { has_province_flag = greatfisher_flag }
+		1856 = { has_province_flag = the_sound_flag }
+		2057 = { has_province_flag = kattegat_flag }
+		1857 = { has_province_flag = skagerrak_flag }
+		1864 = { has_province_flag = fjords_flag }
+		NED = { has_country_flag = sailing_to_baltic_region }
+		capital_scope = { continent = europe }
+		OR = {
+		num_of_colonies = 1
+		num_of_owned_provinces_with = {
+		value = 1
+		region = carribeans_region
+		}
+		any_subject_country = {
+		is_overseas_subject = yes
+		OR = {
+		num_of_colonies = 1
+		num_of_owned_provinces_with = {
+		value = 1
+		region = carribeans_region
+		}
+		}
+		}
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1111.a"
+		ai_chance = { factor = 100 }
+		
+		every_owned_province = {
+		add_core = ROOT
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1111.b"
+		ai_chance = { factor = 100 }
+		
+		every_province = {
+		limit = {
+		owned_by = DAN
+		}
+		cede_province = DEN
+		}
+		DEN = { create_subject = { subject_type = kalmar_union subject = NOR } }
+		
+		}
+
+	
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1111.c"
+		ai_chance = { factor = 100 }
+		
+		random_owned_province = {
+		change_religion = catholic
+		}
+		
+		random_owned_province = {
+		change_religion = catholic
+		}
+		
+		random_owned_province = {
+		change_religion = catholic
+		}
+		
+		random_owned_province = {
+		change_religion = catholic
+		}
+		
+		change_religion = protestant
+		
+		
+		}
+		
+		}
+
+		
+		
+		
+
+		
+		
+		
+		
+		###############################
+		## Franco - ottoman alliance ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1340
+		title = "flavor_Historical_Wars_event.1340.title"
+		desc = "flavor_Historical_Wars_event.1340.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		is_year = 1536
+		tag = FRA
+		SPA = {exists = yes dynasty = "von Habsburg"}
+		FRA = {ai = yes exists = yes dynasty = "de Valois"}
+		HAB = {exists = yes dynasty = "von Habsburg"}
+		TUR = {ai = yes exists = yes}
+		is_at_war = no
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1340.a"
+		ai_chance = { factor = 95 }
+		
+		set_global_flag = franco_ottoman_alliance
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = franco_ottoman_kinship
+		duration = 3650
+		}
+		
+		every_country = {
+		limit = {
+		OR = {
+		religion = catholic
+		religion = protestant
+		religion = protestant
+		religion = orthodox
+		}
+		}
+		add_trust = {
+    	who = FRA
+    	value = -25
+    	mutual = no
+		}
+		}
+		
+		}
+		
+		create_alliance = TUR
+
+		add_opinion = {
+		who = TUR
+		modifier = opinion_united_against_habsburgs
+		}
+
+		add_trust = {
+    	who = TUR
+    	value = 10
+    	mutual = yes
+		}
+
+		TUR = {
+
+		add_opinion = {
+		who = FRA
+		modifier = opinion_united_against_habsburgs
+		}
+
+		}
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1340.b"
+		ai_chance = { factor = 5 }
+		
+		
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+	
+		
+		
+		#######################
+		## Current trade hub ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1377
+		title = "flavor_Historical_Wars_event.1377.title"
+		desc = "flavor_Historical_Wars_event.1377.desc"
+		picture = TRADING_PORT_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1377.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+		
+		
+		###########################################
+		## Historical Immersion Portugal decision##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1382
+		title = "flavor_Historical_Wars_event.1382.title"
+		desc = "flavor_Historical_Wars_event.1382.desc"
+		picture = BIG_BOOK_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1382.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+
+		}
+		
+		
+		
+		
+		########################
+		## spice trade claim ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1383
+		title = "flavor_Historical_Wars_event.1383.title"
+		desc = "flavor_Historical_Wars_event.1383.desc"
+		picture = TRADEGOODS_eventPicture
+
+		trigger = {
+		has_global_flag = europeans_discover_spice_islands
+		NOT = { 596 = {	owned_by = ROOT } }
+		NOT = { 624 = {	owned_by = ROOT } }
+		is_subject = no
+		capital_scope = { continent = europe }
+		OR = {
+		full_idea_group = trade_ideas
+		development = 100
+		}
+		AND = {
+		NOT = {is_claim = 596}
+		NOT = {is_claim = 624}
+		}
+		has_discovered = 596
+		has_discovered = 624
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1383.a"
+		ai_chance = { factor = 100 }
+
+		add_claim = 596
+		add_claim = 624
+		
+		}
+
+		}
+		
+		
+		
+		##############################################
+		## Historical Immersion spice trade decision##
+		##############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1384
+		title = "flavor_Historical_Wars_event.1384.title"
+		desc = "flavor_Historical_Wars_event.1384.desc"
+		picture = TRADEGOODS_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1384.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+
+		}
+		
+	
+		
+		
+		
+		
+		
+		
+		#####################################################
+		## Europeans lose control over over Luanda harbor ##
+		#####################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1387
+		title = "flavor_Historical_Wars_event.1387.title"
+		desc = "flavor_Historical_Wars_event.1387.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		province_id = 2879
+		has_province_modifier = luanda_trade_outpost
+		NOT = {
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		}
+		
+		
+		
+		immediate = {
+		
+		remove_province_modifier = luanda_trade_outpost
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1387.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		################################################
+		## Europeans seize control over Luanda harbor ##
+		###############################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1388
+		title = "flavor_Historical_Wars_event.1388.title"
+		desc = "flavor_Historical_Wars_event.1388.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		is_colony = no
+		province_id = 2879
+		NOT = { has_province_modifier = luanda_trade_outpost }
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		
+		
+		immediate = {
+		
+		add_permanent_province_modifier = {
+		name = luanda_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1388.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+
+		}
+
+		}
+
+
+
+		
+		
+		
+		
+		
+		#####################################################
+		## Europeans lose control over over Malindi harbor ##
+		#####################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1389
+		title = "flavor_Historical_Wars_event.1389.title"
+		desc = "flavor_Historical_Wars_event.1389.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		province_id = 1187
+		has_province_modifier = malindi_trade_outpost
+		NOT = {
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		}
+		
+		
+		
+		immediate = {
+		
+		remove_province_modifier = malindi_trade_outpost
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1389.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+
+
+
+		################################################
+		## Europeans seize control over Malindi harbor ##
+		###############################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1390
+		title = "flavor_Historical_Wars_event.1390.title"
+		desc = "flavor_Historical_Wars_event.1390.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		province_id = 1187
+		is_colony = no
+		NOT = { has_province_modifier = malindi_trade_outpost }
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		
+		
+		immediate = {
+		
+		add_permanent_province_modifier = {
+		name = malindi_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1390.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+		
+		}
+
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		##########################################
+		## Treaty of Windsor - Portugal decides ##
+		##########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1367
+		title = "flavor_Historical_Wars_event.1367.title"
+		desc = "flavor_Historical_Wars_event.1367.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1367.a"
+		ai_chance = { factor = 95 }
+		
+		set_global_flag = treaty_of_windsor
+
+		from = {
+		
+		remove_country_modifier = treaty_of_windsor_not_ratified
+		
+		add_country_modifier = {
+		name = treaty_of_windsor
+		duration = -1
+		}
+
+		}
+		
+		remove_country_modifier = treaty_of_windsor_not_ratified
+
+		add_country_modifier = {
+		name = treaty_of_windsor
+		duration = -1
+		}
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1367.b"
+		ai_chance = { factor = 5 }
+		
+		set_global_flag = treaty_of_windsor_rejected
+
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = -1
+		}
+
+		from = {
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = -1
+		}
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		########################
+		## Treaty of Windsor  ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1394
+		title = "flavor_Historical_Wars_event.1394.title"
+		desc = "flavor_Historical_Wars_event.1394.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		is_year = 1386
+		OR = {
+		tag = ENG
+		tag = GBR
+		}
+		alliance_with = POR
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1394.a"
+		ai_chance = { factor = 95 }
+		
+		set_global_flag = treaty_of_windsor_initial_event
+		
+		POR = {
+		country_event = { id = flavor_Historical_Wars_event.1367 days = 1 }
+		}
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1394.b"
+		ai_chance = { factor = 5 }
+		
+		set_global_flag = treaty_of_windsor_rejected
+		
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = 9125
+		}
+		
+		POR = {
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = 9125
+		}
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		######################################
+		## Treaty of Windsor declared null  ##
+		######################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1395
+		title = "flavor_Historical_Wars_event.1395.title"
+		desc = "flavor_Historical_Wars_event.1395.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		
+
+		trigger = {
+		is_year = 1386
+		OR = {
+		tag = ENG
+		tag = GBR
+		}
+		NOT = {alliance_with = POR}
+		has_global_flag = treaty_of_windsor
+		}
+		
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1395.a"
+		ai_chance = { factor = 100 }
+		
+		clr_global_flag = treaty_of_windsor
+		
+		remove_country_modifier = treaty_of_windsor
+		
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = -1
+		}
+		
+		POR = {
+		
+		remove_country_modifier = treaty_of_windsor
+		
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = -1
+		}
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		################################
+		## Treaty of Windsor restored ##
+		################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1396
+		title = "flavor_Historical_Wars_event.1396.title"
+		desc = "flavor_Historical_Wars_event.1396.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		
+
+		trigger = {
+		is_year = 1386
+		OR = {
+		tag = ENG
+		tag = GBR
+		}
+		alliance_with = POR
+		has_global_flag = treaty_of_windsor_initial_event
+		NOT = {has_global_flag = treaty_of_windsor}
+		NOT = {has_global_flag = treaty_of_windsor_rejected}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1396.a"
+		ai_chance = { factor = 95 }
+		
+		POR = {
+		country_event = { id = flavor_Historical_Wars_event.1367 days = 1 }
+		}
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1396.b"
+		ai_chance = { factor = 5 }
+		
+		set_global_flag = treaty_of_windsor_rejected
+		
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = 9125
+		}
+		
+		POR = {
+		add_country_modifier = {
+		name = treaty_of_windsor_not_ratified
+		duration = 9125
+		}
+		}
+
+		}
+		
+		}
+		
+			
+
+		
+		
+		###################################
+		## Scandinavian balance of power  ##
+		###################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1402
+		title = "flavor_Historical_Wars_event.1402.title"
+		desc = "flavor_Historical_Wars_event.1402.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+		trigger = {
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		OR = {
+		SWE = { OR = { war_score_against = { who = DAN value = 25 } war_score_against = { who = DEN value = 25 } } }
+		DEN = { war_score_against = { who = SWE value = 25 } }
+		DAN = { war_score_against = { who = SWE value = 25 } }
+		}
+		tag = NED
+		exists = NED
+		NOT = { war_with = SWE }
+		NOT = { war_with = DAN }
+		NOT = { war_with = DEN }
+		NOT = { has_country_modifier = scandinavian_balance_of_power_decision }
+		has_country_flag = moedernegotiee
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+		
+		
+		immediate = {
+		
+		hidden_effect = {
+		add_country_modifier = {
+		name = scandinavian_balance_of_power_decision
+		hidden = yes
+		duration = 3650
+		}
+		}
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1402.a"
+		ai_chance = { factor = 80 }
+
+
+		if = {
+		limit = {
+		DAN = { war_score_against = { who = SWE value = 25 } }
+		}
+		declare_war_with_cb = {
+		who = DAN
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+		else_if = {
+		limit = {
+		DEN = { war_score_against = { who = SWE value = 25 } }
+		}
+		declare_war_with_cb = {
+		who = DEN
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+		else_if = {
+		limit = {
+		SWE = { OR = { war_score_against = { who = DAN value = 25 } war_score_against = { who = DEN value = 25 } } }
+		}
+		declare_war_with_cb = {
+		who = SWE
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+
+		}
+
+	
+
+		option = {
+		name = "flavor_Historical_Wars_event.1402.b"
+		ai_chance = { factor = 20 }
+		
+		add_stability = -1
+		add_prestige = -25
+
+		}
+
+		}
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		#############################
+		## Negotiations for Calais ##
+		############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1417
+		title = "flavor_Historical_Wars_event.1417.title"
+		desc = "flavor_Historical_Wars_event.1417.desc"
+		picture = DIPLOMACY_eventPicture
+		is_triggered_only = yes
+		major = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1417.a"
+		ai_chance = { factor = 90 }
+		
+		63 = {cede_province = FRA}
+		white_peace = ENG
+
+		}
+
+		option = {
+		name = "flavor_Historical_Wars_event.1417.b"
+		ai_chance = { factor = 10 }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		#####################
+		## Fall of Granada ##
+		#####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1419
+		title = "flavor_Historical_Wars_event.1419.title"
+		desc = "flavor_Historical_Wars_event.1419.desc"
+		picture = RECONQUISTA_eventPicture
+		fire_only_once = yes
+		major = yes
+
+		
+		trigger = {
+		NOT = {is_year = 1500}
+		exists = CAS
+		exists = GRA
+		tag = CAS
+		war_with = GRA
+		NOT = {
+		iberia_superregion = {
+		controlled_by = GRA
+		owned_by = GRA
+		}
+		}
+		iberia_superregion = {
+		controlled_by = CAS
+		owned_by = GRA
+		}
+ 		
+		has_ruler_modifier = servant_of_god
+		
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1419.a"
+		ai_chance = { factor = 100 }
+		
+		every_province = {
+		limit = {
+		NOT = {has_province_modifier = guaranteed_religious_rights}
+		owned_by = GRA
+		OR = {
+		controlled_by = CAS
+		controlled_by = ARA
+		}
+		}
+		add_province_modifier = {
+		name = guaranteed_religious_rights
+		duration = 3650  
+		hidden = no
+		}
+		cede_province = CAS
+		}
+		
+		white_peace = GRA
+		
+		}
+
+		}
+
+		
+		
+		
+		
+		
+		########################
+		## Fall of Ak Koyunlu ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1455
+		title = "flavor_Historical_Wars_event.1455.title"
+		desc = "flavor_Historical_Wars_event.1455.desc"
+		picture = BATTLE_eventPicture
+		fire_only_once = yes
+		major = yes
+
+		
+		trigger = {
+		war_with = TUR
+		TUR = {
+		war_score_against = {
+		who = ROOT
+		value = 25
+		}
+		}
+		tag = AKK
+		exists = AKK
+		is_year = 1473
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1455.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = fall_of_ak_koyunlu
+		
+		add_stability = -3
+		
+		central_asia = {
+		kill_units = {
+		who = AKK
+		}
+		}
+		
+		hidden_effect = {
+		
+		every_owned_province = {
+		limit = {
+		culture = persian
+		owned_by = AKK
+		}
+		spawn_rebels = {
+		type = nationalist_rebels
+		size = 3
+		}
+		}
+		
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		##########################
+		## First Shah of Persia ##
+		##########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.14555
+		title = "flavor_Historical_Wars_event.14555.title"
+		desc = "flavor_Historical_Wars_event.14555.desc"
+		picture = BATTLE_eventPicture
+		fire_only_once = yes
+		major = yes
+
+		
+		trigger = {
+		tag = PER
+		exists = PER
+		has_global_flag = fall_of_ak_koyunlu
+		is_at_war = no
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.14555.a"
+		ai_chance = { factor = 100 }
+		
+
+		define_ruler = {
+		adm = 3
+		dip = 4
+		mil = 5
+		dynasty = "Safavi"
+		name = "Ismail I"
+		birth_date = 1487.05.23
+		}
+				
+		add_ruler_modifier = { name = first_shah }
+		
+		if = { limit = { has_global_flag = historical_rulers_immortality } add_ruler_personality = immortal_personality }
+		
+		declare_war_with_cb = {
+		who = AKK
+		casus_belli = cb_historical_wars_persian_conquest
+		}
+		
+		}
+
+		}
+	
+		
+	
+		
+		
+
+
+
+		###############################
+		## Franco - ottoman kinship ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1499
+		title = "flavor_Historical_Wars_event.1499.title"
+		desc = "flavor_Historical_Wars_event.1499.desc"
+		picture = DIPLOMACY_eventPicture
+		
+
+		trigger = {
+		ai = yes
+		is_year = 1540
+		NOT = {is_year = 1776}
+		tag = FRA
+		exists = SPA
+		exists = FRA
+		exists = HAB
+		exists = TUR
+		SPA = {dynasty = "von Habsburg"}
+		FRA = {ai = yes}
+		HAB = {dynasty = "von Habsburg"}
+		TUR = {ai = yes}
+		NOT = {has_country_modifier = franco_ottoman_kinship}
+		NOT = {FRA = {war_with = TUR}}
+		NOT = {is_rival = TUR}
+		has_global_flag = franco_ottoman_alliance
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1499.a"
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = franco_ottoman_kinship
+		duration = 3650
+		}
+		
+		}
+
+		add_opinion = {
+		who = TUR
+		modifier = opinion_united_against_habsburgs
+		}
+
+		add_trust = {
+    	who = TUR
+    	value = 10
+    	mutual = yes
+		}
+
+		TUR = {
+
+		add_opinion = {
+		who = FRA
+		modifier = opinion_united_against_habsburgs
+		}
+
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		###############################
+		## Monopoly lost spice trade ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1515
+		title = "flavor_Historical_Wars_event.1515.title"
+		desc = "flavor_Historical_Wars_event.1515.desc"
+		picture = TRADING_PORT_eventPicture
+		major = yes
+
+
+		trigger = {
+		tag = POR
+		exists = POR
+		has_country_flag = spice_trade_monopoly
+		OR = {
+		596 = {
+		NOT = { owned_by = ROOT }
+		}
+		624 = {
+		NOT = { owned_by = ROOT }
+		}
+		}
+		}	
+		
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1515.a"
+		ai_chance = { factor = 100 }
+
+		remove_country_modifier = spice_trade_monopoly
+		clr_country_flag = spice_trade_monopoly
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+		##############################
+		## Monopolozing spice trade ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1516
+		title = "flavor_Historical_Wars_event.1516.title"
+		desc = "flavor_Historical_Wars_event.1516.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+
+
+		trigger = {
+		tag = POR
+		exists = POR
+		596 = {	owned_by = POR }
+		624 = {	owned_by = POR }
+		has_country_modifier = spice_trade_duties
+		NOT = {has_country_flag = spice_trade_monopoly}
+		NOT = {has_country_flag = monopoly_not_possible}
+		}
+		
+
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1516.a"
+		ai_chance = { factor = 100 }
+		
+		596 = { if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } } }
+		624 = { if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } } }
+
+		add_country_modifier = {
+		name = spice_trade_monopoly
+		duration = -1
+		}
+		
+		set_country_flag = spice_trade_monopoly
+
+		}
+
+		}
+
+
+
+		##########################
+		## Hollandic Water Line ##
+		##########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1518
+		title = "flavor_Historical_Wars_event.1518.title"
+		desc = "flavor_Historical_Wars_event.1518.desc"
+		picture = HARBOUR_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1629
+		exists = NED
+		tag = NED
+		is_at_war = no
+		97 = { owned_by = NED }
+		2370 = { owned_by = NED }
+		99 = { owned_by = NED }
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1518.a"
+		ai_chance = { factor = 95 }
+
+		set_country_flag = hollandic_water_line
+
+		add_treasury = -1000
+		
+		2370 = { add_province_modifier = { name = "hollandsche_waterlinie" duration = -1 } }
+		99 = { add_province_modifier = { name = "hollandsche_waterlinie" duration = -1 } }
+
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1518.b"
+		ai_chance = { factor = 5 }
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+	
+
+
+
+		#####################################################
+		## England loses control over over Calais strait  ##
+		#####################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1528
+		title = "flavor_Historical_Wars_event.1528.title"
+		desc = "flavor_Historical_Wars_event.1528.desc"
+		picture = TRADING_PORT_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		has_country_flag = calais_control
+		63 = {
+		NOT = {owned_by = ROOT}
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1528.a"
+		ai_chance = { factor = 100 }
+
+		clr_country_flag = calais_control
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		add_claim = 63
+		}
+
+		hidden_effect = {
+		europe = {
+		limit = {
+		has_province_modifier = calais_export_boost
+		}
+		remove_province_modifier = calais_export_boost
+		}
+		}
+
+		63 = {
+		remove_trade_modifier = {
+		who = ROOT
+		name = calais_strait_control
+		}
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		################################################
+		## England seizes control over Calais strait ##
+		###############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1529
+		title = "flavor_Historical_Wars_event.1529.title"
+		desc = "flavor_Historical_Wars_event.1529.desc"
+		picture = TRADING_PORT_eventPicture
+		major = yes
+
+
+		trigger = {
+		NOT = {has_country_flag = calais_control}
+		OR = {
+		AND = {
+		63 = {owned_by = ENG}
+		tag = ENG
+		exists = ENG
+		}
+		AND = {
+		63 = {owned_by = GBR}
+		tag = GBR
+		exists = GBR
+		}
+		}
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1529.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = calais_control
+
+		hidden_effect = {
+		every_owned_province = {
+		limit = {
+		superregion = british_isles_superregion
+		}
+		add_province_modifier = { 
+	    name = calais_export_boost
+	    duration = -1
+	    hidden = no
+		}
+		}
+		}
+
+		63 = {
+		
+		hidden_effect = {
+		add_permanent_claim = FRA
+		}
+
+		add_trade_modifier = {
+		who = root
+		duration = -1
+		power = 25
+		name = calais_strait_control
+
+		}
+
+		}
+
+
+		}
+
+		}
+
+
+
+		#############################
+		## Negotiations for Calais ##
+		############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1530
+		title = "flavor_Historical_Wars_event.1530.title"
+		desc = "flavor_Historical_Wars_event.1530.desc"
+		picture = DIPLOMACY_eventPicture
+		is_triggered_only = yes
+		major = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1530.a"
+		ai_chance = { factor = 85 }
+		
+		add_treasury = 250
+		white_peace = ENG
+
+		}
+
+		option = {
+		name = "flavor_Historical_Wars_event.1530.b"
+		ai_chance = { factor = 15 }
+
+		add_treasury = 250
+
+		add_country_modifier = {
+		name = deceitful
+		duration = 1825
+		}
+
+		}
+
+		}
+
+
+
+
+
+		######################
+		## Retaining Calais ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1531
+		title = "flavor_Historical_Wars_event.1531.title"
+		desc = "flavor_Historical_Wars_event.1531.desc"
+		picture = TRADING_PORT_eventPicture
+
+
+
+		trigger = {
+		is_year = 1356
+		63 = {owned_by = ENG}
+		63 = {controlled_by = FRA}
+		tag = ENG
+		exists = ENG
+		NOT = {has_country_modifier = calais_negotiations}
+		FRA = {
+		war_score_against = {
+		who = ENG
+		value = 10
+		}
+		}
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1531.a"
+		trigger = {
+		NOT = { is_year = 1558 }
+		OR = {
+		AND = {
+		ai = yes
+		NOT = { num_of_loans = 5 }
+		}
+		ai = no
+		}
+		}
+		ai_chance = { factor = 85 }
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		add_treasury = -125
+		}
+		else = {
+		add_treasury = -250
+		}
+		
+		hidden_effect = {
+
+		add_country_modifier = {
+		name = calais_negotiations
+		duration = 1825
+		}
+		
+		}
+
+		FRA = {country_event = { id = flavor_Historical_Wars_event.1530 days = 5}}
+
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1531.b"
+		ai_chance = { factor = 15 }
+
+		add_prestige  = 5
+		
+		hidden_effect = {
+
+		add_country_modifier = {
+		name = calais_negotiations
+		duration = 1825
+		}
+		
+		}
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1531.c"
+		trigger = { is_year = 1558 }
+		ai_chance = { factor = 100 }
+
+		add_prestige  = -10
+		
+		hidden_effect = {
+
+		add_country_modifier = {
+		name = calais_negotiations
+		duration = 1825
+		}
+		
+		}
+		
+		FRA = { country_event = { id = flavor_Historical_Wars_event.1417 days = 5}}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+		#######################
+		## Current trade hub ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1666
+		title = "flavor_Historical_Wars_event.1666.title"
+		desc = "flavor_Historical_Wars_event.1666.desc"
+		picture = TRADING_PORT_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1666.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+
+
+
+
+		#######################
+		## Current trade hub ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1667
+		title = "flavor_Historical_Wars_event.1667.title"
+		desc = "flavor_Historical_Wars_event.1667.desc"
+		picture = TRADING_PORT_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1667.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+
+
+
+
+		#######################
+		## Current trade hub ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1668
+		title = "flavor_Historical_Wars_event.1668.title"
+		desc = "flavor_Historical_Wars_event.1668.desc"
+		picture = TRADING_PORT_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1668.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+		#######################
+		## Current trade hub ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1669
+		title = "flavor_Historical_Wars_event.1669.title"
+		desc = "flavor_Historical_Wars_event.1669.desc"
+		picture = TRADING_PORT_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1669.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}	
+
+
+
+
+
+
+
+
+		########################################
+		## Habsburgs Austrian branch dies out ##
+		########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1686
+		title = "flavor_Historical_Wars_event.1686.title"
+		desc = "flavor_Historical_Wars_event.1686.desc"
+		picture = DEATH_OF_HEIR_eventPicture
+		major = yes
+		fire_only_once = yes	
+
+
+		trigger = {
+		tag = HAB
+		exists = HAB
+		NOT = {dynasty = "von Habsburg"}
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1686.a"
+		ai_chance = { factor = 100 }
+
+		remove_opinion = {
+		who = SPA
+		modifier = opinion_united_dynasties
+		}
+
+		remove_country_modifier = habsburgs_united
+
+
+		SPA = {
+
+		remove_opinion = {
+		who = HAB
+		modifier = opinion_united_dynasties
+		}
+
+		remove_country_modifier = habsburgs_united
+
+		}
+
+
+		}
+
+		}
+
+
+
+		
+
+
+
+		#######################
+		## Dynamic trade hubs ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1689
+		title = "flavor_Historical_Wars_event.1689.title"
+		desc = "flavor_Historical_Wars_event.1689.desc"
+		picture = TRADING_PORT_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1689.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+
+
+		######################################
+		## Portugese second conquest of Diu ##
+		######################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1690
+		title = "flavor_Historical_Wars_event.1690.title"
+		desc = "flavor_Historical_Wars_event.1690.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+
+
+		trigger = {
+		is_year = 1531
+		NOT = {is_year = 1545}
+		tag = POR
+		POR = {is_at_war = no}
+		exists = GUJ
+		3238 = { owned_by = GUJ }
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1690.a"
+		ai_chance = { factor = 80 }
+
+
+		add_claim = 3238
+		add_claim = 531
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		discover_province = 3238
+		discover_province = 531
+		discover_province = 1931
+		}
+
+		declare_war_with_cb = {
+		who = GUJ
+		casus_belli = cb_historical_wars_battle_of_diu
+		}
+
+		hidden_effect = {
+		TUR = {
+		country_event = { id = flavor_Historical_Wars_event.1724 days = 5 }
+		}
+		}
+
+
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1690.b"
+		ai_chance = { factor = 20 }
+
+		add_stability = -1
+		add_prestige = -25
+
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		###################################################
+		## Europeans lose control over over Elmina harbor ##
+		###################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1691
+		title = "flavor_Historical_Wars_event.1691.title"
+		desc = "flavor_Historical_Wars_event.1691.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		province_id = 2878
+		has_province_modifier = elmina_trade_outpost
+		is_year = 1356
+		NOT = {
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		}
+		
+		
+		
+		immediate = {
+		
+		remove_province_modifier = elmina_trade_outpost
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1691.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+
+
+
+
+
+
+		################################################
+		## Europeans seize control over Elmina harbor ##
+		###############################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1692
+		title = "flavor_Historical_Wars_event.1692.title"
+		desc = "flavor_Historical_Wars_event.1692.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		province_id = 2878
+		NOT = { has_province_modifier = elmina_trade_outpost }
+		is_colony = no
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		
+		
+		immediate = {
+		
+		add_permanent_province_modifier = {
+		name = elmina_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1692.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+		
+		}
+
+		}
+		
+		
+		
+
+
+
+
+
+
+
+
+
+		###########################
+		## Battle of River Duyon ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1701
+		title = "flavor_Historical_Wars_event.1701.title"
+		desc = "flavor_Historical_Wars_event.1701.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+
+
+		trigger = {
+		is_year = 1629
+		NOT = {is_year = 1640}
+		tag = ATJ
+		exists = ATJ
+		ATJ = {is_at_war = no}
+		596 = { owned_by = POR }
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1701.a"
+		ai_chance = { factor = 90 }
+
+		add_claim = 596
+
+
+		declare_war_with_cb = {
+		who = POR
+		casus_belli = cb_historical_wars_superiority
+		}
+
+		POR = {
+		define_admiral = {
+		name = "Alvares Botelho"
+		shock = 4
+		fire = 4
+		manuever = 2
+		trait = buccaneer_personality
+		}
+
+		}
+
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1701.b"
+		ai_chance = { factor = 10 }
+
+		add_stability = -1
+		add_prestige = -25
+
+
+		}
+
+		}
+
+
+
+		##################
+		## Aceh revolt  ##
+		##################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1702
+		title = "flavor_Historical_Wars_event.1702.title"
+		desc = "flavor_Historical_Wars_event.1702.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+
+
+		trigger = {
+		is_year = 1496
+		tag = PAS
+		617 = { owned_by = PAS }
+		exists = PAS
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1702.a"
+		ai_chance = { factor = 100 }
+
+		PAS = {
+		every_owned_province = {
+		cede_province = ATJ
+		}
+
+		}
+
+		ATJ = {
+
+		hidden_effect = {
+
+		discover_province = 1955
+		discover_province = 596
+		discover_province = 3239
+		discover_province = 407
+		discover_province = 2830
+		discover_province = 597
+
+		}
+
+		add_treasury = 200
+		add_manpower = 25
+		add_prestige = 100
+		
+		if = {
+		limit = {
+		has_global_flag = historical_balancing
+		}
+		add_country_modifier = {
+		name = aceh_balancing
+		duration = -1
+		}
+		}
+
+		}
+
+
+		hidden_effect = {
+		sumatra_region = {
+		add_permanent_claim = ATJ
+		}
+		}
+
+		MKP = {
+		declare_war_with_cb = {
+		who = ATJ
+		casus_belli = cb_historical_wars_conquest
+		}
+		}
+
+		}
+
+		}
+
+
+
+
+		
+
+
+
+		##################################
+		## Portugal islamic influences  ##
+		#################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1713
+		title = "flavor_Historical_Wars_event.1713.title"
+		desc = "flavor_Historical_Wars_event.1713.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1492
+		tag = POR
+		exists = POR
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1713.a"
+		ai_chance = { factor = 100 }
+
+		add_country_modifier = {
+		name = islamic_influences
+		duration = 54750
+		}
+
+		}
+
+
+		}
+
+
+
+
+		##################################
+		## Leading trade city - Venice ##
+		##################################
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1759
+		title = "flavor_Historical_Wars_event.1759.title"
+		desc = "flavor_Historical_Wars_event.1759.desc"
+		picture = TRADING_PORT_eventPicture
+		fire_only_once = yes
+		major = yes
+
+		trigger = {
+		ai = no
+		112 = {
+		owner = {
+		religion = catholic
+		}
+		}
+		}
+		
+		
+		immediate = {
+		set_global_flag = Venice_trade_capital
+		}
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1759.a"
+		ai_chance = { factor = 100 }
+		
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		#####################
+		## Venice tariff ##
+		#####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1760
+		title = "flavor_Historical_Wars_event.1760.title"
+		desc = "flavor_Historical_Wars_event.1760.desc"
+		picture = ECONOMY_eventPicture
+		major = yes
+
+
+		trigger = {
+		has_global_flag = Venice_trade_capital
+		112 = { owned_by = ROOT NOT = { has_province_modifier = venice_tariff } }
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1760.a"
+		ai_chance = { factor = 100 }
+		
+		112 = {
+		add_province_modifier = {
+		name = "venice_tariff"
+		duration = 730
+		}
+		}
+		
+		random_active_trade_node = {
+			limit = {
+				province_id = 112
+			}
+			add_trade_node_income = 10
+		}
+
+		}
+
+		}
+
+
+		
+
+
+
+
+
+		#####################
+		## Opressed Danes ##
+		#####################
+		country_event = {
+		id = flavor_Historical_Wars_event.1773
+		title = "flavor_Historical_Wars_event.1773.title"
+		desc = "flavor_Historical_Wars_event.1773.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+
+
+		trigger = {
+		NOT = {tag = DEN}
+		NOT = {tag = DAN}
+		OR = {
+		exists = DEN
+		exists = DAN
+		}
+		OR = {
+		num_of_owned_provinces_with = {
+		value = 4
+		culture = danish
+		has_owner_accepted_culture = no
+		}
+		num_of_owned_provinces_with = {
+		value = 3
+		culture = danish
+		has_owner_accepted_culture = no
+		OR = {
+		area = jutland_area
+		area = denmark_area
+		}
+		}  
+		}
+		 
+		NOT = {has_country_modifier = oppressed_danes}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 3  
+		}
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1773.a"
+		ai_chance = { factor = 100 }
+
+		every_owned_province = {
+		limit = {
+		culture = danish
+		}
+		add_unrest = 10
+		spawn_rebels = {
+		type = nationalist_rebels
+		size = 1.5
+		}
+		}
+
+
+		add_country_modifier = {
+		name = oppressed_danes
+		duration = 9125
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+		#######################
+		## Berber rebellions ##
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1790
+		title = "flavor_Historical_Wars_event.1790.title"
+		desc = "flavor_Historical_Wars_event.1790.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		OR = {
+		religion = catholic
+		religion = protestant
+		religion = reformed
+		}
+		num_of_owned_provinces_with = {
+		value = 1
+		religion = sunni
+		OR = {
+		region = west_sahara_region
+		region = west_maghreb_region
+		region = central_maghreb_region
+		region = east_maghreb_region
+		region = east_sahara_region
+		}
+		AND = {
+		NOT = {province_id = 2258}
+		NOT = {province_id = 354}
+		NOT = {province_id = 353}
+		NOT = {province_id = 2868}
+		NOT = {province_id = 2867}
+		NOT = {province_id = 341}
+		NOT = {province_id = 2860}
+		NOT = {province_id = 340}
+		NOT = {province_id = 733}
+		NOT = {province_id = 337}
+		NOT = {province_id = 2866}
+		NOT = {province_id = 1534}
+		NOT = {province_id = 1887}
+		NOT = {province_id = 2971}
+		NOT = {province_id = 1533}
+		NOT = {province_id = 334}
+		NOT = {province_id = 2896}
+		NOT = {province_id = 2962}
+		NOT = {province_id = 4073}
+		NOT = {province_id = 2869}
+		NOT = {province_id = 351}
+		NOT = {province_id = 350}
+		NOT = {province_id = 2863}
+		NOT = {province_id = 340}
+		NOT = {province_id = 2865}
+		NOT = {province_id = 2863}
+		NOT = {province_id = 351}
+		}
+		}		
+		NOT = {has_country_modifier = oppressed_berbers}	
+		}
+			
+
+
+
+		mean_time_to_happen = {        
+		months = 6  
+		}
+
+		###########
+		##options##
+		###########
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1866.a"
+		ai_chance = { factor = 100 }
+
+		every_owned_province = {
+		limit = {
+		religion = sunni
+		OR = {
+		region = west_sahara_region
+		region = west_maghreb_region
+		region = central_maghreb_region
+		region = east_maghreb_region
+		region = east_sahara_region
+		}
+		AND = {
+		NOT = {province_id = 2258}
+		NOT = {province_id = 354}
+		NOT = {province_id = 353}
+		NOT = {province_id = 2868}
+		NOT = {province_id = 2867}
+		NOT = {province_id = 341}
+		NOT = {province_id = 2860}
+		NOT = {province_id = 340}
+		NOT = {province_id = 733}
+		NOT = {province_id = 337}
+		NOT = {province_id = 2866}
+		NOT = {province_id = 1534}
+		NOT = {province_id = 1887}
+		NOT = {province_id = 2971}
+		NOT = {province_id = 1533}
+		NOT = {province_id = 334}
+		NOT = {province_id = 2896}
+		NOT = {province_id = 2962}
+		NOT = {province_id = 4073}
+		NOT = {province_id = 2869}
+		}
+		}
+		add_unrest = 10
+		spawn_rebels = {
+		type = nationalist_rebels
+		size = 2
+		}
+		}
+		
+		hidden_effect = {
+		add_country_modifier = {
+		name = oppressed_berbers
+		duration = 9125
+		}
+		}
+
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+		################
+		## 1492 start ##
+		################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1800
+		title = "flavor_Historical_Wars_event.1800.title"
+		desc = "flavor_Historical_Wars_event.1800.desc"
+		picture = BIG_BOOK_eventPicture
+		fire_only_once = yes
+		#major = yes
+		hidden = yes
+
+
+		trigger = {
+		start_date = 1492.01.01
+		}
+		
+		
+		immediate = {
+		hidden_effect = {
+		
+		ENG = {
+		add_historical_rival = SCO
+		}
+
+		every_country = {
+		add_splendor = 800
+		}
+		
+		TUR = {
+		create_subject = {
+			who = CRI
+			subject_type = rebellious_subjugated_tributary
+		}
+		}
+
+		POL = {
+		create_subject = {
+			who = DNZ
+			subject_type = decentralized_vassal
+		}
+		create_subject = {
+			who = TEU
+			subject_type = decentralized_vassal
+		}
+		}
+		
+		370 = {
+		add_core = ICE
+		}
+		
+		371 = {
+		add_core = ICE
+		}
+		
+		370 = {
+		add_core = ICE
+		}
+
+		431 = {
+		change_province_name = "Hormuz"
+		}
+		
+		1021 = {
+		change_province_name = "Dejima"
+		}
+		
+		2878 = {
+		add_core = POR
+		change_religion = catholic	
+		change_culture = portugese	
+		}
+
+		1138 = {
+		add_core = POR
+		change_religion = catholic	
+		change_culture = portugese	
+		}
+
+		3816 = {
+		add_core = POR
+		change_religion = catholic	
+		change_culture = portugese	
+		}
+
+		2872 = {
+		add_core = POR
+		change_religion = catholic	
+		change_culture = portugese	
+		}
+
+		2870 = {
+		add_core = POR
+		change_religion = catholic	
+		change_culture = portugese	
+		}
+			
+		#2342 = {
+		#cede_province = AYL
+		#add_core = AYL
+		#change_culture = chiribaya
+		#change_religion = inti
+		#}
+		
+		2346 = {
+		cede_province = MAP
+		add_core = MAP
+		change_culture = mapuche
+		change_religion = pantheist
+		}
+
+		POR = { discover_province = 2767 }
+
+
+		FRA = {
+		add_permanent_claim = 63
+		}
+
+		POR = {
+		set_country_flag = vasco_de_gama
+		add_idea_group = exploration_ideas
+		add_idea = quest_for_the_new_world
+		add_idea = overseas_exploration
+		add_idea = colonial_ventures
+
+		if = {
+		limit = {
+		POR = { ai = yes }
+		}
+		762 = { cede_province = POR }
+		762 = {
+		add_core = POR
+		change_religion = catholic	
+		change_culture = portugese	
+		}
+
+		}
+
+		}
+
+		CAS = {
+		
+		kill_leader = {
+		type = explorer
+		}
+				
+		capital_scope = {
+		artillery = CAS
+		}
+		
+		capital_scope = {
+		artillery = CAS
+		}
+		
+		capital_scope = {
+		artillery = CAS
+		}
+		
+		create_marriage = ARA
+
+		create_guarantee = NAV
+		add_truce_with = SAV
+		add_truce_with = NAV
+
+		add_idea_group = exploration_ideas
+		add_idea = quest_for_the_new_world
+		add_idea = overseas_exploration
+		add_idea = colonial_ventures
+
+		declare_war_with_cb = {
+		who = GRA
+		casus_belli = cb_historical_wars_superiority
+		}
+		
+		if = {
+		limit = {
+		CAS = {ai = yes}
+		ARA = {ai = yes}
+		}
+		create_alliance = ARA
+		create_marriage = HAB
+		}
+
+		}
+		
+		ARA = {
+		
+		declare_war_with_cb = {
+		who = GRA
+		casus_belli = cb_historical_wars_superiority
+		}
+		
+		}
+		
+		HAB = {
+		
+		set_capital = 83
+		83 = { if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } } }
+
+		set_global_flag = dutch_rebellion_start
+			REB = {
+				set_variable = { which = dutch_rebellion_desire value = 0 }
+				country_event = { id = flavor_svp.99 days = 3650 }
+			}
+
+			# Inheritor gives SVP its provinces
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+						region = east_france_region
+						province_id = 94
+					}
+				}
+				remove_core = HAB
+				add_core = SVP
+				cede_province = SVP
+			}
+			
+			#create_union = SVP
+			create_subject = {
+				subject_type = rebellious_subjugated_vassal
+				who = SVP
+			}
+
+			# ADD ACCEPTED CULTURES
+			SVP = {
+				change_primary_culture = brabantian
+				add_accepted_culture = flemish
+				add_accepted_culture = dutch
+				add_accepted_culture = wallonian
+			}
+			# CHANGE IDEAS
+			SVP = {
+				swap_national_ideas_effect = yes
+			}
+			# GIVE SVP ESTATE GENERAL MODIFIERS and reduced liberty desire modifier
+			SVP = {
+				every_owned_province = {
+					add_province_modifier = {
+						name = estates_general_1
+						duration = -1
+					}
+				}
+			}
+			# Remove cores/claims outside low countries, give claim to low countries
+
+			low_countries_region = {
+				limit = {
+					NOT = { owned_by = SVP }
+				}
+				add_permanent_claim = SVP
+			}
+			belgii_region = {
+				limit = {
+					NOT = { owned_by = SVP }
+				}
+				add_permanent_claim = SVP
+			}
+			# If ROOT is emperor, put SVP in the HRE
+			if = {
+				limit = { is_emperor = yes }
+				SVP = { join_the_hre = yes }
+			}
+			# ROOT gets flag and modifier
+			set_country_flag = svp_creator
+			add_country_modifier = {
+				name = svp_centralized_recently
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = svp_demanded_tax_recently
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = svp_demanded_manpower_recently
+				duration = 3650
+			}
+			# Run the information event
+			hidden_effect = {
+				country_event = {
+					id = flavor_svp.200
+					days = 10
+				}
+			}
+			SVP = { add_liberty_desire = -100 }
+
+		}
+
+
+		carribeans_region = {
+		undiscover_country = FRA
+		}
+				
+		}
+		
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1800.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+		
+		}
+
+
+
+		############################
+		## control of spice trade ##
+		############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1817
+		title = "flavor_Historical_Wars_event.1817.title"
+		desc = "flavor_Historical_Wars_event.1817.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+		trigger = {
+		capital_scope = {
+		continent = europe
+		}
+		NOT = { has_country_flag = controlling_spice_trade }
+		NOT = { has_country_modifier = spice_trade_duties }
+		596 = {
+		owned_by = ROOT
+		has_province_modifier = major_european_trade_outpost
+		}
+		624 = {
+		owned_by = ROOT
+		has_province_modifier = major_european_trade_outpost
+		}
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		
+		set_country_flag = controlling_spice_trade
+		
+		}
+
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1817.a"
+		ai_chance = { factor = 100 }
+		
+		add_country_modifier = {
+		name = spice_trade_duties
+		duration = -1
+		}
+		
+		596 = { 
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+		}
+		
+		624 = {
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+		}
+		
+		clr_country_flag = controlling_spice_trade
+
+		}
+
+		}
+
+
+
+
+
+
+
+		#############################
+		## spice trade disruptions ##
+		#############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1818
+		title = "flavor_Historical_Wars_event.1818.title"
+		desc = "flavor_Historical_Wars_event.1818.desc"
+		picture = ECONOMY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		has_discovered = 596
+		capital_scope = {continent = europe}
+		has_discovered = 624
+		}
+		
+		
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1818.a"
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = europeans_discover_spice_islands
+		set_country_flag = discovered_spice_islands
+
+		change_price = {
+		trade_goods = pepper 
+		key = great_demand
+		value = 0.5
+		duration = -1
+		}
+
+		change_price = {
+		trade_goods = cinnamon 
+		key = great_demand
+		value = 0.5
+		duration = -1
+		}
+
+		change_price = {
+		trade_goods = clove 
+		key = great_demand
+		value = 0.5
+		duration = -1
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		###############################
+		## no control over spice trade ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1819
+		title = "flavor_Historical_Wars_event.1819.title"
+		desc = "flavor_Historical_Wars_event.1819.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+
+
+		trigger = {
+		has_country_modifier = spice_trade_duties
+		OR = {
+		596 = {
+		NOT = { owned_by = ROOT }
+		}
+		624 = {
+		NOT = { owned_by = ROOT }
+		}
+		}
+		
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1819.a"
+		ai_chance = { factor = 100 }
+		
+		remove_country_modifier = spice_trade_duties
+
+		}
+		}
+
+
+
+
+
+		
+
+
+
+
+		#####################
+		## Opressed Swedes ##
+		#####################
+		country_event = {
+		id = flavor_Historical_Wars_event.1866
+		title = "flavor_Historical_Wars_event.1866.title"
+		desc = "flavor_Historical_Wars_event.1866.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+
+
+		trigger = {
+		exists = SWE
+		NOT = {tag = SWE}
+		NOT = {tag = RSW}
+		NOT = {accepted_culture = swedish}
+		num_of_owned_provinces_with = {
+		value = 3
+		culture = swedish
+		has_owner_accepted_culture = no
+		}  
+		NOT = {has_country_modifier = oppressed_swedes}	
+		}
+			
+
+
+
+		mean_time_to_happen = {        
+		months = 3  
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1866.a"
+		ai_chance = { factor = 100 }
+
+		every_owned_province = {
+		limit = {
+		culture = swedish
+		}
+		add_unrest = 10
+		spawn_rebels = {
+		type = nationalist_rebels
+		size = 2
+		}
+		}
+
+
+		add_country_modifier = {
+		name = oppressed_swedes
+		duration = 9125
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		
+
+
+		
+
+
+
+		#######################
+		## Carlos V is ruler ##
+		######################
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1949
+		title = "flavor_Historical_Wars_event.1949.title"
+		desc = "flavor_Historical_Wars_event.1949.desc"
+		picture = COURT_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		OR = {
+		AND = {
+		tag = SPA
+		exists = SPA
+		}
+		AND = {
+		tag = CAS
+		exists = CAS
+		}
+		}
+		OR = {
+		has_ruler_flag = rey_emperador
+		AND = {
+		has_heir_flag = rey_emperador
+		heir_age = 15
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		hidden_effect = {
+			set_variable = { 	which = nobles_loyalty_removed_a 	value = 5 }
+		}
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1949.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+		
+		if = {
+		limit = {
+		has_heir_flag = rey_emperador
+		}
+		kill_ruler = yes	
+		}
+		
+		}
+		
+		subtract_stability_points_50 = yes
+		reduce_estate_all_nobles_loyalty_effect = { id=a }
+		
+		set_country_flag = rey_emperador
+	
+		}
+
+		}
+		
+		
+
+
+
+
+
+
+
+
+
+		##################################
+		## Spanish colonization of Cuba ##
+		##################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1979
+		title = "flavor_Historical_Wars_event.1979.title"
+		desc = "flavor_Historical_Wars_event.1979.desc"
+		picture = EXPLORERS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1511
+		OR = {
+		AND = {
+		tag = SPA
+		exists = SPA
+		}
+		AND = {
+		tag = CAS
+		exists = CAS
+		}
+		}
+		has_global_flag = colonial_help
+		NOT = {
+		cuba_area = {
+		AND = {
+		owned_by = SPA
+		owned_by = CAS
+		owner = { is_subject_of = ROOT }
+		}
+		}
+		}
+		1540 = { is_empty = yes }
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1979.a"
+		ai_chance = { factor = 100 }
+
+		1540 = {
+		cede_province = ROOT
+		add_core = ROOT
+		change_religion = ROOT	
+		change_culture = castillian	
+		}
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1979.b"
+		ai_chance = { factor = 0 }
+
+		}
+
+		}
+
+
+
+
+		##################################
+		## British privateering in France##
+		##################################
+		
+		
+		country_event = {
+		id = flavor_Historical_Wars_event.1980
+		title = "flavor_Historical_Wars_event.1980.title"
+		desc = "flavor_Historical_Wars_event.1980.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+		trigger = {
+		is_year = 1492
+		OR = {        
+		183 = {
+		privateer_power = {
+		country = ROOT
+		share = 20
+		}
+		}
+		1754 = { 
+		privateer_power = {
+		country = ROOT
+		share = 20
+		}
+		}
+		}
+		FRA = {is_at_war = no} 
+		NOT = {ROOT = {truce_with = FRA}}
+		OR = {
+		tag = ENG
+		tag = GBR
+		}
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled		
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1980.a"
+		ai_chance = { factor = 80 }
+
+		hidden_effect = {
+
+		FRA = {
+		country_event = { id = flavor_Historical_Wars_event.1982 days = 5 }
+		}
+		}
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1980.b"
+		trigger = {NOT = {num_of_loans = 1}}
+		ai_chance = { factor = 20 }
+
+		if = {
+		limit = {
+		is_year = 1492
+		NOT = {is_year = 1600}
+		}
+		ROOT = {add_treasury = -1000}
+		FRA = {add_treasury = 1000}
+		}
+
+		if = {
+		limit = {
+		is_year = 1600
+		NOT = {is_year = 1700}
+		}
+		ROOT = {add_treasury = -1500}
+		FRA = {add_treasury = 1500}
+		}
+
+		if = {
+		limit = {
+		is_year = 1700
+		NOT = {is_year = 1800}
+		}
+		ROOT = {add_treasury = -2000}
+		FRA = {add_treasury = 2000}
+		}
+
+		if = {
+		limit = {
+		is_year = 1800
+		}
+		ROOT = {add_treasury = -2500}
+		FRA = {add_treasury = 2500}
+		}
+
+		}
+
+		}
+
+
+
+
+		###############################
+		## Ai reply to English snubb ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1982
+		title = "flavor_Historical_Wars_event.1982.title"
+		desc = "flavor_Historical_Wars_event.1982.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1982.a"
+		ai_chance = { factor = 90 }
+
+
+		if = {
+		limit = {
+		exists = ENG
+		}
+		declare_war_with_cb = {
+		who = ENG
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+
+		if = {
+		limit = {
+		exists = GBR
+		}
+		declare_war_with_cb = {
+		who = GBR
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+
+		hidden_effect = {
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		ROOT = {
+		random_province = {
+	    limit = {
+	    has_port = yes
+	    continent = europe
+	    owned_by = ROOT
+	    }
+	    light_ship = ROOT
+	    light_ship = ROOT
+	    light_ship = ROOT
+	    heavy_ship = ROOT
+	    heavy_ship = ROOT
+	    heavy_ship = ROOT
+		}
+		}
+		}
+		
+		}
+
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1982.b"
+		ai_chance = { factor = 10 }
+
+
+		add_prestige = -25
+		
+		add_truce_with = FROM
+
+		}
+
+		}
+
+
+
+
+
+		##################################
+		## British privateering in Spain ##
+		##################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1989
+		title = "flavor_Historical_Wars_event.1989.title"
+		desc = "flavor_Historical_Wars_event.1989.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+		trigger = {
+		SPA = { ai = yes }
+		is_year = 1492
+		OR = {        
+		2311 = { #Sevilla
+		privateer_power = {
+		country = ROOT
+		share = 20
+		}
+		}
+		213 = { #Barcelona
+		privateer_power = {
+		country = ROOT
+		share = 20
+		}
+		}
+		}
+		SPA = {is_at_war = no} 
+		NOT = {truce_with = SPA}
+		OR = {
+		AND = {
+		tag = ENG
+		exists = ENG
+		}
+		AND = {
+		tag = GBR
+		exists = GBR
+		}
+		}
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1989.a"
+		ai_chance = { factor = 80 }
+
+		hidden_effect = {
+
+		SPA = {
+		country_event = { id = flavor_Historical_Wars_event.1036 days = 5 }
+		}
+		}
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1989.b"
+		trigger = {NOT = {num_of_loans = 1}}
+		ai_chance = { factor = 20 }
+		
+
+		if = {
+		limit = {
+		is_year = 1492
+		NOT = {is_year = 1600}
+		}
+		ROOT = {add_treasury = -1000}
+		SPA = {add_treasury = 1000}
+		}
+
+		if = {
+		limit = {
+		is_year = 1600
+		NOT = {is_year = 1700}
+		}
+		ROOT = {add_treasury = -1500}
+		SPA = {add_treasury = 1500}
+		}
+
+		if = {
+		limit = {
+		is_year = 1700
+		NOT = {is_year = 1800}
+		}
+		ROOT = {add_treasury = -2000}
+		SPA = {add_treasury = 2000}
+		}
+
+		if = {
+		limit = {
+		is_year = 1800
+		}
+		ROOT = {add_treasury = -2500}
+		SPA = {add_treasury = 2500}
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		##################################
+		## French privateering in Spain ##
+		##################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1031
+		title = "flavor_Historical_Wars_event.1031.title"
+		desc = "flavor_Historical_Wars_event.1031.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+		trigger = {
+		SPA = { ai = yes }
+		is_year = 1492
+		OR = {        
+		2311 = { #Sevilla
+		privateer_power = {
+		country = ROOT
+		share = 20
+		}
+		}
+		213 = { #Barcelona
+		privateer_power = {
+		country = ROOT
+		share = 20
+		}
+		}
+		}
+		SPA = {is_at_war = no}
+		NOT = {truce_with = SPA}	
+		tag = FRA
+		exists = FRA
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+   		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1031.a"
+		ai_chance = { factor = 80 }
+
+		hidden_effect = {
+
+		SPA = {
+		country_event = { id = flavor_Historical_Wars_event.1035 days = 5 }
+		}
+		}
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1031.b"
+		trigger = {NOT = {num_of_loans = 1}}
+		ai_chance = { factor = 20 }
+
+		if = {
+		limit = {
+		is_year = 1492
+		NOT = {is_year = 1600}
+		}
+		ROOT = {add_treasury = -1000}
+		SPA = {add_treasury = 1000}
+		}
+
+		if = {
+		limit = {
+		is_year = 1600
+		NOT = {is_year = 1700}
+		}
+		ROOT = {add_treasury = -1500}
+		SPA = {add_treasury = 1500}
+		}
+
+		if = {
+		limit = {
+		is_year = 1700
+		NOT = {is_year = 1800}
+		}
+		ROOT = {add_treasury = -2000}
+		SPA = {add_treasury = 2000}
+		}
+
+		if = {
+		limit = {
+		is_year = 1800
+		}
+		ROOT = {add_treasury = -2500}
+		SPA = {add_treasury = 2500}
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+		##########################
+		## Thirteen Years' War ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1034
+		title = "flavor_Historical_Wars_event.1034.title"
+		desc = "flavor_Historical_Wars_event.1034.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1654
+		NOT = { is_year = 1664 }
+		RUS = {is_at_war = no}                        
+		tag = RUS
+		exists = RUS
+		exists = PLC
+		is_bankrupt = no
+		has_global_flag = historical_wars_enabled
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1034.a"
+		ai_chance = { factor = 90 }
+
+
+		declare_war_with_cb = {
+		who = PLC
+		casus_belli = cb_historical_wars_superiority
+		}
+
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1034.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = -25
+		add_stability = -1
+
+		}
+
+		}
+
+
+
+
+
+		###############################
+		## Ai reply to French snubb ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1035
+		title = "flavor_Historical_Wars_event.1035.title"
+		desc = "flavor_Historical_Wars_event.1035.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1035.a"
+		ai_chance = { factor = 85 }
+
+		declare_war_with_cb = {
+		who = FRA
+		casus_belli = cb_historical_wars_trade
+		}
+
+		hidden_effect = {
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		ROOT = {
+		random_province = {
+	    limit = {
+	    has_port = yes
+	    continent = europe
+	    owned_by = ROOT
+	    }
+	    light_ship = ROOT
+	    light_ship = ROOT
+	    light_ship = ROOT
+	    heavy_ship = ROOT
+	    heavy_ship = ROOT
+	    heavy_ship = ROOT
+		}
+		}
+		}
+		
+		}
+		
+		}
+
+		option = {
+		name = "flavor_Historical_Wars_event.1035.b"
+		ai_chance = { factor = 15 }
+		
+		add_prestige = -25
+		
+		add_truce_with = FROM
+
+		}
+
+		}
+
+
+
+
+
+		###############################
+		## Ai reply to English snubb ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1036
+		title = "flavor_Historical_Wars_event.1036.title"
+		desc = "flavor_Historical_Wars_event.1036.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1036.a"
+		ai_chance = { factor = 85 }
+
+	
+		if = {
+		limit = {
+		exists = ENG
+		}
+		declare_war_with_cb = {
+		who = ENG
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+
+		if = {
+		limit = {
+		exists = GBR
+		}
+		declare_war_with_cb = {
+		who = GBR
+		casus_belli = cb_historical_wars_trade
+		}
+		}
+
+		hidden_effect = {
+
+		if = {
+		limit = {
+		ai = yes
+		}
+		ROOT = {
+		random_province = {
+	    limit = {
+	    has_port = yes
+	    continent = europe
+	    owned_by = ROOT
+	    }
+	    light_ship = ROOT
+	    light_ship = ROOT
+	    light_ship = ROOT
+	    heavy_ship = ROOT
+	    heavy_ship = ROOT
+	    heavy_ship = ROOT
+		}
+		}
+		}
+		
+		}
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1036.b"
+		ai_chance = { factor = 15 }
+		
+		
+		add_prestige = -25
+		
+		add_truce_with = FROM
+
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		##########################
+		## João II of Portugal ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1270
+		title = "flavor_Historical_Wars_event.1270.title"
+		desc = "flavor_Historical_Wars_event.1270.desc"
+		picture = COURT_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = POR
+		exists = POR
+		dynasty = "de Avis"
+		start_date = 1492.01.01
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1270.a"
+		ai_chance = { factor = 100 }
+
+		add_ruler_modifier = { name = principe_perfeito }
+		if = { limit = { has_global_flag = historical_rulers_immortality } add_ruler_personality = immortal_personality }
+
+		}
+
+		}
+		
+
+		
+		
+		
+		
+		
+		############################
+		## Ferdinand el catholico ##
+		############################
+		country_event = {
+		id = flavor_Historical_Wars_event.1259
+		title = "flavor_Historical_Wars_event.1259.title"
+		desc = "flavor_Historical_Wars_event.1259.desc"
+		picture = COURT_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = ARA
+		exists = ARA
+		start_date = 1492.01.01
+		}
+
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1259.a"
+		ai_chance = { factor = 100 }
+
+		add_ruler_modifier = { name = el_catolico}
+		if = { limit = { has_global_flag = historical_rulers_immortality } add_ruler_personality = immortal_personality }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		###########################################
+		## Scotland ambush english - england event ##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1250
+		title = "flavor_Historical_Wars_event.1250.title"
+		desc = "flavor_Historical_Wars_event.1250.desc"
+		picture = WOUNDED_SOLDIERS_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1250.a"
+		ai_chance = { factor = 100 }
+		
+		add_war_exhaustion = 1
+				
+		SCO = {
+		hidden_effect = {
+		set_variable = {
+		which = killed_by_ambush
+		value = 0
+		}
+		}
+		}
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		######################
+		## Columbus journey ##
+		######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1230
+		title = "flavor_Historical_Wars_event.1230.title"
+		desc = "flavor_Historical_Wars_event.1230.desc"
+		picture = SHIP_SAILING_eventPicture
+		fire_only_once = yes
+		major = yes
+		
+		trigger = {
+		tag = CAS
+		exists = CAS
+		NOT = { exists = GRA }
+		ARA = { is_subject_of = CAS }
+		OR = {
+		AND = {
+		has_ruler_modifier = servant_of_god
+		ARA = { has_ruler_modifier = el_catolico }
+		}
+		NOT = { start_date = 1492.01.01 }
+		}
+		}
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		hidden_effect = {
+			set_variable = { 	which = nobles_loyalty_removed_a 	value = 7.5 }
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1230.a"
+		ai_chance = { factor = 75 }
+		
+		ARA = { add_treasury = -250 }
+		CAS = { add_treasury = -250 }
+			
+		discover_province = 1682
+		discover_province = 1670
+		discover_province = 1675
+		discover_province = 1673
+		discover_province = 1603
+		discover_province = 1627
+		discover_province = 1628
+		discover_province = 1536
+
+		1536 = {
+		hidden_effect = { change_province_name = "La Navidad" }
+		cede_province = CAS
+		add_core = CAS
+		change_religion = catholic	
+		change_culture = castillian
+		hidden_effect = {
+		set_variable = {
+		which = rural_base_pop_removed
+		value = 10
+		}
+		remove_rural_population_DEVS = yes
+		}
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1230.b"
+		ai_chance = { factor = 20 }
+		
+		ARA = { add_treasury = -125 }
+		CAS = { add_treasury = -125 }
+		
+		reduce_estate_all_nobles_loyalty_effect = { id=a }
+			
+		discover_province = 1682
+		discover_province = 1670
+		discover_province = 1675
+		discover_province = 1673
+		discover_province = 1603
+		discover_province = 1627
+		discover_province = 1628
+		discover_province = 1536
+
+		1536 = {
+		hidden_effect = { change_province_name = "La Navidad" }
+		cede_province = CAS
+		add_core = CAS
+		change_religion = catholic	
+		change_culture = castillian
+		hidden_effect = {
+		set_variable = {
+		which = rural_base_pop_removed
+		value = 10
+		}
+		remove_rural_population_DEVS = yes
+		}
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1230.c"
+		ai_chance = { factor = 5 }
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		####################
+		## Barcelona port ##
+		####################
+		country_event = {
+		id = flavor_Historical_Wars_event.1192
+		title = "flavor_Historical_Wars_event.1192.title"
+		desc = "flavor_Historical_Wars_event.1192.desc"
+		picture = CITY_DEVELOPMENT_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		213 = { owned_by = ROOT }
+		is_year = 2000
+		#is_year = 1477
+		OR = {
+		AND = {
+		tag = CAS
+		exists = CAS
+		}
+		AND = {
+		tag = ARA
+		exists = ARA
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1192.a"
+		ai_chance = { factor = 100 }
+		
+		add_treasury = -250
+		
+		213 = {
+		add_building = harbour_infrastructure_1
+
+		add_permanent_province_modifier = {
+		name = santa_creu_wharf
+		duration = -1
+		}
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1192.b"
+		ai_chance = { factor = 0 }
+
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		##########################
+		## Casa de Contratación ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1191
+		title = "flavor_Historical_Wars_event.1191.title"
+		desc = "flavor_Historical_Wars_event.1191.desc"
+		picture = CITY_DEVELOPMENT_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		2311 = { owned_by = ROOT }
+		is_year = 1503
+		num_of_colonies = 1
+		OR = {
+		AND = {
+		tag = CAS
+		exists = CAS
+		}
+		AND = {
+		tag = SPA
+		exists = SPA
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1191.a"
+		ai_chance = { factor = 100 }
+		
+		add_treasury = -250
+		
+		2311 = {
+		add_permanent_province_modifier = {
+		name = casa_de_contratacion
+		duration = -1
+		}
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1191.b"
+		ai_chance = { factor = 0 }
+
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		#######################
+		## Drassanes Reials ##
+		#######################
+		country_event = {
+		id = flavor_Historical_Wars_event.1190
+		title = "flavor_Historical_Wars_event.1190.title"
+		desc = "flavor_Historical_Wars_event.1190.desc"
+		picture = CITY_DEVELOPMENT_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		213 = { owned_by = ROOT }
+		is_year = 1285
+		OR = {
+		AND = {
+		tag = CAS
+		exists = CAS
+		}
+		AND = {
+		tag = ARA
+		exists = ARA
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1190.a"
+		ai_chance = { factor = 100 }
+		
+		add_treasury = -125
+		
+		213 = {
+
+		add_permanent_province_modifier = {
+		name = drassanes_reials
+		duration = -1
+		}
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1190.b"
+		ai_chance = { factor = 0 }
+
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		##############
+		## La lonja ##
+		##############
+		country_event = {
+		id = flavor_Historical_Wars_event.1189
+		title = "flavor_Historical_Wars_event.1189.title"
+		desc = "flavor_Historical_Wars_event.1189.desc"
+		picture = CITY_DEVELOPMENT_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		214 = { owned_by = ROOT }
+		is_year = 1541
+		tag = SPA
+		exists = SPA
+		}
+
+		
+		
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1189.a"
+		ai_chance = { factor = 100 }
+		
+		add_treasury = -125
+		
+		214 = {
+		add_permanent_province_modifier = {
+		name = la_lonja
+		duration = -1
+		}
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1189.b"
+		ai_chance = { factor = 0 }
+
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		################
+		## alfajeria ##
+		################
+		province_event = {
+		id = flavor_Historical_Wars_event.1188
+		title = "flavor_Historical_Wars_event.1188.title"
+		desc = "flavor_Historical_Wars_event.1188.desc"
+		picture = CITY_DEVELOPMENT_eventPicture
+		hidden = yes
+		fire_only_once = yes
+		
+
+		trigger = {
+		province_id = 214
+		}
+
+		
+
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1188.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_15th } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } }
+		
+		add_permanent_province_modifier = {
+		name = aljaferia
+		duration = -1
+		}
+		
+		}
+		
+		
+		}
+		
+		
+		
+
+		
+		
+		
+		
+		###################################################
+		## Portugal special bonus african trade outposts ##
+		###################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1186
+		title = "flavor_Historical_Wars_event.1186.title"
+		desc = "flavor_Historical_Wars_event.1186.desc"
+		picture = MERCHANTS_TALKING_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		NOT = { has_province_modifier = portuguese_trade_outpost }
+		owner = { has_country_flag = discovered_spice_islands }
+		NOT = { owner = { has_country_flag = portuguese_trade_outpost_being_established } }
+		OR = {
+		AND = {
+		province_id = 2878
+		has_province_modifier = elmina_trade_outpost
+		}
+		AND = {
+		province_id = 1187
+		has_province_modifier = malindi_trade_outpost
+		}
+		AND = {
+		province_id = 2879
+		has_province_modifier = luanda_trade_outpost
+		}
+		}
+		owned_by = POR
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		
+		set_country_flag = portuguese_trade_outpost_being_established
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1186.a"
+		ai_chance = { factor = 100 }
+		
+		add_province_modifier = {
+		name = portuguese_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		clr_country_flag = portuguese_trade_outpost_being_established
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		###########################
+		## Spain colonial tariff ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1183
+		title = "flavor_Historical_Wars_event.1183.title"
+		desc = "flavor_Historical_Wars_event.1183.desc"
+		picture = ECONOMY_eventPicture
+		major = yes
+
+
+		trigger = {
+		2311 = {
+		owned_by = ROOT 
+		has_province_modifier = casa_de_contratacion
+		}
+		is_month = 0
+		NOT = { is_month = 1 }
+		any_subject_country = {
+		is_colonial_nation = yes
+		NOT = { is_subject_of_type = conquistador_expedition }
+		NOT = { tariff_value = 0.20 }
+		}
+		}
+		
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1183.a"
+		ai_chance = { factor = 100 }
+				
+		every_subject_country = {
+		limit = {
+		is_colonial_nation = yes
+		NOT = { is_subject_of_type = conquistador_expedition }
+		}
+		if = {
+		limit = {
+		NOT = { tariff_value = 0.20 }
+		}
+		add_tariff_value = 0.05
+		ROOT = { add_adm_power = -25 }
+		}
+		}
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1183.b"
+		ai_chance = { factor = 0 }
+				
+		2311 = {
+		remove_province_modifier = casa_de_contratacion
+		}
+
+		}
+
+		}
+		
+		
+		
+			
+		
+	
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		#####################
+		## Albert I heir  ##
+		#####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1155
+		title = "flavor_Historical_Wars_event.1155.title"
+		desc = "flavor_Historical_Wars_event.1155.desc"
+		picture = NEW_HEIR_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1490
+		tag = TEU
+		exists = TEU
+		OR = {
+		is_subject_of = POL
+		is_subject_of = PLC
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1155.a"
+		ai_chance = { factor = 90 }
+
+		define_heir = {
+		adm = 6
+		dip = 3
+		mil = 1
+		dynasty = "von Hohenzollern"
+		name = "Albrecht I"
+		religion = protestant
+		birth_date = 1490.05.17
+		}
+
+		set_heir_flag = father_of_prussia
+	
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1155.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = 5
+	
+		}
+		
+		}
+		
+		
+		
+		
+		
+		##############
+		## Albert I ##
+		##############
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1154
+		title = "flavor_Historical_Wars_event.1154.title"
+		desc = "flavor_Historical_Wars_event.1154.desc"
+		picture = COURT_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		dynasty = "von Hohenzollern"
+		tag = TEU
+		exists = TEU
+		OR = {
+		is_subject_of = POL
+		is_subject_of = PLC
+		}
+		has_ruler_flag = father_of_prussia
+		}
+
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1154.a"
+		ai_chance = { factor = 100 }
+
+		add_ruler_modifier = { name = father_of_prussia }
+		if = { limit = { has_global_flag = historical_rulers_immortality } add_ruler_personality = immortal_personality }
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		#####################################################
+		## Europeans seize control over Asian trade harbor ##
+		#####################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.2008
+		title = "flavor_Historical_Wars_event.2008.title"
+		desc = "flavor_Historical_Wars_event.2008.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		is_colony = no
+		OR = {
+		AND = {
+		province_id = 677
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		AND = {
+		province_id = 2305
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		AND = {
+		province_id = 2304
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		AND = {
+		province_id = 2303
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		}
+
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		
+		add_permanent_province_modifier = {
+		name = major_european_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2008.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		#########################################################
+		## Europeans lose control over over Asian trade harbor ##
+		#########################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.2009
+		title = "flavor_Historical_Wars_event.2009.title"
+		desc = "flavor_Historical_Wars_event.2009.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		OR = {
+		AND = {
+		province_id = 677
+		has_province_modifier = major_european_trade_outpost
+		}
+		AND = {
+		province_id = 2305
+		has_province_modifier = major_european_trade_outpost
+		}
+		AND = {
+		province_id = 2304
+		has_province_modifier = major_european_trade_outpost
+		}
+		AND = {
+		province_id = 2303
+		has_province_modifier = major_european_trade_outpost
+		}
+		AND = {
+		province_id = 1021
+		has_province_modifier = major_european_trade_outpost
+		}
+		AND = {
+		province_id = 596
+		has_province_modifier = major_european_trade_outpost
+		}
+		AND = {
+		province_id = 624
+		has_province_modifier = major_european_trade_outpost
+		}
+		}
+		NOT = {
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		
+		immediate = {
+		
+		remove_province_modifier = major_european_trade_outpost
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2009.a"
+		ai_chance = { factor = 100 }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		#########################################
+		## Europeans seize control over Dejima ##
+		#########################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.2010
+		title = "flavor_Historical_Wars_event.2010.title"
+		desc = "flavor_Historical_Wars_event.2010.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		is_colony = no
+		AND = {
+		province_id = 1021
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		
+		add_permanent_province_modifier = {
+		name = major_european_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2010.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		###################
+		## Galleon trade ##
+		###################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2012
+		title = "flavor_Historical_Wars_event.2012.title"
+		desc = "flavor_Historical_Wars_event.2012.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = SPA
+		exists = SPA
+		colonial_mexico = {
+		has_port = yes
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = SPA NOT = { is_subject_of_type = conquistador_expedition } }
+		}
+		}
+		2216 = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = SPA }
+		}
+		is_colony = no
+		NOT = { has_province_modifier = galleon_trade }
+		}
+		has_country_modifier = treasure_fleets_enabled
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2012.a"
+		ai_chance = { factor = 90 }
+				
+		2216 = {
+		add_permanent_province_modifier = {
+		name = galleon_trade
+		duration = -1  
+		hidden = no
+		}
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+		}
+		
+		philippines_region = {
+		limit = {
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = SPA }
+		}
+		}
+		add_permanent_province_modifier = {
+		name = benefiting_from_galleon_trade
+		duration = -1  
+		hidden = no
+		}
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2012.b"
+		ai_chance = { factor = 10 }
+		
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		#####################################
+		## Spain lose control over Manila ##
+		#####################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2013
+		title = "flavor_Historical_Wars_event.2013.title"
+		desc = "flavor_Historical_Wars_event.2013.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = SPA
+		exists = SPA
+		2216 = {
+		has_province_modifier = galleon_trade
+		NOT = {
+		owned_by = SPA
+		owner = { is_subject_of = SPA }
+		}
+		}
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2013.a"
+		ai_chance = { factor = 100 }
+				
+		2216 = { remove_province_modifier = galleon_trade }
+		
+		philippines_region = {
+		remove_province_modifier = benefiting_from_galleon_trade
+		}
+
+		}
+
+		}
+		
+		
+	
+		
+		
+		
+		####################################
+		## Spain lose control over Mexico ##
+		####################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2014
+		title = "flavor_Historical_Wars_event.2014.title"
+		desc = "flavor_Historical_Wars_event.2014.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = SPA
+		exists = SPA
+		2216 = { has_province_modifier = galleon_trade }
+		NOT = {
+		colonial_mexico = {
+		has_port = yes
+		OR = {
+		owned_by = SPA
+		owner = { is_subject_of = SPA }
+		}
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.2014.a"
+		ai_chance = { factor = 100 }
+		
+		2216 = { remove_province_modifier = galleon_trade }
+		
+		philippines_region = {
+		remove_province_modifier = benefiting_from_galleon_trade
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		######################################
+		## Hollandic Water Line maintenance ##
+		######################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2023
+		title = "flavor_Historical_Wars_event.2023.title"
+		desc = "flavor_Historical_Wars_event.2023.desc"
+		picture = HARBOUR_eventPicture
+
+
+		trigger = {
+		exists = NED
+		tag = NED
+		had_country_flag = {
+		flag = hollandic_water_line_activated
+		days = 365
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		immediate = {
+		
+		clr_country_flag = hollandic_water_line_activated
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2023.a"
+		ai_chance = { factor = 100 }
+		
+		
+		set_country_flag = hollandic_water_line_activated
+
+		add_treasury = -250
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		
+		#####################################################
+		## Europeans seize control over spice trade harbors ##
+		#####################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.2030
+		title = "flavor_Historical_Wars_event.2030.title"
+		desc = "flavor_Historical_Wars_event.2030.desc"
+		picture = NAVAL_MILITARY_eventPicture
+		major = yes
+
+
+
+		trigger = {
+		is_colony = no
+		OR = {
+		AND = {
+		province_id = 596
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		AND = {
+		province_id = 624
+		NOT = { has_province_modifier = major_european_trade_outpost }
+		}
+		}
+
+		owner = {
+		capital_scope = {
+		continent = europe
+		}
+		}
+		}
+		
+		mean_time_to_happen = {        
+		months = 1                                        
+		}
+		
+		
+		immediate = {
+		
+		add_permanent_province_modifier = {
+		name = major_european_trade_outpost
+		duration = -1  
+		hidden = no
+		}
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2030.a"
+		ai_chance = { factor = 100 }
+		
+		if = { limit = { owner = { ai = yes } NOT = { has_building = fort_14th } NOT = { has_building = fort_15th } NOT = { has_building = fort_16th } } add_building = fort_14th  province_event = { id = POP_MassBuilding.006 } }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

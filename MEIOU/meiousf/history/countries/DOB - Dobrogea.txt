@@ -1,0 +1,48 @@
+# Country : Tsardom of Dobrogea
+# Tag : DOB
+
+government = republic
+add_government_reform = trade_republic #feel free to revise
+add_government_reform = oligarchy_reform
+add_government_reform = vote_tax
+government_rank = 1 #Despotate
+mercantilism = 0.0
+technology_group = eastern
+primary_culture = gothic_p
+add_accepted_culture = v_gothic
+add_accepted_culture = gothic
+add_accepted_culture = pontic
+religion = orthodox
+capital = 2274
+historical_neutral = MOL
+
+1000.1.1 = {
+	add_country_modifier = { name = title_2 duration = -1 }
+	set_country_flag = title_4
+	#set_variable = { which = "centralization_decentralization" value = 2 }
+	add_absolutism = -100
+	add_absolutism = 30
+	set_legacy_government = venetian_merchant_republic 
+	set_country_flag = native_greek_state
+}
+
+1347.1.1 = {
+	monarch = {
+		name = "Dobritsa"
+		dynasty = "Karvuna"
+		ADM = 4
+		DIP = 2
+		MIL = 1
+	}
+	#add_country_modifier = { name = obstacle_magnates duration = -1 }
+}
+1380.1.1 = {
+	monarch = {
+		name = "Alexander"
+		dynasty = "Doukas"
+		ADM = 4
+		DIP = 6
+		MIL = 5
+	}
+	#add_country_modifier = { name = obstacle_magnates duration = -1 }
+}

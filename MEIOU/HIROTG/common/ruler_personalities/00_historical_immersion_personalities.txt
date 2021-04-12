@@ -1,0 +1,14 @@
+immortal_personality = {
+
+allow = {
+}
+
+chance = {
+modifier = {
+factor = -2
+}
+}
+
+immortal = 1 # dummy modifier only used to get the right icon
+nation_designer_cost = 800
+}

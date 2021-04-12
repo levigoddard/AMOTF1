@@ -1,0 +1,109 @@
+# DAP - Da Polenta Ravenna
+
+government = monarchy
+add_government_reform = parliamentary_monarchy #feel free to revise
+add_government_reform = delegated_rulers
+add_government_reform = hereditary_elite
+government_rank = 1
+mercantilism = 0.0
+primary_culture = n_roman
+add_accepted_culture = latin_greek
+#add_accepted_culture = romagnol
+religion = orthodox
+technology_group = western
+capital = 3867
+elector = yes
+historical_rival = VEN
+historical_rival = PAP
+
+1000.1.1 = {
+	add_country_modifier = { name = title_3 duration = -1 }
+	set_country_flag = title_4
+	#set_variable = { which = "centralization_decentralization" value = 4 }
+	add_absolutism = -100
+	add_absolutism = 20
+	add_country_modifier = {
+		name = "roman_claimant"
+		duration = -1
+	}
+	set_legacy_government = english_monarchy_legacy
+}
+
+
+1380.1.1 = {
+	monarch = {
+		name = "August Justinian"
+		dynasty = "Julia"
+		birth_date = 1365.1.1 #dates approximate at best
+		death_date = 1400.7.1
+		adm = 5
+		dip = 6
+		mil = 6
+	}
+	queen = {
+		country_of_origin = THD
+		name = "Irene Justinia"
+		dynasty = "sid Hórus"
+		culture = gothic_e
+		birth_date = 1365.1.1 #dates approximate at best
+		death_date = 1400.7.1
+		female = yes
+		ADM = 5
+		DIP = 6
+		MIL = 4
+	}
+	heir = {
+		name = "Livia"
+		monarch_name = "Augustia Livia I"
+		dynasty = "Julia"
+		birth_date = 1385.1.1
+		death_date = 1402.10.29
+		claim = 95
+		female = yes
+		ADM = 6
+		DIP = 6
+		MIL = 6
+	}
+}
+
+1396.1.1 = {
+	monarch = {
+		name = "Bernardino II"
+		dynasty = "da Polenta"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1400.1.1 = {
+	monarch = {
+		name = "Obizzo"
+		dynasty = "da Polenta"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1404.1.1 = {
+	monarch = {
+		name = "Aldobrandino"
+		dynasty = "da Polenta"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1406.1.1 = {
+	monarch = {
+		name = "Ostasio III"
+		dynasty = "da Polenta"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+# 1440 to Venice

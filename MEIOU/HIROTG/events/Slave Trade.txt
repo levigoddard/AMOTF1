@@ -1,0 +1,1777 @@
+	namespace = flavor_Portuguese_slave_trade_event
+	
+	
+	
+	###################################
+	## Portuguese slave trade resume ##
+	###################################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1695
+	title = "flavor_Historical_Wars_event.1695.title"
+	desc = "flavor_Historical_Wars_event.1695.desc"
+	picture = DIPLOMACY_eventPicture
+	major = yes
+
+	trigger = {
+	tag = POR
+	exists = KON
+	NOT = {war_with = KON}
+	AND = {
+	2879 = { owned_by = POR }
+	reverse_has_opinion = {
+	who = KON
+	value = 75
+	}		
+	}
+	has_country_flag = slave_trade_east_africa_ended		
+	}
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1695.a"
+	ai_chance = { factor = 100 }	
+
+	clr_country_flag = slave_trade_east_africa_ended
+	set_country_flag = slave_trade_east_africa
+
+	add_country_modifier = {
+	name = slave_trade_bonus_merchant
+	duration = -1
+	}
+	
+	add_trust = {
+	who = KON
+	value = 10
+	mutual = yes
+	}
+
+	if = {
+	limit = {
+	POR = {ai = yes}
+	}
+	KON = {
+	add_opinion = {
+	who = ROOT
+	modifier = slave_trade_agreement_ratified
+	duration = -1
+	}
+
+	}
+
+	}
+
+
+	POR = {
+
+	add_opinion = {
+	who = KON
+	modifier = slave_trade_agreement_ratified
+	duration = -1
+	}
+
+	}
+
+	}
+
+	}
+
+
+
+
+	################################
+	## Portuguese slave trade end ##
+	################################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1696
+	title = "flavor_Historical_Wars_event.1696.title"
+	desc = "flavor_Historical_Wars_event.1696.desc"
+	picture = DIPLOMACY_eventPicture
+	major = yes
+
+
+	trigger = {
+	tag = POR
+	exists = POR
+	OR = {
+	war_with = KON
+	NOT = {2879 = { owned_by = POR }}
+	NOT = {exists = KON}
+	NOT = {
+	reverse_has_opinion = {
+	who = KON
+	value = 75
+	}
+	}
+	}
+	has_country_flag = slave_trade_east_africa		
+	}
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1696.a"
+	ai_chance = { factor = 100 }
+	
+	remove_country_modifier = slave_trade_bonus_merchant
+	
+	if = {
+	limit = {
+	has_opinion_modifier = {
+	who = KON
+	modifier = slave_trade_agreement_ratified
+	}
+	}
+	remove_opinion = {
+	who = KON
+	modifier = slave_trade_agreement_ratified
+	}
+	}
+	
+
+	clr_country_flag = slave_trade_east_africa
+	set_country_flag = slave_trade_east_africa_ended
+
+	KON = {
+	
+	if = {
+	limit = {
+	has_opinion_modifier = {
+	who = POR
+	modifier = slave_trade_agreement_ratified
+	}
+	}
+	remove_opinion = {
+	who = POR
+	modifier = slave_trade_agreement_ratified
+	}
+	}
+
+	}
+
+	}
+
+	}
+
+
+
+
+
+
+
+
+
+	############################
+	## Portuguese slave trade ##
+	############################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1697
+	title = "flavor_Historical_Wars_event.1697.title"
+	desc = "flavor_Historical_Wars_event.1697.desc"
+	picture = MERCHANTS_TALKING_eventPicture
+	major = yes
+	fire_only_once = yes
+
+
+	trigger = {
+	is_year = 1356
+	NOT = {war_with = KON}
+	tag = POR
+	exists = POR
+	exists = KON
+	2879 = { owned_by = POR }
+	}
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1697.a"
+	ai_chance = { factor = 100 }	
+
+	set_country_flag = slave_trade_east_africa
+
+	add_country_modifier = {
+	name = slave_trade_bonus_merchant
+	duration = -1
+	}
+
+	KON = {
+
+	add_opinion = {
+	who = ROOT
+	modifier = slave_trade_agreement_ratified
+	}
+
+	add_opinion = {
+	who = ROOT
+	modifier = new_customer
+	}
+
+
+	}
+
+	POR = {
+
+	add_opinion = {
+	who = KON
+	modifier = slave_trade_agreement_ratified
+	}
+
+	}
+
+	}
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1697.b"
+	ai_chance = { factor = 0 }
+
+	KON = {
+
+	add_trust = {
+	who = ROOT
+	value = -5
+	mutual = yes
+	}
+
+	}
+
+	}
+
+	}
+
+
+
+
+
+
+
+	#######################
+	## Slave auction won ##
+	#######################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1698
+	title = "flavor_Historical_Wars_event.1698.title"
+	desc = "flavor_Historical_Wars_event.1698.desc"
+	picture = LIBERUM_VETO_eventPicture
+	#major = yes
+	is_triggered_only = yes
+	
+	
+	immediate = {
+	hidden_effect = {
+	
+	ROOT = {
+	set_variable  = {
+		which = offered_price
+		which = offered_price
+	}
+	POR = {
+		set_variable = {
+			which = offered_price
+			which = PREV
+		}
+	
+	}
+	}
+
+	POR = {
+	subtract_variable = {
+	which = num_of_bidders
+	value = 1
+	}
+	}
+	
+	}
+	}
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1698.a"
+	ai_chance = { factor = 75 }
+	
+	hidden_effect = {
+	POR = { country_event = { id = flavor_Historical_Wars_event.1195 days = 5 } }
+	}
+	
+	#set_country_flag = purchased_slaves
+			
+	set_variable = { which = ducat_cost which = offered_price }
+	hidden_effect = {
+	scaled_ducat_cost_country = yes
+	}
+
+	every_province = {
+	limit = {
+	is_colony = yes
+	OR = {
+	owned_by = ROOT
+	owner = { is_subject_of = ROOT }
+	}
+	}
+	if = {
+	limit = {
+	POR = { has_country_flag = low_productivity_slaves }
+	}
+	add_colonysize = 100
+	}
+	if = {
+	limit = {
+	POR = { has_country_flag = average_productivity_slaves }
+	}
+	add_colonysize = 150
+	}
+	if = {
+	limit = {
+	POR = { has_country_flag = high_productivity_slaves }
+	}
+	add_colonysize = 200
+	}
+	}
+	
+	#hidden_effect = {
+
+	carribeans_region = {
+	limit = {
+	is_empty = no
+	OR = {
+	owner = { is_colonial_nation_of = ROOT }
+	owned_by = ROOT
+	}
+	has_port = yes
+	}
+	if = {
+	limit = {
+	POR = {has_country_flag = low_productivity_slaves}
+	}
+	set_variable = {
+	 which = rural_base_pop_added
+	value = 0.01
+	}
+	add_rural_population_DEVS = yes
+	}
+	else_if = {
+	limit = {
+	POR = {has_country_flag = average_productivity_slaves}
+	}
+	set_variable = {
+	 which = rural_base_pop_added
+	value = 0.015
+	}
+	add_rural_population_DEVS = yes
+	}
+	else_if = {
+	limit = {
+	POR = {has_country_flag = high_productivity_slaves}
+	}
+	set_variable = {
+	 which = rural_base_pop_added
+	value = 0.02
+	}
+	add_rural_population_DEVS = yes
+	}
+	hidden_effect = {
+	add_province_modifier = {
+    name = slave_population
+    duration = 3650 
+    hidden = no
+	}
+	}
+	}
+	
+	#}
+	
+	}
+
+	}
+
+
+
+
+
+
+
+
+
+	#######################################
+	## Portuguese buys slaves from Kongo ##
+	#######################################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1699
+	title = "flavor_Historical_Wars_event.1699.title"
+	desc = "flavor_Historical_Wars_event.1699.desc"
+	picture = MERCHANTS_TALKING_eventPicture
+	major = yes
+
+
+	trigger = {
+	tag = POR
+	exists = POR
+	exists = KON
+	has_country_flag = slave_trade_east_africa
+	OR = {
+	2879 = { owned_by = POR }
+	5219 = { owned_by = POR }
+	}		
+	NOT = {has_country_modifier = recent_slave_trade}
+	}
+
+
+	mean_time_to_happen = {        
+	months = 6                                        
+	}
+	
+	
+	immediate = {
+	hidden_effect = {
+	add_country_modifier = {
+	name = recent_slave_trade
+	duration = 1825
+	}
+	
+	}
+	}
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1699.a"
+	ai_chance = { factor = 25 }
+	
+	hidden_effect = {
+	
+	set_variable = {
+	which = purchased_slaves
+	value = 3
+	}
+	
+	set_variable = {
+	which = slaves_for_sale
+	value = 1
+	}
+	
+	country_event = { id = flavor_Historical_Wars_event.1194 days = 5 }
+	
+	set_country_flag = purchased_slaves
+
+	}
+
+	add_truce_with = KON
+
+	clr_country_flag = low_productivity_slaves
+	clr_country_flag = average_productivity_slaves
+	clr_country_flag = high_productivity_slaves
+
+	set_country_flag = low_productivity_slaves
+
+
+	POR = {
+	
+	add_treasury = -100
+	
+	if = {
+	limit = {
+	ai = yes
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	
+	if = {
+	limit = {
+	ai = no
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+	
+	add_truce_with = KON
+	
+	}
+
+	KON = {
+	
+	add_treasury = 100
+	
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = yes}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = no}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+
+	add_trust = {
+	who = POR
+	value = 5
+	mutual = yes
+	}
+
+	}
+
+	}
+
+	option = {
+	name = "flavor_Historical_Wars_event.1699.b"
+	trigger = { NOT = { num_of_loans = 10 } }
+	ai_chance = { factor = 50 }
+	
+	hidden_effect = {
+	
+	set_variable = {
+	which = purchased_slaves
+	value = 3
+	}
+	
+	set_variable = {
+	which = slaves_for_sale
+	value = 1
+	}
+	
+	country_event = { id = flavor_Historical_Wars_event.1194 days = 5 }
+	
+	set_country_flag = purchased_slaves
+
+	}
+
+	add_truce_with = KON
+
+	clr_country_flag = low_productivity_slaves
+	clr_country_flag = average_productivity_slaves
+	clr_country_flag = high_productivity_slaves
+
+	set_country_flag = average_productivity_slaves
+
+	POR = {
+	
+	add_treasury = -125
+	
+	if = {
+	limit = {
+	ai = yes
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	
+	if = {
+	limit = {
+	ai = no
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+	
+	add_truce_with = KON
+	
+	}
+
+	KON = {
+	
+	add_treasury = 125
+	
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = yes}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = no}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+
+	add_trust = {
+	who = POR
+	value = 5
+	mutual = yes
+	}
+
+	}
+
+	}
+
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1699.c"
+	trigger = { NOT = { num_of_loans = 5 } }
+	ai_chance = { factor = 50 }
+	
+	hidden_effect = {
+	
+	set_variable = {
+	which = purchased_slaves
+	value = 3
+	}
+	
+	set_variable = {
+	which = slaves_for_sale
+	value = 1
+	}
+	
+	country_event = { id = flavor_Historical_Wars_event.1194 days = 5 }
+	
+	set_country_flag = purchased_slaves
+
+	}
+
+	add_truce_with = KON
+
+	clr_country_flag = low_productivity_slaves
+	clr_country_flag = average_productivity_slaves
+	clr_country_flag = high_productivity_slaves
+
+	set_country_flag = high_productivity_slaves
+
+	POR = {
+	
+	add_treasury = -150
+	
+	if = {
+	limit = {
+	ai = yes
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	
+	if = {
+	limit = {
+	ai = no
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+	
+	add_truce_with = KON
+	
+	}
+
+	KON = {
+	
+	add_treasury = 150
+	
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = yes}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = no}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+
+	add_trust = {
+	who = POR
+	value = 5
+	mutual = yes
+	}
+
+	}
+
+	}
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1699.d"
+	trigger = {
+	OR = {
+	num_of_colonies = 1
+	any_subject_country = { is_colonial_nation_of = ROOT num_of_colonies = 1 }
+	carribeans_region = { OR = { owned_by = ROOT owner = { is_colonial_nation_of = ROOT } } }
+	}
+	}
+	ai_chance = { factor = 25 }
+	
+	clr_country_flag = low_productivity_slaves
+	clr_country_flag = average_productivity_slaves
+	clr_country_flag = high_productivity_slaves
+
+	add_treasury = -100
+	
+	every_province = {
+	limit = {
+	is_colony = yes
+	OR = {
+	owned_by = ROOT
+	owner = { is_subject_of = ROOT is_colonial_nation = yes }
+	}
+	}
+	random_list = {
+		33 = { add_colonysize = 100 POR = { set_country_flag = low_productivity_slaves } }
+		33 = { add_colonysize = 150 POR = { set_country_flag = average_productivity_slaves } }
+		33 = { add_colonysize = 200 POR = { set_country_flag = high_productivity_slaves } }
+	}
+
+	}
+	
+	hidden_effect = {
+
+	carribeans_region = {
+	limit = {
+	is_empty = no
+	OR = {
+	owner = { is_colonial_nation_of = ROOT }
+	owned_by = ROOT
+	}
+	has_port = yes
+	}
+	if = {
+	limit = {
+	POR = {has_country_flag = low_productivity_slaves}
+	}
+	set_variable = {
+	 which = rural_base_pop_added
+	value = 0.01
+	}
+	add_rural_population_DEVS = yes
+	}
+	else_if = {
+	limit = {
+	POR = {has_country_flag = average_productivity_slaves}
+	}
+	set_variable = {
+	 which = rural_base_pop_added
+	value = 0.015
+	}
+	add_rural_population_DEVS = yes
+	}
+	else_if = {
+	limit = {
+	POR = {has_country_flag = high_productivity_slaves}
+	}
+	set_variable = {
+	 which = rural_base_pop_added
+	value = 0.02
+	}
+	add_rural_population_DEVS = yes
+	}
+	hidden_effect = {
+	add_province_modifier = {
+    name = slave_population
+    duration = 3650 
+    hidden = no
+	}
+	}
+	}
+	
+	}
+
+
+	POR = {
+
+	if = {
+	limit = {
+	ai = yes
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	
+	if = {
+	limit = {
+	ai = no
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+	
+	add_truce_with = KON
+
+	}
+
+	KON = {
+	
+	add_treasury = 100
+	
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = yes}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = no}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+
+	add_trust = {
+	who = POR
+	value = 5
+	mutual = yes
+	}
+
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1699.e"
+	trigger = {
+	OR = {
+	AND = {
+	NOT = { sailors = 100 }
+	ai = yes
+	}
+	ai = no
+	}
+	}
+	ai_chance = { factor = 50 }
+	
+	add_sailors = 2500
+	add_treasury = -100
+	
+	POR = {
+
+	if = {
+	limit = {
+	ai = yes
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	
+	if = {
+	limit = {
+	ai = no
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+	
+	add_truce_with = KON
+
+	}
+	
+	KON = {
+	
+	add_treasury = 100
+	
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = yes}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = no}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+
+	add_trust = {
+	who = POR
+	value = 5
+	mutual = yes
+	}
+
+	}
+
+	}
+	
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1699.f"
+	trigger = {
+	OR = {
+	AND = {
+	NOT = { manpower = 5 }
+	ai = yes
+	}
+	ai = no
+	}
+	}
+	ai_chance = { factor = 50 }
+	
+	add_manpower = 2.5
+	add_treasury = -100
+	
+	POR = {
+
+	if = {
+	limit = {
+	ai = yes
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	
+	if = {
+	limit = {
+	ai = no
+	}
+	add_opinion = {
+	who = KON
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+	
+	add_truce_with = KON
+
+	}
+	
+	KON = {
+	
+	add_treasury = 100
+	
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = yes}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement_a.i
+	duration = 1825
+	}
+	}
+	if = {
+	limit = {
+	ai = yes
+	POR = {ai = no}
+	}
+	add_opinion = {
+	who = ROOT
+	modifier = honored_slave_trade_agreement
+	duration = 1825
+	}
+	}
+
+	add_trust = {
+	who = POR
+	value = 5
+	mutual = yes
+	}
+
+	}
+
+	}
+
+	option = {
+	name = "flavor_Historical_Wars_event.1699.g"
+	ai_chance = { factor = 0 }
+
+	KON = {
+
+	add_opinion = {
+	who = ROOT
+	modifier = impeded_slave_trade
+	duration = 1825
+	}
+
+	add_trust = {
+	who = POR
+	value = -5
+	mutual = yes
+	}
+
+	}
+
+	}
+
+	}
+	
+	
+	
+	#####################################
+	## Portuguese slaves are not sold ##
+	####################################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1364
+	title = "flavor_Historical_Wars_event.1364.title"
+	desc = "flavor_Historical_Wars_event.1364.desc"
+	picture = MERCHANTS_TALKING_eventPicture
+	major = yes
+
+
+	trigger = {
+	is_year = 1356
+	tag = POR
+	exists = POR
+	had_country_flag = {
+	flag = purchased_slaves
+	days = 182
+	}
+	check_variable = { which = purchased_slaves value = 1 }
+	}
+	
+	
+	immediate = {
+	
+	hidden_effect = {
+	
+	set_variable = {
+	which = remaining_bidders
+	value = 0
+	}
+	
+	set_variable = {
+	which = num_of_bidders
+	value = 0
+	}
+	
+	set_variable = {
+	which = offered_price
+	value = 0
+	}
+	clr_country_flag = purchased_slaves
+	
+	}
+	
+	
+	}
+
+
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1364.a"
+	ai_chance = { factor = 25 }
+	
+	hidden_effect = {
+	set_variable = {
+	which = purchased_slaves
+	value = 0
+	}
+	}
+	
+	add_prestige = 5
+	
+	
+	}
+	
+	
+	
+	
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1364.b"
+	trigger = {
+	OR = {
+	AND = {
+	ai = yes
+	NOT = { sailors = 1000 }
+	}
+	ai = no
+	}
+	}
+	ai_chance = { factor = 75 }
+			
+	if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 2 } }
+	}
+	add_sailors = 250
+	}
+	else_if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 3 } }
+	}
+	add_sailors = 500
+	}
+	else_if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 4 } }
+	}
+	add_sailors = 750
+	}
+	else_if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 5 } }
+	}
+	add_sailors = 1000
+	}
+	
+	hidden_effect = {
+	set_variable = {
+	which = purchased_slaves
+	value = 0
+	}
+	}
+	
+	}
+	
+	
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1364.c"
+	trigger = {
+	OR = {
+	AND = {
+	ai = yes
+	NOT = { manpower = 10 }
+	}
+	ai = no
+	}
+	}
+	ai_chance = { factor = 75 }
+	
+	if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 2 } }
+	}
+	add_manpower = 2.5
+	}
+	else_if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 3 } }
+	}
+	add_manpower = 5
+	}
+	else_if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 4 } }
+	}
+	add_manpower = 7.5
+	}
+	else_if = {
+	limit = {
+	NOT = { check_variable = { which = purchased_slaves value = 5 } }
+	}
+	add_manpower = 10
+	}
+	
+	hidden_effect = {
+	set_variable = {
+	which = purchased_slaves
+	value = 0
+	}
+	}
+	
+	}
+	
+	}
+	
+	
+	
+	###########################
+	## Slave auction bidding ##
+	###########################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1197
+	title = "flavor_Historical_Wars_event.1197.title"
+	desc = "flavor_Historical_Wars_event.1197.desc"
+	picture = LIBERUM_VETO_eventPicture
+	major = yes
+	is_triggered_only = yes
+
+	immediate = {
+	hidden_effect = {
+	POR = { subtract_variable = { which = remaining_bidders value = 1 } }
+	}
+	}
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1197.a"
+	ai_chance = { factor = 0 }
+	
+	set_variable = {
+	which = offered_price
+	value = 75
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.b"
+	ai_chance = { factor = 0 }
+	
+	set_variable = {
+	which = offered_price
+	value = 100
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.c"
+	ai_chance = { factor = 0 }
+	
+	set_variable = {
+	which = offered_price
+	value = 125
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.d"
+	ai_chance = { factor = 0 }
+	
+	set_variable = {
+	which = offered_price
+	value = 150
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.e"
+	ai_chance = { factor = 0 }
+	
+	set_variable = {
+	which = offered_price
+	value = 175
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.f"
+	trigger = { ai = yes }
+	ai_chance = { factor = 75 }
+	
+	hidden_effect = {
+	
+	if = {
+	limit = {
+	POR = {
+	NOT = {
+	subtract_variable = {
+	which = num_of_bidders
+	value = 2
+	}
+	}
+	}
+	}
+	random_list = {
+			50 = { set_variable = { which = offered_price value = 75 } }
+			50 = { set_variable = { which = offered_price value = 100 } }
+	}
+	}
+	else = {
+	random_list = {
+			20 = { set_variable = { which = offered_price value = 75 } }
+			20 = { set_variable = { which = offered_price value = 100 } }
+			20 = { set_variable = { which = offered_price value = 125 } }
+			20 = { set_variable = { which = offered_price value = 150 } }
+			20 = { set_variable = { which = offered_price value = 175 } }
+	}
+	}
+	}
+
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.g"
+	trigger = { POR = { has_country_flag = low_productivity_slaves } }
+	ai_chance = { factor = 35 }
+	
+	hidden_effect = {
+	set_country_flag = not_interested
+	
+	POR = {
+	subtract_variable = {
+	which = num_of_bidders
+	value = 1
+	}
+	}
+
+	}
+	
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.h"
+	trigger = { POR = { has_country_flag = medium_productivity_slaves } }
+	ai_chance = { factor = 25 }
+	
+	hidden_effect = {
+	set_country_flag = not_interested
+	
+	POR = {
+	subtract_variable = {
+	which = num_of_bidders
+	value = 1
+	}
+	}
+
+	}
+	
+	}
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1197.i"
+	trigger = { OR = { ai = no AND = { ai = yes num_of_loans = 10 is_in_deficit = yes } } }
+	ai_chance = { factor = 100 }
+	
+	hidden_effect = {
+	set_country_flag = not_interested
+	
+	POR = {
+	subtract_variable = {
+	which = num_of_bidders
+	value = 1
+	}
+	}
+
+	}
+	
+	}
+	
+	}
+	
+	
+	
+	
+	##############################
+	## Slave auction bids placed ##
+	###############################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1196
+	title = "flavor_Historical_Wars_event.1196.title"
+	desc = "flavor_Historical_Wars_event.1196.desc"
+	picture = LIBERUM_VETO_eventPicture
+	#major = yes
+	hidden = yes
+
+
+	trigger = {
+	POR = { NOT = { check_variable = { which = remaining_bidders value = 1 } } }
+	POR = { check_variable = { which = slaves_for_sale value = 1 } }
+	tag = POR
+	exists = POR
+	}
+	
+	
+	immediate = {
+	subtract_variable = {
+	which = slaves_for_sale
+	value = 1
+	}
+	set_global_flag = auction_in_progress
+	}
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1196.a"
+	ai_chance = { factor = 100 }
+			
+
+	random_country = {
+	limit = {
+	check_variable = { which = offered_price value = 175 }
+	has_global_flag = auction_in_progress
+	#NOT = { has_country_flag = purchased_slaves }
+	}
+	clr_global_flag = auction_in_progress
+	country_event = { id = flavor_Historical_Wars_event.1698 days = 1 }
+	}
+	
+	random_country = {
+	limit = {
+	check_variable = { which = offered_price value = 150 }
+	NOT = { check_variable = { which = offered_price value = 151 } }
+	has_global_flag = auction_in_progress
+	#NOT = { has_country_flag = purchased_slaves }
+	}
+	clr_global_flag = auction_in_progress
+	country_event = { id = flavor_Historical_Wars_event.1698 days = 1 }
+	}
+	
+	random_country = {
+	limit = {
+	check_variable = { which = offered_price value = 125 }
+	NOT = { check_variable = { which = offered_price value = 126 } }
+	has_global_flag = auction_in_progress
+	#NOT = { has_country_flag = purchased_slaves }
+	}
+	clr_global_flag = auction_in_progress
+	country_event = { id = flavor_Historical_Wars_event.1698 days = 1 }
+	}
+	
+	random_country = {
+	limit = {
+	check_variable = { which = offered_price value = 100 }
+	NOT = { check_variable = { which = offered_price value = 101 } }
+	has_global_flag = auction_in_progress
+	#NOT = { has_country_flag = purchased_slaves }
+	}
+	clr_global_flag = auction_in_progress
+	country_event = { id = flavor_Historical_Wars_event.1698 days = 1 }
+	}
+	
+	random_country = {
+	limit = {
+	check_variable = { which = offered_price value = 75 }
+	NOT = { check_variable = { which = offered_price value = 76 } }
+	has_global_flag = auction_in_progress
+	#NOT = { has_country_flag = purchased_slaves }
+	}
+	clr_global_flag = auction_in_progress
+	country_event = { id = flavor_Historical_Wars_event.1698 days = 1 }
+	}
+
+
+	}
+			
+	}
+	
+	
+	
+	
+	
+	################################################
+	## Slave auction decision to continue or not ##
+	###############################################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1195
+	title = "flavor_Historical_Wars_event.1195.title"
+	desc = "flavor_Historical_Wars_event.1195.desc"
+	picture = LIBERUM_VETO_eventPicture
+	major = yes
+	is_triggered_only = yes
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1195.a"
+	trigger = { check_variable = { which = purchased_slaves value = 1 } }
+	ai_chance = { factor = 100 }
+	
+	set_variable = { which = ducat_gain which = offered_price }
+	hidden_effect = {
+	scaled_ducat_gained_country = yes
+	
+	every_country = {
+	limit = {
+	check_variable = { which = offered_price value = 1 }
+	}
+	set_variable = {
+	which = offered_price
+	value = 0
+	}
+	}
+	
+	change_variable = {
+	which = slaves_for_sale
+	value = 1
+	}
+	
+	subtract_variable = {
+	which = purchased_slaves
+	value = 1
+	}
+	
+	set_variable = {
+	which = remaining_bidders
+	which = num_of_bidders
+	}	
+	
+	every_country = {
+	limit = {
+	has_country_flag = colonial_power
+	NOT = {has_country_flag = not_interested}
+	#NOT = {has_country_flag = purchased_slaves}
+	}
+	country_event = { id = flavor_Historical_Wars_event.1197 days = 5 }
+	}
+
+	}
+	
+	}
+	
+	
+	option = {
+	name = "flavor_Historical_Wars_event.1195.b"
+	trigger = { NOT = { check_variable = { which = purchased_slaves value = 1 } } }
+	ai_chance = { factor = 100 }
+	
+	set_variable = { which = ducat_gain which = offered_price }
+	
+	hidden_effect = {
+	
+	scaled_ducat_gained_country = yes
+	
+	set_variable = {
+	which = remaining_bidders
+	value = 0
+	}
+	
+	set_variable = {
+	which = num_of_bidders
+	value = 0
+	}
+	
+	set_variable = {
+	which = offered_price
+	value = 0
+	}
+	clr_country_flag = purchased_slaves
+	
+	}
+	
+	}		
+	
+	}
+
+	
+	
+	
+	
+	
+	
+	###################################################
+	## Slave trade potential buyers background event ##
+	###################################################
+
+
+	country_event = {
+	id = flavor_Historical_Wars_event.1194
+	title = "flavor_Historical_Wars_event.1194.title"
+	desc = "flavor_Historical_Wars_event.1194.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	#major = yes
+	
+
+	immediate = {
+	
+	every_country = {
+	limit = {
+	check_variable = { which = offered_price value = 1 }
+	}
+	set_variable = {
+	which = offered_price
+	value = 0
+	}
+	}
+	
+	every_country = {
+	limit = {
+	OR = {
+	has_country_flag = colonial_power
+	has_country_flag = not_interested
+	}
+	}
+	clr_country_flag = not_interested
+	clr_country_flag = colonial_power
+	}
+	
+	
+	every_country = {
+	limit = {
+	NOT = { tag = POR }
+	capital_scope = { continent = europe }
+	OR = {
+	num_of_owned_provinces_with = {
+	value = 1
+	OR = {
+	AND = {
+	is_colony = yes
+	is_overseas = yes
+	}
+	region = carribeans_region
+	}
+	}
+	random_subject_country = {
+	limit = {
+	is_overseas_subject = yes
+	num_of_owned_provinces_with = {
+	value = 1
+	OR = {
+	is_colony = yes
+	region = carribeans_region
+	}
+	}
+	}
+	}
+	}
+	}
+	set_country_flag = colonial_power
+	POR = {
+	change_variable = {
+	which = num_of_bidders
+	value = 1
+	}
+	}
+	}
+	
+	}
+	
+
+
+	###########
+	##options##
+	###########
+
+
+	option = {
+	name = "flavor_Historical_Wars_event.1194.a"
+	ai_chance = { factor = 100 }
+	
+	
+	set_variable = {
+	which = remaining_bidders
+	which = num_of_bidders
+	}
+	
+	every_country = {
+	limit = {
+	has_country_flag = colonial_power
+	}
+	country_event = { id = flavor_Historical_Wars_event.1197 days = 5 }
+	}
+	
+	}
+	
+	}
+
+

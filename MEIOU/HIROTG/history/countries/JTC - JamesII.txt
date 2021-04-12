@@ -1,0 +1,22 @@
+# JTC - JamesII
+#10.01.10 FB-HT3 - make HT3 changes
+
+
+government = monarchy
+add_government_reform = divine_right
+government_rank = 5
+mercantilism = 0.1 # mercantilism_freetrade = -1
+unit_type = western
+technology_group = western
+primary_culture = english
+add_accepted_culture = northern_e
+add_accepted_culture = gascon
+add_accepted_culture = normand
+add_accepted_culture = francien
+religion = catholic
+capital = 236	# London
+
+1000.1.1  = {
+	set_variable = { which = "centralization_decentralization" value = -2 }
+	set_legacy_government = feudal_monarchy
+}

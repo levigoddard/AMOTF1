@@ -1,0 +1,2259 @@
+		namespace = flavor_Historical_Wars_event
+		
+		################################
+		## treasure fleet start event ##
+		################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1798
+		title = "flavor_Historical_Wars_event.1798.title"
+		desc = "flavor_Historical_Wars_event.1798.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		ai = no
+		exists = SPA
+		has_country_flag = is_host
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1798.a"
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+		
+		SPA = {
+		add_country_modifier = {
+		name = treasure_fleets_enabled
+		duration = -1
+		}		
+		
+		set_variable = {
+    	which = total_european_silver
+    	value = 25
+		}
+		
+		}
+		
+		}
+
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1798.b"
+		ai_chance = { factor = 100 }
+
+		SPA = {
+		remove_country_modifier =  treasure_fleets_enabled
+		}
+
+		}
+
+
+		}
+		
+		
+		####################
+		## Treasure fleets ##
+		####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1280
+		title = "flavor_Historical_Wars_event.1280.title"
+		desc = "flavor_Historical_Wars_event.1280.desc"
+		picture = SHIP_SAILING_eventPicture
+		#major = yes
+		hidden = yes
+
+
+		trigger = {
+		tag = SPA
+		exists = SPA
+		OR = {
+		colonial_bolivia = {
+        owner = { is_colonial_nation_of = ROOT NOT = { is_subject_of_type = conquistador_expedition } }
+        }
+        colonial_mexico = {
+        owner = { is_colonial_nation_of = ROOT NOT = { is_subject_of_type = conquistador_expedition } }
+		}
+        chile_region = {
+        owner = { is_colonial_nation_of = ROOT NOT = { is_subject_of_type = conquistador_expedition } }
+        }
+        la_plata_region = {
+        owner = { is_colonial_nation_of = ROOT NOT = { is_subject_of_type = conquistador_expedition } }
+        }
+		colonial_peru = {
+        owner = { is_colonial_nation_of = ROOT NOT = { is_subject_of_type = conquistador_expedition } }
+        }
+		}
+		NOT = {has_country_modifier = disrupted_treasure_fleets}
+		NOT = {has_country_modifier = recent_treasure_fleet}
+		has_country_modifier = treasure_fleets_enabled
+		}
+		
+		
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1280.a"
+		ai_chance = { factor = 100 }
+		
+		set_variable = {
+        which = treasure_fleet_total 
+        value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_amount
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = inflation_total
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_50
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_25
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_10
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = mexico_treasure_fleet
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = peru_treasure_fleet
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = bolivia_treasure_fleet
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = la_plata_treasure_fleet
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = chile_treasure_fleet
+    	value = 0
+		}
+		
+		set_variable = {
+        which = delivered_silver
+        value = 0
+		}
+		
+		
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		OR = {
+		AND = {
+		NOT = { 2216 = { has_province_modifier = galleon_trade } }
+		colonial_region = colonial_mexico
+		}
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		}
+		
+		SPA = {
+		
+		if = {
+		limit = {
+		is_year = 1503
+		NOT = {is_year = 1581}
+		}
+		change_variable = {
+    	which = total_european_silver
+    	value = 3
+		}
+		
+		change_variable = {
+    	which = delivered_silver
+    	value = 3
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_amount
+    	value = 425
+		}
+		
+		change_variable = {
+    	which = treasure_fleet_total
+    	value = 425
+		}
+				
+		change_variable = {
+    	which = inflation_total
+    	value = 1
+		}
+		
+		}
+		
+		if = {
+		limit = {
+		is_year = 1581
+		NOT = {is_year = 1631}
+		}
+		change_variable = {
+    	which = total_european_silver
+    	value = 4
+		}
+		
+		change_variable = {
+    	which = delivered_silver
+    	value = 4
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_amount
+    	value = 475
+		}
+		
+		change_variable = {
+    	which = treasure_fleet_total
+    	value = 475
+		}
+		
+		change_variable = {
+    	which = inflation_total
+    	value = 1.25
+		}
+		
+		}
+		
+		if = {
+		limit = {
+		is_year = 1631
+		}
+		change_variable = {
+    	which = total_european_silver
+    	value = 2
+		}
+		
+		change_variable = {
+    	which = delivered_silver
+    	value = 2
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_amount
+    	value = 375
+		}
+		
+		change_variable = {
+    	which = treasure_fleet_total
+    	value = 375
+		}
+		
+		change_variable = {
+    	which = inflation_total
+    	value = 0.75
+		}
+
+		}
+		}
+		
+		if = {
+		limit = {
+		capital_scope = { colonial_region = colonial_bolivia }
+		}
+		SPA = {
+		change_variable = {
+    	which = bolivia_treasure_fleet
+    	which = treasure_fleet_amount
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		capital_scope = { region = chile_region }
+		}
+		SPA = {
+		change_variable = {
+    	which = chile_treasure_fleet
+    	which = treasure_fleet_amount
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		capital_scope = { colonial_region = colonial_peru }
+		}
+		SPA = {
+		change_variable = {
+    	which = peru_treasure_fleet
+    	which = treasure_fleet_amount
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		capital_scope = { region = la_plata_region }
+		}
+		SPA = {
+		change_variable = {
+    	which = la_plata_treasure_fleet
+    	which = treasure_fleet_amount
+		}
+		}
+		}
+		
+		if = {
+		limit = {
+		capital_scope = { colonial_region = colonial_mexico	}
+		}
+		SPA = {
+		change_variable = {
+    	which = mexico_treasure_fleet
+    	which = treasure_fleet_amount
+		}
+		}
+		}
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_50
+    	which = treasure_fleet_total
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_25
+    	which = treasure_fleet_total
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_10
+    	which = treasure_fleet_total
+		}
+		
+		multiply_variable = {
+    	which = treasure_fleet_total_50
+    	value = 0.5
+		}
+		
+		multiply_variable = {
+    	which = treasure_fleet_total_25
+    	value = 0.25
+		}
+		
+		multiply_variable = {
+    	which = treasure_fleet_total_10
+    	value = 0.1
+		}
+		
+		if = {
+		limit = {
+		has_country_flag = cadiz_raid_successful
+		}
+		set_country_flag = treasure_fleet_raided_by_buccaneers
+		
+		set_variable = {
+    	which = treasure_fleet_total
+    	value = 0
+		}
+		set_variable = {
+    	which = inflation_total
+    	value = 0
+		}
+		clr_country_flag = cadiz_raid_successful
+		}
+		
+		else = {
+		random_list = {
+		15 = {
+		random_country = {
+		limit = {
+		has_country_flag = letters_of_marque_issued 
+		OR = {
+		num_of_owned_provinces_with = {
+		value = 1
+		region = carribeans_region
+		is_colony = no
+		}
+		carribeans_region = {
+		owner = {
+		is_subject_of = THIS 
+		} 
+		} 
+		} 
+		}
+		set_variable = {
+			which = treasure_fleet_total
+			which = PREV
+		}
+		multiply_variable = {
+		which = treasure_fleet_total
+		value = 0.75
+		}
+		country_event = { id = flavor_Historical_Wars_event.1273 days = 0 }
+		
+		SPA = {
+		
+		set_country_flag = treasure_fleet_raided_by_buccaneers
+		
+		set_variable = {
+    	which = treasure_fleet_total
+    	value = 0
+		}
+		set_variable = {
+    	which = inflation_total
+    	value = 0
+		}
+		}
+		
+		}
+		
+		}
+		15 = {
+		if = {
+		limit = {
+		carribeans_region = {
+		controlled_by = PIR 
+		}
+		}
+				
+		set_country_flag = treasure_fleet_looted_by_pirates
+		
+		set_variable = {
+    	which = treasure_fleet_total
+    	value = 0
+		}
+		set_variable = {
+    	which = inflation_total
+    	value = 0
+		}
+		subtract_variable = {
+    	which = total_european_silver
+    	which = delivered_silver
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1279 days = 0 }
+		
+		}
+		}
+		75 = {}
+		}
+		}
+		
+		SPA = {	country_event = { id = flavor_Historical_Wars_event.1950 days = 10 } }
+		
+		}
+			
+		
+		}
+		
+		
+		
+		####################
+		## Treasure fleets ##
+		####################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1950
+		title = "flavor_Historical_Wars_event.1950.title"
+		desc = "flavor_Historical_Wars_event.1950.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+		is_triggered_only = yes
+		
+		
+		immediate = {
+		hidden_effect = {
+			set_variable = { 	which = burghers_loyalty_removed_a 	value = 10 }
+			set_variable = { 	which = burghers_loyalty_removed_b 	value = 5 }
+		}
+		}
+
+
+		
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1950.a"
+		trigger = { check_variable = { which = treasure_fleet_total value = 1 } NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } OR = { AND = { ai = yes num_of_loans = 10  check_variable = { which = estate_burghers_loyalty value = 0.15 } } ai = no } }
+		ai_chance = { factor = 75 }
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		OR = {
+		AND = {
+		NOT = { 2216 = { has_province_modifier = galleon_trade } }
+		colonial_region = colonial_mexico
+		}
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1503
+		NOT = {is_year = 1581}
+		}
+		SPA = { add_inflation = 1 }
+		}
+		if = {
+		limit = {
+		is_year = 1581
+		NOT = {is_year = 1631}
+		}
+		SPA = { add_inflation = 1.25 }
+		}
+		if = {
+		limit = {
+		is_year = 1631
+		}
+		SPA = { add_inflation = 0.75 }
+		}
+		}
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		}
+		
+		subtract_stability_points_50 = yes
+
+		reduce_estate_burghers_loyalty_effect = { id=a }
+		
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.b"
+		trigger = { check_variable = { which = treasure_fleet_total value = 1 } NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } OR = { AND = { ai = yes num_of_loans = 3 check_variable = { which = estate_burghers_loyalty value = 0.20 } } ai = no } }
+		ai_chance = { factor = 75 }
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		OR = {
+		AND = {
+		NOT = { 2216 = { has_province_modifier = galleon_trade } }
+		colonial_region = colonial_mexico
+		}
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1503
+		NOT = {is_year = 1581}
+		}
+		SPA = { add_inflation = 0.5 }
+		}
+		if = {
+		limit = {
+		is_year = 1581
+		NOT = {is_year = 1631}
+		}
+		SPA = { add_inflation = 0.625 }
+		}
+		if = {
+		limit = {
+		is_year = 1631
+		}
+		SPA = { add_inflation = 0.375 }
+		}
+		}
+
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total_50 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+				
+		}
+		
+		reduce_estate_burghers_loyalty_effect = { id=b }
+		
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.c"
+		trigger = { check_variable = { which = treasure_fleet_total value = 1 } NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } }
+		ai_chance = { factor = 50 }
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		OR = {
+		AND = {
+		NOT = { 2216 = { has_province_modifier = galleon_trade } }
+		colonial_region = colonial_mexico
+		}
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1503
+		NOT = {is_year = 1581}
+		}
+		SPA = { add_inflation = 0.1875 }
+		}
+		if = {
+		limit = {
+		is_year = 1581
+		NOT = {is_year = 1631}
+		}
+		SPA = { add_inflation = 0.25 }
+		}
+		if = {
+		limit = {
+		is_year = 1631
+		}
+		SPA = { add_inflation = 0.125 }
+		}
+		}
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total_25 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.d"
+		trigger = { check_variable = { which = treasure_fleet_total value = 1 } NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } OR = { AND = { ai = yes NOT = { num_of_loans = 3 } } ai = no } }
+		ai_chance = { factor = 25 }
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		OR = {
+		AND = {
+		NOT = { 2216 = { has_province_modifier = galleon_trade } }
+		colonial_region = colonial_mexico
+		}
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		}
+		random_owned_province = { limit = { is_empty = no is_colony = no  NOT = { has_building = fort_15th } NOT = { has_province_modifier = fort_is_building } } province_event = { id = POP_MassBuilding.006 } }
+		
+		if = {
+		limit = {
+		is_year = 1503
+		NOT = {is_year = 1581}
+		}
+		SPA = { add_inflation = 0.1 }
+		}
+		if = {
+		limit = {
+		is_year = 1581
+		NOT = {is_year = 1631}
+		}
+		SPA = { add_inflation = 0.125 }
+		}
+		if = {
+		limit = {
+		is_year = 1631
+		}
+		SPA = { add_inflation = 0.075 }
+		}
+		}
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total_10 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.e"
+		trigger = {
+		check_variable = { which = treasure_fleet_total value = 1 }
+		NOT = { has_country_flag = treasure_fleet_looted_by_pirates }
+		NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers }
+		OR = {
+		AND = {
+		ai = yes 
+		NOT = { num_of_loans = 3 }		
+		} 
+		ai = no 
+		} 
+		any_province = {
+		owner = { is_colonial_nation_of = SPA NOT = { is_subject_of_type = conquistador_expedition } }
+		is_colony = no
+		has_province_modifier = copper_1  
+		NOT = { has_building = mines_1 }
+		NOT = { has_building = mines_2 }
+		NOT = { has_building = mines_3 }
+		NOT = { has_building = mines_4 }
+		NOT = { has_building = mines_5 }
+		}
+		}
+		ai_chance = { factor = 100 }
+		
+		every_province = {
+		limit = {
+		owner = { is_colonial_nation_of = SPA }
+		is_colony = no
+		has_province_modifier = copper_1  
+		NOT = { has_building = mines_1 }
+		NOT = { has_building = mines_2 }
+		NOT = { has_building = mines_3 }
+		NOT = { has_building = mines_4 }
+		NOT = { has_building = mines_5 }
+		}
+		add_building = mines_1
+		}
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.f"
+		trigger = {	NOT = { has_country_flag = treasure_fleet_looted_by_pirates } has_country_flag = treasure_fleet_raided_by_buccaneers }
+		ai_chance = { factor = 100 }
+		
+		clr_country_flag = treasure_fleet_raided_by_buccaneers
+		
+		set_variable = { which = ducat_gain value = 0 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.g"
+		trigger = {	has_country_flag = treasure_fleet_looted_by_pirates }
+		ai_chance = { factor = 100 }
+		
+		clr_country_flag = treasure_fleet_looted_by_pirates
+		
+		set_variable = { which = ducat_gain value = 0 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1950.h"
+		trigger = {	NOT = { has_country_flag = treasure_fleet_looted_by_pirates NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } NOT = { check_variable = { which = treasure_fleet_total value = 1 } } } }
+		ai_chance = { factor = 100 }
+		
+		set_variable = { which = ducat_gain value = 0 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = SPA
+		NOT = { is_subject_of_type = conquistador_expedition }
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		########################
+		## treasure fleet end ##
+		########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1796
+		title = "flavor_Historical_Wars_event.1796.title"
+		desc = "flavor_Historical_Wars_event.1796.desc"
+		picture = SHIP_SAILING_eventPicture
+		#major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = SPA
+		exists = SPA
+		is_year = 1500
+		
+		NOT = {
+			colonial_peru = {
+			owner = {is_subject_of = ROOT}
+			}
+		}
+
+		NOT = {
+			colonial_bolivia = {
+			owner = {is_subject_of = ROOT}
+			}
+		}
+
+		NOT = {
+			colonial_mexico = {
+			owner = {is_subject_of = ROOT}
+			}
+		}
+
+		NOT = {
+			chile_region = {
+			owner = {is_subject_of = ROOT}
+			}
+		}
+
+		NOT = {
+			la_plata_region = {
+			owner = {is_subject_of = ROOT}
+			}
+		}
+		
+		has_country_modifier = treasure_fleets_enabled
+		has_country_modifier = recent_treasure_fleet
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1796.a"
+		ai_chance = { factor = 100 }
+
+		remove_country_modifier = treasure_fleets_enabled
+
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		########################################
+		## treasure fleet sinks - calculation ##
+		########################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1275
+		title = "flavor_Historical_Wars_event.1275.title"
+		desc = "flavor_Historical_Wars_event.1275.desc"
+		picture = FLAGSHIP_SUNK_eventPicture
+		hidden = yes
+
+
+		trigger = {
+		is_colonial_nation_of = SPA
+		capital_scope = {
+		OR = {
+		AND = {
+		NOT = { 2216 = { has_province_modifier = galleon_trade } }
+		colonial_region = colonial_mexico
+		}
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		num_of_ports = 1
+		NOT = {has_country_modifier = disrupted_treasure_fleets}
+		exists = SPA
+		SPA = { has_country_modifier = treasure_fleets_enabled }
+		SPA = { has_country_modifier = recent_treasure_fleet }
+		}
+		
+		
+		
+		mean_time_to_happen = {        
+		months = 400                                        
+		}
+		
+		
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1275.a"
+		ai_chance = { factor = 100 }
+		
+		add_country_modifier = {
+		name = disrupted_treasure_fleets
+		duration = -1
+		}
+		
+		SPA = {	country_event = { id = flavor_Historical_Wars_event.12755 days = 1 } }
+
+		}
+
+		}
+		
+		
+		
+		##########################
+		## treasure fleet sinks ##
+		##########################
+		country_event = {
+		id = flavor_Historical_Wars_event.12755
+		title = "flavor_Historical_Wars_event.12755.title"
+		desc = "flavor_Historical_Wars_event.12755.desc"
+		picture = FLAGSHIP_SUNK_eventPicture
+		major = yes
+		is_triggered_only = yes
+		
+
+		###########
+		##options##
+		###########
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.12755.a"
+		ai_chance = { factor = 100 }
+		
+		}
+
+		}
+
+		
+		
+		
+		
+		########################################
+		## treasure fleet captured by pirates ##
+		########################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1279
+		title = "flavor_Historical_Wars_event.1279.title"
+		desc = "flavor_Historical_Wars_event.1279.desc"
+		picture = PIRATE_CAPTAINS_eventPicture
+		major = yes
+		is_triggered_only = yes
+		
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		every_country = {
+		limit = {
+		is_colonial_nation_of = SPA
+		capital_scope = {
+		OR = {
+		colonial_region = colonial_mexico
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		add_country_modifier = {
+		name = disrupted_treasure_fleets
+		duration = -1
+		}
+		}
+		
+		}
+		
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1279.a"
+		ai_chance = { factor = 100 }
+
+		}
+		
+		}
+		
+		
+		
+		
+		############################################################
+		## treasure fleet captured by buccaneers - spain decision ##
+		############################################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1278
+		title = "flavor_Historical_Wars_event.1278.title"
+		desc = "flavor_Historical_Wars_event.1278.desc"
+		picture = BUCCANEERS_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1278.a"
+		trigger = {
+		NOT = { is_subject_of = FROM }
+		NOT = { war_with = FROM }
+		OR = {
+		AND = {
+		ai = yes
+		is_bankrupt = no
+		OR = {
+		is_at_war = no 
+		AND = { is_at_war = yes war_score = 25 NOT = { war_exhaustion = 10 } }
+		} 
+		}
+		ai = no 
+		}
+		}
+		ai_chance = { factor = 75 }
+
+
+		declare_war_with_cb = {
+		who = FROM
+		casus_belli = cb_historical_immersion_remove_letters_of_marque
+		}
+
+		}
+		
+
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1278.b"
+		trigger = { NOT = { war_with = FROM } NOT = { is_subject_of = FROM } }
+		ai_chance = { factor = 25 }
+
+		add_prestige = -10
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1278.c"
+		trigger = { dip = 5 NOT = { is_subject_of = FROM } }
+		ai_chance = { factor = 100 }
+
+		FROM  = {
+		
+		clr_country_flag = letters_of_marque_issued
+		
+		remove_country_modifier = supporting_buccaneers
+		
+		add_country_modifier = {
+		name = letters_of_marque_forcibly_revoked
+		duration = 9125
+		}
+		
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1278.d"
+		trigger = {	war_with = FROM }
+		ai_chance = { factor = 75 }
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1278.e"
+		trigger = {	is_subject_of = FROM }
+		ai_chance = { factor = 100 }
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		#######################
+		## Letters of marque ##
+		#######################
+		country_event = {
+		id = flavor_Historical_Wars_event.1277
+		title = "flavor_Historical_Wars_event.1277.title"
+		desc = "flavor_Historical_Wars_event.1277.desc"
+		picture = BUCCANEERS_eventPicture
+		major = yes
+
+
+		trigger = {
+		NOT = { has_country_flag = letters_of_marque_event }
+		capital_scope = {continent = europe}
+		NOT = { tag = SPA }
+		is_year = 1500
+		exists = SPA
+		SPA = {has_country_modifier = treasure_fleets_enabled}
+		OR = {
+		num_of_owned_provinces_with = {
+		value = 1
+		region = carribeans_region
+		is_colony = no
+		}
+		carribeans_region = {
+		owner = {
+		is_subject_of = ROOT
+		is_colonial_nation = yes
+		}
+		}
+		}
+		}
+		
+			
+		mean_time_to_happen = {        
+			months = 24                                        
+		}
+		
+		
+		immediate = {
+		
+		set_country_flag = letters_of_marque_event
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1277.a"
+		ai_chance = { factor = 85 }
+		
+		
+		set_country_flag = letters_of_marque_issued
+		
+		add_country_modifier = {
+		name = supporting_buccaneers
+		duration = -1
+		}
+		
+		add_trust = {
+		who = SPA
+		value = -25
+		mutual = yes
+		}
+		
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1277.b"
+		ai_chance = { factor = 15 }
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		###########################################
+		## treasure fleet captured by buccaneers ##
+		############################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1273
+		title = "flavor_Historical_Wars_event.1273.title"
+		desc = "flavor_Historical_Wars_event.1273.desc"
+		picture = BUCCANEERS_eventPicture
+		major = yes
+		is_triggered_only = yes
+		
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		every_country = {
+		limit = {
+		is_colonial_nation_of = SPA
+		capital_scope = {
+		OR = {
+		colonial_region = colonial_mexico
+		colonial_region = colonial_bolivia
+		colonial_region = colonial_peru
+		region = chile_region
+		region = la_plata_region
+		}
+		}
+		}
+		add_country_modifier = {
+		name = disrupted_treasure_fleets
+		duration = -1
+		}
+		}
+				
+		SPA = { country_event = { id = flavor_Historical_Wars_event.1278 days = 0 } }
+		
+		}
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1273.a"
+		ai_chance = { factor = 100 }
+		
+			
+		set_variable = { which = ducat_gain which = treasure_fleet_total }
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+		which = treasure_fleet_total
+		value = 0
+		}
+		
+		}
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		##############################
+		## Treasure fleets Portugal ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1152
+		title = "flavor_Historical_Wars_event.1152.title"
+		desc = "flavor_Historical_Wars_event.1152.desc"
+		picture = SHIP_SAILING_eventPicture
+		#major = yes
+		hidden = yes
+
+
+		trigger = {
+		has_country_modifier = brazil_treasure_fleet_enabled
+		tag = POR
+		exists = POR
+		colonial_brazil = {
+        owner = {is_colonial_nation_of = ROOT}
+        }
+		NOT = {has_country_modifier = recent_treasure_fleet}
+		}
+		
+		
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1152.a"
+		ai_chance = { factor = 100 }
+		
+		set_variable = {
+        which = treasure_fleet_total 
+        value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_amount
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = inflation_total
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_50
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_25
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_10
+    	value = 0
+		}
+		
+		set_variable = {
+    	which = brazil_treasure_fleet
+    	value = 0
+		}
+		
+		
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		num_of_ports = 1
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		}
+		
+		POR = {
+		
+		if = {
+		limit = {
+		is_year = 1697
+		NOT = {is_year = 1797}
+		}
+	
+		set_variable = {
+    	which = treasure_fleet_amount
+    	value = 425
+		}
+		
+		change_variable = {
+    	which = treasure_fleet_total
+    	value = 425
+		}
+				
+		change_variable = {
+    	which = inflation_total
+    	value = 1
+		}
+		
+		}
+
+		}
+		
+		if = {
+		limit = {
+		capital_scope = { colonial_region = colonial_brazil }
+		}
+		POR = {
+		change_variable = {
+    	which = brazil_treasure_fleet
+    	which = treasure_fleet_amount
+		}
+		}
+		}
+		
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_50
+    	which = treasure_fleet_total
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_25
+    	which = treasure_fleet_total
+		}
+		
+		set_variable = {
+    	which = treasure_fleet_total_10
+    	which = treasure_fleet_total
+		}
+		
+		multiply_variable = {
+    	which = treasure_fleet_total_50
+    	value = 0.5
+		}
+		
+		multiply_variable = {
+    	which = treasure_fleet_total_25
+    	value = 0.25
+		}
+		
+		multiply_variable = {
+    	which = treasure_fleet_total_10
+    	value = 0.1
+		}
+				
+		POR = {	country_event = { id = flavor_Historical_Wars_event.1735 days = 10 } }
+		
+		}
+			
+		
+		}
+		
+		
+		
+		
+		
+		##############################
+		## Treasure fleets Portugal ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1735
+		title = "flavor_Historical_Wars_event.1735.title"
+		desc = "flavor_Historical_Wars_event.1735.desc"
+		picture = SHIP_SAILING_eventPicture
+		#major = yes
+		is_triggered_only = yes
+		
+		
+		immediate = {
+		hidden_effect = {
+			set_variable = { 	which = burghers_loyalty_removed_a 	value = 5 }
+			set_variable = { 	which = burghers_loyalty_removed_b 	value = 2.5 }
+		}
+		}
+
+
+		
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1735.a"
+		trigger = { NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } OR = { AND = { ai = yes num_of_loans = 10  check_variable = { which = estate_burghers_loyalty value = 0.15 } } ai = no } }
+		ai_chance = { factor = 75 }
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1697
+		NOT = {is_year = 1797}
+		}
+		POR = { add_inflation = 1 }
+		}
+		}
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		}
+		
+		subtract_stability_points_50 = yes
+
+		reduce_estate_burghers_loyalty_effect = { id=a }
+		
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1735.b"
+		trigger = { NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } OR = { AND = { ai = yes check_variable = { which = estate_burghers_loyalty value = 0.25 } } ai = no } }
+		ai_chance = { factor = 75 }
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1697
+		NOT = {is_year = 1797}
+		}
+		POR = { add_inflation = 0.5 }
+		}
+		}
+
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total_50 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+				
+		}
+		
+		reduce_estate_burghers_loyalty_effect = { id=b }
+		
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1735.c"
+		trigger = { NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } }
+		ai_chance = { factor = 50 }
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1697
+		NOT = {is_year = 1797}
+		}
+		POR = { add_inflation = 0.1875 }
+		}
+		}
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total_25 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1735.d"
+		trigger = { NOT = { has_country_flag = treasure_fleet_looted_by_pirates } NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers } OR = { AND = { ai = yes NOT = { num_of_loans = 3 } } ai = no } }
+		ai_chance = { factor = 25 }
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		NOT = { has_country_modifier = disrupted_treasure_fleets }
+		num_of_ports = 1
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		}
+		if = {
+		limit = {
+		is_year = 1697
+		NOT = {is_year = 1797}
+		}
+		POR = { add_inflation = 0.1 }
+		}
+		}
+		
+		set_variable = { which = ducat_gain which = treasure_fleet_total_10 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1735.e"
+		trigger = {
+		NOT = { has_country_flag = treasure_fleet_looted_by_pirates }
+		NOT = { has_country_flag = treasure_fleet_raided_by_buccaneers }
+		OR = {
+		AND = {
+		ai = yes 
+		NOT = { num_of_loans = 3 }		
+		} 
+		ai = no 
+		} 
+		any_province = {
+		owner = { is_colonial_nation_of = POR }
+		has_province_modifier = copper_1  
+		NOT = { has_building = mines_1 }
+		NOT = { has_building = mines_2 }
+		NOT = { has_building = mines_3 }
+		NOT = { has_building = mines_4 }
+		NOT = { has_building = mines_5 }
+		}
+		}
+		ai_chance = { factor = 75 }
+		
+		random_province = {
+		limit = {
+		owner = { is_colonial_nation_of = POR }
+		has_province_modifier = copper_1  
+		NOT = { has_building = mines_1 }
+		NOT = { has_building = mines_2 }
+		NOT = { has_building = mines_3 }
+		NOT = { has_building = mines_4 }
+		NOT = { has_building = mines_5 }
+		}
+		add_building = mines_1
+		}
+		
+		hidden_effect = {
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1735.f"
+		trigger = {	NOT = { has_country_flag = treasure_fleet_looted_by_pirates } has_country_flag = treasure_fleet_raided_by_buccaneers }
+		
+		clr_country_flag = treasure_fleet_raided_by_buccaneers
+		
+		set_variable = { which = ducat_gain value = 0 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1735.g"
+		trigger = {	has_country_flag = treasure_fleet_looted_by_pirates }
+		
+		clr_country_flag = treasure_fleet_looted_by_pirates
+		
+		set_variable = { which = ducat_gain value = 0 }
+		
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+		
+		add_country_modifier = {
+		name = recent_treasure_fleet
+		duration = 912
+		}
+		
+		every_subject_country = {
+		limit = {
+		AND = {
+		is_colonial_nation_of = POR
+		has_country_modifier = disrupted_treasure_fleets
+		}
+		}
+		remove_country_modifier = disrupted_treasure_fleets
+		}
+		
+		}
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		################################
+		## treasure fleet start event ##
+		################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1736
+		title = "flavor_Historical_Wars_event.1736.title"
+		desc = "flavor_Historical_Wars_event.1736.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = POR
+		exists = POR
+		is_year = 1697
+		3465 = {owner = {is_subject_of = POR}}
+		}
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1736.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = brazil_gold_rush
+
+		add_country_modifier = {
+		name = brazil_treasure_fleet_enabled
+		duration = -1
+		}
+
+
+		every_subject_country = {
+		limit = {
+		is_colonial_nation_of = POR
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		add_opinion = {
+		who = POR
+		modifier = bleeding_us_dry
+		}
+		add_liberty_desire = 25
+		}
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1736.b"
+		ai_chance = { factor = 0 }
+
+		set_country_flag = brazil_gold_rush
+
+		every_subject_country = {
+		limit = {
+		is_colonial_nation_of = POR
+		capital_scope = {
+		colonial_region = colonial_brazil
+		}
+		}
+		add_opinion = {
+		who = POR
+		modifier = beloved_overlord
+		}
+		add_liberty_desire = -25
+
+		add_country_modifier = {
+		name = "brazil_gold_rush"
+		duration = 36865
+		}
+
+		}
+
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		########################
+		## treasure fleet end ##
+		########################
+		country_event = {
+		id = flavor_Historical_Wars_event.1734
+		title = "flavor_Historical_Wars_event.1734.title"
+		desc = "flavor_Historical_Wars_event.1734.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = POR
+		exists = POR
+		OR = {
+		is_year = 1797
+		NOT = {
+		colonial_brazil = {
+		owner = {
+		is_subject_of = ROOT
+		}
+		}
+		}
+		}
+		has_country_modifier = brazil_treasure_fleet_enabled
+		}
+
+		###########
+		##options##
+		###########
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1734.a"
+		ai_chance = { factor = 100 }
+
+		remove_country_modifier = brazil_treasure_fleet_enabled
+
+		}
+
+		}
+	
+
+

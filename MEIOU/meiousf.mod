@@ -1,0 +1,7 @@
+version="1.29.6.0"
+tags={
+	"Alternative History"
+}
+name="MEIOU - Sub -fix 1.29.6"
+supported_version="1.29.6"
+path="C:/Users/packl/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/meiousf"

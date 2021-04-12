@@ -1,0 +1,35 @@
+# MGL - Legazpi
+# 10.01.27 FB-HT3 - make HT3 changes
+
+government = monarchy 
+add_government_reform = divine_right
+government_rank = 1
+mercantilism = 0.0
+primary_culture = castillian
+religion = catholic
+technology_group = western
+unit_type = western
+capital = 657	# 
+
+historical_neutral = SPA
+historical_rival = LUS
+
+
+1000.1.1 = {
+	add_country_modifier = { name = title_4 duration = -1 }
+	set_country_flag = title_4
+	#set_variable = { which = "centralization_decentralization" value = -2 }
+	add_absolutism = -100
+	add_absolutism = 70
+	set_legacy_government = feudal_monarchy
+}
+1563.1.1 = {
+	monarch = {
+		name = "Legazpi"
+		dynasty = "Miguel"
+		ADM = 6
+		DIP = 4
+		MIL = 6
+		leader = {	name = "Miguel Legazpi"              	type = conquistador		fire = 4	shock = 4	manuever = 5	siege = 1	death_date = 1570.6.26 }  
+	}
+}

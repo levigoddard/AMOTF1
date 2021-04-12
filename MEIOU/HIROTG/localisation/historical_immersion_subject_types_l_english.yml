@@ -1,0 +1,38 @@
+﻿l_english:
+
+ joint_monarchy_title:1 "Shared monarchy"
+ joint_monarchy_title_plural:1 "Shared monarchies"
+ joint_monarchy_long_desc:1 "A marital and political union with shared rule between spouses or members of family."
+ joint_monarchy_is_our:1 "$NAME|Y$ is ruled by members of our royal family, but retains its independence in foreign affairs and domestic matters, but must come to the aid of one another in times of war."
+ joint_monarchy_no_overlord_dow:1 "You cannot declare war on members of family."
+ 
+ joint_reign_title:1 "Shared monarchy"
+ joint_reign_title_plural:1 "Shared monarchies"
+ joint_reign_long_desc:1 "A marital and political union between Mary I and Felipe II with shared rule over England."
+ joint_reign_is_our:1 "$NAME|Y$ is our subject by marital union, but retains its independence in foreign affairs and domestic matters. It cannot however, seek other alliances for the duration of the union."
+ joint_reign_no_overlord_dow:1 "You cannot declare war on your spouse."
+ 
+ iberian_union_title:1 "Iberian union subject"
+ iberian_union_title_plural:1 "Iberian union subjects"
+ iberian_union_long_desc:1 "A dynastic union between the Spanish and Portuguese empires, with seperate cortes and code of law. The defence of Portuguese territory is reserved for the Portuguese nobility."
+ iberian_union_is_our:1 "$NAME|Y$ is our dynastic subject."
+ iberian_union_no_overlord_dow:1 "You cannot declare war on a subject kingdom."
+
+ rebellious_subjugated_tributary_title:0 "Subjugated tributary"
+ rebellious_subjugated_tributary_title_plural:0 "Subjugated tributaries"
+ rebellious_subjugated_tributary_long_desc:0 "A Subjugated tributary is a nation that has been conquered but allowed to keep its autonomy. It cannot be annexed and will pay no tribute."
+ rebellious_subjugated_tributary_tooltip:0 "A Subjugated tributary is a nation that has been conquered but allowed to keep its autonomy. It cannot be annexed and will pay no tribute."
+ rebellious_subjugated_tributary_is_our:0 "$NAME|Y$ is unwillingly under our suzerainty."
+ rebellious_subjugated_tributary_no_overlord_dow:0 "You can't declare war on those under your suzerainty."
+ 
+ conquistador_expedition_title:1 "Conquistador expedition"
+ conquistador_expedition_title_plural:1 "Conquistador expeditions"
+ conquistador_expedition_long_desc:1 "A semi independent expedition consisting of knights, soldiers and explorers of the Spanish Empire, sailing beyond Europe to the Americas, Oceania, Africa, and Asia, conquering territory and opening trade routes. It cannot be annexed and will pay no tribute."
+ conquistador_expedition_is_our:1 "$NAME|Y$ is led by a conquistador loyal to the Spanish Empire, making significant explorations and conquests."
+ conquistador_expedition_no_overlord_dow:1 "You cannot declare war on your own expedition."
+ 
+ kalmar_union_title:1 "Kalmar union subject"
+ kalmar_union_title_plural:1 "Kalmar union subjects"
+ kalmar_union_long_desc:1 "A dynastic union between the Kingdom of Denmark, Norway and Sweden, with domestic and foreign policies directed by a common monarch, with seperate code of law."
+ kalmar_union_is_our:1 "$NAME|Y$ is our dynastic subject."
+ kalmar_union_no_overlord_dow:1 "You cannot declare war on a subject kingdom."

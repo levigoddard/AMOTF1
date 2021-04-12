@@ -1,0 +1,14 @@
+callaction = {
+	condition = {
+	potential = {
+	tag = DEN
+	FROM = { is_subject_of = ROOT }
+	}
+	allow = {
+	any_country = {
+	offensive_war_with = ROOT
+	}
+	}
+	}
+}
+

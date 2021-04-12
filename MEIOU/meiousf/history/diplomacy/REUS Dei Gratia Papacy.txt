@@ -1,0 +1,28 @@
+dependency = {
+	subject_type = roman_territories
+	first = PAP
+	second = PA2
+	start_date = 1309.1.1
+	end_date = 1389.1.1
+}
+dependency = {
+	subject_type = roman_territories
+	first = DAP
+	second = PA2
+	start_date = 1390.1.1
+	end_date = 1391.1.1
+}
+dependency = {
+	subject_type = roman_territories
+	first = DAP
+	second = AVI
+	start_date = 1390.1.1
+	end_date = 1391.1.1
+}
+dependency = {
+	subject_type = roman_territories
+	first = PAP
+	second = PA2
+	start_date = 1392.1.1
+	end_date = 1540.1.1
+}

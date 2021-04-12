@@ -1,0 +1,38 @@
+egy_goth_union = {
+
+	years_of_nationalism = -10
+	max_absolutism = 15
+	num_accepted_cultures = 3
+	diplomatic_upkeep = 4
+	
+	picture = "arotg_three_crowns"	#"coa_a_khe_thd"
+}
+roman_claimant = {
+	vassal_forcelimit_bonus = 0.50
+	vassal_income = 0.25 
+	diplomatic_upkeep = 2
+
+}
+
+####Religion Mods Prov####
+
+gothic_rising = {
+
+	picture = "catholic_ecumenical_council"
+}
+khemetic_rising = {
+
+
+}
+
+
+####Prov Mods####
+city_state_of_naples = {
+	local_unrest = 0.05
+	local_tax_modifier = 0.5
+	trade_goods_size_modifier = 0.05
+	local_autonomy = 0.15
+	
+	picture = "coa_kingdom_of_naples"
+}
+	

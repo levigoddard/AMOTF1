@@ -1,0 +1,17 @@
+#bookmark =
+#{
+#	name = "HISTORICAL_WARS_NAME"
+#	desc = "HISTORICAL_WARS_DESC"
+#	date = 1492.1.1
+#
+#	country = FRA
+#	country = ENG
+#	country = HAB
+#	country = MOS
+#	country = POL
+#	country = POR
+#	country = SWE
+#	country = CAS
+#	country = TUR
+#
+#}

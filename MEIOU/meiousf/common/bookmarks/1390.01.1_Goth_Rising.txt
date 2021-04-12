@@ -1,0 +1,21 @@
+bookmark =
+{
+	name = "Goth_Rising_NAME"
+	desc = "Goth_Rising_DESC"
+	date = 1390.1.1
+
+	country = THD
+	country = TUR
+	country = BRA
+	country = HAB
+	country = BYZ
+	country = TRE
+	country = DAP
+	country = MZA
+	country = FRA
+	country = ENG
+
+#	effect = {
+#		1 = { set_global_flag = f_game_start }
+#	}
+}

@@ -1,0 +1,1771 @@
+		namespace = flavor_Historical_Wars_event
+		
+		
+	
+
+
+
+
+
+
+
+
+		################################
+		#### Brazil wants independence #
+		################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1099
+		title = "flavor_Historical_Wars_event.1099.title"
+		desc = "flavor_Historical_Wars_event.1099.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		tag = POR
+		exists = POR
+		has_country_flag = administration_destroyed
+		brazil_region = {
+		owner = { is_colonial_nation_of = ROOT }
+		}	
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1099.a"
+		ai_chance = { factor = 100 }
+
+
+		every_country = {
+		limit = {
+		capital_scope = { region = brazil_region }
+		is_colonial_nation_of = root
+		}
+		add_liberty_desire = 100
+		
+		declare_war_with_cb = {
+		who = POR
+		casus_belli = cb_colonial_independance_war
+		}
+		
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+		#########################################
+		#### Napoleonic Wars - Peninsulan War  #
+		#########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1100
+		title = "flavor_Historical_Wars_event.1100.title"
+		desc = "flavor_Historical_Wars_event.1100.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		tag = FRA
+		exists = FRA
+		OR = {
+		war_with = POR
+		POR = { has_country_modifier = continental_coward }
+		}
+		has_ruler_modifier = master_strategist
+		NOT = { war_with = SPA }
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1100.a"
+		ai_chance = { factor = 100 }
+
+		declare_war_with_cb = {
+		who = SPA
+		casus_belli = cb_historical_immersion_iberian_peninsula_war
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		#############################################
+		#### Napoleonic Wars - Spain Occupation     #
+		#############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1101
+		title = "flavor_Historical_Wars_event.1101.title"
+		desc = "flavor_Historical_Wars_event.1101.desc"
+		picture = REVOLUTION_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		exists = SPA
+		tag = SPA
+		capital_scope = { controlled_by = FRA }
+		is_in_war = {
+		casus_belli = cb_historical_immersion_iberian_peninsula_war
+		}
+		FRA = {	has_ruler_modifier = master_strategist }
+		}
+
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		set_country_flag = administration_destroyed
+
+		define_ruler = {
+		adm = 2
+		dip = 3
+		mil = 2
+		dynasty = "Bonaparte"
+		name = "Joseph"
+		age = 40
+		}
+		
+		add_ruler_modifier { name = foreign_ruler }
+		add_legitimacy = -50
+		
+		}
+		
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1101.a"
+		ai_chance = { factor = 10 }
+
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1101.b"
+		ai_chance = { factor = 90 }
+		
+		add_prestige = -25
+
+		GBR = {
+		country_event = { id = flavor_Historical_Wars_event.1102 days = 5 }
+		}
+
+		}
+		
+		}
+
+
+
+
+
+
+
+
+		###################################################################
+		#### Peninsulan War - Britain attempts to form fifth coalition ####
+		###################################################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1102
+		title = "flavor_Historical_Wars_event.1102.title"
+		desc = "flavor_Historical_Wars_event.1102.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1102.a"
+		ai_chance = { factor = 90 }
+		
+		hidden_effect = {
+		
+		set_global_flag = fifth_coalition_attempted
+
+		set_country_flag = fifth_coalition_participant
+		
+		country_event = { id = flavor_Historical_Wars_event.11032 days = 15 }
+		
+
+		HAB = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = FRA }
+		}
+		country_event = { id = flavor_Historical_Wars_event.1103 days = 5 }
+		}
+		}
+		
+		SIC = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = FRA }
+		}
+		country_event = { id = flavor_Historical_Wars_event.1103 days = 5 }
+		}
+		}
+		
+		SAR = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = FRA }
+		}
+		country_event = { id = flavor_Historical_Wars_event.1103 days = 5 }
+		}
+		}
+		
+		POL = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = FRA }
+		}
+		country_event = { id = flavor_Historical_Wars_event.11031 days = 5 }
+		}
+		}
+		
+		PLC = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = FRA }
+		}
+		country_event = { id = flavor_Historical_Wars_event.11031 days = 5 }
+		}
+		}
+		
+		SAX = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = FRA }
+		}
+		country_event = { id = flavor_Historical_Wars_event.11031 days = 5 }
+		}
+		}
+
+		}
+		
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1102.b"
+		ai_chance = { factor = 10 }
+
+
+		add_prestige = -25
+		add_stability = -1
+
+		}
+
+		}
+
+
+
+
+		###########################################
+		#### Napoleonic Wars - Fifth coalition ####
+		###########################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1103
+		title = "flavor_Historical_Wars_event.1103.title"
+		desc = "flavor_Historical_Wars_event.1103.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1103.a"
+		ai_chance = { factor = 90 }
+		
+		set_country_flag = fifth_coalition_participant
+	
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1103.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = -25
+		add_stability = -1
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		############################
+		#### Allies of France  ####
+		############################
+		country_event = {
+		id = flavor_Historical_Wars_event.11031
+		title = "flavor_Historical_Wars_event.11031.title"
+		desc = "flavor_Historical_Wars_event.11031.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.11031.a"
+		ai_chance = { factor = 90 }
+
+		create_guarantee = FRA
+
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.11031.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = -25
+		add_stability = -1
+		
+		}
+		
+		}
+		
+		
+		
+		#########################
+		#### Coalition trigger ##
+		#########################
+		country_event = {
+		id = flavor_Historical_Wars_event.11032
+		title = "flavor_Historical_Wars_event.11032.title"
+		desc = "flavor_Historical_Wars_event.11032.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		tag = GBR
+		exists = GBR
+		has_country_flag = fifth_coalition_participant
+		any_country = {
+		NOT = { tag = ROOT }
+		has_country_flag = fifth_coalition_participant
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		days = 20                                       
+		}
+
+
+		###########
+		##options##
+		###########
+		
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.11032.a"
+		ai_chance = { factor = 100 }
+
+		form_coalition_against = FRA  
+        		
+
+		every_country = {
+		limit = {
+		has_country_flag = fifth_coalition_participant
+		}
+		form_coalition_against = FRA
+		add_trust = {
+    	who = ROOT
+    	value = 10
+    	mutual = yes
+		}
+		}
+		
+		declare_war_with_cb = {
+		who = FRA
+		casus_belli = cb_historical_immersion_fifth_coalition
+		}
+
+		}
+		
+		}
+
+
+
+
+
+
+
+
+		#############################################
+		#### Napoleonic Wars - Treaty of Schönbrunn #
+		#############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1104
+		title = "flavor_Historical_Wars_event.1104.title"
+		desc = "flavor_Historical_Wars_event.1104.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_in_war = {
+		casus_belli = cb_historical_immersion_fifth_coalition
+		}
+		tag = FRA
+		exists = FRA
+		HAB = { capital_scope = { controlled_by = FRA } } 
+		FRA = {	has_ruler_modifier = master_strategist }
+		}
+
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1104.a"
+		ai_chance = { factor = 100 }
+
+		white_peace = HAB
+
+		add_treasury = 1500
+
+		HAB = {                                        
+		every_core_province = {
+		limit = {
+		area = east_adriatic_coast_area
+		}
+		cede_province = FRA
+		add_core = FRA
+		remove_core = HAB
+		}
+
+		add_treasury = -1500
+		
+		add_country_modifier = { 
+		name = treaty_of_schonbrunn
+		duration = 3650  
+		}
+
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+		#############################################
+		#### Peninsulan War - Bourbon restoration   #
+		#############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1105
+		title = "flavor_Historical_Wars_event.1105.title"
+		desc = "flavor_Historical_Wars_event.1105.desc"
+		picture = COURT_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_year = 1814
+		tag = SPA
+		exists = SPA
+		is_at_war = no
+		dynasty = "Bonaparte"
+		FRA = { dynasty = "Bourbon" }
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1105.a"
+		ai_chance = { factor = 100 }
+
+		define_ruler = {
+		adm = 4
+		dip = 3
+		mil = 2
+		dynasty = "de Bourbon"
+		name = "Ferdinand VII"
+		age = 31
+		}
+
+		define_heir = {
+		dynasty = "de Bourbon"
+		claim = 100
+		adm = 3
+		dip = 5
+		mil = 3
+		name = "Eduardo I"
+		age = 1
+		}
+
+		add_legitimacy = 25
+
+		}
+		
+		}
+
+
+
+
+
+
+
+
+
+		########################################
+		#### Spains colonies wants independence#
+		########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1106
+		title = "flavor_Historical_Wars_event.1106.title"
+		desc = "flavor_Historical_Wars_event.1106.desc"
+		picture = ANGRY_MOB_eventPicture		
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		is_year = 1811
+		tag = SPA
+		exists = SPA
+		has_country_flag = administration_destroyed
+		south_america = {
+		is_colonial_nation = SPA
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1106.a"
+		ai_chance = { factor = 100 }
+
+
+		every_country = {
+		limit = {
+		is_colonial_nation_of = root
+		}
+		add_liberty_desire = 100
+		}
+
+		}
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+		#######################
+		#### Serbian uprising #
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1107
+		title = "flavor_Historical_Wars_event.1107.title"
+		desc = "flavor_Historical_Wars_event.1107.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		is_year = 1804
+		tag = TUR
+		exists = TUR
+		NOT = {ROOT = {stability = 3}}        
+		NOT = { exists = SER }
+		central_balkan_region = {
+		owned_by = TUR
+		}	
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		central_balkan_region = {
+		add_core = SER
+		}
+
+		release = SER
+		
+		declare_war_with_cb = {
+		who = SER
+		casus_belli = cb_overlord_attacking_independence_war
+		}
+		
+		}
+		
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1107.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = serbia_revolts
+
+		}
+		
+		}
+
+
+
+
+
+
+
+		#################
+		#### Finish War #
+		#################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1108
+		title = "flavor_Historical_Wars_event.1108.title"
+		desc = "flavor_Historical_Wars_event.1108.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_year = 1808
+		NOT = { is_year = 1812 }
+		tag = RUS
+		exists = RUS
+		is_at_war = no
+		NOT = {exists = FIN}
+		finland_region = {
+		owned_by = SWE
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1108.a"
+		ai_chance = { factor = 80 }
+
+		finland_region = {
+		add_claim = RUS
+		}
+		
+		declare_war_with_cb = {
+		who = SWE
+		casus_belli = cb_historical_immersion_finish_war
+		}
+
+		hidden_effect = {
+
+		GBR = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = RUS }  
+		}
+		country_event = { id = flavor_Historical_Wars_event.1110 days = 5 }
+		}
+		}
+
+
+		DEN = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = SWE }  
+		}
+		country_event = { id = flavor_Historical_Wars_event.1112 days = 5 }
+		}
+		}
+
+
+		DAN = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = SWE }  
+		}
+		country_event = { id = flavor_Historical_Wars_event.1112 days = 5 }
+		}
+		}
+
+
+		}
+
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1108.b"
+		ai_chance = { factor = 20 }
+
+		add_stability = -1
+		add_prestige = -25
+
+		}
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+		################################
+		#### Treaty of Fredrikshamn ####
+		################################
+		country_event = {
+		id = flavor_Historical_Wars_event.1109
+		title = "flavor_Historical_Wars_event.1109.title"
+		desc = "flavor_Historical_Wars_event.1109.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		fire_only_once = yes
+
+
+		trigger = {
+		tag = SWE
+		exists = SWE
+		capital_scope = { controlled_by = RUS }
+		is_in_war = {
+		casus_belli = cb_historical_immersion_finish_war
+		}
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1109.a"
+		ai_chance = { factor = 100 }
+
+		
+		finland_region = {
+		add_core = FIN
+		}
+		
+		release = FIN
+		white_peace = RUS
+
+		RUS = {
+				create_subject = {
+			who = FIN
+			subject_type = decentralized_vassal
+		}
+		}
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+		##################
+		## Swedish side ##
+		##################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1110
+		title = "flavor_Historical_Wars_event.1110.title"
+		desc = "flavor_Historical_Wars_event.1110.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1110.a"
+		ai_chance = { factor = 80 }
+
+
+		declare_war_with_cb = {
+		who = RUS
+		casus_belli = cb_historical_immersion_finish_war
+		}
+				
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1110.b"
+		ai_chance = { factor = 20 }
+		
+		
+		add_prestige = -25
+		add_stability = -1
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+		##################
+		## Russian side ##
+		##################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1112
+		title = "flavor_Historical_Wars_event.1112.title"
+		desc = "flavor_Historical_Wars_event.1112.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1112.a"
+		ai_chance = { factor = 80 }
+		
+		
+		declare_war_with_cb = {
+		who = SWE
+		casus_belli = cb_historical_immersion_finish_war
+		}
+		
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1112.b"
+		ai_chance = { factor = 20 }
+		
+		
+		add_prestige = -25
+		add_stability = -1
+
+		}
+
+		}
+
+
+
+
+
+
+		#######################
+		#### Irish Rebellion  #
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1113
+		title = "flavor_Historical_Wars_event.1113.title"
+		desc = "flavor_Historical_Wars_event.1113.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_year = 1798
+		tag = GBR
+		exists = GBR
+		NOT = { exists = IRE }
+		ireland_region = {
+		owned_by = GBR
+		}
+		}
+
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		ireland_region = {
+		add_core = IRE
+		spawn_rebels = {
+		type = nationalist_rebels
+		size = 3
+		}
+		}
+		
+		}
+		
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1113.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		###############################
+		#### Irish Rebellion crushed  #
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.11131
+		title = "flavor_Historical_Wars_event.11131.title"
+		desc = "flavor_Historical_Wars_event.11131.desc"
+		picture = WOUNDED_SOLDIERS_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_in_war = {
+		casus_belli = cb_historical_immersion_irish_rebellion
+		}
+		tag = GBR
+		exists = GBR
+		war_score_against = {
+		who = IRE
+		value = 75
+		}
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.11131.a"
+		ai_chance = { factor = 100 }
+
+		vassalize = IRE
+
+		}
+
+
+		}
+
+
+
+
+
+
+		###########################
+		#### 2nd Serbian uprising #
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1114
+		title = "flavor_Historical_Wars_event.1114.title"
+		desc = "flavor_Historical_Wars_event.1114.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+				
+		
+		trigger = {
+		is_year = 1814
+		tag = TUR
+		exists = TUR
+		NOT = { stability = 3 }
+		ROOT = { has_country_flag = serbia_revolts }
+		NOT = { exists = SER }
+		central_balkan_region = {
+		owned_by = TUR
+		}
+		}
+
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		immediate = {
+		
+		hidden_effect = {
+		
+		central_balkan_region = {
+		add_core = SER
+		}
+
+		release = SER
+		
+		declare_war_with_cb = {
+		who = SER
+		casus_belli = cb_overlord_attacking_independence_war
+		}
+		
+		}
+		
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1114.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+		#################################
+		#### Greek war of Independence  #
+		#################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1115
+		title = "flavor_Historical_Wars_event.1115.title"
+		desc = "flavor_Historical_Wars_event.1115.desc"
+		picture = ANGRY_MOB_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_year = 1821
+		tag = TUR
+		exists = TUR
+		NOT = { exists = GRE }
+		NOT = { stability = 3 }
+		greece_region = {
+		owned_by = TUR
+		}		
+		}
+		
+
+		mean_time_to_happen = {        
+		months = 6                                        
+		}
+
+
+		immediate = {
+		
+		hidden_effect = {
+		
+		greece_region = {
+		add_core = GRE
+		}
+
+		release = GRE
+		
+		declare_war_with_cb = {
+		who = GRE
+		casus_belli = cb_overlord_attacking_independence_war
+		}
+		
+		}
+		
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1115.a"
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+
+		GBR = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = TUR }  
+		}
+		}
+		country_event = { id = flavor_Historical_Wars_event.1118 days = 15 }
+		}
+		
+		FRA = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = TUR } 
+		}
+		}
+		country_event = { id = flavor_Historical_Wars_event.1118 days = 15 }
+		}
+		
+		RUS = {
+		if = {
+		limit = {
+		exists = yes
+		is_subject = no
+		NOT = { war_with = TUR } 
+		}
+		}
+		country_event = { id = flavor_Historical_Wars_event.1118 days = 15 }
+		}
+
+		}
+
+
+		}
+
+
+		}
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+		###############################
+		## Greeks nation asks for help##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1118
+		title = "flavor_Historical_Wars_event.1118.title"
+		desc = "flavor_Historical_Wars_event.1118.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1118.a"
+		ai_chance = { factor = 60 }
+
+
+		create_guarantee = GRE
+		
+		declare_war_with_cb = {
+		who = TUR
+		casus_belli = cb_historical_wars_superiority
+		}
+
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1118.b"
+		ai_chance = { factor = 20 }
+
+		add_treasury = -500
+		add_manpower = -15
+
+
+		GRE = {
+		add_treasury = 500
+		add_manpower = 15
+		}
+
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1118.c"
+		ai_chance = { factor = 20 }
+
+
+		add_prestige = -25
+
+		}
+		
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		#######################
+		#### Invasion of Russia#
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1119
+		title = "flavor_Historical_Wars_event.1119.title"
+		desc = "flavor_Historical_Wars_event.1119.desc"
+		picture = BATTLE_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		is_year = 1812
+		NOT = { is_year = 1816 }
+		tag = FRA
+		exists = FRA
+		FRA = { is_at_war = no }        
+		FRA = {	has_ruler_modifier = master_strategist }
+		}
+
+
+		mean_time_to_happen = {        
+		months = 2                                        
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1119.a"
+		ai_chance = { factor = 90 }
+
+		add_claim = 295 
+
+		declare_war_with_cb = {
+		who = RUS
+		casus_belli = cb_historical_wars_conquest
+		}
+
+		}
+
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1119.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = -25
+		add_stability = -1
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		#######################
+		#### Moscow Falls     #
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1120
+		title = "flavor_Historical_Wars_event.1120.title"
+		desc = "flavor_Historical_Wars_event.1120.desc"
+		picture = BURNING_CITY_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		tag = FRA
+		exists = FRA
+		295 = {  controlled_by = FRA }
+		295 = { owned_by = RUS }
+		is_in_war = {
+		casus_belli = cb_historical_immersion_conquest_of_moscow
+		}
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1120.a"
+		ai_chance = { factor = 90 }
+
+		add_prestige = 50
+		
+		white_peace = RUS
+		vassalize = RUS
+
+		}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		#######################
+		#### Failed invasion  #
+		#######################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1121
+		title = "flavor_Historical_Wars_event.1121.title"
+		desc = "flavor_Historical_Wars_event.1121.desc"
+		picture = WOUNDED_SOLDIERS_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		
+		trigger = {
+		tag = HAB
+		exists = HAB
+		FRA = {
+		is_in_war = {
+		casus_belli = cb_historical_immersion_conquest_of_moscow
+		}
+		295 = {  controlled_by = RUS }
+		}
+		NOT = { FRA = { army_size = 50 } }
+		NOT = { war_with = FRA }
+		}
+
+
+		mean_time_to_happen = {        
+		months = 2                                        
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1121.a"
+		ai_chance = { factor = 90 }
+		
+		set_country_flag = napoleonic_war_participant
+	
+		declare_war_with_cb = {
+		who = FRA
+		casus_belli = cb_historical_wars_superiority
+		}
+
+		set_country_flag = dethrone_emperor
+
+		hidden_effect = {
+
+		SWE = {
+		if = {
+		limit = {
+		is_subject = no
+		NOT = { war_with = FRA }
+		exists = yes
+		}
+		country_event = { id = flavor_Historical_Wars_event.1122 days = 5 }
+		}
+		}
+		PRU = {
+		if = {
+		limit = {
+		is_subject = no
+		NOT = { war_with = FRA }
+		exists = yes
+		}
+		country_event = { id = flavor_Historical_Wars_event.1122 days = 5 }
+		}
+		}
+		GBR = {
+		if = {
+		limit = {
+		is_subject = no
+		NOT = { war_with = FRA }
+		exists = yes
+		}
+		country_event = { id = flavor_Historical_Wars_event.1122 days = 5 }
+		}
+		}
+		SPA = {
+		if = {
+		limit = {
+		is_subject = no
+		NOT = { war_with = FRA }
+		exists = yes
+		}
+		country_event = { id = flavor_Historical_Wars_event.1122 days = 5 }
+		}
+		}
+		SAX = {
+		if = {
+		limit = {
+		is_subject = no
+		NOT = { war_with = FRA }
+		exists = yes
+		}
+		country_event = { id = flavor_Historical_Wars_event.1122 days = 5 }
+		}
+		}
+		NED = {
+		if = {
+		limit = {
+		is_subject = no
+		NOT = { war_with = FRA }
+		exists = yes
+		}
+		country_event = { id = flavor_Historical_Wars_event.1122 days = 5 }
+		}
+		}
+
+		}
+
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1121.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = -25
+		add_stability = -1
+
+		}
+		
+		}
+
+
+
+
+
+
+
+
+
+
+		#################################
+		## Weakening of French hegemony ##
+		#################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1122
+		title = "flavor_Historical_Wars_event.1122.title"
+		desc = "flavor_Historical_Wars_event.1122.desc"
+		picture = BATTLE_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1122.a"
+		ai_chance = { factor = 90 }
+		
+		set_country_flag = napoleonic_war_participant
+		
+		declare_war_with_cb = {
+		who = FRA
+		casus_belli = cb_historical_wars_superiority
+		}
+	
+		}
+
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1122.b"
+		ai_chance = { factor = 10 }
+
+		add_prestige = -25
+		add_stability = -1
+
+		}
+		
+		}
+
+
+
+
+
+
+
+
+
+
+		#########################################
+		#### Napoleonic Wars - Treaty of Paris  #
+		#########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1123
+		title = "flavor_Historical_Wars_event.1123.title"
+		desc = "flavor_Historical_Wars_event.1123.desc"
+		picture = DIPLOMACY_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+		trigger = {
+		tag = FRA
+		exists = FRA
+		FRA = { has_country_flag = dethrone_emperor }
+		NOT = { capital_scope = { controlled_by = FRA } }
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1123.a"
+		ai_chance = { factor = 100 }
+		
+		every_country = {
+		limit = {
+		has_country_flag = napoleonic_war_participant
+		}
+		white_peace = FRA
+		}
+
+		release_all_subjects = yes
+
+		clr_country_flag = Napoleon_is_ruler
+		set_country_flag = pax_britanica
+		
+		if = {
+		limit = {
+		has_dlc = "Dharma"
+		}
+		change_government = monarchy 
+		add_government_reform = constitutional_monarchy
+		}
+		else = {
+		set_legacy_government = constitutional_monarchy
+		}
+
+		define_ruler = {
+		adm = 2
+		dip = 6
+		mil = 3
+		dynasty = "de Bourbon"
+		name = "Louis XVIII"
+		age = 41
+		}
+		
+		}
+
+		}

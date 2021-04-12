@@ -1,0 +1,4423 @@
+		namespace = flavor_Historical_Wars_event
+		
+		
+		
+		###########################################
+		## Netherlands enhanced gameplay decision##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1327
+		title = "flavor_Historical_Wars_event.1327.title"
+		desc = "flavor_Historical_Wars_event.1327.desc"
+		picture = BIG_BOOK_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1327.a"
+		ai_chance = { factor = 100 }
+
+
+		}
+		
+
+		}
+		
+		
+
+		
+		
+		
+		######################################
+		## Netherlands total revenue report ##
+		######################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1397
+		title = "flavor_Historical_Wars_event.1397.title"
+		desc = "flavor_Historical_Wars_event.1397.desc"
+		picture = BIG_BOOK_eventPicture
+		#major = yes
+		is_triggered_only = yes
+		
+
+		
+		immediate = {
+
+		hidden_effect = {
+		set_variable = { 	which = burgher_loyalty_removed_a 	value = 2.5 }
+		set_variable = { 	which = burgher_loyalty_added_a 	value = 2.5 }
+		set_variable = { 	which = burgher_loyalty_added_b 	value = 5 }
+		
+		
+		change_variable = {
+		which = netherlands_sales
+		which = netherlands_commision_fee_total
+		}
+		
+		change_variable = {
+		which = netherlands_sales
+		which = netherlands_basic_wares_total
+		}
+			
+		set_variable = {
+		which = netherlands_burgher_share
+		which = netherlands_sales
+		}
+		
+		multiply_variable = {
+		which = netherlands_burgher_share
+		value = 0.25
+		}
+
+		subtract_variable = {
+		which = netherlands_sales
+		which = netherlands_burgher_share
+		}
+		
+		set_variable = {
+		which = netherlands_profit
+		which = netherlands_sales
+		}
+		
+		subtract_variable = {
+		which = netherlands_profit
+		which = purchased_goods
+		}
+		
+		subtract_variable = {
+		which = netherlands_profit
+		which = sound_toll_total
+		}
+		
+		}
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1397.a"
+		ai_chance = { factor = 100 }
+			
+		set_variable = { which = ducat_gain which = netherlands_sales }
+		hidden_effect = {
+		scaled_ducat_gained_country = yes
+		}
+
+		
+		if = {
+		limit = {
+		check_variable = { which = netherlands_burgher_share value = 25 }
+		NOT = { check_variable = { which = netherlands_burgher_share value = 50 } }
+		}
+		add_estate_burghers_loyalty_effect = { id=a }
+		}
+		else_if = {
+		limit = {
+		check_variable = { which = netherlands_burgher_share value = 50 }
+		}
+		add_estate_burghers_loyalty_effect = { id=b }
+		}
+		else_if = {
+		limit = {
+		NOT = { check_variable = { which = netherlands_burgher_share value = 0 } }
+		}
+		reduce_estate_burghers_loyalty_effect = { id=a }
+		}
+		
+		hidden_effect = {
+		
+		set_variable = {
+		which = sound_toll_total
+		value = 0
+		}
+		
+		set_variable = {
+        which = scaled_ducat_gained_country
+        value = 0
+		}
+
+		set_variable = {
+        which = netherlands_commision_fee_total
+        value = 0
+		}
+		
+		set_variable = {
+        which = netherlands_basic_wares_total
+        value = 0
+		}
+		
+		set_variable = {
+        which = customer_cost_basic_wares
+        value = 0
+		}
+		
+		set_variable = {
+        which = purchased_goods
+        value = 0
+		}
+		
+		set_variable = {
+        which = netherlands_result_total
+        value = 0
+		}
+		
+		set_variable = {
+        which = customers_not_interested
+        value = 0
+		}
+		
+		set_variable = {
+        which = customers_debt
+        value = 0
+		}
+		
+		set_variable = {
+        which = number_of_customers
+        value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_sales
+		value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_profit
+		value = 0
+		}
+		
+		if = { limit = { NOT = { check_variable = { which = basic_wares value = 0 } } } set_variable = { which = basic_wares value = 0 } }	
+
+		}
+		
+		}
+
+		}
+		
+		
+		#########################################
+		## Dutch bulk resources damaged by fire ##
+		#########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1398
+		title = "flavor_Historical_Wars_event.1398.title"
+		desc = "flavor_Historical_Wars_event.1398.desc"
+		picture = BURNING_CITY_eventPicture
+		major = yes
+		
+		
+		trigger = {
+		exists = NED
+		tag = NED
+		NED = { check_variable = { which = basic_wares  value = 1 } }
+		NED = {has_country_flag = moedernegotiee}
+		}
+		
+		
+		mean_time_to_happen = {      
+		months = 250                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1398.a"
+		ai_chance = { factor = 100 }	
+		
+		
+		random_list = {
+				45 = { subtract_variable = { which = basic_wares	value = 1 } }
+				35 = { subtract_variable = { which = basic_wares	value = 2 } }
+				20 = { subtract_variable = { which = basic_wares	value = 3 } }
+
+		}
+		
+		}
+
+		}
+		
+		
+		
+		#########################################
+		## Dutch bulk resources ruined by rain ##
+		#########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1399
+		title = "flavor_Historical_Wars_event.1399.title"
+		desc = "flavor_Historical_Wars_event.1399.desc"
+		picture = FLOOD_eventPicture
+		major = yes
+		
+		
+		trigger = {
+		exists = NED
+		tag = NED
+		NED = { check_variable = { which = basic_wares  value = 1 } }
+		NED = { has_country_flag = moedernegotiee }
+		}
+		
+		
+		mean_time_to_happen = {      
+		months = 250                                        
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1399.a"
+		ai_chance = { factor = 100 }
+		
+
+		random_list = {
+				45 = { subtract_variable = { which = basic_wares	value = 1 } }
+				35 = { subtract_variable = { which = basic_wares	value = 2 } }
+				20 = { subtract_variable = { which = basic_wares	value = 3 } }
+
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		############################
+		## Stadtholder veto trade ##
+		############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1400
+		title = "flavor_Historical_Wars_event.1400.title"
+		desc = "flavor_Historical_Wars_event.1400.desc"
+		picture = DIPLOMACY_eventPicture
+		is_triggered_only = yes
+		#major = yes
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1400.a"
+		ai_chance = { factor = 100 }
+		
+		add_opinion = {
+		who = NED
+		modifier = vetoed_trade
+		}
+		
+		add_casus_belli = {
+		target = NED
+		type = cb_historical_wars_trade
+		duration = 3650
+		}
+		
+		}
+		
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		###################
+		## Order placed  ##
+		###################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1401
+		title = "flavor_Historical_Wars_event.1401.title"
+		desc = "flavor_Historical_Wars_event.1401.desc"
+		picture = TRADEGOODS_eventPicture
+		is_triggered_only = yes
+		
+		
+		immediate = {
+		hidden_effect = {
+			set_variable = { 	which = burghers_loyalty_removed_b 	value = 2.5 }
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1401.a"
+		trigger = {
+		NOT = {alliance_with = FROM}
+		}
+		ai_chance = { factor = 95 }
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1401.b"
+		trigger = {
+		alliance_with = FROM
+		}
+		ai_chance = { factor = 95 }
+					
+		}
+		
+				
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1401.c"
+		trigger = {
+		AND = {
+		estate_loyalty = {
+		estate = estate_city_burghers
+		loyalty = 40
+		}
+		ai = yes
+		NOT = {
+		has_opinion = {
+		who = FROM
+		value = 0
+		}
+		}
+		}
+		}
+		ai_chance = { factor = 95 }
+	
+		reduce_estate_burghers_loyalty_effect = { id=b }
+
+		FROM = {
+
+		hidden_effect = {
+		add_country_modifier = {
+		name = stadtholder_veto
+		duration = 3650
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1400 days = 5 }
+		}
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1401.d"
+		trigger = {
+		OR = {
+		AND = {
+		estate_loyalty = {
+		estate = estate_city_burghers
+		loyalty = 40
+		}
+		ai = yes
+		}
+		ai = no
+		}
+		}
+		ai_chance = { factor = 5 }
+		
+		reduce_estate_burghers_loyalty_effect = { id=b }
+
+		
+		FROM = {
+				
+		hidden_effect = {
+		add_country_modifier = {
+		name = stadtholder_veto
+		duration = 3650
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1400 days = 5 }
+		}
+		}
+		
+		}
+
+
+		}
+		
+		
+		
+		
+		
+		######################################################
+		## Dutch selling basic wares during maunder minimum ##
+		######################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1458
+		title = "flavor_Historical_Wars_event.1458.title"
+		desc = "flavor_Historical_Wars_event.1458.desc"
+		picture = TRADEGOODS_eventPicture
+		is_triggered_only = yes
+		
+		immediate = {
+		hidden_effect = {
+		set_variable = {
+		which = customer_cost_basic_wares
+		value = 0
+		}
+		set_variable = {
+        which = customer_cost_commision_fee
+        value = 100
+		}
+		
+		every_owned_province = {
+		limit = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}
+		remove_province_modifier = cold_year_provincial_starvation
+		
+		ROOT = {		
+		change_variable = {
+        which = customer_cost_basic_wares
+        value = 10
+		}
+		}
+		
+		}
+		
+		}
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1458.a"
+		trigger = {
+		OR = {
+		NOT = {num_of_loans = 5}
+		ai = no
+		}
+		}
+		ai_chance = { factor = 75 }
+		
+		NED = {subtract_variable = { which = basic_wares  value = 1} }
+			
+		set_variable = {
+        which = ducat_cost
+        which = customer_cost_basic_wares
+		}
+		change_variable = {
+        which = ducat_cost
+        which = customer_cost_commision_fee
+		}
+		
+		hidden_effect = {
+
+		scaled_ducat_cost_country = yes
+
+		add_country_modifier = {
+		name = purchased_dutch_basic_wares
+		duration = 365
+		}
+		
+		ROOT = {
+		set_variable  = {
+			which = customer_cost_basic_wares
+			which = customer_cost_basic_wares
+		}
+		NED = {
+			set_variable = {
+				which = customer_cost_basic_wares
+				which = PREV
+			}
+			change_variable = {
+			which = number_of_customers
+			value = 1
+			}
+			change_variable = {
+			which = netherlands_commision_fee_total
+			value = 100
+			}
+			change_variable = {
+			which = netherlands_basic_wares_total
+			which = customer_cost_basic_wares
+			}
+			if = {
+			limit = {
+			has_country_flag = approve_all
+			}
+			}
+			else_if = {
+			limit = {
+			has_country_flag = approve_allies
+			NOT = { FROM = { alliance_with = NED } }
+			}
+			country_event = { id = flavor_Historical_Wars_event.1401 days = 10 }
+			}
+			else_if = {
+			limit = {
+			has_country_flag = approve_friends
+			FROM = { reverse_has_opinion = { who = NED value = 50 } }
+			}
+			country_event = { id = flavor_Historical_Wars_event.1401 days = 10 }
+			}
+			else = {
+			country_event = { id = flavor_Historical_Wars_event.1401 days = 10 }
+			}
+		
+		}
+		}
+		
+		}
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1458.b"
+		ai_chance = { factor = 25 }	
+
+		set_country_flag = dutch_trade_not_interested
+
+		NED = {
+		hidden_effect = {
+		change_variable = {
+        which = customers_not_interested
+        value = 1
+		}
+		}
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1458.c"
+		trigger = {
+		num_of_loans = 5
+		ai = yes
+		}
+		ai_chance = { factor = 75 }
+		
+		set_country_flag = dutch_trade_not_interested
+		
+		NED = {
+		hidden_effect = {
+		change_variable = {
+        which = customers_debt
+        value = 1
+		}
+		}
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		###################################
+		## Trade during maunder minimum  ##
+		###################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1459
+		title = "flavor_Historical_Wars_event.1459.title"
+		desc = "flavor_Historical_Wars_event.1459.desc"
+		picture = TRADEGOODS_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1459.a"
+		ai_chance = { factor = 100 }
+		
+		}		
+
+		}
+		
+		
+				
+		
+		
+		
+		##############################################
+		## Dutch distributed wares in low countries ##
+		##############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1461
+		title = "flavor_Historical_Wars_event.1461.title"
+		desc = "flavor_Historical_Wars_event.1461.desc"
+		picture = PLAGUE_eventPicture
+		major = yes
+		
+		
+
+		trigger = {
+		NOT = { has_country_flag = distribution_of_goods_low_countries }
+		has_country_flag = moedernegotiee
+		NED = {check_variable = { which = basic_wares  value = 1 } }
+		NOT = {has_global_flag = huaynaputina_eruption}
+		has_global_flag = exceptionally_cold_year
+		capital_scope = {continent = europe}
+		any_owned_province = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}
+		tag = NED
+		exists = NED
+		}
+		
+		
+		
+		immediate = {
+		set_country_flag = distribution_of_goods_low_countries
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1461.a"
+		ai_chance = { factor = 80 }
+		
+		subtract_variable = { which = basic_wares  value = 1 }
+		
+
+		hidden_effect = {
+		
+		every_owned_province = {
+		limit = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}
+		remove_province_modifier = cold_year_provincial_starvation
+		}
+		
+    	}
+		
+		}
+
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1461.b"
+		ai_chance = { factor = 20 }
+
+
+		}
+				
+		}
+		
+		
+		
+		
+		
+		
+		#########################
+		## Dutch trade resumes ##
+		#########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1462
+		title = "flavor_Historical_Wars_event.1462.title"
+		desc = "flavor_Historical_Wars_event.1462.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1462.a"
+		ai_chance = { factor = 100 }	
+	
+		clr_country_flag = volcano_disrupts_moedernegotiee
+		set_country_flag = sailing_to_baltic_region
+		
+		}
+
+		}
+		
+		
+		
+		
+		###################################
+		## Volcano disrupts dutch trade ##
+		##################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1463
+		title = "flavor_Historical_Wars_event.1463.title"
+		desc = "flavor_Historical_Wars_event.1463.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+		
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		if = {
+		limit = {
+		ai = yes
+		}
+		set_country_flag = returning_to_amsterdam
+		}
+		
+		set_country_flag = volcano_disrupts_moedernegotiee
+		
+		}
+		
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1463.a"
+		ai_chance = { factor = 50 }
+	
+
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1463.b"
+		trigger = { check_variable = { which = basic_wares  value = 10 } }
+		ai_chance = { factor = 100 }
+
+		subtract_variable = { which = basic_wares  value = 10 }
+		
+		low_countries_region = {
+		limit = {
+		owned_by = NED
+		}
+		remove_province_modifier = huaynaputina_eruption
+		}
+
+		}
+
+		}
+		
+		
+		############################
+		## decline of mothertrade ##
+		############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1464
+		title = "flavor_Historical_Wars_event.1464.title"
+		desc = "flavor_Historical_Wars_event.1464.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+		fire_only_once = yes
+		
+		
+
+		trigger = {
+		tag = NED
+		exists = NED
+		has_country_flag = moedernegotiee
+		OR = {
+		is_year = 1721
+		AND = {
+		25 = { owned_by = SWE }
+		1257 = { owned_by = SWE }
+		38 = { owned_by = RUS }
+		AND = {
+		NOT = { 2355 = { owned_by = DNZ } }
+		NOT = { 2355 = { owned_by = POL } }
+		NOT = { 2355 = { owned_by = PLC } }
+		}
+		}
+		}
+		}
+		
+		
+		mean_time_to_happen = {        
+		months = 48 
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1464.a"
+		ai_chance = { factor = 25 }	
+	
+		set_global_flag = decline_of_moedernegotiee
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1464.b"
+		ai_chance = { factor = 75 }	
+	
+		clr_country_flag = moedernegotiee
+		set_country_flag = returning_to_amsterdam
+		
+		2355 = { remove_province_modifier = moedernegotie_trade_port }
+		
+		1257 = { remove_province_modifier = moedernegotie_trade_port }
+		
+		38 = { remove_province_modifier = moedernegotie_trade_port }
+		
+		25 = { remove_province_modifier = moedernegotie_trade_port }
+		
+		}
+
+		}
+		
+		
+		
+		################################
+		## Dutch selling basic wares  ##
+		################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1465
+		title = "flavor_Historical_Wars_event.1465.title"
+		desc = "flavor_Historical_Wars_event.1465.desc"
+		picture = TRADEGOODS_eventPicture
+		is_triggered_only = yes
+		
+		immediate = {
+		hidden_effect = {
+		set_variable = {
+		which = customer_cost_basic_wares
+		value = 0
+		}
+		set_variable = {
+        which = customer_cost_commision_fee
+        value = 50
+		}
+		
+		every_owned_province = {
+		limit = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}	
+		ROOT = {		
+		change_variable = {
+        which = customer_cost_basic_wares
+        value = 5
+		}
+		}
+		}
+		
+		}
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1465.a"
+		trigger = {
+		OR = {
+		NOT = {num_of_loans = 5}
+		ai = no
+		}
+		}
+		ai_chance = { factor = 75 }
+		
+		
+		NED = {subtract_variable = { which = basic_wares  value = 1} }
+			
+		set_variable = {
+        which = ducat_cost
+        which = customer_cost_basic_wares
+		}
+		change_variable = {
+        which = ducat_cost
+        which = customer_cost_commision_fee
+		}
+		
+		hidden_effect = {
+
+		scaled_ducat_cost_country = yes
+
+		add_country_modifier = {
+		name = purchased_dutch_basic_wares
+		duration = 365
+		}
+		
+		every_owned_province = {
+		limit = {
+		OR = {
+		has_province_modifier = exceptionally_cold_year
+		has_province_modifier = exceptionally_cold_year_maunder_minimum
+		}
+		}
+		remove_province_modifier = cold_year_provincial_starvation	
+		}
+		
+		ROOT = {
+		set_variable  = {
+			which = customer_cost_basic_wares
+			which = customer_cost_basic_wares
+		}
+		NED = {
+			set_variable = {
+				which = customer_cost_basic_wares
+				which = PREV
+			}
+			change_variable = {
+			which = number_of_customers
+			value = 1
+			}
+			change_variable = {
+			which = netherlands_commision_fee_total
+			value = 50
+			}
+			change_variable = {
+			which = netherlands_basic_wares_total
+			which = customer_cost_basic_wares
+			}
+			if = {
+			limit = {
+			has_country_flag = approve_all
+			}
+			}
+			else_if = {
+			limit = {
+			has_country_flag = approve_allies
+			NOT = { FROM = { alliance_with = NED } }
+			}
+			country_event = { id = flavor_Historical_Wars_event.1401 days = 10 }
+			}
+			else_if = {
+			limit = {
+			has_country_flag = approve_friends
+			FROM = { reverse_has_opinion = { who = NED value = 50 } }
+			}
+			country_event = { id = flavor_Historical_Wars_event.1401 days = 10 }
+			}
+			else = {
+			country_event = { id = flavor_Historical_Wars_event.1401 days = 10 }
+			}
+		
+		}
+		}
+		
+		}
+
+		}
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1465.b"
+		ai_chance = { factor = 25 }	
+
+		set_country_flag = dutch_trade_not_interested
+
+		NED = {
+		hidden_effect = {
+		change_variable = {
+        which = customers_not_interested
+        value = 1
+		}
+		}
+		}
+
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1465.c"
+		trigger = {
+		num_of_loans = 5
+		ai = yes
+		}
+		ai_chance = { factor = 75 }
+		
+		set_country_flag = dutch_trade_not_interested
+		
+		NED = {
+		hidden_effect = {
+		change_variable = {
+        which = customers_debt
+        value = 1
+		}
+		}
+		}
+		
+		}
+
+		}
+		
+		
+		###############################
+		## Moedernegotie start event ##
+		###############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1466
+		title = "flavor_Historical_Wars_event.1466.title"
+		desc = "flavor_Historical_Wars_event.1466.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+		fire_only_once = yes
+
+		trigger = {
+		is_year = 1560
+		ai = no
+		has_country_flag = is_host
+		NED = { is_at_war = no }
+		exists = NED
+		}
+
+
+		mean_time_to_happen = {        
+		months = 3                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1466.a"
+		ai_chance = { factor = 100 }
+		
+		2355 = {
+		add_permanent_province_modifier = { 
+		name = moedernegotie_trade_port
+		duration = -1
+		hidden = no
+		}
+		}
+		
+		1257 = {
+		add_permanent_province_modifier = { 
+		name = moedernegotie_trade_port
+		duration = -1
+		hidden = no
+		}
+		}
+		
+		38 = {
+		add_permanent_province_modifier = { 
+		name = moedernegotie_trade_port
+		duration = -1
+		hidden = no
+		}
+		}
+		
+		25 = {
+		add_permanent_province_modifier = { 
+		name = moedernegotie_trade_port
+		duration = -1
+		hidden = no
+		}
+		}
+		
+		1867 = { set_province_flag = holland_flag }
+		1866 = { set_province_flag = helgoland_flag } 
+		1875 = { set_province_flag = greatfisher_flag }
+		1856 = { set_province_flag = the_sound_flag }
+		2057 = { set_province_flag = kattegat_flag }
+		1857 = { set_province_flag = skagerrak_flag }
+		1864 = { set_province_flag = fjords_flag }
+		
+		hidden_effect = {
+		
+		NED = { 		
+	
+		set_country_flag = moedernegotiee
+		set_country_flag = sailing_to_baltic_region
+		
+		hidden_effect = {
+		
+		set_variable = {
+		which = sound_toll_total
+		value = 0
+		}
+		
+		set_variable = {
+		which = customer_cost_basic_wares
+		value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_commision_fee_total
+		value = 0
+		}
+		
+		set_variable = {
+        which = netherlands_basic_wares_total
+        value = 0
+		}
+		
+		set_variable = {
+		which = purchased_goods
+		value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_result_total
+		value = 0
+		}
+		
+		set_variable = {
+		which = customers_not_interested
+		value = 0
+		}
+		
+		set_variable = {
+        which = customers_debt
+        value = 0
+		}
+		
+		set_variable = {
+        which = number_of_customers
+        value = 0
+		}
+		
+		set_variable = {
+        which = num_of_goods_cargo_hold
+        value = 0
+		}
+		
+		set_variable = {
+        which = basic_wares
+        value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_republic_share
+		value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_burgher_share
+		value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_sales
+		value = 0
+		}
+		
+		set_variable = {
+		which = netherlands_profit
+		value = 0
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1203 days = 1 }
+		
+		}
+
+		}
+		
+		}
+		
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1466.b"
+		ai_chance = { factor = 0 }
+
+		}
+		
+		}
+	
+		
+		
+		
+		
+		###########################
+		## Dutch - danzig trade ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1249
+		title = "flavor_Historical_Wars_event.1249.title"
+		desc = "flavor_Historical_Wars_event.1249.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		2355 = {
+		set_variable  = {
+			which = danzig_market_price
+			which = danzig_market_price
+		}
+		ROOT = {
+			set_variable = {
+				which = danzig_market_price
+				which = PREV
+			}
+		}
+		}
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1249.a"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } AND = { 2355 = { check_variable = { which = danzig_available_wares value = 1 } } NOT = { NED = { has_country_modifier = danzig_trade_ban } } 2355 = { has_province_modifier = docked_at_danzig } } }
+		ai_chance = { factor = 75 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		2355 = {
+		subtract_variable = {
+        which = danzig_available_wares
+        value = 1
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = danzig_market_price }
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+	
+		scaled_ducat_cost_country = yes
+		
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		}
+
+		country_event = { id = flavor_Historical_Wars_event.1249 days = 0 }
+		2355 = { owner = { country_event = { id = flavor_Historical_Wars_event.1231 days = 0 } } }
+		
+		}
+
+		}
+		
+		
+
+		option = {
+		name = "flavor_Historical_Wars_event.1249.b"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 2355 = { check_variable = { which = danzig_available_wares value = 3 } } NOT = { NED = { has_country_modifier = danzig_trade_ban } } 2355 = { has_province_modifier = docked_at_danzig } }
+		ai_chance = { factor = 100 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		2355 = {
+		subtract_variable = {
+        which = danzig_available_wares
+        value = 3
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = danzig_market_price }
+		multiply_variable = { which = ducat_cost value = 3}
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+	
+		scaled_ducat_cost_country = yes
+		
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 3
+		}
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1249 days = 0 }
+		2355 = { owner = { country_event = { id = flavor_Historical_Wars_event.1231 days = 0 } } }
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1249.c"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 2355 = { check_variable = { which = danzig_available_wares value = 1 } } NOT = { NED = { has_country_modifier = danzig_trade_ban } } 2355 = { has_province_modifier = docked_at_danzig } NOT = { has_country_modifier = danzig_negotiated_price } }
+		ai_chance = { factor = 10 }
+		
+		hidden_effect = {
+		
+		random_list = {
+				20 = { 2355 = { multiply_variable = { which = danzig_market_price value = 0.75 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				20 = { 2355 = { multiply_variable = { which = danzig_market_price value = 0.5 } } set_variable = { which = new_price value = 50 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				25 = { country_event = { id = flavor_Historical_Wars_event.1247 days = 0 } }
+				10 = { country_event = { id = flavor_Historical_Wars_event.1244 days = 0 } }
+				20 = { 2355 = { multiply_variable = { which = danzig_market_price value = 1.25 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1245 days = 0 } }
+		}
+		
+		add_country_modifier = {
+		name = danzig_negotiated_price
+		duration = 90
+		}
+		
+		NED = { country_event = { id = flavor_Historical_Wars_event.1249 days = 5 } }
+		
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1249.d"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = danzig_trade_ban } } 2355 = { has_province_modifier = docked_at_danzig } }
+		ai_chance = { factor = 15 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1249.e"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NED = { has_country_modifier = danzig_trade_ban } 2355 = { has_province_modifier = docked_at_danzig } }
+		ai_chance = { factor = 100 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1249.f"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = danzig_trade_ban } } NOT = { 2355 = { has_province_modifier = docked_at_danzig } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1249.g"
+		trigger = { OR = { has_global_flag = huaynaputina_eruption has_global_flag = exceptionally_cold_year } NOT = { 38 = { has_province_modifier = docked_at_danzig } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		}
+
+		
+		
+		
+		
+		
+		
+		#######################################
+		## Dutch navy docks at trade harbour ##
+		#######################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1248
+		title = "flavor_Historical_Wars_event.1248.title"
+		desc = "flavor_Historical_Wars_event.1248.desc"
+		picture = HARBOUR_eventPicture
+		hidden = yes
+		#major = yes
+
+		trigger = {
+		NED = { has_country_flag = moedernegotiee }
+		OR = {
+		AND = {
+		NED = {
+		NOT = { has_country_modifier = ai_docked_at_baltic_trade_port }
+		NOT = { has_country_flag = returning_to_amsterdam }
+		had_country_flag = {
+		flag = sailing_to_baltic_region
+		days = 125
+		}
+		ai = yes
+		}
+		}
+		AND = {
+		NOT = { 2355 = { has_province_modifier = docked_at_danzig } }
+		2355 = { light_ships_in_province = NED }
+		}
+		AND = {
+		NOT = { 1257 = { has_province_modifier = docked_at_oland } }
+		1257 = { light_ships_in_province = NED }
+		}
+		AND = {
+		NOT = { 25 = { has_province_modifier = docked_at_gotland } }
+		25 = { light_ships_in_province = NED }
+		}
+		AND = {
+		NOT = { 38 = { has_province_modifier = docked_at_riga } }
+		38 = { light_ships_in_province = NED }
+		}
+		}
+		}
+		
+		mean_time_to_happen = {        
+		days = 10
+		modifier = {
+			factor = 0.1
+			NED = { ai = no }
+			}
+		}		
+
+		
+		immediate = {
+		
+		if = {
+		limit = {
+		NED = { ai = yes }
+		NOT = { has_country_modifier = ai_docked_at_baltic_trade_port }
+		}
+		NED = {
+		add_country_modifier = {
+		name = ai_docked_at_baltic_trade_port
+		duration = 50
+		}
+		}
+		random_list = {
+				25 = { 2355 = { add_province_modifier = { name = docked_at_danzig duration = 30	} } } 
+				25 = { 1257 = { add_province_modifier = { name = docked_at_oland duration = 30	} } }
+				25 = { 25 = { add_province_modifier = { name = docked_at_gotland duration = 30	} } }
+				25 = { 38 = { add_province_modifier = { name = docked_at_riga duration = 30	} } }
+		}
+		}
+		else_if = {
+		limit = {
+		AND = {
+		NOT = { has_province_modifier = docked_at_danzig }
+		2355 = { light_ships_in_province = NED }
+		}
+		}
+		2355 = {
+		add_province_modifier = {
+		name = docked_at_danzig
+		duration = -1
+		}
+		}
+		}
+		else_if = {
+		limit = {
+		AND = {
+		NOT = { has_province_modifier = docked_at_oland }
+		1257 = { light_ships_in_province = NED }
+		}
+		}
+		1257 = {
+		add_province_modifier = {
+		name = docked_at_oland
+		duration = -1
+		}
+		}
+		}
+		else_if = {
+		limit = {
+		AND = {
+		NOT = { has_province_modifier = docked_at_gotland }
+		25 = { light_ships_in_province = NED }
+		}
+		}
+		25 = {
+		add_province_modifier = {
+		name = docked_at_gotland
+		duration = -1
+		}
+		}
+		}
+		else_if = {
+		limit = {
+		AND = {
+		NOT = { has_province_modifier = docked_at_riga }
+		38 = { light_ships_in_province = NED }
+		}
+		}
+		38 = {
+		add_province_modifier = {
+		name = docked_at_riga
+		duration = -1
+		}
+		}
+		}
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1248.a"
+		ai_chance = { factor = 100 }
+
+		if = {
+		limit = {
+		2355 = { has_province_modifier = docked_at_danzig }
+		}
+		2355 = { NED = { country_event = { id = flavor_Historical_Wars_event.1249 days = 1 } } }
+		}
+		else_if = {
+		limit = {
+		1257 = { has_province_modifier = docked_at_oland }
+		}
+		1257 = { NED = { country_event = { id = flavor_Historical_Wars_event.1233 days = 1 } } }
+		}
+		else_if = {
+		limit = {
+		25 = { has_province_modifier = docked_at_gotland }
+		}
+		25 = { NED = { country_event = { id = flavor_Historical_Wars_event.1228 days = 1 } } }
+		}
+		else_if = {
+		limit = {
+		38 = { has_province_modifier = docked_at_riga }
+		}
+		38 = { NED = { country_event = { id = flavor_Historical_Wars_event.1222 days = 1 } } }
+		}
+		
+		}
+		
+		}
+		
+		
+		
+		
+		###########################################
+		## merchant guild refuses to lower price ##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1247
+		title = "flavor_Historical_Wars_event.1247.title"
+		desc = "flavor_Historical_Wars_event.1247.desc"
+		picture = ACCUSATION_eventPicture
+		is_triggered_only = yes
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1247.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		2355 = {
+		has_province_modifier = docked_at_danzig
+		}
+		}
+		2355 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		1257 = {
+		has_province_modifier = docked_at_oland
+		}
+		}
+		1257 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		25 = {
+		has_province_modifier = docked_at_gotland
+		}
+		}
+		25 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		38 = {
+		has_province_modifier = docked_at_riga
+		}
+		}
+		38 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+
+		}			
+		
+		}
+		
+		
+		
+		
+		
+		
+		###########################################
+		## merchant guild agrees to lower price ##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1246
+		title = "flavor_Historical_Wars_event.1246.title"
+		desc = "flavor_Historical_Wars_event.1246.desc"
+		picture = MERCHANTS_TALKING_eventPicture
+		is_triggered_only = yes
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1246.a"
+		ai_chance = { factor = 100 }
+		
+
+		}			
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		#################################
+		## merchant guild raises price ##
+		#################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1245
+		title = "flavor_Historical_Wars_event.1245.title"
+		desc = "flavor_Historical_Wars_event.1245.desc"
+		picture = ACCUSATION_eventPicture
+		is_triggered_only = yes
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1245.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		2355 = {
+		has_province_modifier = docked_at_danzig
+		}
+		}
+		2355 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		1257 = {
+		has_province_modifier = docked_at_oland
+		}
+		}
+		1257 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		25 = {
+		has_province_modifier = docked_at_gotland
+		}
+		}
+		25 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		38 = {
+		has_province_modifier = docked_at_riga
+		}
+		}
+		38 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -10
+	    mutual = yes
+		}
+		}
+		}
+		}
+
+		}			
+		
+		}
+		
+		
+		
+		
+		
+		
+		#############################
+		## merchant guild outraged ##
+		#############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1244
+		title = "flavor_Historical_Wars_event.1244.title"
+		desc = "flavor_Historical_Wars_event.1244.desc"
+		picture = ACCUSATION_eventPicture
+		is_triggered_only = yes
+		major = yes
+		
+		
+		
+		immediate = {
+		
+		hidden_effect = {
+		
+		if = {
+		limit = {
+		2355 = {
+		has_province_modifier = docked_at_danzig
+		}
+		}
+		add_country_modifier = {
+		name = danzig_trade_ban
+		duration = 1095
+		}
+		}
+		
+		else_if = {
+		limit = {
+		1257 = {
+		has_province_modifier = docked_at_oland
+		}
+		}
+		add_country_modifier = {
+		name = oland_trade_ban
+		duration = 1095
+		}
+		}
+		
+		else_if = {
+		limit = {
+		25 = {
+		has_province_modifier = docked_at_gotland
+		}
+		}
+		add_country_modifier = {
+		name = gotland_trade_ban
+		duration = 1095
+		}
+		}
+		
+		else_if = {
+		limit = {
+		38 = {
+		has_province_modifier = docked_at_riga
+		}
+		}
+		add_country_modifier = {
+		name = riga_trade_ban
+		duration = 1095
+		}
+		}
+		
+		}
+		
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1244.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		2355 = {
+		has_province_modifier = docked_at_danzig
+		}
+		}
+		2355 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -25
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		1257 = {
+		has_province_modifier = docked_at_oland
+		}
+		}
+		1257 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -25
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		25 = {
+		has_province_modifier = docked_at_gotland
+		}
+		}
+		25 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -25
+	    mutual = yes
+		}
+		}
+		}
+		}
+		
+		else_if = {
+		limit = {
+		38 = {
+		has_province_modifier = docked_at_riga
+		}
+		}
+		38 = {
+		owner = {
+        add_trust = {
+	    who = NED
+	    value = -25
+	    mutual = yes
+		}
+		}
+		}
+		}
+
+		}			
+		
+		}
+		
+		
+		
+		
+		###########################
+		## Dutch leaving harbour ##
+		###########################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1243
+		title = "flavor_Historical_Wars_event.1243.title"
+		desc = "flavor_Historical_Wars_event.1243.desc"
+		picture = HARBOUR_eventPicture
+		hidden = yes
+
+
+		trigger = {
+		NED = { ai = no }
+		OR = {
+		AND = {
+		2355 = { has_province_modifier = docked_at_danzig }
+		NOT = { 2355 = { light_ships_in_province = NED } } 
+		}
+		AND = {
+		1257 = { has_province_modifier = docked_at_oland }
+		NOT = { 1257 = { light_ships_in_province = NED } } 
+		}
+		AND = {
+		25 = { has_province_modifier = docked_at_gotland }
+		NOT = { 25 = { light_ships_in_province = NED } } 
+		}
+		AND = {
+		38 = { has_province_modifier = docked_at_riga }
+		NOT = { 38 = { light_ships_in_province = NED } } 
+		}
+		}
+		
+		}
+		
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1243.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		AND = {
+		2355 = { has_province_modifier = docked_at_danzig }
+		NOT = { 2355 = { light_ships_in_province = NED } }
+		}
+		}
+		2355 = { remove_province_modifier = docked_at_danzig }
+		}
+		
+		if = {
+		limit = {
+		AND = {
+		1257 = { has_province_modifier = docked_at_oland }
+		NOT = { 1257 = { light_ships_in_province = NED } }
+		}
+		}
+		1257 = { remove_province_modifier = docked_at_oland }
+		}
+		
+		if = {
+		limit = {
+		AND = {
+		25 = { has_province_modifier = docked_at_gotland }
+		NOT = { 25 = { light_ships_in_province = NED } }
+		}
+		}
+		25 = { remove_province_modifier = docked_at_gotland }
+		}
+		
+		if = {
+		limit = {
+		AND = {
+		38 = { has_province_modifier = docked_at_riga }
+		NOT = { 38 = { light_ships_in_province = NED } }
+		}
+		}
+		38 = { remove_province_modifier = docked_at_riga }
+		}
+
+		}
+		
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		########################################
+		## Dutch sail to Amsterdam with wares ##
+		########################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1242
+		title = "flavor_Historical_Wars_event.1242.title"
+		desc = "flavor_Historical_Wars_event.1242.desc"
+		picture = HARBOUR_eventPicture
+		hidden = yes
+		#major = yes
+
+
+		trigger = {
+		NED = { has_country_flag = sailing_to_baltic_region }
+		
+		OR = {
+		
+		AND = {
+		1867 = { light_ships_in_province = NED }
+		1867 = { has_province_flag = holland_flag }
+		NOT = { 1875 = { has_province_flag = greatfisher_flag } }
+		NOT = { 1866 = { has_province_flag = helgoland_flag } }
+		}
+		
+		AND = {
+		OR = {
+		AND = {
+		1875 = { light_ships_in_province = NED }
+		1875 = { has_province_flag = greatfisher_flag }
+		}
+		AND = {
+		1866 = { light_ships_in_province = NED }
+		1866 = { has_province_flag = helgoland_flag }
+		}
+		}
+		NOT = { 1864 = { has_province_flag = fjords_flag } }
+		}
+		
+		AND = {
+		1864 = { light_ships_in_province = NED }
+		1864 = { has_province_flag = fjords_flag }
+		NOT = { 1857 = { has_province_flag = skagerrak_flag } }
+		}
+		
+		AND = {
+		1857 = { light_ships_in_province = NED }
+		1857 = { has_province_flag = skagerrak_flag }
+		NOT = { 2057 = { has_province_flag = kattegat_flag } }
+		}
+		
+		AND = {
+		2057 = { light_ships_in_province = NED }
+		2057 = { has_province_flag = kattegat_flag }
+		NOT = { 1856 = { has_province_flag = the_sound_flag } }
+		}
+
+		AND = {
+		1856 = { light_ships_in_province = NED }
+		1856 = { has_province_flag = the_sound_flag }
+		}
+		
+		}
+		
+		}
+		
+		
+		immediate = {
+		if = {
+		limit = {
+		1856 = { has_province_flag = the_sound_flag }
+		}
+		1856 = { clr_province_flag = the_sound_flag }
+		}
+		else_if = {
+		limit = {
+		2057 = { has_province_flag = kattegat_flag }
+		}
+		2057 = { clr_province_flag = kattegat_flag }
+		}
+		else_if = {
+		limit = {
+		1857 = { has_province_flag = skagerrak_flag }
+		}
+		1857 = { clr_province_flag = skagerrak_flag }
+		}
+		else_if = {
+		limit = {
+		1864 = { has_province_flag = fjords_flag }
+		}
+		1864 = { clr_province_flag = fjords_flag }
+		}
+		else_if = {
+		limit = {
+		OR = {
+		1875 = { has_province_flag = greatfisher_flag }
+		1866 = { has_province_flag = helgoland_flag }
+		}
+		}
+		1875 = { clr_province_flag = greatfisher_flag }
+		1866 = { clr_province_flag = helgoland_flag }
+		}
+		else_if = {
+		limit = {
+		1867 = { has_province_flag = holland_flag }
+		}
+		1867 = { clr_province_flag = holland_flag }
+		}
+		
+		
+		}
+		
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1242.a"
+		ai_chance = { factor = 100 }
+		
+		}
+		
+		}
+		
+		
+		
+		
+		###########################################
+		## Dutch navy docks at Amsterdam harbour ##
+		###########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1241
+		title = "flavor_Historical_Wars_event.1241.title"
+		desc = "flavor_Historical_Wars_event.1241.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		major = yes
+		
+		
+		immediate = {
+		
+		clr_country_flag = sailing_to_baltic_region
+		
+		}
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1241.a"
+		ai_chance = { factor = 100 }
+			
+		if = {
+		limit = {
+		NOT = { has_global_flag = exceptionally_cold_year }
+		NOT = { has_global_flag = huaynaputina_eruption }
+		}
+		set_country_flag = sailing_to_baltic_region
+		}
+
+		hidden_effect = {
+		
+		change_variable = {
+        which = basic_wares
+        which = num_of_goods_cargo_hold
+		}
+		
+		set_variable = {
+        which = num_of_goods_cargo_hold
+        value = 0
+		}
+	
+		}
+
+
+		}
+		
+		}
+
+
+
+
+		#################################################
+		## Dutch trade harbour prices and availability ##
+		#################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1240
+		title = "flavor_Historical_Wars_event.1240.title"
+		desc = "flavor_Historical_Wars_event.1240.desc"
+		picture = HARBOUR_eventPicture
+		hidden = yes
+
+		trigger = {
+		tag = NED
+		exists = NED
+		has_country_flag = moedernegotiee
+		}
+		
+		
+		
+		mean_time_to_happen = {      
+		months = 12
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1240.a"
+		ai_chance = { factor = 100 }
+
+		2355 = {
+		random_list = {
+				10 = { set_variable = { which = danzig_available_wares	value = 0 } }
+				50 = { set_variable = { which = danzig_available_wares	value = 1 } }
+				40 = { set_variable = { which = danzig_available_wares	value = 2 } }
+				5 = { set_variable = { which = danzig_available_wares	value = 3 } }
+				5 = { set_variable = { which = danzig_available_wares	value = 4 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = danzig_market_price	value = 10 } }
+				30 = { set_variable = { which = danzig_market_price	value = 15 } }
+				20 = { set_variable = { which = danzig_market_price	value = 10 } }
+				10 = { set_variable = { which = danzig_market_price	value = 5 } }
+		}
+		}
+		
+		1257 = {
+		random_list = {
+				15 = { set_variable = { which = oland_available_wares	value = 0 } }
+				35 = { set_variable = { which = oland_available_wares	value = 1 } }
+				40 = { set_variable = { which = oland_available_wares	value = 2 } }
+				5 = { set_variable = { which = oland_available_wares	value = 3 } }
+				5 = { set_variable = { which = oland_available_wares	value = 3 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = oland_market_price	value = 10 } }
+				30 = { set_variable = { which = oland_market_price	value = 15 } }
+				20 = { set_variable = { which = oland_market_price	value = 10 } }
+				10 = { set_variable = { which = oland_market_price	value = 5 } }
+		}
+		}
+		
+		25 = {
+		random_list = {
+				10 = { set_variable = { which = gotland_available_wares	value = 0 } }
+				40 = { set_variable = { which = gotland_available_wares	value = 1 } }
+				30 = { set_variable = { which = gotland_available_wares	value = 2 } }
+				10 = { set_variable = { which = gotland_available_wares	value = 3 } }
+				10 = { set_variable = { which = gotland_available_wares	value = 3 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = gotland_market_price	value = 10 } }
+				30 = { set_variable = { which = gotland_market_price	value = 15 } }
+				20 = { set_variable = { which = gotland_market_price	value = 10 } }
+				10 = { set_variable = { which = gotland_market_price	value = 5 } }
+		}
+		}
+		
+		38 = {
+		random_list = {
+				25 = { set_variable = { which = riga_available_wares	value = 0 } }
+				25 = { set_variable = { which = riga_available_wares	value = 1 } }
+				20 = { set_variable = { which = riga_available_wares	value = 2 } }
+				15 = { set_variable = { which = riga_available_wares	value = 3 } }
+				15 = { set_variable = { which = riga_available_wares	value = 3 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = riga_market_price	value = 10 } }
+				30 = { set_variable = { which = riga_market_price	value = 15 } }
+				20 = { set_variable = { which = riga_market_price	value = 10 } }
+				10 = { set_variable = { which = riga_market_price	value = 5 } }
+		}
+		}
+		
+		if = {
+		limit = {
+		has_global_flag = decline_of_moedernegotiee
+		}
+		2355 = { divide_variable = { which = danzig_available_wares	value = 2 } }
+		1257 = { divide_variable = { which = oland_available_wares	value = 2 } }
+		25 = { divide_variable = { which = gotland_available_wares	value = 2 } }
+		38 = { divide_variable = { which = riga_available_wares value = 2 } }
+		}
+		
+		if = {
+		limit = {
+		has_global_flag = maunder_minimum
+		}
+		2355 = { multiply_variable = { which = danzig_market_price	value = 2 } }
+		1257 = { multiply_variable = { which = oland_market_price	value = 2 } }
+		25 = { multiply_variable = { which = gotland_market_price	value = 2 } }
+		38 = { multiply_variable = { which = riga_market_price	value = 2 } }
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		####################################
+		## Dutch stay out too long at sea ##
+		####################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1239
+		title = "flavor_Historical_Wars_event.1239.title"
+		desc = "flavor_Historical_Wars_event.1239.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+
+
+		trigger = {
+		tag = NED
+		exists = NED
+		check_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		OR = {
+		AND = {
+		had_country_flag = {
+		flag = sailing_to_baltic_region
+		days = 730
+		}
+		ai = yes
+		}
+		AND = {
+		had_country_flag = {
+		flag = sailing_to_baltic_region
+		days = 605
+		}
+		ai = no
+		}
+		}
+		}
+		
+		
+		
+		mean_time_to_happen = {      
+		months = 6                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1239.a"
+		ai_chance = { factor = 100 }
+
+		random_list = {
+				45 = { subtract_variable = { which = num_of_goods_cargo_hold	value = 1 } }
+				35 = { subtract_variable = { which = num_of_goods_cargo_hold	value = 2 } }
+				20 = { subtract_variable = { which = num_of_goods_cargo_hold	value = 3 } }
+
+		}
+		
+		hidden_effect = { 
+		
+		if = { limit = { NOT = { check_variable = { which = num_of_goods_cargo_hold  value = 0 } } } set_variable = { which = num_of_goods_cargo_hold value = 0 } }
+		if = { limit = { ai = no NOT = { check_variable = { which = num_of_goods_cargo_hold  value = 1 } } } clr_country_flag = returning_to_amsterdam }
+		
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		########################
+		## Rats destroy goods ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1238
+		title = "flavor_Historical_Wars_event.1238.title"
+		desc = "flavor_Historical_Wars_event.1238.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+
+
+		trigger = {
+		tag = NED
+		exists = NED
+		check_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		}
+		
+		
+		
+		mean_time_to_happen = {      
+		months = 150                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1238.a"
+		ai_chance = { factor = 100 }
+
+		random_list = {
+				45 = { subtract_variable = { which = num_of_goods_cargo_hold	value = 1 } }
+				35 = { subtract_variable = { which = num_of_goods_cargo_hold	value = 2 } }
+				20 = { subtract_variable = { which = num_of_goods_cargo_hold	value = 3 } }
+
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		###############################################
+		## Dutch purchase goods oland - owner event ##
+		###############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1237
+		title = "flavor_Historical_Wars_event.1237.title"
+		desc = "flavor_Historical_Wars_event.1237.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		if = {
+		limit = {
+		1257 = { has_province_modifier = docked_at_oland }
+		}
+		1257 = {
+		set_variable  = {
+			which = oland_market_price
+			which = oland_market_price
+		}
+		owner = {
+			set_variable = {
+				which = oland_market_price
+				which = PREV
+			}
+			set_variable = {
+				which = taxable_income
+				which = oland_market_price
+			}
+			multiply_variable = {
+			which = taxable_income
+			value = 0.5
+			}
+
+		} 
+		}
+		}
+		
+		}
+
+		}
+		
+		
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1237.a"
+		ai_chance = { factor = 100 }
+		
+		set_variable = { which = ducat_gain which = taxable_income }
+		
+		hidden_effect = {
+	
+		scaled_ducat_gained_country = yes
+		
+		change_variable = {
+        which = ducat_gain
+        value = 0
+		}
+		
+		}
+
+		}
+		
+		}
+		
+		
+
+		
+		
+		
+		##########################
+		## Dutch pay sound dues ##
+		##########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1236
+		title = "flavor_Historical_Wars_event.1236.title"
+		desc = "flavor_Historical_Wars_event.1236.desc"
+		picture = SHIP_SAILING_eventPicture
+		is_triggered_only = yes
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1236.a"
+		ai_chance = { factor = 100 }
+		
+
+		if = {
+		limit = {
+		OR = {
+		AND = { scandinavian_superregion = { owned_by = SWE } NOT = { exists = DEN } NOT = { exists = DAN } }
+		AND = { scandinavian_superregion = { owned_by = DEN } NOT = { exists = SWE } }
+		AND = { scandinavian_superregion = { owned_by = DAN } NOT = { exists = SWE } }
+		AND = { scandinavian_superregion = { owned_by = SCA } NOT = { exists = SWE } NOT = { exists = DEN } NOT = { exists = DAN } }
+		}
+		}
+		if = {
+		limit = { 
+		tag = NED
+		}
+		add_treasury = -24
+		hidden_effect = {
+		change_variable = {
+		which = sound_toll_total
+		value = 24
+		}
+		}
+		}
+		else = {
+		add_treasury = 24
+		}
+		}
+		else = {
+		if = {
+		limit = { 
+		tag = NED
+		}
+		add_treasury = -12
+		hidden_effect = {
+		change_variable = {
+		which = sound_toll_total
+		value = 12
+		}
+		}
+		}
+		else = {
+		add_treasury = 12
+		}
+		}
+		
+		}
+
+		}
+		
+		
+		
+		#######################################
+		## Dutch sound dues background event ##
+		#######################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1235
+		title = "flavor_Historical_Wars_event.1235.title"
+		desc = "flavor_Historical_Wars_event.1235.desc"
+		picture = SHIP_SAILING_eventPicture
+		hidden = yes
+		#major = yes
+
+
+		trigger = {
+		NED = { has_country_flag = moedernegotiee }
+		OR = {
+		AND = {
+		NED = { ai = no }
+		2057 = { light_ships_in_province = NED }
+		}
+		AND = {
+		NED = { ai = yes }
+		OR = {
+		AND = {
+		NED = {
+		had_country_flag = {
+		flag = returning_to_amsterdam
+		days = 80
+		}
+		NOT = {
+		had_country_flag = {
+		flag = returning_to_amsterdam
+		days = 100
+		}
+		}
+		}
+		}
+		NED = {
+		had_country_flag = {
+		flag = sailing_to_baltic_region
+		days = 80
+		}
+		NOT = {
+		had_country_flag = {
+		flag = sailing_to_baltic_region
+		days = 100
+		}
+		}
+		}
+		}
+		}
+		}
+		OR = {
+		12 = { owned_by = DAN }
+		12 = { owned_by = DEN }
+		12 = { owned_by = SWE }
+		12 = { owned_by = SCA }
+		}
+		NOT = { NED = { has_country_modifier = paid_sound_toll } }
+		}
+		
+		
+		immediate = {
+		
+		NED = {
+		add_country_modifier = {
+		name = paid_sound_toll
+		duration = 30
+		}
+		
+		}
+		
+		}
+		
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1235.a"
+		ai_chance = { factor = 100 }
+
+
+		12 = { owner = { country_event = { id = flavor_Historical_Wars_event.1236 days = 5 } } }
+		
+		NED = { country_event = { id = flavor_Historical_Wars_event.1236 days = 5 } }
+		
+		}
+		
+		}
+		
+		
+
+		
+		
+		
+		
+		#######################################################
+		## Dutch a.i set sail for amsterdam background event ##
+		#######################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1234
+		title = "flavor_Historical_Wars_event.1234.title"
+		desc = "flavor_Historical_Wars_event.1234.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+
+
+		trigger = {
+		ai = yes
+		tag = NED
+		exists = NED
+		OR = {
+		check_variable = {
+        which = num_of_goods_cargo_hold
+        value = 10
+		}
+		had_country_flag = {
+		flag = sailing_to_baltic_region
+		days = 625
+		}
+		}
+		NOT = { has_global_flag = exceptionally_cold_year }
+		NOT = { has_country_flag = returning_to_amsterdam }
+		}
+		
+		
+		
+		mean_time_to_happen = {      
+		months = 1                                        
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1234.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = returning_to_amsterdam
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		###########################
+		## Dutch - oland trade ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1233
+		title = "flavor_Historical_Wars_event.1233.title"
+		desc = "flavor_Historical_Wars_event.1233.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		1257 = {
+		set_variable  = {
+			which = oland_market_price
+			which = oland_market_price
+		}
+		ROOT = {
+			set_variable = {
+				which = oland_market_price
+				which = PREV
+			}
+		}
+		}
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1233.a"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } AND = { 1257 = { check_variable = { which = oland_available_wares value = 1 } } NOT = { NED = { has_country_modifier = oland_trade_ban } } 1257 = { has_province_modifier = docked_at_oland } } }
+		ai_chance = { factor = 75 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		1257 = {
+		subtract_variable = {
+        which = oland_available_wares
+        value = 1
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = oland_market_price }
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+	
+		scaled_ducat_cost_country = yes
+		
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		}
+
+		country_event = { id = flavor_Historical_Wars_event.1233 days = 0 }
+		1257 = { owner = { country_event = { id = flavor_Historical_Wars_event.1237 days = 0 } } }
+		
+		}
+
+		}
+		
+		
+
+		option = {
+		name = "flavor_Historical_Wars_event.1233.b"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 1257 = { check_variable = { which = oland_available_wares value = 3 } } NOT = { NED = { has_country_modifier = oland_trade_ban } } 1257 = { has_province_modifier = docked_at_oland } }
+		ai_chance = { factor = 100 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		1257 = {
+		subtract_variable = {
+        which = oland_available_wares
+        value = 3
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = oland_market_price }
+		multiply_variable = { which = ducat_cost value = 3}
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+	
+		scaled_ducat_cost_country = yes
+		
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 3
+		}
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1233 days = 0 }
+		1257 = { owner = { country_event = { id = flavor_Historical_Wars_event.1237 days = 0 } } }
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1233.c"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 1257 = { check_variable = { which = oland_available_wares value = 1 } } NOT = { NED = { has_country_modifier = oland_trade_ban } } 1257 = { has_province_modifier = docked_at_oland } NOT = { has_country_modifier = oland_negotiated_price } }
+		ai_chance = { factor = 10 }
+		
+		hidden_effect = {
+		
+		random_list = {
+				20 = { 1257 = { multiply_variable = { which = oland_market_price value = 0.75 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				20 = { 1257 = { multiply_variable = { which = oland_market_price value = 0.5 } } set_variable = { which = new_price value = 50 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				25 = { country_event = { id = flavor_Historical_Wars_event.1247 days = 0 } }
+				10 = { country_event = { id = flavor_Historical_Wars_event.1244 days = 0 } }
+				20 = { 1257 = { multiply_variable = { which = oland_market_price value = 1.25 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1245 days = 0 } }
+		}
+		
+		
+		add_country_modifier = {
+		name = oland_negotiated_price
+		duration = 90
+		}
+		
+		NED = { country_event = { id = flavor_Historical_Wars_event.1233 days = 5 } }
+		
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1233.d"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = oland_trade_ban } } 1257 = { has_province_modifier = docked_at_oland } }
+		ai_chance = { factor = 15 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1233.e"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NED = { has_country_modifier = oland_trade_ban } 1257 = { has_province_modifier = docked_at_oland } }
+		ai_chance = { factor = 100 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1233.f"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = oland_trade_ban } } NOT = { 1257 = { has_province_modifier = docked_at_oland } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1233.g"
+		trigger = { OR = { has_global_flag = huaynaputina_eruption has_global_flag = exceptionally_cold_year } NOT = { 38 = { has_province_modifier = docked_at_oland } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		###############################################
+		## Dutch purchase goods danzig - owner event ##
+		###############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1231
+		title = "flavor_Historical_Wars_event.1231.title"
+		desc = "flavor_Historical_Wars_event.1231.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		if = {
+		limit = {
+		2355 = { has_province_modifier = docked_at_danzig }
+		}
+		2355 = {
+		set_variable  = {
+			which = danzig_market_price
+			which = danzig_market_price
+		}
+		owner = {
+			set_variable = {
+				which = danzig_market_price
+				which = PREV
+			}
+			set_variable = {
+				which = taxable_income
+				which = danzig_market_price
+			}
+			multiply_variable = {
+			which = taxable_income
+			value = 0.5
+			}
+
+		} 
+		}
+		}
+		
+		}
+
+		}
+		
+		
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1231.a"
+		ai_chance = { factor = 100 }
+		
+		set_variable = { which = ducat_gain which = taxable_income }
+		
+		hidden_effect = {
+	
+		scaled_ducat_gained_country = yes
+		
+		change_variable = {
+        which = ducat_gain
+        value = 0
+		}
+		
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		########################
+		## background event 1 ##
+		########################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1229
+		title = "flavor_Historical_Wars_event.1229.title"
+		desc = "flavor_Historical_Wars_event.1229.desc"
+		picture = ECONOMY_eventPicture
+		hidden = yes
+		#major = yes
+		
+		
+		trigger = {
+		exists = NED
+		NED = { has_country_flag = moedernegotiee }
+		OR = {
+		NED = {
+		had_country_flag = {
+		flag = revenue_report_not_signed
+		days = 180
+		}
+		}
+		had_global_flag = {
+		flag = basic_wares_purchase_in_progress
+		days = 5
+		}
+		}
+		}
+		
+			
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1229.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		had_global_flag = {
+		flag = basic_wares_purchase_in_progress
+		days = 5
+		}
+		}
+		clr_global_flag = basic_wares_purchase_in_progress
+		}
+		
+		if = {
+		limit = {
+		NED = {
+		had_country_flag = {
+		flag = revenue_report_not_signed
+		days = 180
+		}
+		}
+		}
+		NED = { clr_country_flag = revenue_report_not_signed }
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		###########################
+		## Dutch - gotland trade ##
+		###########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1228
+		title = "flavor_Historical_Wars_event.1228.title"
+		desc = "flavor_Historical_Wars_event.1228.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		25 = {
+		set_variable  = {
+			which = gotland_market_price
+			which = gotland_market_price
+		}
+		ROOT = {
+			set_variable = {
+				which = gotland_market_price
+				which = PREV
+			}
+		}
+		}
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1228.a"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } AND = { 25 = { check_variable = { which = gotland_available_wares value = 1 } } NOT = { NED = { has_country_modifier = gotland_trade_ban } } 25 = { has_province_modifier = docked_at_gotland } } }
+		ai_chance = { factor = 75 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		25 = {
+		subtract_variable = {
+        which = gotland_available_wares
+        value = 1
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = gotland_market_price }
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+		
+		scaled_ducat_cost_country = yes
+
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		}
+
+		country_event = { id = flavor_Historical_Wars_event.1228 days = 0 }
+		25 = { owner = { country_event = { id = flavor_Historical_Wars_event.1227 days = 0 } } }
+		
+		}
+
+		}
+		
+		
+
+		option = {
+		name = "flavor_Historical_Wars_event.1228.b"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 25 = { check_variable = { which = gotland_available_wares value = 3 } } NOT = { NED = { has_country_modifier = gotland_trade_ban } } 25 = { has_province_modifier = docked_at_gotland } }
+		ai_chance = { factor = 100 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		25 = {
+		subtract_variable = {
+        which = gotland_available_wares
+        value = 3
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = gotland_market_price }
+		multiply_variable = { which = ducat_cost value = 3}
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+		
+		scaled_ducat_cost_country = yes
+
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 3
+		}
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1228 days = 0 }
+		25 = { owner = { country_event = { id = flavor_Historical_Wars_event.1227 days = 0 } } }
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1228.c"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 25 = { check_variable = { which = gotland_available_wares value = 1 } } NOT = { NED = { has_country_modifier = gotland_trade_ban } } 25 = { has_province_modifier = docked_at_gotland } NOT = { has_country_modifier = gotland_negotiated_price } }
+		ai_chance = { factor = 10 }
+		
+		hidden_effect = {
+		
+		random_list = {
+				20 = { 25 = { multiply_variable = { which = gotland_market_price value = 0.75 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				20 = { 25 = { multiply_variable = { which = gotland_market_price value = 0.5 } } set_variable = { which = new_price value = 50 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				25 = { country_event = { id = flavor_Historical_Wars_event.1247 days = 0 } }
+				10 = { country_event = { id = flavor_Historical_Wars_event.1244 days = 0 } }
+				20 = { 25 = { multiply_variable = { which = gotland_market_price value = 1.25 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1245 days = 0 } }
+		}
+		
+		add_country_modifier = {
+		name = gotland_negotiated_price
+		duration = 90
+		}
+		
+		NED = { country_event = { id = flavor_Historical_Wars_event.1228 days = 5 } }
+		
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1228.d"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = gotland_trade_ban } } 25 = { has_province_modifier = docked_at_gotland } }
+		ai_chance = { factor = 15 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1228.e"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NED = { has_country_modifier = gotland_trade_ban } 25 = { has_province_modifier = docked_at_gotland } }
+		ai_chance = { factor = 100 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1228.f"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = gotland_trade_ban } } NOT = { 25 = { has_province_modifier = docked_at_gotland } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1228.g"
+		trigger = { OR = { has_global_flag = huaynaputina_eruption has_global_flag = exceptionally_cold_year } NOT = { 38 = { has_province_modifier = docked_at_gotland } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		###############################################
+		## Dutch purchase goods gotland - owner event ##
+		###############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1227
+		title = "flavor_Historical_Wars_event.1227.title"
+		desc = "flavor_Historical_Wars_event.1227.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		if = {
+		limit = {
+		25 = { has_province_modifier = docked_at_gotland }
+		}
+		25 = {
+		set_variable  = {
+			which = gotland_market_price
+			which = gotland_market_price
+		}
+		owner = {
+			set_variable = {
+				which = gotland_market_price
+				which = PREV
+			}
+			set_variable = {
+				which = taxable_income
+				which = gotland_market_price
+			}
+			multiply_variable = {
+			which = taxable_income
+			value = 0.5
+			}
+
+		}
+
+		}
+		
+		}
+		}
+		
+		}
+		
+		
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1227.a"
+		ai_chance = { factor = 100 }
+		
+		set_variable = { which = ducat_gain which = taxable_income }
+		
+		hidden_effect = {
+	
+		scaled_ducat_gained_country = yes
+		
+		change_variable = {
+        which = ducat_gain
+        value = 0
+		}
+		
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		####################################################
+		## Dutch navy docks at Amsterdam background event ##
+		####################################################
+
+
+		province_event = {
+		id = flavor_Historical_Wars_event.1226
+		title = "flavor_Historical_Wars_event.1226.title"
+		desc = "flavor_Historical_Wars_event.1226.desc"
+		picture = HARBOUR_eventPicture
+		hidden = yes
+
+		
+		trigger = {
+		NED = { has_country_flag = moedernegotiee }
+		exists = NED
+		OR = {
+		AND = {
+		NED = {
+		ai = yes
+		had_country_flag = {
+		flag = returning_to_amsterdam
+		days = 125
+		}
+		}
+		}
+		AND = {
+		NED = {
+		ai = no
+		NOT = { 1866 = { has_province_flag = helgoland_flag } }
+		NOT = { 1875 = { has_province_flag = greatfisher_flag } }
+		NOT = { 1856 = { has_province_flag = the_sound_flag } }
+		NOT = { 2057 = { has_province_flag = kattegat_flag } }
+		NOT = { 1857 = { has_province_flag = skagerrak_flag } }
+		NOT = { 1864 = { has_province_flag = fjords_flag } } 
+		NOT = { 1867 = { has_province_flag = holland_flag } }
+		97 = { light_ships_in_province = NED }
+		}
+		}
+		}
+		}
+		
+		immediate = {
+		NED = { clr_country_flag = returning_to_amsterdam }
+		}
+
+
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1226.a"
+		ai_chance = { factor = 100 }
+		
+		1867 = { set_province_flag = holland_flag }
+		1866 = { set_province_flag = helgoland_flag } 
+		1875 = { set_province_flag = greatfisher_flag }
+		1856 = { set_province_flag = the_sound_flag }
+		2057 = { set_province_flag = kattegat_flag }
+		1857 = { set_province_flag = skagerrak_flag }
+		1864 = { set_province_flag = fjords_flag }
+		
+		
+		NED = { country_event = { id = flavor_Historical_Wars_event.1241 days = 1 } }
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		#######################################################
+		## Dutch trading stops due to cold year - notification ##
+		#######################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1225
+		title = "flavor_Historical_Wars_event.1225.title"
+		desc = "flavor_Historical_Wars_event.1225.desc"
+		picture = SHIP_SAILING_eventPicture
+		major = yes
+		is_triggered_only = yes
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1225.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		ai = yes
+		}
+		set_country_flag = returning_to_amsterdam
+		}
+	
+		}
+		
+		}
+		
+		
+		
+		
+		
+		
+		#######################
+		## loss of amsterdam ##
+		########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1224
+		title = "flavor_Historical_Wars_event.1224.title"
+		desc = "flavor_Historical_Wars_event.1224.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+		
+		
+
+		trigger = {
+		tag = NED
+		exists = NED
+		has_country_flag = moedernegotiee
+		NOT = { 97 = { owned_by = NED } }
+		NOT = { has_country_flag = amsterdam_lost }
+		}
+		
+		
+		immediate = {
+		
+		clr_country_flag = moedernegotiee
+		set_country_flag = amsterdam_lost
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1224.a"
+		ai_chance = { factor = 100 }	
+	
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		###################################
+		## control of amsterdam restored ##
+		###################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1223
+		title = "flavor_Historical_Wars_event.1223.title"
+		desc = "flavor_Historical_Wars_event.1223.desc"
+		picture = TRADEGOODS_eventPicture
+		major = yes
+		
+		
+
+		trigger = {
+		tag = NED
+		exists = NED
+		NOT = { has_country_flag = moedernegotiee }
+		97 = { owned_by = NED }
+		has_country_flag = amsterdam_lost
+		}
+		
+		
+		immediate = {
+		
+		set_country_flag = moedernegotiee
+		clr_country_flag = amsterdam_lost
+		
+		}
+
+
+
+		###########
+		##options##
+		###########
+
+
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1223.a"
+		ai_chance = { factor = 100 }	
+	
+		
+
+		}
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		#########################
+		## Dutch - riga trade ##
+		#########################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1222
+		title = "flavor_Historical_Wars_event.1222.title"
+		desc = "flavor_Historical_Wars_event.1222.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		38 = {
+		set_variable  = {
+			which = riga_market_price
+			which = riga_market_price
+		}
+		ROOT = {
+			set_variable = {
+				which = riga_market_price
+				which = PREV
+			}
+		}
+		}
+		}
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1222.a"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } AND = { 38 = { check_variable = { which = riga_available_wares value = 1 } } NOT = { NED = { has_country_modifier = riga_trade_ban } } 38 = { has_province_modifier = docked_at_riga } } }
+		ai_chance = { factor = 75 }
+		
+		set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		38 = {
+		subtract_variable = {
+        which = riga_available_wares
+        value = 1
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = riga_market_price }
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+		
+		scaled_ducat_cost_country = yes
+
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		}
+
+		country_event = { id = flavor_Historical_Wars_event.1222 days = 0 }
+		38 = { owner = { country_event = { id = flavor_Historical_Wars_event.1221 days = 0 } } }
+		
+		}
+
+		}
+		
+		
+
+		option = {
+		name = "flavor_Historical_Wars_event.1222.b"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 38 = { check_variable = { which = riga_available_wares value = 3 } } NOT = { NED = { has_country_modifier = riga_trade_ban } } 38 = { has_province_modifier = docked_at_riga } }
+		ai_chance = { factor = 100 }
+		
+		#set_country_flag = baltic_purchase_completed
+		
+		hidden_effect = {
+		
+		38 = {
+		subtract_variable = {
+        which = riga_available_wares
+        value = 3
+		}
+		}
+
+		}		
+		
+		set_variable = { which = ducat_cost which = riga_market_price }
+		multiply_variable = { which = ducat_cost value = 3}
+		
+		hidden_effect = {
+		
+		change_variable = {
+        which = purchased_goods
+        which = ducat_cost
+		}
+		
+		scaled_ducat_cost_country = yes
+
+		# subtract_variable = {
+        # which = netherlands_result_total
+        # which = purchased_goods
+		# }
+		set_variable = { 
+        which = ducat_cost
+        value = 0
+		}
+		NED = {
+		change_variable = {
+        which = num_of_goods_cargo_hold
+        value = 3
+		}
+		}
+		
+		country_event = { id = flavor_Historical_Wars_event.1222 days = 0 }
+		38 = { owner = { country_event = { id = flavor_Historical_Wars_event.1221 days = 0 } } }
+		
+		}
+		
+		}
+		
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1222.c"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } 38 = { check_variable = { which = riga_available_wares value = 1 } } NOT = { NED = { has_country_modifier = riga_trade_ban } } 38 = { has_province_modifier = docked_at_riga } NOT = { has_country_modifier = riga_negotiated_price } }
+		ai_chance = { factor = 10 }
+		
+		hidden_effect = {
+		
+		random_list = {
+				20 = { 38 = { multiply_variable = { which = riga_market_price value = 0.75 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				20 = { 38 = { multiply_variable = { which = riga_market_price value = 0.5 } } set_variable = { which = new_price value = 50 } country_event = { id = flavor_Historical_Wars_event.1246 days = 0 } }
+				25 = { country_event = { id = flavor_Historical_Wars_event.1247 days = 0 } }
+				100 = { country_event = { id = flavor_Historical_Wars_event.1244 days = 0 } }
+				20 = { 38 = { multiply_variable = { which = riga_market_price value = 1.25 } } set_variable = { which = new_price value = 25 } country_event = { id = flavor_Historical_Wars_event.1245 days = 0 } }
+		}
+		
+		add_country_modifier = {
+		name = riga_negotiated_price
+		duration = 90
+		}
+		
+		NED = { country_event = { id = flavor_Historical_Wars_event.1222 days = 5 } }
+		
+		}
+		
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1222.d"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = riga_trade_ban } } 38 = { has_province_modifier = docked_at_riga } }
+		ai_chance = { factor = 15 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1222.e"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NED = { has_country_modifier = riga_trade_ban } 38 = { has_province_modifier = docked_at_riga } }
+		ai_chance = { factor = 100 }
+		
+		
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1222.f"
+		trigger = { NOT = { has_global_flag = exceptionally_cold_year } NOT = { has_global_flag = huaynaputina_eruption } NOT = { NED = { has_country_modifier = riga_trade_ban } } NOT = { 38 = { has_province_modifier = docked_at_riga } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1222.g"
+		trigger = { OR = { has_global_flag = huaynaputina_eruption has_global_flag = exceptionally_cold_year } NOT = { 38 = { has_province_modifier = docked_at_riga } } }
+		ai_chance = { factor = 0 }
+
+		}
+		
+		
+		}
+		
+		
+		
+		
+		
+		###############################################
+		## Dutch purchase goods riga - owner event ##
+		###############################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1221
+		title = "flavor_Historical_Wars_event.1221.title"
+		desc = "flavor_Historical_Wars_event.1221.desc"
+		picture = HARBOUR_eventPicture
+		is_triggered_only = yes
+		#major = yes
+		
+		immediate = {
+		hidden_effect = {
+		if = {
+		limit = {
+		38 = { has_province_modifier = docked_at_riga }
+		}
+		38 = {
+		set_variable  = {
+			which = riga_market_price
+			which = riga_market_price
+		}
+		owner = {
+			set_variable = {
+				which = riga_market_price
+				which = PREV
+			}
+			set_variable = {
+				which = taxable_income
+				which = riga_market_price
+			}
+			multiply_variable = {
+			which = taxable_income
+			value = 0.5
+			}
+
+		} 
+		}
+		}
+
+		}
+		
+		}
+		
+		
+
+		###########
+		##options##
+		###########
+
+		option = {
+		name = "flavor_Historical_Wars_event.1221.a"
+		ai_chance = { factor = 100 }
+		
+		set_variable = { which = ducat_gain which = taxable_income }
+		
+		hidden_effect = {
+	
+		scaled_ducat_gained_country = yes
+		
+		change_variable = {
+        which = ducat_gain
+        value = 0
+		}
+		
+		}
+
+		}
+		
+		}
+		
+		
+		
+		
+		
+		#########################################
+		## Netherlands moedernegotiee decision##
+		#########################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1220
+		title = "flavor_Historical_Wars_event.1220.title"
+		desc = "flavor_Historical_Wars_event.1220.desc"
+		picture = BIG_BOOK_eventPicture
+		is_triggered_only = yes
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1220.a"
+		ai_chance = { factor = 100 }
+		
+		clr_country_flag = approve_friends
+		clr_country_flag = approve_friends
+		set_country_flag = approve_all
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1220.b"
+		ai_chance = { factor = 100 }
+		
+		clr_country_flag = approve_all
+		clr_country_flag = approve_friends
+		set_country_flag = approve_allies
+
+
+		}
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1220.c"
+		ai_chance = { factor = 100 }
+		
+		clr_country_flag = approve_all
+		set_country_flag = approve_allies
+		set_country_flag = approve_friends
+
+
+		}
+		
+		
+		option = {
+		name = "flavor_Historical_Wars_event.1220.d"
+		ai_chance = { factor = 100 }
+		
+		clr_country_flag = approve_all
+		clr_country_flag = approve_allies
+		clr_country_flag = approve_friends
+
+
+		}
+		
+
+		}
+		
+		
+		
+		
+		
+		
+		#################################################
+		## Dutch trade harbour prices and availability ##
+		#################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.1203
+		title = "flavor_Historical_Wars_event.1203.title"
+		desc = "flavor_Historical_Wars_event.1203.desc"
+		picture = HARBOUR_eventPicture
+		hidden = yes
+		is_triggered_only = yes
+		
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.1203.a"
+		ai_chance = { factor = 100 }
+
+		2355 = {
+		random_list = {
+				40 = { set_variable = { which = danzig_available_wares	value = 2 } }
+				30 = { set_variable = { which = danzig_available_wares	value = 2 } }
+				20 = { set_variable = { which = danzig_available_wares	value = 4 } }
+				10 = { set_variable = { which = danzig_available_wares	value = 4 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = danzig_market_price	value = 10 } }
+				30 = { set_variable = { which = danzig_market_price	value = 15 } }
+				20 = { set_variable = { which = danzig_market_price	value = 20 } }
+				10 = { set_variable = { which = danzig_market_price	value = 5 } }
+		}
+		}
+		
+		1257 = {
+		random_list = {
+				40 = { set_variable = { which = oland_available_wares	value = 1 } }
+				30 = { set_variable = { which = oland_available_wares	value = 2 } }
+				20 = { set_variable = { which = oland_available_wares	value = 3 } }
+				10 = { set_variable = { which = oland_available_wares	value = 4 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = oland_market_price	value = 10 } }
+				30 = { set_variable = { which = oland_market_price	value = 15 } }
+				20 = { set_variable = { which = oland_market_price	value = 20 } }
+				10 = { set_variable = { which = oland_market_price	value = 5 } }
+		}
+		}
+		
+		25 = {
+		random_list = {
+				40 = { set_variable = { which = gotland_available_wares	value = 1 } }
+				30 = { set_variable = { which = gotland_available_wares	value = 2 } }
+				20 = { set_variable = { which = gotland_available_wares	value = 3 } }
+				10 = { set_variable = { which = gotland_available_wares	value = 4 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = gotland_market_price	value = 10 } }
+				30 = { set_variable = { which = gotland_market_price	value = 15 } }
+				20 = { set_variable = { which = gotland_market_price	value = 20 } }
+				10 = { set_variable = { which = gotland_market_price	value = 5 } }
+		}
+		}
+		
+		38 = {
+		random_list = {
+				40 = { set_variable = { which = riga_available_wares	value = 1 } }
+				30 = { set_variable = { which = riga_available_wares	value = 2 } }
+				20 = { set_variable = { which = riga_available_wares	value = 3 } }
+				10 = { set_variable = { which = riga_available_wares	value = 4 } }
+		}
+		
+		random_list = {
+				40 = { set_variable = { which = riga_market_price	value = 10 } }
+				30 = { set_variable = { which = riga_market_price	value = 15 } }
+				20 = { set_variable = { which = riga_market_price	value = 20 } }
+				10 = { set_variable = { which = riga_market_price	value = 5 } }
+		}
+		}
+		
+		if = {
+		limit = {
+		has_global_flag = decline_of_moedernegotiee
+		}
+		2355 = { divide_variable = { which = danzig_available_wares	value = 2 } }
+		1257 = { divide_variable = { which = oland_market_price	value = 2 } }
+		25 = { divide_variable = { which = gotland_market_price	value = 2 } }
+		38 = { divide_variable = { which = riga_market_price	value = 2 } }
+		}
+		
+		if = {
+		limit = {
+		has_global_flag = maunder_minimum
+		}
+		2355 = { multiply_variable = { which = danzig_market_price	value = 2 } }
+		1257 = { multiply_variable = { which = oland_market_price	value = 2 } }
+		25 = { multiply_variable = { which = gotland_market_price	value = 2 } }
+		38 = { multiply_variable = { which = riga_market_price	value = 2 } }
+		}
+		
+		}
+
+		}
+		
+		
+		
+		
+		
+		#####################################################################################
+		## Human player Dutch arrive at the baltics - sailing flag for spoiled goods event ##
+		#####################################################################################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2016
+		title = "flavor_Historical_Wars_event.2016.title"
+		desc = "flavor_Historical_Wars_event.2016.desc"
+		picture = SHIP_SAILING_eventPicture
+		hidden = yes
+
+
+		trigger = {
+		tag = NED
+		exists = NED
+		ai = no
+		check_variable = {
+        which = num_of_goods_cargo_hold
+        value = 1
+		}
+		has_country_flag = sailing_to_baltic_region
+		NOT = { has_country_flag = returning_to_amsterdam }
+		}
+		
+		
+		immediate = {
+		
+		clr_country_flag = sailing_to_baltic_region
+		
+		}
+		
+
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2016.a"
+		ai_chance = { factor = 100 }
+
+		set_country_flag = sailing_to_baltic_region
+		set_country_flag = returning_to_amsterdam
+		
+		}
+		
+		}
+		
+		
+		
+		
+		
+		##############################
+		## merchant fleet destroyed ##
+		##############################
+
+
+		country_event = {
+		id = flavor_Historical_Wars_event.2017
+		title = "flavor_Historical_Wars_event.2017.title"
+		desc = "flavor_Historical_Wars_event.2017.desc"
+		picture = FLAGSHIP_SUNK_eventPicture
+		major = yes
+		
+
+		trigger = {
+		tag = NED
+		exists = NED
+		ai = no
+		has_country_flag = sailing_to_baltic_region
+		1857 = { has_province_flag = skagerrak_flag }
+		#1856 = { has_province_flag = the_sound_flag }
+		#2057 = { has_province_flag = kattegat_flag }
+		NOT = {
+		25 = { light_ships_in_province = ROOT }
+		38 = { light_ships_in_province = ROOT }
+		1257 = { light_ships_in_province = ROOT }
+		2355 = { light_ships_in_province = ROOT }
+		baltic_sea_region  = { light_ships_in_province = ROOT }
+		}
+		check_variable = {
+		which = num_of_goods_cargo_hold
+		value = 1
+		}
+		}
+		
+		
+		immediate = {
+		
+		clr_country_flag = sailing_to_baltic_region
+		clr_country_flag = returning_to_amsterdam
+		
+		}
+
+
+		###########
+		##options##
+		###########
+
+
+		option = {
+		name = "flavor_Historical_Wars_event.2017.a"
+		ai_chance = { factor = 100 }
+		
+		if = {
+		limit = {
+		NOT = { has_global_flag = exceptionally_cold_year }
+		NOT = { has_global_flag = huaynaputina_eruption }
+		}
+		set_country_flag = sailing_to_baltic_region
+		}
+		
+		1867 = { set_province_flag = holland_flag }
+		1866 = { set_province_flag = helgoland_flag } 
+		1875 = { set_province_flag = greatfisher_flag }
+		1856 = { set_province_flag = the_sound_flag }
+		2057 = { set_province_flag = kattegat_flag }
+		1857 = { set_province_flag = skagerrak_flag }
+		1864 = { set_province_flag = fjords_flag }
+
+		set_variable = {
+		which = num_of_goods_cargo_hold
+		value = 0
+		}
+		
+		}
+		
+		}
+		
+				

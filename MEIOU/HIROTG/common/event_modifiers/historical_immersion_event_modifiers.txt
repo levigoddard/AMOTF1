@@ -1,0 +1,2503 @@
+    oppressed_swedes = {}
+
+    oppressed_dutchmen = {}
+
+    oppressed_danes = {}
+	
+	oppressed_norwegians = {}
+
+    oppressed_scots = {}
+
+    paid_sound_dues {}
+
+    sound_dues_collected {}
+	
+	letters_of_marque_forcibly_revoked {}
+	
+	paid_sound_toll {}
+
+
+    continental_coward = {
+    global_trade_power = -0.5
+
+    }
+	
+	slave_population {
+	picture = "immigrants"
+	}
+	
+	captured_by_pirates {}
+	
+	population_control {}
+
+    calais_negotiations {}
+
+    new_world_pagans_conquest {}
+
+    increased_birth_rates {}
+	
+	merchant_fleet_flag {}
+
+    heir_presence_inspires {}
+
+    the_absolutist {
+
+    legitimacy = 0.1
+    prestige_decay = -0.15
+
+    }
+	
+	pirate_balancing_ai {
+	
+	discipline = 0.5
+	land_morale = 0.5
+	
+	}
+
+    lavish_spender {
+
+    global_tax_income = -60
+	
+    }
+
+
+
+    unpopular_ruler {
+
+    legitimacy = -2.0
+    local_unrest = 5
+
+    }
+	
+	
+	outraged_by_death_of_ferdinand {
+
+    local_unrest = 10
+
+    }
+
+    overwhelmed_by_sorrow {
+    
+    heir_chance = -5.0
+
+    }
+
+    motherland_reinvesting {
+
+    production_efficiency = 0.25
+    global_tax_modifier = 0.25
+
+    }
+
+
+    diminished_tolls = {
+    
+    trade_efficiency = -0.15
+
+    }
+
+
+    cold_year_starvation {}
+   
+    mutural_trust {}
+
+
+    minor_colonial_shipment {
+
+    production_efficiency = 0.05
+    heavy_ship_cost = -0.03             
+    light_ship_cost = -0.03                
+    galley_cost = -0.03                     
+    transport_cost = -0.03                
+
+    }
+
+    medium_colonial_shipment {
+
+    production_efficiency = 0.075
+    heavy_ship_cost = -0.06             
+    light_ship_cost = -0.06               
+    galley_cost = -0.06                     
+    transport_cost = -0.06
+
+    }
+	
+	major_colonial_shipment {
+
+    production_efficiency = 0.1
+    heavy_ship_cost = -0.09             
+    light_ship_cost = -0.09               
+    galley_cost = -0.09                     
+    transport_cost = -0.09
+
+    }
+	
+	
+	ai_help_estate_loyalty {}
+
+
+    marian_persecutions {}
+
+
+    irish_resist_heresy {}
+
+
+
+    spice_production_bonus {
+
+    #trade_goods_size_modifier = 0.25
+
+    }
+
+
+    fur_trade_bonus {
+
+    trade_value = 1
+
+    }
+
+
+    recent_american_shipment {}
+
+    recent_colonial_shipment {}
+
+    scandinavian_intervention {}
+
+    spreading_the_faith = {
+    land_morale = 0.05
+    naval_morale = 0.05
+    trade_efficiency = 0.05
+    }
+
+
+    foreign_ruler {
+    land_morale = -0.1
+    naval_morale = -0.1
+    global_unrest = 5
+    }
+
+
+    great_princess {
+	
+	adm_tech_cost_modifier = -0.1
+	diplomatic_reputation = 1
+	warscore_cost_vs_other_religion = -0.25
+    inflation_reduction = 0.05
+	global_institution_spread = 0.15
+	
+    }
+
+    master_strategist {
+
+    fire_damage = 0.1
+	shock_damage = 0.1
+	cavalry_flanking = 0.1
+	siege_ability = 0.1
+	artillery_bonus_vs_fort = 1
+	
+    }
+
+    russian_offensive {
+
+    land_morale = 0.05 
+	
+    }
+	
+	superior_enemy {
+
+    land_morale = -0.05
+    discipline = -0.05
+
+    }
+
+
+    aztec_conqueror {
+
+    discipline = 0.05
+    land_morale = 0.05
+    siege_ability = 0.25
+
+    }
+
+    inca_conqueror {
+
+    discipline = 0.05
+    land_morale = 0.05
+	siege_ability = 0.25
+
+    }
+	
+	legazpi_balancing {
+
+	global_tax_income = 120
+    land_forcelimit = 10
+	naval_forcelimit = 10
+	range = -1.3
+    }
+	
+	
+	colony_forcelimit_balancing_decrease {
+
+	land_forcelimit_modifier = -0.9
+
+    }
+
+	
+	colony_forcelimit_balancing_increase {
+	
+    land_forcelimit = 5
+	global_tax_income = 60
+
+    }
+
+
+    cortes_balancing {
+
+    global_tax_income = 120
+    land_forcelimit = 10
+
+    }
+	
+	pizarro_balancing {
+
+    global_tax_income = 120
+    land_forcelimit = 10
+
+    }
+
+
+    the_liberator {
+
+    defensiveness = 0.05
+    global_missionary_strength = 0.1
+    land_morale = 0.05
+    land_forcelimit_modifier = 0.25
+	global_institution_spread = 0.15
+
+    }
+
+    coalition_share_technology {
+
+    discipline = 0.025
+    land_morale = 0.025
+	global_institution_spread = 0.1
+	siege_ability = 0.15
+	
+    }
+
+    high_loyalty {
+
+    }
+
+
+    indolent {
+
+    production_efficiency = -0.05
+    global_tax_modifier = -0.05
+    inflation_reduction = -0.05
+    prestige_decay = 0.05
+    army_tradition_decay = 0.1
+    
+    }
+
+
+
+    defending_the_spice_provinces {
+
+    land_forcelimit_modifier = 0.05
+
+    }
+	
+	mexico_conquest_ai {}
+
+    brazil_treasure_fleet_enabled {}
+
+
+
+    ottoman_balancing {
+
+    global_tax_income = 240
+	ae_impact = 0.15
+	land_forcelimit = 25
+	naval_forcelimit = 25
+	
+    }
+
+    stagnation {
+
+    trade_efficiency = -0.1
+    global_autonomy = 0.05
+    discipline = -0.05
+    land_maintenance_modifier = 0.1
+	naval_maintenance_modifier = 0.1
+    land_morale = -0.05
+    global_unrest = 5
+    technology_cost = 0.25
+
+    }
+	
+		
+	brandenburg_balancing {
+
+    global_tax_income = 120
+    land_forcelimit = 15
+
+    }
+	
+	
+	prussia_balancing {
+
+	global_tax_income = 60
+    land_forcelimit = 10
+
+    }
+
+
+    austria_balancing {
+
+    global_tax_income = 120
+    land_forcelimit = 15
+	diplomatic_reputation = 1
+	
+    }
+	
+
+    navarre_balancing {
+	
+	global_tax_income = 90
+
+    }
+
+    fertile {
+
+    heir_chance = 0.25
+
+    }
+
+    
+
+    recent_treasure_fleet {}
+
+    treasure_fleets_enabled {}
+
+    recent_slave_trade {}
+
+    low_productivity_slaves_bonus {
+
+    global_colonial_growth = 5
+
+    }
+
+    average_productivity_slaves_bonus {
+
+    global_colonial_growth = 7.5
+
+    }
+
+    high_productivity_slaves_bonus {
+
+    global_colonial_growth = 10
+
+    }
+
+    imported_slaves_bonus {
+
+    global_colonial_growth = 10
+
+    }
+
+
+    mercenary_navy {
+
+    naval_forcelimit_modifier = 0.25
+
+    }
+	
+	
+
+    diplomatically_strained {
+
+    diplomatic_upkeep = -1
+
+    }
+	
+	minted_copper_coins {
+	
+	trade_efficiency = -0.1
+	diplomatic_reputation = -2
+	
+	}
+
+    royal_navy_founder = {
+
+    naval_forcelimit_modifier = 0.15
+
+    }
+
+    french_funding {
+ 
+	land_forcelimit = 10
+	global_tax_income = 120
+	possible_mercenaries = 0.5
+
+    }
+	
+	
+	treaty_of_schonbrunn {
+	
+	land_forcelimit_modifier = -0.5
+	
+	}
+	
+	swedish_army_funding {
+
+	land_forcelimit = -10
+	global_tax_income = -120
+	possible_mercenaries = -0.5
+
+    }
+
+	
+	hollandic_water_line_declined {}
+
+    praying_really_really_hard {}
+
+    a.i_prestige_balancing {
+
+    prestige_decay = -0.1
+
+    }
+
+    monetary_reforms {
+
+    inflation_reduction = 0.05
+    global_tax_modifier = 0.1
+	trade_goods_size_modifier = 0.1
+
+    }
+	
+
+
+    combining_our_forces {
+
+    global_tax_modifier = 0.1
+    production_efficiency = 0.1
+    land_forcelimit_modifier = 0.1
+
+    }
+
+    ravaged_by_european_disease {
+
+    global_unrest = 10
+	manpower_recovery_speed = -0.95
+
+    }
+
+    pirate_attack_cooldown {}
+
+
+    rey_emperador = {
+  
+    prestige_decay = -0.1
+	legitimacy = 0.25
+	global_missionary_strength = 0.025
+
+    }
+
+
+    ruling_from_afar {
+
+    global_tax_modifier = -0.125
+    land_morale = 0.05
+    discipline = 0.05
+    global_autonomy = 0.05
+
+    }
+
+
+    empire_overextended_cooldown {}
+	
+	
+	dominating_navarre {}
+	
+	fugger_lending {
+	
+	interest = 5
+	
+	}
+	
+	forfeited_loan {
+	
+	interest = 10
+	
+	}
+	
+	fugger_lending_decision {}
+	
+	
+	fort_maintenance_ai_balancing {
+	
+	fort_maintenance_modifier = -0.25
+	
+	}
+	
+	fort_maintenance_ai_balancing_lvl2 {
+	
+	fort_maintenance_modifier = -0.50
+	
+	}
+	
+	fort_maintenance_ai_balancing_lvl3 {
+	
+	fort_maintenance_modifier = -0.75
+	
+	}
+
+	
+	le_taille {
+	
+	global_tax_income = 60
+	global_unrest = 10
+	
+	}
+	
+	the_sickly {
+	heir_chance = -0.5
+	}
+	
+	le_taille_light {
+	
+	global_tax_income = 30
+	global_unrest = 10
+	
+	}
+	
+	oppressed_berbers {}
+
+
+    aceh_balancing {
+
+    global_tax_income = 60
+	land_forcelimit = 5
+	naval_forcelimit = 5
+
+    }
+
+    slave_trade_bonus_merchant {
+
+    merchants = 1
+
+    }
+
+    napoleon_administrative_reforms {
+
+    land_forcelimit_modifier = -0.25
+    adm_tech_cost_modifier = -0.1
+
+    }
+
+    modernised_administration {
+
+    adm_tech_cost_modifier = -0.05
+
+    }
+
+    golden_age {
+
+    embargo_efficiency = 0.05
+    naval_forcelimit_modifier = 0.15
+    land_forcelimit_modifier = 0.15
+    sailors_recovery_speed = 0.25
+	global_ship_trade_power = 0.1
+
+    }
+	
+
+    el_prudente = {
+
+	monthly_splendor = 0.50
+	global_institution_spread = 0.25
+    global_missionary_strength = 0.01
+	
+    }
+	
+
+    preserving_the_monasteries = {
+
+    global_tax_modifier = -0.05 
+
+    }
+
+
+    recent_raid {}
+
+ 
+
+    recent_english_raid {
+
+    trade_goods_size_modifier = -0.25
+    local_unrest = 5
+    local_tax_modifier = -0.25
+    local_production_efficiency = -0.25
+    ship_recruit_speed = 0.5
+	picture = "raided_city"
+
+    }
+
+
+    naval_patrols_increased {}
+
+
+    recent_pirate_raid {
+
+    trade_goods_size_modifier = -0.25
+    local_unrest = 5
+    province_trade_power_modifier = -0.25
+	ship_recruit_speed = 0.5
+	picture = "raided_city"
+
+    }
+
+    relief_efforts {
+
+    trade_goods_size_modifier = 0.125
+    local_unrest = -2.5
+    local_tax_modifier = 0.125
+    local_production_efficiency = 0.125
+    ship_recruit_speed = -0.25
+
+    }
+
+    ferdinand_the_defender = {
+	
+    defensiveness = 0.5
+    land_morale = 0.05
+	discipline = 0.05
+
+    }
+	
+	family_first {}
+	
+	war_exhaustion_rebalance = {
+	
+	war_exhaustion = -0.11
+	
+	}
+
+
+
+    slightly_inbred {
+	
+	diplomatic_reputation = -1
+	monthly_splendor = -0.5
+    legitimacy = -0.1
+	heir_chance = -0.5
+
+    }
+	
+	
+	inbred {
+
+    diplomatic_reputation = -2
+	monthly_splendor = -1
+    legitimacy = -0.2
+    heir_chance = -1.0
+
+    }
+
+    defensiveness_reduced = {
+    defensiveness = -0.30
+
+
+    }
+
+    independence_achieved {
+
+    defensiveness = 0.125
+    land_morale = 0.05
+
+    }
+
+    institution_technology_rebalance {
+	
+    global_institution_spread = 1
+    technology_cost = -0.25
+	
+    }
+
+    repell_the_invaders = {
+    defensiveness = 1.0
+
+    }
+
+    royal_navy_boost = {
+
+    global_sailors_modifier = 0.1
+	sailors_recovery_speed = 0.1
+	naval_forcelimit = 10
+
+    }
+	
+	italian_invasion_decided {}
+
+    venice_tariff = {
+	
+	local_institution_spread = 0.15
+	picture = "major_harbour"
+	
+    }
+
+    amsterdam_tariff = {
+	
+	local_institution_spread = 0.15
+	picture = "major_harbour"
+	
+    }
+
+    antwerp_tariff = {
+	
+	local_institution_spread = 0.15
+	picture = "major_harbour"
+	
+    }
+
+    london_tariff = {
+
+	local_institution_spread = 0.15
+	picture = "major_harbour"
+	
+    }
+	
+	lisboa_tariff = {
+	
+	local_institution_spread = 0.15
+	picture = "major_harbour"
+	
+    }
+
+    protestant_champion = {
+	
+	monthly_splendor = 0.5
+    prestige_decay = -0.1
+	global_missionary_strength = 0.025
+	
+    }
+
+    Bourbon_ruler {
+		
+	yearly_absolutism = 0.5
+	monthly_splendor = 0.5
+	prestige_decay = -0.1
+
+    }
+
+    reduce_colonial_growth = {
+
+    global_colonial_growth = -25
+	
+    }
+
+
+    reduce_manpower = { 
+
+    global_manpower_modifier = -0.5
+	
+    }
+
+
+
+    virgin_queen = {
+	
+    privateer_efficiency = 0.25
+    heir_chance = -5.0
+    global_missionary_strength = 0.025
+	
+    }
+
+
+    ai_help_unrest = {
+
+    global_unrest = -10
+
+    }
+
+    persecuted {
+
+    local_unrest = 10
+
+    }
+
+    disrupted_treasure_fleets {}
+
+    bloody_mary = {
+	
+    global_unrest = 10
+    global_missionary_strength = -0.05
+	
+    }
+
+    not_so_secret_catholic = {
+	
+    global_unrest = 5
+    global_missionary_strength = -0.05
+	
+    }
+
+    denying_rightful_claim = {
+	
+    global_unrest = 5
+	
+    }
+
+    embrace_the_new_faith = {
+	
+    global_unrest = -5
+    global_missionary_strength = 0.05
+    missionaries = 1
+	
+    }
+
+    quick_convert = {
+	
+    global_missionary_strength = 0.05
+    missionaries = 1
+	
+    }
+
+
+
+    mad_henry = {
+	
+    global_unrest = 10
+	global_missionary_strength = -0.025
+	
+    }
+
+    brazil_gold_rush {
+
+    trade_efficiency = 0.05
+    production_efficiency = 0.15
+    global_tax_modifier = 0.15
+
+    }
+
+
+
+
+    barren = {
+	
+    heir_chance = -5.0
+
+    }
+
+    puppet_monarch = {
+	
+    heir_chance = -1.0
+
+    }
+
+
+    costly_trade = {
+	
+    global_trade_power = -0.15
+
+    }
+	
+	indians_granted_full_right = {
+
+    global_colonial_growth = 10
+
+    }
+	
+	
+	filles_du_roy = {
+
+    global_colonial_growth = 5
+
+    }
+
+
+
+    mass_immigration_from_portugal = {
+
+    global_colonial_growth = 10
+
+    }
+
+    mass_immigration_from_motherland = {
+
+    global_colonial_growth = 10
+
+    }
+
+    the_great_migration = {
+
+    global_colonial_growth = 10
+
+    }
+
+
+    servant_of_god {
+	
+	inflation_reduction = 0.05
+    global_missionary_strength = 0.025
+    global_autonomy = -0.05
+	yearly_absolutism = 0.5
+
+    }
+
+
+    colonial_enthusiast = {
+	
+    colonists = 1
+    range = 0.25
+
+    }
+
+    end_of_colonization = {
+	
+    colonists = -10
+
+    }
+
+    dim_witted = {
+
+    global_autonomy = 0.05
+    interest = 3
+
+    }
+
+    the_pious = {
+
+    global_missionary_strength = 0.05
+
+    }
+
+    bringer_of_stability {
+
+    global_unrest = -5
+    trade_efficiency = 0.025
+    global_institution_spread = 0.1
+
+    }
+
+
+    holding_us_back {
+
+    global_unrest = 10
+    global_colonial_growth = -10
+
+    }
+
+    questionable_claim {
+
+    legitimacy = -2.0
+
+    }
+
+    the_great {
+
+    land_morale = 0.025
+    naval_morale = 0.025
+    inflation_reduction = 0.05
+    technology_cost = -0.1
+	global_institution_spread = 0.15
+
+    }
+
+
+    low_christian_spirit {
+
+    land_morale = -0.05
+    naval_morale = -0.05
+
+    }
+
+
+    sun_king {
+	
+
+	yearly_absolutism = 1
+	diplomatic_reputation = -3
+	tolerance_heretic = -3
+	monthly_splendor = 1
+	drill_gain_modifier = 0.1
+
+    }
+		
+	
+	rise_of_persia {
+
+    discipline = 0.05
+    land_morale = 0.05
+    naval_morale = 0.05
+	land_forcelimit = 15
+	global_missionary_strength = 0.025
+
+    }
+	
+	first_shah {
+
+    discipline = 0.025
+    land_morale = 0.025
+    naval_morale = 0.025
+	siege_ability = 0.1
+	
+    }
+
+
+    defender_of_christianity {
+
+    discipline = 0.05
+    land_morale = 0.05
+	global_institution_spread = 0.15
+
+    }
+
+  
+	
+	grocer_king {
+	
+	global_ship_trade_power = 0.125
+	global_trade_power = 0.05
+	
+	}
+	
+	recent_bulk_resource_purchase {}
+	
+	dutch_bulk_resources {
+
+	local_production_efficiency = 0.25
+	local_unrest = -5
+	supply_limit_modifier = 0.125
+	
+	}
+	
+	supporting_buccaneers {
+	
+	diplomatic_reputation = -1
+	
+	}
+	
+	purchased_dutch_basic_wares {}
+	
+	brazil_colony_balancing {
+
+	colonists = 3
+
+    }
+	
+	capitanias_extra_funding {
+	
+	global_tax_income = -60
+	
+	}
+
+    catholic_james_balancing {
+
+    global_tax_income = 120
+    global_manpower_modifier = 1.0
+    land_forcelimit = 25
+
+    }
+	
+	
+	catherine_of_aragon_pension {
+
+    global_tax_modifier = -24
+
+    }
+ 
+
+    spice_trade_tariff {
+	
+    }
+	
+	o_desejado {
+	
+	warscore_cost_vs_other_religion = -0.1
+	tolerance_heretic = -1
+    tolerance_own = 1
+	
+	}
+
+
+    the_genocidaire {
+
+    global_unrest = 10
+    tolerance_heretic = -5
+
+    }
+
+    huguenot_massacre {
+
+    tolerance_heretic = -5
+	global_unrest = 10
+
+    }
+
+    the_politique {
+
+    tolerance_heretic = 1
+    tolerance_own = 1
+
+    }
+
+    demoralizing_defeat {
+
+    naval_morale = -0.05
+
+    }
+
+    inspiring_victory {
+
+    naval_morale = 0.05
+
+    }
+
+    macau_leasing_fee {}
+
+    nagasaki_leasing_fee {}
+
+    habsburgs_united {}
+
+    franco_ottoman_kinship {}
+	
+	
+	spice_trade_control_point = {
+	province_trade_power_value = 1
+	picture = "province_trade_power_value"
+	}
+	
+    spice_trade_monopoly {
+
+    global_tax_income = 120
+	merchants = 1
+
+    }
+	
+	spice_trade_duties {
+
+    global_tax_income = 60
+	global_trade_power = 0.025
+	
+    }
+
+    islamic_influences {
+
+    dip_tech_cost_modifier = -0.1
+
+    }
+
+    persia_balancing {
+	
+	land_forcelimit = 15
+    naval_forcelimit  = 15
+ 	global_tax_income = 120
+
+    }
+	
+	timurid_balancing {
+	
+	land_forcelimit = 15
+    naval_forcelimit  = 15
+ 	global_tax_income = 180
+
+    }
+	
+	
+	the_strong {
+	
+	heir_chance = 1
+	diplomatic_reputation = 1
+	global_unrest = 5
+	
+	}
+
+
+    forced_truce_cooldown {}
+
+    portuguese_blockade {
+
+        trade_efficiency = -0.05
+    }
+	
+	
+	the_chaste = {
+	
+    heir_chance = -1.5
+
+    }
+
+
+    european_technology_discovered {
+
+	technology_cost = -0.25
+
+    }
+	
+	
+	comite_de_salut_public {
+	
+	state_maintenance_modifier = -0.1
+	administrative_efficiency = 0.1
+	
+	}
+	
+	
+	levee_en_masse {}
+	
+	
+	united_states_balancing {
+	
+	global_tax_income = 360
+    global_trade_power = 0.05
+    trade_efficiency = 0.05
+	naval_forcelimit = 15
+	land_forcelimit = 15
+    merchants = 1
+	colonists = 1
+	
+    }
+	
+		
+	historical_religions_cooldown {}
+	
+	portugal_balancing_light {
+	
+    global_tax_income = 30
+	placed_merchant_power = 2.5
+	global_own_trade_power  = 0.05
+	diplomatic_upkeep = -2
+	land_forcelimit = 5
+	papal_influence = 1
+	
+    }
+	
+    portugal_balancing {
+
+    global_tax_income = 60
+	placed_merchant_power = 5
+	global_own_trade_power  = 0.1
+    diplomatic_upkeep = -2
+    land_forcelimit = 5
+	papal_influence = 3
+	global_unrest = -10
+	
+    }
+	
+
+    britain_balancing {
+	
+	global_tax_income = 120
+	prestige_from_naval = 0.1
+	own_coast_naval_combat_bonus = 1.0
+	blockade_efficiency = 0.1
+	naval_forcelimit = 10
+    merchants = 1
+	
+    }
+	
+	spain_balancing {
+
+    diplomatic_upkeep = -1
+	global_tariffs = 0.5
+	colonists = 1
+	min_autonomy = 25
+	
+    }
+	
+	
+	spain_balancing_light {
+
+    diplomatic_upkeep = -2
+	min_autonomy = 25
+
+    }
+
+
+    france_balancing {
+
+	diplomatic_upkeep = -1
+	naval_forcelimit = 10
+	land_forcelimit = 10
+
+    }
+	
+	
+	france_balancing_light {
+    
+ 	diplomatic_upkeep = -2
+
+    }
+
+    netherlands_balancing {
+	
+	global_tax_income = 90
+	global_foreign_trade_power = 0.1
+	land_forcelimit = 10
+	naval_forcelimit = 10
+	global_ship_trade_power = 0.1
+	merchants = 1
+
+    }
+
+    england_balancing {
+
+    global_tax_income = 60
+	prestige_from_naval = 0.1
+	own_coast_naval_combat_bonus = 1.0
+	naval_forcelimit = 10
+    merchants = 1
+	
+    }
+
+	sweden_balancing {
+
+    land_forcelimit = 5
+    global_tax_income = 180
+
+    }
+
+
+    scotland_balancing {
+
+    global_tax_income = 120
+
+    }
+	
+	vader_des_vaderlands {
+	
+	yearly_absolutism = 0.5
+	diplomatic_reputation = 3
+	
+	}
+
+    falta_de_cabeza {
+
+    prestige_decay = 0.1
+    adm_tech_cost_modifier = 0.1
+    mil_tech_cost_modifier = 0.1
+
+    }
+
+    the_terrible {
+
+    adm_tech_cost_modifier = -0.1
+    land_morale = 0.05
+    global_unrest = 10
+
+    }
+	
+	hollandsche_waterlinie {
+	picture = "dike_icon"
+	}
+
+    russian_winter {}
+
+    siberian_winds {
+	
+    local_hostile_attrition = 5
+    supply_limit_modifier = -0.25
+	
+	picture = "winter_severe"
+
+    }
+	
+	harsh_russian_winter_light {
+
+    local_hostile_attrition = 7.5
+    supply_limit_modifier = -0.1
+	
+	picture = "winter_severe"
+
+    }
+	
+	invaded_italy {
+
+	ae_impact = 0.125
+	
+    }
+	
+	peaceful {
+	
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+	
+	}
+
+    strong_siberian_winds {
+
+    local_hostile_attrition = 7.5
+    supply_limit_modifier = -0.5
+	
+	picture = "winter_severe"
+    
+    }
+	
+	cold_year_provincial_starvation {
+
+    local_unrest = 20
+	supply_limit_modifier = -0.25
+	local_autonomy = 0.05
+	
+	picture = "famine_terrible"
+
+    }
+	
+
+    exceptionally_cold_year {
+	
+    supply_limit_modifier = -0.25
+	trade_goods_size_modifier = -0.25
+	local_production_efficiency = -0.25
+	local_unrest = 10
+	
+	picture = "winter_severe"
+
+    }
+
+    huaynaputina_eruption {
+
+	trade_goods_size_modifier = -0.5
+    supply_limit_modifier = -0.5
+	local_unrest = 10
+
+    }
+
+    exceptionally_cold_year_maunder_minimum {
+
+    supply_limit_modifier = -0.35
+	trade_goods_size_modifier = -0.35
+	local_production_efficiency = -0.35
+	local_unrest = 15
+	
+	picture = "winter_severe"
+
+    }
+
+    the_golden_era {
+
+	prestige_decay = -0.1
+    monthly_splendor = 0.5
+	global_institution_spread = 0.15
+	
+    }
+
+
+
+
+    milan_balancing {
+
+    global_tax_income = 90
+    land_forcelimit = 5
+
+    }
+
+    savoy_balancing {
+
+    global_tax_income = 90
+    land_forcelimit = 5
+
+    }
+
+
+    mamluks_balancing {
+
+    naval_forcelimit = 10
+
+    }
+	
+	
+	secret_fleet_bonus {
+
+    naval_forcelimit_modifier = 0.5
+
+    }
+
+    retaking_our_european_holdings {
+
+    land_morale = 0.025
+    discipline = 0.025
+
+    }
+
+
+
+    asiento_agreement {
+
+    }
+	
+	
+	
+	vijayanagar_decline {
+	
+	global_unrest = 50
+	
+	}
+	
+	
+	dehli_decline {
+	
+	global_unrest = 50
+	
+	}
+    
+
+
+    ming_dynasty_decline {
+
+    global_unrest = 25
+
+    }
+
+    great_elector {
+
+    discipline = 0.05
+	movement_speed = 0.25
+    land_forcelimit = 10
+	diplomatic_reputation = 1
+
+    }
+
+
+    simply_great {
+
+    mil_tech_cost_modifier = -0.1
+	adm_tech_cost_modifier = -0.1
+    production_efficiency = 0.1
+    global_tax_modifier = 0.1
+
+    }
+
+    his_most_christian_majesty {
+
+    tolerance_own = 3
+    tolerance_heretic = 3
+
+    }
+
+    deceitful {
+
+    diplomatic_reputation = -1
+
+    }
+	
+	
+	wind_powered_sawmill {
+	
+	global_ship_cost = -0.25
+	global_ship_recruit_speed = -0.25
+	sailor_maintenance_modifer = -0.25
+	
+	}
+	
+	
+	pious_yet_erratic {
+	
+	global_missionary_strength = 0.05
+	diplomatic_reputation = -1
+	
+	}
+	
+	
+	sea_beggars {
+	
+	naval_forcelimit_modifier = 0.15
+	global_sailors_modifier = 0.15
+	diplomatic_reputation = -1
+	
+	}
+	
+	
+	adolphus_oxenstierna_reforms {
+	
+	global_institution_spread = 0.1
+    global_tax_modifier = 0.1
+	land_forcelimit = 5
+	adm_tech_cost_modifier = -0.05
+	yearly_absolutism = 0.5
+	max_absolutism = 5
+
+    }
+	
+	bill_of_rights {
+	
+	max_absolutism = 10
+	yearly_absolutism = 0.5
+	
+	}
+	
+	the_golden_king {
+
+    adm_tech_cost_modifier = -0.1
+
+    }
+	
+	
+	
+	lion_of_the_north {
+
+	infantry_shock = 1
+	cavalry_shock = 1
+	infantry_fire = 1
+	siege_ability = 0.25
+	artillery_cost = -0.25
+	drill_gain_modifier = 0.1
+
+    }
+	
+	father_of_prussia {
+	
+	adm_tech_cost_modifier = -0.1
+	global_missionary_strength = 0.05
+	monthly_splendor = 0.25
+	
+	}
+	
+	increased_naval_patrols {
+	global_tax_income = -60
+	}
+
+
+    denmark_norway_balancing {
+	
+	global_tax_income = 45
+    land_forcelimit = 5
+ 
+    }
+
+    denmark_balancing {
+
+    global_tax_income = 90
+    land_forcelimit = 10
+
+    }
+	
+	
+	guaranteed_religious_rights {
+
+    global_missionary_strength = -0.05
+
+    }
+
+    russia_balancing {
+	
+	global_tax_income = 45
+    global_missionary_strength = 0.05
+    colonists = 3
+    naval_forcelimit = 10
+	land_forcelimit = 10
+
+    }
+	
+	muscowy_balancing {
+	
+    global_tax_income = 90
+    global_missionary_strength = 0.05
+    colonists = 3
+	naval_forcelimit = 10
+	land_forcelimit = 10
+
+    }
+	
+	
+	santa_creu_wharf {
+
+	province_trade_power_value = 15
+	picture = "natural_harbour"
+	
+    }
+	
+	
+	aljaferia {
+	
+	local_defensiveness = 1.0
+	fort_level = 1
+	
+	}
+	
+	la_lonja {
+	
+	trade_value = 3
+	province_trade_power_value = 15
+	picture = "centre_of_trade_big"
+	
+    }
+	
+	casa_de_contratacion {
+	
+	global_tariffs = 0.2
+	embargo_efficiency = 0.1
+	picture = "natural_harbour_small"
+	
+    }
+	
+	
+	drassanes_reials {
+	
+	naval_forcelimit_modifier = 0.15
+	ship_recruit_speed = -0.25
+	local_ship_repair = 0.25
+	picture = "natural_harbour_small"
+	
+    }
+	
+	
+	estado_da_india {
+	
+	local_defensiveness = 0.5
+	global_sailors_modifier = 0.15
+	global_manpower_modifier = 0.15
+	#sailors_recovery_speed = 0.1
+	#manpower_recovery_speed = 0.1
+	province_trade_power_value = 25
+	picture = "coa_portugal_cortes"
+	
+    }
+	
+	por_makeshift_defenses = {
+	local_defensiveness = 0.25
+	supply_limit_modifier = 0.25
+	local_unrest = -10
+	}
+	
+	
+	calais_export_boost {
+
+    trade_goods_size_modifier = 0.25
+    local_production_efficiency = 0.05
+    local_tax_modifier = 0.05
+
+    }
+	
+	
+	invented_steam_engine {
+	
+    production_efficiency = 0.25
+	global_institution_spread = 0.25
+	
+	}
+	
+	moedernegotie_trade_port {
+	
+	province_trade_power_value = 1
+	picture = "logcabin_good"
+	
+	}
+	
+	
+	skilled_worker_migration {
+	
+	trade_goods_size_modifier = 0.25
+    local_production_efficiency = 0.25
+	local_sailors_modifier = 0.25
+	local_institution_spread = 0.1
+	picture = "immigrants"
+	
+	}
+	
+	
+	skilled_worker_emigration {
+	
+	trade_goods_size_modifier = -0.25
+    local_production_efficiency = -0.25
+	local_sailors_modifier = -0.25
+	local_institution_spread = -0.1
+	picture = "minor_center_of_transport"
+	
+	}
+	
+	new_model_army {
+	
+	land_morale = 0.05
+	discipline = 0.05
+	
+	}
+	
+	
+	el_catolico {
+	
+	discipline = 0.025
+	land_morale = 0.025
+	global_autonomy = -0.05
+	yearly_absolutism = 0.5
+	
+	}
+		
+	el_adelantado {
+
+    siege_ability = 0.1
+
+    }
+
+
+	
+	financial_revolution {
+
+    trade_efficiency = 0.1
+    global_trade_power = 0.1
+    inflation_reduction = 0.1
+
+    }
+	
+	dutch_merchant_class_investments {
+	
+	global_tax_income = 120
+	global_ship_trade_power = 0.15
+	
+	}
+	
+	
+	loss_of_merchant_class_investments {
+	
+	global_tax_income = -120
+	global_ship_trade_power = -0.15
+	
+	}
+	
+	military_cooperation {
+	
+	naval_forcelimit_modifier = 0.1
+	
+	}
+		
+	
+	financial_revolution_light {
+
+    trade_efficiency = 0.05
+    global_trade_power = 0.05
+    inflation_reduction = 0.05
+
+    }
+
+
+    removed_beloved_heir {
+
+    global_unrest = 10
+
+    }
+
+    fez_balancing {
+
+    global_tax_income = 90
+
+    }
+
+
+    morocco_balancing {
+
+    global_tax_income = 90
+
+    }
+
+    superior_opponent {
+
+    discipline = -0.1
+    land_morale = -0.1
+
+    }
+	
+	
+	gemene_middelen {
+
+    global_tax_modifier = 0.25
+ 
+    }
+	
+	
+	gemene_middelen_light {
+
+    global_tax_modifier = 0.125
+ 
+    }
+	
+	
+	
+	sugar_colony_1 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_2 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_3 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_4 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_5 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_6 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_7 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_8 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_9 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_10 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_11 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_12 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_13 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_14 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_15 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_16 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_17 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_18 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_19 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_20 {
+	
+	global_tax_income = 36
+	
+	}
+	
+	sugar_colony_taxes {}
+	
+	duties_on_sugar {
+	
+	local_unrest = 5
+	
+	}
+	
+	the_tiger {
+	
+	diplomatic_reputation = -1
+	siege_ability = 0.1
+	cavalry_shock = 1
+	
+	}
+		
+
+    mughal_decline {
+	
+	global_unrest = 50
+	
+	}
+	
+	caribbean_presence {}
+	
+	strong_pirate_presence {}
+	
+	spain_bankruptsy_decision_made {}
+	
+	
+	stadtholder_veto {}
+	
+	treaty_of_windsor {
+	
+	diplomatic_upkeep = 1
+	diplomatic_reputation = 1
+	trade_efficiency = 0.025
+	
+	}
+	
+	treaty_of_windsor_not_ratified {
+	
+	diplomatic_upkeep = -1
+	diplomatic_reputation = -1
+	
+	}
+	
+	hollandic_water_line {
+	
+    local_defensiveness = 1
+	fort_level = 3
+	local_hostile_attrition = 5
+    local_tax_modifier = -1
+    local_production_efficiency = -1
+	province_trade_power_modifier = -1
+	picture = "dike_icon"
+
+    }
+	
+	scandinavian_balance_of_power_decision {}
+	
+	galleon_trade {
+	province_trade_power_value = 50
+	picture = "minor_center_of_transport"
+	}
+	
+	benefiting_from_galleon_trade {
+	local_unrest = -10
+	picture = "coin_good"
+	}
+	
+	malindi_trade_outpost {
+	trade_value = 1
+	province_trade_power_value = 25
+	naval_forcelimit_modifier = 0.025
+	picture = "logcabin_good"
+	}
+	
+	luanda_trade_outpost {
+	trade_value = 1
+	province_trade_power_value = 25
+	naval_forcelimit_modifier = 0.025
+	picture = "logcabin_good"
+	}
+	
+	major_european_trade_outpost {
+	trade_value = 1
+	local_institution_spread = 0.1
+	province_trade_power_value = 25
+	naval_forcelimit_modifier = 0.025
+	picture = "logcabin_good"
+	}
+	
+	elmina_trade_outpost {
+	trade_value = 1
+	province_trade_power_value = 25
+	naval_forcelimit_modifier = 0.025
+	picture = "logcabin_good"
+	}
+	
+	portuguese_trade_outpost {
+	province_trade_power_value = 15
+	naval_forcelimit_modifier = 0.025
+	merchants = 1
+	picture = "coa_portugal_cortes"
+	}
+	
+	japan_china_trade_monopoly {
+	global_tax_income = 120
+	merchants = 1
+	}
+	
+	aden_blockade {
+	province_trade_power_value = 50
+	picture = "coa_portugal_cortes"
+	}
+	
+	hormuz_blockade {
+	province_trade_power_value = 25
+	picture = "coa_portugal_cortes"
+	}
+	
+	the_affable = {
+	
+	diplomatic_reputation = -1
+	artillery_bonus_vs_fort = 3
+	global_autonomy = -0.05
+	discipline = 0.025
+	
+	}
+	
+	
+	dutch_east_india_company_balancing {
+
+    global_tax_income = 240
+    land_forcelimit = 15
+	naval_forcelimit = 15
+	
+    }
+	
+	voc_cooldown {}
+	
+	voc_assistance_request {}
+	
+	ai_help_war_exhaustion {}
+	
+	ai_help_stability {
+	
+	stability_cost_modifier = -0.1
+	
+	}
+	
+	ai_help_economy_meltdown {
+	
+	fort_maintenance_modifier = -10
+	state_maintenance_modifier = -10
+	
+	}
+	
+	alvarez_de_toledo_social_reforms {
+	
+	local_build_cost = -0.25
+	local_unrest = 5
+	local_tax_modifier = -0.75
+	
+	}
+	
+	the_arsenale {
+	
+	naval_forcelimit_modifier = 0.15
+	ship_recruit_speed = -0.25
+	local_ship_repair = 0.25
+	picture = "natural_harbour_small"
+	
+	}
+	
+	ai_help_economy_large {
+	
+	global_tax_income = 120
+	
+	}
+	
+	ai_help_economy_small {
+	
+	global_tax_income = 60
+	
+	}
+	
+	ai_help_manpower {
+	
+	manpower_recovery_speed = 0.25
+	
+	}
+	
+	ai_help_inflation {
+	
+	inflation_reduction = 0.2
+	
+	}
+	
+	ai_help_autonomy {
+	
+	global_autonomy = -0.1
+	
+	}
+	
+	ai_help_corruption {
+	
+	yearly_corruption = -0.1
+	
+	}
+
+	ai_help_prestige {
+	
+	prestige_decay = -0.1
+	
+	}
+	
+	merchant_fleet_support {
+	
+	naval_forcelimit_modifier = 0.25
+	
+	}
+	
+	docked_at_riga {}
+	
+	docked_at_danzig {}
+	
+	docked_at_oland {}
+	
+	docked_at_gotland {}
+	
+	oland_trade_ban {}
+	
+	riga_trade_ban {}
+	
+	danzig_trade_ban {}
+	
+	gotland_trade_ban {}
+
+	
+	
+	earthquake_aftermath {
+	
+	global_unrest = 5
+	trade_efficiency = -0.1
+	inflation_reduction = -0.25
+	global_tax_modifier = -0.05
+	colonists = -2
+	
+	}
+	
+	lisboa_reconstruction {
+	
+	global_tax_income = -120
+	
+	}
+	
+	danzig_negotiated_price {}
+	
+	oland_negotiated_price {}
+	
+	gotland_negotiated_price {}
+	
+	riga_negotiated_price {}
+	
+	
+	ai_docked_at_baltic_trade_port {}
+	
+	
+	not_for_sale {}
+	
+	collapse_of_silver_currency {
+	
+	interest = 5
+	inflation_reduction = -0.15
+	
+	}
+	
+	domestic_supply_of_copper {}
+	
+	adequate_supply_of_copper {
+	
+	build_cost = -0.05
+	ship_durability = 0.05
+	monthly_splendor = 0.25
+	prestige_decay = -0.01
+	artillery_cost = -0.1
+	
+	}
+	
+	reasonable_supply_of_copper {
+	
+	build_cost = -0.075
+	ship_durability = 0.075
+	monthly_splendor = 0.5
+	prestige_decay = -0.015
+	artillery_cost = -0.15
+	
+	}
+	
+	abundant_supply_of_copper {
+	
+	build_cost = -0.1
+	ship_durability = 0.1
+	monthly_splendor = 0.75
+	prestige_decay = -0.02
+	artillery_cost = -0.2
+	
+	}
+	
+	shortage_of_copper {
+	
+	build_cost = 0.05
+	ship_durability = -0.05
+	monthly_splendor = -1
+	prestige_decay = 0.01
+	artillery_cost = 0.1
+	
+	}
+	
+	the_reformer {
+	
+	adm_tech_cost_modifier = -0.05
+	dip_tech_cost_modifier = -0.05
+	global_tax_income = 60
+	
+	}
+	
+	
+	importing_copper {}
+	
+	cave_in {}
+	
+	recently_paid_bonus {}
+	
+	constructed_worker_huts {}
+	
+	low_worker_productivity {}
+	
+	strike {}
+
+	recently_raised_salaries {}
+	
+	patron_of_the_arts {
+	
+	monthly_splendor = 0.5
+	prestige_decay = -0.1
+	
+	}
+	
+	la_loca {
+	
+	legitimacy = -0.1
+    prestige_decay = 0.15
+	
+	}
+	
+	increased_defensive_spending {
+	
+	defensiveness = 0.25
+	
+	}
+	
+	
+	principe_perfeito {
+	
+	adm_tech_cost_modifier = -0.05
+	yearly_corruption = -0.05
+	naval_forcelimit_modifier = 0.1
+	global_tax_income = 60
+	
+	
+	}
+	
+	
+	knight_king {
+	
+	discipline = 0.025
+    land_morale = 0.025
+    siege_ability = 0.1
+	
+	}
+	
+	
+	father_and_restorer_of_letters {
+	
+	monthly_splendor = 0.5
+	prestige_decay = -0.05
+	
+	}
+	
+	
+	intelligent_but_insane {
+	
+	adm_tech_cost_modifier = -0.1
+	monthly_splendor = 0.5
+	legitimacy = -0.1
+	
+	}
+	
+	magnificient {
+	
+	discipline = 0.025
+    land_morale = 0.025
+    siege_ability = 0.1
+	monthly_splendor = 0.5
+	global_institution_spread = 0.15
+	
+	}
+	
+	
+	militaergrenze {
+	
+	min_local_autonomy = 75
+	local_manpower_modifier = -0.5
+	local_missionary_strength = -1
+	picture = "immigrants"
+		
+	}
+	
+	grenzer_fort_lvl1 {
+	
+	fort_level = 1
+	local_defensiveness = 1
+	local_hostile_attrition = 5
+	picture = "fortress"
+	
+	}
+	
+	grenzer_fort_lvl2 {
+	
+	fort_level = 2
+	local_defensiveness = 1
+	local_hostile_attrition = 5
+	picture = "fortress"
+	
+	}
+	
+	grenzer_fort_lvl3 {
+	
+	fort_level = 3
+	local_defensiveness = 1
+	local_hostile_attrition = 5
+	picture = "fortress"
+	
+	}
+	
+	grenzer_fort_lvl4 {
+	
+	fort_level = 4
+	local_defensiveness = 1
+	local_hostile_attrition = 5
+	picture = "fortress"
+	
+	}
+	
+	
+	queen_of_scots {
+	
+	tolerance_heretic = 3
+	local_unrest = 10
+	
+	}
+		
+	
+	docked_at_amsterdam {}

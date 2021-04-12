@@ -1,0 +1,26 @@
+country_decisions = {
+	show_loot = {
+		major = yes
+		
+		potential = {
+			ai = no
+			is_at_war = yes
+		}
+		
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = work_in_progress
+				
+				OR = {
+					check_variable = { which = "loot_pool" value = 1 }
+					check_variable = { which = "loot_pool_moving" value = 1 }
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = show_loot_desc
+			# country_event = { id = POP_looting.012 }
+		}
+	}
+}

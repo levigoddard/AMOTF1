@@ -1,0 +1,56 @@
+# BHA - Al-Quds
+
+government = monarchy
+add_government_reform = competitive_inheritance
+add_government_reform = delegated_rulers
+add_government_reform = hereditary_elite
+government_rank = 1
+mercantilism = 0.0
+technology_group = muslim
+primary_culture = syriakos
+religion = druze
+capital = 875
+
+1000.1.1 = {
+	add_country_modifier = { name = title_2 duration = -1 }
+	set_country_flag = title_2
+	#set_variable = { which = "centralization_decentralization" value = 3 }
+	add_absolutism = -100
+	add_absolutism = 20
+	set_legacy_government = despotic_monarchy
+}
+
+1380.1.1 = {
+	monarch = {
+		name = "Niv I"
+		dynasty = "Soliman-Ishaq"
+		birth_date = 1360.1.1
+		death_date = 1399.1.1
+		adm = 6
+		dip = 6
+		mil = 6
+	}
+	queen = {
+		country_of_origin = THD
+		name = "Theodóra Julia"
+		dynasty = "Komnenós"
+		culture = gothic_e
+		birth_date = 1361.1.1 #dates approximate at best
+		death_date = 1400.7.1
+		female = yes
+		ADM = 5
+		DIP = 6
+		MIL = 4
+	}
+	heir = {
+		name = "Thomas"
+		monarch_name = "Thomas I"
+		dynasty = "Soliman-Ishaq"
+		birth_date = 1385.1.1
+		death_date = 1400.10.29
+		claim = 95
+		ADM = 6
+		DIP = 4
+		MIL = 6
+	}
+}

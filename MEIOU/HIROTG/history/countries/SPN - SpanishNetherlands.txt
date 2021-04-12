@@ -1,0 +1,30 @@
+# SPN - SpanishNetherlands
+# 10.01.27 FB-HT3 - make HT3 changes
+
+government = monarchy
+add_government_reform = divine_right
+government_rank = 1
+mercantilism = 0.0
+primary_culture = castillian
+add_accepted_culture = brabantian
+add_accepted_culture = flemish
+religion = catholic
+technology_group = western
+unit_type = western
+capital = 92	# 
+
+historical_neutral = SPA
+historical_rival = FRA
+
+
+1000.1.1 = {
+	add_country_modifier = { name = title_4 duration = -1 }
+	set_country_flag = title_4
+	#set_variable = { which = "centralization_decentralization" value = -2 }
+	add_absolutism = -100
+	add_absolutism = 70
+	set_legacy_government = feudal_monarchy
+}
+
+
+
