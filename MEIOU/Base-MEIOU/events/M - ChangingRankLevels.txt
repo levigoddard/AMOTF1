@@ -1,0 +1,461 @@
+country_event = {
+	id = rank_change.1
+	title = no_localization
+	desc = no_localization
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		always = yes
+	}
+	immediate = {
+		trigger_switch = {
+			on_trigger = total_development
+			3000 = {
+				if = {
+					limit = {
+						NOT = {
+							government_rank = 6
+						}
+					}
+					set_government_rank = 6
+					country_event = {
+						id = rank_change.2
+					}
+				}
+			}
+			1200 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 5
+							}
+							government_rank = 6
+						}
+					}
+					set_government_rank = 5
+					country_event = {
+						id = rank_change.2
+					}
+				}
+			}
+			400 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 4
+							}
+							government_rank = 5
+						}
+					}
+					set_government_rank = 4
+					country_event = {
+						id = rank_change.2
+					}
+				}
+			}
+			100 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 3
+							}
+							government_rank = 4
+						}
+					}
+					set_government_rank = 3
+					country_event = {
+						id = rank_change.2
+					}
+				}
+			}
+			30 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 2
+							}
+							government_rank = 3
+						}
+					}
+					set_government_rank = 2
+					country_event = {
+						id = rank_change.2
+					}
+				}
+			}
+			1 = {
+				if = {
+					limit = {
+						government_rank = 2
+					}
+					set_government_rank = 1
+					country_event = {
+						id = rank_change.2
+					}
+				}
+			}
+		}
+		set_variable = {
+			which = alliance_limit
+			value = 0
+		}
+		if = {
+			limit = {
+				dip_tech = 48
+			}
+			set_variable = {
+				which = alliance_limit
+				value = 0
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = government_rank
+				6 = {
+					change_variable = {
+						which = alliance_limit
+						value = 4
+					}
+				}
+				5 = {
+					change_variable = {
+						which = alliance_limit
+						value = 3
+					}
+				}
+				4 = {
+					change_variable = {
+						which = alliance_limit
+						value = 2
+					}
+				}
+				3 = {
+					change_variable = {
+						which = alliance_limit
+						value = 2
+					}
+				}
+				2 = {
+					change_variable = {
+						which = alliance_limit
+						value = 1
+					}
+				}
+				1 = {
+					change_variable = {
+						which = alliance_limit
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = court_level_1
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 0
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_2
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 0
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_3
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_4
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_5
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_6
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					dip_tech = 31
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					dip_tech = 19
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = no_localization
+	}
+}
+country_event = {
+	id = rank_change.2
+	title = rank_change.1.t
+	desc = rank_change.1.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		always = yes
+	}
+	option = {
+		name = "OPT.VERYGOOD"
+	}
+}
+country_event = {
+	id = rank_change.3
+	title = no_localization
+	desc = no_localization
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		always = yes
+	}
+	immediate = {
+		trigger_switch = {
+			on_trigger = total_development
+			3000 = {
+				if = {
+					limit = {
+						NOT = {
+							government_rank = 6
+						}
+					}
+					set_government_rank = 6
+				}
+			}
+			1200 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 5
+							}
+							government_rank = 6
+						}
+					}
+					set_government_rank = 5
+				}
+			}
+			400 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 4
+							}
+							government_rank = 5
+						}
+					}
+					set_government_rank = 4
+				}
+			}
+			100 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 3
+							}
+							government_rank = 4
+						}
+					}
+					set_government_rank = 3
+				}
+			}
+			30 = {
+				if = {
+					limit = {
+						OR = {
+							NOT = {
+								government_rank = 2
+							}
+							government_rank = 3
+						}
+					}
+					set_government_rank = 2
+				}
+			}
+			1 = {
+				if = {
+					limit = {
+						government_rank = 2
+					}
+					set_government_rank = 1
+				}
+			}
+		}
+		set_variable = {
+			which = alliance_limit
+			value = 0
+		}
+		if = {
+			limit = {
+				dip_tech = 48
+			}
+			set_variable = {
+				which = alliance_limit
+				value = 0
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = government_rank
+				6 = {
+					change_variable = {
+						which = alliance_limit
+						value = 4
+					}
+				}
+				5 = {
+					change_variable = {
+						which = alliance_limit
+						value = 3
+					}
+				}
+				4 = {
+					change_variable = {
+						which = alliance_limit
+						value = 2
+					}
+				}
+				3 = {
+					change_variable = {
+						which = alliance_limit
+						value = 2
+					}
+				}
+				2 = {
+					change_variable = {
+						which = alliance_limit
+						value = 1
+					}
+				}
+				1 = {
+					change_variable = {
+						which = alliance_limit
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = court_level_1
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 0
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_2
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 0
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_3
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_4
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_5
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = court_level_6
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					dip_tech = 31
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					dip_tech = 19
+				}
+				change_variable = {
+					which = alliance_limit
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = no_localization
+	}
+}

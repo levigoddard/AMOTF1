@@ -1,0 +1,20 @@
+name = "Conquest of Dalmatia"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 2571
+}
+1350.1.1 = {
+	add_attacker = HUN
+	add_attacker = CRO
+	add_defender = VEN
+	add_defender = RAG
+	add_defender = NAX
+}
+1358.2.18 = {
+	rem_attacker = HUN
+	rem_attacker = CRO
+	rem_defender = VEN
+	rem_defender = RAG
+	rem_defender = NAX
+}

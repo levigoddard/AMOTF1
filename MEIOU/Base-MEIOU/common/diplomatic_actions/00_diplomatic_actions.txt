@@ -1,0 +1,815 @@
+claimaction = {
+	condition = {
+		tooltip = ORTHODOXCLAIM
+		potential = {
+			OR = {
+				religion = orthodox
+				religion = chalcedonism
+				religion = coptic
+				religion = chaldean
+				religion = gnostic
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = ORTHODOXCLAIMOUT
+		potential = {
+			FROM = {
+				OR = {
+					religion = orthodox
+					religion = chalcedonism
+					religion = coptic
+					religion = chaldean
+					religion = gnostic
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+abandon_union_action = {
+	condition = {
+		tooltip = ABANDONUNIONPEACE
+		potential = {}
+		allow = {
+			ROOT = {
+				senior_union_with = FROM
+				is_at_war = no
+			}
+		}
+	}
+}
+form_coalition = {
+	condition = {
+		tooltip = MINAGGRESSIVEEXPANSION
+		potential = {}
+		allow = {
+			has_opinion_modifier = {
+				modifier = aggressive_expansion
+				who = FROM
+			}
+			NOT = {
+				has_opinion_modifier = {
+					modifier = aggressive_expansion
+					who = FROM
+					value = -50
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+enforce_peace = {
+	condition = {
+		tooltip = MEDIEVALMONARCHYVASSAL
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = hereditary_elite
+						}
+						has_reform = feudal_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							capital_scope = {
+								continent = indian_continent
+							}
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = hereditary_elite
+						}
+						has_reform = principality_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							capital_scope = {
+								continent = southeast_asia
+							}
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = appointed_elite
+						}
+						has_reform = tsardom_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					vassal_of = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+guaranteeaction = {
+	condition = {
+		tooltip = GUARANTEETRUCE
+		potential = {}
+		allow = {
+			NOT = {
+				truce_with = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+warningaction = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+sellprov = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+warsubsidy = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+threaten_war = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = RAID_CB_NO_THREATEN_WAR
+		potential = {
+			is_tribal = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+fleet_access = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+offer_fleet_access = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+call_crusade_action = {
+	condition = {
+		tooltip = VANILLA_CRUSADES_ARE_BROKEN
+		potential = {
+			always = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+support_rebels = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+justify_trade_conflict = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+sow_discontent = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+request_to_join_trade_league = {
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION_FROM
+		potential = {}
+		allow = {
+			home_trade_node = {
+				trade_share = {
+					country = from
+					share = 1
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = PAPALSTATE
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = papacy_reform
+						has_reform = papal_government
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+invite_to_trade_league = {
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION
+		potential = {}
+		allow = {
+			from = {
+				home_trade_node = {
+					trade_share = {
+						country = root
+						share = 1
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = PAPALSTATE
+		potential = {
+			FROM = {
+				AND = {
+					OR = {
+						has_reform = papacy_reform
+						has_reform = papal_government
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+excommunicate_action = {
+	condition = {
+		tooltip = EXCOM_POPE_EXIST
+		potential = {
+			PAP = {
+				exists = no
+			}
+		}
+		allow = {
+			tag = PAP
+		}
+	}
+}
+grant_freecity = {
+	condition = {
+		potential = {
+			FROM = {
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

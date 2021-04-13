@@ -1,0 +1,2 @@
+culture = papuan
+religion = polynesian_religion

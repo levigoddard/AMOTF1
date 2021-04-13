@@ -1,0 +1,655 @@
+country_event = {
+	id = eastern_haram.10
+	title = "eastern_haram.1t"
+	desc = "eastern_haram.1de"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				remove_province_triggered_modifier = eastern_haram_trigger
+			}
+		}
+	}
+	option = {
+		name = "eastern_haram.1a"
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 50
+				adm = 2
+				male = yes
+				dynasty = ROOT
+				hide_skills = yes
+			}
+		}
+		add_war_exhaustion = -1
+		add_legitimacy = 15
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.1b"
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 50
+				mil = 2
+				male = yes
+				dynasty = ROOT
+				hide_skills = yes
+			}
+		}
+		add_army_tradition = 2
+		add_legitimacy = 15
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.1c"
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 50
+				dip = 2
+				male = yes
+				dynasty = ROOT
+				hide_skills = yes
+			}
+		}
+		add_prestige = 5
+		add_legitimacy = 15
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.1d"
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 40
+				mil = 1
+				dip = 1
+				adm = 1
+				male = yes
+				dynasty = ROOT
+				hide_skills = yes
+			}
+		}
+		add_adm_power = 10
+		add_legitimacy = 15
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.1e"
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 75
+				dynasty = ROOT
+				male = yes
+				hide_skills = yes
+			}
+		}
+		add_legitimacy = 15
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = "eastern_haram.1f"
+		add_adm_power = 10
+	}
+}
+country_event = {
+	id = eastern_haram.2
+	title = "eastern_haram.2t"
+	desc = "eastern_haram.2d"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			religion_group = muslim
+			religion_group = dharmic
+		}
+		NOT = {
+			religion = sikhism
+		}
+		NOT = {
+			absolutism = 50
+		}
+		government = monarchy
+		OR = {
+			NOT = {
+				legitimacy = 70
+			}
+			NOT = {
+				stability = 0
+			}
+			has_regency = yes
+		}
+		NOT = {
+			ADM = 5
+		}
+		NOT = {
+			MIL = 5
+		}
+		NOT = {
+			DIP = 5
+		}
+		num_of_cities = 10
+		NOT = {
+			has_country_flag = newdakanistate
+		}
+		NOT = {
+			has_country_modifier = internal_succession_crisis
+		}
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = elective_monarchy
+					has_reform = elective_monarchy_legacy
+					has_reform = mamluk_government_legacy
+				}
+			}
+		}
+	}
+	option = {
+		name = "eastern_haram.2a"
+		random_owned_province = {
+			limit = {
+				NOT = {
+					culture_group = THIS
+				}
+				NOT = {
+					has_province_modifier = pretender_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "pretender_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_core_province = {
+			limit = {
+				NOT = {
+					culture_group = THIS
+				}
+				NOT = {
+					has_province_modifier = pretender_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "pretender_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					is_core = owner
+				}
+				NOT = {
+					culture_group = THIS
+				}
+				NOT = {
+					has_province_modifier = nationalists_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nationalists_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					is_core = owner
+				}
+				NOT = {
+					culture_group = THIS
+				}
+				NOT = {
+					has_province_modifier = nationalists_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nationalists_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					is_core = owner
+				}
+				NOT = {
+					culture_group = THIS
+				}
+				NOT = {
+					has_province_modifier = nationalists_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nationalists_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					is_core = owner
+				}
+				NOT = {
+					culture_group = THIS
+				}
+				NOT = {
+					has_province_modifier = nationalists_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nationalists_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		add_country_modifier = {
+			name = "internal_succession_crisis"
+			duration = 730
+		}
+	}
+}
+country_event = {
+	id = eastern_haram.3
+	title = "eastern_haram.3t"
+	desc = "eastern_haram.3d"
+	picture = NEW_HEIR_eventPicture
+	trigger = {
+		OR = {
+			religion_group = muslim
+			religion_group = dharmic
+		}
+		NOT = {
+			religion = sikhism
+		}
+		government = monarchy
+		has_heir = yes
+		heir_age = 15
+		NOT = {
+			heir_age = 30
+		}
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = elective_monarchy
+					has_reform = elective_monarchy_legacy
+					has_reform = mamluk_government_legacy
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			factor = 0.25
+			NOT = {
+				heir_claim = 50
+			}
+		}
+		modifier = {
+			factor = 0.25
+			NOT = {
+				heir_claim = 25
+			}
+		}
+		modifier = {
+			factor = 0.9
+			heir_age = 25
+		}
+		modifier = {
+			factor = 2.0
+			stability = 2
+		}
+	}
+	option = {
+		name = "eastern_haram.3a"
+		random_list = {
+			40 = {
+				country_event = {
+					id = eastern_haram.4
+				}
+			}
+			35 = {
+				country_event = {
+					id = eastern_haram.5
+				}
+			}
+			25 = {
+				country_event = {
+					id = eastern_haram.6
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.3b"
+		random_list = {
+			40 = {
+				country_event = {
+					id = eastern_haram.6
+				}
+			}
+			35 = {
+				country_event = {
+					id = eastern_haram.7
+				}
+			}
+			25 = {
+				country_event = {
+					id = eastern_haram.8
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = eastern_haram.4
+	title = "eastern_haram.4t"
+	desc = "eastern_haram.4d"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "eastern_haram.4a"
+		random_list = {
+			50 = {
+				ROOT = {
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+					add_heir_claim = 10
+				}
+			}
+			35 = {
+				random_owned_province = {
+					limit = {
+						OR = {
+							is_core = ROOT
+							is_capital = yes
+						}
+					}
+					add_province_modifier = {
+						name = "pretender_organizing"
+						duration = 1825
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 5
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_5
+				}
+			}
+			15 = {
+				ROOT = {
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+					add_heir_claim = 10
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = eastern_haram.5
+	title = "eastern_haram.5t"
+	desc = "eastern_haram.5d"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		add_stability = -2
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+		kill_heir = yes
+	}
+	option = {
+		name = "eastern_haram.5a"
+		add_prestige = -15
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.5b"
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.5c"
+		add_stability = -2
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 45
+				mil = 2
+				dynasty = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = eastern_haram.6
+	title = "eastern_haram.6t"
+	desc = "eastern_haram.6d"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		kill_heir = yes
+	}
+	option = {
+		name = "eastern_haram.6a"
+		hidden_effect = {
+			define_heir = {
+				age = 17
+				claim = 45
+				mil = 2
+				dynasty = ROOT
+			}
+		}
+		add_years_of_income = 0.01
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = "eastern_haram.6b"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = eastern_haram.7
+	title = "eastern_haram.7t"
+	desc = "eastern_haram.7d"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "eastern_haram.7a"
+		add_heir_claim = 10
+	}
+}
+country_event = {
+	id = eastern_haram.8
+	title = "eastern_haram.8t"
+	desc = "eastern_haram.8d"
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "eastern_haram.8a"
+	}
+}

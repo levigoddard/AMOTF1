@@ -1,0 +1,518 @@
+country_decisions = {
+	crusader_kingdom_of_egypt = {
+		major = yes
+		potential = {
+			owns = 358
+			religion = catholic
+			NOT = {
+				exists = KEG
+			}
+			NOT = {
+				government = republic
+			}
+			NOT = {
+				is_religion_enabled = protestant
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 358
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			clr_country_flag = holy_land_jerusalem
+			custom_tooltip = church_settlement_explained
+			set_country_flag = church_settlement
+			clr_country_flag = dispensation_denied
+			set_country_flag = dispensation_granted
+			add_papal_influence = 50
+			add_prestige = 25
+			358 = {
+				add_core = KEG
+				remove_core = ROOT
+				change_province_name = "Alexandria"
+				rename_capital = "Alexandria"
+				every_neighbor_province = {
+					limit = {
+						owned_by = ROOT
+					}
+					cede_province = KEG
+				}
+			}
+			release = KEG
+			vassalize = KEG
+			KEG = {
+				change_primary_culture = ROOT
+				set_dynasty = ROOT
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 358
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				change_government = monarchy
+			}
+			every_country = {
+				limit = {
+					any_owned_province = {
+						region = egypt_region
+						is_core = PREV
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_historical_rival = KEG
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	become_crusader_kingdom_of_egypt = {
+		major = yes
+		potential = {
+			OR = {
+				tag = CYP
+				tag = KNI
+			}
+			religion = catholic
+			NOT = {
+				exists = KEG
+			}
+			egypt_region = {
+				owned_by = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = egypt_region
+		}
+		allow = {
+			owns = 358
+			is_at_war = no
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Egypt"
+					value = 8
+				}
+				check_variable = {
+					which = "Cores_on_Egypt"
+					value = 5
+				}
+			}
+		}
+		effect = {
+			egypt_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = KEG
+				}
+				add_core = KEG
+			}
+			egypt_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = KEG
+			}
+			every_country = {
+				limit = {
+					any_owned_province = {
+						region = egypt_region
+						is_core = PREV
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_historical_rival = KEG
+			}
+			add_prestige = 15
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					government = theocracy
+				}
+				if = {
+					limit = {
+						adm_tech = 35
+					}
+					change_government = monarchy
+					add_government_reform = parliamentary_monarchy
+					add_government_reform = bureaucracy
+					add_government_reform = appointed_elite
+					set_legacy_government = administrative_monarchy
+				}
+				else = {
+					change_government = monarchy
+					add_government_reform = divine_right
+					add_government_reform = delegated_rulers
+					add_government_reform = hereditary_elite
+					hidden_effect = {
+						set_legacy_government = despotic_monarchy
+					}
+					set_legacy_government = feudal_monarchy
+				}
+				if = {
+					limit = {
+						religion = catholic
+						exists = PAP
+					}
+					PAP = {
+						add_opinion = {
+							who = ROOT
+							modifier = opinion_displeased
+						}
+					}
+				}
+			}
+			change_tag = KEG
+			add_absolutism = 10
+			358 = {
+				change_province_name = "Alexandria"
+				rename_capital = "Alexandria"
+			}
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 358
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = KEG_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

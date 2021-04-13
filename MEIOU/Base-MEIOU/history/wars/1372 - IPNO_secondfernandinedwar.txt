@@ -1,0 +1,16 @@
+name = "Second Fernandine War"
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = CAS
+}
+1372.1.1 = {
+	add_attacker = POR
+	add_attacker = ENG
+	add_defender = CAS
+}
+1373.1.1 = {
+	rem_attacker = POR
+	rem_attacker = ENG
+	rem_defender = CAS
+}

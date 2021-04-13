@@ -1,0 +1,179 @@
+muslim_ghazi = {
+	color = { 235 115 115 }
+	area = nation
+	government = any
+	defection = none
+	independence = none
+	defect_delay = 24
+	gfx_type = culture_province
+	resilient = yes
+	reinforcing = no
+	general = yes
+	smart = yes
+	unit_transfer = no
+	will_relocate = no
+	artillery = 0.0
+	infantry = 0.6
+	cavalry = 0.4
+	morale = 0.85
+	handle_action_negotiate = no
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = no
+	spawn_chance = {
+		factor = 0.25
+		modifier = {
+			NOT = {
+				any_neighbor_province = {
+					religion_group = muslim
+					owner = {
+						religion_group = muslim
+						AND = {
+							OR = {
+								is_subject = no
+								is_subject_of_type = tributary_state
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			owner = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			has_province_flag = TP_trading_post
+			factor = 0
+		}
+	}
+	movement_evaluation = {
+		factor = 0
+	}
+	siege_won_trigger = {}
+	siege_won_effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_province_flag = ghazi_raid
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = sunni
+					}
+					event_target:ghazi_origins = {
+						religion = sunni
+					}
+				}
+				custom_tooltip = sunni_20
+				hidden_effect = {
+					change_variable = {
+						which = sunni
+						value = 4
+					}
+					change_variable = {
+						which = province_religion
+						value = -4
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = shiite
+					}
+					event_target:ghazi_origins = {
+						religion = shiite
+					}
+				}
+				custom_tooltip = shiite_20
+				hidden_effect = {
+					change_variable = {
+						which = shiite
+						value = 4
+					}
+					change_variable = {
+						which = province_religion
+						value = -4
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = wahhabi
+					}
+					event_target:ghazi_origins = {
+						religion = wahhabi
+					}
+				}
+				custom_tooltip = wahhabi_20
+				hidden_effect = {
+					change_variable = {
+						which = wahhabi
+						value = 4
+					}
+					change_variable = {
+						which = province_religion
+						value = -4
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = ibadi
+					}
+					event_target:ghazi_origins = {
+						religion = ibadi
+					}
+				}
+				custom_tooltip = ibadi_20
+				hidden_effect = {
+					change_variable = {
+						which = ibadi
+						value = 4
+					}
+					change_variable = {
+						which = province_religion
+						value = -4
+					}
+				}
+			}
+		}
+		set_province_flag = ghazi_raid
+	}
+	can_negotiate_trigger = {}
+	can_enforce_trigger = {
+		any_owned_province = {
+			controlled_by = muslim_ghazi
+		}
+	}
+	demands_description = "muslim_ghazi_demand"
+	demands_enforced_effect = {
+		every_owned_province = {
+			limit = {
+				OR = {
+					controlled_by = muslim_ghazi
+					has_province_flag = ghazi_raid
+				}
+			}
+			set_province_flag = ghazi_victory
+			province_event = {
+				id = dg_islam.101
+				days = 0
+			}
+		}
+	}
+}

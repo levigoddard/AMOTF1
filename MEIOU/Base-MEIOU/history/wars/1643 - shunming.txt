@@ -1,0 +1,14 @@
+name = "Li Zicheng Rebellion"
+war_goal = {
+	type = defend_capital_independence
+	casus_belli = cb_independence_war
+	tag = DSH
+}
+1643.10.31 = {
+	add_attacker = MNG
+	add_defender = DSH
+}
+1645.3.1 = {
+	rem_attacker = MNG
+	rem_defender = DSH
+}

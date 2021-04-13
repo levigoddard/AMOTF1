@@ -1,0 +1,405 @@
+# Call eval script with parameters that corresponds to action evaluation
+AIEvalAction = {
+	AIEval = {
+		type = Action
+		name = $name$
+		tuning = 1.001
+		clean = None
+	}
+}
+
+# A scripted effect with no parameter, when called manage list of actions
+# By evaluating all actions and adding or removing the appropriate ones
+# Interacts with Eval, Agenda and Do
+AIAction = {
+	# Set a list of candidate actions
+	if = {
+		limit = {
+			always = yes
+		}
+		set_country_flag = aiEvalActionManageLoan
+		set_country_flag = aiEvalActionSaveTreasury
+		set_country_flag = aiEvalActionImpStab
+		set_country_flag = aiEvalActionEstFavor
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = aiHasAgendaMilitary
+		}
+#		set_country_flag = aiEvalActionManpower
+		set_country_flag = aiEvalActionBuildShipyards
+		set_country_flag = aiEvalActionWarchest
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaOffense
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaDefense
+			}
+			set_country_flag = aiEvalActionBuildForts
+		}
+		else = {
+			clr_country_flag = aiHasActionBuildForts
+		}
+	}
+	else = {
+#		clr_country_flag = aiHasActionManpower
+		clr_country_flag = aiHasActionBuildShipyards
+		clr_country_flag = aiHasActionWarchest
+		clr_country_flag = aiHasActionBuildForts
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = aiHasAgendaExpansion
+		}
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaInvasion
+			}
+#			set_country_flag = aiEvalActionGetCB
+			set_country_flag = aiEvalActionDecWar
+			set_country_flag = aiEvalActionWarchest
+		}
+		else = {
+#			clr_country_flag = aiHasActionGetCB
+			clr_country_flag = aiHasActionDecWar
+			clr_country_flag = aiHasActionWarchest
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaColonization
+			}
+#			set_country_flag = aiEvalActionPlanColonization
+#			set_country_flag = aiEvalActionDoColonization
+		}
+		else = {
+#			clr_country_flag = aiEvalActionPlanColonization
+#			clr_country_flag = aiEvalActionDoColonization
+		}
+	}
+	else = {
+#		clr_country_flag = aiHasActionGetCB
+		clr_country_flag = aiHasActionDecWar
+		clr_country_flag = aiHasActionWarchest
+#		clr_country_flag = aiHasActionPlanColonization
+#		clr_country_flag = aiHasActionDoColonization
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = aiHasAgendaEconomy
+		}
+		set_country_flag = aiEvalActionBuildCity
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaTrade
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaProduction
+			}
+		}
+	}
+	else = {
+		clr_country_flag = aiEvalActionBuildCity
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = aiHasAgendaGovernance
+		}
+		set_country_flag = aiEvalActionEstDemand
+		set_country_flag = aiEvalActionEstGrant
+#		set_country_flag = aiEvalActionSolveDis
+#		set_country_flag = aiEvalActionManageVassal
+#		set_country_flag = aiEvalActionRebel
+#		set_country_flag = aiEvalActionSolveObs
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaTech
+			}
+#			set_country_flag = aiEvalActionEmbraceInst
+			set_country_flag = aiEvalActionEduArt
+		}
+		else = {
+#			clr_country_flag = aiHasActionEmbraceInst
+			clr_country_flag = aiHasActionEduArt
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaReform
+			}
+			set_country_flag = aiEvalActionEstDemote
+			set_country_flag = aiEvalActionEstRevoke
+		}
+		else = {
+			clr_country_flag = aiHasActionEstDemote
+			clr_country_flag = aiHasActionEstRevoke
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasAgendaCE
+			}
+			if = {
+				limit = {
+					check_variable = { which = fixed_cap value = 1 }
+				}
+				set_variable = { which = prov_id which = fixed_cap }
+				if = {
+					limit = {
+						NOT = {
+							capital_scope = {
+								is_variable_equal = { which = prov_id which = PREV }
+							}
+						}
+					}
+					set_country_flag = aiEvalActionMoveCapital
+				}
+				set_variable = { which = prov_id value = 0 }
+			}
+			else = {
+				set_country_flag = aiEvalActionMoveCapital
+			}
+			set_country_flag = aiEvalActionBuildBureau
+			set_country_flag = aiEvalActionBuildPort
+			set_country_flag = aiEvalActionBuildRoad
+		}
+		else = {
+			clr_country_flag = aiHasActionMoveCapital
+			clr_country_flag = aiHasActionBuildBureau
+			clr_country_flag = aiHasActionBuildPort
+			clr_country_flag = aiHasActionBuildRoad
+		}
+	}
+	else = {
+		clr_country_flag = aiHasActionEstDemand
+		clr_country_flag = aiHasActionEstGrant
+#		clr_country_flag = aiHasActionSolveDis
+#		clr_country_flag = aiHasActionManageVassal
+#		clr_country_flag = aiHasActionRebel
+#		clr_country_flag = aiHasActionSolveObs
+#		clr_country_flag = aiHasActionEmbraceInst
+		clr_country_flag = aiHasActionEduArt
+		clr_country_flag = aiHasActionEstDemote
+		clr_country_flag = aiHasActionEstRevoke
+		clr_country_flag = aiHasActionMoveCapital
+		clr_country_flag = aiHasActionBuildBureau
+		clr_country_flag = aiHasActionBuildPort
+		clr_country_flag = aiHasActionBuildRoad
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = autoDo
+		}
+		clr_country_flag = aiEvalActionEmbraceInst
+		clr_country_flag = aiEvalActionWarchest
+		clr_country_flag = aiEvalActionManageLoan
+		clr_country_flag = aiEvalActionMoveCapital
+		clr_country_flag = aiEvalActionImpStab
+		clr_country_flag = aiEvalActionDecWar
+		
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = autoEstAll
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoEstFavor
+					}
+				}
+				clr_country_flag = aiEvalActionEstFavor
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoEstDemand
+					}
+				}
+				clr_country_flag = aiEvalActionEstDemand
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoEstGrant
+					}
+				}
+				clr_country_flag = aiEvalActionEstGrant
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoEstRevoke
+					}
+				}
+				clr_country_flag = aiEvalActionEstRevoke
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoEstDemote
+					}
+				}
+				clr_country_flag = aiEvalActionEstDemote
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = autoSpendingAll
+				}
+			}
+			clr_country_flag = aiEvalActionBuildBureau
+			clr_country_flag = aiEvalActionBuildShipyards
+			
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoSpending
+					}
+				}
+				clr_country_flag = aiEvalActionSaveTreasury
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoSpendingFort
+					}
+				}
+				clr_country_flag = aiEvalActionBuildForts
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoSpendingRoad
+					}
+				}
+				clr_country_flag = aiEvalActionBuildRoad
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoSpendingPort
+					}
+				}
+				clr_country_flag = aiEvalActionBuildPort
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = autoSpendingCity
+					}
+				}
+				clr_country_flag = aiEvalActionBuildCity
+			}
+		}
+	}
+	
+	
+	# Evaluate a list of candidate actions
+	# Military
+	AIEvalAction = {
+		name = Manpower
+	}
+	AIEvalAction = {
+		name = BuildShipyards
+	}
+	AIEvalAction = {
+		name = BuildForts
+	}
+	AIEvalAction = {
+		name = Warchest
+	}
+	
+	# Expansion
+	AIEvalAction = {
+		name = PlanColonization
+	}
+	AIEvalAction = {
+		name = DoColonization
+	}
+	AIEvalAction = {
+		name = GetCB
+	}
+	AIEvalAction = {
+		name = DecWar
+	}
+	
+	# Economy
+	AIEvalAction = {
+		name = BuildCity
+	}
+	
+	# Governance
+	AIEvalAction = {
+		name = EstFavor
+	}
+	AIEvalAction = {
+		name = EstDemand
+	}
+	AIEvalAction = {
+		name = EstDemote
+	}
+	AIEvalAction = {
+		name = EstGrant
+	}
+	AIEvalAction = {
+		name = EstRevoke
+	}
+	AIEvalAction = {
+		name = SolveDis
+	}
+	AIEvalAction = {
+		name = SolveObs
+	}
+	AIEvalAction = {
+		name = ImpStab
+	}
+	AIEvalAction = {
+		name = MoveCapital
+	}
+	AIEvalAction = {
+		name = ManageVassal
+	}
+	AIEvalAction = {
+		name = EmbraceInst
+	}
+	AIEvalAction = {
+		name = EduArt
+	}
+	AIEvalAction = {
+		name = ManageLoan
+	}
+	AIEvalAction = {
+		name = BuildBureau
+	}
+	AIEvalAction = {
+		name = BuildRoad
+	}
+	AIEvalAction = {
+		name = BuildPort
+	}
+	AIEvalAction = {
+		name = Rebel
+	}
+	AIEvalAction = {
+		name = SaveTreasury
+	}
+}

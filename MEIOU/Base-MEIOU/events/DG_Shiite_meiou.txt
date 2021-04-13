@@ -1,0 +1,6734 @@
+namespace = dg_shiite
+province_event = {
+	id = dg_shiite.003
+	title = dg_shiite.003.t
+	desc = dg_shiite.003.d
+	picture = muslim_mausoleum
+	trigger = {
+		AND = {
+			OR = {
+				superregion = near_east_superregion
+				superregion = anatolia_superregion
+			}
+		}
+		owner = {
+			religion = shiite
+		}
+		OR = {
+			NOT = {
+				has_province_flag = imamzadeh
+			}
+			has_province_flag = abandoned_imamzadeh
+		}
+		NOT = {
+			any_neighbor_province = {
+				has_province_flag = imamzadeh
+			}
+		}
+		owner = {
+			OR = {
+				ai = yes
+				has_country_flag = religious_news_trivial
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			has_province_flag = imamzadeh_abandoned
+			factor = 2
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 160
+			}
+			factor = 1.6
+		}
+	}
+	immediate = {
+		set_province_flag = imamzadeh
+	}
+	option = {
+		name = dg_shiite.003.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				NOT = {
+					AND = {
+						OR = {
+							has_building = temple
+							has_building = temple_heathen
+						}
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 50
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -50
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					religion_group = muslim
+				}
+				factor = 0.7
+			}
+			modifier = {
+				religion = shiite
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						treasury = 40
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						treasury = 20
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						treasury = 10
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_loans = 1
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_loans = 2
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_loans = 3
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						is_bankrupt = yes
+					}
+				}
+				factor = 0.1
+			}
+			modifier = {
+				owner = {
+					war_exhaustion = 5
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					war_exhaustion = 10
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					war_exhaustion = 15
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					war_exhaustion = 20
+				}
+				factor = 0.7
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 100
+				}
+			}
+			owner = {
+				add_prestige = 4
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						piety = 100
+					}
+				}
+				owner = {
+					piety = 50
+				}
+			}
+			owner = {
+				add_prestige = 3
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						piety = 50
+					}
+				}
+				owner = {
+					piety = 0
+				}
+			}
+			owner = {
+				add_prestige = 2
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						piety = 0
+					}
+				}
+				owner = {
+					piety = -50
+				}
+			}
+			owner = {
+				add_prestige = 1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_building = great_temple
+					}
+					NOT = {
+						num_free_building_slots = 1
+					}
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					AND = {
+						OR = {
+							has_building = temple
+							has_building = temple_heathen
+						}
+					}
+				}
+				NOT = {
+					AND = {
+						has_building = great_temple
+					}
+				}
+				num_free_building_slots = 1
+			}
+			add_building = temple
+			owner = {
+				add_treasury = -50
+			}
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = ROOT
+				}
+				religion = shiite
+				any_owned_province = {
+					any_neighbor_province = {
+						province_id = ROOT
+					}
+				}
+				piety = 0.6
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = holy_lands_pious
+			}
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = ROOT
+				}
+				religion = shiite
+				any_owned_province = {
+					any_neighbor_province = {
+						province_id = ROOT
+					}
+				}
+				piety = 0.2
+				NOT = {
+					piety = -0.2
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = holy_lands_observant
+			}
+		}
+		if = {
+			limit = {
+				tolerance_to_this = -2
+				NOT = {
+					tolerance_to_this = 1
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 2
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_2
+		}
+		if = {
+			limit = {
+				tolerance_to_this = -5
+				NOT = {
+					tolerance_to_this = -2
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 4
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_4
+		}
+		if = {
+			limit = {
+				NOT = {
+					tolerance_to_this = -5
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 6
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_6
+		}
+	}
+	option = {
+		name = dg_shiite.003.b
+		ai_chance = {
+			factor = 25
+		}
+		hidden_effect = {
+			set_province_flag = imamzadeh_abandoned
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 50
+				}
+			}
+			owner = {
+				add_prestige = -2
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						piety = 50
+					}
+				}
+				owner = {
+					piety = 0
+				}
+			}
+			owner = {
+				add_prestige = -1
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_shiite.004
+	title = dg_shiite.004.t
+	desc = dg_shiite.004.d
+	picture = muslim_quran
+	trigger = {
+		religion = shiite
+		owner = {
+			NOT = {
+				religion = shiite
+			}
+		}
+		NOT = {
+			tolerance_to_this = -2
+		}
+		NOT = {
+			has_province_modifier = taqiyya
+		}
+	}
+	mean_time_to_happen = {
+		years = 41
+		modifier = {
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 160
+			}
+			factor = 1.6
+		}
+	}
+	option = {
+		name = dg_shiite.004.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				unrest = 1
+				factor = 0.7
+			}
+			modifier = {
+				unrest = 5
+				factor = 0.7
+			}
+			modifier = {
+				has_missionary = yes
+				factor = 1.4
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = 3
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_3
+	}
+	option = {
+		name = dg_shiite.004.b
+		ai_chance = {
+			factor = 50
+		}
+		add_province_modifier = {
+			name = "taqiyya"
+			duration = 5000
+		}
+	}
+}
+province_event = {
+	id = dg_shiite.011
+	title = dg_shiite.011.t
+	desc = dg_shiite.011.d
+	picture = muslim_ulama_advisor
+	trigger = {
+		religion = shiite
+		owner = {
+			religion = shiite
+		}
+		OR = {
+			AND = {
+				base_production = 5
+			}
+			is_capital = yes
+			AND = {
+				has_province_flag = university_present
+			}
+		}
+		OR = {
+			has_owner_culture = yes
+			AND = {
+				culture_group = owner
+				owner = {
+					has_country_flag = ulama_patronage
+				}
+			}
+			owner = {
+				has_country_flag = ulama_government
+			}
+		}
+		is_core = owner
+		NOT = {
+			any_neighbor_province = {
+				any_neighbor_province = {
+					any_neighbor_province = {
+						owned_by = ROOT
+						OR = {
+							has_province_modifier = reform_sufis
+							has_province_modifier = sharia_sufis
+							has_province_modifier = shrine_sufis
+							has_province_modifier = charismatic_sufis
+							has_province_modifier = hanbali_local
+							has_province_modifier = hanafi_local
+							has_province_modifier = maliki_local
+							has_province_modifier = shafii_local
+							has_province_modifier = usuli_local
+							has_province_modifier = akhbari_local
+						}
+					}
+				}
+			}
+		}
+		owner = {
+			OR = {
+				ai = yes
+				has_country_flag = religious_news_trivial
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			owner = {
+				has_country_flag = sufi_influence
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				has_country_flag = sufi_patronage
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				has_country_flag = sufi_government
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				is_tribal = yes
+			}
+			factor = 2
+		}
+		modifier = {
+			owner = {
+				government = republic
+			}
+			factor = 0.5
+		}
+		modifier = {
+			NOT = {
+				tolerance_to_this = -1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				tolerance_to_this = 1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 160
+			}
+			factor = 1.6
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_province_flag = usuli_local
+			set_province_flag = akhbari_local
+			set_province_flag = hanafi_local
+			every_neighbor_province = {
+				every_neighbor_province = {
+					every_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+							religion = shiite
+							OR = {
+								AND = {
+									base_production = 5
+								}
+								is_capital = yes
+								AND = {
+									has_province_flag = university_present
+								}
+							}
+						}
+						set_province_flag = usuli_local
+						set_province_flag = akhbari_local
+						set_province_flag = hanafi_local
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.011.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				owner = {
+					has_country_flag = usuli_school_favored
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						AND = {
+							OR = {
+								culture_group = arabian
+								culture_group = mashreqi
+							}
+						}
+					}
+					NOT = {
+						AND = {
+							OR = {
+								culture_group = eastern_aryan
+								culture_group = hindusthani
+								culture_group = central_indian
+								culture_group = pahari_group
+								culture_group = deccan_group
+								culture_group = rajput
+								culture_group = dravidian
+							}
+						}
+					}
+				}
+				factor = 3
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = usuli_school_favored
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = 3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = 2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = akhbari_school_favored
+						has_country_flag = hanafi_school_favored
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = -3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = -2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = -1
+				}
+			}
+			hidden_effect = {
+				set_country_flag = usuli_school_favored
+				clr_country_flag = akhbari_school_favored
+				clr_country_flag = hanafi_school_favored
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = usuli_local
+				}
+				add_province_modifier = {
+					name = usuli_local
+					duration = 10000
+				}
+				hidden_effect = {
+					clr_province_flag = usuli_local
+					clr_province_flag = akhbari_local
+					clr_province_flag = hanafi_local
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.011.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				owner = {
+					has_country_flag = akhbari_school_favored
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					OR = {
+						AND = {
+							OR = {
+								culture_group = arabian
+								culture_group = mashreqi
+							}
+						}
+						AND = {
+							OR = {
+								culture_group = eastern_aryan
+								culture_group = hindusthani
+								culture_group = central_indian
+								culture_group = pahari_group
+								culture_group = deccan_group
+								culture_group = rajput
+								culture_group = dravidian
+							}
+						}
+					}
+					NOT = {
+						AND = {
+							primary_culture = yemeni
+						}
+					}
+				}
+				factor = 3
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = akhbari_school_favored
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = 3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = 2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = usuli_school_favored
+						has_country_flag = hanafi_school_favored
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = -3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = -2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = -1
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = usuli_school_favored
+				clr_country_flag = hanafi_school_favored
+				set_country_flag = akhbari_school_favored
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = akhbari_local
+				}
+				add_province_modifier = {
+					name = akhbari_local
+					duration = 10000
+				}
+				hidden_effect = {
+					clr_province_flag = usuli_local
+					clr_province_flag = akhbari_local
+					clr_province_flag = hanafi_local
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.011.c
+		trigger = {
+			owner = {
+				AND = {
+					culture_group = arabian
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				owner = {
+					has_country_flag = hanafi_school_favored
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					AND = {
+						culture_group = arabian
+					}
+				}
+				factor = 3
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = hanafi_school_favored
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = 3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = 2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = usuli_school_favored
+						has_country_flag = akhbari_school_favored
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = -3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = -2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = -1
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = usuli_school_favored
+				clr_country_flag = akhbari_school_favored
+				set_country_flag = hanafi_school_favored
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = hanafi_local
+				}
+				add_province_modifier = {
+					name = hanafi_local
+					duration = 10000
+				}
+				hidden_effect = {
+					clr_province_flag = usuli_local
+					clr_province_flag = akhbari_local
+					clr_province_flag = hanafi_local
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.011.e
+		trigger = {
+			owner = {
+				religion = shiite
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				owner = {
+					has_country_flag = sufi_influence
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					has_country_flag = ulama_influence
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_flag = sufi_patronage
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					has_country_flag = sufi_government
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					has_country_flag = ulama_patronage
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_flag = ulama_government
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					is_tribal = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					government = republic
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 0.7
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = usuli_school_favored
+					has_country_flag = akhbari_school_favored
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_legitimacy = -3
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_legitimacy = -2
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_legitimacy = -1
+				}
+			}
+			hidden_effect = {
+				set_country_flag = sufi_influence
+				clr_country_flag = ulama_influence
+				clr_country_flag = usuli_school_favored
+				clr_country_flag = akhbari_school_favored
+				clr_country_flag = hanafi_school_favored
+				every_owned_province = {
+					clr_province_flag = usuli_local
+					clr_province_flag = akhbari_local
+					clr_province_flag = hanafi_local
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_shiite.012
+	title = dg_shiite.012.t
+	desc = dg_shiite.012.d
+	picture = muslim_ulama
+	trigger = {
+		religion = shiite
+		owner = {
+			religion_group = muslim
+		}
+		OR = {
+			AND = {
+				base_production = 5
+			}
+			is_capital = yes
+			AND = {
+				has_province_flag = university_present
+			}
+		}
+		OR = {
+			AND = {
+				has_owner_culture = no
+				OR = {
+					has_owner_accepted_culture = no
+					owner = {
+						NOT = {
+							has_country_flag = ulama_patronage
+						}
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = ulama_government
+					}
+				}
+			}
+			NOT = {
+				is_core = owner
+			}
+			has_owner_religion = no
+		}
+		NOT = {
+			AND = {
+				OR = {
+					culture_group = arabian
+					culture_group = mashreqi
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				OR = {
+					culture_group = eastern_aryan
+					culture_group = hindusthani
+					culture_group = central_indian
+					culture_group = pahari_group
+					culture_group = deccan_group
+					culture_group = rajput
+					culture_group = dravidian
+				}
+			}
+		}
+		NOT = {
+			any_neighbor_province = {
+				any_neighbor_province = {
+					any_neighbor_province = {
+						owned_by = ROOT
+						OR = {
+							has_province_modifier = reform_sufis
+							has_province_modifier = sharia_sufis
+							has_province_modifier = shrine_sufis
+							has_province_modifier = charismatic_sufis
+							has_province_modifier = usuli_local
+							has_province_modifier = akhbari_local
+							has_province_modifier = maliki_local
+							has_province_modifier = shafii_local
+							has_province_modifier = hanbali_local
+							has_province_modifier = hanafi_local
+						}
+					}
+				}
+			}
+		}
+		owner = {
+			OR = {
+				ai = yes
+				has_country_flag = religious_news_trivial
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 166
+		modifier = {
+			owner = {
+				has_country_flag = sufi_influence
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				has_country_flag = sufi_patronage
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				has_country_flag = sufi_government
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				is_tribal = yes
+			}
+			factor = 2
+		}
+		modifier = {
+			owner = {
+				government = republic
+			}
+			factor = 0.5
+		}
+		modifier = {
+			NOT = {
+				tolerance_to_this = -1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				tolerance_to_this = 1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 160
+			}
+			factor = 1.6
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_province_flag = usuli_local
+			every_neighbor_province = {
+				every_neighbor_province = {
+					every_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+							religion = shiite
+							OR = {
+								AND = {
+									base_production = 5
+								}
+								is_capital = yes
+								AND = {
+									has_province_flag = university_present
+								}
+							}
+						}
+						set_province_flag = usuli_local
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.012.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+					piety = 0.60
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+					piety = 0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+					is_defender_of_faith = yes
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+				}
+				factor = 0.5
+			}
+		}
+		owner = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = usuli_local
+				}
+				add_province_modifier = {
+					name = usuli_local
+					duration = 10000
+				}
+				hidden_effect = {
+					clr_province_flag = usuli_local
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.012.b
+		trigger = {
+			NOT = {
+				owner = {
+					has_country_flag = usuli_school_favored
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_cities = 50
+				}
+			}
+			owner = {
+				add_adm_power = -5
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					num_of_cities = 10
+				}
+			}
+			owner = {
+				add_adm_power = -10
+			}
+		}
+		else = {
+			owner = {
+				add_adm_power = -20
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = akhbari_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = akhbari_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = usuli_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = usuli_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = hanafi_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = hanafi_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = hanbali_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = hanbali_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = shafii_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = shafii_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = maliki_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = maliki_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					owner = {
+						has_country_flag = hanafi_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = hanbali_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = maliki_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = shafii_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = usuli_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = akhbari_school_favored
+					}
+				}
+			}
+			add_province_modifier = {
+				name = usuli_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					any_owned_province = {
+						NOT = {
+							is_core = owner
+						}
+						has_province_flag = usuli_local
+					}
+				}
+			}
+			owner = {
+				every_owned_province = {
+					limit = {
+						has_province_flag = usuli_local
+						NOT = {
+							is_core = owner
+						}
+					}
+					add_nationalism = 2
+				}
+			}
+		}
+		owner = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = usuli_local
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+			}
+			hidden_effect = {
+				every_owned_province = {
+					clr_province_flag = usuli_local
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_shiite.013
+	title = dg_shiite.013.t
+	desc = dg_shiite.013.d
+	picture = muslim_ulama
+	trigger = {
+		religion = shiite
+		owner = {
+			religion_group = muslim
+		}
+		OR = {
+			AND = {
+				base_production = 5
+			}
+			is_capital = yes
+			AND = {
+				has_province_flag = university_present
+			}
+		}
+		OR = {
+			AND = {
+				has_owner_culture = no
+				OR = {
+					has_owner_accepted_culture = no
+					owner = {
+						NOT = {
+							has_country_flag = ulama_patronage
+						}
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = ulama_government
+					}
+				}
+			}
+			NOT = {
+				is_core = owner
+			}
+			has_owner_religion = no
+		}
+		OR = {
+			AND = {
+				OR = {
+					culture_group = arabian
+					culture_group = mashreqi
+				}
+			}
+			AND = {
+				OR = {
+					culture_group = eastern_aryan
+					culture_group = hindusthani
+					culture_group = central_indian
+					culture_group = pahari_group
+					culture_group = deccan_group
+					culture_group = rajput
+					culture_group = dravidian
+				}
+			}
+		}
+		NOT = {
+			any_neighbor_province = {
+				any_neighbor_province = {
+					any_neighbor_province = {
+						owned_by = ROOT
+						OR = {
+							has_province_modifier = reform_sufis
+							has_province_modifier = sharia_sufis
+							has_province_modifier = shrine_sufis
+							has_province_modifier = charismatic_sufis
+							has_province_modifier = usuli_local
+							has_province_modifier = akhbari_local
+							has_province_modifier = maliki_local
+							has_province_modifier = shafii_local
+							has_province_modifier = hanbali_local
+							has_province_modifier = hanafi_local
+						}
+					}
+				}
+			}
+		}
+		owner = {
+			OR = {
+				ai = yes
+				has_country_flag = religious_news_trivial
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 166
+		modifier = {
+			owner = {
+				has_country_flag = sufi_influence
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				has_country_flag = sufi_patronage
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				has_country_flag = sufi_government
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				is_tribal = yes
+			}
+			factor = 2
+		}
+		modifier = {
+			owner = {
+				government = republic
+			}
+			factor = 0.5
+		}
+		modifier = {
+			NOT = {
+				tolerance_to_this = -1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				tolerance_to_this = 1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 160
+			}
+			factor = 1.6
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_province_flag = akhbari_local
+			every_neighbor_province = {
+				every_neighbor_province = {
+					every_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+							religion = shiite
+							OR = {
+								AND = {
+									base_production = 5
+								}
+								is_capital = yes
+								AND = {
+									has_province_flag = university_present
+								}
+							}
+						}
+						set_province_flag = akhbari_local
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.012.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+					piety = 0.60
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+					piety = 0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+					is_defender_of_faith = yes
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religion = shiite
+					}
+				}
+				factor = 0.5
+			}
+		}
+		owner = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = akhbari_local
+				}
+				add_province_modifier = {
+					name = akhbari_local
+					duration = 10000
+				}
+				hidden_effect = {
+					clr_province_flag = akhbari_local
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.012.b
+		trigger = {
+			NOT = {
+				owner = {
+					has_country_flag = akhbari_school_favored
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_cities = 50
+				}
+			}
+			owner = {
+				add_adm_power = -5
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					num_of_cities = 10
+				}
+			}
+			owner = {
+				add_adm_power = -10
+			}
+		}
+		else = {
+			owner = {
+				add_adm_power = -20
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = akhbari_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = akhbari_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = usuli_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = usuli_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = hanafi_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = hanafi_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = hanbali_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = hanbali_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = shafii_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = shafii_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = maliki_school_favored
+				}
+			}
+			add_province_modifier = {
+				name = maliki_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					owner = {
+						has_country_flag = hanafi_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = hanbali_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = maliki_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = shafii_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = usuli_school_favored
+					}
+				}
+				NOT = {
+					owner = {
+						has_country_flag = akhbari_school_favored
+					}
+				}
+			}
+			add_province_modifier = {
+				name = akhbari_local
+				duration = 5000
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					any_owned_province = {
+						NOT = {
+							is_core = owner
+						}
+						has_province_flag = akhbari_local
+					}
+				}
+			}
+			owner = {
+				every_owned_province = {
+					limit = {
+						has_province_flag = akhbari_local
+						NOT = {
+							is_core = owner
+						}
+					}
+					add_nationalism = 2
+				}
+			}
+		}
+		owner = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = akhbari_local
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+			}
+			hidden_effect = {
+				every_owned_province = {
+					clr_province_flag = akhbari_local
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.014
+	title = dg_shiite.014.t
+	desc = dg_shiite.014.d
+	picture = muslim_desert_dervish
+	trigger = {
+		religion = shiite
+		any_owned_province = {
+			has_province_flag = sufi_nation
+		}
+		NOT = {
+			any_neighbor_country = {
+				has_spawned_rebels = safavid_sufis
+			}
+		}
+		OR = {
+			has_regency = no
+			has_consort_regency = yes
+		}
+		is_force_converted = no
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = dg_shiite.014.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				num_of_loans = 1
+				factor = 0.5
+			}
+			modifier = {
+				num_of_loans = 2
+				factor = 0.5
+			}
+			modifier = {
+				is_bankrupt = yes
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					treasury = 50
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					treasury = 25
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					treasury = 10
+				}
+				factor = 0.7
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = church_property
+					value = 10
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = sufi_nation
+				}
+				owner = {
+					add_treasury = -10
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = church_property
+					value = 1
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = church_property
+					value = 1
+				}
+			}
+			add_patriarch_authority = 0.05
+			every_owned_province = {
+				limit = {
+					has_province_flag = sufi_nation
+				}
+				owner = {
+					add_treasury = -5
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = sufi_nation
+			}
+			clr_province_flag = sufi_nation
+			if = {
+				limit = {
+					NOT = {
+						is_core = owner
+					}
+					NOT = {
+						is_claim = ROOT
+					}
+				}
+				add_nationalism = -1
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.014.a
+		trigger = {
+			NOT = {
+				has_country_flag = sufi_government
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_at_war = yes
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					any_owned_province = {
+						NOT = {
+							has_province_flag = sufi_nation
+						}
+					}
+				}
+				factor = 5
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = church_property
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = church_property
+						value = 10
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = church_property
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = sufi_patronage
+				NOT = {
+					has_country_flag = sufi_government
+				}
+			}
+			set_country_flag = sufi_government
+			add_patriarch_authority = 0.10
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = sufi_patronage
+				}
+			}
+			set_country_flag = sufi_patronage
+			add_patriarch_authority = 0.10
+		}
+		trigger_switch = {
+			on_trigger = has_country_modifier
+			unhappy_church_powerful = {
+				remove_country_modifier = unhappy_church_powerful
+			}
+			unhappy_church_strong = {
+				remove_country_modifier = unhappy_church_strong
+			}
+			unhappy_church_moderate = {
+				remove_country_modifier = unhappy_church_moderate
+			}
+			unhappy_church_weak = {
+				remove_country_modifier = unhappy_church_weak
+			}
+			unhappy_church_impotent = {
+				remove_country_modifier = unhappy_church_impotent
+			}
+		}
+		trigger_switch = {
+			on_trigger = has_country_modifier
+			religious_scandal_country_strong = {
+				remove_country_modifier = religious_scandal_country_strong
+			}
+			religious_scandal_country = {
+				remove_country_modifier = religious_scandal_country
+			}
+			religious_scandal_country_weak = {
+				remove_country_modifier = religious_scandal_country_weak
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					advisor = inquisitor
+				}
+			}
+			define_advisor = {
+				religion = shiite
+				type = inquisitor
+				discount = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					num_of_generals = 2
+				}
+			}
+			create_general = {
+				tradition = 50
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = sufi_nation
+			}
+			every_neighbor_province = {
+				limit = {
+					culture = ROOT
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_claim = ROOT
+			}
+			clr_province_flag = sufi_nation
+			add_nationalism = -3
+			owner = {
+				add_manpower = 1
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.014.c
+		ai_chance = {
+			factor = 10
+			modifier = {
+				patriarch_authority = 0.60
+				factor = 2
+			}
+			modifier = {
+				is_at_war = yes
+				factor = 0
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = sufi_nation
+			}
+			hidden_effect = {
+				clr_province_flag = sufi_nation
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 6
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_6
+			if = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					any_country = {
+						has_country_flag = safaviyya_empire
+						religion = shiite
+					}
+					NOT = {
+						owner = {
+							tag = PER
+						}
+					}
+				}
+				spawn_rebels = {
+					type = safavid_sufis
+					size = 1
+					friend = PER
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							AND = {
+								superregion = persia_superregion
+							}
+							any_country = {
+								has_country_flag = safaviyya_empire
+								religion = shiite
+							}
+						}
+						owner = {
+							tag = PER
+						}
+					}
+				}
+				spawn_rebels = {
+					type = charismatic_shiite_sufis
+					size = 1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.020
+	title = dg_shiite.020.t
+	desc = dg_shiite.020.d
+	picture = muslim_army
+	trigger = {
+		NOT = {
+			has_global_flag = safaviyya_founded
+		}
+		NOT = {
+			has_global_flag = safaviyya_preparing
+		}
+		any_owned_province = {
+			AND = {
+				superregion = persia_superregion
+			}
+			has_province_modifier = charismatic_sufis
+		}
+		is_year = 1440
+		NOT = {
+			has_country_flag = safaviyya_revenge
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			num_of_owned_provinces_with = {
+				AND = {
+					superregion = persia_superregion
+				}
+				has_province_modifier = charismatic_sufis
+				value = 2
+			}
+			factor = 0.5
+		}
+		modifier = {
+			capital_scope = {
+				AND = {
+					superregion = persia_superregion
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			is_year = 1500
+			factor = 0.5
+		}
+	}
+	immediate = {
+		set_global_flag = safaviyya_preparing
+	}
+	option = {
+		name = dg_shiite.020.a
+		hidden_effect = {
+			random_list = {
+				20 = {
+					country_event = {
+						id = dg_shiite.021
+						days = 365
+					}
+				}
+				20 = {
+					country_event = {
+						id = dg_shiite.021
+						days = 547
+					}
+				}
+				20 = {
+					country_event = {
+						id = dg_shiite.021
+						days = 730
+					}
+				}
+				20 = {
+					country_event = {
+						id = dg_shiite.021
+						days = 912
+					}
+				}
+				20 = {
+					country_event = {
+						id = dg_shiite.021
+						days = 1095
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.021
+	title = dg_shiite.021.t
+	desc = dg_shiite.021.d
+	picture = muslim_army
+	trigger = {
+		NOT = {
+			has_global_flag = safaviyya_founded
+		}
+		any_owned_province = {
+			AND = {
+				superregion = persia_superregion
+			}
+			has_province_modifier = charismatic_sufis
+		}
+		is_year = 1440
+		NOT = {
+			has_country_flag = safaviyya_revenge
+		}
+		OR = {
+			AND = {
+				ai = no
+				has_global_flag = safaviyya_preparing
+			}
+			AND = {
+				ai = yes
+				NOT = {
+					has_global_flag = safaviyya_preparing
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			num_of_owned_provinces_with = {
+				AND = {
+					superregion = persia_superregion
+				}
+				has_province_modifier = charismatic_sufis
+				value = 2
+			}
+			factor = 0.5
+		}
+		modifier = {
+			capital_scope = {
+				AND = {
+					superregion = persia_superregion
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			is_year = 1500
+			factor = 0.5
+		}
+	}
+	immediate = {
+		set_global_flag = safaviyya_founded
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					has_province_modifier = charismatic_sufis
+				}
+				set_province_flag = safaviyya_origins
+			}
+			every_known_country = {
+				limit = {
+					religion_group = muslim
+					OR = {
+						any_neighbor_country = {
+							has_country_flag = safaviyya_exile
+						}
+						capital_scope = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+						is_rival = PREV
+					}
+					NOT = {
+						tag = ROOT
+					}
+					NOT = {
+						has_country_flag = safaviyya_exile
+					}
+					NOT = {
+						has_country_flag = safaviyya_refuge_denied
+					}
+					NOT = {
+						has_country_flag = safaviyya_revenge
+					}
+				}
+				set_variable = {
+					which = safavid_refuge_chance
+					value = 1
+				}
+				if = {
+					limit = {
+						religion = shiite
+					}
+					change_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					change_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						any_known_country = {
+							has_country_flag = safaviyya_exile
+							is_rival = PREV
+						}
+					}
+					change_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					check_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+					all_country = {
+						OR = {
+							NOT = {
+								check_variable = {
+									which = safavid_refuge_chance
+									which = PREV
+								}
+							}
+							is_variable_equal = {
+								which = safavid_refuge_chance
+								which = PREV
+							}
+						}
+					}
+				}
+				set_country_flag = next_safavid_refuge
+			}
+			every_country = {
+				set_variable = {
+					which = safavid_refuge_chance
+					value = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.021.a
+		ai_chance = {
+			factor = 40
+		}
+		set_country_flag = safaviyya_exile
+		random_country = {
+			limit = {
+				has_country_flag = next_safavid_refuge
+			}
+			clr_country_flag = next_safavid_refuge
+			country_event = {
+				id = dg_shiite.022
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.021.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				NOT = {
+					manpower_percentage = 0.80
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					manpower_percentage = 0.60
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					manpower_percentage = 0.40
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					manpower_percentage = 0.20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				war_exhaustion = 4
+				factor = 0.7
+			}
+			modifier = {
+				war_exhaustion = 8
+				factor = 0.7
+			}
+			modifier = {
+				war_exhaustion = 12
+				factor = 0.7
+			}
+			modifier = {
+				war_exhaustion = 16
+				factor = 0.7
+			}
+			modifier = {
+				is_at_war = yes
+				factor = 0
+			}
+		}
+		set_country_flag = safaviyya_exile
+		add_legitimacy = 5
+		every_owned_province = {
+			limit = {
+				AND = {
+					superregion = persia_superregion
+				}
+				has_province_modifier = charismatic_sufis
+				owner = {
+					NOT = {
+						tag = PER
+					}
+				}
+			}
+			spawn_rebels = {
+				type = safavid_sufis
+				size = 1
+				friend = PER
+			}
+		}
+		every_owned_province = {
+			limit = {
+				AND = {
+					superregion = persia_superregion
+				}
+				has_province_modifier = charismatic_sufis
+				owner = {
+					tag = PER
+				}
+			}
+			spawn_rebels = {
+				type = charismatic_shiite_sufis
+				size = 1
+			}
+		}
+		random_country = {
+			limit = {
+				has_country_flag = next_safavid_refuge
+			}
+			clr_country_flag = next_safavid_refuge
+			country_event = {
+				id = dg_shiite.022
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.021.c
+		trigger = {
+			OR = {
+				has_country_flag = sufi_patronage
+				has_country_flag = sufi_influence
+				has_country_flag = sufi_government
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		set_country_flag = safaviyya_refuge
+		add_prestige = -5
+		define_advisor = {
+			religion = shiite
+			type = inquisitor
+			discount = yes
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_refuge
+				}
+				clr_country_flag = next_safavid_refuge
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.022
+	title = dg_shiite.022.t
+	desc = dg_shiite.022.d
+	picture = muslim_desert_dervish
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					OR = {
+						has_country_flag = safaviyya_exile
+						has_country_flag = safaviyya_revenge
+						is_rival = ROOT
+						is_enemy = ROOT
+						war_with = ROOT
+						truce_with = ROOT
+						is_neighbor_of = ROOT
+					}
+					NOT = {
+						tag = ROOT
+					}
+					any_owned_province = {
+						AND = {
+							superregion = persia_superregion
+						}
+					}
+				}
+				set_variable = {
+					which = safavid_raid_chance
+					value = 1
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = safaviyya_exile
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						is_rival = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						is_enemy = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						war_with = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						truce_with = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						is_neighbor_of = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							religion = shiite
+						}
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+			}
+			random_known_country = {
+				limit = {
+					check_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+					all_country = {
+						OR = {
+							NOT = {
+								check_variable = {
+									which = safavid_raid_chance
+									which = PREV
+								}
+							}
+							is_variable_equal = {
+								which = safavid_raid_chance
+								which = PREV
+							}
+						}
+					}
+				}
+				set_country_flag = next_safavid_raid
+			}
+			every_known_country = {
+				limit = {
+					religion_group = muslim
+					OR = {
+						any_neighbor_country = {
+							has_country_flag = safaviyya_exile
+						}
+						capital_scope = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+						is_rival = PREV
+					}
+					NOT = {
+						tag = ROOT
+					}
+					NOT = {
+						has_country_flag = safaviyya_exile
+					}
+					NOT = {
+						has_country_flag = safaviyya_refuge_denied
+					}
+					NOT = {
+						has_country_flag = safaviyya_revenge
+					}
+				}
+				set_variable = {
+					which = safavid_refuge_chance
+					value = 1
+				}
+				if = {
+					limit = {
+						religion = shiite
+					}
+					change_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					change_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						any_known_country = {
+							has_country_flag = safaviyya_exile
+							is_rival = PREV
+						}
+					}
+					change_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					check_variable = {
+						which = safavid_refuge_chance
+						value = 1
+					}
+					all_country = {
+						OR = {
+							NOT = {
+								check_variable = {
+									which = safavid_refuge_chance
+									which = PREV
+								}
+							}
+							is_variable_equal = {
+								which = safavid_refuge_chance
+								which = PREV
+							}
+						}
+					}
+				}
+				set_country_flag = next_safavid_refuge
+			}
+			every_country = {
+				set_variable = {
+					which = safavid_raid_chance
+					value = 0
+				}
+				set_variable = {
+					which = safavid_refuge_chance
+					value = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.022.a
+		ai_chance = {
+			factor = 40
+		}
+		define_advisor = {
+			religion = shiite
+			type = inquisitor
+			discount = yes
+		}
+		set_country_flag = safaviyya_refuge
+		add_country_modifier = {
+			name = safavid_court
+			duration = 5000
+		}
+		if = {
+			limit = {
+				has_country_flag = sufi_patronage
+				NOT = {
+					has_country_flag = sufi_government
+				}
+			}
+			set_country_flag = sufi_government
+			add_patriarch_authority = 0.05
+			add_piety = -0.05
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = sufi_patronage
+				}
+			}
+			set_country_flag = sufi_patronage
+			add_patriarch_authority = 0.05
+			add_piety = -0.05
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_raid
+				}
+				clr_country_flag = next_safavid_raid
+			}
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_refuge
+				}
+				clr_country_flag = next_safavid_refuge
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.022.b
+		ai_chance = {
+			factor = 20
+		}
+		define_advisor = {
+			religion = shiite
+			type = inquisitor
+			discount = yes
+		}
+		set_country_flag = safaviyya_refuge
+		add_country_modifier = {
+			name = safavid_court
+			duration = 5000
+		}
+		if = {
+			limit = {
+				has_country_flag = sufi_patronage
+				NOT = {
+					has_country_flag = sufi_government
+				}
+			}
+			set_country_flag = sufi_government
+			add_patriarch_authority = 0.05
+			add_piety = -0.05
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = sufi_patronage
+				}
+			}
+			set_country_flag = sufi_patronage
+			add_patriarch_authority = 0.05
+			add_piety = -0.05
+		}
+		random_country = {
+			limit = {
+				has_country_flag = next_safavid_raid
+			}
+			clr_country_flag = next_safavid_raid
+			country_event = {
+				id = dg_shiite.023
+				days = 30
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_refuge
+				}
+				clr_country_flag = next_safavid_refuge
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.022.c
+		ai_chance = {
+			factor = 40
+		}
+		random_country = {
+			limit = {
+				has_country_flag = next_safavid_refuge
+			}
+			clr_country_flag = next_safavid_refuge
+			country_event = {
+				id = dg_shiite.022
+				days = 30
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_raid
+				}
+				clr_country_flag = next_safavid_raid
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.023
+	title = dg_shiite.023.t
+	desc = dg_shiite.023.d
+	picture = muslim_jihad
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						AND = {
+							superregion = persia_superregion
+						}
+						any_neighbor_province = {
+							owned_by = FROM
+						}
+					}
+				}
+				set_variable = {
+					which = qizilbash_raid_zone
+					value = 1
+				}
+				if = {
+					limit = {
+						any_neighbor_province = {
+							owned_by = FROM
+						}
+					}
+					change_variable = {
+						which = qizilbash_raid_zone
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						any_neighbor_province = {
+							owner = {
+								NOT = {
+									tag = ROOT
+								}
+							}
+						}
+					}
+					change_variable = {
+						which = qizilbash_raid_zone
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						any_neighbor_province = {
+							owner = {
+								NOT = {
+									tag = ROOT
+								}
+								capital_scope = {
+									AND = {
+										superregion = persia_superregion
+									}
+								}
+							}
+						}
+					}
+					change_variable = {
+						which = qizilbash_raid_zone
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						has_province_modifier = charismatic_sufis
+					}
+					change_variable = {
+						which = qizilbash_raid_zone
+						value = 1
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					all_province = {
+						OR = {
+							NOT = {
+								check_variable = {
+									which = qizilbash_raid_zone
+									which = PREV
+								}
+							}
+							is_variable_equal = {
+								which = qizilbash_raid_zone
+								which = PREV
+							}
+						}
+					}
+				}
+				set_province_flag = qizilbash_raid
+			}
+			every_owned_province = {
+				set_variable = {
+					which = qizilbash_raid_zone
+					value = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.023.a
+		random_owned_province = {
+			limit = {
+				has_province_flag = qizilbash_raid
+			}
+			clr_province_flag = qizilbash_raid
+			if = {
+				limit = {
+					owner = {
+						tag = PER
+					}
+				}
+				spawn_rebels = {
+					type = charismatic_shiite_sufis
+					size = 1
+					friend = FROM
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							tag = PER
+						}
+					}
+				}
+				spawn_rebels = {
+					type = safavid_sufis
+					size = 1
+					friend = FROM
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.024
+	title = dg_shiite.024.t
+	desc = dg_shiite.024.d
+	picture = muslim_army
+	trigger = {
+		has_country_flag = safaviyya_refuge
+		NOT = {
+			has_country_flag = safaviyya_murder
+		}
+		NOT = {
+			has_country_modifier = safavid_court
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			NOT = {
+				months_of_ruling = 36
+			}
+			factor = 0.5
+		}
+		modifier = {
+			num_of_rebel_controlled_provinces = 1
+			factor = 0.5
+		}
+		modifier = {
+			is_at_war = yes
+			factor = 0.5
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					OR = {
+						has_country_flag = safaviyya_exile
+						has_country_flag = safaviyya_revenge
+						is_rival = ROOT
+						is_enemy = ROOT
+						war_with = ROOT
+						truce_with = ROOT
+						is_neighbor_of = ROOT
+					}
+					NOT = {
+						tag = ROOT
+					}
+					any_owned_province = {
+						AND = {
+							superregion = persia_superregion
+						}
+					}
+				}
+				set_variable = {
+					which = safavid_raid_chance
+					value = 1
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = safaviyya_exile
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						is_rival = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						is_enemy = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						war_with = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						truce_with = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						is_neighbor_of = ROOT
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							religion = shiite
+						}
+					}
+					change_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+				}
+			}
+			random_known_country = {
+				limit = {
+					check_variable = {
+						which = safavid_raid_chance
+						value = 1
+					}
+					all_country = {
+						OR = {
+							NOT = {
+								check_variable = {
+									which = safavid_raid_chance
+									which = PREV
+								}
+							}
+							is_variable_equal = {
+								which = safavid_raid_chance
+								which = PREV
+							}
+						}
+					}
+				}
+				set_country_flag = next_safavid_raid
+			}
+			every_country = {
+				set_variable = {
+					which = safavid_raid_chance
+					value = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.024.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_at_war = yes
+				factor = 2
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = sponsored_safaviyya_raids
+			}
+			set_country_flag = safaviyya_threat
+		}
+		set_country_flag = sponsored_safaviyya_raids
+		add_country_modifier = {
+			name = safavid_court
+			duration = 5000
+		}
+		random_country = {
+			limit = {
+				has_country_flag = next_safavid_raid
+			}
+			clr_country_flag = next_safavid_raid
+			country_event = {
+				id = dg_shiite.023
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.024.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				NOT = {
+					legitimacy = 80
+				}
+				factor = 1.4
+			}
+		}
+		set_country_flag = safaviyya_threat
+		add_country_modifier = {
+			name = safavid_court
+			duration = 5000
+		}
+		add_legitimacy = 2
+		if = {
+			limit = {
+				has_country_flag = sufi_patronage
+				NOT = {
+					has_country_flag = sufi_government
+				}
+			}
+			set_country_flag = sufi_government
+			add_patriarch_authority = 0.05
+			add_piety = -0.05
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = sufi_patronage
+				}
+			}
+			set_country_flag = sufi_patronage
+			add_patriarch_authority = 0.05
+			add_piety = -0.05
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_raid
+				}
+				clr_country_flag = next_safavid_raid
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.024.c
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_country_flag = safaviyya_threat
+				}
+				factor = 0
+			}
+		}
+		set_country_flag = safaviyya_murder
+		clr_country_flag = sufi_government
+		clr_country_flag = sufi_patronage
+		clr_country_flag = sufi_influence
+		if = {
+			limit = {
+				tag = PER
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = charismatic_shiite_sufis
+					size = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = PER
+				}
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = safavid_sufis
+					size = 1
+					friend = PER
+				}
+			}
+		}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					has_country_flag = next_safavid_raid
+				}
+				clr_country_flag = next_safavid_raid
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.025
+	title = dg_shiite.025.t
+	desc = dg_shiite.025.d
+	picture = muslim_jihad_success
+	trigger = {
+		has_country_flag = safaviyya_threat
+		NOT = {
+			has_global_flag = safaviyya_dynasty
+		}
+		NOT = {
+			has_country_flag = safaviyya_dynasty
+		}
+		OR = {
+			NOT = {
+				legitimacy = 50
+			}
+			AND = {
+				has_any_disaster = yes
+			}
+			NOT = {
+				war_score = -50
+			}
+			war_exhaustion = 10
+			AND = {
+				NOT = {
+					ADM = 3
+				}
+				NOT = {
+					MIL = 3
+				}
+				NOT = {
+					DIP = 3
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 25
+	}
+	immediate = {
+		set_country_flag = safaviyya_dynasty
+	}
+	option = {
+		name = dg_shiite.025.a
+		trigger = {
+			is_at_war = no
+			NOT = {
+				exists = PER
+			}
+		}
+		ai_chance = {
+			factor = 80
+		}
+		change_tag = PER
+		swap_free_idea_group = yes
+		change_primary_culture = persian
+		if = {
+			limit = {
+				NOT = {
+					religion = shiite
+				}
+			}
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = shiite
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = shiite_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = shiite_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = shiite_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = shiite
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = shiite
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = shiite
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_shiite
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = shiite
+		}
+		remove_country_modifier = obstacle_succession
+		remove_country_modifier = obstacle_feuding
+		remove_country_modifier = obstacle_shifting_loyalties
+		disband_rebels = safavid_sufis
+		disband_rebels = charismatic_shiite_sufis
+		define_ruler = {
+			dynasty = "Safavid"
+			religion = shiite
+			age = 18
+			ADM = 4
+			DIP = 4
+			MIL = 5
+		}
+		kill_heir = yes
+	}
+	option = {
+		name = dg_shiite.025.b
+		ai_chance = {
+			factor = 20
+		}
+		set_country_flag = safaviyya_murder
+		if = {
+			limit = {
+				tag = PER
+			}
+			every_owned_province = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					OR = {
+						is_capital = yes
+						has_province_modifier = charismatic_sufis
+						has_province_flag = safaviyya_origins
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+					}
+				}
+				spawn_rebels = {
+					type = charismatic_shiite_sufis
+					size = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = PER
+				}
+			}
+			every_owned_province = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					OR = {
+						is_capital = yes
+						has_province_modifier = charismatic_sufis
+						has_province_flag = safaviyya_origins
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+					}
+				}
+				spawn_rebels = {
+					type = safavid_sufis
+					size = 1
+					friend = PER
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.026
+	title = dg_shiite.026.t
+	desc = dg_shiite.026.d
+	picture = muslim_jihad
+	trigger = {
+		has_country_flag = safaviyya_murder
+		had_country_flag = {
+			flag = safaviyya_murder
+			days = 4000
+		}
+		NOT = {
+			has_country_flag = safaviyya_revenge
+		}
+		OR = {
+			AND = {
+				has_any_disaster = yes
+			}
+			NOT = {
+				manpower_percentage = 0.50
+			}
+			war_exhaustion = 4
+			is_bankrupt = yes
+			num_of_rebel_controlled_provinces = 1
+			NOT = {
+				stability = 0
+			}
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = dg_shiite.026.a
+		set_country_flag = safaviyya_revenge
+		if = {
+			limit = {
+				tag = PER
+			}
+			every_owned_province = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					OR = {
+						is_capital = yes
+						has_province_modifier = charismatic_sufis
+						has_province_flag = safaviyya_origins
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+					}
+				}
+				spawn_rebels = {
+					type = charismatic_shiite_sufis
+					size = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = PER
+				}
+			}
+			every_owned_province = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					OR = {
+						is_capital = yes
+						has_province_modifier = charismatic_sufis
+						has_province_flag = safaviyya_origins
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+					}
+				}
+				spawn_rebels = {
+					type = safavid_sufis
+					size = 2
+					friend = PER
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.027
+	title = dg_shiite.027.t
+	desc = dg_shiite.027.d
+	picture = muslim_mosque
+	trigger = {
+		tag = PER
+		dynasty = "Safavid"
+		religion = shiite
+		NOT = {
+			has_country_flag = safaviyya_empire
+		}
+		has_global_flag = safaviyya_founded
+		NOT = {
+			has_global_flag = safaviyya_dynasty
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		set_global_flag = safaviyya_dynasty
+		set_country_flag = safaviyya_empire
+		add_country_modifier = {
+			name = blessing_of_god
+			duration = -1
+		}
+		if = {
+			limit = {
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+			}
+			add_liberty_desire = 200
+		}
+		hidden_effect = {
+			disband_rebels = nationalist_rebels
+			disband_rebels = shiite_rebels
+			disband_rebels = charismatic_shiite_sufis
+			if = {
+				limit = {
+					war_exhaustion = 1
+				}
+				add_war_exhaustion = -5
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					ADM = 6
+				}
+				NOT = {
+					DIP = 6
+				}
+				NOT = {
+					MIL = 6
+				}
+			}
+			define_ruler = {
+				dynasty = "Safavid"
+				religion = shiite
+				age = 18
+				ADM = 4
+				DIP = 4
+				MIL = 5
+			}
+		}
+		set_country_flag = persian_union
+		add_accepted_culture = persian
+		add_accepted_culture = qashqai
+		add_accepted_culture = lurish
+		add_accepted_culture = east_persian
+		add_accepted_culture = tabari
+		add_accepted_culture = baluchi
+		add_accepted_culture = kurdish
+		add_accepted_culture = pashtun
+		add_accepted_culture = azerbadjani
+		add_accepted_culture = tajihk
+		add_accepted_culture = khuzi
+		add_ruler_modifier = {
+			name = sword_of_faith
+			duration = -1
+		}
+		every_province = {
+			limit = {
+				AND = {
+					superregion = persia_superregion
+				}
+				NOT = {
+					is_core = ROOT
+				}
+				OR = {
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+			}
+			add_core = PER
+		}
+		hidden_effect = {
+			every_province = {
+				limit = {
+					AND = {
+						superregion = persia_superregion
+					}
+					NOT = {
+						owned_by = PER
+					}
+					NOT = {
+						any_neighbor_province = {
+							owned_by = PER
+						}
+					}
+				}
+				add_permanent_claim = PER
+			}
+			every_owned_province = {
+				limit = {
+					is_core = PER
+					AND = {
+						superregion = persia_superregion
+					}
+				}
+				owner = {
+					add_manpower = 1
+					add_treasury = 50
+					if = {
+						limit = {
+							OR = {
+								NOT = {
+									army_size_percentage = 1.0
+								}
+								NOT = {
+									num_of_infantry = 15
+								}
+							}
+						}
+						infantry = capital
+						cavalry = capital
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+				}
+				NOT = {
+					has_country_flag = religious_turmoil_happening
+				}
+				religion = shiite
+			}
+			country_event = {
+				id = dg_shiite.029
+				days = 500
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.027.a
+		ai_chance = {
+			factor = 80
+		}
+		add_accepted_culture = persian
+		add_accepted_culture = qashqai
+		add_accepted_culture = lurish
+		add_accepted_culture = east_persian
+		add_accepted_culture = tabari
+		add_accepted_culture = baluchi
+		add_accepted_culture = kurdish
+		add_accepted_culture = pashtun
+		add_accepted_culture = azerbadjani
+		add_accepted_culture = tajihk
+		add_accepted_culture = khuzi
+		if = {
+			limit = {
+				government = theocracy
+			}
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = hereditary_elite
+			hidden_effect = {
+				set_legacy_government = despotic_monarchy
+			}
+			set_legacy_government = feudal_monarchy
+		}
+		if = {
+			limit = {
+				NOT = {
+					legitimacy = 90
+				}
+			}
+			add_legitimacy = 25
+		}
+		if = {
+			limit = {
+				NOT = {
+					prestige = 25
+				}
+			}
+			add_prestige = 25
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = ROOT
+				}
+				any_owned_province = {
+					OR = {
+						AND = {
+							superregion = persia_superregion
+						}
+						any_neighbor_province = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					OR = {
+						has_province_modifier = charismatic_sufis
+						has_province_modifier = sufi_shrine
+						AND = {
+							religion = shiite
+							NOT = {
+								has_owner_religion = yes
+							}
+						}
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+						is_core = PER
+						any_neighbor_province = {
+							owned_by = ROOT
+							is_capital = yes
+						}
+						AND = {
+							is_capital = yes
+							owner = {
+								AND = {
+									has_any_disaster = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			country_event = {
+				id = dg_shiite.028
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.027.b
+		ai_chance = {
+			factor = 20
+		}
+		if = {
+			limit = {
+				NOT = {
+					ADM = 4
+				}
+				NOT = {
+					DIP = 4
+				}
+				NOT = {
+					MIL = 4
+				}
+			}
+			define_ruler = {
+				dynasty = "Safavid"
+				religion = shiite
+				age = 18
+				ADM = 4
+				DIP = 4
+				MIL = 5
+			}
+		}
+		if = {
+			limit = {
+				government = monarchy
+			}
+			change_government = theocracy
+			add_government_reform = ruling_clergy_reform
+			add_government_reform = council_reform
+			add_government_reform = churchmen_rule
+			set_legacy_government = theocratic_government
+		}
+		if = {
+			limit = {
+				NOT = {
+					prestige = 25
+				}
+			}
+			add_prestige = 25
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = ROOT
+				}
+				any_owned_province = {
+					OR = {
+						AND = {
+							superregion = persia_superregion
+						}
+						any_neighbor_province = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					OR = {
+						has_province_modifier = charismatic_sufis
+						has_province_modifier = sufi_shrine
+						AND = {
+							religion = shiite
+							NOT = {
+								has_owner_religion = yes
+							}
+						}
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+						is_core = PER
+						any_neighbor_province = {
+							owned_by = ROOT
+							is_capital = yes
+						}
+						AND = {
+							is_capital = yes
+							owner = {
+								AND = {
+									has_any_disaster = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			country_event = {
+				id = dg_shiite.028
+				days = 30
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.028
+	title = dg_shiite.027.t
+	desc = dg_shiite.027.d
+	picture = muslim_jihad
+	is_triggered_only = yes
+	option = {
+		name = dg_shiite.027.b
+		if = {
+			limit = {
+				tag = PER
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						AND = {
+							superregion = persia_superregion
+						}
+						any_neighbor_province = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					OR = {
+						has_province_modifier = charismatic_sufis
+						has_province_modifier = sufi_shrine
+						AND = {
+							religion = shiite
+							NOT = {
+								has_owner_religion = yes
+							}
+						}
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+						is_core = PER
+						any_neighbor_province = {
+							owned_by = FROM
+							is_capital = yes
+						}
+						AND = {
+							is_capital = yes
+							owner = {
+								AND = {
+									has_any_disaster = yes
+								}
+							}
+						}
+					}
+				}
+				spawn_rebels = {
+					type = charismatic_shiite_sufis
+					size = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = PER
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						AND = {
+							superregion = persia_superregion
+						}
+						any_neighbor_province = {
+							AND = {
+								superregion = persia_superregion
+							}
+						}
+					}
+					OR = {
+						has_province_modifier = charismatic_sufis
+						has_province_modifier = sufi_shrine
+						AND = {
+							religion = shiite
+							NOT = {
+								has_owner_religion = yes
+							}
+						}
+						check_variable = {
+							which = heretics
+							value = 2
+						}
+						is_core = PER
+						any_neighbor_province = {
+							owned_by = FROM
+							is_capital = yes
+						}
+						AND = {
+							is_capital = yes
+							owner = {
+								AND = {
+									has_any_disaster = yes
+								}
+							}
+						}
+					}
+				}
+				spawn_rebels = {
+					type = safavid_sufis
+					size = 1
+					friend = PER
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.029
+	title = dg_shiite.029.t
+	desc = dg_shiite.029.d
+	picture = muslim_call_to_prayer
+	is_triggered_only = yes
+	option = {
+		name = dg_shiite.029.a
+		ai_chance = {
+			factor = 70
+		}
+		define_advisor = {
+			religion = sunni
+			type = inquisitor
+			discount = yes
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 1
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 2
+					}
+				}
+			}
+			add_mil_power = -20
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 2
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 3
+					}
+				}
+			}
+			add_mil_power = -40
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 3
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 4
+					}
+				}
+			}
+			add_mil_power = -60
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 4
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 5
+					}
+				}
+			}
+			add_mil_power = -80
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 5
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 6
+					}
+				}
+			}
+			add_mil_power = -100
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 6
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 7
+					}
+				}
+			}
+			add_mil_power = -120
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 7
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 8
+					}
+				}
+			}
+			add_mil_power = -140
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 8
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 9
+					}
+				}
+			}
+			add_mil_power = -160
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 9
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						check_variable = {
+							which = sunni
+							value = 2
+						}
+						value = 10
+					}
+				}
+			}
+			add_mil_power = -180
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					value = 10
+				}
+			}
+			add_mil_power = -200
+		}
+		if = {
+			limit = {
+				has_country_modifier = edict_of_tolerance
+			}
+			remove_country_modifier = edict_of_tolerance
+		}
+		add_war_exhaustion = 2
+		if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 45
+				}
+			}
+			add_years_of_income = 0.50
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 40
+				}
+			}
+			add_years_of_income = 0.45
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 35
+				}
+			}
+			add_years_of_income = 0.40
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 30
+				}
+			}
+			add_years_of_income = 0.35
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 25
+				}
+			}
+			add_years_of_income = 0.30
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 20
+				}
+			}
+			add_years_of_income = 0.25
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 15
+				}
+			}
+			add_years_of_income = 0.20
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 10
+				}
+			}
+			add_years_of_income = 0.15
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = sunni_population
+					value = 5
+				}
+			}
+			add_years_of_income = 0.10
+		}
+		else = {
+			add_years_of_income = 0.05
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = religious_intolerance
+				}
+			}
+			add_piety = 0.20
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 1600
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 800
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 400
+				}
+			}
+		}
+		set_country_flag = religious_turmoil_sunni
+		set_country_flag = religious_turmoil_happening
+		every_owned_province = {
+			limit = {
+				religion = sunni
+				has_building = temple
+			}
+			remove_building = temple
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 4
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 4
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 4
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 6
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 4
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 6
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 6
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 8
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 6
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 8
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 3
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_3
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 8
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 10
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 8
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 10
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 4
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_4
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 10
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 12
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 10
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 12
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 12
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 14
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 12
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 14
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 6
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_6
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 14
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 16
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 14
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 16
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 7
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_7
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 16
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 18
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 16
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 18
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 8
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_8
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 18
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 20
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 18
+					}
+					NOT = {
+						check_variable = {
+							which = sunni
+							value = 20
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 9
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_9
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = sunni
+						value = 20
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 20
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 10
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_10
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = sunni
+						value = 2
+					}
+					controlled_by = owner
+					is_city = yes
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				add_province_modifier = {
+					name = expulsion_of_heretics
+					duration = 1500
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 200
+						}
+					}
+					any_owned_province = {
+						region = persia_region
+					}
+				}
+				NOT = {
+					religion = shiite
+				}
+				check_variable = {
+					which = shiite_population
+					value = 0.5
+				}
+			}
+			country_event = {
+				id = dg_shiite.030
+				days = 500
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = sunni
+				OR = {
+					piety = 0.60
+					AND = {
+						piety = 0.20
+						NOT = {
+							piety = 0.60
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_fanatical
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 24
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = sunni
+				OR = {
+					AND = {
+						piety = 0.20
+						NOT = {
+							piety = 0.60
+						}
+						NOT = {
+							OR = {
+								is_neighbor_of = ROOT
+								alliance_with = ROOT
+								marriage_with = ROOT
+								junior_union_with = ROOT
+								senior_union_with = ROOT
+								truce_with = ROOT
+							}
+						}
+					}
+					AND = {
+						piety = -0.20
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_pious
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 12
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = sunni
+				OR = {
+					AND = {
+						piety = -0.20
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							OR = {
+								is_neighbor_of = ROOT
+								alliance_with = ROOT
+								marriage_with = ROOT
+								junior_union_with = ROOT
+								senior_union_with = ROOT
+								truce_with = ROOT
+							}
+						}
+					}
+					AND = {
+						piety = -0.60
+						NOT = {
+							piety = -0.20
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_observant
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 6
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = sunni
+				OR = {
+					AND = {
+						piety = -0.60
+						NOT = {
+							piety = -0.20
+						}
+						NOT = {
+							OR = {
+								is_neighbor_of = ROOT
+								alliance_with = ROOT
+								marriage_with = ROOT
+								junior_union_with = ROOT
+								senior_union_with = ROOT
+								truce_with = ROOT
+							}
+						}
+					}
+					AND = {
+						NOT = {
+							piety = -0.60
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_decadent
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 3
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				ai = no
+				religion = sunni
+				has_country_flag = religious_news_major
+			}
+			country_event = {
+				id = dg_turmoil.065
+				days = 15
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.029.b
+		ai_chance = {
+			factor = 30
+		}
+		custom_tooltip = stability_points_gained_100
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 100
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		remove_advisor = inquisitor
+		add_country_modifier = {
+			name = religious_controversy
+			duration = 1000
+		}
+		add_country_modifier = {
+			name = religious_tolerance
+			duration = 5000
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = religious_tolerance
+				}
+			}
+			add_piety = -0.10
+		}
+		if = {
+			limit = {
+				has_country_modifier = religious_intolerance
+			}
+			add_piety = -0.20
+			remove_country_modifier = religious_intolerance
+		}
+	}
+}
+country_event = {
+	id = dg_shiite.030
+	title = dg_shiite.030.t
+	desc = dg_shiite.030.d
+	picture = all_pilgrims
+	is_triggered_only = yes
+	option = {
+		name = dg_shiite.030.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				check_variable = {
+					which = shiite_population
+					value = 10
+				}
+				factor = 0.7
+			}
+			modifier = {
+				check_variable = {
+					which = shiite_population
+					value = 20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				check_variable = {
+					which = shiite_population
+					value = 30
+				}
+				factor = 0.7
+			}
+			modifier = {
+				check_variable = {
+					which = shiite_population
+					value = 40
+				}
+				factor = 0.7
+			}
+		}
+		every_owned_province = {
+			limit = {
+				check_variable = {
+					which = shiite
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						any_neighbor_province = {
+							owned_by = FROM
+						}
+						culture_group = FROM
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+				random = {
+					chance = 50
+					custom_tooltip = convert_10
+					hidden_effect = {
+						change_variable = {
+							which = shiite
+							value = -2
+						}
+						change_variable = {
+							which = converts
+							value = 2
+						}
+						owner = {
+							FROM = {
+								change_variable = {
+									which = shiites_to_persia
+									value = 1
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							base_production = 2
+							check_variable = {
+								which = refugee_movement
+								value = -1
+							}
+							OR = {
+								development = 7
+								check_variable = {
+									which = refugee_movement
+									value = 0
+								}
+							}
+						}
+						random = {
+							chance = 25
+							hidden_effect = {
+								change_variable = {
+									which = refugee_movement
+									value = -1
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							culture_group = FROM
+						}
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = shiite_population
+					value = 40
+				}
+			}
+			add_stability = -3
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -15
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = shiite_population
+					value = 20
+				}
+			}
+			add_stability = -2
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -10
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = shiite_population
+					value = 10
+				}
+			}
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = shiite
+				OR = {
+					piety = 0.60
+					has_country_modifier = sword_of_faith
+					AND = {
+						piety = 0.20
+						NOT = {
+							piety = 0.60
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_fanatical
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 24
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = shiite
+				OR = {
+					has_country_modifier = sword_of_faith
+					AND = {
+						piety = 0.20
+						NOT = {
+							piety = 0.60
+						}
+						NOT = {
+							OR = {
+								is_neighbor_of = ROOT
+								alliance_with = ROOT
+								marriage_with = ROOT
+								junior_union_with = ROOT
+								senior_union_with = ROOT
+								truce_with = ROOT
+							}
+						}
+					}
+					AND = {
+						piety = -0.20
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_pious
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 12
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = shiite
+				OR = {
+					has_country_modifier = sword_of_faith
+					AND = {
+						piety = -0.20
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							OR = {
+								is_neighbor_of = ROOT
+								alliance_with = ROOT
+								marriage_with = ROOT
+								junior_union_with = ROOT
+								senior_union_with = ROOT
+								truce_with = ROOT
+							}
+						}
+					}
+					AND = {
+						piety = -0.60
+						NOT = {
+							piety = -0.20
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_observant
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 6
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					ai = yes
+					NOT = {
+						has_country_flag = religious_news_major
+					}
+				}
+				religion = shiite
+				OR = {
+					has_country_modifier = sword_of_faith
+					AND = {
+						piety = -0.60
+						NOT = {
+							piety = -0.20
+						}
+						NOT = {
+							OR = {
+								is_neighbor_of = ROOT
+								alliance_with = ROOT
+								marriage_with = ROOT
+								junior_union_with = ROOT
+								senior_union_with = ROOT
+								truce_with = ROOT
+							}
+						}
+					}
+					AND = {
+						NOT = {
+							piety = -0.60
+						}
+						OR = {
+							is_neighbor_of = ROOT
+							alliance_with = ROOT
+							marriage_with = ROOT
+							junior_union_with = ROOT
+							senior_union_with = ROOT
+							truce_with = ROOT
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = mistreated_coreligionists_decadent
+			}
+			add_casus_belli = {
+				target = ROOT
+				months = 3
+				type = cb_holy_war_vengeance
+			}
+		}
+		every_country = {
+			limit = {
+				ai = no
+				religion = shiite
+				has_country_flag = religious_news_major
+			}
+			country_event = {
+				id = dg_turmoil.065
+				days = 15
+			}
+		}
+		random_owned_province = {
+			limit = {
+				any_owned_province = {
+					check_variable = {
+						which = shiite
+						value = 2
+					}
+				}
+				NOT = {
+					controlled_by = safavid_sufis
+				}
+				OR = {
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+					NOT = {
+						culture_group = owner
+					}
+					NOT = {
+						is_core = owner
+					}
+					unrest = 1
+				}
+			}
+			province_event = {
+				id = dg_shiite.031
+				days = 1000
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.030.b
+		ai_chance = {
+			factor = 50
+		}
+		every_owned_province = {
+			limit = {
+				check_variable = {
+					which = shiite
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						any_neighbor_province = {
+							owned_by = FROM
+						}
+						culture_group = FROM
+					}
+				}
+				custom_tooltip = convert_10
+				hidden_effect = {
+					change_variable = {
+						which = shiite
+						value = -2
+					}
+					change_variable = {
+						which = converts
+						value = 2
+					}
+					owner = {
+						FROM = {
+							change_variable = {
+								which = shiites_to_persia
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						base_production = 2
+						check_variable = {
+							which = refugee_movement
+							value = -1
+						}
+						OR = {
+							development = 20
+							check_variable = {
+								which = refugee_movement
+								value = 0
+							}
+						}
+					}
+					random = {
+						chance = 25
+						hidden_effect = {
+							change_variable = {
+								which = refugee_movement
+								value = -1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							culture_group = FROM
+						}
+					}
+				}
+				random = {
+					chance = 50
+					custom_tooltip = convert_10
+					hidden_effect = {
+						change_variable = {
+							which = shiite
+							value = -2
+						}
+						change_variable = {
+							which = converts
+							value = 2
+						}
+						owner = {
+							FROM = {
+								change_variable = {
+									which = shiites_to_persia
+									value = 1
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							base_production = 2
+							check_variable = {
+								which = refugee_movement
+								value = -1
+							}
+							OR = {
+								development = 7
+								check_variable = {
+									which = refugee_movement
+									value = 0
+								}
+							}
+						}
+						random = {
+							chance = 25
+							hidden_effect = {
+								change_variable = {
+									which = refugee_movement
+									value = -1
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = shiite_population
+					value = 40
+				}
+			}
+			add_yearly_manpower = -0.40
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = shiite_population
+					value = 20
+				}
+			}
+			add_yearly_manpower = -0.20
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = shiite_population
+					value = 10
+				}
+			}
+			add_yearly_manpower = -0.10
+		}
+	}
+}
+province_event = {
+	id = dg_shiite.031
+	title = dg_shiite.031.t
+	desc = dg_shiite.031.d
+	picture = muslim_arab_raid
+	is_triggered_only = yes
+	option = {
+		name = dg_shiite.031.a
+		spawn_rebels = {
+			type = safavid_sufis
+			size = 1
+		}
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = 10
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_10
+	}
+}
+country_event = {
+	id = dg_shiite.032
+	title = dg_shiite.032.t
+	desc = dg_shiite.032.d
+	picture = all_pilgrims
+	trigger = {
+		religion = shiite
+		check_variable = {
+			which = shiites_to_persia
+			value = 1
+		}
+	}
+	mean_time_to_happen = {
+		months = 5
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_in_capital_area = yes
+					is_city = yes
+					OR = {
+						NOT = {
+							has_province_modifier = cultural_tensions
+						}
+						is_capital = yes
+					}
+					OR = {
+						culture_group = owner
+						is_capital = yes
+					}
+					OR = {
+						is_core = owner
+						is_capital = yes
+					}
+				}
+				set_province_flag = shiite_wave_target
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = shiites_to_persia
+						value = 2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_in_capital_area = yes
+						is_city = yes
+						NOT = {
+							has_province_flag = shiite_wave_target
+						}
+						OR = {
+							NOT = {
+								has_province_modifier = cultural_tensions
+							}
+							is_capital = yes
+						}
+						OR = {
+							culture_group = owner
+							is_capital = yes
+						}
+						OR = {
+							is_core = owner
+							is_capital = yes
+						}
+					}
+					set_province_flag = shiite_wave_target
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = shiites_to_persia
+							value = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							is_in_capital_area = yes
+							is_city = yes
+							NOT = {
+								has_province_flag = shiite_wave_target
+							}
+							OR = {
+								NOT = {
+									has_province_modifier = cultural_tensions
+								}
+								is_capital = yes
+							}
+							OR = {
+								culture_group = owner
+								is_capital = yes
+							}
+							OR = {
+								is_core = owner
+								is_capital = yes
+							}
+						}
+						set_province_flag = shiite_wave_target
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = shiites_to_persia
+								value = 4
+							}
+						}
+						random_owned_province = {
+							limit = {
+								is_in_capital_area = yes
+								is_city = yes
+								NOT = {
+									has_province_flag = shiite_wave_target
+								}
+								OR = {
+									NOT = {
+										has_province_modifier = cultural_tensions
+									}
+									is_capital = yes
+								}
+								OR = {
+									culture_group = owner
+									is_capital = yes
+								}
+								OR = {
+									is_core = owner
+									is_capital = yes
+								}
+							}
+							set_province_flag = shiite_wave_target
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = shiites_to_persia
+									value = 5
+								}
+							}
+							random_owned_province = {
+								limit = {
+									is_in_capital_area = yes
+									is_city = yes
+									NOT = {
+										has_province_flag = shiite_wave_target
+									}
+									OR = {
+										NOT = {
+											has_province_modifier = cultural_tensions
+										}
+										is_capital = yes
+									}
+									OR = {
+										culture_group = owner
+										is_capital = yes
+									}
+									OR = {
+										is_core = owner
+										is_capital = yes
+									}
+								}
+								set_province_flag = shiite_wave_target
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_shiite.032.a
+		if = {
+			limit = {
+				check_variable = {
+					which = shiites_to_persia
+					value = 5
+				}
+			}
+			add_manpower = 5
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = shiites_to_persia
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = shiites_to_persia
+							value = 5
+						}
+					}
+				}
+				add_manpower = 4
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = shiites_to_persia
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = shiites_to_persia
+							value = 4
+						}
+					}
+				}
+				add_manpower = 3
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = shiites_to_persia
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = shiites_to_persia
+							value = 3
+						}
+					}
+				}
+				add_manpower = 2
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = shiites_to_persia
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = shiites_to_persia
+							value = 2
+						}
+					}
+				}
+				add_manpower = 1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = shiite_wave_target
+			}
+			clr_province_flag = shiite_wave_target
+			add_province_modifier = {
+				name = cultural_tensions
+				duration = 500
+			}
+			custom_tooltip = convert_10
+			hidden_effect = {
+				change_variable = {
+					which = converted_heathens
+					value = 2
+				}
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = shiites_to_persia
+				value = -5
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = shiites_to_persia
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = shiites_to_persia
+					value = 0
+				}
+			}
+		}
+	}
+}

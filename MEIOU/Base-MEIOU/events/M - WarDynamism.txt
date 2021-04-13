@@ -1,0 +1,3034 @@
+namespace = war_dynamism
+country_event = {
+	id = war_dynamism.91
+	title = no_localization
+	desc = no_localization
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		every_country = {
+			limit = {
+				is_at_war = yes
+				is_in_war = {
+					attacker_leader = THIS
+				}
+			}
+			save_event_target_as = attacker_leader
+			every_country = {
+				limit = {
+					is_at_war = yes
+					is_in_war = {
+						attacker_leader = event_target:attacker_leader
+						defender_leader = THIS
+					}
+				}
+				save_event_target_as = defender_leader
+				if = {
+					limit = {
+						NOT = {
+							war_score_against = {
+								who = event_target:attacker_leader
+								value = -5
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							is_in_war = {
+								attacker_leader = event_target:attacker_leader
+								defender_leader = event_target:defender_leader
+							}
+							defensive_war_with = event_target:attacker_leader
+						}
+						every_country = {
+							limit = {
+								is_in_war = {
+									attacker_leader = event_target:attacker_leader
+									defender_leader = event_target:defender_leader
+								}
+								offensive_war_with = event_target:defender_leader
+							}
+							set_country_flag = has_wd_flag
+							set_country_flag = winning_against_@PREV
+						}
+					}
+				}
+				else = {
+					every_country = {
+						limit = {
+							is_in_war = {
+								attacker_leader = event_target:attacker_leader
+								defender_leader = event_target:defender_leader
+							}
+							defensive_war_with = event_target:attacker_leader
+						}
+						every_country = {
+							limit = {
+								is_in_war = {
+									attacker_leader = event_target:attacker_leader
+									defender_leader = event_target:defender_leader
+								}
+								offensive_war_with = event_target:defender_leader
+							}
+							if = {
+								limit = {
+									has_country_flag = winning_against_@PREV
+								}
+								clr_country_flag = winning_against_@PREV
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						war_score_against = {
+							who = event_target:attacker_leader
+							value = 5
+						}
+					}
+					every_country = {
+						limit = {
+							is_in_war = {
+								attacker_leader = event_target:attacker_leader
+								defender_leader = event_target:defender_leader
+							}
+							offensive_war_with = event_target:defender_leader
+						}
+						every_country = {
+							limit = {
+								is_in_war = {
+									attacker_leader = event_target:attacker_leader
+									defender_leader = event_target:defender_leader
+								}
+								defensive_war_with = event_target:attacker_leader
+							}
+							set_country_flag = has_wd_flag
+							set_country_flag = winning_against_@PREV
+						}
+					}
+				}
+				else = {
+					every_country = {
+						limit = {
+							is_in_war = {
+								attacker_leader = event_target:attacker_leader
+								defender_leader = event_target:defender_leader
+							}
+							offensive_war_with = event_target:defender_leader
+						}
+						every_country = {
+							limit = {
+								is_in_war = {
+									attacker_leader = event_target:attacker_leader
+									defender_leader = event_target:defender_leader
+								}
+								defensive_war_with = event_target:attacker_leader
+							}
+							if = {
+								limit = {
+									has_country_flag = winning_against_@PREV
+								}
+								clr_country_flag = winning_against_@PREV
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = no_localization
+	}
+}
+country_event = {
+	id = war_dynamism.92
+	title = no_localization
+	desc = no_localization
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		every_country = {
+			limit = {
+				has_country_flag = has_wd_flag
+				is_at_war = no
+			}
+			clr_country_flag = has_wd_flag
+			every_country = {
+				PREV = {
+					if = {
+						limit = {
+							has_country_flag = winning_against_@PREV
+						}
+						clr_country_flag = winning_against_@PREV
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = no_localization
+	}
+}
+province_event = {
+	id = war_dynamism.1
+	title = "war_dynamism.1.t"
+	desc = "war_dynamism.1.d"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			controlled_by = owner
+		}
+		NOT = {
+			has_province_modifier = war_dynamism
+		}
+		NOT = {
+			controlled_by = REB
+		}
+		NOT = {
+			has_siege = yes
+		}
+		is_capital = no
+		controller = {
+			has_country_flag = winning_against_@PREV
+		}
+		OR = {
+			is_core = controller
+			AND = {
+				controller = {
+					dip_tech = 35
+				}
+				OR = {
+					AND = {
+						controller = {
+							dip_tech = 45
+						}
+						OR = {
+							AND = {
+								NOT = {
+									culture_group = owner
+								}
+								culture_group = controller
+								controller = {
+									accepted_culture = ROOT
+								}
+							}
+							AND = {
+								OR = {
+									culture_group = langue_d_oc
+									culture_group = langue_d_oil
+								}
+								controller = {
+									OR = {
+										culture_group = langue_d_oc
+										culture_group = langue_d_oil
+									}
+									accepted_culture = ROOT
+								}
+							}
+						}
+					}
+					AND = {
+						culture = controller
+						NOT = {
+							culture = owner
+						}
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					owner = {
+						tolerance_to_this = 3
+					}
+				}
+				OR = {
+					AND = {
+						NOT = {
+							religion = owner
+						}
+						religion = controller
+					}
+					AND = {
+						NOT = {
+							religion_group = owner
+						}
+						religion_group = controller
+					}
+				}
+				OR = {
+					controller = {
+						tolerance_to_this = 8
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 7
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = 2
+							}
+						}
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 6
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = 1
+							}
+						}
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 5
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = 0
+							}
+						}
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 4
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = -1
+							}
+						}
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 3
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = -2
+							}
+						}
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 2
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = -3
+							}
+						}
+					}
+					AND = {
+						controller = {
+							tolerance_to_this = 1
+						}
+						NOT = {
+							owner = {
+								tolerance_to_this = -4
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				owner = {
+					OR = {
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = steppe_horde
+									NOT = {
+										has_country_modifier = title_6
+										has_country_flag = title_6
+									}
+								}
+								has_reform = steppe_horde_legacy
+							}
+						}
+					}
+				}
+				controller = {
+					culture_group = east_slavic
+					check_variable = {
+						which = "Demesne_in_Russia"
+						value = 25
+					}
+				}
+			}
+			AND = {
+				owner = {
+					OR = {
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = steppe_horde
+									NOT = {
+										has_country_modifier = title_6
+										has_country_flag = title_6
+									}
+								}
+								has_reform = steppe_horde_legacy
+							}
+						}
+					}
+				}
+				controller = {
+					technology_group = steppestech
+				}
+			}
+			AND = {
+				controller = {
+					OR = {
+						tag = TUR
+						tag = OTT
+					}
+				}
+				OR = {
+					region = central_balkan_region
+					region = east_balkan_region
+					region = north_anatolia_region
+					region = south_anatolia_region
+					region = greece_region
+					region = egypt_region
+					region = al_sham_region
+					area = cilicia_area
+					area = dulkadir_area
+					area = erzurum_area
+				}
+			}
+			AND = {
+				continent = east_asia
+				OR = {
+					superregion = north_china_superregion
+					superregion = east_china_superregion
+					superregion = southwest_china_superregion
+				}
+				OR = {
+					culture_group = chinese_group
+					owner = {
+						culture_group = chinese_group
+					}
+					owner = {
+						has_country_flag = barbarian_claimant_china
+					}
+				}
+				controller = {
+					OR = {
+						culture_group = chinese_group
+						has_country_flag = barbarian_claimant_china
+					}
+				}
+				OR = {
+					NOT = {
+						province_id = 5375
+					}
+					NOT = {
+						owned_by = YUA
+					}
+				}
+			}
+			AND = {
+				region = crimea_region
+				controller = {
+					owns = 1402
+					culture_group = turko_byzantine
+				}
+				owner = {
+					OR = {
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = steppe_horde
+									NOT = {
+										has_country_modifier = title_6
+										has_country_flag = title_6
+									}
+								}
+								has_reform = steppe_horde_legacy
+							}
+						}
+						tag = GEN
+						tag = THD
+						tag = TRE
+						tag = BYZ
+					}
+				}
+			}
+			AND = {
+				superregion = persia_superregion
+				owner = {
+					OR = {
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = steppe_horde
+									NOT = {
+										has_country_modifier = title_6
+										has_country_flag = title_6
+									}
+								}
+								has_reform = steppe_horde_legacy
+							}
+						}
+					}
+				}
+				controller = {
+					culture_group = persian_group
+				}
+			}
+			AND = {
+				controller = {
+					AND = {
+						OR = {
+							AND = {
+								has_reform = steppe_horde
+								NOT = {
+									has_country_modifier = title_6
+									has_country_flag = title_6
+								}
+							}
+							has_reform = steppe_horde_legacy
+						}
+					}
+					MIL = 6
+				}
+				any_neighbor_province = {
+					owned_by = PREV
+				}
+			}
+			AND = {
+				superregion = persia_superregion
+				religion_group = muslim
+				controller = {
+					tag = PER
+					dynasty = "Safavid"
+					has_country_modifier = sword_of_faith
+				}
+			}
+			AND = {
+				OR = {
+					superregion = west_india_superregion
+					superregion = north_india_superregion
+					superregion = rajputana_superregion
+					superregion = east_india_superregion
+				}
+				controller = {
+					religion_group = muslim
+					OR = {
+						capital_scope = {
+							superregion = west_india_superregion
+						}
+						capital_scope = {
+							superregion = north_india_superregion
+						}
+						capital_scope = {
+							superregion = rajputana_superregion
+						}
+						capital_scope = {
+							superregion = east_india_superregion
+						}
+						capital_scope = {
+							region = afghanistan_region
+						}
+					}
+				}
+			}
+			AND = {
+				region = afghanistan_region
+				controller = {
+					capital_scope = {
+						region = afghanistan_region
+					}
+					religion_group = muslim
+					adm_tech = 20
+				}
+			}
+			AND = {
+				owner = {
+					OR = {
+						primary_culture = vietnamese
+						tag = VUU
+					}
+				}
+				controller = {
+					OR = {
+						primary_culture = vietnamese
+						tag = VUU
+					}
+				}
+				OR = {
+					region = vietnam_region
+					area = champa_area
+				}
+			}
+			AND = {
+				has_global_flag = sengoku_jidai
+				controller = {
+					culture_group = japanese
+				}
+				OR = {
+					region = west_japan_region
+					region = central_japan_region
+					region = east_japan_region
+				}
+				NOT = {
+					area = ryukyu_area
+				}
+			}
+			AND = {
+				controller = {
+					tag = LIT
+					NOT = {
+						is_year = 1450
+					}
+				}
+				OR = {
+					is_core = KIE
+					is_core = CHV
+					is_core = SMO
+					is_core = KRC
+					region = lithuania_region
+					AND = {
+						region = ruthenia_region
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				is_core = controller
+			}
+			custom_tooltip = war_dynamism_trigger_core_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					controller = {
+						dip_tech = 35
+					}
+					OR = {
+						AND = {
+							controller = {
+								dip_tech = 45
+							}
+							OR = {
+								AND = {
+									NOT = {
+										culture_group = owner
+									}
+									culture_group = controller
+									controller = {
+										accepted_culture = ROOT
+									}
+								}
+								AND = {
+									OR = {
+										culture_group = langue_d_oc
+										culture_group = langue_d_oil
+									}
+									controller = {
+										OR = {
+											culture_group = langue_d_oc
+											culture_group = langue_d_oil
+										}
+										accepted_culture = ROOT
+									}
+								}
+							}
+						}
+						AND = {
+							culture = controller
+							NOT = {
+								culture = owner
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_culture_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					NOT = {
+						owner = {
+							tolerance_to_this = 3
+						}
+					}
+					OR = {
+						AND = {
+							NOT = {
+								religion = owner
+							}
+							religion = controller
+						}
+						AND = {
+							NOT = {
+								religion_group = owner
+							}
+							religion_group = controller
+						}
+					}
+					OR = {
+						controller = {
+							tolerance_to_this = 8
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 7
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = 2
+								}
+							}
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 6
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = 1
+								}
+							}
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 5
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = 0
+								}
+							}
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 4
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = -1
+								}
+							}
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 3
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = -2
+								}
+							}
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 2
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = -3
+								}
+							}
+						}
+						AND = {
+							controller = {
+								tolerance_to_this = 1
+							}
+							NOT = {
+								owner = {
+									tolerance_to_this = -4
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_religion_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					owner = {
+						OR = {
+							AND = {
+								OR = {
+									has_reform = nomad_reform
+									has_reform = native_council_legacy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										has_reform = steppe_horde
+										NOT = {
+											has_country_modifier = title_6
+											has_country_flag = title_6
+										}
+									}
+									has_reform = steppe_horde_legacy
+								}
+							}
+						}
+					}
+					controller = {
+						culture_group = east_slavic
+						check_variable = {
+							which = "Demesne_in_Russia"
+							value = 25
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_russia_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							technology_group = steppestech
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_steppes_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					controller = {
+						OR = {
+							tag = TUR
+							tag = OTT
+						}
+					}
+					OR = {
+						region = central_balkan_region
+						region = east_balkan_region
+						region = north_anatolia_region
+						region = south_anatolia_region
+						region = greece_region
+						region = egypt_region
+						region = al_sham_region
+						area = cilicia_area
+						area = dulkadir_area
+						area = erzurum_area
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_ottoman_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					continent = east_asia
+					OR = {
+						superregion = north_china_superregion
+						superregion = east_china_superregion
+						superregion = southwest_china_superregion
+					}
+					OR = {
+						culture_group = chinese_group
+						owner = {
+							culture_group = chinese_group
+						}
+						owner = {
+							has_country_flag = barbarian_claimant_china
+						}
+					}
+					controller = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+					}
+					OR = {
+						NOT = {
+							province_id = 5375
+						}
+						NOT = {
+							owned_by = YUA
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_chinese_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					region = crimea_region
+					controller = {
+						owns = 1402
+						culture_group = turko_byzantine
+					}
+					owner = {
+						OR = {
+							AND = {
+								OR = {
+									has_reform = nomad_reform
+									has_reform = native_council_legacy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										has_reform = steppe_horde
+										NOT = {
+											has_country_modifier = title_6
+											has_country_flag = title_6
+										}
+									}
+									has_reform = steppe_horde_legacy
+								}
+							}
+							tag = GEN
+							tag = THD
+							tag = TRE
+							tag = BYZ
+						}
+					}
+				}
+				religion_group = christian
+			}
+			custom_tooltip = war_dynamism_trigger_ere_crimea_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					region = crimea_region
+					controller = {
+						owns = 1402
+						culture_group = turko_byzantine
+					}
+					owner = {
+						OR = {
+							AND = {
+								OR = {
+									has_reform = nomad_reform
+									has_reform = native_council_legacy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										has_reform = steppe_horde
+										NOT = {
+											has_country_modifier = title_6
+											has_country_flag = title_6
+										}
+									}
+									has_reform = steppe_horde_legacy
+								}
+							}
+							tag = GEN
+							tag = THD
+							tag = TRE
+							tag = BYZ
+						}
+					}
+				}
+				religion_group = muslim
+			}
+			custom_tooltip = war_dynamism_trigger_tur_crimea_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					superregion = persia_superregion
+					owner = {
+						OR = {
+							AND = {
+								OR = {
+									has_reform = nomad_reform
+									has_reform = native_council_legacy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										has_reform = steppe_horde
+										NOT = {
+											has_country_modifier = title_6
+											has_country_flag = title_6
+										}
+									}
+									has_reform = steppe_horde_legacy
+								}
+							}
+						}
+					}
+					controller = {
+						culture_group = persian_group
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_persia_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					controller = {
+						AND = {
+							OR = {
+								AND = {
+									has_reform = steppe_horde
+									NOT = {
+										has_country_modifier = title_6
+										has_country_flag = title_6
+									}
+								}
+								has_reform = steppe_horde_legacy
+							}
+						}
+						MIL = 6
+					}
+					any_neighbor_province = {
+						owned_by = PREV
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_horde_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					superregion = persia_superregion
+					religion_group = muslim
+					controller = {
+						tag = PER
+						dynasty = "Safavid"
+						has_country_modifier = sword_of_faith
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_safavids_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						superregion = west_india_superregion
+						superregion = north_india_superregion
+						superregion = rajputana_superregion
+						superregion = east_india_superregion
+					}
+					controller = {
+						religion_group = muslim
+						OR = {
+							capital_scope = {
+								superregion = west_india_superregion
+							}
+							capital_scope = {
+								superregion = north_india_superregion
+							}
+							capital_scope = {
+								superregion = rajputana_superregion
+							}
+							capital_scope = {
+								superregion = east_india_superregion
+							}
+							capital_scope = {
+								region = afghanistan_region
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_hindustani_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					region = afghanistan_region
+					controller = {
+						capital_scope = {
+							region = afghanistan_region
+						}
+						religion_group = muslim
+						adm_tech = 20
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_afghani_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					owner = {
+						OR = {
+							primary_culture = vietnamese
+							tag = VUU
+						}
+					}
+					controller = {
+						OR = {
+							primary_culture = vietnamese
+							tag = VUU
+						}
+					}
+					OR = {
+						region = vietnam_region
+						area = champa_area
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_vietnamese_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					has_global_flag = sengoku_jidai
+					controller = {
+						culture_group = japanese
+					}
+					OR = {
+						region = west_japan_region
+						region = central_japan_region
+						region = east_japan_region
+					}
+					NOT = {
+						area = ryukyu_area
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_japanese_tt
+		}
+		if = {
+			limit = {
+				AND = {
+					controller = {
+						tag = LIT
+						NOT = {
+							is_year = 1450
+						}
+					}
+					OR = {
+						is_core = KIE
+						is_core = CHV
+						is_core = SMO
+						is_core = KRC
+						region = lithuania_region
+						AND = {
+							region = ruthenia_region
+							owner = {
+								OR = {
+									AND = {
+										OR = {
+											has_reform = nomad_reform
+											has_reform = native_council_legacy
+										}
+									}
+									AND = {
+										OR = {
+											AND = {
+												has_reform = steppe_horde
+												NOT = {
+													has_country_modifier = title_6
+													has_country_flag = title_6
+												}
+											}
+											has_reform = steppe_horde_legacy
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_lithuania_tt
+		}
+	}
+	option = {
+		name = "war_dynamism.1.a"
+		add_province_modifier = {
+			name = "war_dynamism"
+			duration = -1
+		}
+		if = {
+			limit = {
+				AND = {
+					continent = east_asia
+					OR = {
+						superregion = north_china_superregion
+						superregion = east_china_superregion
+						superregion = southwest_china_superregion
+					}
+					OR = {
+						culture_group = chinese_group
+						owner = {
+							culture_group = chinese_group
+						}
+						owner = {
+							has_country_flag = barbarian_claimant_china
+						}
+					}
+					controller = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+					}
+					OR = {
+						NOT = {
+							province_id = 5375
+						}
+						NOT = {
+							owned_by = YUA
+						}
+					}
+				}
+			}
+			add_province_modifier = {
+				name = "surrendered_timer"
+				duration = 30
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						OR = {
+							superregion = west_india_superregion
+							superregion = north_india_superregion
+							superregion = rajputana_superregion
+							superregion = east_india_superregion
+						}
+						controller = {
+							religion_group = muslim
+							OR = {
+								capital_scope = {
+									superregion = west_india_superregion
+								}
+								capital_scope = {
+									superregion = north_india_superregion
+								}
+								capital_scope = {
+									superregion = rajputana_superregion
+								}
+								capital_scope = {
+									superregion = east_india_superregion
+								}
+								capital_scope = {
+									region = afghanistan_region
+								}
+							}
+						}
+					}
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							culture_group = east_slavic
+							check_variable = {
+								which = "Demesne_in_Russia"
+								value = 25
+							}
+						}
+					}
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							technology_group = steppestech
+						}
+					}
+				}
+			}
+			add_province_modifier = {
+				name = "surrendered_timer"
+				duration = 60
+			}
+		}
+		else_if = {
+			limit = {
+				AND = {
+					controller = {
+						OR = {
+							tag = TUR
+							tag = OTT
+						}
+					}
+					OR = {
+						region = central_balkan_region
+						region = east_balkan_region
+						region = north_anatolia_region
+						region = south_anatolia_region
+						region = greece_region
+						region = egypt_region
+						region = al_sham_region
+						area = cilicia_area
+						area = dulkadir_area
+						area = erzurum_area
+					}
+				}
+			}
+			add_province_modifier = {
+				name = "surrendered_timer"
+				duration = 120
+			}
+		}
+		else = {
+			add_province_modifier = {
+				name = "surrendered_timer"
+				duration = 365
+			}
+		}
+	}
+}
+province_event = {
+	id = war_dynamism.2
+	title = "war_dynamism.2.t"
+	desc = "war_dynamism.2.d"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		has_province_modifier = war_dynamism
+		OR = {
+			AND = {
+				controlled_by = ROOT
+				owner = {
+					is_at_war = yes
+				}
+			}
+			NOT = {
+				controller = {
+					has_country_flag = winning_against_@PREV
+				}
+			}
+		}
+	}
+	option = {
+		name = "OPT.VERYWELL"
+		remove_province_modifier = war_dynamism
+		remove_province_modifier = surrendered_timer
+	}
+}
+country_event = {
+	id = war_dynamism.3
+	title = "war_dynamism.3.t"
+	desc = "war_dynamism.3.d"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		any_owned_province = {
+			controlled_by = ROOT
+			OR = {
+				has_province_modifier = surrendered_timer
+				has_province_modifier = war_dynamism
+			}
+		}
+	}
+	option = {
+		name = "OPT.GOOD1"
+		every_owned_province = {
+			limit = {
+				controlled_by = ROOT
+				has_province_modifier = surrendered_timer
+			}
+			remove_province_modifier = surrendered_timer
+		}
+		every_owned_province = {
+			limit = {
+				controlled_by = ROOT
+				has_province_modifier = war_dynamism
+			}
+			remove_province_modifier = war_dynamism
+		}
+	}
+}
+province_event = {
+	id = war_dynamism.9
+	title = "no_localisation"
+	desc = "no_localisation"
+	picture = CIVIL_WAR_eventPicture
+	hidden = yes
+	trigger = {
+		NOT = {
+			controlled_by = ROOT
+		}
+		NOT = {
+			controlled_by = REB
+		}
+		has_province_modifier = "war_dynamism"
+		NOT = {
+			has_province_modifier = "surrendered_timer"
+		}
+		has_siege = no
+		controller = {
+			dip_power = 30
+		}
+		OR = {
+			has_port = yes
+			any_neighbor_province = {
+				ROOT = {
+					controlled_by = PREV
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			OR = {
+				has_province_flag = part_of_5266
+				has_province_flag = part_of_5267
+				has_province_flag = part_of_5268
+			}
+			factor = 0.5
+		}
+		modifier = {
+			any_neighbor_province = {
+				ROOT = {
+					controlled_by = PREV
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			NOT = {
+				any_neighbor_province = {
+					owned_by = ROOT
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			is_core = controller
+			factor = 0.5
+		}
+		modifier = {
+			local_autonomy = 50
+			factor = 0.5
+		}
+		modifier = {
+			is_core = owner
+			factor = 2
+		}
+		modifier = {
+			has_owner_culture = yes
+			factor = 2
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_core = controller
+					AND = {
+						controller = {
+							dip_tech = 35
+						}
+						OR = {
+							AND = {
+								controller = {
+									dip_tech = 45
+								}
+								OR = {
+									AND = {
+										NOT = {
+											culture_group = owner
+										}
+										culture_group = controller
+										controller = {
+											accepted_culture = ROOT
+										}
+									}
+									AND = {
+										OR = {
+											culture_group = langue_d_oc
+											culture_group = langue_d_oil
+										}
+										controller = {
+											OR = {
+												culture_group = langue_d_oc
+												culture_group = langue_d_oil
+											}
+											accepted_culture = ROOT
+										}
+									}
+								}
+							}
+							AND = {
+								culture = controller
+								NOT = {
+									culture = owner
+								}
+							}
+						}
+					}
+					AND = {
+						NOT = {
+							owner = {
+								tolerance_to_this = 3
+							}
+						}
+						OR = {
+							AND = {
+								NOT = {
+									religion = owner
+								}
+								religion = controller
+							}
+							AND = {
+								NOT = {
+									religion_group = owner
+								}
+								religion_group = controller
+							}
+						}
+						OR = {
+							controller = {
+								tolerance_to_this = 8
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 7
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = 2
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 6
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = 1
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 5
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = 0
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 4
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -1
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 3
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -2
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 2
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -3
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 1
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -4
+									}
+								}
+							}
+						}
+					}
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							culture_group = east_slavic
+							check_variable = {
+								which = "Demesne_in_Russia"
+								value = 25
+							}
+						}
+					}
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							technology_group = steppestech
+						}
+					}
+					AND = {
+						controller = {
+							OR = {
+								tag = TUR
+								tag = OTT
+							}
+						}
+						OR = {
+							region = central_balkan_region
+							region = east_balkan_region
+							region = north_anatolia_region
+							region = south_anatolia_region
+							region = greece_region
+							region = egypt_region
+							region = al_sham_region
+							area = cilicia_area
+							area = dulkadir_area
+							area = erzurum_area
+						}
+					}
+					AND = {
+						continent = east_asia
+						OR = {
+							superregion = north_china_superregion
+							superregion = east_china_superregion
+							superregion = southwest_china_superregion
+						}
+						OR = {
+							culture_group = chinese_group
+							owner = {
+								culture_group = chinese_group
+							}
+							owner = {
+								has_country_flag = barbarian_claimant_china
+							}
+						}
+						controller = {
+							OR = {
+								culture_group = chinese_group
+								has_country_flag = barbarian_claimant_china
+							}
+						}
+						OR = {
+							NOT = {
+								province_id = 5375
+							}
+							NOT = {
+								owned_by = YUA
+							}
+						}
+					}
+					AND = {
+						region = crimea_region
+						controller = {
+							owns = 1402
+							culture_group = turko_byzantine
+						}
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+								tag = GEN
+								tag = THD
+								tag = TRE
+								tag = BYZ
+							}
+						}
+					}
+					AND = {
+						superregion = persia_superregion
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							culture_group = persian_group
+						}
+					}
+					AND = {
+						controller = {
+							AND = {
+								OR = {
+									AND = {
+										has_reform = steppe_horde
+										NOT = {
+											has_country_modifier = title_6
+											has_country_flag = title_6
+										}
+									}
+									has_reform = steppe_horde_legacy
+								}
+							}
+							MIL = 6
+						}
+						any_neighbor_province = {
+							owned_by = PREV
+						}
+					}
+					AND = {
+						superregion = persia_superregion
+						religion_group = muslim
+						controller = {
+							tag = PER
+							dynasty = "Safavid"
+							has_country_modifier = sword_of_faith
+						}
+					}
+					AND = {
+						OR = {
+							superregion = west_india_superregion
+							superregion = north_india_superregion
+							superregion = rajputana_superregion
+							superregion = east_india_superregion
+						}
+						controller = {
+							religion_group = muslim
+							OR = {
+								capital_scope = {
+									superregion = west_india_superregion
+								}
+								capital_scope = {
+									superregion = north_india_superregion
+								}
+								capital_scope = {
+									superregion = rajputana_superregion
+								}
+								capital_scope = {
+									superregion = east_india_superregion
+								}
+								capital_scope = {
+									region = afghanistan_region
+								}
+							}
+						}
+					}
+					AND = {
+						region = afghanistan_region
+						controller = {
+							capital_scope = {
+								region = afghanistan_region
+							}
+							religion_group = muslim
+							adm_tech = 20
+						}
+					}
+					AND = {
+						owner = {
+							OR = {
+								primary_culture = vietnamese
+								tag = VUU
+							}
+						}
+						controller = {
+							OR = {
+								primary_culture = vietnamese
+								tag = VUU
+							}
+						}
+						OR = {
+							region = vietnam_region
+							area = champa_area
+						}
+					}
+					AND = {
+						has_global_flag = sengoku_jidai
+						controller = {
+							culture_group = japanese
+						}
+						OR = {
+							region = west_japan_region
+							region = central_japan_region
+							region = east_japan_region
+						}
+						NOT = {
+							area = ryukyu_area
+						}
+					}
+					AND = {
+						controller = {
+							tag = LIT
+							NOT = {
+								is_year = 1450
+							}
+						}
+						OR = {
+							is_core = KIE
+							is_core = CHV
+							is_core = SMO
+							is_core = KRC
+							region = lithuania_region
+							AND = {
+								region = ruthenia_region
+								owner = {
+									OR = {
+										AND = {
+											OR = {
+												has_reform = nomad_reform
+												has_reform = native_council_legacy
+											}
+										}
+										AND = {
+											OR = {
+												AND = {
+													has_reform = steppe_horde
+													NOT = {
+														has_country_modifier = title_6
+														has_country_flag = title_6
+													}
+												}
+												has_reform = steppe_horde_legacy
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			province_event = {
+				id = war_dynamism.4
+				days = 0
+			}
+		}
+		else = {
+			remove_province_modifier = war_dynamism
+			remove_province_modifier = surrendered_timer
+		}
+	}
+	option = {}
+}
+province_event = {
+	id = war_dynamism.4
+	title = "war_dynamism.4.t"
+	desc = "war_dynamism.4.d"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.BASTARD"
+		controller = {
+			country_event = {
+				id = war_dynamism.5
+				days = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = war_dynamism.5
+	title = "war_dynamism.5.t"
+	desc = "war_dynamism.5.d"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					is_core = controller
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_core_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						controller = {
+							dip_tech = 35
+						}
+						OR = {
+							AND = {
+								controller = {
+									dip_tech = 45
+								}
+								OR = {
+									AND = {
+										NOT = {
+											culture_group = owner
+										}
+										culture_group = controller
+										controller = {
+											accepted_culture = ROOT
+										}
+									}
+									AND = {
+										OR = {
+											culture_group = langue_d_oc
+											culture_group = langue_d_oil
+										}
+										controller = {
+											OR = {
+												culture_group = langue_d_oc
+												culture_group = langue_d_oil
+											}
+											accepted_culture = ROOT
+										}
+									}
+								}
+							}
+							AND = {
+								culture = controller
+								NOT = {
+									culture = owner
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_culture_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						NOT = {
+							owner = {
+								tolerance_to_this = 3
+							}
+						}
+						OR = {
+							AND = {
+								NOT = {
+									religion = owner
+								}
+								religion = controller
+							}
+							AND = {
+								NOT = {
+									religion_group = owner
+								}
+								religion_group = controller
+							}
+						}
+						OR = {
+							controller = {
+								tolerance_to_this = 8
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 7
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = 2
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 6
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = 1
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 5
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = 0
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 4
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -1
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 3
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -2
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 2
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -3
+									}
+								}
+							}
+							AND = {
+								controller = {
+									tolerance_to_this = 1
+								}
+								NOT = {
+									owner = {
+										tolerance_to_this = -4
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_religion_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							culture_group = east_slavic
+							check_variable = {
+								which = "Demesne_in_Russia"
+								value = 25
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_russia_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							technology_group = steppestech
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_steppes_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						controller = {
+							OR = {
+								tag = TUR
+								tag = OTT
+							}
+						}
+						OR = {
+							region = central_balkan_region
+							region = east_balkan_region
+							region = north_anatolia_region
+							region = south_anatolia_region
+							region = greece_region
+							region = egypt_region
+							region = al_sham_region
+							area = cilicia_area
+							area = dulkadir_area
+							area = erzurum_area
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_ottoman_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						continent = east_asia
+						OR = {
+							superregion = north_china_superregion
+							superregion = east_china_superregion
+							superregion = southwest_china_superregion
+						}
+						OR = {
+							culture_group = chinese_group
+							owner = {
+								culture_group = chinese_group
+							}
+							owner = {
+								has_country_flag = barbarian_claimant_china
+							}
+						}
+						controller = {
+							OR = {
+								culture_group = chinese_group
+								has_country_flag = barbarian_claimant_china
+							}
+						}
+						OR = {
+							NOT = {
+								province_id = 5375
+							}
+							NOT = {
+								owned_by = YUA
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_chinese_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						region = crimea_region
+						controller = {
+							owns = 1402
+							culture_group = turko_byzantine
+						}
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+								tag = GEN
+								tag = THD
+								tag = TRE
+								tag = BYZ
+							}
+						}
+					}
+				}
+				religion_group = christian
+			}
+			custom_tooltip = war_dynamism_trigger_ere_crimea_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						region = crimea_region
+						controller = {
+							owns = 1402
+							culture_group = turko_byzantine
+						}
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+								tag = GEN
+								tag = THD
+								tag = TRE
+								tag = BYZ
+							}
+						}
+					}
+				}
+				religion_group = muslim
+			}
+			custom_tooltip = war_dynamism_trigger_tur_crimea_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						superregion = persia_superregion
+						owner = {
+							OR = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = steppe_horde
+											NOT = {
+												has_country_modifier = title_6
+												has_country_flag = title_6
+											}
+										}
+										has_reform = steppe_horde_legacy
+									}
+								}
+							}
+						}
+						controller = {
+							culture_group = persian_group
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_persia_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						controller = {
+							AND = {
+								OR = {
+									AND = {
+										has_reform = steppe_horde
+										NOT = {
+											has_country_modifier = title_6
+											has_country_flag = title_6
+										}
+									}
+									has_reform = steppe_horde_legacy
+								}
+							}
+							MIL = 6
+						}
+						any_neighbor_province = {
+							owned_by = PREV
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_horde_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						superregion = persia_superregion
+						religion_group = muslim
+						controller = {
+							tag = PER
+							dynasty = "Safavid"
+							has_country_modifier = sword_of_faith
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_safavids_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						OR = {
+							superregion = west_india_superregion
+							superregion = north_india_superregion
+							superregion = rajputana_superregion
+							superregion = east_india_superregion
+						}
+						controller = {
+							religion_group = muslim
+							OR = {
+								capital_scope = {
+									superregion = west_india_superregion
+								}
+								capital_scope = {
+									superregion = north_india_superregion
+								}
+								capital_scope = {
+									superregion = rajputana_superregion
+								}
+								capital_scope = {
+									superregion = east_india_superregion
+								}
+								capital_scope = {
+									region = afghanistan_region
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_hindustani_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						region = afghanistan_region
+						controller = {
+							capital_scope = {
+								region = afghanistan_region
+							}
+							religion_group = muslim
+							adm_tech = 20
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_afghani_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						owner = {
+							OR = {
+								primary_culture = vietnamese
+								tag = VUU
+							}
+						}
+						controller = {
+							OR = {
+								primary_culture = vietnamese
+								tag = VUU
+							}
+						}
+						OR = {
+							region = vietnam_region
+							area = champa_area
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_vietnamese_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						has_global_flag = sengoku_jidai
+						controller = {
+							culture_group = japanese
+						}
+						OR = {
+							region = west_japan_region
+							region = central_japan_region
+							region = east_japan_region
+						}
+						NOT = {
+							area = ryukyu_area
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_japanese_tt
+		}
+		if = {
+			limit = {
+				FROM = {
+					AND = {
+						controller = {
+							tag = LIT
+							NOT = {
+								is_year = 1450
+							}
+						}
+						OR = {
+							is_core = KIE
+							is_core = CHV
+							is_core = SMO
+							is_core = KRC
+							region = lithuania_region
+							AND = {
+								region = ruthenia_region
+								owner = {
+									OR = {
+										AND = {
+											OR = {
+												has_reform = nomad_reform
+												has_reform = native_council_legacy
+											}
+										}
+										AND = {
+											OR = {
+												AND = {
+													has_reform = steppe_horde
+													NOT = {
+														has_country_modifier = title_6
+														has_country_flag = title_6
+													}
+												}
+												has_reform = steppe_horde_legacy
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = war_dynamism_trigger_lithuania_tt
+		}
+	}
+	option = {
+		name = "OPT.EXCELLENT"
+		ai_chance = {
+			factor = 70
+			modifier = {
+				FROM = {
+					culture = ROOT
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					culture_group = ROOT
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					religion = ROOT
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					religion_group = ROOT
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					is_core = ROOT
+				}
+				factor = 1.5
+			}
+			modifier = {
+				FROM = {
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				factor = 1.5
+			}
+		}
+		add_prestige = 1
+		add_dip_power = -30
+		FROM = {
+			cede_province = controller
+		}
+		FROM = {
+			if = {
+				limit = {
+					controller = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+					}
+					AND = {
+						continent = east_asia
+						OR = {
+							superregion = north_china_superregion
+							superregion = east_china_superregion
+							superregion = southwest_china_superregion
+						}
+					}
+				}
+				add_core = ROOT
+			}
+		}
+		FROM = {
+			if = {
+				limit = {
+					controller = {
+						culture_group = japanese
+					}
+					OR = {
+						region = west_japan_region
+						region = central_japan_region
+						region = east_japan_region
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = blessing_of_god
+				}
+				FROM = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						is_claim = ROOT
+					}
+				}
+			}
+			FROM = {
+				add_local_autonomy = 50
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					NOT = {
+						is_core = ROOT
+					}
+				}
+				OR = {
+					FROM = {
+						is_claim = ROOT
+					}
+					has_country_modifier = blessing_of_god
+				}
+				NOT = {
+					AND = {
+						FROM = {
+							is_claim = ROOT
+						}
+						has_country_modifier = blessing_of_god
+					}
+				}
+			}
+			FROM = {
+				add_local_autonomy = 33
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					culture_group = chinese_group
+				}
+				NOT = {
+					has_country_flag = barbarian_claimant_china
+				}
+			}
+			FROM = {
+				add_scaled_local_adm_power = -2.0
+			}
+			FROM = {
+				add_scaled_local_dip_power = -2.0
+			}
+			FROM = {
+				add_scaled_local_mil_power = -2.0
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					controller = {
+						NOT = {
+							government = republic
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					owner = {
+						is_emperor_of_china = yes
+					}
+				}
+			}
+			FROM = {
+				owner = {
+					add_mandate = -0.5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					owner = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						overlord = {
+							is_emperor_of_china = yes
+						}
+					}
+				}
+			}
+			FROM = {
+				owner = {
+					overlord = {
+						add_mandate = -0.5
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					is_emperor_of_china = yes
+				}
+			}
+			ROOT = {
+				add_mandate = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					overlord = {
+						is_emperor_of_china = yes
+					}
+				}
+			}
+			ROOT = {
+				overlord = {
+					add_mandate = 0.5
+				}
+			}
+		}
+	}
+	option = {
+		name = "OPT.DECLINE1"
+		ai_chance = {
+			factor = 30
+			modifier = {
+				FROM = {
+					NOT = {
+						culture = ROOT
+					}
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					NOT = {
+						culture_group = ROOT
+					}
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					NOT = {
+						religion = ROOT
+					}
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					NOT = {
+						religion_group = ROOT
+					}
+				}
+				factor = 1.05
+			}
+			modifier = {
+				FROM = {
+					NOT = {
+						is_core = ROOT
+					}
+				}
+				factor = 1.1
+			}
+			modifier = {
+				FROM = {
+					NOT = {
+						any_neighbor_province = {
+							owned_by = ROOT
+						}
+					}
+				}
+				factor = 1.5
+			}
+			modifier = {
+				culture_group = chinese_group
+				factor = 0
+			}
+		}
+		FROM = {
+			add_province_modifier = {
+				name = "surrendered_timer"
+				duration = 356
+			}
+		}
+	}
+}
+country_event = {
+	id = war_dynamism.7
+	title = war_dynamism.7.t
+	desc = war_dynamism.7.d
+	picture = CIVIL_WAR_eventPicture
+	trigger = {
+		NOT = {
+			has_country_modifier = offensive_war
+		}
+		is_at_war = yes
+		NOT = {
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		OR = {
+			is_in_war = {
+				attackers = ROOT
+			}
+			is_in_war = {
+				defenders = ROOT
+				casus_belli = cb_independence_war
+			}
+			is_in_war = {
+				defenders = ROOT
+				casus_belli = cb_colonial_independance_war
+			}
+			is_in_war = {
+				defenders = ROOT
+				casus_belli = cb_overlord_attacking_independence_war
+			}
+			is_in_war = {
+				defenders = ROOT
+				casus_belli = cb_religious_independence
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		add_country_modifier = {
+			name = offensive_war
+			duration = -1
+		}
+	}
+	option = {
+		name = OPT.NOCHOICE
+	}
+}
+country_event = {
+	id = war_dynamism.8
+	title = "no_localization"
+	desc = "no_localization"
+	picture = CIVIL_WAR_eventPicture
+	hidden = yes
+	trigger = {
+		has_country_modifier = offensive_war
+		OR = {
+			is_at_war = no
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				OR = {
+					is_in_war = {
+						attackers = ROOT
+					}
+					is_in_war = {
+						defenders = ROOT
+						casus_belli = cb_independence_war
+					}
+					is_in_war = {
+						defenders = ROOT
+						casus_belli = cb_colonial_independance_war
+					}
+					is_in_war = {
+						defenders = ROOT
+						casus_belli = cb_overlord_attacking_independence_war
+					}
+					is_in_war = {
+						defenders = ROOT
+						casus_belli = cb_religious_independence
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		remove_country_modifier = offensive_war
+	}
+	option = {
+		name = "no_localization"
+	}
+}

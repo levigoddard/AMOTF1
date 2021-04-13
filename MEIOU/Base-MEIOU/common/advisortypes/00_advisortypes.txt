@@ -1,0 +1,701 @@
+philosopher = {
+	monarch_power = ADM
+	prestige = 0.15
+	idea_cost = -0.05
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.25
+			NOT = {
+				AND = {
+					has_province_flag = university_present
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			AND = {
+				has_province_flag = has_art_center_modifier
+			}
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				OR = {
+					has_idea_group = scholasticism_ideas
+					has_idea_group = theology_ideas
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				has_idea_group = humanist_ideas
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = philosopher
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+natural_scientist = {
+	monarch_power = ADM
+	production_efficiency = 0.10
+	technology_cost = -0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.25
+			NOT = {
+				AND = {
+					has_province_flag = university_present
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			AND = {
+				has_province_flag = has_art_center_modifier
+			}
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				has_idea = scientific_revolution
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = natural_scientist
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+artist = {
+	monarch_power = ADM
+	stability_cost_modifier = -0.10
+	prestige_decay = -0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			AND = {
+				has_province_flag = has_art_center_modifier
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				AND = {
+					OR = {
+						has_building = art_corporation
+						has_building = fine_arts_academy
+						has_building = opera
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = artist
+			}
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				has_idea_group = culture_ideas
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+treasurer = {
+	monarch_power = ADM
+	global_tax_modifier = 0.05
+	production_efficiency = 0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_building = bank
+				has_building = stock_exchange
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_building = bureaucracy_1
+				has_building = bureaucracy_2
+				has_building = bureaucracy_3
+				has_building = bureaucracy_4
+				has_building = bureaucracy_5
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea = national_bank
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = treasurer
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+theologian = {
+	monarch_power = ADM
+	adm_tech_cost_modifier = -0.05
+	tolerance_heretic = 0.5
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			AND = {
+				has_province_flag = has_art_center_modifier
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				AND = {
+					has_province_flag = university_present
+				}
+			}
+		}
+		modifier = {
+			factor = 1.15
+			owner = {
+				OR = {
+					has_idea_group = scholasticism_ideas
+					has_idea_group = theology_ideas
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = theologian
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+master_of_mint = {
+	monarch_power = ADM
+	inflation_reduction = 0.025
+	inflation_action_cost = -0.10
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = bank
+				has_building = stock_exchange
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_building = merchant_guild
+				has_building = trade_depot
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea = national_bank
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = master_of_mint
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+inquisitor = {
+	monarch_power = ADM
+	global_missionary_strength = 0.01
+	global_heretic_missionary_strength = 0.01
+	global_unrest = -1
+	tolerance_heretic = -1
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			has_owner_religion = no
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				has_idea = ecceleistical_judiciary
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea = crusades
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea = sacrifices
+			}
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				has_idea = tolerance_idea
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = inquisitor
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+statesman = {
+	monarch_power = DIP
+	diplomatic_reputation = 0.5
+	dip_tech_cost_modifier = -0.025
+	improve_relation_modifier = 0.1
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = statesman
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+naval_reformer = {
+	monarch_power = DIP
+	naval_morale = 0.1
+	dip_tech_cost_modifier = -0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			has_port = no
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				NOT = {
+					has_idea = naval_cadets
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = naval_reformer
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			is_at_war = yes
+		}
+	}
+}
+trader = {
+	monarch_power = DIP
+	trade_efficiency = 0.1
+	global_foreign_trade_power = 0.1
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_building = bank
+				has_building = stock_exchange
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = merchant_guild
+				has_building = trade_depot
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				OR = {
+					has_building = marketplace
+					has_building = merchant_guild
+					has_building = trade_depot
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = trader
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+spymaster = {
+	monarch_power = DIP
+	spy_offence = 0.10
+	global_spy_defence = 0.10
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = spymaster
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0.75
+	}
+}
+colonial_governor = {
+	monarch_power = DIP
+	global_tariffs = 0.10
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			owner = {
+				NOT = {
+					num_of_colonists = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				is_colonial_nation = yes
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0.75
+	}
+}
+diplomat = {
+	monarch_power = DIP
+	improve_relation_modifier = 0.25
+	diplomatic_upkeep = 1
+	envoy_travel_time = -0.25
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = diplomat
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+navigator = {
+	monarch_power = DIP
+	range = 0.20
+	naval_attrition = -0.25
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			owner = {
+				NOT = {
+					num_of_colonists = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			has_port = no
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = navigator
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+army_reformer = {
+	monarch_power = MIL
+	land_morale = 0.075
+	mil_tech_cost_modifier = -0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = army_reformer
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.4
+			is_at_war = yes
+		}
+	}
+}
+army_organiser = {
+	monarch_power = MIL
+	land_forcelimit_modifier = 0.05
+	reinforce_speed = 0.20
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = army_organiser
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+commandant = {
+	monarch_power = MIL
+	discipline = 0.015
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = commandant
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}
+quartermaster = {
+	monarch_power = MIL
+	manpower_recovery_speed = 0.10
+	recover_army_morale_speed = 0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = quartermaster
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.4
+			is_at_war = yes
+		}
+	}
+}
+recruitmaster = {
+	monarch_power = MIL
+	global_manpower_modifier = 0.075
+	global_regiment_recruit_speed = -0.25
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = recruitmaster
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.4
+			is_at_war = yes
+		}
+	}
+}
+fortification_expert = {
+	monarch_power = MIL
+	defensiveness = 0.10
+	siege_ability = 0.05
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea = defensive_mentality
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea = new_fortification_techniques
+			}
+		}
+		modifier = {
+			factor = 1.1
+			has_building = fort_15th
+		}
+		modifier = {
+			factor = 1.15
+			has_building = fort_16th
+		}
+		modifier = {
+			factor = 1.20
+			has_building = fort_17th
+		}
+		modifier = {
+			factor = 1.25
+			has_building = fort_18th
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = fortification_expert
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+grand_captain = {
+	monarch_power = MIL
+	land_maintenance_modifier = -0.025
+	prestige_from_land = 0.25
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = grand_captain
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			is_at_war = yes
+		}
+	}
+}

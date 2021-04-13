@@ -1,0 +1,109 @@
+ruling_clergy_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	legacy_equivalent = theocratic_government
+	icon = "religious_leader"
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_tax_modifier = 0.15
+		global_autonomy = 0.10
+		max_absolutism = -10
+	}
+}
+monastic_order_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	rulers_can_be_generals = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	icon = "monks"
+	legacy_equivalent = monastic_order_government
+	monastic = yes
+	modifiers = {
+		fort_maintenance_modifier = -0.3
+		land_maintenance_modifier = -0.05
+		build_cost = 0.2
+		core_creation = 0.1
+	}
+}
+papacy_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			tag = PAP
+			tag = AVI
+		}
+	}
+	valid_for_nation_designer = no
+	icon = "papacy"
+	legacy_equivalent = papal_government
+	papacy = yes
+	allow_convert = no
+	modifiers = {
+		diplomatic_reputation = 1
+		tolerance_own = 1
+		prestige = 0.4
+		state_maintenance_modifier = 0.3
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+divine_sign = {
+	icon = "church"
+	allow_normal_conversion = yes
+	modifiers = {
+		tolerance_own = 1
+		ae_impact = -0.1
+		idea_cost = 0.1
+	}
+}
+council_reform = {
+	icon = "clergyman"
+	allow_normal_conversion = yes
+	modifiers = {
+		stability_cost_modifier = -0.15
+		free_policy = 1
+		global_autonomy = 0.10
+		max_absolutism = -10
+	}
+}
+appointment_reform = {
+	icon = "paper_with_seal"
+	allow_normal_conversion = yes
+	modifiers = {
+		global_unrest = -2
+		global_autonomy = -0.10
+		stability_cost_modifier = 0.10
+		yearly_corruption = 0.3
+	}
+}
+secular_nobility = {
+	icon = "nobleman"
+	allow_normal_conversion = yes
+	modifiers = {
+		global_autonomy = 0.15
+		state_maintenance_modifier = -0.2
+		land_maintenance_modifier = -0.05
+	}
+}
+chaotic_organization = {
+	icon = "landscape"
+	allow_normal_conversion = yes
+	modifiers = {
+		stability_cost_modifier = 0.20
+		global_autonomy = -0.10
+		global_unrest = 2
+	}
+}
+churchmen_rule = {
+	icon = "clergyman"
+	allow_normal_conversion = yes
+	modifiers = {
+		stability_cost_modifier = -0.10
+		diplomatic_reputation = 1
+		state_maintenance_modifier = 0.2
+	}
+}

@@ -1,0 +1,132 @@
+muslim_site_slots = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		religion_group = muslim
+	}
+	muslim_holy_makka = {
+		icon = mission_mosque
+		required_missions = {}
+		position = 1
+		provinces_to_highlight = {
+			province_id = 385
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			385 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			385 = {
+				add_province_modifier = {
+					name = "mission_medium_urban_gravity"
+					duration = 7300
+				}
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+		}
+	}
+	muslim_holy_madina = {
+		icon = mission_mosque
+		required_missions = {}
+		position = 2
+		provinces_to_highlight = {
+			province_id = 384
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			384 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_legitimacy = 10
+			384 = {
+				add_province_modifier = {
+					name = "mission_medium_urban_gravity"
+					duration = 7300
+				}
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+		}
+	}
+}
+sunni_site_slots = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		religion = sunni
+	}
+	sunni_holy_jerusalem = {
+		icon = mission_mosque
+		required_missions = {}
+		position = 3
+		provinces_to_highlight = {
+			province_id = 379
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			379 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			379 = {
+				add_province_modifier = {
+					name = "mission_medium_urban_gravity"
+					duration = 7300
+				}
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+		}
+	}
+}
+shia_site_slots = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		religion = shiite
+	}
+	shia_holy_najaf = {
+		icon = mission_mosque
+		required_missions = {}
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1330
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			1330 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			1330 = {
+				add_province_modifier = {
+					name = "mission_medium_urban_gravity"
+					duration = 7300
+				}
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+		}
+	}
+}

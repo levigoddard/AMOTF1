@@ -1,0 +1,5477 @@
+namespace = trade_company_country
+country_event = {
+	id = trade_company_country.1
+	title = trade_company_country.1.t
+	desc = trade_company_country.1.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.1.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 25
+				OR = {
+					culture_group = british
+					culture_group = colonial_british
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					culture_group = langue_d_oil
+					culture_group = langue_d_oc
+					culture_group = colonial_french
+				}
+			}
+			561 = {
+				rename_capital = "Chandernagor"
+			}
+		}
+		trigger = {
+			jessor_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		561 = {
+			set_province_flag = capital_of_india
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.b
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			dakka_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		2696 = {
+			set_province_flag = capital_of_india
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							culture_group = british
+							culture_group = colonial_british
+						}
+					}
+				}
+				change_province_name = "Dacca"
+				rename_capital = "Dacca"
+			}
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = british
+					culture_group = colonial_british
+				}
+			}
+		}
+		trigger = {
+			or = {
+				north_coromandel_area = {
+					type = all
+					owned_by = ROOT
+				}
+				south_coromandel_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+		}
+		542 = {
+			set_province_flag = capital_of_india
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.e
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 25
+				OR = {
+					culture_group = langue_d_oil
+					culture_group = langue_d_oc
+				}
+			}
+		}
+		trigger = {
+			or = {
+				north_coromandel_area = {
+					type = all
+					owned_by = ROOT
+				}
+				south_coromandel_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+		}
+		2245 = {
+			set_province_flag = capital_of_india
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							culture_group = langue_d_oil
+							culture_group = langue_d_oc
+						}
+					}
+				}
+				change_province_name = "Pondichéry"
+				rename_capital = "Pondichéry"
+			}
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.f
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = langue_d_oil
+					culture_group = langue_d_oc
+				}
+			}
+			modifier = {
+				factor = 25
+				OR = {
+					culture_group = scandinavian
+					culture_group = finnic
+				}
+			}
+		}
+		trigger = {
+			madura_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		537 = {
+			set_province_flag = capital_of_india
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							culture_group = scandinavian
+							culture_group = finnic
+						}
+					}
+				}
+				change_province_name = "Tranquebar"
+				rename_capital = "Tranquebar"
+			}
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							culture_group = langue_d_oil
+							culture_group = langue_d_oc
+							culture_group = colonial_french
+						}
+					}
+				}
+				change_province_name = "Karikal"
+				rename_capital = "Karikal"
+			}
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.g
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 25
+				culture_group = portuguese
+			}
+		}
+		trigger = {
+			kanara_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		531 = {
+			set_province_flag = capital_of_india
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.h
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				culture_group = portuguese
+			}
+		}
+		trigger = {
+			maharashtra_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		3144 = {
+			set_province_flag = capital_of_india
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							culture_group = british
+							culture_group = colonial_british
+						}
+					}
+				}
+				change_province_name = "Bombay"
+				rename_capital = "Bombay"
+			}
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.1.i
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			gujarat_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		2568 = {
+			set_province_flag = capital_of_india
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							culture_group = langue_d_oil
+							culture_group = langue_d_oc
+						}
+					}
+				}
+				change_province_name = "Surate"
+				rename_capital = "Surate"
+			}
+		}
+		hidden_effect = {
+			india_trade_company_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			country_event = {
+				id = trade_company_country.2
+				days = 3
+			}
+		}
+	}
+}
+country_event = {
+	id = trade_company_country.2
+	title = "trade_company_country.2.t"
+	desc = "trade_company_country.2.d"
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "trade_company_country.2.a"
+		ai_chance = {
+			factor = 90
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					any_owned_province = {
+						area = india_trade_company_area
+					}
+					is_colonial_nation = yes
+					colonial_parent = {
+						any_owned_province = {
+							continent = indian_continent
+						}
+					}
+					NOT = {
+						has_country_flag = trade_company_country
+					}
+				}
+				set_country_flag = trade_country_protectorate
+				country_event = {
+					id = trade_company_country.3
+				}
+			}
+		}
+	}
+	option = {
+		name = "trade_company_country.2.b"
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					any_owned_province = {
+						area = india_trade_company_area
+					}
+					is_colonial_nation = yes
+					colonial_parent = {
+						any_owned_province = {
+							continent = indian_continent
+						}
+					}
+					NOT = {
+						has_country_flag = trade_company_country
+					}
+				}
+				country_event = {
+					id = trade_company_country.3
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = trade_company_country.3
+	title = "trade_company_country.3.t"
+	desc = "trade_company_country.3.t"
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			colonial_parent = {
+				every_owned_province = {
+					limit = {
+						continent = indian_continent
+						is_city = yes
+						is_overseas = yes
+					}
+					remove_core = THIS
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = trade_country_protectorate
+				}
+				colonial_parent = {
+					create_subject = {
+						who = ROOT
+						subject_type = protectorate
+					}
+				}
+			}
+			set_country_flag = trade_company_country
+			change_government = republic
+			add_government_reform = colonial_government
+			add_government_reform = oligarchy_reform
+			add_government_reform = vote_tax
+			set_legacy_government = colonial_government_legacy
+			change_technology_group = indian
+			change_unit_type = indian
+		}
+	}
+	option = {
+		name = "trade_company_country.3.a"
+		hidden_effect = {
+			custom_tooltip = stability_points_gained_150
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 150
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+			every_owned_province = {
+				limit = {
+					owned_by = ROOT
+					area = india_trade_company_area
+				}
+				remove_core = ROOT
+				AAA = {
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = sub_continent_food_center
+							}
+						}
+						set_country_flag = sub_continent_food_center
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = regional_food_center
+							}
+						}
+						set_country_flag = regional_food_center
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = has_estuary
+							}
+						}
+						set_country_flag = has_estuary
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = has_natural_harbour
+							}
+						}
+						set_country_flag = has_natural_harbour
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = has_small_natural_harbour
+							}
+						}
+						set_country_flag = has_small_natural_harbour
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = has_great_natural_harbour
+							}
+						}
+						set_country_flag = has_great_natural_harbour
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = good_natural_place
+							}
+						}
+						set_country_flag = good_natural_place
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = great_natural_place
+							}
+						}
+						set_country_flag = great_natural_place
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = awesome_natural_place
+							}
+						}
+						set_country_flag = awesome_natural_place
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = has_confluence
+							}
+						}
+						set_country_flag = has_confluence
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = favorable_terrain
+							}
+						}
+						set_country_flag = favorable_terrain
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = rugged_terrain
+							}
+						}
+						set_country_flag = rugged_terrain
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = challenging_terrain
+							}
+						}
+						set_country_flag = challenging_terrain
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = ashkenazi_jews
+							}
+						}
+						set_country_flag = ashkenazi_jews
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = tribals_control_province
+							}
+						}
+						set_country_flag = tribals_control_province
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = no_plagues
+							}
+						}
+						set_country_flag = no_plagues
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_flag = no_horses_present
+							}
+						}
+						set_country_flag = no_horses_present
+					}
+					if = {
+						limit = {
+							PREV = {
+								has_province_modifier = oasis_route
+							}
+						}
+						set_country_flag = oasis_route
+					}
+					set_variable = {
+						which = base_food
+						which = PREV
+					}
+					set_variable = {
+						which = cont_id
+						which = PREV
+					}
+					set_variable = {
+						which = continent_food
+						which = PREV
+					}
+					set_variable = {
+						which = continent_food_factor
+						which = PREV
+					}
+					set_variable = {
+						which = continent_food_percent_uneaten
+						which = PREV
+					}
+					set_variable = {
+						which = devPointRuralCur
+						which = PREV
+					}
+					set_variable = {
+						which = devPointTotal
+						which = PREV
+					}
+					set_variable = {
+						which = devPointUpperCur
+						which = PREV
+					}
+					set_variable = {
+						which = devPointUrbanCur
+						which = PREV
+					}
+					set_variable = {
+						which = eats_continent_food
+						which = PREV
+					}
+					set_variable = {
+						which = farm_efficiency
+						which = PREV
+					}
+					set_variable = {
+						which = farm_efficiency_terrain
+						which = PREV
+					}
+					set_variable = {
+						which = farm_efficiency_ducats_invested
+						which = PREV
+					}
+					set_variable = {
+						which = food_per_capita_quality
+						which = PREV
+					}
+					set_variable = {
+						which = ideal_rural_pop
+						which = PREV
+					}
+					set_variable = {
+						which = innate_rural_pop
+						which = PREV
+					}
+					set_variable = {
+						which = innate_rural_pop_base
+						which = PREV
+					}
+					set_variable = {
+						which = innate_rural_pop_region_share
+						which = PREV
+					}
+					set_variable = {
+						which = local_weather_factor
+						which = PREV
+					}
+					set_variable = {
+						which = mine_deposit_current
+						which = PREV
+					}
+					set_variable = {
+						which = mine_deposit_starting
+						which = PREV
+					}
+					set_variable = {
+						which = mine_power
+						which = PREV
+					}
+					set_variable = {
+						which = mine_starting_multiplier
+						which = PREV
+					}
+					set_variable = {
+						which = mine_new_reserves_threshold
+						which = PREV
+					}
+					set_variable = {
+						which = price_of_metal
+						which = PREV
+					}
+					set_variable = {
+						which = price_of_rural_good
+						which = PREV
+					}
+					set_variable = {
+						which = price_of_rural_good_mod
+						which = PREV
+					}
+					set_variable = {
+						which = prov_factor
+						which = PREV
+					}
+					set_variable = {
+						which = prov_id
+						which = PREV
+					}
+					set_variable = {
+						which = prov_radius
+						which = PREV
+					}
+					set_variable = {
+						which = prov_size
+						which = PREV
+					}
+					set_variable = {
+						which = province_plague_immunity
+						which = PREV
+					}
+					set_variable = {
+						which = regional_food_factor
+						which = PREV
+					}
+					set_variable = {
+						which = region_id
+						which = PREV
+					}
+					set_variable = {
+						which = rural_density
+						which = PREV
+					}
+					set_variable = {
+						which = rural_pop
+						which = PREV
+					}
+					set_variable = {
+						which = rural_production_power
+						which = PREV
+					}
+					set_variable = {
+						which = rural_production_power_save
+						which = PREV
+					}
+					set_variable = {
+						which = settlement_score_gravity
+						which = PREV
+					}
+					set_variable = {
+						which = settlement_score_progress
+						which = PREV
+					}
+					set_variable = {
+						which = sr_id
+						which = PREV
+					}
+					set_variable = {
+						which = surplus_food
+						which = PREV
+					}
+					set_variable = {
+						which = surplus_food_save
+						which = PREV
+					}
+					set_variable = {
+						which = tech_admin_level
+						which = PREV
+					}
+					set_variable = {
+						which = timber_province_production
+						which = PREV
+					}
+					set_variable = {
+						which = total_pop
+						which = PREV
+					}
+					set_variable = {
+						which = total_pop_r
+						which = PREV
+					}
+					set_variable = {
+						which = total_surplus_output
+						which = PREV
+					}
+					set_variable = {
+						which = travel_time_terrain_base
+						which = PREV
+					}
+					set_variable = {
+						which = tribal_culture
+						which = PREV
+					}
+					set_variable = {
+						which = tribal_settlement_score
+						which = PREV
+					}
+					set_variable = {
+						which = tribals_ratio
+						which = PREV
+					}
+					set_variable = {
+						which = urban_density
+						which = PREV
+					}
+					set_variable = {
+						which = urban_gravity_total
+						which = PREV
+					}
+					set_variable = {
+						which = upper_pop
+						which = PREV
+					}
+					set_variable = {
+						which = upper_pop_r
+						which = PREV
+					}
+					set_variable = {
+						which = urban_pop
+						which = PREV
+					}
+					set_variable = {
+						which = urban_production_power
+						which = PREV
+					}
+					set_variable = {
+						which = urban_ratio
+						which = PREV
+					}
+					set_variable = {
+						which = wealth_rural_fluid
+						which = PREV
+					}
+					set_variable = {
+						which = wealth_urban_fluid
+						which = PREV
+					}
+					set_variable = {
+						which = x_coord
+						which = PREV
+					}
+					set_variable = {
+						which = y_coord
+						which = PREV
+					}
+					set_variable = {
+						which = year_ticker
+						which = PREV
+					}
+					set_variable = {
+						which = catholic
+						which = PREV
+					}
+					set_variable = {
+						which = orthodox
+						which = PREV
+					}
+					set_variable = {
+						which = protestant
+						which = PREV
+					}
+					set_variable = {
+						which = reformed
+						which = PREV
+					}
+					set_variable = {
+						which = hussite
+						which = PREV
+					}
+					set_variable = {
+						which = gnostic
+						which = PREV
+					}
+					set_variable = {
+						which = chaldean
+						which = PREV
+					}
+					set_variable = {
+						which = coptic
+						which = PREV
+					}
+					set_variable = {
+						which = jewish
+						which = PREV
+					}
+					set_variable = {
+						which = sunni
+						which = PREV
+					}
+					set_variable = {
+						which = shiite
+						which = PREV
+					}
+					set_variable = {
+						which = ibadi
+						which = PREV
+					}
+					set_variable = {
+						which = wahhabi
+						which = PREV
+					}
+					set_variable = {
+						which = druze
+						which = PREV
+					}
+					set_variable = {
+						which = hinduism
+						which = PREV
+					}
+					set_variable = {
+						which = sikhism
+						which = PREV
+					}
+					set_variable = {
+						which = jain
+						which = PREV
+					}
+					set_variable = {
+						which = zoroastrian
+						which = PREV
+					}
+					set_variable = {
+						which = confucianism
+						which = PREV
+					}
+					set_variable = {
+						which = buddhism
+						which = PREV
+					}
+					set_variable = {
+						which = mahayana
+						which = PREV
+					}
+					set_variable = {
+						which = vajrayana
+						which = PREV
+					}
+					set_variable = {
+						which = inti
+						which = PREV
+					}
+					set_variable = {
+						which = nahuatl
+						which = PREV
+					}
+					set_variable = {
+						which = mesoamerican_religion
+						which = PREV
+					}
+					set_variable = {
+						which = totemism
+						which = PREV
+					}
+					set_variable = {
+						which = pantheism
+						which = PREV
+					}
+					set_variable = {
+						which = tengri_pagan_reformed
+						which = PREV
+					}
+					set_variable = {
+						which = shamanism
+						which = PREV
+					}
+					set_variable = {
+						which = animism
+						which = PREV
+					}
+					set_variable = {
+						which = west_african_pagan_reformed
+						which = PREV
+					}
+					set_variable = {
+						which = polynesian_religion
+						which = PREV
+					}
+					set_variable = {
+						which = shinto
+						which = PREV
+					}
+					set_variable = {
+						which = adi_dharam
+						which = PREV
+					}
+					set_variable = {
+						which = hellenic_pagan
+						which = PREV
+					}
+					set_variable = {
+						which = norse_pagan_reformed
+						which = PREV
+					}
+					set_variable = {
+						which = finnish_pagan_reformed
+						which = PREV
+					}
+					set_variable = {
+						which = slavic_pagan_reformed
+						which = PREV
+					}
+					set_variable = {
+						which = baltic_pagan_reformed
+						which = PREV
+					}
+					PREV = {
+						trigger_switch = {
+							on_trigger = has_province_flag
+							tin = {
+								AAA = {
+									set_country_flag = tin
+								}
+							}
+							coal = {
+								AAA = {
+									set_country_flag = coal
+								}
+							}
+							iron = {
+								AAA = {
+									set_country_flag = iron
+								}
+							}
+							salt = {
+								AAA = {
+									set_country_flag = salt
+								}
+							}
+							copper = {
+								AAA = {
+									set_country_flag = copper
+								}
+							}
+							sulphur = {
+								AAA = {
+									set_country_flag = sulphur
+								}
+							}
+							marble = {
+								AAA = {
+									set_country_flag = marble
+								}
+							}
+							gems = {
+								AAA = {
+									set_country_flag = gems
+								}
+							}
+							silver = {
+								AAA = {
+									set_country_flag = silver
+								}
+							}
+							gold = {
+								AAA = {
+									set_country_flag = gold
+								}
+							}
+							lead = {
+								AAA = {
+									set_country_flag = lead
+								}
+							}
+							alum = {
+								AAA = {
+									set_country_flag = alum
+								}
+							}
+							obsidian = {
+								AAA = {
+									set_country_flag = obsidian
+								}
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_province_modifier
+							fur_low = {
+								AAA = {
+									set_country_flag = fur_low
+								}
+							}
+							fur_medium = {
+								AAA = {
+									set_country_flag = fur_medium
+								}
+							}
+							fur_large = {
+								AAA = {
+									set_country_flag = fur_large
+								}
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_province_modifier
+							cod_province_small = {
+								AAA = {
+									set_country_flag = cod_province_small
+								}
+							}
+							cod_province_medium = {
+								AAA = {
+									set_country_flag = cod_province_medium
+								}
+							}
+							cod_province_big = {
+								AAA = {
+									set_country_flag = cod_province_big
+								}
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_province_modifier
+							ivory_low = {
+								AAA = {
+									set_country_flag = ivory_low
+								}
+							}
+							ivory_medium = {
+								AAA = {
+									set_country_flag = ivory_medium
+								}
+							}
+							ivory_large = {
+								AAA = {
+									set_country_flag = ivory_large
+								}
+							}
+						}
+					}
+				}
+				cede_province = ---
+				remove_core = owner
+				set_local_autonomy = 0
+				remove_province_modifier = martial_law
+				add_base_tax = 1
+				AAA = {
+					PREV = {
+						set_variable = {
+							which = base_food
+							which = PREV
+						}
+						set_variable = {
+							which = cont_id
+							which = PREV
+						}
+						set_variable = {
+							which = continent_food
+							which = PREV
+						}
+						set_variable = {
+							which = continent_food_factor
+							which = PREV
+						}
+						set_variable = {
+							which = continent_food_percent_uneaten
+							which = PREV
+						}
+						set_variable = {
+							which = devPointRuralCur
+							which = PREV
+						}
+						set_variable = {
+							which = devPointTotal
+							which = PREV
+						}
+						set_variable = {
+							which = devPointUpperCur
+							which = PREV
+						}
+						set_variable = {
+							which = devPointUrbanCur
+							which = PREV
+						}
+						set_variable = {
+							which = eats_continent_food
+							which = PREV
+						}
+						set_variable = {
+							which = farm_efficiency
+							which = PREV
+						}
+						set_variable = {
+							which = farm_efficiency_terrain
+							which = PREV
+						}
+						set_variable = {
+							which = farm_efficiency_ducats_invested
+							which = PREV
+						}
+						set_variable = {
+							which = food_per_capita_quality
+							which = PREV
+						}
+						set_variable = {
+							which = ideal_rural_pop
+							which = PREV
+						}
+						set_variable = {
+							which = innate_rural_pop
+							which = PREV
+						}
+						set_variable = {
+							which = innate_rural_pop_base
+							which = PREV
+						}
+						set_variable = {
+							which = innate_rural_pop_region_share
+							which = PREV
+						}
+						set_variable = {
+							which = local_weather_factor
+							which = PREV
+						}
+						set_variable = {
+							which = mine_deposit_current
+							which = PREV
+						}
+						set_variable = {
+							which = mine_deposit_starting
+							which = PREV
+						}
+						set_variable = {
+							which = mine_power
+							which = PREV
+						}
+						set_variable = {
+							which = mine_starting_multiplier
+							which = PREV
+						}
+						set_variable = {
+							which = mine_new_reserves_threshold
+							which = PREV
+						}
+						set_variable = {
+							which = price_of_metal
+							which = PREV
+						}
+						set_variable = {
+							which = price_of_rural_good
+							which = PREV
+						}
+						set_variable = {
+							which = price_of_rural_good_mod
+							which = PREV
+						}
+						set_variable = {
+							which = prov_factor
+							which = PREV
+						}
+						set_variable = {
+							which = prov_id
+							which = PREV
+						}
+						set_variable = {
+							which = prov_radius
+							which = PREV
+						}
+						set_variable = {
+							which = prov_size
+							which = PREV
+						}
+						set_variable = {
+							which = province_plague_immunity
+							which = PREV
+						}
+						set_variable = {
+							which = regional_food_factor
+							which = PREV
+						}
+						set_variable = {
+							which = region_id
+							which = PREV
+						}
+						set_variable = {
+							which = rural_density
+							which = PREV
+						}
+						set_variable = {
+							which = rural_pop
+							which = PREV
+						}
+						set_variable = {
+							which = rural_production_power
+							which = PREV
+						}
+						set_variable = {
+							which = rural_production_power_save
+							which = PREV
+						}
+						set_variable = {
+							which = settlement_score_gravity
+							which = PREV
+						}
+						set_variable = {
+							which = settlement_score_progress
+							which = PREV
+						}
+						set_variable = {
+							which = sr_id
+							which = PREV
+						}
+						set_variable = {
+							which = surplus_food
+							which = PREV
+						}
+						set_variable = {
+							which = surplus_food_save
+							which = PREV
+						}
+						set_variable = {
+							which = tech_admin_level
+							which = PREV
+						}
+						set_variable = {
+							which = timber_province_production
+							which = PREV
+						}
+						set_variable = {
+							which = total_pop
+							which = PREV
+						}
+						set_variable = {
+							which = total_pop_r
+							which = PREV
+						}
+						set_variable = {
+							which = total_surplus_output
+							which = PREV
+						}
+						set_variable = {
+							which = travel_time_terrain_base
+							which = PREV
+						}
+						set_variable = {
+							which = tribal_culture
+							which = PREV
+						}
+						set_variable = {
+							which = tribal_settlement_score
+							which = PREV
+						}
+						set_variable = {
+							which = tribals_ratio
+							which = PREV
+						}
+						set_variable = {
+							which = urban_density
+							which = PREV
+						}
+						set_variable = {
+							which = urban_gravity_total
+							which = PREV
+						}
+						set_variable = {
+							which = upper_pop
+							which = PREV
+						}
+						set_variable = {
+							which = upper_pop_r
+							which = PREV
+						}
+						set_variable = {
+							which = urban_pop
+							which = PREV
+						}
+						set_variable = {
+							which = urban_production_power
+							which = PREV
+						}
+						set_variable = {
+							which = urban_ratio
+							which = PREV
+						}
+						set_variable = {
+							which = wealth_rural_fluid
+							which = PREV
+						}
+						set_variable = {
+							which = wealth_urban_fluid
+							which = PREV
+						}
+						set_variable = {
+							which = x_coord
+							which = PREV
+						}
+						set_variable = {
+							which = y_coord
+							which = PREV
+						}
+						set_variable = {
+							which = year_ticker
+							which = PREV
+						}
+						set_variable = {
+							which = catholic
+							which = PREV
+						}
+						set_variable = {
+							which = orthodox
+							which = PREV
+						}
+						set_variable = {
+							which = protestant
+							which = PREV
+						}
+						set_variable = {
+							which = reformed
+							which = PREV
+						}
+						set_variable = {
+							which = hussite
+							which = PREV
+						}
+						set_variable = {
+							which = gnostic
+							which = PREV
+						}
+						set_variable = {
+							which = chaldean
+							which = PREV
+						}
+						set_variable = {
+							which = coptic
+							which = PREV
+						}
+						set_variable = {
+							which = jewish
+							which = PREV
+						}
+						set_variable = {
+							which = sunni
+							which = PREV
+						}
+						set_variable = {
+							which = shiite
+							which = PREV
+						}
+						set_variable = {
+							which = ibadi
+							which = PREV
+						}
+						set_variable = {
+							which = wahhabi
+							which = PREV
+						}
+						set_variable = {
+							which = druze
+							which = PREV
+						}
+						set_variable = {
+							which = hinduism
+							which = PREV
+						}
+						set_variable = {
+							which = sikhism
+							which = PREV
+						}
+						set_variable = {
+							which = jain
+							which = PREV
+						}
+						set_variable = {
+							which = zoroastrian
+							which = PREV
+						}
+						set_variable = {
+							which = confucianism
+							which = PREV
+						}
+						set_variable = {
+							which = buddhism
+							which = PREV
+						}
+						set_variable = {
+							which = mahayana
+							which = PREV
+						}
+						set_variable = {
+							which = vajrayana
+							which = PREV
+						}
+						set_variable = {
+							which = inti
+							which = PREV
+						}
+						set_variable = {
+							which = nahuatl
+							which = PREV
+						}
+						set_variable = {
+							which = mesoamerican_religion
+							which = PREV
+						}
+						set_variable = {
+							which = totemism
+							which = PREV
+						}
+						set_variable = {
+							which = pantheism
+							which = PREV
+						}
+						set_variable = {
+							which = tengri_pagan_reformed
+							which = PREV
+						}
+						set_variable = {
+							which = shamanism
+							which = PREV
+						}
+						set_variable = {
+							which = animism
+							which = PREV
+						}
+						set_variable = {
+							which = west_african_pagan_reformed
+							which = PREV
+						}
+						set_variable = {
+							which = polynesian_religion
+							which = PREV
+						}
+						set_variable = {
+							which = shinto
+							which = PREV
+						}
+						set_variable = {
+							which = adi_dharam
+							which = PREV
+						}
+						set_variable = {
+							which = hellenic_pagan
+							which = PREV
+						}
+						set_variable = {
+							which = norse_pagan_reformed
+							which = PREV
+						}
+						set_variable = {
+							which = finnish_pagan_reformed
+							which = PREV
+						}
+						set_variable = {
+							which = slavic_pagan_reformed
+							which = PREV
+						}
+						set_variable = {
+							which = baltic_pagan_reformed
+							which = PREV
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_flag
+						tin = {
+							PREV = {
+								set_province_flag = tin
+							}
+							clr_country_flag = tin
+						}
+						coal = {
+							PREV = {
+								set_province_flag = coal
+							}
+							clr_country_flag = coal
+						}
+						iron = {
+							PREV = {
+								set_province_flag = iron
+							}
+							clr_country_flag = iron
+						}
+						salt = {
+							PREV = {
+								set_province_flag = salt
+							}
+							clr_country_flag = salt
+						}
+						copper = {
+							PREV = {
+								set_province_flag = copper
+							}
+							clr_country_flag = copper
+						}
+						sulphur = {
+							PREV = {
+								set_province_flag = sulphur
+							}
+							clr_country_flag = sulphur
+						}
+						marble = {
+							PREV = {
+								set_province_flag = marble
+							}
+							clr_country_flag = marble
+						}
+						gems = {
+							PREV = {
+								set_province_flag = gems
+							}
+							clr_country_flag = gems
+						}
+						silver = {
+							PREV = {
+								set_province_flag = silver
+							}
+							clr_country_flag = silver
+						}
+						gold = {
+							PREV = {
+								set_province_flag = gold
+							}
+							clr_country_flag = gold
+						}
+						lead = {
+							PREV = {
+								set_province_flag = lead
+							}
+							clr_country_flag = lead
+						}
+						alum = {
+							PREV = {
+								set_province_flag = alum
+							}
+							clr_country_flag = alum
+						}
+						obsidian = {
+							PREV = {
+								set_province_flag = obsidian
+							}
+							clr_country_flag = obsidian
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_flag
+						fur_low = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = fur_low
+									duration = -1
+								}
+							}
+							clr_country_flag = fur_low
+						}
+						fur_medium = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = fur_medium
+									duration = -1
+								}
+							}
+							clr_country_flag = fur_medium
+						}
+						fur_large = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = fur_large
+									duration = -1
+								}
+							}
+							clr_country_flag = fur_large
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_flag
+						cod_province_small = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = cod_province_small
+									duration = -1
+								}
+							}
+							clr_country_flag = cod_province_small
+						}
+						cod_province_medium = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = cod_province_medium
+									duration = -1
+								}
+							}
+							clr_country_flag = cod_province_medium
+						}
+						cod_province_big = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = cod_province_big
+									duration = -1
+								}
+							}
+							clr_country_flag = cod_province_big
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_flag
+						ivory_low = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = ivory_low
+									duration = -1
+								}
+							}
+							clr_country_flag = ivory_low
+						}
+						ivory_medium = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = ivory_medium
+									duration = -1
+								}
+							}
+							clr_country_flag = ivory_medium
+						}
+						ivory_large = {
+							PREV = {
+								add_permanent_province_modifier = {
+									name = ivory_large
+									duration = -1
+								}
+							}
+							clr_country_flag = ivory_large
+						}
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = sub_continent_food_center
+						}
+					}
+					set_province_flag = sub_continent_food_center
+					AAA = {
+						clr_country_flag = sub_continent_food_center
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = regional_food_center
+						}
+					}
+					set_province_flag = regional_food_center
+					AAA = {
+						clr_country_flag = regional_food_center
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = has_estuary
+						}
+					}
+					set_province_flag = has_estuary
+					AAA = {
+						clr_country_flag = has_estuary
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = has_natural_harbour
+						}
+					}
+					set_province_flag = has_natural_harbour
+					AAA = {
+						clr_country_flag = has_natural_harbour
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = has_small_natural_harbour
+						}
+					}
+					set_province_flag = has_small_natural_harbour
+					AAA = {
+						clr_country_flag = has_small_natural_harbour
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = has_great_natural_harbour
+						}
+					}
+					set_province_flag = has_great_natural_harbour
+					AAA = {
+						clr_country_flag = has_great_natural_harbour
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = good_natural_place
+						}
+					}
+					set_province_flag = good_natural_place
+					AAA = {
+						clr_country_flag = good_natural_place
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = great_natural_place
+						}
+					}
+					set_province_flag = great_natural_place
+					AAA = {
+						clr_country_flag = great_natural_place
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = awesome_natural_place
+						}
+					}
+					set_province_flag = awesome_natural_place
+					AAA = {
+						clr_country_flag = awesome_natural_place
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = has_confluence
+						}
+					}
+					set_province_flag = has_confluence
+					AAA = {
+						clr_country_flag = has_confluence
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = favorable_terrain
+						}
+					}
+					set_province_flag = favorable_terrain
+					AAA = {
+						clr_country_flag = favorable_terrain
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = rugged_terrain
+						}
+					}
+					set_province_flag = rugged_terrain
+					AAA = {
+						clr_country_flag = rugged_terrain
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = challenging_terrain
+						}
+					}
+					set_province_flag = challenging_terrain
+					AAA = {
+						clr_country_flag = challenging_terrain
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = ashkenazi_jews
+						}
+					}
+					set_province_flag = ashkenazi_jews
+					AAA = {
+						clr_country_flag = ashkenazi_jews
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = tribals_control_province
+						}
+					}
+					set_province_flag = tribals_control_province
+					AAA = {
+						clr_country_flag = tribals_control_province
+					}
+					add_permanent_province_modifier = {
+						name = estate_tribal_territory
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = no_plagues
+						}
+					}
+					set_province_flag = no_plagues
+					AAA = {
+						clr_country_flag = no_plagues
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = no_horses_present
+						}
+					}
+					set_province_flag = no_horses_present
+					AAA = {
+						clr_country_flag = no_horses_present
+					}
+				}
+				set_variable = {
+					which = tempRural
+					which = rural_pop_display
+				}
+				set_variable = {
+					which = tempUrban
+					which = urban_pop_display
+				}
+				set_variable = {
+					which = rural_pop_display
+					value = 0
+				}
+				set_variable = {
+					which = urban_pop_display
+					value = 0
+				}
+				set_variable = {
+					which = upper_pop_display
+					value = 0
+				}
+				set_variable = {
+					which = total_pop_display
+					value = 0
+				}
+				set_variable = {
+					which = t_P_ITV
+					value = 100
+				}
+				subtract_variable = {
+					which = t_P_ITV
+					which = urban_ratio
+				}
+				set_variable = {
+					which = t1_P_RTV
+					which = total_pop_r
+				}
+				multiply_variable = {
+					which = t1_P_RTV
+					which = t_P_ITV
+				}
+				set_variable = {
+					which = t2_P_RTV
+					which = t1_P_RTV
+				}
+				multiply_variable = {
+					which = t1_P_RTV
+					value = 0.01
+				}
+				set_variable = {
+					which = t3_P_RTV
+					which = t1_P_RTV
+				}
+				multiply_variable = {
+					which = t3_P_RTV
+					value = -100
+				}
+				change_variable = {
+					which = t3_P_RTV
+					which = t2_P_RTV
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = t3_P_RTV
+							value = 0.05
+						}
+					}
+					change_variable = {
+						which = t1_P_RTV
+						value = 0.001
+					}
+				}
+				set_variable = {
+					which = rural_pop_display
+					which = t1_P_RTV
+				}
+				set_variable = {
+					which = t1_P_RTV
+					value = 0
+				}
+				set_variable = {
+					which = t2_P_RTV
+					value = 0
+				}
+				set_variable = {
+					which = t3_P_RTV
+					value = 0
+				}
+				set_variable = {
+					which = t_P_ITV
+					value = 0
+				}
+				set_variable = {
+					which = t1_P_RTV
+					which = total_pop_r
+				}
+				multiply_variable = {
+					which = t1_P_RTV
+					which = urban_ratio
+				}
+				set_variable = {
+					which = t2_P_RTV
+					which = t1_P_RTV
+				}
+				multiply_variable = {
+					which = t1_P_RTV
+					value = 0.01
+				}
+				set_variable = {
+					which = t3_P_RTV
+					which = t1_P_RTV
+				}
+				multiply_variable = {
+					which = t3_P_RTV
+					value = -100
+				}
+				change_variable = {
+					which = t3_P_RTV
+					which = t2_P_RTV
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = t3_P_RTV
+							value = 0.05
+						}
+					}
+					change_variable = {
+						which = t1_P_RTV
+						value = 0.001
+					}
+				}
+				set_variable = {
+					which = urban_pop_display
+					which = t1_P_RTV
+				}
+				set_variable = {
+					which = t1_P_RTV
+					value = 0
+				}
+				set_variable = {
+					which = t2_P_RTV
+					value = 0
+				}
+				set_variable = {
+					which = t3_P_RTV
+					value = 0
+				}
+				change_variable = {
+					which = upper_pop_display
+					which = upper_pop_r
+				}
+				change_variable = {
+					which = total_pop_display
+					which = total_pop_r
+				}
+				subtract_variable = {
+					which = tempRural
+					which = rural_pop_display
+				}
+				subtract_variable = {
+					which = tempUrban
+					which = urban_pop_display
+				}
+				subtract_variable = {
+					which = rural_change_display
+					which = tempRural
+				}
+				subtract_variable = {
+					which = urban_change_display
+					which = tempUrban
+				}
+				set_variable = {
+					which = tempRural
+					value = 0
+				}
+				set_variable = {
+					which = tempUrban
+					value = 0
+				}
+				set_variable = {
+					which = total_change_display
+					which = rural_change_display
+				}
+				change_variable = {
+					which = total_change_display
+					which = urban_change_display
+				}
+				add_permanent_province_modifier = {
+					name = pop_display
+					duration = -1
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_wasteland = yes
+						}
+						NOT = {
+							is_city = yes
+						}
+					}
+					set_variable = {
+						which = devPointRuralCur
+						value = 0
+					}
+					set_variable = {
+						which = devPointUrbanCur
+						value = 0
+					}
+					set_variable = {
+						which = devPointUpperCur
+						value = 0
+					}
+					trigger_switch = {
+						on_trigger = has_province_modifier
+						fur_low = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 0.75
+							}
+						}
+						fur_medium = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.125
+							}
+						}
+						fur_large = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.875
+							}
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_province_modifier
+						pearls_low = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.75
+							}
+						}
+						pearls_medium = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 4
+							}
+						}
+						pearls_large = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 7.625
+							}
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_province_modifier
+						herring_province_small = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 0.375
+							}
+						}
+						herring_province_medium = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 0.75
+							}
+						}
+						herring_province_big = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.5
+							}
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_province_modifier
+						cod_province_small = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 0.375
+							}
+						}
+						cod_province_medium = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 0.75
+							}
+						}
+						cod_province_big = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.5
+							}
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_province_modifier
+						ivory_low = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 0.75
+							}
+						}
+						ivory_medium = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.125
+							}
+						}
+						ivory_large = {
+							change_variable = {
+								which = devPointRuralCur
+								value = 1.5
+							}
+						}
+					}
+					multiply_variable = {
+						which = devPointRuralCur
+						value = 0.5
+					}
+					set_variable = {
+						which = devPointRuralPOP
+						which = rural_pop
+					}
+					multiply_variable = {
+						which = devPointRuralPOP
+						value = 0.2
+					}
+					change_variable = {
+						which = devPointRuralCur
+						which = devPointRuralPOP
+					}
+					set_variable = {
+						which = devPointRuralPOP
+						value = 0
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_flag = good_natural_place
+								has_province_flag = great_natural_place
+								has_province_flag = awesome_natural_place
+							}
+						}
+						change_variable = {
+							which = devPointRuralCur
+							value = 0.5
+						}
+					}
+					change_variable = {
+						which = devPointRuralCur
+						value = 1
+					}
+					set_variable = {
+						which = devPointTotal
+						which = devPointRuralCur
+					}
+					change_variable = {
+						which = devPointTotal
+						which = devPointUrbanCur
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = devPointUpperCur
+								which = devPointTotal
+							}
+						}
+						set_variable = {
+							which = devPointUpperCur
+							which = devPointTotal
+						}
+						subtract_variable = {
+							which = devPointUpperCur
+							value = 1
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = devPointUpperCur
+										value = 0
+									}
+								}
+							}
+							set_variable = {
+								which = devPointUpperCur
+								value = 0
+							}
+						}
+					}
+					change_variable = {
+						which = devPointTotal
+						which = devPointUpperCur
+					}
+					set_variable = {
+						which = devDiffRural
+						which = devPointRuralCur
+					}
+					multiply_variable = {
+						which = devDiffRural
+						value = 0.001
+					}
+					multiply_variable = {
+						which = devDiffRural
+						value = 1000
+					}
+					export_to_variable = {
+						which = devCurRural
+						value = base_tax
+					}
+					subtract_variable = {
+						which = devDiffRural
+						which = devCurRural
+					}
+					while = {
+						limit = {
+							OR = {
+								check_variable = {
+									which = devDiffRural
+									value = 1
+								}
+								NOT = {
+									check_variable = {
+										which = devDiffRural
+										value = -0.999
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = devDiffRural
+									value = 1
+								}
+							}
+							set_province_flag = update_capital
+							if = {
+								limit = {
+									check_variable = {
+										which = devDiffRural
+										value = 5
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffRural
+											value = 7
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = 8
+											}
+										}
+										add_base_tax = 8
+										change_variable = {
+											which = devDiffRural
+											value = -8
+										}
+									}
+									else = {
+										add_base_tax = 7
+										change_variable = {
+											which = devDiffRural
+											value = -7
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = 6
+											}
+										}
+										add_base_tax = 6
+										change_variable = {
+											which = devDiffRural
+											value = -6
+										}
+									}
+									else = {
+										add_base_tax = 5
+										change_variable = {
+											which = devDiffRural
+											value = -5
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffRural
+											value = 3
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = 4
+											}
+										}
+										add_base_tax = 4
+										change_variable = {
+											which = devDiffRural
+											value = -4
+										}
+									}
+									else = {
+										add_base_tax = 3
+										change_variable = {
+											which = devDiffRural
+											value = -3
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = 2
+											}
+										}
+										add_base_tax = 2
+										change_variable = {
+											which = devDiffRural
+											value = -2
+										}
+									}
+									else = {
+										add_base_tax = 1
+										change_variable = {
+											which = devDiffRural
+											value = -1
+										}
+									}
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = devDiffRural
+										value = -0.999
+									}
+								}
+							}
+							set_province_flag = update_capital
+							if = {
+								limit = {
+									check_variable = {
+										which = devDiffRural
+										value = -4
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffRural
+											value = -2
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = -1
+											}
+										}
+										add_base_tax = -1
+										change_variable = {
+											which = devDiffRural
+											value = 1
+										}
+									}
+									else = {
+										add_base_tax = -2
+										change_variable = {
+											which = devDiffRural
+											value = 2
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = -3
+											}
+										}
+										add_base_tax = -3
+										change_variable = {
+											which = devDiffRural
+											value = 3
+										}
+									}
+									else = {
+										add_base_tax = -4
+										change_variable = {
+											which = devDiffRural
+											value = 4
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffRural
+											value = -6
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = -5
+											}
+										}
+										add_base_tax = -5
+										change_variable = {
+											which = devDiffRural
+											value = 5
+										}
+									}
+									else = {
+										add_base_tax = -6
+										change_variable = {
+											which = devDiffRural
+											value = 6
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffRural
+												value = -7
+											}
+										}
+										add_base_tax = -7
+										change_variable = {
+											which = devDiffRural
+											value = 7
+										}
+									}
+									else = {
+										add_base_tax = -8
+										change_variable = {
+											which = devDiffRural
+											value = 8
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = devCurRural
+						value = 0
+					}
+					set_variable = {
+						which = devDiffRural
+						value = 0
+					}
+					set_variable = {
+						which = devDiffUrban
+						which = devPointUrbanCur
+					}
+					multiply_variable = {
+						which = devDiffUrban
+						value = 0.001
+					}
+					multiply_variable = {
+						which = devDiffUrban
+						value = 1000
+					}
+					export_to_variable = {
+						which = devCurUrban
+						value = base_production
+					}
+					subtract_variable = {
+						which = devDiffUrban
+						which = devCurUrban
+					}
+					while = {
+						limit = {
+							OR = {
+								check_variable = {
+									which = devDiffUrban
+									value = 1
+								}
+								NOT = {
+									check_variable = {
+										which = devDiffUrban
+										value = -0.999
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = devDiffUrban
+									value = 1
+								}
+							}
+							set_province_flag = update_capital
+							if = {
+								limit = {
+									check_variable = {
+										which = devDiffUrban
+										value = 5
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUrban
+											value = 7
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = 8
+											}
+										}
+										add_base_production = 8
+										change_variable = {
+											which = devDiffUrban
+											value = -8
+										}
+									}
+									else = {
+										add_base_production = 7
+										change_variable = {
+											which = devDiffUrban
+											value = -7
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = 6
+											}
+										}
+										add_base_production = 6
+										change_variable = {
+											which = devDiffUrban
+											value = -6
+										}
+									}
+									else = {
+										add_base_production = 5
+										change_variable = {
+											which = devDiffUrban
+											value = -5
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUrban
+											value = 3
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = 4
+											}
+										}
+										add_base_production = 4
+										change_variable = {
+											which = devDiffUrban
+											value = -4
+										}
+									}
+									else = {
+										add_base_production = 3
+										change_variable = {
+											which = devDiffUrban
+											value = -3
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = 2
+											}
+										}
+										add_base_production = 2
+										change_variable = {
+											which = devDiffUrban
+											value = -2
+										}
+									}
+									else = {
+										add_base_production = 1
+										change_variable = {
+											which = devDiffUrban
+											value = -1
+										}
+									}
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = devDiffUrban
+										value = -0.999
+									}
+								}
+							}
+							set_province_flag = update_capital
+							if = {
+								limit = {
+									check_variable = {
+										which = devDiffUrban
+										value = -4
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUrban
+											value = -2
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = -1
+											}
+										}
+										add_base_production = -1
+										change_variable = {
+											which = devDiffUrban
+											value = 1
+										}
+									}
+									else = {
+										add_base_production = -2
+										change_variable = {
+											which = devDiffUrban
+											value = 2
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = -3
+											}
+										}
+										add_base_production = -3
+										change_variable = {
+											which = devDiffUrban
+											value = 3
+										}
+									}
+									else = {
+										add_base_production = -4
+										change_variable = {
+											which = devDiffUrban
+											value = 4
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUrban
+											value = -6
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = -5
+											}
+										}
+										add_base_production = -5
+										change_variable = {
+											which = devDiffUrban
+											value = 5
+										}
+									}
+									else = {
+										add_base_production = -6
+										change_variable = {
+											which = devDiffUrban
+											value = 6
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUrban
+												value = -7
+											}
+										}
+										add_base_production = -7
+										change_variable = {
+											which = devDiffUrban
+											value = 7
+										}
+									}
+									else = {
+										add_base_production = -8
+										change_variable = {
+											which = devDiffUrban
+											value = 8
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = devCurUrban
+						value = 0
+					}
+					set_variable = {
+						which = devDiffUrban
+						value = 0
+					}
+					set_variable = {
+						which = devDiffUpper
+						which = devPointUpperCur
+					}
+					multiply_variable = {
+						which = devDiffUpper
+						value = 0.001
+					}
+					multiply_variable = {
+						which = devDiffUpper
+						value = 1000
+					}
+					export_to_variable = {
+						which = devCurUpper
+						value = base_manpower
+					}
+					subtract_variable = {
+						which = devDiffUpper
+						which = devCurUpper
+					}
+					while = {
+						limit = {
+							OR = {
+								check_variable = {
+									which = devDiffUpper
+									value = 1
+								}
+								NOT = {
+									check_variable = {
+										which = devDiffUpper
+										value = -0.999
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = devDiffUpper
+									value = 1
+								}
+							}
+							set_province_flag = update_capital
+							if = {
+								limit = {
+									check_variable = {
+										which = devDiffUpper
+										value = 5
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUpper
+											value = 7
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = 8
+											}
+										}
+										add_base_manpower = 8
+										change_variable = {
+											which = devDiffUpper
+											value = -8
+										}
+									}
+									else = {
+										add_base_manpower = 7
+										change_variable = {
+											which = devDiffUpper
+											value = -7
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = 6
+											}
+										}
+										add_base_manpower = 6
+										change_variable = {
+											which = devDiffUpper
+											value = -6
+										}
+									}
+									else = {
+										add_base_manpower = 5
+										change_variable = {
+											which = devDiffUpper
+											value = -5
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUpper
+											value = 3
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = 4
+											}
+										}
+										add_base_manpower = 4
+										change_variable = {
+											which = devDiffUpper
+											value = -4
+										}
+									}
+									else = {
+										add_base_manpower = 3
+										change_variable = {
+											which = devDiffUpper
+											value = -3
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = 2
+											}
+										}
+										add_base_manpower = 2
+										change_variable = {
+											which = devDiffUpper
+											value = -2
+										}
+									}
+									else = {
+										add_base_manpower = 1
+										change_variable = {
+											which = devDiffUpper
+											value = -1
+										}
+									}
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = devDiffUpper
+										value = -0.999
+									}
+								}
+							}
+							set_province_flag = update_capital
+							if = {
+								limit = {
+									check_variable = {
+										which = devDiffUpper
+										value = -4
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUpper
+											value = -2
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = -1
+											}
+										}
+										add_base_manpower = -1
+										change_variable = {
+											which = devDiffUpper
+											value = 1
+										}
+									}
+									else = {
+										add_base_manpower = -2
+										change_variable = {
+											which = devDiffUpper
+											value = 2
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = -3
+											}
+										}
+										add_base_manpower = -3
+										change_variable = {
+											which = devDiffUpper
+											value = 3
+										}
+									}
+									else = {
+										add_base_manpower = -4
+										change_variable = {
+											which = devDiffUpper
+											value = 4
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = devDiffUpper
+											value = -6
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = -5
+											}
+										}
+										add_base_manpower = -5
+										change_variable = {
+											which = devDiffUpper
+											value = 5
+										}
+									}
+									else = {
+										add_base_manpower = -6
+										change_variable = {
+											which = devDiffUpper
+											value = 6
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = devDiffUpper
+												value = -7
+											}
+										}
+										add_base_manpower = -7
+										change_variable = {
+											which = devDiffUpper
+											value = 7
+										}
+									}
+									else = {
+										add_base_manpower = -8
+										change_variable = {
+											which = devDiffUpper
+											value = 8
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = devCurUpper
+						value = 0
+					}
+					set_variable = {
+						which = devDiffUpper
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						province_id = 3645
+					}
+					add_permanent_province_modifier = {
+						name = "toronto_natural_harbour"
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						province_id = 944
+					}
+					add_permanent_province_modifier = {
+						name = "chicago_natural_harbour"
+						duration = -1
+					}
+				}
+				if = {
+					limit = {
+						AAA = {
+							has_country_flag = oasis_route
+						}
+					}
+					add_permanent_province_modifier = {
+						name = "oasis_route"
+						duration = -1
+					}
+					AAA = {
+						clr_country_flag = oasis_route
+					}
+				}
+				AAA = {
+					set_variable = {
+						which = base_food
+						value = 0
+					}
+					set_variable = {
+						which = cont_id
+						value = 0
+					}
+					set_variable = {
+						which = continent_food
+						value = 0
+					}
+					set_variable = {
+						which = continent_food_factor
+						value = 0
+					}
+					set_variable = {
+						which = continent_food_percent_uneaten
+						value = 0
+					}
+					set_variable = {
+						which = devPointRuralCur
+						value = 0
+					}
+					set_variable = {
+						which = devPointTotal
+						value = 0
+					}
+					set_variable = {
+						which = devPointUpperCur
+						value = 0
+					}
+					set_variable = {
+						which = devPointUrbanCur
+						value = 0
+					}
+					set_variable = {
+						which = eats_continent_food
+						value = 0
+					}
+					set_variable = {
+						which = farm_efficiency
+						value = 0
+					}
+					set_variable = {
+						which = farm_efficiency_terrain
+						value = 0
+					}
+					set_variable = {
+						which = farm_efficiency_ducats_invested
+						value = 0
+					}
+					set_variable = {
+						which = food_per_capita_quality
+						value = 0
+					}
+					set_variable = {
+						which = ideal_rural_pop
+						value = 0
+					}
+					set_variable = {
+						which = innate_rural_pop
+						value = 0
+					}
+					set_variable = {
+						which = innate_rural_pop_base
+						value = 0
+					}
+					set_variable = {
+						which = innate_rural_pop_region_share
+						value = 0
+					}
+					set_variable = {
+						which = local_weather_factor
+						value = 0
+					}
+					set_variable = {
+						which = mine_deposit_current
+						value = 0
+					}
+					set_variable = {
+						which = mine_deposit_starting
+						value = 0
+					}
+					set_variable = {
+						which = mine_power
+						value = 0
+					}
+					set_variable = {
+						which = mine_starting_multiplier
+						value = 0
+					}
+					set_variable = {
+						which = mine_new_reserves_threshold
+						value = 0
+					}
+					set_variable = {
+						which = price_of_metal
+						value = 0
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0
+					}
+					set_variable = {
+						which = price_of_rural_good_mod
+						value = 0
+					}
+					set_variable = {
+						which = prov_factor
+						value = 0
+					}
+					set_variable = {
+						which = prov_id
+						value = 0
+					}
+					set_variable = {
+						which = prov_radius
+						value = 0
+					}
+					set_variable = {
+						which = prov_size
+						value = 0
+					}
+					set_variable = {
+						which = province_plague_immunity
+						value = 0
+					}
+					set_variable = {
+						which = regional_food_factor
+						value = 0
+					}
+					set_variable = {
+						which = region_id
+						value = 0
+					}
+					set_variable = {
+						which = rural_density
+						value = 0
+					}
+					set_variable = {
+						which = rural_pop
+						value = 0
+					}
+					set_variable = {
+						which = rural_production_power
+						value = 0
+					}
+					set_variable = {
+						which = rural_production_power_save
+						value = 0
+					}
+					set_variable = {
+						which = settlement_score_gravity
+						value = 0
+					}
+					set_variable = {
+						which = settlement_score_progress
+						value = 0
+					}
+					set_variable = {
+						which = sr_id
+						value = 0
+					}
+					set_variable = {
+						which = surplus_food
+						value = 0
+					}
+					set_variable = {
+						which = surplus_food_save
+						value = 0
+					}
+					set_variable = {
+						which = tech_admin_level
+						value = 0
+					}
+					set_variable = {
+						which = timber_province_production
+						value = 0
+					}
+					set_variable = {
+						which = total_pop
+						value = 0
+					}
+					set_variable = {
+						which = total_pop_r
+						value = 0
+					}
+					set_variable = {
+						which = total_surplus_output
+						value = 0
+					}
+					set_variable = {
+						which = travel_time_terrain_base
+						value = 0
+					}
+					set_variable = {
+						which = tribal_culture
+						value = 0
+					}
+					set_variable = {
+						which = tribal_settlement_score
+						value = 0
+					}
+					set_variable = {
+						which = tribals_ratio
+						value = 0
+					}
+					set_variable = {
+						which = urban_density
+						value = 0
+					}
+					set_variable = {
+						which = urban_gravity_total
+						value = 0
+					}
+					set_variable = {
+						which = upper_pop
+						value = 0
+					}
+					set_variable = {
+						which = upper_pop_r
+						value = 0
+					}
+					set_variable = {
+						which = urban_pop
+						value = 0
+					}
+					set_variable = {
+						which = urban_production_power
+						value = 0
+					}
+					set_variable = {
+						which = urban_ratio
+						value = 0
+					}
+					set_variable = {
+						which = wealth_rural_fluid
+						value = 0
+					}
+					set_variable = {
+						which = wealth_urban_fluid
+						value = 0
+					}
+					set_variable = {
+						which = x_coord
+						value = 0
+					}
+					set_variable = {
+						which = y_coord
+						value = 0
+					}
+					set_variable = {
+						which = year_ticker
+						value = 0
+					}
+					set_variable = {
+						which = catholic
+						value = 0
+					}
+					set_variable = {
+						which = orthodox
+						value = 0
+					}
+					set_variable = {
+						which = protestant
+						value = 0
+					}
+					set_variable = {
+						which = reformed
+						value = 0
+					}
+					set_variable = {
+						which = hussite
+						value = 0
+					}
+					set_variable = {
+						which = gnostic
+						value = 0
+					}
+					set_variable = {
+						which = chaldean
+						value = 0
+					}
+					set_variable = {
+						which = coptic
+						value = 0
+					}
+					set_variable = {
+						which = jewish
+						value = 0
+					}
+					set_variable = {
+						which = sunni
+						value = 0
+					}
+					set_variable = {
+						which = shiite
+						value = 0
+					}
+					set_variable = {
+						which = ibadi
+						value = 0
+					}
+					set_variable = {
+						which = wahhabi
+						value = 0
+					}
+					set_variable = {
+						which = druze
+						value = 0
+					}
+					set_variable = {
+						which = hinduism
+						value = 0
+					}
+					set_variable = {
+						which = sikhism
+						value = 0
+					}
+					set_variable = {
+						which = jain
+						value = 0
+					}
+					set_variable = {
+						which = zoroastrian
+						value = 0
+					}
+					set_variable = {
+						which = confucianism
+						value = 0
+					}
+					set_variable = {
+						which = buddhism
+						value = 0
+					}
+					set_variable = {
+						which = mahayana
+						value = 0
+					}
+					set_variable = {
+						which = vajrayana
+						value = 0
+					}
+					set_variable = {
+						which = inti
+						value = 0
+					}
+					set_variable = {
+						which = nahuatl
+						value = 0
+					}
+					set_variable = {
+						which = mesoamerican_religion
+						value = 0
+					}
+					set_variable = {
+						which = totemism
+						value = 0
+					}
+					set_variable = {
+						which = pantheism
+						value = 0
+					}
+					set_variable = {
+						which = tengri_pagan_reformed
+						value = 0
+					}
+					set_variable = {
+						which = shamanism
+						value = 0
+					}
+					set_variable = {
+						which = animism
+						value = 0
+					}
+					set_variable = {
+						which = west_african_pagan_reformed
+						value = 0
+					}
+					set_variable = {
+						which = polynesian_religion
+						value = 0
+					}
+					set_variable = {
+						which = shinto
+						value = 0
+					}
+					set_variable = {
+						which = adi_dharam
+						value = 0
+					}
+					set_variable = {
+						which = hellenic_pagan
+						value = 0
+					}
+					set_variable = {
+						which = norse_pagan_reformed
+						value = 0
+					}
+					set_variable = {
+						which = finnish_pagan_reformed
+						value = 0
+					}
+					set_variable = {
+						which = slavic_pagan_reformed
+						value = 0
+					}
+					set_variable = {
+						which = baltic_pagan_reformed
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					561 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 561
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 561
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+				561 = {
+					clr_province_flag = capital_of_india
+				}
+			}
+			if = {
+				limit = {
+					2696 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 2696
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 2696
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					542 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 542
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 542
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+				542 = {
+					clr_province_flag = capital_of_india
+				}
+			}
+			if = {
+				limit = {
+					2245 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 2245
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 2245
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					537 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 537
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 537
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+				537 = {
+					clr_province_flag = capital_of_india
+				}
+			}
+			if = {
+				limit = {
+					531 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 531
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 531
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+				531 = {
+					clr_province_flag = capital_of_india
+				}
+			}
+			if = {
+				limit = {
+					3144 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 3144
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 3144
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					2568 = {
+						has_province_flag = capital_of_india
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							capital = 2568
+						}
+					}
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = 2568
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						num_of_cities = 50
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+			}
+			if = {
+				limit = {
+					num_of_cities = 50
+					NOT = {
+						num_of_cities = 100
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_4
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					num_of_cities = 100
+					NOT = {
+						num_of_cities = 200
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					num_of_cities = 200
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			every_owned_province = {
+				add_nationalism = -40
+				add_local_autonomy = -50
+			}
+			random_owned_province = {
+				limit = {
+					controlled_by = ROOT
+				}
+				cavalry = ROOT
+				infantry = ROOT
+				infantry = ROOT
+				infantry = ROOT
+				infantry = ROOT
+			}
+			overlord = {
+				country_event = {
+					id = trade_company_country.4
+				}
+			}
+			swap_free_idea_group = yes
+		}
+	}
+}
+country_event = {
+	id = trade_company_country.4
+	title = trade_company_country.4.t
+	desc = trade_company_country.4.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.4.a
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = FROM
+	}
+	option = {
+		name = trade_company_country.4.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = {
+	id = trade_company_country.5
+	title = trade_company_country.5.t
+	desc = trade_company_country.5.d
+	picture = COMPANY_BASE_eventPicture
+	trigger = {
+		AND = {
+			OR = {
+				has_reform = colonial_government
+				has_reform = colonial_government_legacy
+			}
+		}
+		any_neighbor_country = {
+			NOT = {
+				technology_group = western
+			}
+			NOT = {
+				technology_group = eastern
+			}
+			NOT = {
+				technology_group = chinese
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				alliance_with = ROOT
+			}
+			NOT = {
+				is_rival = ROOT
+			}
+			NOT = {
+				has_country_modifier = title_5
+				has_country_modifier = title_6
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			factor = 0.5
+			is_year = 1700
+		}
+		modifier = {
+			factor = 0.25
+			is_year = 1750
+		}
+	}
+	option = {
+		name = trade_company_country.5.a
+		ai_chance = {
+			factor = 100
+		}
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					technology_group = western
+				}
+				NOT = {
+					technology_group = eastern
+				}
+				NOT = {
+					technology_group = chinese
+				}
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = colonial_government
+							has_reform = colonial_government_legacy
+						}
+					}
+				}
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				NOT = {
+					alliance_with = ROOT
+				}
+				NOT = {
+					is_rival = ROOT
+				}
+				NOT = {
+					has_country_modifier = title_5
+					has_country_modifier = title_6
+				}
+			}
+			country_event = {
+				id = trade_company_country.6
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.5.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = trade_company_country.6
+	title = trade_company_country.6.t
+	desc = trade_company_country.6.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.6.a
+		ai_chance = {
+			factor = 90
+		}
+		create_alliance = FROM
+		FROM = {
+			country_event = {
+				id = trade_company_country.7
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.6.b
+		ai_chance = {
+			factor = 10
+		}
+		FROM = {
+			country_event = {
+				id = trade_company_country.8
+			}
+		}
+	}
+}
+country_event = {
+	id = trade_company_country.7
+	title = trade_company_country.7.t
+	desc = trade_company_country.7.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.7.a
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = trade_company_country.8
+	title = trade_company_country.8.t
+	desc = trade_company_country.8.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.8.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.1
+				is_at_war = yes
+			}
+		}
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_unite_the_raj
+		}
+	}
+	option = {
+		name = trade_company_country.8.b
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = -10
+	}
+}
+country_event = {
+	id = trade_company_country.9
+	title = trade_company_country.9.t
+	desc = trade_company_country.9.d
+	picture = COMPANY_BASE_eventPicture
+	trigger = {
+		AND = {
+			OR = {
+				has_reform = colonial_government
+				has_reform = colonial_government_legacy
+			}
+		}
+		any_ally = {
+			NOT = {
+				technology_group = western
+			}
+			NOT = {
+				technology_group = eastern
+			}
+			NOT = {
+				technology_group = chinese
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			factor = 0.5
+			is_year = 1700
+		}
+		modifier = {
+			factor = 0.25
+			is_year = 1750
+		}
+		modifier = {
+			factor = 0.1
+			is_year = 1800
+		}
+	}
+	option = {
+		name = trade_company_country.5.a
+		ai_chance = {
+			factor = 100
+		}
+		random_ally = {
+			limit = {
+				NOT = {
+					technology_group = western
+				}
+				NOT = {
+					technology_group = eastern
+				}
+				NOT = {
+					technology_group = chinese
+				}
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = colonial_government
+							has_reform = colonial_government_legacy
+						}
+					}
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+			}
+			country_event = {
+				id = trade_company_country.10
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.5.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = trade_company_country.10
+	title = trade_company_country.10.t
+	desc = trade_company_country.10.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.6.a
+		ai_chance = {
+			factor = 75
+		}
+		add_country_modifier = {
+			name = indian_subsidiary_alliance
+			duration = -1
+		}
+		if = {
+			limit = {
+				NOT = {
+					technology_group = indian
+				}
+			}
+			change_technology_group = indian
+			change_unit_type = indian
+		}
+		FROM = {
+			country_event = {
+				id = trade_company_country.11
+			}
+		}
+	}
+	option = {
+		name = trade_company_country.6.b
+		ai_chance = {
+			factor = 25
+		}
+		add_opinion = {
+			who = FROM
+			modifier = reaction_tp_grabbed
+		}
+		FROM = {
+			country_event = {
+				id = trade_company_country.12
+			}
+		}
+	}
+}
+country_event = {
+	id = trade_company_country.11
+	title = trade_company_country.7.t
+	desc = trade_company_country.7.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.7.a
+		vassalize = FROM
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = trade_company_country.12
+	title = trade_company_country.8.t
+	desc = trade_company_country.8.d
+	picture = COMPANY_BASE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = trade_company_country.8.a
+		ai_chance = {
+			factor = 99
+		}
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_unite_the_raj
+		}
+	}
+	option = {
+		name = trade_company_country.8.b
+		ai_chance = {
+			factor = 1
+		}
+		add_prestige = -10
+	}
+}

@@ -1,0 +1,30 @@
+wg_de_jure_vietnam = {
+	type = defend_capital
+	badboy_factor = 0.2
+	prestige_factor = 0.5
+	peace_cost_factor = 0.2
+	allowed_provinces = {
+		region = vietnam_region
+	}
+	allowed_provinces_are_eligible = yes
+	peace_options = { po_demand_provinces }
+	war_name = DE_JURE_VIETNAM
+}
+wg_de_jure_nam_tien = {
+	type = take_province
+	badboy_factor = 0.2
+	prestige_factor = 0.5
+	peace_cost_factor = 0.2
+	allowed_provinces = {
+		AND = {
+			region = cochinchina_region
+			OR = {
+				area = mekong_area
+				area = champa_area
+			}
+		}
+	}
+	allowed_provinces_are_eligible = yes
+	peace_options = { po_demand_provinces }
+	war_name = DE_JURE_NAM_TIEN
+}

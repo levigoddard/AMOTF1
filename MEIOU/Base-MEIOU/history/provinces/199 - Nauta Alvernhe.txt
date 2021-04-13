@@ -1,0 +1,251 @@
+owner = AUV
+controller = AUV
+add_core = AUV
+capital = "Clarmon"
+trade_goods = livestock
+culture = limousin
+religion = catholic
+hre = no
+base_tax = 24
+base_production = 0
+base_manpower = 2
+is_city = yes
+fort_14th = yes
+temple = yes
+warehouse = yes
+local_fortification_2 = yes
+road_network = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+1356.1.1 = {
+	add_permanent_claim = FRA
+	add_permanent_claim = BUR
+	set_province_flag = add_local_autonomy_50
+}
+1361.1.1 = {
+	owner = AUV
+	controller = AUV
+	add_core = NAV
+	remove_core = BUR
+}
+1378.1.1 = {
+	remove_core = NAV
+}
+1434.1.1 = {
+	owner = BOU
+	controller = BOU
+	add_core = BOU
+}
+1520.5.5 = {
+	base_tax = 40
+	base_production = 1
+	base_manpower = 3
+}
+1527.1.1 = {
+	owner = DAL
+	controller = DAL
+	add_core = DAL
+}
+1530.1.1 = {
+	fort_14th = yes
+}
+1530.1.2 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+}
+1530.1.3 = {
+	road_network = no
+	paved_road_network = yes
+}
+1560.1.1 = {
+	religion = reformed
+}
+1565.1.1 = {
+	unrest = 8
+}
+1568.9.1 = {
+	unrest = 15
+}
+1570.8.8 = {
+	unrest = 10
+}
+1573.9.1 = {
+	unrest = 15
+}
+1574.5.1 = {
+	unrest = 7
+}
+1584.1.1 = {
+	unrest = 12
+}
+1588.12.1 = {
+	unrest = 15
+}
+1589.8.2 = {
+	owner = FRA
+	controller = FRA
+	remove_core = DAL
+}
+1594.1.1 = {
+	unrest = 10
+}
+1598.4.13 = {
+	unrest = 3
+}
+1598.5.2 = {
+	unrest = 0
+}
+1630.4.15 = {
+	capital = "Clermont-Ferrand"
+}
+1636.1.1 = {
+	unrest = 5
+}
+1640.1.1 = {
+	fort_14th = no
+	fort_15th = yes
+}
+1645.1.1 = {
+	unrest = 0
+}
+1650.1.14 = {
+	unrest = 7
+}
+1651.4.1 = {
+	unrest = 4
+}
+1651.12.1 = {
+	unrest = 7
+}
+1652.10.21 = {
+	unrest = 0
+}
+1685.10.18 = {
+	unrest = 8
+}
+1686.1.17 = {
+	religion = catholic
+}
+1689.1.1 = {
+	unrest = 0
+}
+1700.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+1701.1.1 = {
+	unrest = 7
+}
+1702.1.1 = {
+	controller = REB
+}
+1705.1.1 = {
+	controller = FRA
+	unrest = 3
+}
+1710.1.1 = {
+	unrest = 0
+}
+1789.7.14 = {
+	capital = "Clermont"
+}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 444.084
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 10.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 445.584
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 8.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 305.183
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 7.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 362.194
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 6.750
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 419.204
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 6.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 459.525
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 8.750
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 506.035
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 19.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 574.236
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 21.750
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 599.866
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 24.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 603.514
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 41.750
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 659.359
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 77.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 816.846
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 98.000
+	}
+}

@@ -1,0 +1,87 @@
+asian_missions = {
+	slot = 8
+	generic = yes
+	ai = yes
+	potential = {
+		capital_scope = {
+			continent = east_asia
+		}
+	}
+	clove_trade_asia = {
+		icon = mission_asian_trader
+		required_missions = {}
+		position = 1
+		provinces_to_highlight = {
+			province_id = 624
+			has_discovered = ROOT
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = clove
+			}
+			624 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spice_trade_controlled"
+				duration = 7300
+			}
+		}
+	}
+	pepper_trade_asia = {
+		icon = mission_asian_trader
+		required_missions = {}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 534
+				province_id = 624
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = pepper
+			}
+			OR = {
+				534 = {
+					is_strongest_trade_power = ROOT
+				}
+				624 = {
+					is_strongest_trade_power = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spice_trade_controlled"
+				duration = 7300
+			}
+		}
+	}
+	cinnamon_trade_asia = {
+		icon = mission_asian_trader
+		required_missions = {}
+		position = 3
+		provinces_to_highlight = {
+			province_id = 534
+			has_discovered = ROOT
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = cinnamon
+			}
+			534 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spice_trade_controlled"
+				duration = 7300
+			}
+		}
+	}
+}

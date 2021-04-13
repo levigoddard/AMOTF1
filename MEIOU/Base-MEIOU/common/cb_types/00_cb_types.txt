@@ -1,0 +1,905 @@
+cb_restore_personal_union = {
+	war_goal = take_capital_personal_union
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 240
+	prerequisites = {
+		government = monarchy
+		FROM = {
+			government = monarchy
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+			}
+		}
+		is_revolution_target = no
+	}
+}
+cb_defection = {
+	war_goal = take_core_defection
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12
+}
+cb_loan_cancelled = {
+	war_goal = superiority_loan
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_spy_discovered = {
+	war_goal = superiority_spy
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_disloyal_vassal = {
+	war_goal = take_capital_disloyal
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 120
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion }
+}
+cb_hre_attacked = {
+	war_goal = take_province_hre
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 60
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_insult = {
+	war_goal = superiority_insult_mutual
+	is_triggered_only = yes
+	valid_for_subject = no
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+	months = 12
+}
+cb_insult_capital = {
+	war_goal = superiority_insult_mutual_capital
+	is_triggered_only = yes
+	valid_for_subject = no
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+	months = 12
+}
+cb_dishonored_call = {
+	war_goal = superiority_insult
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 36
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_vassalize_mission = {
+	war_goal = take_capital_vassalize
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 120
+	attacker_disabled_po = { po_demand_provinces }
+}
+cb_fabricated_claims = {
+	war_goal = take_capital_fabricated_claims
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12
+	attacker_disabled_po = { po_demand_provinces po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_religious_conformance = {
+	war_goal = take_capital_conformance
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 24
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_become_vassal po_become_tributary_state }
+}
+cb_border_war = {
+	war_goal = take_border
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12
+	prerequisites = {
+		NOT = {
+			is_tribal = yes
+		}
+		NOT = {
+			is_nomad = yes
+		}
+	}
+	attacker_disabled_po = { po_form_personal_union po_change_government po_become_vassal po_become_tributary_state po_change_religion }
+}
+cb_trade_war_triggered = {
+	war_goal = superiority_trade
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 24
+	attacker_disabled_po = { po_revoke_cores po_release_vassals po_release_annexed po_return_cores po_become_vassal po_become_tributary_state po_form_personal_union }
+}
+cb_trade_conflict = {
+	war_goal = blockade_ports
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 24
+	attacker_disabled_po = { po_demand_provinces po_revoke_cores po_release_vassals po_release_annexed po_return_cores po_become_vassal po_become_tributary_state po_form_personal_union }
+}
+cb_trade_league_conflict = {
+	war_goal = blockade_ports
+	valid_for_subject = no
+	months = 24
+	prerequisites = {
+		is_trade_league_leader = yes
+		can_justify_trade_conflict = FROM
+	}
+	attacker_disabled_po = { po_demand_provinces po_revoke_cores po_release_vassals po_release_annexed po_return_cores po_become_vassal po_become_tributary_state po_form_personal_union }
+}
+cb_annex = {
+	war_goal = annex_country
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 24
+	attacker_disabled_po = { po_form_personal_union po_change_government po_become_vassal po_become_tributary_state po_change_religion }
+}
+cb_change_government = {
+	war_goal = war_goal_change_government
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 120
+	attacker_disabled_po = { po_form_personal_union po_become_vassal po_become_tributary_state po_change_religion }
+}
+cb_humiliate = {
+	war_goal = humiliate
+	valid_for_subject = no
+	prerequisites = {
+		has_dlc = "Conquest of Paradise"
+		government = native
+		is_neighbor_of = FROM
+		NOT = {
+			OR = {
+				num_of_cities = 2
+				FROM = {
+					num_of_cities = 2
+				}
+			}
+		}
+		is_revolution_target = no
+	}
+}
+cb_conquest = {
+	war_goal = take_claim
+	prerequisites = {
+		claim = FROM
+		is_revolution_target = no
+		OR = {
+			FROM = {
+				capital_scope = {
+					continent = north_america
+				}
+			}
+			FROM = {
+				capital_scope = {
+					continent = south_america
+				}
+			}
+			AND = {
+				NOT = {
+					has_country_flag = heir_to_rome
+				}
+				NOT = {
+					is_nomad = yes
+				}
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = free_city
+							has_reform = imperial_city
+							has_reform = trading_city_legacy
+						}
+					}
+				}
+			}
+		}
+		NOT = {
+			is_subject_of_type = daimyo_vassal
+		}
+	}
+}
+cb_core = {
+	war_goal = take_core
+	prerequisites = {
+		core_claim = FROM
+		NOT = {
+			is_nomad = yes
+		}
+		is_revolution_target = no
+		NOT = {
+			culture_group = japanese
+			FROM = {
+				culture_group = japanese
+			}
+		}
+		NOT = {
+			has_country_flag = heir_to_rome
+		}
+	}
+	attacker_disabled_po = { po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_independence_war = {
+	war_goal = defend_capital_independence
+	exclusive = yes
+	independence = yes
+	prerequisites = {
+		AND = {
+			is_subject = yes
+			NOT = {
+				is_subject_of_type = tributary_state
+			}
+			NOT = {
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		is_subject_of = FROM
+		NOT = {
+			is_subject_of_type = colony
+		}
+		NOT = {
+			is_subject_of_type = daimyo_vassal
+		}
+		OR = {
+			NOT = {
+				is_subject_of_type = warlord
+			}
+			NOT = {
+				dynasty = FROM
+			}
+		}
+	}
+	attacker_disabled_po = { po_change_government po_change_religion }
+}
+cb_colonial_independance_war = {
+	war_goal = defend_capital_independence
+	exclusive = yes
+	independence = yes
+	prerequisites = {
+		is_subject_of = FROM
+		is_subject_of_type = colony
+	}
+	attacker_disabled_po = { po_change_government po_change_religion }
+}
+cb_nationalist = {
+	war_goal = take_province_nationalist
+	prerequisites = {
+		culture_group_claim = FROM
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+		}
+		is_revolution_target = no
+		dip_tech = 35
+		NOT = {
+			is_tribal = yes
+		}
+		NOT = {
+			is_nomad = yes
+		}
+		NOT = {
+			has_country_flag = heir_to_rome
+		}
+	}
+	attacker_disabled_po = { po_change_government po_change_religion }
+}
+cb_imperial = {
+	war_goal = take_capital_imperial
+	valid_for_subject = no
+	prerequisites = {
+		OR = {
+			AND = {
+				dip_tech = 35
+				OR = {
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = appointed_elite
+							}
+							has_reform = prussian_monarchy_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = peasants_republic
+								has_reform = assembly_reform
+								has_reform = vote_free
+							}
+							has_reform = revolutionary_republic
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = bureaucracy
+								has_reform = military_elite
+							}
+							has_reform = enlightened_despotism
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								NOT = {
+									has_reform = free_city
+								}
+								NOT = {
+									has_reform = city_state
+								}
+								NOT = {
+									has_reform = trade_republic
+								}
+								NOT = {
+									has_reform = colonial_government
+								}
+								has_reform = dictator_reform
+							}
+							has_reform = republican_dictatorship
+						}
+					}
+					absolutism = 70
+				}
+			}
+			invasion_nation = yes
+		}
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+		}
+		NOT = {
+			is_tribal = yes
+		}
+		NOT = {
+			is_nomad = yes
+		}
+		is_revolution_target = no
+		NOT = {
+			has_country_flag = heir_to_rome
+		}
+	}
+	attacker_disabled_po = { po_change_government po_change_religion }
+}
+cb_revolutionary = {
+	war_goal = war_goal_change_government_mutual
+	valid_for_subject = no
+	prerequisites = {
+		is_neighbor_of = FROM
+		cb_on_government_enemies = yes
+		OR = {
+			AND = {
+				government = monarchy
+				FROM = {
+					government = republic
+				}
+			}
+			AND = {
+				government = republic
+				NOT = {
+					FROM = {
+						government = republic
+					}
+				}
+			}
+		}
+		NOT = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = papacy_reform
+						has_reform = papal_government
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = steppe_horde
+							NOT = {
+								has_country_modifier = title_6
+								has_country_flag = title_6
+							}
+						}
+						has_reform = steppe_horde_legacy
+					}
+				}
+				AND = {
+					OR = {
+						has_reform = nomad_reform
+						has_reform = native_council_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = parliamentary_monarchy
+							has_reform = delegated_rulers
+						}
+						has_reform = english_monarchy_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = parliamentary_monarchy
+							has_reform = bureaucracy
+							has_reform = hereditary_elite
+						}
+						has_reform = dutch_republic_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							OR = {
+								culture_group = chinese_group
+								has_country_flag = barbarian_claimant_china
+							}
+							has_reform = celestial_empire
+						}
+						has_reform = celestial_empire_legacy
+					}
+				}
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+				government = native
+			}
+		}
+		FROM = {
+			NOT = {
+				OR = {
+					AND = {
+						OR = {
+							has_reform = papacy_reform
+							has_reform = papal_government
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = steppe_horde
+								NOT = {
+									has_country_modifier = title_6
+									has_country_flag = title_6
+								}
+							}
+							has_reform = steppe_horde_legacy
+						}
+					}
+					AND = {
+						OR = {
+							has_reform = nomad_reform
+							has_reform = native_council_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = parliamentary_monarchy
+								has_reform = delegated_rulers
+							}
+							has_reform = english_monarchy_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = parliamentary_monarchy
+								has_reform = bureaucracy
+								has_reform = hereditary_elite
+							}
+							has_reform = dutch_republic_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								OR = {
+									culture_group = chinese_group
+									has_country_flag = barbarian_claimant_china
+								}
+								has_reform = celestial_empire
+							}
+							has_reform = celestial_empire_legacy
+						}
+					}
+					AND = {
+						OR = {
+							has_reform = colonial_government
+							has_reform = colonial_government_legacy
+						}
+					}
+					government = native
+				}
+			}
+		}
+		is_revolution_target = no
+	}
+}
+cb_colonial = {
+	war_goal = take_colony
+	prerequisites = {
+		colony_claim = FROM
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_change_government po_change_religion }
+}
+cb_liberation = {
+	war_goal = take_capital_liberation
+	is_triggered_only = yes
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_trade_war = {
+	war_goal = superiority_trade_mutual
+	prerequisites = {
+		OR = {
+			AND = {
+				trade_embargo_by = FROM
+				NOT = {
+					FROM = {
+						trade_embargo_by = ROOT
+					}
+				}
+			}
+			AND = {
+				AND = {
+					OR = {
+						has_reform = trade_republic
+						has_reform = merchant_republic
+						has_reform = venetian_merchant_republic
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = trade_republic
+							has_reform = merchant_republic
+							has_reform = venetian_merchant_republic
+						}
+					}
+				}
+			}
+		}
+		NOT = {
+			is_nomad = yes
+		}
+		is_revolution_target = no
+		NOT = {
+			has_country_flag = heir_to_rome
+		}
+	}
+	attacker_disabled_po = { po_demand_provinces po_revoke_cores po_release_vassals po_release_annexed po_return_cores po_become_vassal po_become_tributary_state po_form_personal_union }
+}
+cb_trade_league_dispute = {
+	war_goal = superiority_trade_mutual
+	prerequisites = {
+		is_trade_league_leader = yes
+		NOT = {
+			ROOT = {
+				trade_embargo_by = FROM
+			}
+		}
+		NOT = {
+			is_nomad = yes
+		}
+		trade_league_embargoed_by = FROM
+		is_revolution_target = no
+		NOT = {
+			has_country_flag = heir_to_rome
+		}
+	}
+	attacker_disabled_po = { po_demand_provinces po_revoke_cores po_release_vassals po_release_annexed po_return_cores po_become_vassal po_become_tributary_state po_form_personal_union }
+}
+cb_imperial_ban = {
+	war_goal = take_province_ban
+	valid_for_subject = no
+	prerequisites = {
+		is_emperor = yes
+		is_imperial_ban_allowed = yes
+		FROM = {
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			any_owned_province = {
+				is_part_of_hre = yes
+			}
+		}
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_form_personal_union po_change_government po_change_religion po_become_vassal }
+}
+cb_liberate_elector = {
+	war_goal = superiority_liberation
+	valid_for_subject = no
+	prerequisites = {
+		is_emperor = yes
+		FROM = {
+			any_subject_country = {
+				is_elector = yes
+			}
+		}
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal }
+}
+cb_super_badboy = {
+	war_goal = superiority_punitive
+	coalition = yes
+	prerequisites = {
+		coalition_target = FROM
+		NOT = {
+			FROM = {
+				is_in_coalition_war = yes
+			}
+		}
+		num_of_coalition_members = 3
+		has_opinion_modifier = {
+			modifier = aggressive_expansion
+			who = FROM
+		}
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_change_religion }
+}
+cb_claim_throne = {
+	war_goal = take_capital_throne
+	valid_for_subject = no
+	prerequisites = {
+		succession_claim = FROM
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_demand_provinces po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_revoke_electorate = {
+	war_goal = revoke_elector
+	no_opinion_hit = yes
+	prerequisites = {
+		NOT = {
+			has_dlc = "Common Sense"
+		}
+		NOT = {
+			has_dlc = "Art of War"
+		}
+		is_emperor = yes
+		FROM = {
+			is_elector = yes
+		}
+		NOT = {
+			religion = FROM
+		}
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_privateers = {
+	war_goal = blockade_ports
+	prerequisites = {
+		FROM = {
+			has_privateers = yes
+		}
+		OR = {
+			home_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+				privateer_power = {
+					country = FROM
+					share = 1
+				}
+			}
+			any_active_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+				privateer_power = {
+					country = FROM
+					share = 1
+				}
+			}
+		}
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_support_rebels = {
+	war_goal = take_capital_support_rebels
+	support_rebels = yes
+	valid_for_subject = no
+	prerequisites = {
+		has_dlc = "Art of War"
+		has_spawned_supported_rebels = FROM
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_demand_provinces po_form_personal_union po_change_government po_change_religion po_become_vassal po_become_tributary_state }
+}
+cb_crush_the_revolution = {
+	war_goal = take_capital_revolution
+	ai_peace_desire = -50
+	valid_for_subject = no
+	prerequisites = {
+		FROM = {
+			is_revolution_target = yes
+		}
+		OR = {
+			is_neighbor_of = FROM
+			capital_scope = {
+				continent = europe
+			}
+		}
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+		}
+		government = monarchy
+		OR = {
+			absolutism = 70
+			AND = {
+				OR = {
+					AND = {
+						has_reform = divine_right
+						has_reform = bureaucracy
+						has_reform = military_elite
+					}
+					has_reform = enlightened_despotism
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						has_reform = divine_right
+						has_reform = delegated_rulers
+						has_reform = hereditary_elite
+					}
+					has_reform = feudal_monarchy
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						has_reform = divine_right
+						has_reform = delegated_rulers
+						has_reform = military_elite
+					}
+					has_reform = despotic_monarchy
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						has_reform = divine_right
+						has_reform = bureaucracy
+						has_reform = appointed_elite
+					}
+					has_reform = administrative_monarchy
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						has_reform = parliamentary_monarchy
+						has_reform = bureaucracy
+						has_reform = appointed_elite
+					}
+					has_reform = constitutional_monarchy
+				}
+			}
+			AND = {
+				OR = {
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = city_state
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						has_reform = checks_and_balances
+					}
+					has_reform = bureaucratic_despotism
+				}
+			}
+		}
+	}
+	attacker_disabled_po = { po_change_religion }
+}
+cb_spread_the_revolution = {
+	war_goal = superiority_revolution
+	valid_for_subject = no
+	prerequisites = {
+		is_revolution_target = yes
+		FROM = {
+			NOT = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = peasants_republic
+							has_reform = assembly_reform
+							has_reform = vote_free
+						}
+						has_reform = revolutionary_republic
+					}
+				}
+			}
+		}
+		NOT = {
+			overlord_of = FROM
+		}
+	}
+	attacker_disabled_po = { po_change_religion }
+}
+cb_maya_expansion = {
+	war_goal = take_capital_imperial
+	valid_for_subject = no
+	prerequisites = {
+		has_dlc = "El Dorado"
+		religion = mesoamerican_religion
+		FROM = {
+			religion_group = pagan
+		}
+		is_neighbor_of = FROM
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+		}
+		is_religion_reformed = no
+		NOT = {
+			overlord_of = FROM
+		}
+	}
+}
+cb_humiliate_rotw = {
+	war_goal = humiliate
+	valid_for_subject = no
+	prerequisites = {
+		is_rival = FROM
+		NOT = {
+			is_nomad = yes
+		}
+		is_revolution_target = no
+	}
+	attacker_disabled_po = { po_demand_provinces po_revoke_cores po_release_vassals po_release_annexed po_return_cores po_become_vassal po_become_tributary_state po_form_personal_union }
+}
+cb_force_migration = {
+	war_goal = force_migration
+	valid_for_subject = no
+	prerequisites = {
+		has_dlc = "The Cossacks"
+		is_neighbor_of = FROM
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+		}
+		FROM = {
+			can_migrate = yes
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+			}
+		}
+	}
+	attacker_disabled_po = { po_change_government po_change_religion }
+}
+cb_forced_break_alliance = {
+	war_goal = superiority_insult
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 120
+}
+cb_overlord_attacking_independence_war = {
+	war_goal = attack_capital_independence
+}

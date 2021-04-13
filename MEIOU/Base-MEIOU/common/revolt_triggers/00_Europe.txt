@@ -1,0 +1,263 @@
+GBR = {
+	is_core = GBR
+}
+ENG = {
+	NOT = {
+		exists = GBR
+	}
+}
+ERG = {
+	always = no
+}
+GER = {
+	is_core = GER
+}
+ITA = {
+	is_core = ITA
+}
+NED = {
+	is_core = NED
+}
+BRB = {
+	is_core = BRB
+}
+FLA = {
+	is_core = FLA
+}
+HAI = {
+	is_core = HAI
+}
+HOL = {
+	is_core = HOL
+}
+PLC = {
+	OR = {
+		is_core = PLC
+		owner = {
+			capital_scope = {
+				is_core = PLC
+			}
+		}
+	}
+	NOT = {
+		exists = POL
+	}
+	NOT = {
+		exists = LIT
+	}
+}
+GRE = {
+	NOT = {
+		exists = BYZ
+	}
+}
+MOE = {
+	is_core = MOE
+}
+CRT = {
+	is_core = CRT
+}
+THD = {
+	is_core = THD
+}
+TRE = {
+	is_core = TRE
+}
+ERE = {
+	OR = {
+		NOT = {
+			culture = mongol
+		}
+		is_core = ERE
+	}
+}
+TSL = {
+	always = no
+}
+KAM = {
+	is_core = KAM
+}
+DOB = {
+	is_core = DOB
+}
+MON = {
+	is_core = MON
+}
+EPI = {
+	is_core = EPI
+}
+MKO = {
+	is_core = MKO
+}
+VBZ = {
+	is_core = VBZ
+}
+VUK = {
+	is_core = VUK
+}
+SRR = {
+	is_core = SRR
+}
+ATH = {
+	always = no
+}
+CEP = {
+	always = no
+}
+ACH = {
+	always = no
+}
+CYP = {
+	always = no
+}
+NAX = {
+	always = no
+}
+SPI = {
+	OR = {
+		is_core = SPI
+		owner = {
+			capital_scope = {
+				is_core = SPI
+			}
+		}
+	}
+}
+PRU = {
+	OR = {
+		is_core = PRU
+		owner = {
+			capital_scope = {
+				is_core = PRU
+			}
+		}
+	}
+}
+HAN = {
+	OR = {
+		is_core = HAN
+		owner = {
+			capital_scope = {
+				is_core = HAN
+			}
+		}
+	}
+}
+SWA = {
+	OR = {
+		is_core = SWA
+		owner = {
+			capital_scope = {
+				is_core = SWA
+			}
+		}
+	}
+}
+BAV = {
+	OR = {
+		is_core = BAV
+		owner = {
+			capital_scope = {
+				is_core = BAV
+			}
+		}
+	}
+}
+IRE = {
+	OR = {
+		is_core = IRE
+		owner = {
+			capital_scope = {
+				is_core = IRE
+			}
+		}
+	}
+}
+KNP = {
+	OR = {
+		is_core = KNP
+		owner = {
+			capital_scope = {
+				is_core = KNP
+			}
+		}
+	}
+	NOT = {
+		exists = NAP
+	}
+	NOT = {
+		exists = SIC
+	}
+}
+NAP = {
+	NOT = {
+		exists = KNP
+	}
+}
+SIC = {
+	NOT = {
+		exists = KNP
+	}
+}
+ROU = {
+	OR = {
+		is_core = ROU
+		owner = {
+			capital_scope = {
+				is_core = ROU
+			}
+		}
+	}
+}
+WAL = {
+	NOT = {
+		is_core = ROU
+	}
+}
+MOL = {
+	NOT = {
+		is_core = ROU
+	}
+}
+HSA = {
+	always = no
+}
+TEU = {
+	always = no
+}
+LVO = {
+	always = no
+}
+KNI = {
+	always = no
+}
+UKR = {
+	is_core = UKR
+}
+AZT = {
+	is_core = AZT
+}
+BUL = {
+	is_core = BUL
+}
+GGK = {
+	always = no
+}
+KAL = {
+	always = no
+}
+DAN = {
+	always = no
+}
+LOT = {
+	always = no
+}
+ICE = {
+	is_core = ICE
+}
+BUR = {
+	is_core = BUR
+}
+DNZ = {
+	always = no
+}

@@ -1,0 +1,32 @@
+name = "Anglo-Spanish War"
+war_goal = {
+	type = defend_country_faith
+	casus_belli = cb_fidei_defensor
+}
+1585.8.20 = {
+	add_attacker = ENG
+	add_defender = SPA
+}
+1588.7.29 = {
+	battle = {
+		name = "Gravelines"
+		location = 90
+		attacker = {
+			commander = "Francis Drake"
+			heavy_ship = 55
+			losses = 1
+			country = ENG
+		}
+		defender = {
+			commander = "Alonso de Guzmán El Bueno"
+			heavy_ship = 42
+			losses = 5
+			country = SPA
+		}
+		result = yes
+	}
+}
+1604.8.1 = {
+	rem_attacker = ENG
+	rem_defender = SPA
+}

@@ -1,0 +1,75 @@
+country_event = {
+	id = hee_GOT.1
+	title = hee_GOT.1.t
+	desc = hee_GOT.1.d
+	picture = BORDER_TENSION_eventPicture
+	trigger = {
+		tag = GOT
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		owns_core_province = 25
+	}
+	mean_time_to_happen = {
+		years = 66
+	}
+	option = {
+		name = hee_GOT.1.a
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}
+country_event = {
+	id = hee_GOT.2
+	title = hee_GOT.2.t
+	desc = hee_GOT.2.d
+	picture = STREET_SPEECH_eventPicture
+	trigger = {
+		owns_core_province = 25
+		NOT = {
+			capital = 25
+		}
+	}
+	mean_time_to_happen = {
+		years = 100
+	}
+	option = {
+		name = hee_GOT.2.a
+		25 = {
+			add_local_autonomy = 25
+		}
+	}
+	option = {
+		name = hee_GOT.2.b
+		25 = {
+			add_province_modifier = {
+				name = "nationalists_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}

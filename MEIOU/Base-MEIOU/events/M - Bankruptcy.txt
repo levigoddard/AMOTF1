@@ -1,0 +1,36 @@
+namespace = bankruptcy
+country_event = {
+	id = bankruptcy.1
+	title = bankruptcy.1.t
+	desc = bankruptcy.1.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+}
+country_event = {
+	id = bankruptcy.2
+	title = bankruptcy.2.t
+	desc = bankruptcy.2.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+}
+country_event = {
+	id = bankruptcy.3
+	title = bankruptcy.3.t
+	desc = bankruptcy.3.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+}
+country_event = {
+	id = bankruptcy.4
+	title = bankruptcy.4.t
+	desc = bankruptcy.4.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+}
+country_event = {
+	id = bankruptcy.5
+	title = bankruptcy.5.t
+	desc = bankruptcy.5.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+}

@@ -1,0 +1,196 @@
+owner = TEU
+controller = TEU
+add_core = TEU
+capital = "Marienburg"
+trade_goods = wheat
+culture = prussian
+religion = catholic
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 0
+is_city = yes
+road_network = yes
+harbour_infrastructure_1 = yes
+marketplace = yes
+town_hall = yes
+local_fortification_1 = yes
+fort_14th = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 4.5
+	}
+}
+1444.1.1 = {
+	fort_14th = no
+	fort_15th = yes
+}
+1454.3.6 = {
+	add_core = POL
+}
+1466.10.19 = {
+	owner = POL
+	controller = POL
+	remove_core = TEU
+	culture = prussian
+	capital = "Elbing"
+}
+1467.1.1 = {
+	unrest = 7
+	controller = REB
+}
+1479.1.1 = {
+	controller = POL
+}
+1512.1.1 = {
+	unrest = 0
+}
+1520.5.5 = {
+	base_tax = 3
+	base_production = 1
+	base_manpower = 0
+}
+1524.1.25 = {
+	unrest = 6
+}
+1525.1.1 = {
+	unrest = 0
+	religion = protestant
+}
+1525.4.10 = {}
+1530.1.3 = {
+	road_network = no
+	paved_road_network = yes
+}
+1569.7.1 = {
+	owner = PLC
+	controller = PLC
+	add_core = PLC
+}
+1572.1.1 = {
+	unrest = 6
+}
+1576.1.1 = {
+	unrest = 8
+}
+1577.6.13 = {
+	controller = PLC
+}
+1588.1.1 = {
+	controller = REB
+}
+1589.1.1 = {
+	controller = PLC
+	unrest = 0
+}
+1600.1.1 = {
+	fort_14th = yes
+}
+1772.8.5 = {
+	owner = PRU
+	controller = PRU
+	add_core = PRU
+}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 18.542
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 18.542
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 16.065
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 21.711
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 17.718
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 10.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 24.404
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 12.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 27.362
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 20.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 27.894
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 20.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 27.913
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 19.750
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 31.257
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 19.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 35.737
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 22.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 44.463
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 29.000
+	}
+}

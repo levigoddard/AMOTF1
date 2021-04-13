@@ -1,0 +1,19 @@
+requestpeace = {
+	condition = {
+		tooltip = CHINESEVASSAL
+		potential = {
+			FROM = {
+				is_subject_of_type = warlord
+				has_country_flag = imperial_appenage
+			}
+		}
+		allow = {
+			OR = {
+				is_subject_of_type = warlord
+				culture_group = chinese_group
+				has_country_flag = mandate_of_heaven_claimed
+				has_country_flag = barbarian_claimant_china
+			}
+		}
+	}
+}

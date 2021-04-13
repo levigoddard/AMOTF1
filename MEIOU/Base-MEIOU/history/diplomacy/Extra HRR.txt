@@ -1,0 +1,18 @@
+alliance = {
+	first = PST
+	second = PWO
+	start_date = 1356.1.1
+	end_date = 1625.2.6
+}
+alliance = {
+	first = PST
+	second = PSP
+	start_date = 1368.5.25
+	end_date = 1459.5.3
+}
+alliance = {
+	first = PST
+	second = PSP
+	start_date = 1569.2.3
+	end_date = 1622.10.31
+}

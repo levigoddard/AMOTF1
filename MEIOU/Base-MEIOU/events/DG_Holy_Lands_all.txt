@@ -1,0 +1,8541 @@
+namespace = dg_holylands
+country_event = {
+	id = dg_holylands.001
+	title = dg_holylands.001.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_jerusalem
+		NOT = {
+			owns_or_non_sovereign_subject_of = 379
+		}
+		OR = {
+			religion_group = jewish_group
+			AND = {
+				religion_group = christian
+				NOT = {
+					religion = reformed
+				}
+				NOT = {
+					religion = protestant
+				}
+			}
+			AND = {
+				religion_group = muslim
+				NOT = {
+					religion = druze
+				}
+			}
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_jerusalem
+		if = {
+			limit = {
+				religion_group = jewish_group
+			}
+			hidden_effect = {
+				change_variable = {
+					which = jerusalem
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				379 = {
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = jerusalem
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				379 = {
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = jerusalem
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				379 = {
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = jerusalem
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = jerusalem
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_country_modifier = religious_scandal_country_strong
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = jerusalem
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_country_modifier = religious_scandal_country_strong
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = jerusalem
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.002
+	title = dg_holylands.002.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_rome
+		NOT = {
+			AND = {
+				owns_or_non_sovereign_subject_of = 2530
+			}
+		}
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = coptic
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_rome
+		if = {
+			limit = {
+				religion = catholic
+			}
+			hidden_effect = {
+				change_variable = {
+					which = rome
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					AND = {
+						continent = europe
+						OR = {
+							superregion = france_superregion
+							superregion = iberia_superregion
+							superregion = italy_superregion
+							superregion = british_isles_superregion
+							AND = {
+								superregion = scandinavian_superregion
+								NOT = {
+									region = finland_region
+								}
+							}
+							superregion = germany_superregion
+							region = swabia_bavarian_region
+							region = switzerland_region
+							region = west_balkan_region
+							region = east_balkan_region
+							region = greece_region
+							region = magyar_plains_region
+							region = north_carpathia_region
+							region = south_carpathia_region
+						}
+					}
+				}
+				OR = {
+					religion = orthodox
+					religion = coptic
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = rome
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_province = {
+					AND = {
+						province_id = 2530
+					}
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = rome
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					2530 = {
+						owner = {
+							NOT = {
+								religion_group = ROOT
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = rome
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				AND = {
+					2530 = {
+						owner = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = rome
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = rome
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = rome
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = rome
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.003
+	title = dg_holylands.003.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_constantinople
+		NOT = {
+			AND = {
+				owns_or_non_sovereign_subject_of = 1402
+			}
+		}
+		religion = orthodox
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_constantinople
+		if = {
+			limit = {
+				capital_scope = {
+					continent = europe
+					NOT = {
+						AND = {
+							continent = europe
+							OR = {
+								superregion = france_superregion
+								superregion = iberia_superregion
+								superregion = italy_superregion
+								superregion = british_isles_superregion
+								AND = {
+									superregion = scandinavian_superregion
+									NOT = {
+										region = finland_region
+									}
+								}
+								superregion = germany_superregion
+								region = swabia_bavarian_region
+								region = switzerland_region
+								region = west_balkan_region
+								region = east_balkan_region
+								region = greece_region
+								region = magyar_plains_region
+								region = north_carpathia_region
+								region = south_carpathia_region
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = constantinople
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_province = {
+					AND = {
+						province_id = 1402
+					}
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = constantinople
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					1402 = {
+						owner = {
+							NOT = {
+								religion_group = ROOT
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = constantinople
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				AND = {
+					1402 = {
+						owner = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = constantinople
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = constantinople
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = constantinople
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = constantinople
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.004
+	title = dg_holylands.004.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_antioch
+		NOT = {
+			AND = {
+				owns_or_non_sovereign_subject_of = 332
+			}
+		}
+		OR = {
+			religion = orthodox
+			religion = coptic
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_antioch
+		if = {
+			limit = {
+				capital_scope = {
+					AND = {
+						OR = {
+							continent = southeast_asia
+							continent = indian_continent
+							continent = east_asia
+							continent = central_asia
+							continent = north_asia
+						}
+					}
+				}
+				religion = orthodox
+			}
+			hidden_effect = {
+				change_variable = {
+					which = antioch
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					continent = europe
+				}
+				religion = coptic
+			}
+			hidden_effect = {
+				change_variable = {
+					which = antioch
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_province = {
+					AND = {
+						province_id = 332
+					}
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = antioch
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					332 = {
+						owner = {
+							NOT = {
+								religion_group = ROOT
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = antioch
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				AND = {
+					332 = {
+						owner = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = antioch
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = antioch
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_country_modifier = religious_scandal_country_strong
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = antioch
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_country_modifier = religious_scandal_country_strong
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = antioch
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.005
+	title = dg_holylands.005.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_alexandria
+		NOT = {
+			owns_or_non_sovereign_subject_of = 358
+		}
+		OR = {
+			religion = orthodox
+			religion = coptic
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_alexandria
+		if = {
+			limit = {
+				capital_scope = {
+					AND = {
+						OR = {
+							superregion = east_africa_superregion
+							superregion = west_africa_superregion
+							superregion = north_africa_superregion
+							region = egypt_region
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = alexandria
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = coptic
+				NOT = {
+					capital_scope = {
+						AND = {
+							OR = {
+								superregion = east_africa_superregion
+								superregion = west_africa_superregion
+								superregion = north_africa_superregion
+								region = egypt_region
+							}
+						}
+					}
+				}
+				NOT = {
+					capital_scope = {
+						continent = europe
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = alexandria
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				358 = {
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = alexandria
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				358 = {
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = alexandria
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				358 = {
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = alexandria
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = alexandria
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_country_modifier = religious_scandal_country_strong
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = alexandria
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = alexandria
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.006
+	title = dg_holylands.006.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_ctesiphon
+		NOT = {
+			owns_or_non_sovereign_subject_of = 410
+		}
+		religion = chaldean
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_ctesiphon
+		if = {
+			limit = {
+				410 = {
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = ctesiphon
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				410 = {
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = ctesiphon
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				410 = {
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = ctesiphon
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = ctesiphon
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						NOT = {
+							has_country_modifier = religious_scandal_country_strong
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country
+						}
+						NOT = {
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = ctesiphon
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = ctesiphon
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.007
+	title = dg_holylands.007.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_mecca
+		NOT = {
+			owns_or_non_sovereign_subject_of = 385
+		}
+		religion_group = muslim
+		NOT = {
+			religion = druze
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_mecca
+		if = {
+			limit = {
+				OR = {
+					religion = sunni
+					religion = wahhabi
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = mecca
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				385 = {
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = mecca
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				385 = {
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = mecca
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				385 = {
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = mecca
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = mecca
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = mecca
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = mecca
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.008
+	title = dg_holylands.008.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_medina
+		NOT = {
+			owns_or_non_sovereign_subject_of = 384
+		}
+		religion_group = muslim
+		NOT = {
+			religion = druze
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_medina
+		if = {
+			limit = {
+				OR = {
+					religion = sunni
+					religion = wahhabi
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = medina
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				384 = {
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = medina
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				384 = {
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = medina
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				384 = {
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = medina
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = medina
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = medina
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = medina
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.009
+	title = dg_holylands.009.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_al_najaf
+		NOT = {
+			AND = {
+				owns_or_non_sovereign_subject_of = 1330
+			}
+		}
+		religion = shiite
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_al_najaf
+		if = {
+			limit = {
+				religion = shiite
+			}
+			hidden_effect = {
+				change_variable = {
+					which = al_najaf
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_province = {
+					AND = {
+						province_id = 1330
+					}
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = al_najaf
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					1330 = {
+						owner = {
+							NOT = {
+								religion_group = ROOT
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = al_najaf
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				AND = {
+					1330 = {
+						owner = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = al_najaf
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = al_najaf
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_equal = {
+					which = al_najaf
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = al_najaf
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.010
+	title = dg_holylands.010.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_balga
+		NOT = {
+			owns_or_non_sovereign_subject_of = 41
+		}
+		religion = baltic_pagan_reformed
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_balga
+		if = {
+			limit = {
+				41 = {
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = balga
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				41 = {
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = balga
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				41 = {
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = balga
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = balga
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = balga
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = balga
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.011
+	title = dg_holylands.011.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_amritsar
+		NOT = {
+			any_owned_province = {
+				has_province_flag = amritsar
+			}
+		}
+		religion = sikhism
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_amritsar
+		if = {
+			limit = {
+				OR = {
+					religion = sunni
+					religion = wahhabi
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = amritsar
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_province = {
+					has_province_flag = amritsar
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = amritsar
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = amritsar
+					owner = {
+						NOT = {
+							religion_group = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = amritsar
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = amritsar
+					owner = {
+						religion = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = amritsar
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = amritsar
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = {
+					which = amritsar
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = amritsar
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.012
+	title = dg_holylands.012.t
+	desc = dg_holylands.001.d
+	picture = all_refugees
+	trigger = {
+		has_country_flag = holy_land_varanasi
+		NOT = {
+			AND = {
+				owns_or_non_sovereign_subject_of = 2632
+			}
+		}
+		OR = {
+			religion = jain
+			religion = buddhism
+			religion = hinduism
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	immediate = {
+		clr_country_flag = holy_land_varanasi
+		if = {
+			limit = {
+				any_province = {
+					AND = {
+						province_id = 2632
+					}
+					is_core = ROOT
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = varanasi
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					2632 = {
+						owner = {
+							NOT = {
+								religion_group = ROOT
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = varanasi
+					value = 1
+				}
+			}
+			custom_tooltip = lost_holyland_heathen
+		}
+		if = {
+			limit = {
+				AND = {
+					2632 = {
+						owner = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = varanasi
+					value = -1
+				}
+			}
+			custom_tooltip = lost_holyland_coreligionist
+		}
+	}
+	option = {
+		name = dg_holylands.001.a
+		if = {
+			limit = {
+				check_variable = {
+					which = varanasi
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 2000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 2000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 2000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 2000
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_variable_equal = {
+					which = varanasi
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = religious_scandal_country_strong
+						has_country_modifier = religious_scandal_country
+						has_country_modifier = religious_scandal_country_weak
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 1000
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 1000
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 1000
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 1000
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_country_modifier = religious_scandal_country_strong
+							has_country_modifier = religious_scandal_country
+							has_country_modifier = religious_scandal_country_weak
+						}
+					}
+				}
+				if = {
+					limit = {
+						patriarch_authority = 0.80
+					}
+					add_country_modifier = {
+						name = unhappy_church_powerful
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.60
+					}
+					add_country_modifier = {
+						name = unhappy_church_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.40
+					}
+					add_country_modifier = {
+						name = unhappy_church_moderate
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						patriarch_authority = 0.20
+					}
+					add_country_modifier = {
+						name = unhappy_church_weak
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = unhappy_church_impotent
+						duration = 500
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						piety = 0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country_strong
+						duration = 500
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_country_modifier = {
+						name = religious_scandal_country
+						duration = 500
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = religious_scandal_country_weak
+						duration = 500
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = varanasi
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.013
+	title = dg_holylands.013.t
+	desc = dg_holylands.013.d
+	picture = all_refugees
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = inc_dg_4
+			value = 1
+		}
+		every_country = {
+			limit = {
+				exists = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						PREV = {
+							check_variable = {
+								which = inc_dg_4
+								value = 200
+							}
+						}
+					}
+				}
+				country_event = {
+					id = dg_holylands.014
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						PREV = {
+							check_variable = {
+								which = inc_dg_4
+								value = 400
+							}
+						}
+					}
+				}
+				country_event = {
+					id = dg_holylands.014
+					days = 1
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						PREV = {
+							check_variable = {
+								which = inc_dg_4
+								value = 600
+							}
+						}
+					}
+				}
+				country_event = {
+					id = dg_holylands.014
+					days = 2
+				}
+			}
+			else = {
+				country_event = {
+					id = dg_holylands.014
+					days = 3
+				}
+			}
+			PREV = {
+				change_variable = {
+					which = inc_dg_4
+					value = 1
+				}
+			}
+		}
+		set_variable = {
+			which = inc_dg_4
+			value = 0
+		}
+	}
+	option = {
+		name = dg_holylands.013.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = dg_holylands.014
+	title = dg_holylands.014.t
+	desc = dg_holylands.014.d
+	picture = all_refugees
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					religion = catholic
+					religion = chaldean
+					religion = gnostic
+					religion = hussite
+				}
+				owns_or_non_sovereign_subject_of = 379
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = catholic_jerusalem_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						catholic_jerusalem_observant = {
+							remove_country_modifier = catholic_jerusalem_observant
+						}
+						catholic_jerusalem_pious = {
+							remove_country_modifier = catholic_jerusalem_pious
+						}
+					}
+					add_country_modifier = {
+						name = catholic_jerusalem_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = catholic_jerusalem_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						catholic_jerusalem_observant = {
+							remove_country_modifier = catholic_jerusalem_observant
+						}
+						catholic_jerusalem_fanatical = {
+							remove_country_modifier = catholic_jerusalem_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = catholic_jerusalem_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = catholic_jerusalem_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						catholic_jerusalem_pious = {
+							remove_country_modifier = catholic_jerusalem_pious
+						}
+						catholic_jerusalem_fanatical = {
+							remove_country_modifier = catholic_jerusalem_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = catholic_jerusalem_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					catholic_jerusalem_observant = {
+						remove_country_modifier = catholic_jerusalem_observant
+					}
+					catholic_jerusalem_pious = {
+						remove_country_modifier = catholic_jerusalem_pious
+					}
+					catholic_jerusalem_fanatical = {
+						remove_country_modifier = catholic_jerusalem_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				catholic_jerusalem_observant = {
+					remove_country_modifier = catholic_jerusalem_observant
+				}
+				catholic_jerusalem_pious = {
+					remove_country_modifier = catholic_jerusalem_pious
+				}
+				catholic_jerusalem_fanatical = {
+					remove_country_modifier = catholic_jerusalem_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion_group = muslim
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = wahhabi
+						religion = sunni
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = islam_destruction_of_kaaba
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = destruction_mecca_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								destruction_mecca_observant = {
+									remove_country_modifier = destruction_mecca_observant
+								}
+								destruction_mecca_pious = {
+									remove_country_modifier = destruction_mecca_pious
+								}
+							}
+							add_country_modifier = {
+								name = destruction_mecca_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = destruction_mecca_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								destruction_mecca_observant = {
+									remove_country_modifier = destruction_mecca_observant
+								}
+								destruction_mecca_fanatical = {
+									remove_country_modifier = destruction_mecca_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = destruction_mecca_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = destruction_mecca_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								destruction_mecca_pious = {
+									remove_country_modifier = destruction_mecca_pious
+								}
+								destruction_mecca_fanatical = {
+									remove_country_modifier = destruction_mecca_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = destruction_mecca_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							destruction_mecca_observant = {
+								remove_country_modifier = destruction_mecca_observant
+							}
+							destruction_mecca_pious = {
+								remove_country_modifier = destruction_mecca_pious
+							}
+							destruction_mecca_fanatical = {
+								remove_country_modifier = destruction_mecca_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						destruction_mecca_observant = {
+							remove_country_modifier = destruction_mecca_observant
+						}
+						destruction_mecca_pious = {
+							remove_country_modifier = destruction_mecca_pious
+						}
+						destruction_mecca_fanatical = {
+							remove_country_modifier = destruction_mecca_fanatical
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								AND = {
+									religion = sunni
+									385 = {
+										owner = {
+											NOT = {
+												religion = sunni
+											}
+										}
+									}
+								}
+								AND = {
+									religion = wahhabi
+									385 = {
+										owner = {
+											NOT = {
+												religion = wahhabi
+											}
+										}
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								piety = 0.60
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_mecca_fanatical
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_mecca_observant = {
+										remove_country_modifier = infidel_mecca_observant
+									}
+									infidel_mecca_pious = {
+										remove_country_modifier = infidel_mecca_pious
+									}
+								}
+								add_country_modifier = {
+									name = infidel_mecca_fanatical
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = 0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_mecca_pious
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_mecca_observant = {
+										remove_country_modifier = infidel_mecca_observant
+									}
+									infidel_mecca_fanatical = {
+										remove_country_modifier = infidel_mecca_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_mecca_pious
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = -0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_mecca_observant
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_mecca_pious = {
+										remove_country_modifier = infidel_mecca_pious
+									}
+									infidel_mecca_fanatical = {
+										remove_country_modifier = infidel_mecca_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_mecca_observant
+									duration = -1
+								}
+							}
+						}
+						else = {
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_mecca_observant = {
+									remove_country_modifier = infidel_mecca_observant
+								}
+								infidel_mecca_pious = {
+									remove_country_modifier = infidel_mecca_pious
+								}
+								infidel_mecca_fanatical = {
+									remove_country_modifier = infidel_mecca_fanatical
+								}
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_mecca_observant = {
+								remove_country_modifier = infidel_mecca_observant
+							}
+							infidel_mecca_pious = {
+								remove_country_modifier = infidel_mecca_pious
+							}
+							infidel_mecca_fanatical = {
+								remove_country_modifier = infidel_mecca_fanatical
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = islam_destruction_of_kaaba
+				}
+				if = {
+					limit = {
+						owns_or_non_sovereign_subject_of = 384
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_medina_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_medina_observant = {
+									remove_country_modifier = muslim_medina_observant
+								}
+								muslim_medina_pious = {
+									remove_country_modifier = muslim_medina_pious
+								}
+							}
+							add_country_modifier = {
+								name = muslim_medina_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_medina_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_medina_observant = {
+									remove_country_modifier = muslim_medina_observant
+								}
+								muslim_medina_fanatical = {
+									remove_country_modifier = muslim_medina_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_medina_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_medina_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_medina_pious = {
+									remove_country_modifier = muslim_medina_pious
+								}
+								muslim_medina_fanatical = {
+									remove_country_modifier = muslim_medina_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_medina_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							muslim_medina_observant = {
+								remove_country_modifier = muslim_medina_observant
+							}
+							muslim_medina_pious = {
+								remove_country_modifier = muslim_medina_pious
+							}
+							muslim_medina_fanatical = {
+								remove_country_modifier = muslim_medina_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						muslim_medina_observant = {
+							remove_country_modifier = muslim_medina_observant
+						}
+						muslim_medina_pious = {
+							remove_country_modifier = muslim_medina_pious
+						}
+						muslim_medina_fanatical = {
+							remove_country_modifier = muslim_medina_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					muslim_medina_observant = {
+						remove_country_modifier = muslim_medina_observant
+					}
+					muslim_medina_pious = {
+						remove_country_modifier = muslim_medina_pious
+					}
+					muslim_medina_fanatical = {
+						remove_country_modifier = muslim_medina_fanatical
+					}
+				}
+				if = {
+					limit = {
+						owns_or_non_sovereign_subject_of = 385
+						owns_or_non_sovereign_subject_of = 384
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_mecca_medina_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_mecca_medina_observant = {
+									remove_country_modifier = muslim_mecca_medina_observant
+								}
+								muslim_mecca_medina_pious = {
+									remove_country_modifier = muslim_mecca_medina_pious
+								}
+							}
+							add_country_modifier = {
+								name = muslim_mecca_medina_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_mecca_medina_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_mecca_medina_observant = {
+									remove_country_modifier = muslim_mecca_medina_observant
+								}
+								muslim_mecca_medina_fanatical = {
+									remove_country_modifier = muslim_mecca_medina_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_mecca_medina_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_mecca_medina_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_mecca_medina_pious = {
+									remove_country_modifier = muslim_mecca_medina_pious
+								}
+								muslim_mecca_medina_fanatical = {
+									remove_country_modifier = muslim_mecca_medina_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_mecca_medina_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							muslim_mecca_medina_observant = {
+								remove_country_modifier = muslim_mecca_medina_observant
+							}
+							muslim_mecca_medina_pious = {
+								remove_country_modifier = muslim_mecca_medina_pious
+							}
+							muslim_mecca_medina_fanatical = {
+								remove_country_modifier = muslim_mecca_medina_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						muslim_mecca_medina_observant = {
+							remove_country_modifier = muslim_mecca_medina_observant
+						}
+						muslim_mecca_medina_pious = {
+							remove_country_modifier = muslim_mecca_medina_pious
+						}
+						muslim_mecca_medina_fanatical = {
+							remove_country_modifier = muslim_mecca_medina_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							owns_or_non_sovereign_subject_of = 385
+						}
+						owns_or_non_sovereign_subject_of = 384
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_medina_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_medina_observant = {
+									remove_country_modifier = muslim_medina_observant
+								}
+								muslim_medina_pious = {
+									remove_country_modifier = muslim_medina_pious
+								}
+							}
+							add_country_modifier = {
+								name = muslim_medina_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_medina_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_medina_observant = {
+									remove_country_modifier = muslim_medina_observant
+								}
+								muslim_medina_fanatical = {
+									remove_country_modifier = muslim_medina_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_medina_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_medina_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_medina_pious = {
+									remove_country_modifier = muslim_medina_pious
+								}
+								muslim_medina_fanatical = {
+									remove_country_modifier = muslim_medina_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_medina_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							muslim_medina_observant = {
+								remove_country_modifier = muslim_medina_observant
+							}
+							muslim_medina_pious = {
+								remove_country_modifier = muslim_medina_pious
+							}
+							muslim_medina_fanatical = {
+								remove_country_modifier = muslim_medina_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						muslim_medina_observant = {
+							remove_country_modifier = muslim_medina_observant
+						}
+						muslim_medina_pious = {
+							remove_country_modifier = muslim_medina_pious
+						}
+						muslim_medina_fanatical = {
+							remove_country_modifier = muslim_medina_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							owns_or_non_sovereign_subject_of = 384
+						}
+						owns_or_non_sovereign_subject_of = 385
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_mecca_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_mecca_observant = {
+									remove_country_modifier = muslim_mecca_observant
+								}
+								muslim_mecca_pious = {
+									remove_country_modifier = muslim_mecca_pious
+								}
+							}
+							add_country_modifier = {
+								name = muslim_mecca_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_mecca_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_mecca_observant = {
+									remove_country_modifier = muslim_mecca_observant
+								}
+								muslim_mecca_fanatical = {
+									remove_country_modifier = muslim_mecca_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_mecca_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = muslim_mecca_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								muslim_mecca_pious = {
+									remove_country_modifier = muslim_mecca_pious
+								}
+								muslim_mecca_fanatical = {
+									remove_country_modifier = muslim_mecca_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = muslim_mecca_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							muslim_mecca_observant = {
+								remove_country_modifier = muslim_mecca_observant
+							}
+							muslim_mecca_pious = {
+								remove_country_modifier = muslim_mecca_pious
+							}
+							muslim_mecca_fanatical = {
+								remove_country_modifier = muslim_mecca_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						muslim_mecca_observant = {
+							remove_country_modifier = muslim_mecca_observant
+						}
+						muslim_mecca_pious = {
+							remove_country_modifier = muslim_mecca_pious
+						}
+						muslim_mecca_fanatical = {
+							remove_country_modifier = muslim_mecca_fanatical
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = shiite
+				}
+				if = {
+					limit = {
+						owns_or_non_sovereign_subject_of = 1330
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = shiite_al_najaf_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								shiite_al_najaf_observant = {
+									remove_country_modifier = shiite_al_najaf_observant
+								}
+								shiite_al_najaf_pious = {
+									remove_country_modifier = shiite_al_najaf_pious
+								}
+							}
+							add_country_modifier = {
+								name = shiite_al_najaf_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = shiite_al_najaf_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								shiite_al_najaf_observant = {
+									remove_country_modifier = shiite_al_najaf_observant
+								}
+								shiite_al_najaf_fanatical = {
+									remove_country_modifier = shiite_al_najaf_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = shiite_al_najaf_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = shiite_al_najaf_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								shiite_al_najaf_pious = {
+									remove_country_modifier = shiite_al_najaf_pious
+								}
+								shiite_al_najaf_fanatical = {
+									remove_country_modifier = shiite_al_najaf_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = shiite_al_najaf_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							shiite_al_najaf_observant = {
+								remove_country_modifier = shiite_al_najaf_observant
+							}
+							shiite_al_najaf_pious = {
+								remove_country_modifier = shiite_al_najaf_pious
+							}
+							shiite_al_najaf_fanatical = {
+								remove_country_modifier = shiite_al_najaf_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						shiite_al_najaf_observant = {
+							remove_country_modifier = shiite_al_najaf_observant
+						}
+						shiite_al_najaf_pious = {
+							remove_country_modifier = shiite_al_najaf_pious
+						}
+						shiite_al_najaf_fanatical = {
+							remove_country_modifier = shiite_al_najaf_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						1330 = {
+							owner = {
+								NOT = {
+									religion = shiite
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_al_najaf_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_al_najaf_observant = {
+									remove_country_modifier = infidel_al_najaf_observant
+								}
+								infidel_al_najaf_pious = {
+									remove_country_modifier = infidel_al_najaf_pious
+								}
+							}
+							add_country_modifier = {
+								name = infidel_al_najaf_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_al_najaf_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_al_najaf_observant = {
+									remove_country_modifier = infidel_al_najaf_observant
+								}
+								infidel_al_najaf_fanatical = {
+									remove_country_modifier = infidel_al_najaf_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_al_najaf_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_al_najaf_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_al_najaf_pious = {
+									remove_country_modifier = infidel_al_najaf_pious
+								}
+								infidel_al_najaf_fanatical = {
+									remove_country_modifier = infidel_al_najaf_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_al_najaf_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_al_najaf_observant = {
+								remove_country_modifier = infidel_al_najaf_observant
+							}
+							infidel_al_najaf_pious = {
+								remove_country_modifier = infidel_al_najaf_pious
+							}
+							infidel_al_najaf_fanatical = {
+								remove_country_modifier = infidel_al_najaf_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_al_najaf_observant = {
+							remove_country_modifier = infidel_al_najaf_observant
+						}
+						infidel_al_najaf_pious = {
+							remove_country_modifier = infidel_al_najaf_pious
+						}
+						infidel_al_najaf_fanatical = {
+							remove_country_modifier = infidel_al_najaf_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					shiite_al_najaf_observant = {
+						remove_country_modifier = shiite_al_najaf_observant
+					}
+					shiite_al_najaf_pious = {
+						remove_country_modifier = shiite_al_najaf_pious
+					}
+					shiite_al_najaf_fanatical = {
+						remove_country_modifier = shiite_al_najaf_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_al_najaf_observant = {
+						remove_country_modifier = infidel_al_najaf_observant
+					}
+					infidel_al_najaf_pious = {
+						remove_country_modifier = infidel_al_najaf_pious
+					}
+					infidel_al_najaf_fanatical = {
+						remove_country_modifier = infidel_al_najaf_fanatical
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = orthodox
+			}
+			if = {
+				limit = {
+					antioch_patriarch_area = {
+						has_province_flag = orthodox_patriarch_of_antioch
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+					alexandria_patriarch_area = {
+						has_province_flag = orthodox_patriarch_of_alexandria
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+					constantinople_patriarch_area = {
+						has_province_flag = orthodox_patriarch_of_constantinople
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+					jerusalem_patriarch_area = {
+						has_province_flag = orthodox_patriarch_of_jerusalem
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+					rome_patriarch_area = {
+						has_province_flag = orthodox_patriarch_of_rome
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = orthodox_greek_patriarchates_fanatical
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_greek_patriarchates_observant = {
+								remove_country_modifier = orthodox_greek_patriarchates_observant
+							}
+							orthodox_greek_patriarchates_pious = {
+								remove_country_modifier = orthodox_greek_patriarchates_pious
+							}
+						}
+						add_country_modifier = {
+							name = orthodox_greek_patriarchates_fanatical
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = orthodox_greek_patriarchates_pious
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_greek_patriarchates_observant = {
+								remove_country_modifier = orthodox_greek_patriarchates_observant
+							}
+							orthodox_greek_patriarchates_fanatical = {
+								remove_country_modifier = orthodox_greek_patriarchates_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = orthodox_greek_patriarchates_pious
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = orthodox_greek_patriarchates_observant
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_greek_patriarchates_pious = {
+								remove_country_modifier = orthodox_greek_patriarchates_pious
+							}
+							orthodox_greek_patriarchates_fanatical = {
+								remove_country_modifier = orthodox_greek_patriarchates_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = orthodox_greek_patriarchates_observant
+							duration = -1
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						orthodox_greek_patriarchates_observant = {
+							remove_country_modifier = orthodox_greek_patriarchates_observant
+						}
+						orthodox_greek_patriarchates_pious = {
+							remove_country_modifier = orthodox_greek_patriarchates_pious
+						}
+						orthodox_greek_patriarchates_fanatical = {
+							remove_country_modifier = orthodox_greek_patriarchates_fanatical
+						}
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					orthodox_jerusalem_observant = {
+						remove_country_modifier = orthodox_jerusalem_observant
+					}
+					orthodox_jerusalem_pious = {
+						remove_country_modifier = orthodox_jerusalem_pious
+					}
+					orthodox_jerusalem_fanatical = {
+						remove_country_modifier = orthodox_jerusalem_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					orthodox_antioch_observant = {
+						remove_country_modifier = orthodox_antioch_observant
+					}
+					orthodox_antioch_pious = {
+						remove_country_modifier = orthodox_antioch_pious
+					}
+					orthodox_antioch_fanatical = {
+						remove_country_modifier = orthodox_antioch_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					orthodox_alexandria_observant = {
+						remove_country_modifier = orthodox_alexandria_observant
+					}
+					orthodox_alexandria_pious = {
+						remove_country_modifier = orthodox_alexandria_pious
+					}
+					orthodox_alexandria_fanatical = {
+						remove_country_modifier = orthodox_alexandria_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					orthodox_constantinople_observant = {
+						remove_country_modifier = orthodox_constantinople_observant
+					}
+					orthodox_constantinople_pious = {
+						remove_country_modifier = orthodox_constantinople_pious
+					}
+					orthodox_constantinople_fanatical = {
+						remove_country_modifier = orthodox_constantinople_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_jerusalem_observant = {
+						remove_country_modifier = infidel_jerusalem_observant
+					}
+					infidel_jerusalem_pious = {
+						remove_country_modifier = infidel_jerusalem_pious
+					}
+					infidel_jerusalem_fanatical = {
+						remove_country_modifier = infidel_jerusalem_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_alexandria_observant = {
+						remove_country_modifier = infidel_alexandria_observant
+					}
+					infidel_alexandria_pious = {
+						remove_country_modifier = infidel_alexandria_pious
+					}
+					infidel_alexandria_fanatical = {
+						remove_country_modifier = infidel_alexandria_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_constantinople_observant = {
+						remove_country_modifier = infidel_constantinople_observant
+					}
+					infidel_constantinople_pious = {
+						remove_country_modifier = infidel_constantinople_pious
+					}
+					infidel_constantinople_fanatical = {
+						remove_country_modifier = infidel_constantinople_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_antioch_observant = {
+						remove_country_modifier = infidel_antioch_observant
+					}
+					infidel_antioch_pious = {
+						remove_country_modifier = infidel_antioch_pious
+					}
+					infidel_antioch_fanatical = {
+						remove_country_modifier = infidel_antioch_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_orthodox_rome_observant = {
+						remove_country_modifier = infidel_orthodox_rome_observant
+					}
+					infidel_orthodox_rome_pious = {
+						remove_country_modifier = infidel_orthodox_rome_pious
+					}
+					infidel_orthodox_rome_fanatical = {
+						remove_country_modifier = infidel_orthodox_rome_fanatical
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					orthodox_greek_patriarchates_observant = {
+						remove_country_modifier = orthodox_greek_patriarchates_observant
+					}
+					orthodox_greek_patriarchates_pious = {
+						remove_country_modifier = orthodox_greek_patriarchates_pious
+					}
+					orthodox_greek_patriarchates_fanatical = {
+						remove_country_modifier = orthodox_greek_patriarchates_fanatical
+					}
+				}
+				if = {
+					limit = {
+						jerusalem_patriarch_area = {
+							has_province_flag = orthodox_patriarch_of_jerusalem
+							OR = {
+								owned_by = ROOT
+								owner = {
+									is_subject_of = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_jerusalem_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_jerusalem_observant = {
+									remove_country_modifier = orthodox_jerusalem_observant
+								}
+								orthodox_jerusalem_pious = {
+									remove_country_modifier = orthodox_jerusalem_pious
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_jerusalem_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_jerusalem_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_jerusalem_observant = {
+									remove_country_modifier = orthodox_jerusalem_observant
+								}
+								orthodox_jerusalem_fanatical = {
+									remove_country_modifier = orthodox_jerusalem_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_jerusalem_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_jerusalem_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_jerusalem_pious = {
+									remove_country_modifier = orthodox_jerusalem_pious
+								}
+								orthodox_jerusalem_fanatical = {
+									remove_country_modifier = orthodox_jerusalem_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_jerusalem_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_jerusalem_observant = {
+								remove_country_modifier = orthodox_jerusalem_observant
+							}
+							orthodox_jerusalem_pious = {
+								remove_country_modifier = orthodox_jerusalem_pious
+							}
+							orthodox_jerusalem_fanatical = {
+								remove_country_modifier = orthodox_jerusalem_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						orthodox_jerusalem_observant = {
+							remove_country_modifier = orthodox_jerusalem_observant
+						}
+						orthodox_jerusalem_pious = {
+							remove_country_modifier = orthodox_jerusalem_pious
+						}
+						orthodox_jerusalem_fanatical = {
+							remove_country_modifier = orthodox_jerusalem_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						antioch_patriarch_area = {
+							has_province_flag = orthodox_patriarch_of_antioch
+							OR = {
+								owned_by = ROOT
+								owner = {
+									is_subject_of = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_antioch_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_antioch_observant = {
+									remove_country_modifier = orthodox_antioch_observant
+								}
+								orthodox_antioch_pious = {
+									remove_country_modifier = orthodox_antioch_pious
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_antioch_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_antioch_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_antioch_observant = {
+									remove_country_modifier = orthodox_antioch_observant
+								}
+								orthodox_antioch_fanatical = {
+									remove_country_modifier = orthodox_antioch_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_antioch_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_antioch_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_antioch_pious = {
+									remove_country_modifier = orthodox_antioch_pious
+								}
+								orthodox_antioch_fanatical = {
+									remove_country_modifier = orthodox_antioch_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_antioch_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_antioch_observant = {
+								remove_country_modifier = orthodox_antioch_observant
+							}
+							orthodox_antioch_pious = {
+								remove_country_modifier = orthodox_antioch_pious
+							}
+							orthodox_antioch_fanatical = {
+								remove_country_modifier = orthodox_antioch_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						orthodox_antioch_observant = {
+							remove_country_modifier = orthodox_antioch_observant
+						}
+						orthodox_antioch_pious = {
+							remove_country_modifier = orthodox_antioch_pious
+						}
+						orthodox_antioch_fanatical = {
+							remove_country_modifier = orthodox_antioch_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						alexandria_patriarch_area = {
+							has_province_flag = orthodox_patriarch_of_alexandria
+							OR = {
+								owned_by = ROOT
+								owner = {
+									is_subject_of = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_alexandria_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_alexandria_observant = {
+									remove_country_modifier = orthodox_alexandria_observant
+								}
+								orthodox_alexandria_pious = {
+									remove_country_modifier = orthodox_alexandria_pious
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_alexandria_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_alexandria_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_alexandria_observant = {
+									remove_country_modifier = orthodox_alexandria_observant
+								}
+								orthodox_alexandria_fanatical = {
+									remove_country_modifier = orthodox_alexandria_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_alexandria_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_alexandria_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_alexandria_pious = {
+									remove_country_modifier = orthodox_alexandria_pious
+								}
+								orthodox_alexandria_fanatical = {
+									remove_country_modifier = orthodox_alexandria_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_alexandria_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_alexandria_observant = {
+								remove_country_modifier = orthodox_alexandria_observant
+							}
+							orthodox_alexandria_pious = {
+								remove_country_modifier = orthodox_alexandria_pious
+							}
+							orthodox_alexandria_fanatical = {
+								remove_country_modifier = orthodox_alexandria_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						orthodox_alexandria_observant = {
+							remove_country_modifier = orthodox_alexandria_observant
+						}
+						orthodox_alexandria_pious = {
+							remove_country_modifier = orthodox_alexandria_pious
+						}
+						orthodox_alexandria_fanatical = {
+							remove_country_modifier = orthodox_alexandria_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						constantinople_patriarch_area = {
+							has_province_flag = orthodox_patriarch_of_constantinople
+							OR = {
+								owned_by = ROOT
+								owner = {
+									is_subject_of = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_constantinople_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_constantinople_observant = {
+									remove_country_modifier = orthodox_constantinople_observant
+								}
+								orthodox_constantinople_pious = {
+									remove_country_modifier = orthodox_constantinople_pious
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_constantinople_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_constantinople_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_constantinople_observant = {
+									remove_country_modifier = orthodox_constantinople_observant
+								}
+								orthodox_constantinople_fanatical = {
+									remove_country_modifier = orthodox_constantinople_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_constantinople_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = orthodox_constantinople_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								orthodox_constantinople_pious = {
+									remove_country_modifier = orthodox_constantinople_pious
+								}
+								orthodox_constantinople_fanatical = {
+									remove_country_modifier = orthodox_constantinople_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = orthodox_constantinople_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							orthodox_constantinople_observant = {
+								remove_country_modifier = orthodox_constantinople_observant
+							}
+							orthodox_constantinople_pious = {
+								remove_country_modifier = orthodox_constantinople_pious
+							}
+							orthodox_constantinople_fanatical = {
+								remove_country_modifier = orthodox_constantinople_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						orthodox_constantinople_observant = {
+							remove_country_modifier = orthodox_constantinople_observant
+						}
+						orthodox_constantinople_pious = {
+							remove_country_modifier = orthodox_constantinople_pious
+						}
+						orthodox_constantinople_fanatical = {
+							remove_country_modifier = orthodox_constantinople_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_owned_province = {
+								has_province_modifier = orthodox_patriarchate
+							}
+						}
+					}
+					if = {
+						limit = {
+							jerusalem_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_jerusalem
+								owner = {
+									NOT = {
+										religion = ROOT
+									}
+								}
+							}
+							capital_scope = {
+								AND = {
+									OR = {
+										continent = southeast_asia
+										continent = indian_continent
+										continent = east_asia
+										continent = central_asia
+										continent = north_asia
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								piety = 0.60
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_jerusalem_fanatical
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_jerusalem_observant = {
+										remove_country_modifier = infidel_jerusalem_observant
+									}
+									infidel_jerusalem_pious = {
+										remove_country_modifier = infidel_jerusalem_pious
+									}
+								}
+								add_country_modifier = {
+									name = infidel_jerusalem_fanatical
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = 0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_jerusalem_pious
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_jerusalem_observant = {
+										remove_country_modifier = infidel_jerusalem_observant
+									}
+									infidel_jerusalem_fanatical = {
+										remove_country_modifier = infidel_jerusalem_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_jerusalem_pious
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = -0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_jerusalem_observant
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_jerusalem_pious = {
+										remove_country_modifier = infidel_jerusalem_pious
+									}
+									infidel_jerusalem_fanatical = {
+										remove_country_modifier = infidel_jerusalem_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_jerusalem_observant
+									duration = -1
+								}
+							}
+						}
+						else = {
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_jerusalem_observant = {
+									remove_country_modifier = infidel_jerusalem_observant
+								}
+								infidel_jerusalem_pious = {
+									remove_country_modifier = infidel_jerusalem_pious
+								}
+								infidel_jerusalem_fanatical = {
+									remove_country_modifier = infidel_jerusalem_fanatical
+								}
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_jerusalem_observant = {
+								remove_country_modifier = infidel_jerusalem_observant
+							}
+							infidel_jerusalem_pious = {
+								remove_country_modifier = infidel_jerusalem_pious
+							}
+							infidel_jerusalem_fanatical = {
+								remove_country_modifier = infidel_jerusalem_fanatical
+							}
+						}
+					}
+					if = {
+						limit = {
+							capital_scope = {
+								AND = {
+									OR = {
+										continent = southeast_asia
+										continent = indian_continent
+										continent = east_asia
+										continent = central_asia
+										continent = north_asia
+									}
+								}
+							}
+							antioch_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_antioch
+								owner = {
+									NOT = {
+										religion = ROOT
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								piety = 0.60
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_antioch_fanatical
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_antioch_observant = {
+										remove_country_modifier = infidel_antioch_observant
+									}
+									infidel_antioch_pious = {
+										remove_country_modifier = infidel_antioch_pious
+									}
+								}
+								add_country_modifier = {
+									name = infidel_antioch_fanatical
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = 0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_antioch_pious
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_antioch_observant = {
+										remove_country_modifier = infidel_antioch_observant
+									}
+									infidel_antioch_fanatical = {
+										remove_country_modifier = infidel_antioch_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_antioch_pious
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = -0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_antioch_observant
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_antioch_pious = {
+										remove_country_modifier = infidel_antioch_pious
+									}
+									infidel_antioch_fanatical = {
+										remove_country_modifier = infidel_antioch_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_antioch_observant
+									duration = -1
+								}
+							}
+						}
+						else = {
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_antioch_observant = {
+									remove_country_modifier = infidel_antioch_observant
+								}
+								infidel_antioch_pious = {
+									remove_country_modifier = infidel_antioch_pious
+								}
+								infidel_antioch_fanatical = {
+									remove_country_modifier = infidel_antioch_fanatical
+								}
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_antioch_observant = {
+								remove_country_modifier = infidel_antioch_observant
+							}
+							infidel_antioch_pious = {
+								remove_country_modifier = infidel_antioch_pious
+							}
+							infidel_antioch_fanatical = {
+								remove_country_modifier = infidel_antioch_fanatical
+							}
+						}
+					}
+					if = {
+						limit = {
+							capital_scope = {
+								AND = {
+									OR = {
+										superregion = east_africa_superregion
+										superregion = west_africa_superregion
+										superregion = north_africa_superregion
+										region = egypt_region
+									}
+								}
+							}
+							alexandria_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_alexandria
+								owner = {
+									NOT = {
+										religion = ROOT
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								piety = 0.60
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_alexandria_fanatical
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_alexandria_observant = {
+										remove_country_modifier = infidel_alexandria_observant
+									}
+									infidel_alexandria_pious = {
+										remove_country_modifier = infidel_alexandria_pious
+									}
+								}
+								add_country_modifier = {
+									name = infidel_alexandria_fanatical
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = 0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_alexandria_pious
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_alexandria_observant = {
+										remove_country_modifier = infidel_alexandria_observant
+									}
+									infidel_alexandria_fanatical = {
+										remove_country_modifier = infidel_alexandria_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_alexandria_pious
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = -0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_alexandria_observant
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_alexandria_pious = {
+										remove_country_modifier = infidel_alexandria_pious
+									}
+									infidel_alexandria_fanatical = {
+										remove_country_modifier = infidel_alexandria_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_alexandria_observant
+									duration = -1
+								}
+							}
+						}
+						else = {
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_alexandria_observant = {
+									remove_country_modifier = infidel_alexandria_observant
+								}
+								infidel_alexandria_pious = {
+									remove_country_modifier = infidel_alexandria_pious
+								}
+								infidel_alexandria_fanatical = {
+									remove_country_modifier = infidel_alexandria_fanatical
+								}
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_alexandria_observant = {
+								remove_country_modifier = infidel_alexandria_observant
+							}
+							infidel_alexandria_pious = {
+								remove_country_modifier = infidel_alexandria_pious
+							}
+							infidel_alexandria_fanatical = {
+								remove_country_modifier = infidel_alexandria_fanatical
+							}
+						}
+					}
+					if = {
+						limit = {
+							capital_scope = {
+								continent = europe
+								NOT = {
+									AND = {
+										continent = europe
+										OR = {
+											superregion = france_superregion
+											superregion = iberia_superregion
+											superregion = italy_superregion
+											superregion = british_isles_superregion
+											AND = {
+												superregion = scandinavian_superregion
+												NOT = {
+													region = finland_region
+												}
+											}
+											superregion = germany_superregion
+											region = swabia_bavarian_region
+											region = switzerland_region
+											region = west_balkan_region
+											region = east_balkan_region
+											region = greece_region
+											region = magyar_plains_region
+											region = north_carpathia_region
+											region = south_carpathia_region
+										}
+									}
+								}
+							}
+							constantinople_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_constantinople
+								owner = {
+									NOT = {
+										religion = ROOT
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								piety = 0.60
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_constantinople_fanatical
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_constantinople_observant = {
+										remove_country_modifier = infidel_constantinople_observant
+									}
+									infidel_constantinople_pious = {
+										remove_country_modifier = infidel_constantinople_pious
+									}
+								}
+								add_country_modifier = {
+									name = infidel_constantinople_fanatical
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = 0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_constantinople_pious
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_constantinople_observant = {
+										remove_country_modifier = infidel_constantinople_observant
+									}
+									infidel_constantinople_fanatical = {
+										remove_country_modifier = infidel_constantinople_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_constantinople_pious
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = -0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_constantinople_observant
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_constantinople_pious = {
+										remove_country_modifier = infidel_constantinople_pious
+									}
+									infidel_constantinople_fanatical = {
+										remove_country_modifier = infidel_constantinople_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_constantinople_observant
+									duration = -1
+								}
+							}
+						}
+						else = {
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_constantinople_observant = {
+									remove_country_modifier = infidel_constantinople_observant
+								}
+								infidel_constantinople_pious = {
+									remove_country_modifier = infidel_constantinople_pious
+								}
+								infidel_constantinople_fanatical = {
+									remove_country_modifier = infidel_constantinople_fanatical
+								}
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_constantinople_observant = {
+								remove_country_modifier = infidel_constantinople_observant
+							}
+							infidel_constantinople_pious = {
+								remove_country_modifier = infidel_constantinople_pious
+							}
+							infidel_constantinople_fanatical = {
+								remove_country_modifier = infidel_constantinople_fanatical
+							}
+						}
+					}
+					if = {
+						limit = {
+							capital_scope = {
+								AND = {
+									continent = europe
+									OR = {
+										superregion = france_superregion
+										superregion = iberia_superregion
+										superregion = italy_superregion
+										superregion = british_isles_superregion
+										AND = {
+											superregion = scandinavian_superregion
+											NOT = {
+												region = finland_region
+											}
+										}
+										superregion = germany_superregion
+										region = swabia_bavarian_region
+										region = switzerland_region
+										region = west_balkan_region
+										region = east_balkan_region
+										region = greece_region
+										region = magyar_plains_region
+										region = north_carpathia_region
+										region = south_carpathia_region
+									}
+								}
+							}
+							NOT = {
+								PAP = {
+									has_country_flag = concordat
+								}
+							}
+							rome_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_rome
+								owner = {
+									NOT = {
+										religion = ROOT
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								piety = 0.60
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_orthodox_rome_fanatical
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_orthodox_rome_observant = {
+										remove_country_modifier = infidel_orthodox_rome_observant
+									}
+									infidel_orthodox_rome_pious = {
+										remove_country_modifier = infidel_orthodox_rome_pious
+									}
+								}
+								add_country_modifier = {
+									name = infidel_orthodox_rome_fanatical
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = 0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_orthodox_rome_pious
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_orthodox_rome_observant = {
+										remove_country_modifier = infidel_orthodox_rome_observant
+									}
+									infidel_orthodox_rome_fanatical = {
+										remove_country_modifier = infidel_orthodox_rome_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_orthodox_rome_pious
+									duration = -1
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								piety = -0.20
+							}
+							if = {
+								limit = {
+									NOT = {
+										has_country_modifier = infidel_orthodox_rome_observant
+									}
+								}
+								trigger_switch = {
+									on_trigger = has_country_modifier
+									infidel_orthodox_rome_pious = {
+										remove_country_modifier = infidel_orthodox_rome_pious
+									}
+									infidel_orthodox_rome_fanatical = {
+										remove_country_modifier = infidel_orthodox_rome_fanatical
+									}
+								}
+								add_country_modifier = {
+									name = infidel_orthodox_rome_observant
+									duration = -1
+								}
+							}
+						}
+						else = {
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_orthodox_rome_observant = {
+									remove_country_modifier = infidel_orthodox_rome_observant
+								}
+								infidel_orthodox_rome_pious = {
+									remove_country_modifier = infidel_orthodox_rome_pious
+								}
+								infidel_orthodox_rome_fanatical = {
+									remove_country_modifier = infidel_orthodox_rome_fanatical
+								}
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_orthodox_rome_observant = {
+								remove_country_modifier = infidel_orthodox_rome_observant
+							}
+							infidel_orthodox_rome_pious = {
+								remove_country_modifier = infidel_orthodox_rome_pious
+							}
+							infidel_orthodox_rome_fanatical = {
+								remove_country_modifier = infidel_orthodox_rome_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_jerusalem_observant = {
+							remove_country_modifier = infidel_jerusalem_observant
+						}
+						infidel_jerusalem_pious = {
+							remove_country_modifier = infidel_jerusalem_pious
+						}
+						infidel_jerusalem_fanatical = {
+							remove_country_modifier = infidel_jerusalem_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_antioch_observant = {
+							remove_country_modifier = infidel_antioch_observant
+						}
+						infidel_antioch_pious = {
+							remove_country_modifier = infidel_antioch_pious
+						}
+						infidel_antioch_fanatical = {
+							remove_country_modifier = infidel_antioch_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_alexandria_observant = {
+							remove_country_modifier = infidel_alexandria_observant
+						}
+						infidel_alexandria_pious = {
+							remove_country_modifier = infidel_alexandria_pious
+						}
+						infidel_alexandria_fanatical = {
+							remove_country_modifier = infidel_alexandria_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_constantinople_observant = {
+							remove_country_modifier = infidel_constantinople_observant
+						}
+						infidel_constantinople_pious = {
+							remove_country_modifier = infidel_constantinople_pious
+						}
+						infidel_constantinople_fanatical = {
+							remove_country_modifier = infidel_constantinople_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_orthodox_rome_observant = {
+							remove_country_modifier = infidel_orthodox_rome_observant
+						}
+						infidel_orthodox_rome_pious = {
+							remove_country_modifier = infidel_orthodox_rome_pious
+						}
+						infidel_orthodox_rome_fanatical = {
+							remove_country_modifier = infidel_orthodox_rome_fanatical
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = coptic
+			}
+			if = {
+				limit = {
+					jerusalem_patriarch_area = {
+						has_province_flag = miaphysite_catholicos_of_jerusalem
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_jerusalem_fanatical
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_jerusalem_observant = {
+								remove_country_modifier = coptic_jerusalem_observant
+							}
+							coptic_jerusalem_pious = {
+								remove_country_modifier = coptic_jerusalem_pious
+							}
+						}
+						add_country_modifier = {
+							name = coptic_jerusalem_fanatical
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_jerusalem_pious
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_jerusalem_observant = {
+								remove_country_modifier = coptic_jerusalem_observant
+							}
+							coptic_jerusalem_fanatical = {
+								remove_country_modifier = coptic_jerusalem_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = coptic_jerusalem_pious
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_jerusalem_observant
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_jerusalem_pious = {
+								remove_country_modifier = coptic_jerusalem_pious
+							}
+							coptic_jerusalem_fanatical = {
+								remove_country_modifier = coptic_jerusalem_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = coptic_jerusalem_observant
+							duration = -1
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						coptic_jerusalem_observant = {
+							remove_country_modifier = coptic_jerusalem_observant
+						}
+						coptic_jerusalem_pious = {
+							remove_country_modifier = coptic_jerusalem_pious
+						}
+						coptic_jerusalem_fanatical = {
+							remove_country_modifier = coptic_jerusalem_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					coptic_jerusalem_observant = {
+						remove_country_modifier = coptic_jerusalem_observant
+					}
+					coptic_jerusalem_pious = {
+						remove_country_modifier = coptic_jerusalem_pious
+					}
+					coptic_jerusalem_fanatical = {
+						remove_country_modifier = coptic_jerusalem_fanatical
+					}
+				}
+			}
+			if = {
+				limit = {
+					antioch_patriarch_area = {
+						has_province_flag = miaphysite_catholicos_of_antioch
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_antioch_fanatical
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_antioch_observant = {
+								remove_country_modifier = coptic_antioch_observant
+							}
+							coptic_antioch_pious = {
+								remove_country_modifier = coptic_antioch_pious
+							}
+						}
+						add_country_modifier = {
+							name = coptic_antioch_fanatical
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_antioch_pious
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_antioch_observant = {
+								remove_country_modifier = coptic_antioch_observant
+							}
+							coptic_antioch_fanatical = {
+								remove_country_modifier = coptic_antioch_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = coptic_antioch_pious
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_antioch_observant
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_antioch_pious = {
+								remove_country_modifier = coptic_antioch_pious
+							}
+							coptic_antioch_fanatical = {
+								remove_country_modifier = coptic_antioch_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = coptic_antioch_observant
+							duration = -1
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						coptic_antioch_observant = {
+							remove_country_modifier = coptic_antioch_observant
+						}
+						coptic_antioch_pious = {
+							remove_country_modifier = coptic_antioch_pious
+						}
+						coptic_antioch_fanatical = {
+							remove_country_modifier = coptic_antioch_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					coptic_antioch_observant = {
+						remove_country_modifier = coptic_antioch_observant
+					}
+					coptic_antioch_pious = {
+						remove_country_modifier = coptic_antioch_pious
+					}
+					coptic_antioch_fanatical = {
+						remove_country_modifier = coptic_antioch_fanatical
+					}
+				}
+			}
+			if = {
+				limit = {
+					alexandria_patriarch_area = {
+						has_province_flag = miaphysite_catholicos_of_alexandria
+						OR = {
+							owned_by = ROOT
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_alexandria_fanatical
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_alexandria_observant = {
+								remove_country_modifier = coptic_alexandria_observant
+							}
+							coptic_alexandria_pious = {
+								remove_country_modifier = coptic_alexandria_pious
+							}
+						}
+						add_country_modifier = {
+							name = coptic_alexandria_fanatical
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_alexandria_pious
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_alexandria_observant = {
+								remove_country_modifier = coptic_alexandria_observant
+							}
+							coptic_alexandria_fanatical = {
+								remove_country_modifier = coptic_alexandria_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = coptic_alexandria_pious
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = coptic_alexandria_observant
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							coptic_alexandria_pious = {
+								remove_country_modifier = coptic_alexandria_pious
+							}
+							coptic_alexandria_fanatical = {
+								remove_country_modifier = coptic_alexandria_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = coptic_alexandria_observant
+							duration = -1
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						coptic_alexandria_observant = {
+							remove_country_modifier = coptic_alexandria_observant
+						}
+						coptic_alexandria_pious = {
+							remove_country_modifier = coptic_alexandria_pious
+						}
+						coptic_alexandria_fanatical = {
+							remove_country_modifier = coptic_alexandria_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					coptic_alexandria_observant = {
+						remove_country_modifier = coptic_alexandria_observant
+					}
+					coptic_alexandria_pious = {
+						remove_country_modifier = coptic_alexandria_pious
+					}
+					coptic_alexandria_fanatical = {
+						remove_country_modifier = coptic_alexandria_fanatical
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_province = {
+							has_province_modifier = coptic_patriarchate
+						}
+					}
+					capital_scope = {
+						NOT = {
+							continent = europe
+						}
+					}
+				}
+				if = {
+					limit = {
+						jerusalem_patriarch_area = {
+							has_province_flag = miaphysite_catholicos_of_jerusalem
+							owner = {
+								NOT = {
+									religion = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_jerusalem_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_jerusalem_observant = {
+									remove_country_modifier = infidel_coptic_jerusalem_observant
+								}
+								infidel_coptic_jerusalem_pious = {
+									remove_country_modifier = infidel_coptic_jerusalem_pious
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_jerusalem_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_jerusalem_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_jerusalem_observant = {
+									remove_country_modifier = infidel_coptic_jerusalem_observant
+								}
+								infidel_coptic_jerusalem_fanatical = {
+									remove_country_modifier = infidel_coptic_jerusalem_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_jerusalem_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_jerusalem_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_jerusalem_pious = {
+									remove_country_modifier = infidel_coptic_jerusalem_pious
+								}
+								infidel_coptic_jerusalem_fanatical = {
+									remove_country_modifier = infidel_coptic_jerusalem_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_jerusalem_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_coptic_jerusalem_observant = {
+								remove_country_modifier = infidel_coptic_jerusalem_observant
+							}
+							infidel_coptic_jerusalem_pious = {
+								remove_country_modifier = infidel_coptic_jerusalem_pious
+							}
+							infidel_coptic_jerusalem_fanatical = {
+								remove_country_modifier = infidel_coptic_jerusalem_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_coptic_jerusalem_observant = {
+							remove_country_modifier = infidel_coptic_jerusalem_observant
+						}
+						infidel_coptic_jerusalem_pious = {
+							remove_country_modifier = infidel_coptic_jerusalem_pious
+						}
+						infidel_coptic_jerusalem_fanatical = {
+							remove_country_modifier = infidel_coptic_jerusalem_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						antioch_patriarch_area = {
+							has_province_flag = miaphysite_catholicos_of_antioch
+							owner = {
+								NOT = {
+									religion = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_antioch_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_antioch_observant = {
+									remove_country_modifier = infidel_coptic_antioch_observant
+								}
+								infidel_coptic_antioch_pious = {
+									remove_country_modifier = infidel_coptic_antioch_pious
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_antioch_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_antioch_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_antioch_observant = {
+									remove_country_modifier = infidel_coptic_antioch_observant
+								}
+								infidel_coptic_antioch_fanatical = {
+									remove_country_modifier = infidel_coptic_antioch_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_antioch_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_antioch_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_antioch_pious = {
+									remove_country_modifier = infidel_coptic_antioch_pious
+								}
+								infidel_coptic_antioch_fanatical = {
+									remove_country_modifier = infidel_coptic_antioch_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_antioch_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_coptic_antioch_observant = {
+								remove_country_modifier = infidel_coptic_antioch_observant
+							}
+							infidel_coptic_antioch_pious = {
+								remove_country_modifier = infidel_coptic_antioch_pious
+							}
+							infidel_coptic_antioch_fanatical = {
+								remove_country_modifier = infidel_coptic_antioch_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_coptic_antioch_observant = {
+							remove_country_modifier = infidel_coptic_antioch_observant
+						}
+						infidel_coptic_antioch_pious = {
+							remove_country_modifier = infidel_coptic_antioch_pious
+						}
+						infidel_coptic_antioch_fanatical = {
+							remove_country_modifier = infidel_coptic_antioch_fanatical
+						}
+					}
+				}
+				if = {
+					limit = {
+						alexandria_patriarch_area = {
+							has_province_flag = miaphysite_catholicos_of_alexandria
+							owner = {
+								NOT = {
+									religion = ROOT
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_alexandria_fanatical
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_alexandria_observant = {
+									remove_country_modifier = infidel_coptic_alexandria_observant
+								}
+								infidel_coptic_alexandria_pious = {
+									remove_country_modifier = infidel_coptic_alexandria_pious
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_alexandria_fanatical
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_alexandria_pious
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_alexandria_observant = {
+									remove_country_modifier = infidel_coptic_alexandria_observant
+								}
+								infidel_coptic_alexandria_fanatical = {
+									remove_country_modifier = infidel_coptic_alexandria_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_alexandria_pious
+								duration = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = infidel_coptic_alexandria_observant
+								}
+							}
+							trigger_switch = {
+								on_trigger = has_country_modifier
+								infidel_coptic_alexandria_pious = {
+									remove_country_modifier = infidel_coptic_alexandria_pious
+								}
+								infidel_coptic_alexandria_fanatical = {
+									remove_country_modifier = infidel_coptic_alexandria_fanatical
+								}
+							}
+							add_country_modifier = {
+								name = infidel_coptic_alexandria_observant
+								duration = -1
+							}
+						}
+					}
+					else = {
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_coptic_alexandria_observant = {
+								remove_country_modifier = infidel_coptic_alexandria_observant
+							}
+							infidel_coptic_alexandria_pious = {
+								remove_country_modifier = infidel_coptic_alexandria_pious
+							}
+							infidel_coptic_alexandria_fanatical = {
+								remove_country_modifier = infidel_coptic_alexandria_fanatical
+							}
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_coptic_alexandria_observant = {
+							remove_country_modifier = infidel_coptic_alexandria_observant
+						}
+						infidel_coptic_alexandria_pious = {
+							remove_country_modifier = infidel_coptic_alexandria_pious
+						}
+						infidel_coptic_alexandria_fanatical = {
+							remove_country_modifier = infidel_coptic_alexandria_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_coptic_jerusalem_observant = {
+						remove_country_modifier = infidel_coptic_jerusalem_observant
+					}
+					infidel_coptic_jerusalem_pious = {
+						remove_country_modifier = infidel_coptic_jerusalem_pious
+					}
+					infidel_coptic_jerusalem_fanatical = {
+						remove_country_modifier = infidel_coptic_jerusalem_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_coptic_antioch_observant = {
+						remove_country_modifier = infidel_coptic_antioch_observant
+					}
+					infidel_coptic_antioch_pious = {
+						remove_country_modifier = infidel_coptic_antioch_pious
+					}
+					infidel_coptic_antioch_fanatical = {
+						remove_country_modifier = infidel_coptic_antioch_fanatical
+					}
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_coptic_alexandria_observant = {
+						remove_country_modifier = infidel_coptic_alexandria_observant
+					}
+					infidel_coptic_alexandria_pious = {
+						remove_country_modifier = infidel_coptic_alexandria_pious
+					}
+					infidel_coptic_alexandria_fanatical = {
+						remove_country_modifier = infidel_coptic_alexandria_fanatical
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion_group = jewish_group
+				owns_or_non_sovereign_subject_of = 379
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = jewish_jerusalem_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						jewish_jerusalem_observant = {
+							remove_country_modifier = jewish_jerusalem_observant
+						}
+						jewish_jerusalem_pious = {
+							remove_country_modifier = jewish_jerusalem_pious
+						}
+					}
+					add_country_modifier = {
+						name = jewish_jerusalem_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = jewish_jerusalem_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						jewish_jerusalem_observant = {
+							remove_country_modifier = jewish_jerusalem_observant
+						}
+						jewish_jerusalem_fanatical = {
+							remove_country_modifier = jewish_jerusalem_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = jewish_jerusalem_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = jewish_jerusalem_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						jewish_jerusalem_pious = {
+							remove_country_modifier = jewish_jerusalem_pious
+						}
+						jewish_jerusalem_fanatical = {
+							remove_country_modifier = jewish_jerusalem_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = jewish_jerusalem_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					jewish_jerusalem_observant = {
+						remove_country_modifier = jewish_jerusalem_observant
+					}
+					jewish_jerusalem_pious = {
+						remove_country_modifier = jewish_jerusalem_pious
+					}
+					jewish_jerusalem_fanatical = {
+						remove_country_modifier = jewish_jerusalem_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				jewish_jerusalem_observant = {
+					remove_country_modifier = jewish_jerusalem_observant
+				}
+				jewish_jerusalem_pious = {
+					remove_country_modifier = jewish_jerusalem_pious
+				}
+				jewish_jerusalem_fanatical = {
+					remove_country_modifier = jewish_jerusalem_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = baltic_pagan_reformed
+				owns_or_non_sovereign_subject_of = 41
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = romuva_balta_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						romuva_balta_observant = {
+							remove_country_modifier = romuva_balta_observant
+						}
+						romuva_balta_pious = {
+							remove_country_modifier = romuva_balta_pious
+						}
+					}
+					add_country_modifier = {
+						name = romuva_balta_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = romuva_balta_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						romuva_balta_observant = {
+							remove_country_modifier = romuva_balta_observant
+						}
+						romuva_balta_fanatical = {
+							remove_country_modifier = romuva_balta_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = romuva_balta_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = romuva_balta_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						romuva_balta_pious = {
+							remove_country_modifier = romuva_balta_pious
+						}
+						romuva_balta_fanatical = {
+							remove_country_modifier = romuva_balta_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = romuva_balta_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					romuva_balta_observant = {
+						remove_country_modifier = romuva_balta_observant
+					}
+					romuva_balta_pious = {
+						remove_country_modifier = romuva_balta_pious
+					}
+					romuva_balta_fanatical = {
+						remove_country_modifier = romuva_balta_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				romuva_balta_observant = {
+					remove_country_modifier = romuva_balta_observant
+				}
+				romuva_balta_pious = {
+					remove_country_modifier = romuva_balta_pious
+				}
+				romuva_balta_fanatical = {
+					remove_country_modifier = romuva_balta_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					religion = jain
+					religion = buddhism
+				}
+				owns_or_non_sovereign_subject_of = 2632
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = varanasi_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						varanasi_observant = {
+							remove_country_modifier = varanasi_observant
+						}
+						varanasi_pious = {
+							remove_country_modifier = varanasi_pious
+						}
+					}
+					add_country_modifier = {
+						name = varanasi_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = varanasi_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						varanasi_observant = {
+							remove_country_modifier = varanasi_observant
+						}
+						varanasi_fanatical = {
+							remove_country_modifier = varanasi_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = varanasi_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = varanasi_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						varanasi_pious = {
+							remove_country_modifier = varanasi_pious
+						}
+						varanasi_fanatical = {
+							remove_country_modifier = varanasi_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = varanasi_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					varanasi_observant = {
+						remove_country_modifier = varanasi_observant
+					}
+					varanasi_pious = {
+						remove_country_modifier = varanasi_pious
+					}
+					varanasi_fanatical = {
+						remove_country_modifier = varanasi_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				varanasi_observant = {
+					remove_country_modifier = varanasi_observant
+				}
+				varanasi_pious = {
+					remove_country_modifier = varanasi_pious
+				}
+				varanasi_fanatical = {
+					remove_country_modifier = varanasi_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				always = no
+				religion = chaldean
+				owns_or_non_sovereign_subject_of = 2632
+				ctesiphon_patriarch_area = {
+					has_province_flag = chaldean_catholicos_of_ctesiphon
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = chaldean_ctesiphon_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						chaldean_ctesiphon_observant = {
+							remove_country_modifier = chaldean_ctesiphon_observant
+						}
+						chaldean_ctesiphon_pious = {
+							remove_country_modifier = chaldean_ctesiphon_pious
+						}
+					}
+					add_country_modifier = {
+						name = chaldean_ctesiphon_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = chaldean_ctesiphon_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						chaldean_ctesiphon_observant = {
+							remove_country_modifier = chaldean_ctesiphon_observant
+						}
+						chaldean_ctesiphon_fanatical = {
+							remove_country_modifier = chaldean_ctesiphon_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = chaldean_ctesiphon_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = chaldean_ctesiphon_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						chaldean_ctesiphon_pious = {
+							remove_country_modifier = chaldean_ctesiphon_pious
+						}
+						chaldean_ctesiphon_fanatical = {
+							remove_country_modifier = chaldean_ctesiphon_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = chaldean_ctesiphon_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					chaldean_ctesiphon_observant = {
+						remove_country_modifier = chaldean_ctesiphon_observant
+					}
+					chaldean_ctesiphon_pious = {
+						remove_country_modifier = chaldean_ctesiphon_pious
+					}
+					chaldean_ctesiphon_fanatical = {
+						remove_country_modifier = chaldean_ctesiphon_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				chaldean_ctesiphon_observant = {
+					remove_country_modifier = chaldean_ctesiphon_observant
+				}
+				chaldean_ctesiphon_pious = {
+					remove_country_modifier = chaldean_ctesiphon_pious
+				}
+				chaldean_ctesiphon_fanatical = {
+					remove_country_modifier = chaldean_ctesiphon_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = sikhism
+				PUN = {
+					has_country_flag = amritsar_built
+				}
+			}
+			if = {
+				limit = {
+					any_province = {
+						has_province_flag = amritsar
+						owner = {
+							NOT = {
+								religion = sikhism
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = infidel_amritsar_fanatical
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_amritsar_observant = {
+								remove_country_modifier = infidel_amritsar_observant
+							}
+							infidel_amritsar_pious = {
+								remove_country_modifier = infidel_amritsar_pious
+							}
+						}
+						add_country_modifier = {
+							name = infidel_amritsar_fanatical
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = infidel_amritsar_pious
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_amritsar_observant = {
+								remove_country_modifier = infidel_amritsar_observant
+							}
+							infidel_amritsar_fanatical = {
+								remove_country_modifier = infidel_amritsar_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = infidel_amritsar_pious
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = infidel_amritsar_observant
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							infidel_amritsar_pious = {
+								remove_country_modifier = infidel_amritsar_pious
+							}
+							infidel_amritsar_fanatical = {
+								remove_country_modifier = infidel_amritsar_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = infidel_amritsar_observant
+							duration = -1
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_amritsar_observant = {
+							remove_country_modifier = infidel_amritsar_observant
+						}
+						infidel_amritsar_pious = {
+							remove_country_modifier = infidel_amritsar_pious
+						}
+						infidel_amritsar_fanatical = {
+							remove_country_modifier = infidel_amritsar_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_amritsar_observant = {
+						remove_country_modifier = infidel_amritsar_observant
+					}
+					infidel_amritsar_pious = {
+						remove_country_modifier = infidel_amritsar_pious
+					}
+					infidel_amritsar_fanatical = {
+						remove_country_modifier = infidel_amritsar_fanatical
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						has_province_flag = amritsar
+						owner = {
+							religion = sikhism
+						}
+					}
+				}
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = sikhism_amritsar_fanatical
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							sikhism_amritsar_observant = {
+								remove_country_modifier = sikhism_amritsar_observant
+							}
+							sikhism_amritsar_pious = {
+								remove_country_modifier = sikhism_amritsar_pious
+							}
+						}
+						add_country_modifier = {
+							name = sikhism_amritsar_fanatical
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = sikhism_amritsar_pious
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							sikhism_amritsar_observant = {
+								remove_country_modifier = sikhism_amritsar_observant
+							}
+							sikhism_amritsar_fanatical = {
+								remove_country_modifier = sikhism_amritsar_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = sikhism_amritsar_pious
+							duration = -1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = sikhism_amritsar_observant
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_country_modifier
+							sikhism_amritsar_pious = {
+								remove_country_modifier = sikhism_amritsar_pious
+							}
+							sikhism_amritsar_fanatical = {
+								remove_country_modifier = sikhism_amritsar_fanatical
+							}
+						}
+						add_country_modifier = {
+							name = sikhism_amritsar_observant
+							duration = -1
+						}
+					}
+				}
+				else = {
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						sikhism_amritsar_observant = {
+							remove_country_modifier = sikhism_amritsar_observant
+						}
+						sikhism_amritsar_pious = {
+							remove_country_modifier = sikhism_amritsar_pious
+						}
+						sikhism_amritsar_fanatical = {
+							remove_country_modifier = sikhism_amritsar_fanatical
+						}
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					sikhism_amritsar_observant = {
+						remove_country_modifier = sikhism_amritsar_observant
+					}
+					sikhism_amritsar_pious = {
+						remove_country_modifier = sikhism_amritsar_pious
+					}
+					sikhism_amritsar_fanatical = {
+						remove_country_modifier = sikhism_amritsar_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				infidel_amritsar_observant = {
+					remove_country_modifier = infidel_amritsar_observant
+				}
+				infidel_amritsar_pious = {
+					remove_country_modifier = infidel_amritsar_pious
+				}
+				infidel_amritsar_fanatical = {
+					remove_country_modifier = infidel_amritsar_fanatical
+				}
+			}
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				sikhism_amritsar_observant = {
+					remove_country_modifier = sikhism_amritsar_observant
+				}
+				sikhism_amritsar_pious = {
+					remove_country_modifier = sikhism_amritsar_pious
+				}
+				sikhism_amritsar_fanatical = {
+					remove_country_modifier = sikhism_amritsar_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = catholic
+				NOT = {
+					PAP = {
+						has_country_flag = concordat
+					}
+				}
+				2530 = {
+					owner = {
+						NOT = {
+							religion = catholic
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = infidel_rome_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_rome_observant = {
+							remove_country_modifier = infidel_rome_observant
+						}
+						infidel_rome_pious = {
+							remove_country_modifier = infidel_rome_pious
+						}
+					}
+					add_country_modifier = {
+						name = infidel_rome_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = infidel_rome_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_rome_observant = {
+							remove_country_modifier = infidel_rome_observant
+						}
+						infidel_rome_fanatical = {
+							remove_country_modifier = infidel_rome_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = infidel_rome_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = infidel_rome_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						infidel_rome_pious = {
+							remove_country_modifier = infidel_rome_pious
+						}
+						infidel_rome_fanatical = {
+							remove_country_modifier = infidel_rome_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = infidel_rome_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					infidel_rome_observant = {
+						remove_country_modifier = infidel_rome_observant
+					}
+					infidel_rome_pious = {
+						remove_country_modifier = infidel_rome_pious
+					}
+					infidel_rome_fanatical = {
+						remove_country_modifier = infidel_rome_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				infidel_rome_observant = {
+					remove_country_modifier = infidel_rome_observant
+				}
+				infidel_rome_pious = {
+					remove_country_modifier = infidel_rome_pious
+				}
+				infidel_rome_fanatical = {
+					remove_country_modifier = infidel_rome_fanatical
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_holylands.014.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

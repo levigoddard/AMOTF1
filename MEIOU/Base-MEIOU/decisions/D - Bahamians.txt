@@ -1,0 +1,524 @@
+country_decisions = {
+	break_up_the_tarafs = {
+		potential = {
+			tag = BAH
+			num_of_cities = 10
+			NOT = {
+				has_country_flag = administrative_reforms_of_mahmud_gawan
+			}
+			NOT = {
+				full_idea_group = aristocracy_ideas
+			}
+			NOT = {
+				capital = 2212
+			}
+		}
+		allow = {
+			stability = 1
+			legitimacy = 60
+			absolutism = 50
+			ADM = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "administrative_reforms_of_mahmud_gawan"
+				duration = 3650
+			}
+			set_country_flag = "administrative_reforms_of_mahmud_gawan"
+			add_absolutism = 10
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+			add_legitimacy = -10
+			random_owned_province = {}
+			custom_tooltip = deccanis_gain_infl
+			hidden_effect = {
+				change_variable = {
+					which = "gharbians_vs_deccanis"
+					value = 2
+				}
+				if = {
+					limit = {
+						primary_culture = dakani
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = "gharbians_vs_deccanis"
+								value = 15
+							}
+						}
+						add_country_modifier = {
+							name = "deccani_control"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_dominance"
+						remove_country_modifier = "gharbian_influence"
+						remove_country_modifier = "deccan_equal_standing"
+						remove_country_modifier = "deccani_influence"
+						remove_country_modifier = "deccani_dominance"
+						remove_country_modifier = "gharbian_society"
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = "gharbians_vs_deccanis"
+								value = 10
+							}
+						}
+						add_country_modifier = {
+							name = "deccani_dominance"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_dominance"
+						remove_country_modifier = "gharbian_influence"
+						remove_country_modifier = "deccan_equal_standing"
+						remove_country_modifier = "deccani_influence"
+						remove_country_modifier = "gharbian_society"
+						remove_country_modifier = "deccani_control"
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = "gharbians_vs_deccanis"
+								value = 5
+							}
+						}
+						add_country_modifier = {
+							name = "deccani_influence"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_dominance"
+						remove_country_modifier = "gharbian_influence"
+						remove_country_modifier = "deccan_equal_standing"
+						remove_country_modifier = "gharbian_society"
+						remove_country_modifier = "deccani_dominance"
+						remove_country_modifier = "deccani_control"
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = "gharbians_vs_deccanis"
+								value = 0
+							}
+						}
+						add_country_modifier = {
+							name = "deccan_equal_standing"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_dominance"
+						remove_country_modifier = "gharbian_influence"
+						remove_country_modifier = "gharbian_society"
+						remove_country_modifier = "deccani_influence"
+						remove_country_modifier = "deccani_dominance"
+						remove_country_modifier = "deccani_control"
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = "gharbians_vs_deccanis"
+								value = -5
+							}
+						}
+						add_country_modifier = {
+							name = "gharbian_influence"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_dominance"
+						remove_country_modifier = "gharbian_society"
+						remove_country_modifier = "deccan_equal_standing"
+						remove_country_modifier = "deccani_influence"
+						remove_country_modifier = "deccani_dominance"
+						remove_country_modifier = "deccani_control"
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = "gharbians_vs_deccanis"
+								value = -10
+							}
+						}
+						add_country_modifier = {
+							name = "gharbian_dominance"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_society"
+						remove_country_modifier = "gharbian_influence"
+						remove_country_modifier = "deccan_equal_standing"
+						remove_country_modifier = "deccani_influence"
+						remove_country_modifier = "deccani_dominance"
+						remove_country_modifier = "deccani_control"
+					}
+					else = {
+						add_country_modifier = {
+							name = "gharbian_society"
+							duration = -1
+						}
+						remove_country_modifier = "gharbian_dominance"
+						remove_country_modifier = "gharbian_influence"
+						remove_country_modifier = "deccan_equal_standing"
+						remove_country_modifier = "deccani_influence"
+						remove_country_modifier = "deccani_dominance"
+						remove_country_modifier = "deccani_control"
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	move_capital_to_bidar = {
+		potential = {
+			tag = BAH
+			is_year = 1410
+			owns = 2681
+			NOT = {
+				capital = 2681
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					legitimacy = 70
+				}
+				NOT = {
+					stability = 1
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 2681
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			add_legitimacy = 10
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	bahmani_warning_2 = {
+		potential = {
+			ai = no
+			tag = BAH
+			primary_culture = dakani
+			has_country_flag = deccan_warning_1
+			NOT = {
+				has_global_flag = bahmani_breakup
+			}
+		}
+		allow = {
+			primary_culture = dakani
+			absolutism = 20
+			OR = {
+				has_country_modifier = gharbian_society
+				has_country_modifier = deccani_control
+				AND = {
+					has_country_modifier = deccani_dominance
+					dominant_culture = marathi
+				}
+				AND = {
+					has_country_modifier = deccani_dominance
+					dominant_culture = telegu
+				}
+				AND = {
+					has_country_modifier = deccani_dominance
+					dominant_culture = kannada
+				}
+				AND = {
+					has_country_modifier = gharbian_dominance
+					dominant_culture = marathi
+				}
+				AND = {
+					has_country_modifier = gharbian_dominance
+					dominant_culture = telegu
+				}
+				AND = {
+					has_country_modifier = gharbian_dominance
+					dominant_culture = kannada
+				}
+				NOT = {
+					legitimacy = 30
+				}
+			}
+			OR = {
+				AND = {
+					stability = 3
+					NOT = {
+						legitimacy = 65
+					}
+				}
+				AND = {
+					NOT = {
+						stability = 2
+					}
+					NOT = {
+						legitimacy = 70
+					}
+				}
+				AND = {
+					NOT = {
+						stability = 0
+					}
+					NOT = {
+						legitimacy = 75
+					}
+				}
+				AND = {
+					NOT = {
+						stability = -1
+					}
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				AND = {
+					NOT = {
+						stability = -3
+					}
+					NOT = {
+						legitimacy = 95
+					}
+				}
+				NOT = {
+					dynasty = "Bahmanid"
+				}
+			}
+		}
+		effect = {}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	play_on_as_golconda = {
+		potential = {
+			ai = no
+			has_country_flag = play_on_as_deccani_splinter_state
+			tag = BAH
+			exists = GOC
+			primary_culture = dakani
+		}
+		allow = {}
+		effect = {
+			switch_tag = GOC
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	play_on_as_ahmednagar = {
+		potential = {
+			ai = no
+			has_country_flag = play_on_as_deccani_splinter_state
+			tag = BAH
+			exists = BAS
+			primary_culture = dakani
+		}
+		allow = {}
+		effect = {
+			switch_tag = BAS
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	play_on_as_bijapur = {
+		potential = {
+			ai = no
+			has_country_flag = play_on_as_deccani_splinter_state
+			tag = BAH
+			exists = BIJ
+			primary_culture = dakani
+		}
+		allow = {}
+		effect = {
+			switch_tag = BIJ
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	play_on_as_berar = {
+		potential = {
+			ai = no
+			has_country_flag = play_on_as_deccani_splinter_state
+			tag = BAH
+			exists = BRR
+			primary_culture = dakani
+		}
+		allow = {}
+		effect = {
+			switch_tag = BRR
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

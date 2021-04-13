@@ -1,0 +1,815 @@
+country_event = {
+	id = hohenzollerns_1530.1
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = POM
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "Gryf"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		BRA = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		PRU = {
+			OR = {
+				exists = no
+				has_country_flag = hohenzollern_succession
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		BRA = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.2
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = POM
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "Gryf"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		PRU = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			has_country_flag = hohenzollern_succession_secured
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		PRU = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.3
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		OR = {
+			tag = BYR
+			tag = ANS
+			tag = HOH
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		BRA = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			has_country_flag = hohenzollern_succession_secured
+		}
+		PRU = {
+			OR = {
+				exists = no
+				has_country_flag = hohenzollern_succession
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		BRA = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.4
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		OR = {
+			tag = BYR
+			tag = ANS
+			tag = HOH
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		OR = {
+			AND = {
+				PRU = {
+					dynasty = "von Hohenzollern"
+					AND = {
+						OR = {
+							is_subject = no
+							is_subject_of_type = tributary_state
+							is_subject_of_type = close_tributary_state
+						}
+					}
+				}
+				NOT = {
+					exists = BRA
+				}
+			}
+			PRU = {
+				dynasty = "von Hohenzollern"
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				has_country_flag = hohenzollern_succession_secured
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		PRU = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.5
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = PRU
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		BRA = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			has_country_flag = hohenzollern_succession_secured
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		every_owned_province = {
+			limit = {
+				region = prussia_region
+			}
+			remove_core = PLC
+			remove_claim = PLC
+			remove_core = POL
+			remove_claim = POL
+			remove_core = LIT
+			remove_claim = LIT
+		}
+		BRA = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.6
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = BRA
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		PRU = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		PRU = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.7
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = BRA
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		HOH = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		HOH = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.8
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = BRA
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			is_female = yes
+		}
+		ANS = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		ANS = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = hohenzollerns_1530.9
+	title = "hohenzollerns_1530.1.t"
+	desc = "hohenzollerns_1530.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = hohenzollern_succession
+		tag = BRA
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		OR = {
+			NOT = {
+				dynasty = "von Hohenzollern"
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+		}
+		BYR = {
+			dynasty = "von Hohenzollern"
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		ai = yes
+	}
+	option = {
+		name = "hindustani_unification.2a"
+		clr_country_flag = hohenzollern_succession
+		BYR = {
+			inherit = ROOT
+		}
+	}
+}
+country_event = {
+	id = secondpeaceofthorn.1
+	title = "secondpeaceofthorn.1.t"
+	desc = "secondpeaceofthorn.1.d"
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = POL
+		OR = {
+			owns = 2355
+			owns = 1844
+			owns = 41
+		}
+		TEU = {
+			NOT = {
+				war_with = POL
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			any_owned_province = {
+				region = prussia_region
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = "secondpeaceofthorn.1.a"
+		every_owned_province = {
+			limit = {
+				region = prussia_region
+				owned_by = ROOT
+				NOT = {
+					province_id = 2398
+				}
+			}
+			cede_province = TEU
+			add_core = TEU
+		}
+		if = {
+			limit = {
+				2398 = {
+					owned_by = TEU
+				}
+			}
+			2398 = {
+				cede_province = POL
+				add_core = POL
+			}
+		}
+		TEU = {
+			free_vassal = LVO
+		}
+		LIT = {
+			if = {
+				limit = {
+					junior_union_with = POL
+				}
+				every_owned_province = {
+					limit = {
+						region = prussia_region
+						owned_by = THIS
+						NOT = {
+							province_id = 2398
+						}
+					}
+					remove_core = THIS
+					cede_province = TEU
+					add_core = TEU
+				}
+			}
+		}
+		country_event = {
+			id = secondpeaceofthorn.2
+		}
+	}
+}
+country_event = {
+	id = secondpeaceofthorn.2
+	title = "secondpeaceofthorn.2.t"
+	desc = "secondpeaceofthorn.2.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "secondpeaceofthorn.2.a"
+		ai_chance = {
+			factor = 100
+		}
+		TEU = {
+			country_event = {
+				id = secondpeaceofthorn.3
+			}
+		}
+		add_prestige = 15
+		hidden_effect = {
+			vassalize = TEU
+		}
+		create_march = TEU
+	}
+	option = {
+		name = "secondpeaceofthorn.2.b"
+		trigger = {
+			TEU = {
+				ai = yes
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -15
+		add_country_modifier = {
+			name = "claimed_whole_prussia"
+			duration = 3650
+		}
+		inherit = TEU
+		country_event = {
+			id = secondpeaceofthorn.5
+		}
+	}
+}
+country_event = {
+	id = secondpeaceofthorn.3
+	title = "secondpeaceofthorn.3.t"
+	desc = "secondpeaceofthorn.3.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "secondpeaceofthorn.3.a"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			capital_scope = {
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_5242.88
+					}
+					remove_province_modifier = misc_expenses_5242.88
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_2621.44
+					}
+					remove_province_modifier = misc_expenses_2621.44
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_1310.72
+					}
+					remove_province_modifier = misc_expenses_1310.72
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_655.36
+					}
+					remove_province_modifier = misc_expenses_655.36
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_327.68
+					}
+					remove_province_modifier = misc_expenses_327.68
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_163.84
+					}
+					remove_province_modifier = misc_expenses_163.84
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_81.92
+					}
+					remove_province_modifier = misc_expenses_81.92
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_40.96
+					}
+					remove_province_modifier = misc_expenses_40.96
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_20.48
+					}
+					remove_province_modifier = misc_expenses_20.48
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_10.24
+					}
+					remove_province_modifier = misc_expenses_10.24
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_5.12
+					}
+					remove_province_modifier = misc_expenses_5.12
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_2.56
+					}
+					remove_province_modifier = misc_expenses_2.56
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_1.28
+					}
+					remove_province_modifier = misc_expenses_1.28
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.64
+					}
+					remove_province_modifier = misc_expenses_0.64
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.32
+					}
+					remove_province_modifier = misc_expenses_0.32
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.16
+					}
+					remove_province_modifier = misc_expenses_0.16
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.08
+					}
+					remove_province_modifier = misc_expenses_0.08
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.04
+					}
+					remove_province_modifier = misc_expenses_0.04
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.02
+					}
+					remove_province_modifier = misc_expenses_0.02
+				}
+				if = {
+					limit = {
+						has_province_modifier = misc_expenses_0.01
+					}
+					remove_province_modifier = misc_expenses_0.01
+				}
+				set_variable = {
+					which = misc_expenses_cache
+					value = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_part_of_hre = yes
+				ROOT = {
+					is_part_of_hre = no
+				}
+			}
+			set_in_empire = no
+			swap_non_generic_missions = yes
+			emperor = {
+				add_opinion = {
+					who = ROOT
+					modifier = hre_province_left
+				}
+			}
+			add_imperial_influence = -1
+		}
+		set_capital = 41
+		hidden_effect = {
+			country_event = {
+				id = miscexpenses.002
+			}
+		}
+		free_vassal = LVO
+		every_owned_province = {
+			limit = {
+				area = west_prussia_area
+				owned_by = ROOT
+			}
+			cede_province = POL
+		}
+		POL = {
+			country_event = {
+				id = secondpeaceofthorn.4
+			}
+		}
+	}
+}
+country_event = {
+	id = secondpeaceofthorn.4
+	title = "secondpeaceofthorn.4.t"
+	desc = "secondpeaceofthorn.4.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "secondpeaceofthorn.4.a"
+		every_owned_province = {
+			limit = {
+				region = prussia_region
+				owned_by = ROOT
+				NOT = {
+					is_core = ROOT
+				}
+			}
+			add_nationalism = -15
+			if = {
+				limit = {
+					is_core = POL
+				}
+				add_local_autonomy = -10
+			}
+			else = {
+				add_territorial_core = POL
+			}
+		}
+	}
+}
+country_event = {
+	id = secondpeaceofthorn.5
+	title = "secondpeaceofthorn.5.t"
+	desc = "secondpeaceofthorn.5.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "secondpeaceofthorn.5.a"
+		every_owned_province = {
+			limit = {
+				region = prussia_region
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			add_nationalism = 15
+			remove_core = ROOT
+			add_claim = ROOT
+			add_core = TEU
+		}
+		free_vassal = LVO
+	}
+}

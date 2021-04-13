@@ -1,0 +1,2303 @@
+namespace = italian_power
+country_event = {
+	id = italian_power.1
+	title = "italian_power.EVTNAME1"
+	desc = "italian_power.EVTDESC1"
+	picture = ITALIAN_POWER_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "italian_power.EVTOPTA1"
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = italian_powers_disabled
+				}
+			}
+			set_variable = {
+				which = italian_power
+				value = 0
+			}
+			every_country = {
+				set_variable = {
+					which = italian_power
+					value = 0
+				}
+				set_variable = {
+					which = temp
+					value = 0
+				}
+				clr_country_flag = new_italian_power
+			}
+			italy_superregion = {
+				export_to_variable = {
+					which = italian_power
+					value = development
+				}
+				change_variable = {
+					which = italian_power
+					which = art_power
+				}
+				change_variable = {
+					which = italian_power
+					which = art_power
+				}
+				PREV = {
+					change_variable = {
+						which = italian_power
+						which = PREV
+					}
+				}
+				owner = {
+					change_variable = {
+						which = italian_power
+						which = PREV
+					}
+					set_country_flag = new_italian_power
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				every_subject_country = {
+					limit = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+					every_subject_country = {
+						limit = {
+							AND = {
+								is_subject = yes
+								NOT = {
+									is_subject_of_type = tributary_state
+								}
+								NOT = {
+									is_subject_of_type = close_tributary_state
+								}
+							}
+						}
+						every_subject_country = {
+							limit = {
+								AND = {
+									is_subject = yes
+									NOT = {
+										is_subject_of_type = tributary_state
+									}
+									NOT = {
+										is_subject_of_type = close_tributary_state
+									}
+								}
+							}
+							every_subject_country = {
+								limit = {
+									AND = {
+										is_subject = yes
+										NOT = {
+											is_subject_of_type = tributary_state
+										}
+										NOT = {
+											is_subject_of_type = close_tributary_state
+										}
+									}
+								}
+								export_to_variable = {
+									which = temp2
+									value = total_development
+								}
+								change_variable = {
+									which = temp
+									which = temp2
+								}
+								change_variable = {
+									which = temp
+									which = art_power
+								}
+								change_variable = {
+									which = temp
+									which = art_power
+								}
+								PREV = {
+									change_variable = {
+										which = temp
+										which = PREV
+									}
+								}
+								if = {
+									limit = {
+										has_country_flag = new_italian_power
+									}
+									clr_country_flag = new_italian_power
+									PREV = {
+										change_variable = {
+											which = italian_power
+											which = PREV
+										}
+										set_country_flag = new_italian_power
+									}
+								}
+							}
+							export_to_variable = {
+								which = temp2
+								value = total_development
+							}
+							change_variable = {
+								which = temp
+								which = temp2
+							}
+							change_variable = {
+								which = temp
+								which = art_power
+							}
+							change_variable = {
+								which = temp
+								which = art_power
+							}
+							PREV = {
+								change_variable = {
+									which = temp
+									which = PREV
+								}
+							}
+							if = {
+								limit = {
+									has_country_flag = new_italian_power
+								}
+								clr_country_flag = new_italian_power
+								PREV = {
+									change_variable = {
+										which = italian_power
+										which = PREV
+									}
+									set_country_flag = new_italian_power
+								}
+							}
+						}
+						export_to_variable = {
+							which = temp2
+							value = total_development
+						}
+						change_variable = {
+							which = temp
+							which = temp2
+						}
+						change_variable = {
+							which = temp
+							which = art_power
+						}
+						change_variable = {
+							which = temp
+							which = art_power
+						}
+						PREV = {
+							change_variable = {
+								which = temp
+								which = PREV
+							}
+						}
+						if = {
+							limit = {
+								has_country_flag = new_italian_power
+							}
+							clr_country_flag = new_italian_power
+							PREV = {
+								change_variable = {
+									which = italian_power
+									which = PREV
+								}
+								set_country_flag = new_italian_power
+							}
+						}
+					}
+					export_to_variable = {
+						which = temp2
+						value = total_development
+					}
+					change_variable = {
+						which = temp
+						which = temp2
+					}
+					change_variable = {
+						which = temp
+						which = art_power
+					}
+					change_variable = {
+						which = temp
+						which = art_power
+					}
+					PREV = {
+						change_variable = {
+							which = temp
+							which = PREV
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = new_italian_power
+						}
+						clr_country_flag = new_italian_power
+						PREV = {
+							change_variable = {
+								which = italian_power
+								which = PREV
+							}
+							set_country_flag = new_italian_power
+						}
+					}
+				}
+				export_to_variable = {
+					which = total_art_dev
+					value = total_development
+				}
+				change_variable = {
+					which = total_art_dev
+					which = art_power
+				}
+				change_variable = {
+					which = total_art_dev
+					which = art_power
+				}
+				change_variable = {
+					which = total_art_dev
+					which = temp
+				}
+				if = {
+					limit = {
+						has_country_flag = new_italian_power
+					}
+					set_variable = {
+						which = temp
+						which = italian_power
+					}
+					divide_variable = {
+						which = temp
+						which = total_art_dev
+					}
+					divide_variable = {
+						which = italian_power
+						which = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = italian_powers_enabled
+				}
+				if = {
+					limit = {
+						any_country = {
+							has_country_flag = new_italian_power
+							check_variable = {
+								which = italian_power
+								value = 0.667
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							has_country_flag = italian_power
+						}
+						clr_country_flag = italian_power
+						country_event = {
+							id = italian_power.4
+						}
+					}
+				}
+				else = {
+					every_country = {
+						if = {
+							limit = {
+								has_country_flag = new_italian_power
+							}
+							multiply_variable = {
+								which = temp
+								value = 2
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = temp
+											value = 1
+										}
+									}
+								}
+								multiply_variable = {
+									which = italian_power
+									which = temp
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = italian_power
+										value = 0.1
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = italian_power
+											value = 0.2
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = italian_power
+												value = 0.4
+											}
+										}
+										if = {
+											limit = {
+												NOT = {
+													has_country_flag = italian_power
+												}
+											}
+											set_country_flag = italian_power
+											add_country_modifier = {
+												name = menacing_italian_power
+												duration = -1
+											}
+											country_event = {
+												id = italian_power.3
+											}
+										}
+										else_if = {
+											limit = {
+												NOT = {
+													has_country_modifier = menacing_italian_power
+												}
+											}
+											remove_country_modifier = insignificant_italian_power
+											remove_country_modifier = local_italian_power
+											remove_country_modifier = regional_italian_power
+											remove_country_modifier = major_italian_power
+											remove_country_modifier = dominant_italian_power
+											remove_country_modifier = menacing_italian_power
+											add_country_modifier = {
+												name = menacing_italian_power
+												duration = -1
+											}
+											country_event = {
+												id = italian_power.2
+											}
+										}
+									}
+									else = {
+										if = {
+											limit = {
+												NOT = {
+													has_country_flag = italian_power
+												}
+											}
+											set_country_flag = italian_power
+											add_country_modifier = {
+												name = dominant_italian_power
+												duration = -1
+											}
+											country_event = {
+												id = italian_power.3
+											}
+										}
+										else_if = {
+											limit = {
+												NOT = {
+													has_country_modifier = dominant_italian_power
+												}
+											}
+											remove_country_modifier = insignificant_italian_power
+											remove_country_modifier = local_italian_power
+											remove_country_modifier = regional_italian_power
+											remove_country_modifier = major_italian_power
+											remove_country_modifier = dominant_italian_power
+											remove_country_modifier = menacing_italian_power
+											add_country_modifier = {
+												name = dominant_italian_power
+												duration = -1
+											}
+											country_event = {
+												id = italian_power.2
+											}
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											NOT = {
+												has_country_flag = italian_power
+											}
+										}
+										set_country_flag = italian_power
+										add_country_modifier = {
+											name = major_italian_power
+											duration = -1
+										}
+										country_event = {
+											id = italian_power.3
+										}
+									}
+									else_if = {
+										limit = {
+											NOT = {
+												has_country_modifier = major_italian_power
+											}
+										}
+										remove_country_modifier = insignificant_italian_power
+										remove_country_modifier = local_italian_power
+										remove_country_modifier = regional_italian_power
+										remove_country_modifier = major_italian_power
+										remove_country_modifier = dominant_italian_power
+										remove_country_modifier = menacing_italian_power
+										add_country_modifier = {
+											name = major_italian_power
+											duration = -1
+										}
+										country_event = {
+											id = italian_power.2
+										}
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									check_variable = {
+										which = italian_power
+										value = 0.02
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = italian_power
+											value = 0.05
+										}
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_country_flag = italian_power
+											}
+										}
+										set_country_flag = italian_power
+										add_country_modifier = {
+											name = regional_italian_power
+											duration = -1
+										}
+										country_event = {
+											id = italian_power.3
+										}
+									}
+									else_if = {
+										limit = {
+											NOT = {
+												has_country_modifier = regional_italian_power
+											}
+										}
+										remove_country_modifier = insignificant_italian_power
+										remove_country_modifier = local_italian_power
+										remove_country_modifier = regional_italian_power
+										remove_country_modifier = major_italian_power
+										remove_country_modifier = dominant_italian_power
+										remove_country_modifier = menacing_italian_power
+										add_country_modifier = {
+											name = regional_italian_power
+											duration = -1
+										}
+										country_event = {
+											id = italian_power.2
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											NOT = {
+												has_country_flag = italian_power
+											}
+										}
+										set_country_flag = italian_power
+										add_country_modifier = {
+											name = local_italian_power
+											duration = -1
+										}
+										country_event = {
+											id = italian_power.3
+										}
+									}
+									else_if = {
+										limit = {
+											NOT = {
+												has_country_modifier = local_italian_power
+											}
+										}
+										remove_country_modifier = insignificant_italian_power
+										remove_country_modifier = local_italian_power
+										remove_country_modifier = regional_italian_power
+										remove_country_modifier = major_italian_power
+										remove_country_modifier = dominant_italian_power
+										remove_country_modifier = menacing_italian_power
+										add_country_modifier = {
+											name = local_italian_power
+											duration = -1
+										}
+										country_event = {
+											id = italian_power.2
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										NOT = {
+											has_country_flag = italian_power
+										}
+									}
+									set_country_flag = italian_power
+									add_country_modifier = {
+										name = insignificant_italian_power
+										duration = -1
+									}
+									country_event = {
+										id = italian_power.3
+									}
+								}
+								else_if = {
+									limit = {
+										NOT = {
+											has_country_modifier = insignificant_italian_power
+										}
+									}
+									remove_country_modifier = insignificant_italian_power
+									remove_country_modifier = local_italian_power
+									remove_country_modifier = regional_italian_power
+									remove_country_modifier = major_italian_power
+									remove_country_modifier = dominant_italian_power
+									remove_country_modifier = menacing_italian_power
+									add_country_modifier = {
+										name = insignificant_italian_power
+										duration = -1
+									}
+									country_event = {
+										id = italian_power.2
+									}
+								}
+							}
+							multiply_variable = {
+								which = italian_power
+								value = 100
+							}
+						}
+						else_if = {
+							limit = {
+								has_country_flag = italian_power
+							}
+							clr_country_flag = italian_power
+							remove_country_modifier = insignificant_italian_power
+							remove_country_modifier = local_italian_power
+							remove_country_modifier = regional_italian_power
+							remove_country_modifier = major_italian_power
+							remove_country_modifier = dominant_italian_power
+							remove_country_modifier = menacing_italian_power
+							country_event = {
+								id = italian_power.4
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_flag = italian_power
+							check_variable = {
+								which = italian_power
+								value = 0.667
+							}
+						}
+					}
+				}
+				set_country_flag = italian_powers_enabled
+				country_event = {
+					id = italian_power.1
+					days = 2
+				}
+			}
+			every_country = {
+				clr_country_flag = new_italian_power
+			}
+		}
+	}
+}
+country_event = {
+	id = italian_power.2
+	title = "italian_power.EVTNAME2"
+	desc = "italian_power.EVTDESC2"
+	picture = ITALIAN_POWER_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_country_flag = insignificant_italian_power
+			has_country_flag = local_italian_power
+			has_country_flag = regional_italian_power
+			has_country_flag = major_italian_power
+			has_country_flag = dominant_italian_power
+			has_country_flag = menacing_italian_power
+		}
+	}
+	option = {
+		trigger = {
+			has_country_flag = insignificant_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTA2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = 3
+		set_country_flag = local_italian_power
+		clr_country_flag = insignificant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = local_italian_power
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTA2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = 3
+		set_country_flag = regional_italian_power
+		clr_country_flag = local_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = regional_italian_power
+			has_country_modifier = major_italian_power
+		}
+		name = "italian_power.EVTOPTB2"
+		custom_tooltip = italian_power_major_tooltip
+		add_prestige = 5
+		set_country_flag = major_italian_power
+		clr_country_flag = regional_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = major_italian_power
+			has_country_modifier = dominant_italian_power
+		}
+		name = "italian_power.EVTOPTC2"
+		custom_tooltip = italian_power_dominant_tooltip
+		add_prestige = 2
+		set_country_flag = dominant_italian_power
+		clr_country_flag = major_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = menacing_italian_power
+		}
+		name = "italian_power.EVTOPTD2"
+		custom_tooltip = italian_power_menacing_tooltip
+		add_prestige = 1
+		set_country_flag = menacing_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = menacing_italian_power
+			has_country_modifier = dominant_italian_power
+		}
+		name = "italian_power.EVTOPTE2"
+		custom_tooltip = italian_power_dominant_tooltip
+		add_prestige = -2
+		set_country_flag = dominant_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = major_italian_power
+		}
+		name = "italian_power.EVTOPTF2"
+		custom_tooltip = italian_power_major_tooltip
+		add_prestige = -3
+		set_country_flag = major_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = major_italian_power
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTG2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = -5
+		set_country_flag = regional_italian_power
+		clr_country_flag = major_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = regional_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTH2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -4
+		set_country_flag = local_italian_power
+		clr_country_flag = regional_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = local_italian_power
+			has_country_modifier = insignificant_italian_power
+		}
+		name = "italian_power.EVTOPTH2"
+		custom_tooltip = italian_power_insignifican_tooltip
+		add_prestige = -4
+		set_country_flag = insignificant_italian_power
+		clr_country_flag = local_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = insignificant_italian_power
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = 10
+		set_country_flag = regional_italian_power
+		clr_country_flag = insignificant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = insignificant_italian_power
+			has_country_modifier = major_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_major_tooltip
+		add_prestige = 10
+		set_country_flag = major_italian_power
+		clr_country_flag = insignificant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = insignificant_italian_power
+			has_country_modifier = dominant_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_dominant_tooltip
+		add_prestige = 15
+		set_country_flag = dominant_italian_power
+		clr_country_flag = insignificant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = insignificant_italian_power
+			has_country_modifier = menacing_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_menacing_tooltip
+		add_prestige = 10
+		set_country_flag = menacing_italian_power
+		clr_country_flag = insignificant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = local_italian_power
+			has_country_modifier = major_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_major_tooltip
+		add_prestige = 10
+		set_country_flag = major_italian_power
+		clr_country_flag = local_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = local_italian_power
+			has_country_modifier = dominant_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_dominant_tooltip
+		add_prestige = 5
+		set_country_flag = dominant_italian_power
+		clr_country_flag = local_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = local_italian_power
+			has_country_modifier = menacing_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_menacing_tooltip
+		add_prestige = 20
+		set_country_flag = menacing_italian_power
+		clr_country_flag = local_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = regional_italian_power
+			has_country_modifier = dominant_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_dominant_tooltip
+		add_prestige = 10
+		set_country_flag = dominant_italian_power
+		clr_country_flag = regional_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = regional_italian_power
+			has_country_modifier = menacing_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_menacing_tooltip
+		add_prestige = 15
+		set_country_flag = menacing_italian_power
+		clr_country_flag = regional_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = major_italian_power
+			has_country_modifier = menacing_italian_power
+		}
+		name = "italian_power.EVTOPTI2"
+		custom_tooltip = italian_power_menacing_tooltip
+		add_prestige = 10
+		set_country_flag = menacing_italian_power
+		clr_country_flag = major_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = menacing_italian_power
+			has_country_modifier = major_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_major_tooltip
+		add_prestige = -10
+		set_country_flag = major_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = menacing_italian_power
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = -15
+		set_country_flag = regional_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = menacing_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -20
+		set_country_flag = local_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = menacing_italian_power
+			has_country_modifier = insignificant_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_insignificant_tooltip
+		add_prestige = -20
+		set_country_flag = insignificant_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = -10
+		set_country_flag = regional_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -15
+		set_country_flag = local_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = insignificant_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_insignificant_tooltip
+		add_prestige = -20
+		set_country_flag = insignificant_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = major_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -10
+		set_country_flag = local_italian_power
+		clr_country_flag = major_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = menacing_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -20
+		set_country_flag = local_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = -10
+		set_country_flag = regional_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = dominant_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -15
+		set_country_flag = local_italian_power
+		clr_country_flag = dominant_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = major_italian_power
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = -10
+		set_country_flag = local_italian_power
+		clr_country_flag = major_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = major_italian_power
+			has_country_modifier = insignificant_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_insignificant_tooltip
+		add_prestige = -10
+		set_country_flag = insignificant_italian_power
+		clr_country_flag = major_italian_power
+	}
+	option = {
+		trigger = {
+			has_country_flag = regional_italian_power
+			has_country_modifier = insignificant_italian_power
+		}
+		name = "italian_power.EVTOPTJ2"
+		custom_tooltip = italian_power_insignificant_tooltip
+		add_prestige = -10
+		set_country_flag = insignificant_italian_power
+		clr_country_flag = regional_italian_power
+	}
+}
+country_event = {
+	id = italian_power.3
+	title = "italian_power.EVTNAME1"
+	desc = "italian_power.EVTDESC1"
+	picture = ITALIAN_POWER_eventPicture
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			has_country_modifier = insignificant_italian_power
+		}
+		name = "italian_power.EVTOPTA3"
+		custom_tooltip = italian_power_insignificant_tooltip
+		add_prestige = 1
+		set_country_flag = insignificant_italian_power
+		set_country_flag = italian_power
+	}
+	option = {
+		trigger = {
+			has_country_modifier = local_italian_power
+		}
+		name = "italian_power.EVTOPTA3"
+		custom_tooltip = italian_power_local_tooltip
+		add_prestige = 1
+		set_country_flag = local_italian_power
+		set_country_flag = italian_power
+	}
+	option = {
+		trigger = {
+			has_country_modifier = regional_italian_power
+		}
+		name = "italian_power.EVTOPTA2"
+		custom_tooltip = italian_power_regional_tooltip
+		add_prestige = 2
+		set_country_flag = regional_italian_power
+		set_country_flag = italian_power
+	}
+	option = {
+		trigger = {
+			has_country_modifier = major_italian_power
+		}
+		name = "italian_power.EVTOPTB2"
+		custom_tooltip = italian_power_major_tooltip
+		add_prestige = 3
+		set_country_flag = major_italian_power
+		set_country_flag = italian_power
+	}
+	option = {
+		trigger = {
+			has_country_modifier = dominant_italian_power
+		}
+		name = "italian_power.EVTOPTC2"
+		custom_tooltip = italian_power_dominant_tooltip
+		add_prestige = 4
+		set_country_flag = dominant_italian_power
+		set_country_flag = italian_power
+	}
+	option = {
+		trigger = {
+			has_country_modifier = menacing_italian_power
+		}
+		name = "italian_power.EVTOPTD2"
+		custom_tooltip = italian_power_menacing_tooltip
+		add_prestige = 5
+		set_country_flag = menacing_italian_power
+		set_country_flag = italian_power
+	}
+}
+country_event = {
+	id = italian_power.4
+	title = "italian_power.EVTNAME4"
+	desc = "italian_power.EVTDESC4"
+	picture = ITALIAN_POWER_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "italian_power.EVTOPTA4"
+		add_prestige = -5
+		clr_country_flag = insignificant_italian_power
+		clr_country_flag = local_italian_power
+		clr_country_flag = regional_italian_power
+		clr_country_flag = major_italian_power
+		clr_country_flag = dominant_italian_power
+		clr_country_flag = menacing_italian_power
+	}
+}
+country_event = {
+	id = italian_power.5
+	title = "italian_power.EVTNAME5"
+	desc = "italian_power.EVTDESC5"
+	picture = ITALIAN_POWER_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "italian_power.EVTOPTA5"
+		clr_country_flag = insignificant_italian_power
+		clr_country_flag = local_italian_power
+		clr_country_flag = regional_italian_power
+		clr_country_flag = major_italian_power
+		clr_country_flag = dominant_italian_power
+		clr_country_flag = menacing_italian_power
+		remove_country_modifier = insignificant_italian_power
+		remove_country_modifier = local_italian_power
+		remove_country_modifier = regional_italian_power
+		remove_country_modifier = major_italian_power
+		remove_country_modifier = dominant_italian_power
+		remove_country_modifier = menacing_italian_power
+	}
+}
+country_event = {
+	id = italian_power.6
+	title = italian_power.EVTNAME6
+	desc = italian_power.EVTDESC6
+	picture = ITALIAN_POWER_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "italian_power.EVTOPTA5"
+		clr_country_flag = insignificant_italian_power
+		clr_country_flag = local_italian_power
+		clr_country_flag = regional_italian_power
+		clr_country_flag = major_italian_power
+		clr_country_flag = dominant_italian_power
+		clr_country_flag = menacing_italian_power
+		remove_country_modifier = insignificant_italian_power
+		remove_country_modifier = local_italian_power
+		remove_country_modifier = regional_italian_power
+		remove_country_modifier = major_italian_power
+		remove_country_modifier = dominant_italian_power
+		remove_country_modifier = menacing_italian_power
+	}
+}
+country_event = {
+	id = hre_event.1
+	title = "hre_event.1.t"
+	desc = "hre_event.1.d"
+	picture = HRE_eventPicture
+	trigger = {
+		NOT = {
+			has_global_flag = italy_out_of_HRE
+		}
+		NOT = {
+			has_global_flag = 1530_start_date
+		}
+		normal_or_historical_nations = yes
+		is_year = 1490
+		NOT = {
+			is_year = 1550
+		}
+		NOT = {
+			emperor = {
+				culture_group = latin
+			}
+		}
+		NOT = {
+			emperor = {
+				culture_group = napolitan
+			}
+		}
+		OR = {
+			capital_scope = {
+				AND = {
+					superregion = italy_superregion
+					OR = {
+						region = east_italy_region
+						region = west_italy_region
+						region = central_italy_region
+					}
+					OR = {
+						NOT = {
+							area = corsica_sardinia_area
+						}
+						province_id = 1247
+						province_id = 2851
+					}
+					NOT = {
+						province_id = 107
+						province_id = 112
+						province_id = 101
+						province_id = 1513
+					}
+				}
+			}
+			tag = SAV
+		}
+		OR = {
+			emilia_romagna_area = {
+				is_part_of_hre = no
+			}
+			marche_area = {
+				is_part_of_hre = no
+			}
+			108 = {
+				is_part_of_hre = no
+			}
+			3382 = {
+				is_part_of_hre = no
+			}
+			1348 = {
+				is_part_of_hre = no
+			}
+			1858 = {
+				is_part_of_hre = no
+			}
+			111 = {
+				is_part_of_hre = no
+			}
+			lombardy_area = {
+				is_part_of_hre = no
+			}
+			piedmont_area = {
+				is_part_of_hre = no
+			}
+			padan_area = {
+				is_part_of_hre = no
+			}
+			102 = {
+				is_part_of_hre = no
+			}
+			2564 = {
+				is_part_of_hre = no
+			}
+			tuscany_area = {
+				is_part_of_hre = no
+			}
+			siena_area = {
+				is_part_of_hre = no
+			}
+			lazio_area = {
+				is_part_of_hre = no
+			}
+			1247 = {
+				is_part_of_hre = no
+			}
+			2851 = {
+				is_part_of_hre = no
+			}
+		}
+		is_part_of_hre = yes
+		NOT = {
+			any_country = {
+				overlord_of = ROOT
+				is_part_of_hre = yes
+				OR = {
+					culture_group = low_germanic
+					culture_group = high_germanic
+					is_emperor = yes
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	immediate = {
+		hidden_effect = {
+			set_global_flag = italy_out_of_HRE
+			set_country_flag = shadow_kingdom
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						culture_group = latin
+						culture_group = napolitan
+						capital_scope = {
+							AND = {
+								superregion = italy_superregion
+								OR = {
+									region = east_italy_region
+									region = west_italy_region
+									region = central_italy_region
+								}
+								OR = {
+									NOT = {
+										area = corsica_sardinia_area
+									}
+									province_id = 1247
+									province_id = 2851
+								}
+								NOT = {
+									province_id = 107
+									province_id = 112
+									province_id = 101
+									province_id = 1513
+								}
+							}
+						}
+					}
+					NOT = {
+						has_country_flag = shadow_kingdom
+					}
+				}
+				country_event = {
+					id = hre_event.2
+				}
+				set_country_flag = shadow_kingdom
+			}
+			every_country = {
+				limit = {
+					OR = {
+						culture_group = latin
+						culture_group = napolitan
+						capital_scope = {
+							AND = {
+								superregion = italy_superregion
+								OR = {
+									region = east_italy_region
+									region = west_italy_region
+									region = central_italy_region
+								}
+								OR = {
+									NOT = {
+										area = corsica_sardinia_area
+									}
+									province_id = 1247
+									province_id = 2851
+								}
+								NOT = {
+									province_id = 107
+									province_id = 112
+									province_id = 101
+									province_id = 1513
+								}
+							}
+						}
+					}
+					is_part_of_hre = no
+					any_owned_province = {
+						is_part_of_hre = yes
+					}
+				}
+				country_event = {
+					id = hre_event.3
+				}
+			}
+		}
+	}
+	option = {
+		name = "hre_event.1.a"
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = left_the_empire
+		set_in_empire = no
+		swap_non_generic_missions = yes
+		every_country = {
+			limit = {
+				ai = no
+				overlord_of = ROOT
+				NOT = {
+					has_country_flag = shadow_kingdom
+				}
+				NOT = {
+					has_country_flag = had_shadow_kingdom_info
+				}
+			}
+			country_event = {
+				id = hre_event.3
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				ai = no
+				NOT = {
+					overlord_of = ROOT
+				}
+				NOT = {
+					has_country_flag = shadow_kingdom
+				}
+				NOT = {
+					has_country_flag = had_shadow_kingdom_info
+				}
+			}
+			country_event = {
+				id = hre_event.3
+			}
+		}
+		if = {
+			limit = {
+				is_elector = yes
+			}
+			elector = no
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = slipped_out_of_empire
+			}
+		}
+		add_opinion = {
+			who = emperor
+			modifier = slipped_out_of_empire
+		}
+		add_prestige = 35
+	}
+	option = {
+		name = "hre_event.1.b"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				tag = SAV
+			}
+		}
+		custom_tooltip = PENALTY_SHADOW_KINGDOM
+		add_opinion = {
+			who = emperor
+			modifier = stayed_in_the_empire
+		}
+		emperor = {
+			add_imperial_influence = 5
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_in_the_empire
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = SAV
+				}
+			}
+			add_prestige = -35
+			every_country = {
+				limit = {
+					has_country_flag = left_the_empire
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = stayed_in_the_empire_hostile
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = hre_event.2
+	title = "hre_event.1.t"
+	desc = "hre_event.1.d"
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "hre_event.1.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				emperor = {
+					overlord_of = ROOT
+				}
+			}
+		}
+		set_country_flag = left_the_empire
+		set_in_empire = no
+		swap_non_generic_missions = yes
+		every_country = {
+			limit = {
+				ai = no
+				overlord_of = ROOT
+				NOT = {
+					has_country_flag = shadow_kingdom
+				}
+				NOT = {
+					has_country_flag = had_shadow_kingdom_info
+				}
+			}
+			country_event = {
+				id = hre_event.3
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				ai = no
+				NOT = {
+					overlord_of = ROOT
+				}
+				NOT = {
+					has_country_flag = shadow_kingdom
+				}
+				NOT = {
+					has_country_flag = had_shadow_kingdom_info
+				}
+			}
+			country_event = {
+				id = hre_event.3
+			}
+		}
+		if = {
+			limit = {
+				is_elector = yes
+			}
+			elector = no
+		}
+		add_prestige = 35
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = slipped_out_of_empire
+			}
+		}
+		add_opinion = {
+			who = emperor
+			modifier = slipped_out_of_empire
+		}
+	}
+	option = {
+		name = "hre_event.1.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				emperor = {
+					NOT = {
+						overlord_of = ROOT
+					}
+				}
+			}
+		}
+		add_prestige = -35
+		add_opinion = {
+			who = emperor
+			modifier = stayed_in_the_empire
+		}
+		emperor = {
+			add_imperial_influence = 5
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_in_the_empire
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = left_the_empire
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_in_the_empire_hostile
+			}
+		}
+	}
+}
+country_event = {
+	id = hre_event.3
+	title = "hre_event.3.t"
+	desc = "hre_event.3.d"
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_shadow_kingdom_info
+		}
+	}
+	option = {
+		name = "hre_event.3.a"
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture_group = napolitan
+				capital_scope = {
+					AND = {
+						superregion = italy_superregion
+						OR = {
+							region = east_italy_region
+							region = west_italy_region
+							region = central_italy_region
+						}
+						OR = {
+							NOT = {
+								area = corsica_sardinia_area
+							}
+							province_id = 1247
+							province_id = 2851
+						}
+						NOT = {
+							province_id = 107
+							province_id = 112
+							province_id = 101
+							province_id = 1513
+						}
+					}
+				}
+			}
+			is_part_of_hre = no
+		}
+		every_owned_province = {
+			limit = {
+				is_part_of_hre = yes
+				AND = {
+					superregion = italy_superregion
+					OR = {
+						region = east_italy_region
+						region = west_italy_region
+						region = central_italy_region
+					}
+					OR = {
+						NOT = {
+							area = corsica_sardinia_area
+						}
+						province_id = 1247
+						province_id = 2851
+					}
+					NOT = {
+						province_id = 107
+						province_id = 112
+						province_id = 101
+						province_id = 1513
+					}
+				}
+			}
+			set_in_empire = no
+			swap_non_generic_missions = yes
+		}
+	}
+	option = {
+		name = "hre_event.3.b"
+		trigger = {
+			NOT = {
+				culture_group = latin
+				culture_group = napolitan
+				capital_scope = {
+					AND = {
+						superregion = italy_superregion
+						OR = {
+							region = east_italy_region
+							region = west_italy_region
+							region = central_italy_region
+						}
+						OR = {
+							NOT = {
+								area = corsica_sardinia_area
+							}
+							province_id = 1247
+							province_id = 2851
+						}
+						NOT = {
+							province_id = 107
+							province_id = 112
+							province_id = 101
+							province_id = 1513
+						}
+					}
+				}
+			}
+			is_part_of_hre = no
+		}
+	}
+	option = {
+		name = "hre_event.3.c"
+		trigger = {
+			NOT = {
+				culture_group = latin
+				culture_group = napolitan
+				capital_scope = {
+					AND = {
+						superregion = italy_superregion
+						OR = {
+							region = east_italy_region
+							region = west_italy_region
+							region = central_italy_region
+						}
+						OR = {
+							NOT = {
+								area = corsica_sardinia_area
+							}
+							province_id = 1247
+							province_id = 2851
+						}
+						NOT = {
+							province_id = 107
+							province_id = 112
+							province_id = 101
+							province_id = 1513
+						}
+					}
+				}
+			}
+			is_part_of_hre = yes
+		}
+	}
+}
+country_event = {
+	id = hre_event.4
+	title = "hre_event.4.t"
+	desc = "hre_event.4.d"
+	picture = HRE_eventPicture
+	trigger = {
+		OR = {
+			is_emperor = yes
+			ai = no
+		}
+		NOT = {
+			has_global_flag = italy_out_of_HRE
+		}
+		normal_or_historical_nations = yes
+		is_year = 1440
+		NOT = {
+			is_year = 1550
+		}
+		OR = {
+			is_part_of_hre = yes
+			is_emperor = yes
+		}
+		NOT = {
+			has_country_flag = italian_warning
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = italian_warning
+			every_country = {
+				limit = {
+					ai = no
+					is_part_of_hre = yes
+					NOT = {
+						has_country_flag = italian_warning
+					}
+				}
+				country_event = {
+					id = hre_event.4
+				}
+				set_country_flag = italian_warning
+			}
+			set_global_flag = enable_stop_shadow_kingdom
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "hre_event.4.a"
+		trigger = {
+			NOT = {
+				culture_group = latin
+			}
+			NOT = {
+				culture_group = napolitan
+			}
+		}
+		custom_tooltip = hre_event.4.a.tt
+	}
+	option = {
+		name = "hre_event.4.b"
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture_group = napolitan
+			}
+		}
+		custom_tooltip = hre_event.4.b.tt
+	}
+}
+country_event = {
+	id = hre_event.5
+	title = "hre_event.5.t"
+	desc = "hre_event.5.d"
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "hre_event.5.a"
+		add_imperial_influence = -75
+		add_prestige = -10
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opinion_left_empire
+			}
+		}
+	}
+}
+country_event = {
+	id = hre_event.6
+	title = "hre_event.6.t"
+	desc = "hre_event.6.d"
+	picture = HRE_eventPicture
+	trigger = {
+		NOT = {
+			has_global_flag = provence_out_of_HRE
+		}
+		normal_or_historical_nations = yes
+		is_year = 1390
+		NOT = {
+			is_year = 1550
+		}
+		NOT = {
+			emperor = {
+				culture_group = langue_d_oc
+			}
+		}
+		capital_scope = {
+			region = provence_region
+			NOT = {
+				owned_by = SAV
+			}
+			NOT = {
+				owned_by = PAP
+			}
+			NOT = {
+				owned_by = AVI
+			}
+		}
+		provence_region = {
+			NOT = {
+				owned_by = SAV
+			}
+			is_part_of_hre = no
+		}
+		is_part_of_hre = yes
+		NOT = {
+			any_country = {
+				overlord_of = ROOT
+				is_part_of_hre = yes
+				OR = {
+					culture_group = low_germanic
+					culture_group = high_germanic
+					is_emperor = yes
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	immediate = {
+		hidden_effect = {
+			set_global_flag = provence_out_of_HRE
+			set_country_flag = shadow_duchy
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					NOT = {
+						tag = SAV
+					}
+					OR = {
+						culture_group = langue_d_oc
+						capital_scope = {
+							region = provence_region
+						}
+					}
+					NOT = {
+						has_country_flag = shadow_duchy
+					}
+				}
+				country_event = {
+					id = hre_event.7
+				}
+				set_country_flag = shadow_duchy
+			}
+			every_country = {
+				limit = {
+					OR = {
+						culture_group = langue_d_oc
+						capital_scope = {
+							region = provence_region
+						}
+					}
+					NOT = {
+						tag = SAV
+					}
+					is_part_of_hre = no
+					any_owned_province = {
+						is_part_of_hre = yes
+					}
+				}
+				country_event = {
+					id = hre_event.8
+				}
+			}
+		}
+	}
+	option = {
+		name = "hre_event.6.a"
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = left_the_empire
+		set_in_empire = no
+		swap_non_generic_missions = yes
+		every_country = {
+			limit = {
+				ai = no
+				overlord_of = ROOT
+				NOT = {
+					has_country_flag = shadow_duchy
+				}
+				NOT = {
+					has_country_flag = had_shadow_duchy_info
+				}
+			}
+			country_event = {
+				id = hre_event.8
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				ai = no
+				NOT = {
+					overlord_of = ROOT
+				}
+				NOT = {
+					has_country_flag = shadow_duchy
+				}
+				NOT = {
+					has_country_flag = had_shadow_duchy_info
+				}
+			}
+			country_event = {
+				id = hre_event.8
+			}
+		}
+		if = {
+			limit = {
+				is_elector = yes
+			}
+			elector = no
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = slipped_out_of_empire
+			}
+		}
+		add_opinion = {
+			who = emperor
+			modifier = slipped_out_of_empire
+		}
+		add_prestige = 35
+	}
+	option = {
+		name = "hre_event.6.b"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				tag = SAV
+			}
+		}
+		custom_tooltip = PENALTY_SHADOW_KINGDOM
+		add_opinion = {
+			who = emperor
+			modifier = stayed_in_the_empire
+		}
+		emperor = {
+			add_imperial_influence = 5
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_in_the_empire
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = SAV
+				}
+			}
+			add_prestige = -35
+			every_country = {
+				limit = {
+					has_country_flag = left_the_empire
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = stayed_in_the_empire_hostile
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = hre_event.7
+	title = "hre_event.6.t"
+	desc = "hre_event.6.d"
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "hre_event.6.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				emperor = {
+					overlord_of = ROOT
+				}
+			}
+		}
+		set_country_flag = left_the_empire
+		set_in_empire = no
+		swap_non_generic_missions = yes
+		every_country = {
+			limit = {
+				ai = no
+				overlord_of = ROOT
+				NOT = {
+					has_country_flag = shadow_duchy
+				}
+				NOT = {
+					has_country_flag = had_shadow_duchy_info
+				}
+			}
+			country_event = {
+				id = hre_event.8
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				ai = no
+				NOT = {
+					overlord_of = ROOT
+				}
+				NOT = {
+					has_country_flag = shadow_duchy
+				}
+				NOT = {
+					has_country_flag = had_shadow_duchy_info
+				}
+			}
+			country_event = {
+				id = hre_event.8
+			}
+		}
+		if = {
+			limit = {
+				is_elector = yes
+			}
+			elector = no
+		}
+		add_prestige = 35
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = slipped_out_of_empire
+			}
+		}
+		add_opinion = {
+			who = emperor
+			modifier = slipped_out_of_empire
+		}
+	}
+	option = {
+		name = "hre_event.6.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				emperor = {
+					NOT = {
+						overlord_of = ROOT
+					}
+				}
+			}
+		}
+		add_prestige = -35
+		add_opinion = {
+			who = emperor
+			modifier = stayed_in_the_empire
+		}
+		emperor = {
+			add_imperial_influence = 5
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_in_the_empire
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = left_the_empire
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_in_the_empire_hostile
+			}
+		}
+	}
+}
+country_event = {
+	id = hre_event.8
+	title = "hre_event.8.t"
+	desc = "hre_event.8.d"
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_shadow_duchy_info
+		}
+	}
+	option = {
+		name = "hre_event.8.a"
+		trigger = {
+			OR = {
+				primary_culture = provencal
+				capital_scope = {
+					region = provence_region
+					NOT = {
+						owned_by = SAV
+					}
+				}
+			}
+			is_part_of_hre = no
+		}
+		every_owned_province = {
+			limit = {
+				is_part_of_hre = yes
+				region = provence_region
+				NOT = {
+					owned_by = SAV
+				}
+			}
+			set_in_empire = no
+			swap_non_generic_missions = yes
+		}
+	}
+	option = {
+		name = "hre_event.8.b"
+		trigger = {
+			NOT = {
+				primary_culture = provencal
+				capital_scope = {
+					region = provence_region
+					NOT = {
+						owned_by = SAV
+					}
+				}
+			}
+			is_part_of_hre = no
+		}
+	}
+	option = {
+		name = "hre_event.8.c"
+		trigger = {
+			NOT = {
+				primary_culture = provencal
+				capital_scope = {
+					region = provence_region
+					NOT = {
+						owned_by = SAV
+					}
+				}
+			}
+			is_part_of_hre = yes
+		}
+	}
+}
+country_event = {
+	id = hre_event.9
+	title = "hre_event.9.t"
+	desc = "hre_event.9.d"
+	picture = HRE_eventPicture
+	trigger = {
+		OR = {
+			is_emperor = yes
+			ai = no
+		}
+		NOT = {
+			has_global_flag = provence_out_of_HRE
+		}
+		normal_or_historical_nations = yes
+		is_year = 1440
+		NOT = {
+			is_year = 1550
+		}
+		OR = {
+			is_part_of_hre = yes
+			is_emperor = yes
+		}
+		NOT = {
+			has_country_flag = provencal_warning
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = provencal_warning
+			every_country = {
+				limit = {
+					ai = no
+					is_part_of_hre = yes
+					NOT = {
+						has_country_flag = provencal_warning
+					}
+				}
+				country_event = {
+					id = hre_event.9
+				}
+				set_country_flag = provencal_warning
+			}
+			set_global_flag = enable_stop_shadow_duchy
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "hre_event.9.a"
+		trigger = {
+			NOT = {
+				primary_culture = provencal
+			}
+		}
+		custom_tooltip = hre_event.9.a.tt
+	}
+	option = {
+		name = "hre_event.9.b"
+		trigger = {
+			primary_culture = provencal
+		}
+		custom_tooltip = hre_event.9.b.tt
+	}
+}
+province_event = {
+	id = italian_power.6
+	title = "italian_power.EVTNAME6"
+	desc = "italian_power.EVTDESC6"
+	picture = ITALIAN_POWER_eventPicture
+	trigger = {
+		superregion = italy_superregion
+		owner = {
+			OR = {
+				has_country_modifier = dominant_italian_power
+				has_country_modifier = menacing_italian_power
+			}
+		}
+		NOT = {
+			has_global_flag = italian_powers_disabled
+		}
+		NOT = {
+			is_core = owner
+		}
+		NOT = {
+			has_province_modifier = unlawful_territory
+		}
+	}
+	is_triggered_only = yes
+	option = {
+		name = "italian_power.EVTOPTA6"
+		add_province_modifier = {
+			name = "unlawful_territory"
+			duration = 7300
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_country_modifier = dominant_italian_power
+						has_country_modifier = menacing_italian_power
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						check_variable = {
+							which = "Demesne_in_Italy"
+							value = 1
+						}
+						is_neighbor_of = ROOT
+					}
+					capital_scope = {
+						continent = europe
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_unlawful_territory
+				}
+			}
+		}
+	}
+}

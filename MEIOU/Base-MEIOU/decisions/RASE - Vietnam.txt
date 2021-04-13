@@ -1,0 +1,462 @@
+country_decisions = {
+	install_le_emperor = {
+		major = yes
+		potential = {
+			primary_culture = vietnamese
+			NOT = {
+				tag = DAI
+			}
+			NOT = {
+				has_country_modifier = puppet_le_emperor
+			}
+		}
+		allow = {
+			owns = 2395
+			treasury = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "puppet_le_emperor"
+				duration = -1
+			}
+			every_known_country = {
+				limit = {
+					has_country_modifier = puppet_le_emperor
+				}
+				remove_country_modifier = puppet_le_emperor
+				add_prestige = -50
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = fall_of_mac
+					}
+				}
+				DAI = {
+					country_event = {
+						id = hundred_viet.2
+					}
+				}
+			}
+			add_treasury = -50
+			add_adm_power = 100
+			add_dip_power = 100
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 2395
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	restore_le_emperor = {
+		major = yes
+		potential = {
+			primary_culture = vietnamese
+			NOT = {
+				tag = DAI
+			}
+			has_country_modifier = puppet_le_emperor
+		}
+		provinces_to_highlight = {
+			OR = {
+				owned_by = TOK
+				owned_by = ANN
+				owned_by = VUU
+				owned_by = MAC
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				and = {
+					tag = ANN
+					OR = {
+						NOT = {
+							exists = TOK
+						}
+						overlord_of = TOK
+					}
+					OR = {
+						NOT = {
+							exists = VUU
+						}
+						overlord_of = VUU
+					}
+					OR = {
+						NOT = {
+							exists = MAC
+						}
+						overlord_of = MAC
+					}
+				}
+				and = {
+					tag = TOK
+					OR = {
+						NOT = {
+							exists = ANN
+						}
+						overlord_of = ANN
+					}
+					OR = {
+						NOT = {
+							exists = VUU
+						}
+						overlord_of = VUU
+					}
+					OR = {
+						NOT = {
+							exists = MAC
+						}
+						overlord_of = MAC
+					}
+				}
+				and = {
+					tag = VUU
+					OR = {
+						NOT = {
+							exists = TOK
+						}
+						overlord_of = TOK
+					}
+					OR = {
+						NOT = {
+							exists = ANN
+						}
+						overlord_of = ANN
+					}
+					OR = {
+						NOT = {
+							exists = MAC
+						}
+						overlord_of = MAC
+					}
+				}
+			}
+			owns = 2395
+			treasury = 50
+		}
+		effect = {
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			vietnam_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = DAI
+			}
+			vietnam_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = DAI
+			}
+			champa_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = DAI
+			}
+			champa_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = DAI
+			}
+			change_tag = DAI
+			add_absolutism = 10
+			define_ruler = {
+				dynasty = "Le"
+			}
+			define_heir = {
+				dynasty = "Le"
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = DAI_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			remove_country_modifier = puppet_le_emperor
+			if = {
+				limit = {
+					overlord_of = MAC
+				}
+				inherit = MAC
+			}
+			if = {
+				limit = {
+					overlord_of = TOK
+				}
+				inherit = TOK
+			}
+			if = {
+				limit = {
+					overlord_of = ANN
+				}
+				inherit = ANN
+			}
+			if = {
+				limit = {
+					overlord_of = VUU
+				}
+				inherit = VUU
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 400
+	}
+	assassinate_kim_nguyen = {
+		potential = {
+			dynasty = "Mac"
+			NOT = {
+				has_global_flag = kim_nguyen_dead
+			}
+		}
+		allow = {
+			3936 = {
+				owned_by = ANN
+			}
+			treasury = 50
+		}
+		effect = {
+			random = {
+				chance = 50
+				ANN = {
+					kill_ruler = yes
+				}
+			}
+			add_treasury = -50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	introduce_emperor = {
+		potential = {
+			primary_culture = vietnamese
+			religion = mahayana
+			has_country_modifier = title_6
+			has_heir = yes
+			OR = {
+				heir_age = 18
+				has_country_modifier = heir_introduced
+			}
+			NOT = {
+				has_ruler_modifier = retired_emperor
+			}
+		}
+		allow = {
+			years_of_income = 0.05
+			dip_power = 20
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "retired_emperor"
+				duration = -1
+			}
+			add_heir_claim = 10
+			add_prestige = 5
+			add_years_of_income = -0.05
+			add_dip_power = -20
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

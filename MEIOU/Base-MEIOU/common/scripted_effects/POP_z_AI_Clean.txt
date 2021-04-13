@@ -1,0 +1,95 @@
+AIInitClean = {
+	set_variable = {
+		which = aiInitPower
+		value = 0
+	}
+	set_variable = {
+		which = aiInitFortPerDev
+		value = 0
+	}
+		
+	every_country = {
+		limit = {
+			has_country_flag = aiInitInRange@PREV
+		}
+		clr_country_flag = aiInitInRange@PREV
+		
+		set_variable = {
+			which = aiInitPower
+			value = 0
+		}
+		set_variable = {
+			which = aiInitThreat
+			value = 0
+		}
+	}
+}
+
+AIClean = {
+	AIInitClean = yes
+}
+
+AIClear = {
+	clr_country_flag = aiHasAgendaMilitary
+	clr_country_flag = aiHasAgendaExpansion
+	clr_country_flag = aiHasAgendaGovernance
+	clr_country_flag = aiHasAgendaEconomy
+	clr_country_flag = aiHasAgendaOffense
+	clr_country_flag = aiHasAgendaDefense
+	clr_country_flag = aiHasAgendaInvasion
+	clr_country_flag = aiHasAgendaColonization
+	clr_country_flag = aiHasAgendaTrade
+	clr_country_flag = aiHasAgendaProduction
+	clr_country_flag = aiHasAgendaTech
+	clr_country_flag = aiHasAgendaReform
+	clr_country_flag = aiHasAgendaCE
+	
+	clr_country_flag = aiHasActionManpower
+	clr_country_flag = aiHasActionBuildShipyards
+	clr_country_flag = aiHasActionBuildForts
+	clr_country_flag = aiHasActionWarchest
+	clr_country_flag = aiHasActionDuringWar
+	clr_country_flag = aiHasActionPlanInvasion
+	clr_country_flag = aiHasActionPlanColonization
+	clr_country_flag = aiHasActionDoColonization
+	clr_country_flag = aiHasActionGetCB
+	clr_country_flag = aiHasActionDecWar
+	clr_country_flag = aiHasActionBuildCity
+	clr_country_flag = aiHasActionEstLoyaltyImp
+	clr_country_flag = aiHasActionEstFavorSpend
+	clr_country_flag = aiHasActionEstDemote
+	clr_country_flag = aiHasActionEstPromote
+	clr_country_flag = aiHasActionEstPrivGrant
+	clr_country_flag = aiHasActionEstPrivRevoke
+	clr_country_flag = aiHasActionSolveDis
+	clr_country_flag = aiHasActionSolveObs
+	clr_country_flag = aiHasActionMoveCapital
+	clr_country_flag = aiHasActionManageVassal
+	clr_country_flag = aiHasActionEmbraceInst
+	clr_country_flag = aiHasActionEducation
+	clr_country_flag = aiHasActionArt
+	clr_country_flag = aiHasActionSaveTreasury
+	clr_country_flag = aiHasActionManageLoan
+	clr_country_flag = aiHasActionBuildBureau
+	clr_country_flag = aiHasActionBuildRoad
+	clr_country_flag = aiHasActionBuildPort
+	clr_country_flag = aiHasActionRebel
+	
+	if = {
+		limit = {
+			ai = yes
+		}
+		set_variable = {
+			which = aiTreasuryGeneral
+			value = 0
+		}
+	}
+	
+	set_variable = {
+		which = aiVarWarGain
+		value = 0
+	}
+}
+
+AICleanNone = {
+}

@@ -1,0 +1,84 @@
+owner = HAF
+controller = HAF
+add_core = HAF
+capital = "Jarbah"
+trade_goods = olive
+culture = tunisian
+religion = sunni
+hre = no
+base_tax = 1
+base_production = 0
+base_manpower = 0
+is_city = yes
+harbour_infrastructure_1 = yes
+discovered_by = western
+discovered_by = muslim
+discovered_by = eastern
+discovered_by = turkishtech
+discovered_by = soudantech
+discovered_by = MAL
+448.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 4
+	}
+	set_province_flag = barbary_port
+}
+1489.1.1 = {
+	unrest = 4
+}
+1490.1.1 = {
+	unrest = 0
+}
+1503.1.1 = {
+	owner = TUR
+	controller = TUR
+	add_core = TUR
+}
+1521.1.1 = {
+	owner = SPA
+	controller = SPA
+}
+1524.1.1 = {
+	owner = FZA
+	controller = FZA
+	add_core = FZA
+	remove_core = TUR
+}
+1530.1.1 = {
+	add_claim = TUR
+}
+1551.1.1 = {
+	owner = SPA
+	controller = SPA
+}
+1560.5.14 = {
+	owner = TUR
+	controller = TUR
+}
+1591.1.1 = {
+	unrest = 6
+}
+1592.1.1 = {
+	unrest = 0
+}
+1702.1.1 = {
+	unrest = 4
+	add_core = ALG
+}
+1703.1.1 = {
+	unrest = 0
+}
+1735.1.1 = {
+	unrest = 6
+}
+1756.1.1 = {
+	unrest = 0
+}
+1881.5.12 = {
+	owner = FRA
+	controller = REB
+}
+1881.10.28 = {
+	controller = FRA
+}

@@ -1,0 +1,38 @@
+owner = PAH
+controller = PAH
+add_core = PAH
+capital = "Kuantan"
+trade_goods = sandal
+culture = malayan
+religion = buddhism
+hre = no
+base_tax = 1
+base_production = 0
+base_manpower = 0
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 1.5
+	}
+}
+1460.1.1 = {
+	owner = MLC
+	controller = MLC
+}
+1500.1.1 = {
+	religion = sunni
+}
+1511.9.10 = {
+	owner = PAH
+	controller = PAH
+}
+1725.1.1 = {
+	owner = TRG
+	controller = TRG
+	add_core = TRG
+}

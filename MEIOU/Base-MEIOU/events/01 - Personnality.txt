@@ -1,0 +1,1115 @@
+country_event = {
+	id = personality.01
+	title = "personality.01.t"
+	desc = "personality.01.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "amateurish_pettifogger"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "indulgent"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "reckless"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "selfish"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "trusting"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.02
+	title = "personality.02.t"
+	desc = "personality.02.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "brilliant_strategist"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "sceptical"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "selfish"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "valorous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "vengeful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.03
+	title = "personality.03.t"
+	desc = "personality.03.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "charismatic_negotiator"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "forgiving"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "generous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "just"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.04
+	title = "personality.04.t"
+	desc = "personality.04.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "elusive_shadow"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "coward"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "lazy"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "selfish"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.05
+	title = "personality.05.t"
+	desc = "personality.05.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "flamboyant_schemer"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "indulgent"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "reckless"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "valorous"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.06
+	title = "personality.06.t"
+	desc = "personality.06.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "gruff_diplomat"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "just"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "lazy"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "modest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.07
+	title = "personality.07.t"
+	desc = "personality.07.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "hopeless_spender"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "generous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "indulgent"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "lazy"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "reckless"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "selfish"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.08
+	title = "personality.08.t"
+	desc = "personality.08.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "intricate_webweaver"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "coward"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "sceptical"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "vengeful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.09
+	title = "personality.09.t"
+	desc = "personality.09.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "knowledged_tactician"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "just"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "modest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "valorous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "zealous"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.10
+	title = "personality.10.t"
+	desc = "personality.10.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "midas_touched"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "generous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.11
+	title = "personality.11.t"
+	desc = "personality.11.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "misguided_warrior"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "reckless"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "valorous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "trusting"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "vengeful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "zealous"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.12
+	title = "personality.12.t"
+	desc = "personality.12.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "naive_puppet_master"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "coward"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "indulgent"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "lazy"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "reckless"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "selfish"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "trusting"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "vengeful"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.13
+	title = "personality.13.t"
+	desc = "personality.13.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "silver_tongue"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "generous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.14
+	title = "personality.14.t"
+	desc = "personality.14.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "tough_soldier"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "modest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "valorous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.15
+	title = "personality.15.t"
+	desc = "personality.15.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "grey_eminence"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.21
+	title = "personality.21.t"
+	desc = "personality.21.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "crafty_merchant"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "deceitful"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "sceptical"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "selfish"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.22
+	title = "personality.22.t"
+	desc = "personality.22.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "fanatical_priest"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "cruel"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "modest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "proud"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "suspicious"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "zealous"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.23
+	title = "personality.23.t"
+	desc = "personality.23.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "martial_cleric"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "energetic"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "modest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "reckless"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "trusting"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "valorous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "zealous"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.24
+	title = "personality.24.t"
+	desc = "personality.24.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "master_theologian"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "forgiving"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "generous"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "just"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "sceptical"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = personality.25
+	title = "personality.25.t"
+	desc = "personality.25.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_dlc = "Rights of Man"
+		}
+	}
+	option = {
+		name = "OPT.NEWKING"
+		add_ruler_modifier = {
+			name = "scholarly_theologian"
+		}
+		random_list = {
+			5 = {
+				add_ruler_modifier = {
+					name = "arbitrary"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "forgiving"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "honest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "modest"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "temperate"
+				}
+			}
+			5 = {
+				add_ruler_modifier = {
+					name = "wise"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,5 @@
+discovered_by = steppestech
+discovered_by = turkishtech
+1530.1.1 = {
+	discovered_by = muslim
+}

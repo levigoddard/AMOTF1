@@ -1,0 +1,79 @@
+elective_succession_crisis = {
+	potential = {
+		has_dlc = "Res Publica"
+		has_dlc = "The Cossacks"
+		AND = {
+			OR = {
+				has_reform = elective_monarchy
+				has_reform = elective_monarchy_legacy
+				has_reform = mamluk_government_legacy
+			}
+		}
+	}
+	can_start = {
+		has_any_disaster = no
+		has_country_flag = elective_crises_start
+		NOT = {
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+	}
+	can_stop = {
+		NOT = {
+			has_country_flag = elective_crises_start
+		}
+		AND = {
+			is_subject = yes
+			NOT = {
+				is_subject_of_type = tributary_state
+			}
+			NOT = {
+				is_subject_of_type = close_tributary_state
+			}
+		}
+	}
+	progress = {
+		modifier = {
+			OR = {
+				any_owned_province = {
+					sieged_by = pretender_rebels
+				}
+				has_spawned_rebels = pretender_rebels
+			}
+			factor = 10
+		}
+		modifier = {
+			factor = 10
+			AND = {
+				num_of_rebel_controlled_provinces = 1
+				has_spawned_rebels = pretender_rebels
+			}
+		}
+		modifier = {
+			factor = 20
+			capital_scope = {
+				controlled_by = pretender_rebels
+			}
+		}
+	}
+	can_end = {
+		always = no
+	}
+	modifier = {
+		stability_cost_modifier = 0.5
+		global_manpower_modifier = -0.25
+		land_forcelimit_modifier = -0.20
+		land_morale = -0.10
+		global_tax_modifier = -0.25
+	}
+	on_start = meiouelective_monarchy.101
+	on_end = estate_disasters.2
+	on_monthly = {}
+}

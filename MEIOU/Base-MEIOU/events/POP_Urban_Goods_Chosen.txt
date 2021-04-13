@@ -1,0 +1,1984 @@
+namespace = POP_Urban_Goods_Chosen
+province_event = {
+	id = POP_Urban_Goods_Chosen.001
+	title = POP_Urban_Goods_Chosen.001.t
+	desc = POP_Urban_Goods_Chosen.001.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	trigger = {}
+	immediate = {
+		hidden_effect = {}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.001.a"
+		hidden_effect = {
+			clr_province_flag = urban_goods_mundane
+			clr_province_flag = urban_goods_rank_1
+			if = {
+				limit = {
+					has_province_modifier = mundane_1
+				}
+				remove_province_modifier = mundane_1
+			}
+			set_variable = {
+				which = urban_good_mundane_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_2
+			set_province_flag = urban_goods_linen
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_linen_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_linen_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_linen_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = linen_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 25
+			}
+		}
+		owner = {
+			add_treasury = -25
+		}
+		custom_tooltip = province_gains_25
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.001.b"
+		hidden_effect = {
+			clr_province_flag = urban_goods_mundane
+			clr_province_flag = urban_goods_rank_1
+			if = {
+				limit = {
+					has_province_modifier = mundane_1
+				}
+				remove_province_modifier = mundane_1
+			}
+			set_variable = {
+				which = urban_good_mundane_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_2
+			set_province_flag = urban_goods_metalwork
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_metalwork_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_metalwork_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_metalwork_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = metalwork_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 25
+			}
+		}
+		owner = {
+			add_treasury = -25
+		}
+		custom_tooltip = province_gains_25
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.001.c"
+		hidden_effect = {
+			clr_province_flag = urban_goods_mundane
+			clr_province_flag = urban_goods_rank_1
+			if = {
+				limit = {
+					has_province_modifier = mundane_1
+				}
+				remove_province_modifier = mundane_1
+			}
+			set_variable = {
+				which = urban_good_mundane_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_2
+			set_province_flag = urban_goods_cloth
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_cloth_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_cloth_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_cloth_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = cloth_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 25
+			}
+		}
+		owner = {
+			add_treasury = -25
+		}
+		custom_tooltip = province_gains_25
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.001.e"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			clr_province_flag = urban_goods_mundane
+			clr_province_flag = urban_goods_rank_1
+			if = {
+				limit = {
+					has_province_modifier = mundane_1
+				}
+				remove_province_modifier = mundane_1
+			}
+			set_variable = {
+				which = urban_good_mundane_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_2
+			random_list = {
+				33 = {
+					set_province_flag = urban_goods_linen
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_linen_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_linen_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_linen_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = linen_1
+						duration = -1
+					}
+				}
+				33 = {
+					set_province_flag = urban_goods_metalwork
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = metalwork_1
+						duration = -1
+					}
+				}
+				34 = {
+					set_province_flag = urban_goods_cloth
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_cloth_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_cloth_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_cloth_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = cloth_1
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = POP_Urban_Goods_Chosen.002
+	title = POP_Urban_Goods_Chosen.002.t
+	desc = POP_Urban_Goods_Chosen.002.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.002.a"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_linen
+			if = {
+				limit = {
+					has_province_modifier = linen_1
+				}
+				remove_province_modifier = linen_1
+			}
+			set_variable = {
+				which = urban_good_linen_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_paper
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_paper_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_paper_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_paper_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = paper_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.002.b"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_linen
+			if = {
+				limit = {
+					has_province_modifier = linen_1
+				}
+				remove_province_modifier = linen_1
+			}
+			set_variable = {
+				which = urban_good_linen_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_leather
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_leather_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_leather_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_leather_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = leather_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.002.c"
+		trigger = {
+			OR = {
+				has_building = harbour_infrastructure_2
+				has_building = harbour_infrastructure_3x
+				has_building = harbour_infrastructure_4
+				has_building = harbour_infrastructure_5
+			}
+		}
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_linen
+			if = {
+				limit = {
+					has_province_modifier = linen_1
+				}
+				remove_province_modifier = linen_1
+			}
+			set_variable = {
+				which = urban_good_linen_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_naval_supplies
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = naval_supplies_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.002.e"
+		trigger = {
+			OR = {
+				continent = mena
+				continent = central_asia
+				superregion = west_india_superregion
+			}
+		}
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_linen
+			if = {
+				limit = {
+					has_province_modifier = linen_1
+				}
+				remove_province_modifier = linen_1
+			}
+			set_variable = {
+				which = urban_good_linen_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_carpet
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_carpet_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_carpet_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_carpet_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = carpet_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 66
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.002.f"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_linen
+			if = {
+				limit = {
+					has_province_modifier = linen_1
+				}
+				remove_province_modifier = linen_1
+			}
+			set_variable = {
+				which = urban_good_linen_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			random_list = {
+				50 = {
+					set_province_flag = urban_goods_paper
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_paper_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_paper_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_paper_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = paper_1
+						duration = -1
+					}
+				}
+				50 = {
+					set_province_flag = urban_goods_leather
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_leather_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_leather_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_leather_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = leather_1
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = POP_Urban_Goods_Chosen.003
+	title = POP_Urban_Goods_Chosen.003.t
+	desc = POP_Urban_Goods_Chosen.003.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.003.a"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_metalwork
+			if = {
+				limit = {
+					has_province_modifier = metalwork_1
+				}
+				remove_province_modifier = metalwork_1
+			}
+			set_variable = {
+				which = urban_good_metalwork_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_steel
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_steel_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_steel_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_steel_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = steel_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.003.b"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_metalwork
+			if = {
+				limit = {
+					has_province_modifier = metalwork_1
+				}
+				remove_province_modifier = metalwork_1
+			}
+			set_variable = {
+				which = urban_good_metalwork_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_jewelry
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_jewelry_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_jewelry_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_jewelry_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = jewelry_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.003.c"
+		trigger = {
+			OR = {
+				has_building = harbour_infrastructure_2
+				has_building = harbour_infrastructure_3x
+				has_building = harbour_infrastructure_4
+				has_building = harbour_infrastructure_5
+			}
+		}
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_metalwork
+			if = {
+				limit = {
+					has_province_modifier = metalwork_1
+				}
+				remove_province_modifier = metalwork_1
+			}
+			set_variable = {
+				which = urban_good_metalwork_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_naval_supplies
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = naval_supplies_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 66
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.003.e"
+		trigger = {
+			continent = east_asia
+		}
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_metalwork
+			if = {
+				limit = {
+					has_province_modifier = metalwork_1
+				}
+				remove_province_modifier = metalwork_1
+			}
+			set_variable = {
+				which = urban_good_metalwork_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_chinaware
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_chinaware_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_chinaware_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_chinaware_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = chinaware_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 66
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.003.f"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_metalwork
+			if = {
+				limit = {
+					has_province_modifier = metalwork_1
+				}
+				remove_province_modifier = metalwork_1
+			}
+			set_variable = {
+				which = urban_good_metalwork_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			random_list = {
+				50 = {
+					set_province_flag = urban_goods_steel
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_steel_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_steel_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_steel_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = steel_1
+						duration = -1
+					}
+				}
+				50 = {
+					set_province_flag = urban_goods_jewelry
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_jewelry_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_jewelry_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_jewelry_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = jewelry_1
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = POP_Urban_Goods_Chosen.004
+	title = POP_Urban_Goods_Chosen.004.t
+	desc = POP_Urban_Goods_Chosen.004.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.004.a"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_cloth
+			if = {
+				limit = {
+					has_province_modifier = cloth_1
+				}
+				remove_province_modifier = cloth_1
+			}
+			set_variable = {
+				which = urban_good_cloth_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_luxury_cloth
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_luxury_cloth_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_luxury_cloth_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_luxury_cloth_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = luxury_cloth_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.004.b"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_cloth
+			if = {
+				limit = {
+					has_province_modifier = cloth_1
+				}
+				remove_province_modifier = cloth_1
+			}
+			set_variable = {
+				which = urban_good_cloth_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_silk
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_silk_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_silk_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_silk_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = silk_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 33
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.004.c"
+		trigger = {
+			OR = {
+				has_building = harbour_infrastructure_2
+				has_building = harbour_infrastructure_3x
+				has_building = harbour_infrastructure_4
+				has_building = harbour_infrastructure_5
+			}
+		}
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_cloth
+			if = {
+				limit = {
+					has_province_modifier = cloth_1
+				}
+				remove_province_modifier = cloth_1
+			}
+			set_variable = {
+				which = urban_good_cloth_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			set_province_flag = urban_goods_naval_supplies
+			if = {
+				limit = {
+					has_province_flag = urban_goods_rank_3
+				}
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					value = 0
+				}
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					which = urban_production_power
+				}
+			}
+			else = {
+				set_variable = {
+					which = urban_good_naval_supplies_quantity
+					value = 0
+				}
+			}
+			add_permanent_province_modifier = {
+				name = naval_supplies_1
+				duration = -1
+			}
+			change_variable = {
+				which = wealth_urban_fluid
+				value = 100
+			}
+		}
+		owner = {
+			add_treasury = -100
+		}
+		custom_tooltip = province_gains_100
+		ai_chance = {
+			factor = 66
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.004.e"
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_2
+			clr_province_flag = urban_goods_cloth
+			if = {
+				limit = {
+					has_province_modifier = cloth_1
+				}
+				remove_province_modifier = cloth_1
+			}
+			set_variable = {
+				which = urban_good_cloth_quantity
+				value = 0
+			}
+			set_province_flag = urban_goods_rank_3
+			random_list = {
+				50 = {
+					set_province_flag = urban_goods_luxury_cloth
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_luxury_cloth_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_luxury_cloth_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_luxury_cloth_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = luxury_cloth_1
+						duration = -1
+					}
+				}
+				50 = {
+					set_province_flag = urban_goods_silk
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_silk_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_silk_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_silk_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = silk_1
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = POP_Urban_Goods_Chosen.005
+	title = POP_Urban_Goods_Chosen.005.t
+	desc = POP_Urban_Goods_Chosen.005.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = urban_production_skill_deficit
+				value = 0
+			}
+			set_variable = {
+				which = urban_production_skill_deficit
+				value = 75
+			}
+			subtract_variable = {
+				which = urban_production_skill_deficit
+				which = urban_production_skill
+			}
+			set_variable = {
+				which = ducat_cost_a
+				which = urban_production_skill_deficit
+			}
+			multiply_variable = {
+				which = ducat_cost_a
+				value = 0.001
+			}
+			multiply_variable = {
+				which = ducat_cost_a
+				value = 1000
+			}
+			owner = {
+				set_variable = {
+					which = ducat_cost_a
+					value = 0
+				}
+			}
+			owner = {
+				set_variable = {
+					which = ducat_cost_a
+					which = PREV
+				}
+			}
+			owner = {
+				change_variable = {
+					which = ducat_cost_a
+					value = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.005.a"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			owner = {
+				set_variable = {
+					which = ducat_cost
+					value = 0
+				}
+			}
+			owner = {
+				set_variable = {
+					which = ducat_cost
+					which = ducat_cost_a
+				}
+			}
+			owner = {
+				while = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 65536
+						}
+					}
+					add_treasury = -65536
+					subtract_variable = {
+						which = ducat_cost
+						value = 65536
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 32768
+						}
+					}
+					add_treasury = -32768
+					subtract_variable = {
+						which = ducat_cost
+						value = 32768
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 16384
+						}
+					}
+					add_treasury = -16384
+					subtract_variable = {
+						which = ducat_cost
+						value = 16384
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 8192
+						}
+					}
+					add_treasury = -8192
+					subtract_variable = {
+						which = ducat_cost
+						value = 8192
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 4096
+						}
+					}
+					add_treasury = -4096
+					subtract_variable = {
+						which = ducat_cost
+						value = 4096
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 2048
+						}
+					}
+					add_treasury = -2048
+					subtract_variable = {
+						which = ducat_cost
+						value = 2048
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 1024
+						}
+					}
+					add_treasury = -1024
+					subtract_variable = {
+						which = ducat_cost
+						value = 1024
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 512
+						}
+					}
+					add_treasury = -512
+					subtract_variable = {
+						which = ducat_cost
+						value = 512
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 256
+						}
+					}
+					add_treasury = -256
+					subtract_variable = {
+						which = ducat_cost
+						value = 256
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 128
+						}
+					}
+					add_treasury = -128
+					subtract_variable = {
+						which = ducat_cost
+						value = 128
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 64
+						}
+					}
+					add_treasury = -64
+					subtract_variable = {
+						which = ducat_cost
+						value = 64
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 32
+						}
+					}
+					add_treasury = -32
+					subtract_variable = {
+						which = ducat_cost
+						value = 32
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 16
+						}
+					}
+					add_treasury = -16
+					subtract_variable = {
+						which = ducat_cost
+						value = 16
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 8
+						}
+					}
+					add_treasury = -8
+					subtract_variable = {
+						which = ducat_cost
+						value = 8
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 4
+						}
+					}
+					add_treasury = -4
+					subtract_variable = {
+						which = ducat_cost
+						value = 4
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 2
+						}
+					}
+					add_treasury = -2
+					subtract_variable = {
+						which = ducat_cost
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 1
+						}
+					}
+					add_treasury = -1
+					subtract_variable = {
+						which = ducat_cost
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 0.5
+						}
+					}
+					add_treasury = -0.5
+					subtract_variable = {
+						which = ducat_cost
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 0.25
+						}
+					}
+					add_treasury = -0.25
+					subtract_variable = {
+						which = ducat_cost
+						value = 0.25
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = ducat_cost
+							value = 0.125
+						}
+					}
+					add_treasury = -0.125
+					subtract_variable = {
+						which = ducat_cost
+						value = 0.125
+					}
+				}
+				set_variable = {
+					which = ducat_cost
+					value = 0
+				}
+			}
+			add_province_modifier = {
+				name = subsidize_urban_industry
+				duration = 1825
+				hidden = yes
+			}
+		}
+		owner = {
+			custom_tooltip = ducat_cost_a
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.005.b"
+		custom_tooltip = downgrade_luxury_good
+		hidden_effect = {
+			clr_province_flag = urban_goods_rank_3
+			trigger_switch = {
+				on_trigger = has_province_flag
+				urban_goods_glassware = {
+					if = {
+						limit = {
+							has_province_modifier = glassware_1
+						}
+						remove_province_modifier = glassware_1
+					}
+					set_variable = {
+						which = urban_good_glassware_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_glassware
+					set_province_flag = urban_goods_metalwork
+				}
+				urban_goods_leather = {
+					if = {
+						limit = {
+							has_province_modifier = leather_1
+						}
+						remove_province_modifier = leather_1
+					}
+					set_variable = {
+						which = urban_good_leather_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_leather
+					set_province_flag = urban_goods_linen
+				}
+				urban_goods_silk = {
+					if = {
+						limit = {
+							has_province_modifier = silk_1
+						}
+						remove_province_modifier = silk_1
+					}
+					set_variable = {
+						which = urban_good_silk_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_silk
+					set_province_flag = urban_goods_cloth
+				}
+				urban_goods_steel = {
+					if = {
+						limit = {
+							has_province_modifier = steel_1
+						}
+						remove_province_modifier = steel_1
+					}
+					set_variable = {
+						which = urban_good_steel_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_steel
+					set_province_flag = urban_goods_metalwork
+				}
+				urban_goods_naval_supplies = {
+					if = {
+						limit = {
+							has_province_modifier = naval_supplies_1
+						}
+						remove_province_modifier = naval_supplies_1
+					}
+					set_variable = {
+						which = urban_good_naval_supplies_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_naval_supplies
+					random_list = {
+						33 = {
+							set_province_flag = urban_goods_linen
+						}
+						33 = {
+							set_province_flag = urban_goods_metalwork
+						}
+						34 = {
+							set_province_flag = urban_goods_cloth
+						}
+					}
+				}
+				urban_goods_paper = {
+					if = {
+						limit = {
+							has_province_modifier = paper_1
+						}
+						remove_province_modifier = paper_1
+					}
+					set_variable = {
+						which = urban_good_paper_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_paper
+					set_province_flag = urban_goods_linen
+				}
+				urban_goods_carpet = {
+					if = {
+						limit = {
+							has_province_modifier = carpet_1
+						}
+						remove_province_modifier = carpet_1
+					}
+					set_variable = {
+						which = urban_good_carpet_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_carpet
+					set_province_flag = urban_goods_cloth
+				}
+				urban_goods_chinaware = {
+					if = {
+						limit = {
+							has_province_modifier = chinaware_1
+						}
+						remove_province_modifier = chinaware_1
+					}
+					set_variable = {
+						which = urban_good_chinaware_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_chinaware
+					set_province_flag = urban_goods_metalwork
+				}
+				urban_goods_jewelry = {
+					if = {
+						limit = {
+							has_province_modifier = jewelry_1
+						}
+						remove_province_modifier = jewelry_1
+					}
+					set_variable = {
+						which = urban_good_jewelry_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_jewelry
+					set_province_flag = urban_goods_metalwork
+				}
+				urban_goods_luxury_cloth = {
+					if = {
+						limit = {
+							has_province_modifier = luxury_cloth_1
+						}
+						remove_province_modifier = luxury_cloth_1
+					}
+					set_variable = {
+						which = urban_good_luxury_cloth_quantity
+						value = 0
+					}
+					clr_province_flag = urban_goods_luxury_cloth
+					set_province_flag = urban_goods_cloth
+				}
+			}
+			set_province_flag = urban_goods_rank_2
+			trigger_switch = {
+				on_trigger = has_province_flag
+				urban_goods_metalwork = {
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = metalwork_1
+						duration = -1
+					}
+				}
+				urban_goods_linen = {
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_linen_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_linen_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_linen_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = linen_1
+						duration = -1
+					}
+				}
+				urban_goods_cloth = {
+					if = {
+						limit = {
+							has_province_flag = urban_goods_rank_3
+						}
+						set_variable = {
+							which = urban_good_cloth_quantity
+							value = 0
+						}
+						set_variable = {
+							which = urban_good_cloth_quantity
+							which = urban_production_power
+						}
+					}
+					else = {
+						set_variable = {
+							which = urban_good_cloth_quantity
+							value = 0
+						}
+					}
+					add_permanent_province_modifier = {
+						name = cloth_1
+						duration = -1
+					}
+				}
+			}
+			set_variable = {
+				which = urban_production_skill
+				value = 0
+			}
+			if = {
+				limit = {
+					any_province = {
+						continent = PREV
+						has_province_modifier = promote_urban_industry
+						OR = {
+							has_province_modifier = minor_center_of_production
+							has_province_modifier = important_center_of_production
+							has_province_modifier = major_center_of_production
+							has_province_modifier = dominant_center_of_production
+						}
+						OR = {
+							NOT = {
+								has_province_flag = urban_goods_rank_3
+							}
+							AND = {
+								has_province_flag = urban_goods_rank_3
+								check_variable = {
+									which = urban_production_skill
+									value = 75
+								}
+								NOT = {
+									check_variable = {
+										which = urban_production_skill
+										value = 125
+									}
+								}
+							}
+						}
+						NOT = {
+							has_province_modifier = artisans_visited
+						}
+					}
+				}
+				random_province = {
+					limit = {
+						continent = PREV
+						has_province_modifier = promote_urban_industry
+						OR = {
+							has_province_modifier = minor_center_of_production
+							has_province_modifier = important_center_of_production
+							has_province_modifier = major_center_of_production
+							has_province_modifier = dominant_center_of_production
+						}
+						OR = {
+							NOT = {
+								has_province_flag = urban_goods_rank_3
+							}
+							AND = {
+								has_province_flag = urban_goods_rank_3
+								check_variable = {
+									which = urban_production_skill
+									value = 75
+								}
+								NOT = {
+									check_variable = {
+										which = urban_production_skill
+										value = 125
+									}
+								}
+							}
+						}
+						NOT = {
+							has_province_modifier = artisans_visited
+						}
+					}
+					province_event = {
+						id = POP_Urban_Goods_Chosen.006
+						days = 30
+					}
+				}
+			}
+			else = {
+				random_province = {
+					limit = {
+						continent = PREV
+						OR = {
+							has_province_modifier = minor_center_of_production
+							has_province_modifier = important_center_of_production
+							has_province_modifier = major_center_of_production
+							has_province_modifier = dominant_center_of_production
+						}
+						OR = {
+							NOT = {
+								has_province_flag = urban_goods_rank_3
+							}
+							AND = {
+								has_province_flag = urban_goods_rank_3
+								check_variable = {
+									which = urban_production_skill
+									value = 75
+								}
+								NOT = {
+									check_variable = {
+										which = urban_production_skill
+										value = 125
+									}
+								}
+							}
+						}
+						NOT = {
+							has_province_modifier = artisans_visited
+						}
+					}
+					province_event = {
+						id = POP_Urban_Goods_Chosen.006
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = POP_Urban_Goods_Chosen.006
+	title = POP_Urban_Goods_Chosen.006.t
+	desc = POP_Urban_Goods_Chosen.006.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		add_province_modifier = {
+			name = artisans_visited
+			duration = 385
+			hidden = yes
+		}
+		hidden_effect = {
+			set_variable = {
+				which = urban_production_skill_new
+				value = 0
+			}
+			set_variable = {
+				which = urban_production_skill_new
+				which = urban_production_skill
+			}
+			change_variable = {
+				which = urban_production_skill_new
+				value = 25
+			}
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.006.b"
+		owner = {
+			add_treasury = -25
+		}
+		hidden_effect = {
+			change_variable = {
+				which = urban_production_skill
+				value = 25
+			}
+		}
+		custom_tooltip = emigrees_allowed_to_settle
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.006.a"
+		hidden_effect = {
+			random_province = {
+				limit = {
+					continent = PREV
+					OR = {
+						has_province_modifier = minor_center_of_production
+						has_province_modifier = important_center_of_production
+						has_province_modifier = major_center_of_production
+						has_province_modifier = dominant_center_of_production
+					}
+					OR = {
+						NOT = {
+							has_province_flag = urban_goods_rank_3
+						}
+						AND = {
+							has_province_flag = urban_goods_rank_3
+							check_variable = {
+								which = urban_production_skill
+								value = 75
+							}
+							NOT = {
+								check_variable = {
+									which = urban_production_skill
+									value = 125
+								}
+							}
+						}
+					}
+					NOT = {
+						has_province_modifier = artisans_visited
+					}
+				}
+				province_event = {
+					id = POP_Urban_Goods_Chosen.006
+					days = 30
+				}
+			}
+		}
+		custom_tooltip = emigrees_will_continue_fleeing
+	}
+}
+country_event = {
+	id = POP_Urban_Goods_Chosen.100
+	title = POP_Urban_Goods_Chosen.100.t
+	desc = POP_Urban_Goods_Chosen.100.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.100.a"
+		country_event = {
+			id = POP_Urban_Goods_Chosen.101
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.100.b"
+		country_event = {
+			id = POP_Urban_Goods_Chosen.102
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.100.c"
+		country_event = {
+			id = POP_Urban_Goods_Chosen.103
+		}
+	}
+	option = {
+		name = "POP_Urban_Goods_Chosen.100.e"
+	}
+}
+country_event = {
+	id = POP_Urban_Goods_Chosen.101
+	title = POP_Urban_Goods_Chosen.101.t
+	desc = POP_Urban_Goods_Chosen.101.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.101.a"
+		country_event = {
+			id = POP_Urban_Goods_Chosen.100
+		}
+	}
+}
+country_event = {
+	id = POP_Urban_Goods_Chosen.102
+	title = POP_Urban_Goods_Chosen.102.t
+	desc = POP_Urban_Goods_Chosen.102.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.102.a"
+		country_event = {
+			id = POP_Urban_Goods_Chosen.100
+		}
+	}
+}
+country_event = {
+	id = POP_Urban_Goods_Chosen.103
+	title = POP_Urban_Goods_Chosen.103.t
+	desc = POP_Urban_Goods_Chosen.103.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {}
+	option = {
+		name = "POP_Urban_Goods_Chosen.103.a"
+		country_event = {
+			id = POP_Urban_Goods_Chosen.100
+		}
+	}
+}

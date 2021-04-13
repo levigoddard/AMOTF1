@@ -1,0 +1,54 @@
+name = "Polish-Teutonic War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2398
+}
+1409.1.1 = {
+	add_attacker = POL
+	add_attacker = LIT
+	add_defender = TEU
+}
+1410.7.15 = {
+	battle = {
+		name = "Grunwald"
+		location = 254
+		attacker = {
+			commander = "Wladyslaw II Jagiello"
+			infantry = 32000
+			losses = 8
+			country = POL
+		}
+		defender = {
+			commander = "Ulrich von Jungingen"
+			infantry = 27000
+			losses = 37
+			country = TEU
+		}
+		result = yes
+	}
+}
+1410.10.10 = {
+	battle = {
+		name = "Koronowo"
+		location = 255
+		attacker = {
+			commander = "Wladyslaw II Jagiello"
+			infantry = 2000
+			losses = 6
+			country = POL
+		}
+		defender = {
+			commander = "Michael Küchmeister von Sternberg"
+			infantry = 4000
+			losses = 22
+			country = TEU
+		}
+		result = yes
+	}
+}
+1411.2.1 = {
+	rem_attacker = LIT
+	rem_attacker = POL
+	rem_defender = TEU
+}

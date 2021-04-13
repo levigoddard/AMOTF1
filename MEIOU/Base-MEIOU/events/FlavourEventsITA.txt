@@ -1,0 +1,522 @@
+country_event = {
+	id = flavor_ita.1
+	title = "flavor_ita.1.n"
+	desc = "flavor_ita.1.t"
+	picture = IRONCROWN_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_ita.1.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 50
+				}
+				factor = 1.10
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 100
+				}
+				factor = 1.10
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 1.10
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 200
+				}
+				factor = 1.10
+			}
+			modifier = {
+				num_of_owned_provinces_with = {
+					value = 1
+					AND = {
+						superregion = italy_superregion
+						OR = {
+							region = east_italy_region
+							region = west_italy_region
+							region = central_italy_region
+						}
+					}
+				}
+				factor = 0.90
+			}
+			modifier = {
+				num_of_owned_provinces_with = {
+					value = 5
+					AND = {
+						superregion = italy_superregion
+						OR = {
+							region = east_italy_region
+							region = west_italy_region
+							region = central_italy_region
+						}
+					}
+				}
+				factor = 0.90
+			}
+			modifier = {
+				num_of_owned_provinces_with = {
+					value = 10
+					AND = {
+						superregion = italy_superregion
+						OR = {
+							region = east_italy_region
+							region = west_italy_region
+							region = central_italy_region
+						}
+					}
+				}
+				factor = 0.90
+			}
+			modifier = {
+				FROM = {
+					num_of_owned_provinces_with = {
+						value = 15
+						superregion = italy_superregion
+					}
+				}
+				factor = 1.10
+			}
+			modifier = {
+				FROM = {
+					num_of_owned_provinces_with = {
+						value = 20
+						superregion = italy_superregion
+					}
+				}
+				factor = 1.10
+			}
+			modifier = {
+				FROM = {
+					num_of_owned_provinces_with = {
+						value = 25
+						superregion = italy_superregion
+					}
+				}
+				factor = 1.10
+			}
+			modifier = {
+				FROM = {
+					num_of_owned_provinces_with = {
+						value = 30
+						superregion = italy_superregion
+					}
+				}
+				factor = 1.10
+			}
+		}
+		FROM = {
+			country_event = {
+				id = flavor_ita.2
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = "flavor_ita.1.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = -50
+					}
+				}
+				factor = 1.10
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = -100
+					}
+				}
+				factor = 1.10
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = -150
+					}
+				}
+				factor = 2.00
+			}
+		}
+		FROM = {
+			country_event = {
+				id = flavor_ita.3
+				days = 5
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_ita.2
+	title = "flavor_ita.2.n"
+	desc = "flavor_ita.2.t"
+	picture = IRONCROWN_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_ita.2.a"
+		east_italy_region = {
+			limit = {
+				owned_by = ROOT
+			}
+			hidden_effect = {
+				remove_core = ITA
+			}
+			add_core = ITA
+		}
+		east_italy_region = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ITA
+		}
+		west_italy_region = {
+			limit = {
+				owned_by = ROOT
+			}
+			hidden_effect = {
+				remove_core = ITA
+			}
+			add_core = ITA
+		}
+		west_italy_region = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ITA
+		}
+		central_italy_region = {
+			limit = {
+				owned_by = ROOT
+			}
+			hidden_effect = {
+				remove_core = ITA
+			}
+			add_core = ITA
+		}
+		central_italy_region = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ITA
+		}
+		add_prestige = 10
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = title_5
+				}
+				NOT = {
+					has_country_modifier = title_6
+				}
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		inherit = ITA
+		change_tag = ITA
+		add_accepted_culture = lombard
+		add_accepted_culture = corsican
+		add_accepted_culture = piedmontese
+		add_accepted_culture = ligurian
+		add_accepted_culture = venetian
+		add_accepted_culture = emilian
+		add_accepted_culture = tuscan
+		add_accepted_culture = dalmatian
+		add_accepted_culture = umbrian
+		add_accepted_culture = romagnol
+		add_accepted_culture = friulian
+		add_absolutism = 5
+		if = {
+			limit = {
+				has_custom_ideas = no
+				NOT = {
+					has_idea_group = ITA_ideas
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = ideagroups.9000
+					days = 1
+				}
+			}
+			custom_tooltip = swap_national_ideas
+		}
+		country_event = {
+			id = holyromanempire.1
+			days = 5
+		}
+		custom_tooltip = disable_italian_powers_tt
+		hidden_effect = {
+			set_global_flag = italian_powers_disabled
+			AAA = {
+				clr_country_flag = italian_powers_enabled
+			}
+			clr_country_flag = italian_power
+			clr_country_flag = insignificant_italian_power
+			clr_country_flag = local_italian_power
+			clr_country_flag = regional_italian_power
+			clr_country_flag = major_italian_power
+			clr_country_flag = dominant_italian_power
+			clr_country_flag = menacing_italian_power
+			remove_country_modifier = insignificant_italian_power
+			remove_country_modifier = local_italian_power
+			remove_country_modifier = regional_italian_power
+			remove_country_modifier = major_italian_power
+			remove_country_modifier = dominant_italian_power
+			remove_country_modifier = menacing_italian_power
+			every_country = {
+				limit = {
+					has_country_flag = italian_power
+				}
+				clr_country_flag = italian_power
+				country_event = {
+					id = italian_power.5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_ita.3
+	title = "flavor_ita.3.n"
+	desc = "flavor_ita.3.t"
+	picture = IRONCROWN_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_ita.3.a"
+		east_italy_region = {
+			limit = {
+				owned_by = ROOT
+			}
+			hidden_effect = {
+				remove_core = ITA
+			}
+			add_core = ITA
+		}
+		east_italy_region = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ITA
+		}
+		west_italy_region = {
+			limit = {
+				owned_by = ROOT
+			}
+			hidden_effect = {
+				remove_core = ITA
+			}
+			add_core = ITA
+		}
+		west_italy_region = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ITA
+		}
+		central_italy_region = {
+			limit = {
+				owned_by = ROOT
+			}
+			hidden_effect = {
+				remove_core = ITA
+			}
+			add_core = ITA
+		}
+		central_italy_region = {
+			limit = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			add_permanent_claim = ITA
+		}
+		add_prestige = 10
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = title_5
+				}
+				NOT = {
+					has_country_modifier = title_6
+				}
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		inherit = ITA
+		change_tag = ITA
+		add_accepted_culture = lombard
+		add_accepted_culture = corsican
+		add_accepted_culture = piedmontese
+		add_accepted_culture = ligurian
+		add_accepted_culture = venetian
+		add_accepted_culture = emilian
+		add_accepted_culture = tuscan
+		add_accepted_culture = dalmatian
+		add_accepted_culture = umbrian
+		add_accepted_culture = romagnol
+		add_accepted_culture = friulian
+		add_absolutism = 5
+		if = {
+			limit = {
+				has_custom_ideas = no
+				NOT = {
+					has_idea_group = ITA_ideas
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = ideagroups.9000
+					days = 1
+				}
+			}
+			custom_tooltip = swap_national_ideas
+		}
+		country_event = {
+			id = holyromanempire.1
+			days = 5
+		}
+		FROM = {
+			country_event = {
+				id = flavor_ita.4
+				days = 5
+			}
+		}
+		custom_tooltip = disable_italian_powers_tt
+		hidden_effect = {
+			set_global_flag = italian_powers_disabled
+			AAA = {
+				clr_country_flag = italian_powers_enabled
+			}
+			clr_country_flag = italian_power
+			clr_country_flag = insignificant_italian_power
+			clr_country_flag = local_italian_power
+			clr_country_flag = regional_italian_power
+			clr_country_flag = major_italian_power
+			clr_country_flag = dominant_italian_power
+			clr_country_flag = menacing_italian_power
+			remove_country_modifier = insignificant_italian_power
+			remove_country_modifier = local_italian_power
+			remove_country_modifier = regional_italian_power
+			remove_country_modifier = major_italian_power
+			remove_country_modifier = dominant_italian_power
+			remove_country_modifier = menacing_italian_power
+			every_country = {
+				limit = {
+					has_country_flag = italian_power
+				}
+				clr_country_flag = italian_power
+				country_event = {
+					id = italian_power.5
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_ita.3.b"
+		FROM = {
+			country_event = {
+				id = flavor_ita.5
+				days = 5
+			}
+		}
+		add_prestige = -10
+	}
+}
+country_event = {
+	id = flavor_ita.4
+	title = "flavor_ita.4.n"
+	desc = "flavor_ita.4.t"
+	picture = IRONCROWN_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_ita.4.a"
+		every_province = {
+			limit = {
+				is_city = yes
+				owned_by = ITA
+			}
+			add_claim = ROOT
+		}
+	}
+	option = {
+		name = "flavor_ita.4.a"
+		every_province = {
+			limit = {
+				is_city = yes
+				owned_by = ITA
+			}
+			set_in_empire = no
+			swap_non_generic_missions = yes
+		}
+	}
+}
+country_event = {
+	id = flavor_ita.5
+	title = "flavor_ita.5.n"
+	desc = "flavor_ita.5.t"
+	picture = IRONCROWN_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_ita.5.a"
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = italian_crown_refused
+			}
+		}
+	}
+}

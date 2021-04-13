@@ -1,0 +1,48 @@
+owner = BUE
+controller = BUE
+add_core = BUE
+capital = "Sena"
+trade_goods = cotton
+culture = shona
+religion = animism
+hre = no
+base_tax = 2
+base_production = 0
+base_manpower = 0
+is_city = yes
+marketplace = yes
+discovered_by = central_african
+discovered_by = east_african
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 3
+	}
+	set_province_flag = tribals_control_province
+}
+1572.1.1 = {
+	owner = POR
+	controller = POR
+}
+1597.1.1 = {
+	add_core = POR
+	unrest = 0
+}
+1683.1.1 = {
+	unrest = 7
+}
+1688.1.1 = {
+	unrest = 0
+}
+1691.1.1 = {
+	unrest = 5
+}
+1692.1.1 = {
+	unrest = 0
+}
+1697.1.1 = {
+	unrest = 5
+}
+1698.1.1 = {
+	unrest = 0
+}

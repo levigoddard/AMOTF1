@@ -1,0 +1,21 @@
+dependency = {
+	subject_type = "vassal"
+	first = PAP
+	second = URB
+	start_date = 1399.1.1
+	end_date = 1626.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = PAP
+	second = BLG
+	start_date = 1443.6.3
+	end_date = 1503.9.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = PAP
+	second = RIM
+	start_date = 1239.1.1
+	end_date = 1503.9.1
+}

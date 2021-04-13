@@ -1,0 +1,1418 @@
+country_decisions = {
+	title_up_to_margraviate_hre = {
+		major = yes
+		potential = {
+			religion_group = christian
+			has_country_modifier = title_1
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+			}
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			NOT = {
+				is_emperor = yes
+			}
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			num_of_cities = 2
+			OR = {
+				DIP = 1
+				MIL = 2
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			emperor = {
+				country_event = {
+					id = title_change.1
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_dukedom_hre = {
+		major = yes
+		potential = {
+			religion_group = christian
+			has_country_modifier = title_2
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+			}
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			NOT = {
+				is_emperor = yes
+			}
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 10
+			num_of_cities = 4
+			OR = {
+				DIP = 2
+				MIL = 3
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			emperor = {
+				country_event = {
+					id = title_change.2
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_princedom_hre = {
+		major = yes
+		potential = {
+			religion_group = christian
+			has_country_modifier = title_3
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+			}
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			NOT = {
+				is_emperor = yes
+			}
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 40
+			num_of_cities = 12
+			OR = {
+				DIP = 3
+				MIL = 4
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			emperor = {
+				country_event = {
+					id = title_change.3
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_kingship_hre = {
+		major = yes
+		potential = {
+			religion_group = christian
+			has_country_modifier = title_4
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+			}
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			NOT = {
+				is_emperor = yes
+			}
+			capital_scope = {
+				is_part_of_hre = yes
+			}
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 80
+			num_of_cities = 25
+			OR = {
+				DIP = 5
+				MIL = 6
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			emperor = {
+				country_event = {
+					id = title_change.4
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_margraviate_vassal = {
+		major = yes
+		potential = {
+			has_country_modifier = title_1
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = centralised_daimyo_vassal
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 2
+			OR = {
+				DIP = 1
+				MIL = 2
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.11
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_dukedom_vassal = {
+		major = yes
+		potential = {
+			has_country_modifier = title_2
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = centralised_daimyo_vassal
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 10
+			num_of_cities = 4
+			OR = {
+				DIP = 2
+				MIL = 3
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.12
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_princedom_vassal = {
+		major = yes
+		potential = {
+			has_country_modifier = title_3
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = centralised_daimyo_vassal
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 20
+			num_of_cities = 12
+			OR = {
+				DIP = 3
+				MIL = 4
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.13
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_kingship_vassal = {
+		major = yes
+		potential = {
+			has_country_modifier = title_4
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			NOT = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = centralised_daimyo_vassal
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 40
+			num_of_cities = 25
+			OR = {
+				DIP = 4
+				MIL = 5
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.14
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_margraviate_catholic = {
+		major = yes
+		potential = {
+			religion = catholic
+			has_country_modifier = title_1
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_lesser_in_union = no
+			exists = PAP
+			is_excommunicated = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 2
+			OR = {
+				DIP = 1
+				MIL = 2
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			PAP = {
+				country_event = {
+					id = title_change.21
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_dukedom_catholic = {
+		major = yes
+		potential = {
+			religion = catholic
+			has_country_modifier = title_2
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_lesser_in_union = no
+			exists = PAP
+			is_excommunicated = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 10
+			num_of_cities = 4
+			OR = {
+				DIP = 2
+				MIL = 3
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			PAP = {
+				country_event = {
+					id = title_change.22
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_princedom_catholic = {
+		major = yes
+		potential = {
+			has_country_modifier = title_3
+			religion = catholic
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_lesser_in_union = no
+			exists = PAP
+			is_excommunicated = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 20
+			num_of_cities = 12
+			OR = {
+				DIP = 3
+				MIL = 4
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			PAP = {
+				country_event = {
+					id = title_change.23
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_kingship_catholic = {
+		major = yes
+		potential = {
+			has_country_modifier = title_4
+			religion = catholic
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_lesser_in_union = no
+			exists = PAP
+			is_excommunicated = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 40
+			num_of_cities = 25
+			OR = {
+				DIP = 4
+				MIL = 5
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			PAP = {
+				country_event = {
+					id = title_change.24
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_emperor_catholic = {
+		major = yes
+		potential = {
+			has_country_modifier = title_5
+			religion = catholic
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_lesser_in_union = no
+			exists = PAP
+			is_excommunicated = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 80
+			num_of_cities = 80
+			OR = {
+				DIP = 5
+				MIL = 6
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			PAP = {
+				country_event = {
+					id = title_change.25
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_margraviate_other = {
+		major = yes
+		potential = {
+			has_country_modifier = title_1
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			OR = {
+				NOT = {
+					religion = catholic
+				}
+				NOT = {
+					exists = PAP
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 3
+			OR = {
+				DIP = 1
+				MIL = 2
+				advisor = statesman
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_dukedom_other = {
+		major = yes
+		potential = {
+			has_country_modifier = title_2
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			OR = {
+				NOT = {
+					religion = catholic
+				}
+				NOT = {
+					exists = PAP
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 5
+			OR = {
+				DIP = 2
+				MIL = 3
+				advisor = statesman
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_princedom_other = {
+		major = yes
+		potential = {
+			has_country_modifier = title_3
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			OR = {
+				NOT = {
+					religion = catholic
+				}
+				NOT = {
+					exists = PAP
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 10
+			OR = {
+				DIP = 3
+				MIL = 4
+				advisor = statesman
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_kingship_other = {
+		major = yes
+		potential = {
+			has_country_modifier = title_4
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			has_regency = no
+			OR = {
+				capital_scope = {
+					is_part_of_hre = no
+				}
+				is_emperor = yes
+			}
+			OR = {
+				NOT = {
+					religion = catholic
+				}
+				NOT = {
+					exists = PAP
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			NOT = {
+				overlord = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 15
+			OR = {
+				DIP = 4
+				MIL = 5
+				advisor = statesman
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_emperor_other = {
+		major = yes
+		potential = {
+			has_country_modifier = title_5
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			has_regency = no
+			capital_scope = {
+				is_part_of_hre = no
+			}
+			OR = {
+				NOT = {
+					religion = catholic
+				}
+				NOT = {
+					exists = PAP
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_lesser_in_union = no
+			OR = {
+				government = monarchy
+				government = tribal
+				AND = {
+					OR = {
+						has_reform = colonial_government
+						has_reform = colonial_government_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			prestige = 5
+			num_of_cities = 100
+			OR = {
+				DIP = 5
+				MIL = 6
+				advisor = statesman
+			}
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = BAH
+					}
+					set_global_flag = bahmani_breakup
+				}
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			add_country_modifier = {
+				name = title_6
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_margraviate_china = {
+		major = yes
+		potential = {
+			overlord = {
+				has_country_flag = mandate_of_heaven_claimed
+			}
+			has_country_modifier = title_1
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+		}
+		allow = {
+			num_of_cities = 10
+			OR = {
+				DIP = 1
+				MIL = 2
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.1
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_dukedom_china = {
+		major = yes
+		potential = {
+			overlord = {
+				has_country_flag = mandate_of_heaven_claimed
+			}
+			has_country_modifier = title_2
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+		}
+		allow = {
+			prestige = 10
+			num_of_cities = 20
+			OR = {
+				DIP = 2
+				MIL = 3
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.2
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_princedom_china = {
+		major = yes
+		potential = {
+			overlord = {
+				has_country_flag = mandate_of_heaven_claimed
+			}
+			has_country_modifier = title_3
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+		}
+		allow = {
+			prestige = 40
+			num_of_cities = 30
+			OR = {
+				DIP = 3
+				MIL = 4
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.3
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	title_up_to_kingship_china = {
+		major = yes
+		potential = {
+			overlord = {
+				has_country_flag = mandate_of_heaven_claimed
+			}
+			has_country_modifier = title_4
+			NOT = {
+				has_country_flag = promotion_requested
+			}
+			NOT = {
+				has_country_modifier = newly_promoted
+			}
+			NOT = {
+				has_country_modifier = promotion_denied
+			}
+			has_regency = no
+		}
+		allow = {
+			prestige = 80
+			num_of_cities = 40
+			OR = {
+				DIP = 5
+				MIL = 6
+				advisor = statesman
+			}
+		}
+		effect = {
+			set_country_flag = promotion_requested
+			overlord = {
+				country_event = {
+					id = title_change.4
+					days = 5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

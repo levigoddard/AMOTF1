@@ -1,0 +1,521 @@
+country_decisions = {
+	shinto_pilgrimage = {
+		potential = {
+			OR = {
+				has_country_modifier = shinto_buddhism
+				has_country_modifier = yuiitso_shinto
+				religion = shinto
+			}
+			NOT = {
+				has_country_flag = shinto_pilgrimage
+			}
+			has_regency = no
+			piety = -0.60
+		}
+		allow = {
+			piety = -0.20
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = shinto_pilgrimage
+			if = {
+				limit = {
+					monthly_income = 500
+				}
+				add_treasury = -500
+			}
+			else_if = {
+				limit = {
+					monthly_income = 5
+				}
+				add_years_of_income = -0.08
+			}
+			else = {
+				add_treasury = -5
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = buddhist_purification
+					}
+					piety = 0.60
+				}
+				add_legitimacy = 4
+				add_prestige = 2
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = buddhist_purification
+					}
+					NOT = {
+						piety = 0.60
+					}
+					piety = 0.20
+				}
+				add_legitimacy = 3
+				add_prestige = 1.5
+			}
+			if = {
+				limit = {
+					NOT = {
+						piety = 0.20
+					}
+					piety = -0.20
+				}
+				add_legitimacy = 2
+				add_prestige = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				legitimacy = 99
+				prestige = 0
+				factor = 0
+			}
+			modifier = {
+				legitimacy = 80
+				num_of_loans = 1
+				factor = 0
+			}
+			modifier = {
+				is_bankrupt = yes
+				factor = 0
+			}
+			modifier = {
+				legitimacy = 80
+				NOT = {
+					years_of_income = 0.08
+				}
+				factor = 0
+			}
+		}
+	}
+	reinstate_department_of_rites = {
+		potential = {
+			AND = {
+				culture_group = japanese
+			}
+			OR = {
+				religion = shinto
+				has_country_modifier = yuiitso_shinto
+				has_country_flag = kokugaku
+			}
+			NOT = {
+				has_country_modifier = jingi_kan
+			}
+		}
+		allow = {
+			num_of_owned_provinces_with = {
+				AND = {
+					superregion = japan_superregion
+				}
+				value = 15
+			}
+			OR = {
+				ADM = 4
+				advisor = theologian
+			}
+			stability = 1
+		}
+		effect = {
+			add_years_of_income = -0.25
+			if = {
+				limit = {
+					religion = shinto
+				}
+				custom_tooltip = enables_religious_head_shinto
+			}
+			add_country_modifier = {
+				name = jingi_kan
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					years_of_income = 1
+				}
+				factor = 0
+			}
+		}
+	}
+	establish_state_shinto = {
+		potential = {
+			AND = {
+				culture_group = japanese
+			}
+			NOT = {
+				religion = shinto
+			}
+			OR = {
+				has_country_modifier = yuiitso_shinto
+				has_country_flag = kokugaku
+			}
+			any_owned_province = {
+				culture_group = owner
+				check_variable = {
+					which = shinto
+					value = 2
+				}
+			}
+		}
+		allow = {
+			num_of_owned_provinces_with = {
+				AND = {
+					superregion = japan_superregion
+				}
+				value = 15
+			}
+			NOT = {
+				patriarch_authority = 0.40
+			}
+			OR = {
+				ADM = 4
+				advisor = theologian
+			}
+			stability = 1
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = voluntary_conversion
+			add_legitimacy = 25
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = shinto_population
+							value = 25
+						}
+					}
+				}
+				custom_tooltip = convert_population_0
+				add_stability = -3
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -15
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = shinto_population
+						value = 25
+					}
+					NOT = {
+						dominant_religion = shinto
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					dominant_religion = shinto
+					NOT = {
+						check_variable = {
+							which = shinto_population
+							value = 75
+						}
+					}
+				}
+				custom_tooltip = convert_population_50
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					dominant_religion = shinto
+					check_variable = {
+						which = shinto_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -3
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -15
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = shinto
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = shinto
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = shinto
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_shinto
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = shinto
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				any_subject_country = {
+					religion_group = ROOT
+				}
+				factor = 0
+			}
+			modifier = {
+				overlord = {
+					religion_group = ROOT
+				}
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					any_owned_province = {
+						check_variable = {
+							which = shinto
+							value = 6
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+}

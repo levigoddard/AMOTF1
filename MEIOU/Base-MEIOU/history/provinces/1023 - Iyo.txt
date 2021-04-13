@@ -1,0 +1,75 @@
+owner = KOO
+controller = KOO
+add_core = KOO
+capital = "Imabari"
+trade_goods = rice
+culture = shikoku
+religion = mahayana
+hre = no
+base_tax = 23
+base_production = 1
+base_manpower = 2
+is_city = yes
+town_hall = yes
+temple = yes
+harbour_infrastructure_2 = yes
+local_fortification_1 = yes
+canal_level_1 = yes
+discovered_by = chinese
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5
+	}
+}
+1354.1.1 = {
+	add_core = HKW
+	owner = HKW
+	controller = HKW
+}
+1379.1.1 = {
+	remove_core = HKW
+	add_core = KOO
+	owner = KOO
+	controller = KOO
+}
+1455.1.1 = {
+	remove_core = KOO
+	add_core = HKW
+	owner = HKW
+	controller = HKW
+}
+1459.1.1 = {
+	remove_core = HKW
+	add_core = KOO
+	owner = KOO
+	controller = KOO
+}
+1465.1.1 = {
+	remove_core = KOO
+	add_core = HKW
+	owner = HKW
+	controller = HKW
+}
+1473.1.1 = {
+	remove_core = HKW
+	add_core = KOO
+	owner = KOO
+	controller = KOO
+}
+1501.1.1 = {
+	base_tax = 41
+	base_production = 2
+	base_manpower = 3
+}
+1542.1.1 = {
+	discovered_by = POR
+}
+1585.1.1 = {
+	owner = ODA
+	controller = ODA
+}
+1600.9.15 = {
+	owner = TGW
+	controller = TGW
+}

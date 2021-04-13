@@ -1,0 +1,443 @@
+generic_religious = {
+	slot = 3
+	ai = yes
+	generic = yes
+	potential = {
+		always = yes
+	}
+	religious_temples = {
+		icon = mission_colonial
+		required_missions = {}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					has_building = temple
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = religious_temples_mod
+				duration = 5475
+			}
+		}
+	}
+	religious_stance = {
+		icon = mission_mosque
+		required_missions = { religious_temples }
+		trigger = {
+			OR = {
+				piety = 0.40
+				NOT = {
+					piety = 0
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = religious_stance_mod
+				duration = 5475
+			}
+		}
+	}
+	religious_investment = {
+		icon = mission_european_church
+		required_missions = { religious_stance }
+		trigger = {
+			OR = {
+				OR = {
+					full_idea_group = asceticism_ideas
+					full_idea_group = ceremony_ideas
+					full_idea_group = popular_religion_ideas
+					full_idea_group = scholasticism_ideas
+					full_idea_group = theology_ideas
+				}
+				OR = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = humanist_ideas
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	religious_discourse = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { religious_investment }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = religious_discourse.tooltip
+				OR = {
+					tolerance_to_this = 6
+					AND = {
+						OR = {
+							AND = {
+								religion_group = christian
+								OR = {
+									AND = {
+										religion = catholic
+										protestant = 2
+									}
+									AND = {
+										NOT = {
+											religion = catholic
+										}
+										catholic = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = muslim
+								OR = {
+									AND = {
+										religion = sunni
+										shiite = 2
+									}
+									AND = {
+										NOT = {
+											religion = sunni
+										}
+										sunni = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = taoic
+								OR = {
+									AND = {
+										religion = buddhism
+										confucianism = 2
+									}
+									AND = {
+										NOT = {
+											religion = buddhism
+										}
+										buddhism = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = dharmic
+								OR = {
+									AND = {
+										religion = hinduism
+										sikhism = 2
+									}
+									AND = {
+										NOT = {
+											religion = hinduism
+										}
+										hinduism = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = jewish_group
+								OR = {
+									AND = {
+										religion = jewish
+										samaritan = 2
+									}
+									AND = {
+										NOT = {
+											religion = jewish
+										}
+										jewish = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = new_world_pagan
+								OR = {
+									AND = {
+										religion = mesoamerican_religion
+										inca_reformed = 2
+									}
+									AND = {
+										NOT = {
+											religion = mesoamerican_religion
+										}
+										mesoamerican_religion = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = european_pagan
+								OR = {
+									AND = {
+										religion = baltic_pagan_reformed
+										finnish_pagan_reformed = 2
+									}
+									AND = {
+										NOT = {
+											religion = baltic_pagan_reformed
+										}
+										baltic_pagan_reformed = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = pagan
+								OR = {
+									AND = {
+										religion = adi_dharam
+										shinto = 2
+									}
+									AND = {
+										NOT = {
+											religion = adi_dharam
+										}
+										adi_dharam = 2
+									}
+								}
+							}
+							AND = {
+								religion_group = pagan
+								OR = {
+									AND = {
+										religion = adi_dharam
+										shinto = 2
+									}
+									AND = {
+										NOT = {
+											religion = adi_dharam
+										}
+										adi_dharam = 2
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = religious_discourse_mod
+				duration = 5475
+			}
+		}
+	}
+	religious_church = {
+		icon = mission_japanese_fort
+		required_missions = { religious_discourse }
+		trigger = {
+			OR = {
+				AND = {
+					any_owned_province = {
+						has_building = great_temple
+					}
+					patriarch_authority = 0.50
+				}
+				NOT = {
+					patriarch_authority = 0.30
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+		}
+	}
+	religious_harmony = {
+		icon = mission_rice_field
+		required_missions = { religious_church }
+		trigger = {
+			religious_unity = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = religious_harmony_mod
+				duration = 5475
+			}
+		}
+	}
+	religious_stance_2 = {
+		icon = mission_hands_praying
+		required_missions = { religious_harmony }
+		trigger = {
+			OR = {
+				piety = 0.80
+				NOT = {
+					piety = -0.80
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+	religious_discourse_2 = {
+		icon = mission_buddhist_monk_praying
+		required_missions = { religious_stance_2 }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = religious_discourse_2.tooltip
+				OR = {
+					AND = {
+						AND = {
+							OR = {
+								AND = {
+									religion_group = christian
+									OR = {
+										AND = {
+											religion = catholic
+											protestant = 3
+										}
+										AND = {
+											NOT = {
+												religion = catholic
+											}
+											catholic = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = muslim
+									OR = {
+										AND = {
+											religion = sunni
+											shiite = 3
+										}
+										AND = {
+											NOT = {
+												religion = sunni
+											}
+											sunni = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = taoic
+									OR = {
+										AND = {
+											religion = buddhism
+											confucianism = 3
+										}
+										AND = {
+											NOT = {
+												religion = buddhism
+											}
+											buddhism = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = dharmic
+									OR = {
+										AND = {
+											religion = hinduism
+											sikhism = 3
+										}
+										AND = {
+											NOT = {
+												religion = hinduism
+											}
+											hinduism = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = jewish_group
+									OR = {
+										AND = {
+											religion = jewish
+											samaritan = 3
+										}
+										AND = {
+											NOT = {
+												religion = jewish
+											}
+											jewish = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = new_world_pagan
+									OR = {
+										AND = {
+											religion = mesoamerican_religion
+											inca_reformed = 3
+										}
+										AND = {
+											NOT = {
+												religion = mesoamerican_religion
+											}
+											mesoamerican_religion = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = european_pagan
+									OR = {
+										AND = {
+											religion = baltic_pagan_reformed
+											finnish_pagan_reformed = 3
+										}
+										AND = {
+											NOT = {
+												religion = baltic_pagan_reformed
+											}
+											baltic_pagan_reformed = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = pagan
+									OR = {
+										AND = {
+											religion = adi_dharam
+											shinto = 3
+										}
+										AND = {
+											NOT = {
+												religion = adi_dharam
+											}
+											adi_dharam = 3
+										}
+									}
+								}
+								AND = {
+									religion_group = pagan
+									OR = {
+										AND = {
+											religion = adi_dharam
+											shinto = 3
+										}
+										AND = {
+											NOT = {
+												religion = adi_dharam
+											}
+											adi_dharam = 3
+										}
+									}
+								}
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									religion_group = christian
+									sunni = 3
+								}
+								AND = {
+									NOT = {
+										religion_group = christian
+									}
+									catholic = 3
+								}
+							}
+						}
+					}
+					tolerance_to_this = 8
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+		}
+	}
+}

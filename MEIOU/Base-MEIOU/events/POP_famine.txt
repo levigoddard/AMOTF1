@@ -1,0 +1,4781 @@
+namespace = POP_famine
+country_event = {
+	id = POP_famine.001
+	title = POP_famine.001.t
+	desc = POP_famine.001.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		regiongroup = {
+			region = {
+				limit = {
+					NOT = {
+						is_wasteland = yes
+					}
+				}
+				if = {
+					limit = {
+						has_province_flag = famine_struck
+						check_variable = {
+							which = famine_years_left
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = show_for_developers
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = number_of_famines
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = number_of_famines
+								value = 0
+							}
+						}
+						change_variable = {
+							which = number_of_famines
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = famine_years_left
+						value = 1
+					}
+					set_variable = {
+						which = rural_percentage_removed
+						value = 0
+					}
+					set_variable = {
+						which = rural_percentage_removed
+						which = famine_destructiveness_set
+					}
+					trigger_switch = {
+						on_trigger = has_province_modifier
+						famine_relieved_1 = {
+							multiply_variable = {
+								which = rural_percentage_removed
+								value = 0.75
+							}
+						}
+						famine_relieved_2 = {
+							multiply_variable = {
+								which = rural_percentage_removed
+								value = 0.5
+							}
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = famine_years_left
+									value = 1
+								}
+							}
+						}
+						clr_province_flag = famine_struck
+						if = {
+							limit = {
+								has_province_modifier = famine_ended
+							}
+							remove_province_modifier = famine_ended
+						}
+						trigger_switch = {
+							on_trigger = has_province_modifier
+							famine_mild = {
+								remove_province_modifier = famine_mild
+							}
+							famine_limited = {
+								remove_province_modifier = famine_limited
+							}
+							famine_harsh = {
+								remove_province_modifier = famine_harsh
+							}
+							famine_terrible = {
+								remove_province_modifier = famine_terrible
+							}
+							famine_devastating = {
+								remove_province_modifier = famine_devastating
+							}
+						}
+						trigger_switch = {
+							on_trigger = has_province_modifier
+							famine_relieved_1 = {
+								remove_province_modifier = famine_relieved_1
+								trigger_switch = {
+									on_trigger = has_province_modifier
+									famine_relief_1 = {
+										remove_province_modifier = famine_relief_1
+									}
+									famine_relief_2 = {
+										remove_province_modifier = famine_relief_2
+									}
+									famine_relief_3 = {
+										remove_province_modifier = famine_relief_3
+									}
+									famine_relief_4 = {
+										remove_province_modifier = famine_relief_4
+									}
+									famine_relief_5 = {
+										remove_province_modifier = famine_relief_5
+									}
+								}
+							}
+							famine_relieved_2 = {
+								remove_province_modifier = famine_relieved_2
+								trigger_switch = {
+									on_trigger = has_province_modifier
+									famine_relief_2 = {
+										remove_province_modifier = famine_relief_2
+									}
+									famine_relief_4 = {
+										remove_province_modifier = famine_relief_4
+									}
+									famine_relief_6 = {
+										remove_province_modifier = famine_relief_6
+									}
+									famine_relief_8 = {
+										remove_province_modifier = famine_relief_8
+									}
+									famine_relief_10 = {
+										remove_province_modifier = famine_relief_10
+									}
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = rural_percentage_removed
+								value = 6
+							}
+						}
+						set_variable = {
+							which = rural_percentage_removed
+							value = 6
+						}
+					}
+					multiply_variable = {
+						which = rural_percentage_removed
+						value = 3
+					}
+					multiply_variable = {
+						which = rural_percentage_removed
+						value = 0.01
+					}
+					hidden_effect = {
+						set_variable = {
+							which = rural_population_old
+							which = rural_pop
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_pop
+							}
+							multiply_variable = {
+								which = rural_population_removed
+								which = rural_percentage_removed
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									value = 0
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									which = rural_population_removed
+								}
+								multiply_variable = {
+									which = rural_population_fleeing
+									which = percent_rural_transfered
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_base_pop_removed
+							}
+						}
+						multiply_variable = {
+							which = rural_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 100
+						}
+						subtract_variable = {
+							which = InvPopRatio
+							which = urban_ratio
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = InvPopRatio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = rural_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = rural_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = rural_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = rural_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = InvPopRatio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						set_variable = {
+							which = urban_ratio
+							value = 100
+						}
+						subtract_variable = {
+							which = urban_ratio
+							which = InvPopRatio
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_pop
+										value = 0.01
+									}
+								}
+							}
+							set_variable = {
+								which = rural_pop
+								value = 0.01
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = ideal_rural_pop
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = ideal_rural_pop
+								value = 1
+							}
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_density
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_density
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								which = rural_density
+							}
+							multiply_variable = {
+								which = total_pop_compare
+								value = 2
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = ideal_rural_pop
+										which = total_pop_compare
+									}
+									check_variable = {
+										which = rural_density
+										value = 10
+									}
+								}
+								set_variable = {
+									which = ideal_rural_pop
+									which = rural_density
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								value = 0
+							}
+							divide_variable = {
+								which = rural_density
+								which = ideal_rural_pop
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_density
+										value = 0.5
+									}
+								}
+							}
+							set_variable = {
+								which = rural_density
+								value = 0.5
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = tribals_ratio
+									value = 0.001
+								}
+								OR = {
+									check_variable = {
+										which = rural_percentage_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = rural_base_pop_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+							}
+							if = {
+								limit = {
+									OR = {
+										is_city = yes
+										is_colony = yes
+									}
+									has_province_flag = plague_attacked
+									owner = {
+										NOT = {
+											is_tribal = yes
+										}
+									}
+									NOT = {
+										check_variable = {
+											which = province_plague_immunity
+											value = 0
+										}
+									}
+									OR = {
+										continent = north_america
+										continent = south_america
+										superregion = australia_superregion
+									}
+									OR = {
+										AND = {
+											owner = {
+												is_colonial_nation = no
+											}
+											owner = {
+												capital_scope = {
+													continent = europe
+												}
+											}
+										}
+										AND = {
+											owner = {
+												is_colonial_nation = yes
+											}
+											owner = {
+												colonial_parent = {
+													capital_scope = {
+														continent = europe
+													}
+												}
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_pop
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_population_old
+								}
+								change_variable = {
+									which = rural_population_tribal_decrease
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_decrease
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+							else = {
+								set_variable = {
+									which = rural_population_tribal_increase
+									which = rural_population_old
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									which = rural_pop
+								}
+								change_variable = {
+									which = rural_population_tribal_increase
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_increase
+								}
+								set_variable = {
+									which = rural_population_tribal_increase
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+						}
+						set_variable = {
+							which = rural_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = rural_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_rural_transfered
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_old
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = famine_struck_recently
+							value = 0.2
+						}
+					}
+					subtract_variable = {
+						which = famine_struck_recently
+						value = 0.2
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = food_per_capita_quality
+								value = 0.01
+							}
+						}
+					}
+					set_variable = {
+						which = food_per_capita_quality
+						value = 0.01
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = tribals_ratio
+							value = 0.01
+						}
+					}
+					set_variable = {
+						which = famine_factor
+						value = 100
+					}
+					subtract_variable = {
+						which = famine_factor
+						which = tribals_ratio
+					}
+					multiply_variable = {
+						which = famine_factor
+						which = rural_pop
+					}
+					multiply_variable = {
+						which = famine_factor
+						value = 0.01
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = famine_factor
+									value = 0.01
+								}
+							}
+						}
+						set_variable = {
+							which = famine_factor
+							value = 0.01
+						}
+					}
+				}
+				else = {
+					set_variable = {
+						which = famine_factor
+						which = rural_pop
+					}
+				}
+				divide_variable = {
+					which = famine_factor
+					which = food_per_capita_quality
+				}
+				multiply_variable = {
+					which = famine_factor
+					value = 0.8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = rural_density
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							has_building = canal_level_1
+						}
+						multiply_variable = {
+							which = famine_factor
+							value = 0.85
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = canal_level_2
+						}
+						multiply_variable = {
+							which = famine_factor
+							value = 0.75
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = canal_level_3
+						}
+						multiply_variable = {
+							which = famine_factor
+							value = 0.65
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = tribals_ratio
+							value = 0.01
+						}
+					}
+					set_variable = {
+						which = famine_back_weight
+						value = 100
+					}
+					subtract_variable = {
+						which = famine_back_weight
+						which = tribals_ratio
+					}
+					multiply_variable = {
+						which = famine_back_weight
+						which = rural_pop
+					}
+					multiply_variable = {
+						which = famine_back_weight
+						value = 0.01
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = famine_back_weight
+									value = 0.01
+								}
+							}
+						}
+						set_variable = {
+							which = famine_back_weight
+							value = 0.01
+						}
+					}
+				}
+				else = {
+					set_variable = {
+						which = famine_back_weight
+						which = rural_pop
+					}
+				}
+				set_variable = {
+					which = famine_factor_dispersed_1
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_dispersed_2
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_dispersed_3
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_received_1
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_received_2
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_received_3
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_transfer_1
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_transfer_2
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_transfer_3
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_dispersed_1
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_dispersed_2
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_dispersed_3
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_received_1
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_received_2
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_received_3
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_transfer_1
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_transfer_2
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_transfer_3
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_total
+					value = 0
+				}
+				set_variable = {
+					which = famine_back_weight_total
+					value = 0
+				}
+				set_variable = {
+					which = famine_factor_dispersed_1
+					which = famine_factor
+				}
+				multiply_variable = {
+					which = famine_factor_dispersed_1
+					value = 0.5
+				}
+				set_variable = {
+					which = famine_back_weight_dispersed_1
+					which = famine_back_weight
+				}
+				multiply_variable = {
+					which = famine_back_weight_dispersed_1
+					value = 0.5
+				}
+				every_neighbor_province = {
+					limit = {
+						NOT = {
+							is_wasteland = yes
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_1
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_factor_transfer_1
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_1
+						which = famine_factor_dispersed_1
+					}
+					PREV = {
+						change_variable = {
+							which = famine_factor_transfer_1
+							which = PREV
+						}
+					}
+					PREV = {
+						change_variable = {
+							which = famine_factor_received_1
+							which = famine_factor_transfer_1
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_1
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_factor_transfer_1
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_1
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_back_weight_transfer_1
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_1
+						which = famine_back_weight_dispersed_1
+					}
+					PREV = {
+						change_variable = {
+							which = famine_back_weight_transfer_1
+							which = PREV
+						}
+					}
+					PREV = {
+						change_variable = {
+							which = famine_back_weight_received_1
+							which = famine_back_weight_transfer_1
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_1
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_back_weight_transfer_1
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = famine_factor_dispersed_2
+					which = famine_factor_received_1
+				}
+				multiply_variable = {
+					which = famine_factor_dispersed_2
+					value = 0.5
+				}
+				set_variable = {
+					which = famine_back_weight_dispersed_2
+					which = famine_back_weight_received_1
+				}
+				multiply_variable = {
+					which = famine_back_weight_dispersed_2
+					value = 0.5
+				}
+			}
+		}
+		regiongroup = {
+			region = {
+				limit = {
+					NOT = {
+						is_wasteland = yes
+					}
+				}
+				every_neighbor_province = {
+					limit = {
+						NOT = {
+							is_wasteland = yes
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_2
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_factor_transfer_2
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_2
+						which = famine_factor_dispersed_2
+					}
+					PREV = {
+						change_variable = {
+							which = famine_factor_transfer_2
+							which = PREV
+						}
+					}
+					PREV = {
+						change_variable = {
+							which = famine_factor_received_2
+							which = famine_factor_transfer_2
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_2
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_factor_transfer_2
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_2
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_back_weight_transfer_2
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_2
+						which = famine_back_weight_dispersed_2
+					}
+					PREV = {
+						change_variable = {
+							which = famine_back_weight_transfer_2
+							which = PREV
+						}
+					}
+					PREV = {
+						change_variable = {
+							which = famine_back_weight_received_2
+							which = famine_back_weight_transfer_2
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_2
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_back_weight_transfer_2
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = famine_factor_dispersed_3
+					which = famine_factor_received_2
+				}
+				multiply_variable = {
+					which = famine_factor_dispersed_3
+					value = 0.5
+				}
+				set_variable = {
+					which = famine_back_weight_dispersed_3
+					which = famine_back_weight_received_2
+				}
+				multiply_variable = {
+					which = famine_back_weight_dispersed_3
+					value = 0.5
+				}
+			}
+		}
+		regiongroup = {
+			region = {
+				limit = {
+					NOT = {
+						is_wasteland = yes
+					}
+				}
+				every_neighbor_province = {
+					limit = {
+						NOT = {
+							is_wasteland = yes
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_3
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_factor_transfer_3
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_3
+						which = famine_factor_dispersed_3
+					}
+					PREV = {
+						change_variable = {
+							which = famine_factor_transfer_3
+							which = PREV
+						}
+					}
+					PREV = {
+						change_variable = {
+							which = famine_factor_received_3
+							which = famine_factor_transfer_3
+						}
+					}
+					set_variable = {
+						which = famine_factor_transfer_3
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_factor_transfer_3
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_3
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_back_weight_transfer_3
+							value = 0
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_3
+						which = famine_back_weight_dispersed_3
+					}
+					PREV = {
+						change_variable = {
+							which = famine_back_weight_transfer_3
+							which = PREV
+						}
+					}
+					PREV = {
+						change_variable = {
+							which = famine_back_weight_received_3
+							which = famine_back_weight_transfer_3
+						}
+					}
+					set_variable = {
+						which = famine_back_weight_transfer_3
+						value = 0
+					}
+					PREV = {
+						set_variable = {
+							which = famine_back_weight_transfer_3
+							value = 0
+						}
+					}
+				}
+			}
+		}
+		regiongroup = {
+			region = {
+				limit = {
+					NOT = {
+						is_wasteland = yes
+					}
+				}
+				change_variable = {
+					which = famine_factor_total
+					which = famine_factor
+				}
+				change_variable = {
+					which = famine_factor_total
+					which = famine_factor_received_1
+				}
+				change_variable = {
+					which = famine_factor_total
+					which = famine_factor_received_2
+				}
+				change_variable = {
+					which = famine_factor_total
+					which = famine_factor_received_3
+				}
+				change_variable = {
+					which = famine_back_weight_total
+					which = famine_back_weight
+				}
+				change_variable = {
+					which = famine_back_weight_total
+					which = famine_back_weight_received_1
+				}
+				change_variable = {
+					which = famine_back_weight_total
+					which = famine_back_weight_received_2
+				}
+				change_variable = {
+					which = famine_back_weight_total
+					which = famine_back_weight_received_3
+				}
+				set_variable = {
+					which = famine_chance
+					value = 0
+				}
+				set_variable = {
+					which = famine_chance
+					which = famine_factor_total
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = famine_back_weight_total
+							value = 0
+						}
+					}
+				}
+				else = {
+					divide_variable = {
+						which = famine_chance
+						which = famine_back_weight_total
+					}
+				}
+				subtract_variable = {
+					which = famine_chance
+					which = famine_struck_recently
+				}
+				set_variable = {
+					which = famine_destructiveness
+					value = 0
+				}
+				set_variable = {
+					which = famine_destructiveness
+					which = famine_chance
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_province_flag = famine_struck
+						}
+						check_variable = {
+							which = famine_chance
+							value = 1.95
+						}
+						NOT = {
+							check_variable = {
+								which = famine_years_left
+								value = 1
+							}
+						}
+					}
+					random_list = {
+						75 = {}
+						25 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						75 = {}
+						25 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						75 = {}
+						25 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						50 = {}
+						50 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						50 = {}
+						50 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						50 = {}
+						50 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						50 = {}
+						50 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						50 = {}
+						50 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+					random_list = {
+						50 = {}
+						50 = {
+							change_variable = {
+								which = famine_chance
+								value = 0.5
+							}
+						}
+					}
+				}
+			}
+		}
+		regiongroup = {
+			region = {
+				limit = {
+					NOT = {
+						is_wasteland = yes
+					}
+					check_variable = {
+						which = famine_chance
+						value = 6.25
+					}
+					NOT = {
+						has_province_flag = famine_struck
+					}
+				}
+				set_province_flag = famine_must_strike
+				every_neighbor_province = {
+					limit = {
+						NOT = {
+							is_wasteland = yes
+						}
+						check_variable = {
+							which = famine_destructiveness
+							value = 1.5
+						}
+						NOT = {
+							has_province_flag = famine_struck
+						}
+					}
+					set_province_flag = famine_must_strike
+					every_neighbor_province = {
+						limit = {
+							NOT = {
+								is_wasteland = yes
+							}
+							check_variable = {
+								which = famine_destructiveness
+								value = 1.5
+							}
+							NOT = {
+								has_province_flag = famine_struck
+							}
+						}
+						set_province_flag = famine_must_strike
+						every_neighbor_province = {
+							limit = {
+								NOT = {
+									is_wasteland = yes
+								}
+								check_variable = {
+									which = famine_destructiveness
+									value = 1.5
+								}
+								NOT = {
+									has_province_flag = famine_struck
+								}
+							}
+							set_province_flag = famine_must_strike
+							every_neighbor_province = {
+								limit = {
+									NOT = {
+										is_wasteland = yes
+									}
+									check_variable = {
+										which = famine_destructiveness
+										value = 1.5
+									}
+									NOT = {
+										has_province_flag = famine_struck
+									}
+								}
+								set_province_flag = famine_must_strike
+								every_neighbor_province = {
+									limit = {
+										NOT = {
+											is_wasteland = yes
+										}
+										check_variable = {
+											which = famine_destructiveness
+											value = 1.5
+										}
+										NOT = {
+											has_province_flag = famine_struck
+										}
+									}
+									set_province_flag = famine_must_strike
+									every_neighbor_province = {
+										limit = {
+											NOT = {
+												is_wasteland = yes
+											}
+											check_variable = {
+												which = famine_destructiveness
+												value = 1.5
+											}
+											NOT = {
+												has_province_flag = famine_struck
+											}
+										}
+										set_province_flag = famine_must_strike
+										every_neighbor_province = {
+											limit = {
+												NOT = {
+													is_wasteland = yes
+												}
+												check_variable = {
+													which = famine_destructiveness
+													value = 1.5
+												}
+												NOT = {
+													has_province_flag = famine_struck
+												}
+											}
+											set_province_flag = famine_must_strike
+											every_neighbor_province = {
+												limit = {
+													NOT = {
+														is_wasteland = yes
+													}
+													check_variable = {
+														which = famine_destructiveness
+														value = 1.5
+													}
+													NOT = {
+														has_province_flag = famine_struck
+													}
+												}
+												set_province_flag = famine_must_strike
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			set_variable = {
+				which = country_famine_destructiveness_gross
+				value = 0
+			}
+		}
+		regiongroup = {
+			region = {
+				limit = {
+					NOT = {
+						is_wasteland = yes
+					}
+					has_province_flag = famine_must_strike
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = famine_destructiveness
+							value = 7
+						}
+					}
+					set_variable = {
+						which = famine_destructiveness
+						value = 7
+					}
+				}
+				set_variable = {
+					which = famine_destructiveness_set
+					value = 0
+				}
+				set_variable = {
+					which = famine_destructiveness_set
+					which = famine_destructiveness
+				}
+				set_variable = {
+					which = country_famine_destructiveness_gross
+					value = 0
+				}
+				set_variable = {
+					which = country_famine_destructiveness_gross
+					which = famine_destructiveness_set
+				}
+				multiply_variable = {
+					which = country_famine_destructiveness_gross
+					which = total_pop
+				}
+				owner = {
+					change_variable = {
+						which = country_famine_destructiveness_gross
+						which = PREV
+					}
+				}
+				owner = {
+					set_country_flag = new_famine_strikes
+					add_country_modifier = {
+						name = famine_in_country
+						duration = 1095
+						hidden = yes
+					}
+				}
+				clr_province_flag = famine_must_strike
+				set_province_flag = famine_struck
+				if = {
+					limit = {
+						check_variable = {
+							which = famine_destructiveness
+							value = 2.5
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = famine_destructiveness
+								value = 3
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = famine_destructiveness
+									value = 3.5
+								}
+							}
+							add_permanent_province_modifier = {
+								name = famine_devastating
+								duration = -1
+							}
+						}
+						else = {
+							add_permanent_province_modifier = {
+								name = famine_terrible
+								duration = -1
+							}
+						}
+					}
+					else = {
+						add_permanent_province_modifier = {
+							name = famine_harsh
+							duration = -1
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = {
+								which = famine_destructiveness
+								value = 2
+							}
+						}
+						add_permanent_province_modifier = {
+							name = famine_limited
+							duration = -1
+						}
+					}
+					else = {
+						add_permanent_province_modifier = {
+							name = famine_mild
+							duration = -1
+						}
+					}
+				}
+				set_variable = {
+					which = famine_struck_recently
+					value = 6
+				}
+				set_variable = {
+					which = famine_years_left
+					value = 3
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = show_for_developers
+				}
+			}
+			every_country = {
+				set_variable = {
+					which = country_famine_destructiveness_gross
+					value = 0
+				}
+			}
+			regiongroup = {
+				region = {
+					limit = {
+						NOT = {
+							is_wasteland = yes
+						}
+					}
+					set_variable = {
+						which = famine_rural_density_mod
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_dispersed_1
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_dispersed_2
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_dispersed_3
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_received_1
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_received_2
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_received_3
+						value = 0
+					}
+					set_variable = {
+						which = famine_back_weight_total
+						value = 0
+					}
+					set_variable = {
+						which = famine_chance
+						value = 0
+					}
+					set_variable = {
+						which = famine_destructiveness
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_dispersed_1
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_dispersed_2
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_dispersed_3
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_received_1
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_received_2
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_received_3
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor_total
+						value = 0
+					}
+					set_variable = {
+						which = famine_factor
+						value = 0
+					}
+					set_variable = {
+						which = famine_rural_density_sub
+						value = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "POP_famine.001.a"
+		every_country = {
+			limit = {
+				has_country_flag = new_famine_strikes
+			}
+			set_variable = {
+				which = country_famine_recourse_composite
+				value = 0
+			}
+			set_variable = {
+				which = country_famine_recourse_composite
+				which = country_famine_destructiveness_gross
+			}
+			if = {
+				limit = {
+					is_variable_equal = {
+						which = country_total_pop
+						value = 0
+					}
+				}
+			}
+			else = {
+				divide_variable = {
+					which = country_famine_recourse_composite
+					which = country_total_pop
+				}
+			}
+			country_event = {
+				id = POP_famine.003
+				days = 5
+			}
+		}
+	}
+}
+country_event = {
+	id = POP_famine.002
+	title = POP_famine.002.t
+	desc = POP_famine.002.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		country_event = {
+			id = POP_famine.001
+			days = 5
+		}
+	}
+	option = {
+		name = "POP_famine.002.a"
+	}
+}
+country_event = {
+	id = POP_famine.003
+	title = POP_famine.003.t
+	desc = POP_famine.003.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	trigger = {
+		check_variable = {
+			which = country_famine_recourse_composite
+			value = 0.25
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = new_famine_strikes
+			set_variable = {
+				which = ducat_cost_a
+				value = 0
+			}
+			set_variable = {
+				which = ducat_cost_a
+				which = country_famine_destructiveness_gross
+			}
+			multiply_variable = {
+				which = ducat_cost_a
+				value = 2
+			}
+			multiply_variable = {
+				which = ducat_cost_a
+				value = 0.001
+			}
+			multiply_variable = {
+				which = ducat_cost_a
+				value = 1000
+			}
+			set_variable = {
+				which = ducat_cost_b
+				value = 0
+			}
+			set_variable = {
+				which = ducat_cost_b
+				which = country_famine_destructiveness_gross
+			}
+			multiply_variable = {
+				which = ducat_cost_b
+				value = 0.75
+			}
+			multiply_variable = {
+				which = ducat_cost_b
+				value = 0.001
+			}
+			multiply_variable = {
+				which = ducat_cost_b
+				value = 1000
+			}
+			set_variable = {
+				which = admin_cost_a
+				value = 0
+			}
+			set_variable = {
+				which = admin_cost_a
+				which = country_famine_recourse_composite
+			}
+			multiply_variable = {
+				which = admin_cost_a
+				value = 75
+			}
+			set_variable = {
+				which = admin_cost_b
+				value = 0
+			}
+			set_variable = {
+				which = admin_cost_b
+				which = country_famine_recourse_composite
+			}
+			multiply_variable = {
+				which = admin_cost_b
+				value = 50
+			}
+			set_variable = {
+				which = stability_loss_a
+				value = 0
+			}
+			set_variable = {
+				which = stability_loss_a
+				which = country_famine_recourse_composite
+			}
+			multiply_variable = {
+				which = stability_loss_a
+				value = 15
+			}
+			set_variable = {
+				which = stability_loss_b
+				value = 0
+			}
+			set_variable = {
+				which = stability_loss_b
+				which = country_famine_recourse_composite
+			}
+			multiply_variable = {
+				which = stability_loss_b
+				value = 30
+			}
+			set_variable = {
+				which = stability_loss_c
+				value = 0
+			}
+			set_variable = {
+				which = stability_loss_c
+				which = country_famine_recourse_composite
+			}
+			multiply_variable = {
+				which = stability_loss_c
+				value = 45
+			}
+			multiply_variable = {
+				which = admin_cost_a
+				value = 0.001
+			}
+			multiply_variable = {
+				which = admin_cost_a
+				value = 1000
+			}
+			multiply_variable = {
+				which = admin_cost_b
+				value = 0.001
+			}
+			multiply_variable = {
+				which = admin_cost_b
+				value = 1000
+			}
+		}
+	}
+	option = {
+		name = "POP_famine.003.a"
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = famine_relief_significant
+		custom_tooltip = admin_cost_a
+		hidden_effect = {
+			set_variable = {
+				which = ducat_cost
+				value = 0
+			}
+			set_variable = {
+				which = ducat_cost
+				which = ducat_cost_a
+			}
+			set_variable = {
+				which = admin_cost
+				value = 0
+			}
+			set_variable = {
+				which = admin_cost
+				which = admin_cost_a
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 65536
+					}
+				}
+				add_treasury = -65536
+				subtract_variable = {
+					which = ducat_cost
+					value = 65536
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 32768
+					}
+				}
+				add_treasury = -32768
+				subtract_variable = {
+					which = ducat_cost
+					value = 32768
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 16384
+					}
+				}
+				add_treasury = -16384
+				subtract_variable = {
+					which = ducat_cost
+					value = 16384
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 8192
+					}
+				}
+				add_treasury = -8192
+				subtract_variable = {
+					which = ducat_cost
+					value = 8192
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 4096
+					}
+				}
+				add_treasury = -4096
+				subtract_variable = {
+					which = ducat_cost
+					value = 4096
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 2048
+					}
+				}
+				add_treasury = -2048
+				subtract_variable = {
+					which = ducat_cost
+					value = 2048
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 1024
+					}
+				}
+				add_treasury = -1024
+				subtract_variable = {
+					which = ducat_cost
+					value = 1024
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 512
+					}
+				}
+				add_treasury = -512
+				subtract_variable = {
+					which = ducat_cost
+					value = 512
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 256
+					}
+				}
+				add_treasury = -256
+				subtract_variable = {
+					which = ducat_cost
+					value = 256
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 128
+					}
+				}
+				add_treasury = -128
+				subtract_variable = {
+					which = ducat_cost
+					value = 128
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 64
+					}
+				}
+				add_treasury = -64
+				subtract_variable = {
+					which = ducat_cost
+					value = 64
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 32
+					}
+				}
+				add_treasury = -32
+				subtract_variable = {
+					which = ducat_cost
+					value = 32
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 16
+					}
+				}
+				add_treasury = -16
+				subtract_variable = {
+					which = ducat_cost
+					value = 16
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 8
+					}
+				}
+				add_treasury = -8
+				subtract_variable = {
+					which = ducat_cost
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 4
+					}
+				}
+				add_treasury = -4
+				subtract_variable = {
+					which = ducat_cost
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 2
+					}
+				}
+				add_treasury = -2
+				subtract_variable = {
+					which = ducat_cost
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = ducat_cost
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.5
+					}
+				}
+				add_treasury = -0.5
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.25
+					}
+				}
+				add_treasury = -0.25
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.25
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.125
+					}
+				}
+				add_treasury = -0.125
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.125
+				}
+			}
+			set_variable = {
+				which = ducat_cost
+				value = 0
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 1024
+					}
+				}
+				add_adm_power = -1024
+				subtract_variable = {
+					which = admin_cost
+					value = 1024
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 512
+					}
+				}
+				add_adm_power = -512
+				subtract_variable = {
+					which = admin_cost
+					value = 512
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 256
+					}
+				}
+				add_adm_power = -256
+				subtract_variable = {
+					which = admin_cost
+					value = 256
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 128
+					}
+				}
+				add_adm_power = -128
+				subtract_variable = {
+					which = admin_cost
+					value = 128
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 64
+					}
+				}
+				add_adm_power = -64
+				subtract_variable = {
+					which = admin_cost
+					value = 64
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 32
+					}
+				}
+				add_adm_power = -32
+				subtract_variable = {
+					which = admin_cost
+					value = 32
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 16
+					}
+				}
+				add_adm_power = -16
+				subtract_variable = {
+					which = admin_cost
+					value = 16
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 8
+					}
+				}
+				add_adm_power = -8
+				subtract_variable = {
+					which = admin_cost
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 4
+					}
+				}
+				add_adm_power = -4
+				subtract_variable = {
+					which = admin_cost
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 2
+					}
+				}
+				add_adm_power = -2
+				subtract_variable = {
+					which = admin_cost
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 1
+					}
+				}
+				add_adm_power = -1
+				subtract_variable = {
+					which = admin_cost
+					value = 1
+				}
+			}
+			set_variable = {
+				which = admin_cost
+				value = 0
+			}
+			every_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				trigger_switch = {
+					on_trigger = has_province_modifier
+					famine_mild = {
+						add_permanent_province_modifier = {
+							name = famine_relief_2
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_2
+							hidden = yes
+						}
+					}
+					famine_limited = {
+						add_permanent_province_modifier = {
+							name = famine_relief_4
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_2
+							hidden = yes
+						}
+					}
+					famine_harsh = {
+						add_permanent_province_modifier = {
+							name = famine_relief_6
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_2
+							hidden = yes
+						}
+					}
+					famine_terrible = {
+						add_permanent_province_modifier = {
+							name = famine_relief_8
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_2
+							hidden = yes
+						}
+					}
+					famine_devastating = {
+						add_permanent_province_modifier = {
+							name = famine_relief_10
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_2
+							hidden = yes
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = ducat_cost_a
+		if = {
+			limit = {
+				check_variable = {
+					which = stability_loss_a
+					value = 0.01
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 24
+						}
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 48
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 72
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 96
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 120
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 144
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 168
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 192
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_a
+							value = 216
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else = {
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "POP_famine.003.b"
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = famine_relief_partial
+		custom_tooltip = admin_cost_b
+		hidden_effect = {
+			set_variable = {
+				which = ducat_cost
+				value = 0
+			}
+			set_variable = {
+				which = ducat_cost
+				which = ducat_cost_b
+			}
+			set_variable = {
+				which = admin_cost
+				value = 0
+			}
+			set_variable = {
+				which = admin_cost
+				which = admin_cost_b
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 65536
+					}
+				}
+				add_treasury = -65536
+				subtract_variable = {
+					which = ducat_cost
+					value = 65536
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 32768
+					}
+				}
+				add_treasury = -32768
+				subtract_variable = {
+					which = ducat_cost
+					value = 32768
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 16384
+					}
+				}
+				add_treasury = -16384
+				subtract_variable = {
+					which = ducat_cost
+					value = 16384
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 8192
+					}
+				}
+				add_treasury = -8192
+				subtract_variable = {
+					which = ducat_cost
+					value = 8192
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 4096
+					}
+				}
+				add_treasury = -4096
+				subtract_variable = {
+					which = ducat_cost
+					value = 4096
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 2048
+					}
+				}
+				add_treasury = -2048
+				subtract_variable = {
+					which = ducat_cost
+					value = 2048
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 1024
+					}
+				}
+				add_treasury = -1024
+				subtract_variable = {
+					which = ducat_cost
+					value = 1024
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 512
+					}
+				}
+				add_treasury = -512
+				subtract_variable = {
+					which = ducat_cost
+					value = 512
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 256
+					}
+				}
+				add_treasury = -256
+				subtract_variable = {
+					which = ducat_cost
+					value = 256
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 128
+					}
+				}
+				add_treasury = -128
+				subtract_variable = {
+					which = ducat_cost
+					value = 128
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 64
+					}
+				}
+				add_treasury = -64
+				subtract_variable = {
+					which = ducat_cost
+					value = 64
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 32
+					}
+				}
+				add_treasury = -32
+				subtract_variable = {
+					which = ducat_cost
+					value = 32
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 16
+					}
+				}
+				add_treasury = -16
+				subtract_variable = {
+					which = ducat_cost
+					value = 16
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 8
+					}
+				}
+				add_treasury = -8
+				subtract_variable = {
+					which = ducat_cost
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 4
+					}
+				}
+				add_treasury = -4
+				subtract_variable = {
+					which = ducat_cost
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 2
+					}
+				}
+				add_treasury = -2
+				subtract_variable = {
+					which = ducat_cost
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = ducat_cost
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.5
+					}
+				}
+				add_treasury = -0.5
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.25
+					}
+				}
+				add_treasury = -0.25
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.25
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.125
+					}
+				}
+				add_treasury = -0.125
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.125
+				}
+			}
+			set_variable = {
+				which = ducat_cost
+				value = 0
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 1024
+					}
+				}
+				add_adm_power = -1024
+				subtract_variable = {
+					which = admin_cost
+					value = 1024
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 512
+					}
+				}
+				add_adm_power = -512
+				subtract_variable = {
+					which = admin_cost
+					value = 512
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 256
+					}
+				}
+				add_adm_power = -256
+				subtract_variable = {
+					which = admin_cost
+					value = 256
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 128
+					}
+				}
+				add_adm_power = -128
+				subtract_variable = {
+					which = admin_cost
+					value = 128
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 64
+					}
+				}
+				add_adm_power = -64
+				subtract_variable = {
+					which = admin_cost
+					value = 64
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 32
+					}
+				}
+				add_adm_power = -32
+				subtract_variable = {
+					which = admin_cost
+					value = 32
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 16
+					}
+				}
+				add_adm_power = -16
+				subtract_variable = {
+					which = admin_cost
+					value = 16
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 8
+					}
+				}
+				add_adm_power = -8
+				subtract_variable = {
+					which = admin_cost
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 4
+					}
+				}
+				add_adm_power = -4
+				subtract_variable = {
+					which = admin_cost
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 2
+					}
+				}
+				add_adm_power = -2
+				subtract_variable = {
+					which = admin_cost
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = admin_cost
+						value = 1
+					}
+				}
+				add_adm_power = -1
+				subtract_variable = {
+					which = admin_cost
+					value = 1
+				}
+			}
+			set_variable = {
+				which = admin_cost
+				value = 0
+			}
+			every_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				trigger_switch = {
+					on_trigger = has_province_modifier
+					famine_mild = {
+						add_permanent_province_modifier = {
+							name = famine_relief_1
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_1
+							hidden = yes
+						}
+					}
+					famine_limited = {
+						add_permanent_province_modifier = {
+							name = famine_relief_2
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_1
+							hidden = yes
+						}
+					}
+					famine_harsh = {
+						add_permanent_province_modifier = {
+							name = famine_relief_3
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_1
+							hidden = yes
+						}
+					}
+					famine_terrible = {
+						add_permanent_province_modifier = {
+							name = famine_relief_4
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_1
+							hidden = yes
+						}
+					}
+					famine_devastating = {
+						add_permanent_province_modifier = {
+							name = famine_relief_5
+							hidden = yes
+						}
+						add_permanent_province_modifier = {
+							name = famine_relieved_1
+							hidden = yes
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = ducat_cost_b
+		if = {
+			limit = {
+				check_variable = {
+					which = stability_loss_b
+					value = 0.01
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 24
+						}
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 48
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 72
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 96
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 120
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 144
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 168
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 192
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_b
+							value = 216
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else = {
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "POP_famine.003.c"
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = stability_loss_c
+					value = 0.01
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 24
+						}
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 48
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 72
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 96
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 120
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 144
+						}
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 168
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 192
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 50
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = stability_loss_c
+							value = 216
+						}
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+			else = {
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 75
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+				random = {
+					chance = 25
+					add_stability = -1
+					hidden_effect = {
+						country_event = {
+							id = POP_Stability.003
+						}
+					}
+					if = {
+						limit = {
+							is_emperor_of_china = yes
+						}
+						add_mandate = -5
+					}
+				}
+			}
+		}
+	}
+}

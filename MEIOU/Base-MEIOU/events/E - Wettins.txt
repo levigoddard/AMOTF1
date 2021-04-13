@@ -1,0 +1,659 @@
+country_event = {
+	id = wettin_dynastic.1
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = MEI
+			tag = SWR
+			tag = SWT
+			tag = SGO
+			tag = SCB
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		SAX = {
+			dynasty = "von Wettin"
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = SAX
+			}
+			SAX = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = SAX
+				}
+			}
+			change_tag = SAX
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			SAX = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = SAX
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.2
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = SWR
+			tag = SWT
+			tag = SGO
+			tag = SCB
+			tag = REU
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		MEI = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = MEI
+			}
+			MEI = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = MEI
+				}
+			}
+			change_tag = MEI
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			MEI = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = MEI
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.3
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = MEI
+			tag = SWT
+			tag = SGO
+			tag = SCB
+			tag = REU
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		SWR = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			MEI = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = SWR
+			}
+			SWR = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = SWR
+				}
+			}
+			change_tag = SWR
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			SWR = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = SWR
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.4
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = MEI
+			tag = SWR
+			tag = SGO
+			tag = SCB
+			tag = REU
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		SWT = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			MEI = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWR = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = SWT
+			}
+			SWT = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = SWT
+				}
+			}
+			change_tag = SWT
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			SWT = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = SWT
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.5
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = MEI
+			tag = SWR
+			tag = SWT
+			tag = SCB
+			tag = REU
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		SGO = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			MEI = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWR = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWT = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = SGO
+			}
+			SGO = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = SGO
+				}
+			}
+			change_tag = SGO
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			SGO = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = SGO
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.6
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = MEI
+			tag = SWR
+			tag = SWT
+			tag = SGO
+			tag = REU
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		SCB = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			MEI = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWR = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWT = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SGO = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = SCB
+			}
+			SCB = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = SCB
+				}
+			}
+			change_tag = SCB
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			SCB = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = SCB
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.7
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = MEI
+			tag = SWR
+			tag = SWT
+			tag = SGO
+			tag = SCB
+			tag = THU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		REU = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			MEI = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWR = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWT = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SGO = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SCB = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = REU
+			}
+			REU = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = REU
+				}
+			}
+			change_tag = REU
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			REU = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = REU
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}
+country_event = {
+	id = wettin_dynastic.8
+	title = "wettin_dynastic.1.t"
+	desc = "wettin_dynastic.1.d"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = wettin_succession
+		OR = {
+			tag = SAX
+			tag = MEI
+			tag = SWR
+			tag = SWT
+			tag = SGO
+			tag = SCB
+			tag = REU
+		}
+		NOT = {
+			dynasty = "von Wettin"
+		}
+		THU = {
+			dynasty = "von Wettin"
+		}
+		NOT = {
+			SAX = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			MEI = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWR = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SWT = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SGO = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			REU = {
+				dynasty = "von Wettin"
+			}
+		}
+		NOT = {
+			SCB = {
+				dynasty = "von Wettin"
+			}
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = "hindustani_unification.2a"
+		if = {
+			limit = {
+				exists = THU
+			}
+			THU = {
+				inherit = ROOT
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = THU
+				}
+			}
+			change_tag = THU
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "hindustani_unification.2a"
+		hidden_effect = {
+			THU = {
+				country_event = {
+					id = welfs_dynastic.6
+					days = 1
+				}
+			}
+		}
+		change_tag = THU
+	}
+	after = {
+		clr_country_flag = wettin_succession
+	}
+}

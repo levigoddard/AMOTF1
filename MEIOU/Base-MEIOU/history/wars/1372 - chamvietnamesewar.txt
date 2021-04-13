@@ -1,0 +1,14 @@
+name = "Chinese-Vietnamese War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2395
+}
+1372.1.1 = {
+	add_attacker = CHA
+	add_defender = DAI
+}
+1390.1.1 = {
+	rem_attacker = CHA
+	rem_defender = DAI
+}

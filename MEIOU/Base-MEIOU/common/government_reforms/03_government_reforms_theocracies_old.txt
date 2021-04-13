@@ -1,0 +1,98 @@
+subservient_administrators_reform = {
+	icon = "paper_with_seal"
+	allow_normal_conversion = yes
+	modifiers = {
+		free_policy = 1
+	}
+}
+religious_administrators_reform = {
+	icon = "paper_with_seal_3"
+	allow_normal_conversion = yes
+	modifiers = {
+		stability_cost_modifier = -0.1
+	}
+}
+maintain_religious_head_reform = {
+	icon = "nobleman"
+	allow_normal_conversion = yes
+	modifiers = {
+		yearly_absolutism = 0.1
+	}
+}
+hereditary_religious_leadership_reform = {
+	potential = {
+		religion_group = muslim
+	}
+	icon = "muslim_highlighted"
+	allow_normal_conversion = yes
+	effect = {
+		set_country_flag = populists_in_government
+		change_government = monarchy
+		add_government_reform = divine_right
+		add_government_reform = delegated_rulers
+		add_government_reform = hereditary_elite
+		hidden_effect = {
+			set_legacy_government = despotic_monarchy
+		}
+		set_legacy_government = feudal_monarchy
+	}
+	ai = {
+		factor = 0
+	}
+}
+crown_leader_reform = {
+	icon = "crown_highlighted"
+	allow_normal_conversion = yes
+	trigger = {
+		NOT = {
+			has_government_attribute_short_desc = locked_government_type
+		}
+	}
+	effect = {
+		set_country_flag = populists_in_government
+		change_government = monarchy
+		add_government_reform = parliamentary_monarchy
+		add_government_reform = delegated_rulers
+		add_government_reform = appointed_elite
+		set_legacy_government = english_monarchy_legacy
+	}
+	ai = {
+		factor = 0
+	}
+}
+proclaim_republic_reform = {
+	icon = "parliament_highlighted"
+	allow_normal_conversion = yes
+	trigger = {
+		NOT = {
+			has_government_attribute_short_desc = locked_government_type
+		}
+	}
+	effect = {
+		set_country_flag = populists_in_government
+		change_government = republic
+		add_government_reform = peasants_republic
+		add_government_reform = assembly_reform
+		add_government_reform = vote_tax
+		set_legacy_government = constitutional_republic
+	}
+	ai = {
+		factor = 0
+	}
+}
+battle_pope_reform = {
+	icon = "soldiers_6"
+	allow_normal_conversion = yes
+	potential = {
+		AND = {
+			OR = {
+				has_reform = papacy_reform
+				has_reform = papal_government
+			}
+		}
+	}
+	rulers_can_be_generals = yes
+	modifiers = {
+		leader_land_fire = 1
+	}
+}

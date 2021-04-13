@@ -1,0 +1,43 @@
+name = "First Ottoman-Habsburg War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2375
+}
+1527.7.1 = {
+	add_attacker = HAB
+	add_defender = TRA
+}
+1528.9.1 = {
+	add_defender = TUR
+}
+1528.9.1 = {
+	rem_defender = TRA
+}
+1529.9.27 = {
+	battle = {
+		name = "Vienna"
+		location = 134
+		attacker = {
+			commander = "Wilhelm von Roggendorf"
+			infantry = 24700
+			cavalry = 2000
+			losses = 15
+			country = HAB
+		}
+		defender = {
+			commander = "Suleiman I"
+			infantry = 80000
+			cavalry = 40000
+			losses = 20
+			country = TUR
+		}
+		result = yes
+	}
+	add_defender = TRA
+}
+1533.6.22 = {
+	rem_attacker = HAB
+	rem_defender = TUR
+	rem_defender = TRA
+}

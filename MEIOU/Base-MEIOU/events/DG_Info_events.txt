@@ -1,0 +1,1607 @@
+namespace = DG_papal_authority
+namespace = DG_piety
+namespace = DG_church_influence
+country_event = {
+	id = DG_papal_authority.001
+	title = DG_papal_authority.001.t
+	desc = DG_papal_authority.001.d
+	picture = catholic_habemus_papam
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			PAP = {
+				set_variable = {
+					which = FP_catholic_provinces
+					value = 0
+				}
+				set_variable = {
+					which = FP_catholic_states
+					value = 0
+				}
+				set_variable = {
+					which = FP_catholic_patriarchate
+					value = 0
+				}
+				set_variable = {
+					which = FP_papal_provinces
+					value = 0
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						religion = catholic
+						capital_scope = {
+							continent = europe
+						}
+					}
+				}
+				PAP = {
+					change_variable = {
+						which = papacy_calculation_states
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						religion = catholic
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = support_antipope
+							}
+						}
+						PAP = {
+							change_variable = {
+								which = catholic_states
+								value = 1
+							}
+						}
+					}
+				}
+				every_owned_province = {
+					PAP = {
+						change_variable = {
+							which = papacy_calculation_provinces
+							value = 0.1
+						}
+					}
+					if = {
+						limit = {
+							owned_by = PAP
+						}
+						PAP = {
+							change_variable = {
+								which = papal_provinces
+								value = 0.1
+							}
+						}
+					}
+					if = {
+						limit = {
+							religion = catholic
+						}
+						PAP = {
+							change_variable = {
+								which = catholic_provinces
+								value = 0.1
+							}
+						}
+					}
+				}
+			}
+			PAP = {
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = papacy_calculation_states
+							value = 0
+						}
+					}
+					else = {
+						divide_variable = {
+							which = catholic_states
+							which = papacy_calculation_states
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = catholic_provinces
+							value = 0
+						}
+					}
+					else = {
+						divide_variable = {
+							which = papal_provinces
+							which = catholic_provinces
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_variable_equal = {
+							which = papacy_calculation_provinces
+							value = 0
+						}
+					}
+					else = {
+						divide_variable = {
+							which = catholic_provinces
+							which = papacy_calculation_provinces
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = catholic_provinces
+							value = 1.00
+						}
+					}
+					change_variable = {
+						which = FP_catholic_provinces
+						value = 200
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = catholic_provinces
+							value = 0.05
+						}
+					}
+					set_variable = {
+						which = catholic_provinces_temp
+						which = catholic_provinces
+					}
+					multiply_variable = {
+						which = catholic_provinces_temp
+						value = 200
+					}
+					change_variable = {
+						which = FP_catholic_provinces
+						which = catholic_provinces_temp
+					}
+					set_variable = {
+						which = catholic_provinces_temp
+						value = 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = catholic_states
+							value = 1.00
+						}
+					}
+					change_variable = {
+						which = FP_catholic_states
+						value = 200
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = catholic_states
+							value = 0.05
+						}
+					}
+					set_variable = {
+						which = catholic_states_temp
+						which = catholic_states
+					}
+					multiply_variable = {
+						which = catholic_states_temp
+						value = 200
+					}
+					change_variable = {
+						which = FP_catholic_states
+						which = catholic_states_temp
+					}
+					set_variable = {
+						which = catholic_states_temp
+						value = 0
+					}
+				}
+				every_owned_province = {
+					limit = {
+						has_province_modifier = catholic_patriarchate
+					}
+					owner = {
+						change_variable = {
+							which = FP_catholic_patriarchate
+							value = 25
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = papal_provinces
+							value = 0.10
+						}
+					}
+					subtract_variable = {
+						which = FP_papal_provinces
+						value = 200
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = papal_provinces
+							value = 0.01
+						}
+					}
+					set_variable = {
+						which = papal_provinces_temp
+						which = papal_provinces
+					}
+					multiply_variable = {
+						which = papal_provinces_temp
+						value = 2000
+					}
+					subtract_variable = {
+						which = FP_papal_provinces
+						which = papal_provinces_temp
+					}
+					set_variable = {
+						which = papal_provinces_temp
+						value = 0
+					}
+				}
+				PAP = {
+					set_variable = {
+						which = catholic_states
+						value = 0
+					}
+					set_variable = {
+						which = catholic_provinces
+						value = 0
+					}
+					set_variable = {
+						which = papacy_calculation_provinces
+						value = 0
+					}
+					set_variable = {
+						which = papacy_calculation_states
+						value = 0
+					}
+					set_variable = {
+						which = papal_provinces
+						value = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DG_papal_authority.001.a
+		custom_tooltip = "DG_global_catholicism"
+	}
+	option = {
+		name = DG_papal_authority.001.b
+		custom_tooltip = "DG_papal_state"
+	}
+	option = {
+		name = DG_papal_authority.001.c
+		custom_tooltip = "DG_reaction_reformation"
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		PAP = {
+			set_variable = {
+				which = FP_catholic_provinces
+				value = 0
+			}
+			set_variable = {
+				which = FP_catholic_states
+				value = 0
+			}
+			set_variable = {
+				which = FP_catholic_patriarchate
+				value = 0
+			}
+			set_variable = {
+				which = FP_papal_provinces
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = DG_info_piety.001
+	title = DG_info_piety.001.t
+	desc = DG_info_piety.001.d
+	picture = {
+		trigger = {
+			tag = PAP
+		}
+		picture = catholic_habemus_papam
+	}
+	picture = {
+		trigger = {
+			religion = zoroastrian
+		}
+		picture = zoroastrian_religion
+	}
+	picture = {
+		trigger = {
+			religion_group = muslim
+		}
+		picture = muslim_caliph_court
+	}
+	picture = {
+		trigger = {
+			religion = coptic
+		}
+		picture = miaphysite_europeans_ethiopian_court_saffron
+	}
+	picture = {
+		trigger = {
+			religion = catholic
+		}
+		picture = catholic_court
+	}
+	picture = {
+		trigger = {
+			religion = orthodox
+		}
+		picture = orthodox_court
+	}
+	picture = {
+		trigger = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		picture = protestant_state_church
+	}
+	picture = {
+		trigger = {
+			religion = hinduism
+		}
+		picture = hindu_ruler
+	}
+	picture = {
+		trigger = {
+			OR = {
+				religion_group = new_world_pagan
+				religion_group = european_pagan
+				religion_group = pagan
+			}
+		}
+		picture = pagan_grove
+	}
+	picture = {
+		trigger = {
+			religion = sikhism
+		}
+		picture = sikhism_guru
+	}
+	picture = {
+		trigger = {
+			religion = buddhism
+		}
+		picture = buddhist_offerings
+	}
+	picture = {
+		trigger = {
+			religion = mahayana
+		}
+		picture = mahayana_buddha
+	}
+	picture = {
+		trigger = {
+			always = yes
+		}
+		picture = COURT_eventPicture
+	}
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = FP_piety_ideas
+				value = 0
+			}
+			set_variable = {
+				which = FP_piety_useful_minorities
+				value = 0
+			}
+			set_variable = {
+				which = FP_piety_jizya_population
+				value = 0
+			}
+			set_variable = {
+				which = FP_piety_millet_population
+				value = 0
+			}
+			if = {
+				limit = {
+					has_idea_group = humanist_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -20
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = humanist_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -20
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = plutocracy_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = plutocracy_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = innovativeness_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = innovativeness_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = spy_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = spy_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = free_trade_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = free_trade_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = diplomatic_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = diplomatic_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = asceticism_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = asceticism_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = ceremony_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = ceremony_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = popular_religion_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = popular_religion_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = scholasticism_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = scholasticism_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					has_idea_group = theology_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					full_idea_group = theology_ideas
+				}
+				change_variable = {
+					which = FP_piety_ideas
+					value = 20
+				}
+			}
+			if = {
+				limit = {
+					religion_group = muslim
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = jizya_population
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = jizya_population
+								value = 50
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = jizya_population
+									value = 70
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = jizya_population
+										value = 80
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = jizya_population
+											value = 90
+										}
+									}
+									change_variable = {
+										which = FP_piety_jizya_population
+										value = -50
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = jizya_population
+												value = 90
+											}
+										}
+									}
+									change_variable = {
+										which = FP_piety_jizya_population
+										value = -45
+									}
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = jizya_population
+											value = 80
+										}
+									}
+								}
+								change_variable = {
+									which = FP_piety_jizya_population
+									value = -40
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = jizya_population
+										value = 70
+									}
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = jizya_population
+										value = 60
+									}
+								}
+								change_variable = {
+									which = FP_piety_jizya_population
+									value = -35
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = jizya_population
+											value = 60
+										}
+									}
+								}
+								change_variable = {
+									which = FP_piety_jizya_population
+									value = -30
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = jizya_population
+									value = 50
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = jizya_population
+									value = 20
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = jizya_population
+										value = 30
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = jizya_population
+											value = 40
+										}
+									}
+									change_variable = {
+										which = FP_piety_jizya_population
+										value = -25
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = jizya_population
+												value = 40
+											}
+										}
+									}
+									change_variable = {
+										which = FP_piety_jizya_population
+										value = -20
+									}
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = jizya_population
+											value = 30
+										}
+									}
+								}
+								change_variable = {
+									which = FP_piety_jizya_population
+									value = -15
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = jizya_population
+										value = 20
+									}
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = jizya_population
+										value = 10
+									}
+								}
+								change_variable = {
+									which = FP_piety_jizya_population
+									value = -10
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = jizya_population
+											value = 10
+										}
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = jizya_population
+											value = 1
+										}
+									}
+									change_variable = {
+										which = FP_piety_jizya_population
+										value = -5
+									}
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						religion_group = muslim
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = millet_population
+								value = 1
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = millet_population
+									value = 50
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = millet_population
+										value = 70
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = millet_population
+											value = 80
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = millet_population
+												value = 90
+											}
+										}
+										change_variable = {
+											which = FP_piety_millet_population
+											value = -50
+										}
+									}
+									if = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = millet_population
+													value = 90
+												}
+											}
+										}
+										change_variable = {
+											which = FP_piety_millet_population
+											value = -45
+										}
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = millet_population
+												value = 80
+											}
+										}
+									}
+									change_variable = {
+										which = FP_piety_millet_population
+										value = -40
+									}
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = millet_population
+											value = 70
+										}
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = millet_population
+											value = 60
+										}
+									}
+									change_variable = {
+										which = FP_piety_millet_population
+										value = -35
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = millet_population
+												value = 60
+											}
+										}
+									}
+									change_variable = {
+										which = FP_piety_millet_population
+										value = -30
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = millet_population
+										value = 50
+									}
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = millet_population
+										value = 20
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = millet_population
+											value = 30
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = millet_population
+												value = 40
+											}
+										}
+										change_variable = {
+											which = FP_piety_millet_population
+											value = -25
+										}
+									}
+									if = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = millet_population
+													value = 40
+												}
+											}
+										}
+										change_variable = {
+											which = FP_piety_millet_population
+											value = -20
+										}
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = millet_population
+												value = 30
+											}
+										}
+									}
+									change_variable = {
+										which = FP_piety_millet_population
+										value = -15
+									}
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = millet_population
+											value = 20
+										}
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = millet_population
+											value = 10
+										}
+									}
+									change_variable = {
+										which = FP_piety_millet_population
+										value = -10
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = millet_population
+												value = 10
+											}
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = millet_population
+												value = 1
+											}
+										}
+										change_variable = {
+											which = FP_piety_millet_population
+											value = -5
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = minority_usefulness
+						value = 1
+					}
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_catholic
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_orthodox
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_protestant
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_coptic
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_gnostic
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_chaldean
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_hussite
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_jewish
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_sunni
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_shiite
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_druze
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_ibadi
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_wahhabi
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_hinduism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_sikhism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_jain
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_zoroastrian
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_confucianism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_buddhism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_mahayana
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_vajrayana
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_shinto
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_adi_dharam
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_tengri_pagan_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_shamanism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_west_african_pagan_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_animism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_polynesian_religion
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_hellenic_pagan
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_norse_pagan_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_slavic_pagan_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_baltic_pagan_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_finnish_pagan_reformed
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_pantheism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_totemism
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_nahuatl
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_mesoamerican_religion
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = useful_inti
+				}
+				change_variable = {
+					which = FP_piety_useful_minorities
+					value = -10
+				}
+			}
+		}
+	}
+	option = {
+		name = DG_info_piety.001.a
+		custom_tooltip = "DG_piety_state"
+	}
+	option = {
+		name = DG_info_piety.001.b
+		custom_tooltip = "DG_piety_court"
+	}
+	option = {
+		name = DG_info_piety.001.c
+		trigger = {
+			OR = {
+				religion = zoroastrian
+				religion_group = muslim
+				religion_group = pagan
+				religion_group = new_world_pagan
+				religion_group = european_pagan
+				AND = {
+					religion_group = christian
+					NOT = {
+						religion = chaldean
+					}
+				}
+				religion = hinduism
+				religion = sikhism
+				religion = buddhism
+				religion = mahayana
+			}
+		}
+		custom_tooltip = "DG_piety_religion"
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		set_variable = {
+			which = FP_piety_ideas
+			value = 0
+		}
+		set_variable = {
+			which = FP_piety_useful_minorities
+			value = 0
+		}
+		set_variable = {
+			which = FP_piety_jizya_population
+			value = 0
+		}
+		set_variable = {
+			which = FP_piety_millet_population
+			value = 0
+		}
+	}
+}
+country_event = {
+	id = DG_info_church_influence.001
+	title = DG_info_church_influence.001.t
+	desc = DG_info_church_influence.001.d
+	picture = {
+		trigger = {
+			tag = PAP
+		}
+		picture = catholic_habemus_papam
+	}
+	picture = {
+		trigger = {
+			religion = zoroastrian
+		}
+		picture = zoroastrian_religion
+	}
+	picture = {
+		trigger = {
+			religion_group = muslim
+		}
+		picture = muslim_caliph_court
+	}
+	picture = {
+		trigger = {
+			religion = coptic
+		}
+		picture = miaphysite_europeans_ethiopian_court_saffron
+	}
+	picture = {
+		trigger = {
+			religion = catholic
+		}
+		picture = catholic_court
+	}
+	picture = {
+		trigger = {
+			religion = orthodox
+		}
+		picture = orthodox_court
+	}
+	picture = {
+		trigger = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		picture = protestant_state_church
+	}
+	picture = {
+		trigger = {
+			religion = hinduism
+		}
+		picture = hindu_ruler
+	}
+	picture = {
+		trigger = {
+			OR = {
+				religion_group = new_world_pagan
+				religion_group = european_pagan
+				religion_group = pagan
+			}
+		}
+		picture = pagan_grove
+	}
+	picture = {
+		trigger = {
+			religion = sikhism
+		}
+		picture = sikhism_guru
+	}
+	picture = {
+		trigger = {
+			religion = buddhism
+		}
+		picture = buddhist_offerings
+	}
+	picture = {
+		trigger = {
+			religion = mahayana
+		}
+		picture = mahayana_buddha
+	}
+	picture = {
+		trigger = {
+			always = yes
+		}
+		picture = COURT_eventPicture
+	}
+	is_triggered_only = yes
+	option = {
+		name = DG_info_church_influence.001.a
+		custom_tooltip = "DG_church_influence_state"
+	}
+	option = {
+		name = DG_info_church_influence.001.b
+		trigger = {
+			OR = {
+				religion = hinduism
+				religion = zoroastrian
+				religion = mahayana
+				religion_group = jewish_group
+				religion = orthodox
+				religion = coptic
+				religion = catholic
+				religion = reformed
+				religion = protestant
+				religion = hussite
+				religion = gnostic
+				religion_group = muslim
+			}
+		}
+		custom_tooltip = "DG_church_influence_religion"
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+}

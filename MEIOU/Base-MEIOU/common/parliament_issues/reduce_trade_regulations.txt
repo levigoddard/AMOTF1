@@ -1,0 +1,17 @@
+reduce_trade_regulations = {
+	category = 2
+	allow = {
+		OR = {
+			dip_tech = 22
+			full_idea_group = trade_ideas
+		}
+	}
+	effect = {}
+	modifier = {
+		trade_efficiency = -0.10
+		global_trade_power = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

@@ -1,0 +1,69 @@
+ARA = {
+	NOT = {
+		is_core = SPA
+	}
+	NOT = {
+		exists = SPA
+	}
+}
+CAS = {
+	NOT = {
+		is_core = SPA
+	}
+	NOT = {
+		exists = SPA
+	}
+}
+LEO = {
+	NOT = {
+		is_core = SPA
+	}
+	NOT = {
+		exists = SPA
+	}
+}
+GAL = {
+	NOT = {
+		is_core = SPA
+	}
+	NOT = {
+		exists = SPA
+	}
+}
+NAV = {
+	NOT = {
+		is_core = SPA
+	}
+	NOT = {
+		exists = SPA
+	}
+}
+BLE = {
+	NOT = {
+		is_core = SPA
+	}
+	NOT = {
+		exists = SPA
+	}
+}
+SPA = {
+	OR = {
+		is_core = SPA
+		owner = {
+			capital_scope = {
+				is_core = SPA
+			}
+		}
+	}
+	NOT = {
+		exists = CAS
+	}
+	NOT = {
+		exists = ARA
+	}
+}
+GRA = {
+	NOT = {
+		has_global_flag = 1530_start_date
+	}
+}

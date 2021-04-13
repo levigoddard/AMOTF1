@@ -1,0 +1,437 @@
+swedish_missions_scandinavia = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		has_country_flag = k_of_swe
+	}
+	has_country_shield = yes
+	swe_civil_war = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {}
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					ROOT = {
+						tag = SWE
+					}
+					country_or_non_sovereign_subject_holds = RSW
+				}
+				AND = {
+					ROOT = {
+						NOT = {
+							tag = SWE
+						}
+					}
+					country_or_non_sovereign_subject_holds = SWE
+				}
+				AND = {
+					region = scandinavia_region
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+		}
+		trigger = {
+			scandinavia_region = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = {
+					tag = SWE
+				}
+				NOT = {
+					exists = RSW
+				}
+			}
+			else = {
+				NOT = {
+					exists = SWE
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = SWE_done_CW_mission
+					}
+				}
+				set_country_flag = SWE_done_CW_mission
+				scandinavia_region = {
+					limit = {
+						owned_by = ROOT
+					}
+					hidden_effect = {
+						remove_core = ROOT
+					}
+					add_core = ROOT
+				}
+				scandinavia_region = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+				if = {
+					limit = {
+						NOT = {
+							exists = SWE
+						}
+					}
+					change_tag = SWE
+				}
+				RSW = {
+					country_event = {
+						id = flavor_swe.4308
+						days = 5
+					}
+				}
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 1
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				finland_coastal_area = {
+					limit = {
+						NOT = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						is_empty = no
+					}
+					add_claim = ROOT
+				}
+				finland_inland_area = {
+					limit = {
+						NOT = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						is_empty = no
+					}
+					add_claim = ROOT
+				}
+			}
+		}
+	}
+	swe_control_scania = {
+		icon = mission_assemble_an_army
+		required_missions = { swe_civil_war }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 6
+				province_id = 10
+				province_id = 18
+				province_id = 26
+				province_id = 1256
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			6 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			10 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			18 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			26 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1256 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "consolidated_sweden"
+				duration = 5475
+			}
+		}
+	}
+	swe_subjugate_norway = {
+		icon = mission_have_two_subjects
+		required_missions = { swe_control_scania }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = northern_norway_area
+				area = eastern_norway_area
+				area = western_norway_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			eastern_norway_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_norway_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_norway_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+		}
+	}
+	swe_subjugate_denmark = {
+		icon = mission_have_two_subjects
+		required_missions = { swe_subjugate_norway }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = denmark_area
+				province_id = 15
+				province_id = 67
+				province_id = 3720
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			denmark_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			15 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			67 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			3720 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+		}
+	}
+	swe_unify_scandinavia = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { swe_subjugate_denmark }
+		position = 5
+		trigger = {
+			finland_coastal_area = {
+				type = all
+				owned_by = ROOT
+			}
+			scandinavia_region = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					is_empty = yes
+				}
+			}
+			eastern_norway_area = {
+				type = all
+				owned_by = ROOT
+			}
+			western_norway_area = {
+				type = all
+				owned_by = ROOT
+			}
+			northern_norway_area = {
+				type = all
+				owned_by = ROOT
+			}
+			denmark_area = {
+				type = all
+				owned_by = ROOT
+			}
+			15 = {
+				owned_by = ROOT
+			}
+			67 = {
+				owned_by = ROOT
+			}
+			3720 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "united_scandinavia"
+				duration = 5475
+			}
+			country_event = {
+				id = mission_formable.035
+			}
+			hidden_effect = {
+				complete_mission = swe_unify_scandinavia
+			}
+		}
+	}
+}

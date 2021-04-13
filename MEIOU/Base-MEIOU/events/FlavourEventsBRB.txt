@@ -1,0 +1,213 @@
+namespace = flavor_brb
+country_event = {
+	id = flavor_brb.1
+	title = "flavor_brb.1.n"
+	desc = "flavor_brb.1.t"
+	picture = WOUNDED_SOLDIERS_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = BRB
+		war_with = FLA
+		NOT = {
+			is_year = 1365
+		}
+		2360 = {
+			controlled_by = FLA
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "flavor_brb.1.a"
+		ai_chance = {
+			factor = 90
+		}
+		FLA = {
+			country_event = {
+				id = flavor_brb.2
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = "flavor_brb.1.b"
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = flavor_brb.2
+	title = "flavor_brb.2.n"
+	desc = "flavor_brb.2.t"
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.2.a"
+		ai_chance = {
+			factor = 90
+		}
+		BRB = {
+			country_event = {
+				id = flavor_brb.3
+				days = 15
+			}
+		}
+	}
+	option = {
+		name = "flavor_brb.2.b"
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = 5
+		BRB = {
+			country_event = {
+				id = flavor_brb.4
+				days = 15
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_brb.3
+	title = "flavor_brb.3.n"
+	desc = "flavor_brb.3.t"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.3.a"
+		2360 = {
+			cede_province = FLA
+		}
+		white_peace = FLA
+		FLA = {
+			country_event = {
+				id = flavor_brb.9
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_brb.4
+	title = "flavor_brb.4.n"
+	desc = "flavor_brb.4.t"
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.4.a"
+		FLA = {
+			country_event = {
+				id = flavor_brb.5
+				days = 15
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_brb.5
+	title = "flavor_brb.5.n"
+	desc = "flavor_brb.5.t"
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.5.a"
+		add_prestige = -5
+		BRB = {
+			country_event = {
+				id = flavor_brb.7
+				days = 15
+			}
+		}
+	}
+	option = {
+		name = "flavor_brb.5.b"
+		add_prestige = 10
+		white_peace = BRB
+		FLA = {
+			declare_war = LUX
+		}
+		LUX = {
+			country_event = {
+				id = flavor_brb.6
+			}
+		}
+		BRB = {
+			country_event = {
+				id = flavor_brb.6
+			}
+		}
+		BOH = {
+			country_event = {
+				id = flavor_brb.8
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_brb.6
+	title = "flavor_brb.6.n"
+	desc = "flavor_brb.6.t"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.6.a"
+		infantry = 94
+	}
+}
+country_event = {
+	id = flavor_brb.7
+	title = "flavor_brb.7.n"
+	desc = "flavor_brb.7.t"
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.7.a"
+		add_prestige = 10
+		white_peace = FLA
+		FLA = {
+			country_event = {
+				id = flavor_brb.10
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_brb.8
+	title = "flavor_brb.8.n"
+	desc = "flavor_brb.8.t"
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		AND = {
+			dynasty = "von Luxemburg"
+			is_emperor = yes
+		}
+	}
+	option = {
+		name = "flavor_brb.8.a"
+	}
+}
+country_event = {
+	id = flavor_brb.9
+	title = "flavor_brb.9.n"
+	desc = "flavor_brb.9.t"
+	picture = TRADING_PORT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.9.a"
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = flavor_brb.10
+	title = "flavor_brb.10.n"
+	desc = "flavor_brb.10.t"
+	picture = BURNING_CITY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_brb.10.a"
+		add_prestige = -10
+	}
+}

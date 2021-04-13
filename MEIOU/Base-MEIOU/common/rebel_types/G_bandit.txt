@@ -1,0 +1,99 @@
+bandit_rebels = {
+	color = { 40 140 210 }
+	area = nation
+	government = anti
+	defection = none
+	independence = none
+	defect_delay = 120
+	gfx_type = culture_province
+	resilient = yes
+	reinforcing = no
+	general = no
+	smart = no
+	unit_transfer = no
+	will_relocate = no
+	artillery = 0.0
+	infantry = 0.9
+	cavalry = 0.1
+	morale = 0.7
+	handle_action_negotiate = no
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = yes
+	spawn_chance = {
+		factor = 2
+		modifier = {
+			factor = 2.0
+			owner = {
+				war_exhaustion = 4
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				war_exhaustion = 10
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				war_exhaustion = 18
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				is_bankrupt = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					stability = 0
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_owner_accepted_culture = no
+			NOT = {
+				AND = {
+					owner = {
+						total_development = 1200
+					}
+					culture_group = owner
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					stability = -1
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				NOT = {
+					stability = -2
+				}
+			}
+		}
+	}
+	movement_evaluation = {
+		factor = 0
+	}
+	siege_won_trigger = {}
+	siege_won_effect = {}
+	can_negotiate_trigger = {
+		always = no
+	}
+	can_enforce_trigger = {
+		always = no
+	}
+	demands_description = "bandit_rebels_demand"
+	demands_enforced_effect = {}
+}

@@ -1,0 +1,2 @@
+culture = dayak
+religion = polynesian_religion

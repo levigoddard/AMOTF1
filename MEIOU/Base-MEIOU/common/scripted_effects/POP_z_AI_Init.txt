@@ -1,0 +1,467 @@
+AIInitGetPower = {
+	set_country_flag = aiInitDiploRelated
+	
+	if = {
+		limit = {
+			always = $subject$
+		}
+		every_subject_country = {
+			limit = {
+				NOT = {
+					tag = $scope$
+				}
+
+				AIJoinOverlordWar = yes
+			}
+			set_country_flag = aiInitDiploRelated
+			
+			every_subject_country = {
+				limit = {
+					NOT = {
+						tag = $scope$
+					}
+
+					AIJoinOverlordWar = yes
+				}
+				set_country_flag = aiInitDiploRelated
+				
+				every_subject_country = {
+					limit = {
+						NOT = {
+							tag = $scope$
+						}
+
+						AIJoinOverlordWar = yes
+					}
+					set_country_flag = aiInitDiploRelated
+				}
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			always = $overlord$
+		}
+		overlord = {
+			if = {
+				limit = {
+					NOT = {
+						tag = $scope$
+					}
+				}
+				if = {
+					limit = {
+						is_subject = yes
+					}
+					overlord = {
+						if = {
+							limit = {
+								NOT = {
+									tag = $scope$
+								}
+							}
+							set_country_flag = aiInitDiploRelated
+							
+							every_subject_country = {
+								limit = {
+									NOT = {
+										tag = $scope$
+									}
+
+									AIJoinOverlordWar = yes
+								}
+								set_country_flag = aiInitDiploRelated
+								
+								every_subject_country = {
+									limit = {
+										NOT = {
+											tag = $scope$
+										}
+
+										AIJoinOverlordWar = yes
+									}
+									set_country_flag = aiInitDiploRelated
+									
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = $scope$
+											}
+
+											AIJoinOverlordWar = yes
+										}
+										set_country_flag = aiInitDiploRelated
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					set_country_flag = aiInitDiploRelated
+					
+					every_subject_country = {
+						limit = {
+							NOT = {
+								tag = $scope$
+							}
+
+							AIJoinOverlordWar = yes
+						}
+						set_country_flag = aiInitDiploRelated
+						
+						every_subject_country = {
+							limit = {
+								NOT = {
+									tag = $scope$
+								}
+
+								AIJoinOverlordWar = yes
+							}
+							set_country_flag = aiInitDiploRelated
+							
+							every_subject_country = {
+								limit = {
+									NOT = {
+										tag = $scope$
+									}
+
+									AIJoinOverlordWar = yes
+								}
+								set_country_flag = aiInitDiploRelated
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	set_variable = {
+		which = aiInitDiploArmy
+		value = 0
+	}
+	set_variable = {
+		which = aiInitDiploNavy
+		value = 0
+	}
+	
+	every_country = {
+		limit = {
+			has_country_flag = aiInitDiploRelated
+		}
+		clr_country_flag = aiInitDiploRelated
+		
+		if = {
+			limit = {
+				always = $army$
+			}
+			GetSizeArmy = {
+				state = $state$
+				estate = $estate$
+				rest = $rest$
+				return = tmpAIInitDiploArmy
+			}
+			GetQualArmy = {
+				return = tmpAIInitDiploArmyQual
+			}
+		}
+		else = {
+			set_variable = {
+				which = tmpAIInitDiploArmy
+				value = 0
+			}
+			set_variable = {
+				which = tmpAIInitDiploArmyQual
+				value = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				always = $navy$
+			}
+			GetSizeNavy = {
+				return = tmpAIInitDiploNavy
+			}
+			GetQualNavy = {
+				return = tmpAIInitDiploNavyQual
+			}
+		}
+		else = {
+			set_variable = {
+				which = tmpAIInitDiploNavy
+				value = 0
+			}
+			set_variable = {
+				which = tmpAIInitDiploNavyQual
+				value = 0
+			}
+		}
+		
+		multiply_variable = {
+			which = tmpAIInitDiploArmy
+			which = tmpAIInitDiploArmyQual
+		}
+		multiply_variable = {
+			which = tmpAIInitDiploNavy
+			which = tmpAIInitDiploNavyQual
+		}
+		
+		PREV = {
+			set_variable = {
+				which = tmpAIInitDiploArmy
+				which = PREV
+			}
+			set_variable = {
+				which = tmpAIInitDiploNavy
+				which = PREV
+			}
+			
+			change_variable = {
+				which = aiInitDiploArmy
+				which = tmpAIInitDiploArmy
+			}
+			change_variable = {
+				which = aiInitDiploNavy
+				which = tmpAIInitDiploNavy
+			}
+			
+			set_variable = {
+				which = tmpAIInitDiploArmy
+				value = 0
+			}
+			set_variable = {
+				which = tmpAIInitDiploNavy
+				value = 0
+			}
+		}
+		
+		set_variable = {
+			which = tmpAIInitDiploArmy
+			value = 0
+		}
+		set_variable = {
+			which = tmpAIInitDiploNavy
+			value = 0
+		}
+	}
+	
+	divide_variable = {
+		which = aiInitDiploNavy
+		value = 2
+	}
+	
+	set_variable = {
+		which = $return$
+		which = aiInitDiploArmy
+	}
+	change_variable = {
+		which = $return$
+		which = aiInitDiploNavy
+	}
+	divide_variable = {
+		which = $return$
+		value = 50
+	}
+	
+	set_variable = {
+		which = aiInitDiploArmy
+		value = 0
+	}
+	set_variable = {
+		which = tmpAIInitDiploArmyQual
+		value = 0
+	}
+	set_variable = {
+		which = aiInitDiploNavy
+		value = 0
+	}
+	set_variable = {
+		which = tmpAIInitDiploNavyQual
+		value = 0
+	}
+}
+
+AIInitGetThreat = {
+	$scope$ = {
+		GetAE = {
+			scope = PREV
+			return = aiInitDiploAE
+		}
+		
+		PREV = {
+			set_variable = {
+				which = aiInitDiploAE
+				which = PREV
+			}
+		}
+		
+		set_variable = {
+			which = aiInitDiploAE
+			value = 0
+		}
+	}
+	
+	divide_variable = {
+		which = aiInitDiploAE
+		value = -40
+	}
+	
+	set_variable = {
+		which = aiInitDiploGrowth
+		which = devGrowthSum
+	}
+	
+	divide_variable = {
+		which = aiInitDiploGrowth
+		value = 20
+	}
+	
+	set_variable = {
+		which = $return$
+		which = aiInitDiploAE
+	}
+	change_variable = {
+		which = $return$
+		which = aiInitDiploGrowth
+	}
+	
+	set_variable = {
+		which = aiInitDiploAE
+		value = 0
+	}
+	set_variable = {
+		which = aiInitDiploGrowth
+		value = 0
+	}
+}
+
+AIInitGetFortPerDev = {
+	every_owned_province = {
+		set_variable = {
+			which = $return$
+			value = 0
+		}
+				
+		trigger_switch = {
+			on_trigger = has_building
+			
+			fort_14th = {
+				set_variable = {
+					which = $return$
+					value = 2
+				}
+			}
+			fort_15th = {
+				set_variable = {
+					which = $return$
+					value = 4
+				}
+			}
+			fort_16th = {
+				set_variable = {
+					which = $return$
+					value = 6
+				}
+			}
+			fort_17th = {
+				set_variable = {
+					which = $return$
+					value = 8
+				}
+			}
+			fort_18th = {
+				set_variable = {
+					which = $return$
+					value = 10
+				}
+			}
+		}
+		
+		PREV = {
+			change_variable = {
+				which = $return$
+				which = PREV
+			}
+		}
+		
+		set_variable = {
+			which = $return$
+			value = 0
+		}
+	}
+	
+	export_to_variable = {
+		which = aiInitTotalDev
+		value = total_development
+	}
+	
+	divide_variable = {
+		which = $return$
+		which = aiInitTotalDev
+	}
+	
+	set_variable = {
+		which = aiInitTotalDev
+		value = 0
+	}
+}
+
+AIInit = {
+	save_event_target_as = aiInitTarg
+	
+	AIInitGetPower = {
+		subject = yes
+		overlord = yes
+		army = yes
+		state = yes
+		estate = yes
+		rest = yes
+		navy = yes
+		scope = event_target:aiInitTarg
+		return = aiInitPower
+	}
+	AIInitGetFortPerDev = {
+		return = aiInitFortPerDev
+	}
+	
+	every_country = {
+		limit = {
+			is_subject_other_than_tributary_trigger = no
+			
+			OR = {
+				is_neighbor_of = PREV
+				
+				has_casus_belli_against = PREV
+					
+				capital_distance = {
+					who = event_target:aiInitTarg
+					distance = 80
+				}
+			}
+			
+			NOT = {
+				tag = PREV
+			}
+		}
+		set_country_flag = aiInitInRange@PREV
+		
+		AIInitGetPower = {
+			subject = yes
+			overlord = yes
+			army = yes
+			state = yes
+			estate = yes
+			rest = yes
+			navy = yes
+			scope = event_target:aiInitTarg
+			return = aiInitPower
+		}
+		AIInitGetThreat = {
+			scope = event_target:aiInitTarg
+			return = aiInitThreat
+		}
+	}
+}

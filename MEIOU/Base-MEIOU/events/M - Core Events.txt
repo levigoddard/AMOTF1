@@ -1,0 +1,369 @@
+province_event = {
+	id = regarding_cores.1
+	title = "regarding_cores.1.n"
+	desc = "regarding_cores.1.t"
+	picture = FLANDERS_eventPicture
+	immediate = {
+		add_core = owner
+	}
+	trigger = {
+		is_territorial_core = owner
+		tolerance_to_this = 1
+		NOT = {
+			nationalism = 1
+		}
+		controlled_by = owner
+		NOT = {
+			has_siege = yes
+		}
+		OR = {
+			has_owner_culture = yes
+			AND = {
+				owner = {
+					culture_group = ROOT
+				}
+				OR = {
+					owner = {
+						dip_tech = 20
+						government_rank = 5
+					}
+					owner = {
+						dip_tech = 45
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 80
+		modifier = {
+			factor = 0.8
+			owner = {
+				culture_group = ROOT
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				AND = {
+					dip_tech = 35
+					NOT = {
+						dip_tech = 45
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				AND = {
+					dip_tech = 45
+					NOT = {
+						dip_tech = 50
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				AND = {
+					dip_tech = 50
+				}
+			}
+		}
+	}
+	option = {
+		name = "OPT.EXCELLENT"
+		tooltip = {
+			add_core = owner
+		}
+		if = {
+			limit = {
+				local_autonomy = 5
+				NOT = {
+					local_autonomy = 10
+				}
+			}
+			add_local_autonomy = -1
+		}
+		if = {
+			limit = {
+				local_autonomy = 10
+				NOT = {
+					local_autonomy = 15
+				}
+			}
+			add_local_autonomy = -2
+		}
+		if = {
+			limit = {
+				local_autonomy = 15
+				NOT = {
+					local_autonomy = 20
+				}
+			}
+			add_local_autonomy = -3
+		}
+		if = {
+			limit = {
+				local_autonomy = 20
+				NOT = {
+					local_autonomy = 25
+				}
+			}
+			add_local_autonomy = -4
+		}
+		if = {
+			limit = {
+				local_autonomy = 25
+				NOT = {
+					local_autonomy = 30
+				}
+			}
+			add_local_autonomy = -5
+		}
+		if = {
+			limit = {
+				local_autonomy = 30
+				NOT = {
+					local_autonomy = 35
+				}
+			}
+			add_local_autonomy = -6
+		}
+		if = {
+			limit = {
+				local_autonomy = 35
+				NOT = {
+					local_autonomy = 40
+				}
+			}
+			add_local_autonomy = -7
+		}
+		if = {
+			limit = {
+				local_autonomy = 40
+				NOT = {
+					local_autonomy = 45
+				}
+			}
+			add_local_autonomy = -8
+		}
+		if = {
+			limit = {
+				local_autonomy = 45
+				NOT = {
+					local_autonomy = 50
+				}
+			}
+			add_local_autonomy = -9
+		}
+		if = {
+			limit = {
+				local_autonomy = 50
+				NOT = {
+					local_autonomy = 55
+				}
+			}
+			add_local_autonomy = -10
+		}
+		if = {
+			limit = {
+				local_autonomy = 55
+				NOT = {
+					local_autonomy = 60
+				}
+			}
+			add_local_autonomy = -11
+		}
+		if = {
+			limit = {
+				local_autonomy = 60
+				NOT = {
+					local_autonomy = 65
+				}
+			}
+			add_local_autonomy = -12
+		}
+		if = {
+			limit = {
+				local_autonomy = 65
+				NOT = {
+					local_autonomy = 70
+				}
+			}
+			add_local_autonomy = -13
+		}
+		if = {
+			limit = {
+				local_autonomy = 70
+				NOT = {
+					local_autonomy = 75
+				}
+			}
+			add_local_autonomy = -14
+		}
+		if = {
+			limit = {
+				local_autonomy = 75
+				NOT = {
+					local_autonomy = 80
+				}
+			}
+			add_local_autonomy = -15
+		}
+		if = {
+			limit = {
+				local_autonomy = 80
+				NOT = {
+					local_autonomy = 85
+				}
+			}
+			add_local_autonomy = -16
+		}
+		if = {
+			limit = {
+				local_autonomy = 85
+				NOT = {
+					local_autonomy = 90
+				}
+			}
+			add_local_autonomy = -17
+		}
+		if = {
+			limit = {
+				local_autonomy = 90
+				NOT = {
+					local_autonomy = 95
+				}
+			}
+			add_local_autonomy = -18
+		}
+		if = {
+			limit = {
+				local_autonomy = 95
+				NOT = {
+					local_autonomy = 100
+				}
+			}
+			add_local_autonomy = -19
+		}
+		if = {
+			limit = {
+				local_autonomy = 100
+			}
+			add_local_autonomy = -20
+		}
+	}
+}
+country_event = {
+	id = regarding_cores.4
+	title = "regarding_cores.4.n"
+	desc = "regarding_cores.4.t"
+	picture = REVOLUTION_eventPicture
+	trigger = {
+		NOT = {
+			prestige = -90
+		}
+		any_country = {
+			any_owned_province = {
+				NOT = {
+					culture = ROOT
+				}
+				is_core = ROOT
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+		modifier = {
+			factor = 0.9
+			calc_true_if = {
+				any_country = {
+					any_owned_province = {
+						NOT = {
+							culture = ROOT
+						}
+						is_core = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		modifier = {
+			factor = 0.9
+			calc_true_if = {
+				any_country = {
+					any_owned_province = {
+						NOT = {
+							culture = ROOT
+						}
+						is_core = ROOT
+					}
+				}
+				amount = 20
+			}
+		}
+		modifier = {
+			factor = 0.9
+			calc_true_if = {
+				any_country = {
+					any_owned_province = {
+						NOT = {
+							culture = ROOT
+						}
+						is_core = ROOT
+					}
+				}
+				amount = 30
+			}
+		}
+		modifier = {
+			factor = 0.9
+			calc_true_if = {
+				any_country = {
+					any_owned_province = {
+						NOT = {
+							culture = ROOT
+						}
+						is_core = ROOT
+					}
+				}
+				amount = 40
+			}
+		}
+		modifier = {
+			factor = 0.9
+			calc_true_if = {
+				any_country = {
+					any_owned_province = {
+						NOT = {
+							culture = ROOT
+						}
+						is_core = ROOT
+					}
+				}
+				amount = 50
+			}
+		}
+	}
+	option = {
+		name = "OPT.YIELD"
+		every_country = {
+			every_owned_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					NOT = {
+						culture = ROOT
+					}
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		add_prestige = 90
+	}
+}

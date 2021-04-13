@@ -1,0 +1,20 @@
+quartering_of_troops = {
+	category = 1
+	allow = {
+		always = yes
+		OR = {
+			has_idea_group = logistic_ideas
+			has_idea_group = grand_army_ideas
+			has_idea_group = standing_army_ideas
+			has_idea_group = leadership_ideas
+		}
+	}
+	effect = {}
+	modifier = {
+		land_maintenance_modifier = -0.10
+		global_unrest = 5
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

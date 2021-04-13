@@ -1,0 +1,123 @@
+anti_tax_rebels = {
+	color = { 40 140 210 }
+	area = nation
+	government = anti
+	defection = none
+	independence = none
+	defect_delay = 120
+	gfx_type = culture_province
+	resilient = no
+	reinforcing = no
+	general = no
+	smart = no
+	unit_transfer = no
+	will_relocate = yes
+	artillery = 0.0
+	infantry = 0.9
+	cavalry = 0.1
+	morale = 0.8
+	handle_action_negotiate = yes
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = yes
+	spawn_chance = {
+		factor = 2
+		modifier = {
+			factor = 2.0
+			owner = {
+				has_wartaxes = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				war_exhaustion = 4
+			}
+		}
+		modifier = {
+			factor = 10.0
+			owner = {
+				has_country_flag = peasant_war
+			}
+		}
+		modifier = {
+			factor = 1.2
+			owner = {
+				aristocracy_ideas = 4
+			}
+		}
+		modifier = {
+			factor = 1.2
+			owner = {
+				aristocracy_ideas = 6
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				plutocracy_ideas = 3
+			}
+		}
+		modifier = {
+			factor = 0.7
+			owner = {
+				plutocracy_ideas = 5
+			}
+		}
+		modifier = {
+			has_province_modifier = peasants_organizing
+			factor = 2
+		}
+		modifier = {
+			has_province_flag = tribals_control_province
+			factor = 0.5
+		}
+	}
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+	siege_won_trigger = {
+		NOT = {
+			local_autonomy = 100
+		}
+	}
+	siege_won_effect = {
+		add_local_autonomy = 10
+	}
+	can_negotiate_trigger = {
+		always = yes
+	}
+	can_enforce_trigger = {
+		always = yes
+	}
+	demands_description = "anti_tax_rebels_demand"
+	demands_enforced_effect = {
+		every_owned_province = {
+			limit = {
+				has_rebel_faction = REB
+			}
+			add_local_autonomy = 20
+		}
+		add_prestige = -50
+	}
+}

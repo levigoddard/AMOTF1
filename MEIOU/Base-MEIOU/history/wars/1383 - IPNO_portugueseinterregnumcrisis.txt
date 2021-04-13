@@ -1,0 +1,20 @@
+name = "Portuguese Interregnum Crisis"
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = POR
+}
+1383.10.22 = {
+	add_attacker = CAS
+	add_defender = POR
+}
+1384.6.1 = {
+	add_attacker = FRA
+	add_defender = ENG
+}
+1385.8.14 = {
+	rem_attacker = CAS
+	rem_attacker = FRA
+	rem_defender = POR
+	rem_defender = ENG
+}

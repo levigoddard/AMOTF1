@@ -1,0 +1,114 @@
+country_event = {
+	id = empires.1073
+	title = "EVTNAME1073"
+	desc = "EVTDESC1073"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	trigger = {
+		num_of_cities = 25
+		NOT = {
+			adm = 2
+		}
+		NOT = {
+			economic_ideas = 2
+		}
+		NOT = {
+			stability = 0
+		}
+	}
+	mean_time_to_happen = {
+		years = 18
+		modifier = {
+			factor = 0.9
+			NOT = {
+				adm = 1
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				stability = -2
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				economic_ideas = 2
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				economic_ideas = 1
+			}
+		}
+		modifier = {
+			factor = 0.9
+			vassal = 2
+		}
+	}
+	option = {
+		name = "EVTOPTA1073"
+		ai_chance = {
+			factor = 50
+		}
+		add_years_of_income = -0.25
+	}
+	option = {
+		name = "EVTOPTB1073"
+		ai_chance = {
+			factor = 50
+		}
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+}

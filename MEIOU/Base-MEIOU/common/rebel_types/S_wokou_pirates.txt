@@ -1,0 +1,87 @@
+wokou_pirates = {
+	color = { 200 150 80 }
+	area = nation
+	government = any
+	defection = none
+	independence = none
+	unit_transfer = yes
+	gfx_type = culture_province
+	resilient = yes
+	reinforcing = no
+	general = yes
+	smart = yes
+	artillery = 0.1
+	infantry = 0.6
+	cavalry = 0.0
+	morale = 0.8
+	handle_action_negotiate = no
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = yes
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			has_port = no
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					continent = east_asia
+					OR = {
+						superregion = north_china_superregion
+						superregion = east_china_superregion
+						superregion = southwest_china_superregion
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					superregion = japan_superregion
+				}
+			}
+		}
+		modifier = {
+			factor = 0.05
+			is_overseas = yes
+		}
+		modifier = {
+			has_province_modifier = peasants_organizing
+			factor = 1.4
+		}
+	}
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+	siege_won_trigger = {}
+	siege_won_effect = {}
+	can_negotiate_trigger = {
+		always = no
+	}
+	can_enforce_trigger = {
+		always = yes
+	}
+	demands_description = "wokou_pirates_demand"
+	demands_enforced_effect = {}
+}

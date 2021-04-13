@@ -1,0 +1,206 @@
+country_decisions = {
+	restore_israel = {
+		major = yes
+		potential = {
+			religion_group = jewish_group
+			NOT = {
+				exists = ISR
+			}
+		}
+		provinces_to_highlight = {
+			has_province_flag = jewish_holy_land
+		}
+		allow = {
+			owns = 379
+			custom_trigger_tooltip = {
+				tooltip = jewish_holy_land_3
+				num_of_owned_provinces_with = {
+					has_province_flag = jewish_holy_land
+					value = 3
+				}
+			}
+			is_at_war = no
+			has_regency = no
+		}
+		effect = {
+			change_tag = ISR
+			every_province = {
+				limit = {
+					has_province_flag = jewish_holy_land
+				}
+				add_core = ISR
+			}
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 379
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			add_prestige = 20
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = israeli_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,364 @@
+town_hall = {
+	cost = 150
+	time = 36
+	modifier = {
+		local_unrest = -0.1
+		supply_limit = 0.1
+		garrison_growth = 0.025
+	}
+	trigger = {
+		OR = {
+			AND = {
+				has_province_flag = infra_calc_done
+				owner = {
+					adm_tech = 1
+				}
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_1
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = town_hall
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_1
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				has_building = town_hall
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+urban_infrastructure_1 = {
+	cost = 225
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = town_hall
+				has_province_flag = infra_calc_done
+				check_variable = {
+					which = urban_pop
+					value = 0.5
+				}
+				owner = {
+					adm_tech = 1
+				}
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = urban_infrastructure_1
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				has_building = urban_infrastructure_1
+			}
+		}
+	}
+	modifier = {
+		local_unrest = -0.25
+		supply_limit = 0.25
+		garrison_growth = 0.05
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = town_hall
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+urban_infrastructure_2 = {
+	cost = 300
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = urban_infrastructure_1
+				has_province_flag = infra_calc_done
+				check_variable = {
+					which = urban_pop
+					value = 1.5
+				}
+				owner = {
+					adm_tech = 1
+				}
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = urban_infrastructure_2
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				has_building = urban_infrastructure_2
+			}
+		}
+	}
+	modifier = {
+		local_unrest = -0.5
+		supply_limit = 0.5
+		garrison_growth = 0.075
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = urban_infrastructure_1
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+urban_infrastructure_3 = {
+	cost = 450
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = urban_infrastructure_2
+				has_province_flag = infra_calc_done
+				check_variable = {
+					which = urban_pop
+					value = 3
+				}
+				owner = {
+					adm_tech = 7
+				}
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = urban_infrastructure_3
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				has_building = urban_infrastructure_3
+			}
+		}
+	}
+	modifier = {
+		local_unrest = -1
+		supply_limit = 1
+		garrison_growth = 0.1
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = urban_infrastructure_2
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+urban_infrastructure_4 = {
+	cost = 600
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = urban_infrastructure_3
+				has_province_flag = infra_calc_done
+				check_variable = {
+					which = urban_pop
+					value = 5
+				}
+				owner = {
+					adm_tech = 18
+				}
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = urban_infrastructure_4
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = urban_infrastructure_5
+					}
+				}
+				has_building = urban_infrastructure_4
+			}
+		}
+	}
+	modifier = {
+		local_unrest = -1.5
+		supply_limit = 1.5
+		garrison_growth = 0.125
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = urban_infrastructure_3
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+urban_infrastructure_5 = {
+	cost = 900
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = urban_infrastructure_4
+				has_province_flag = infra_calc_done
+				check_variable = {
+					which = urban_pop
+					value = 8
+				}
+				owner = {
+					adm_tech = 27
+				}
+				AND = {
+					always = yes
+				}
+				NOT = {
+					has_building = urban_infrastructure_5
+				}
+			}
+			AND = {
+				AND = {
+					always = yes
+				}
+				has_building = urban_infrastructure_5
+			}
+		}
+	}
+	modifier = {
+		local_unrest = -2
+		supply_limit = 2
+		garrison_growth = 0.15
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = urban_infrastructure_4
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}

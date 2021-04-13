@@ -1,0 +1,258 @@
+owner = FRA
+controller = FRA
+add_core = FRA
+capital = "La Rochelle"
+trade_goods = wine
+culture = poitevin
+religion = catholic
+hre = no
+base_tax = 16
+base_production = 0
+base_manpower = 0
+is_city = yes
+temple = yes
+harbour_infrastructure_1 = yes
+local_fortification_1 = yes
+workshop = yes
+marketplace = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+450.1.1 = {
+	set_province_flag = has_natural_harbour
+	set_province_flag = has_small_natural_harbour
+	set_province_flag = good_natural_place
+	add_permanent_province_modifier = {
+		name = "gascogne_natural_harbour"
+		duration = -1
+	}
+	set_province_flag = mined_goods
+	set_province_flag = salt
+}
+500.1.1 = {
+	add_permanent_province_modifier = {
+		name = urban_goods_naval_supplies
+		duration = -1
+	}
+}
+1258.1.1 = {
+	owner = GUY
+	controller = GUY
+}
+1356.1.1 = {
+	add_core = GUY
+}
+1372.8.23 = {
+	owner = FRA
+	controller = FRA
+}
+1422.10.21 = {
+	owner = DAU
+	controller = DAU
+	add_core = DAU
+	remove_core = FRA
+}
+1429.7.17 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+	remove_core = DAU
+}
+1475.8.29 = {
+	remove_core = GUY
+	fort_14th = yes
+}
+1520.5.5 = {
+	base_tax = 4
+	base_production = 4
+	base_manpower = 0
+	military_harbour_1 = yes
+}
+1535.1.1 = {
+	fort_14th = yes
+}
+1560.1.1 = {
+	religion = reformed
+}
+1565.1.1 = {
+	unrest = 8
+}
+1568.9.1 = {
+	unrest = 15
+}
+1570.8.8 = {
+	unrest = 10
+}
+1573.9.1 = {
+	unrest = 15
+}
+1574.5.1 = {
+	unrest = 7
+}
+1584.1.1 = {
+	unrest = 12
+}
+1588.12.1 = {
+	unrest = 15
+}
+1594.1.1 = {
+	unrest = 10
+}
+1598.4.13 = {
+	unrest = 3
+}
+1598.5.2 = {
+	unrest = 0
+}
+1621.5.1 = {
+	add_permanent_province_modifier = {
+		name = republique_la_rochelle
+		duration = -1
+	}
+}
+1628.10.28 = {
+	remove_province_modifier = republique_la_rochelle
+}
+1640.1.1 = {
+	fort_14th = no
+	fort_15th = yes
+}
+1650.1.14 = {
+	unrest = 7
+}
+1651.4.1 = {
+	unrest = 4
+}
+1651.12.1 = {
+	unrest = 7
+}
+1652.2.15 = {
+	revolt = {
+		type = noble_rebels
+		size = 0
+	}
+	controller = REB
+}
+1652.10.21 = {
+	revolt = {}
+	controller = FRA
+	unrest = 0
+}
+1670.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+1680.1.1 = {
+	fort_16th = no
+	fort_17th = yes
+}
+1685.10.18 = {
+	unrest = 8
+}
+1686.1.17 = {
+	religion = catholic
+}
+1689.1.1 = {
+	unrest = 0
+}
+1793.3.7 = {}
+1796.12.23 = {}
+1799.10.15 = {}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 170.228
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 2.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 166.728
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 5.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 109.407
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 9.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 127.435
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 12.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 145.464
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 16.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 158.110
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 19.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 176.138
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 23.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 209.049
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 17.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 222.813
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 14.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 249.915
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 16.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 310.464
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 20.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 258.856
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 15.000
+	}
+}

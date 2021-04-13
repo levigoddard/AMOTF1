@@ -1,0 +1,231 @@
+owner = AMG
+controller = AMG
+add_core = AMG
+add_permanent_claim = FRA
+capital = "Guéret"
+trade_goods = wheat
+culture = limousin
+religion = catholic
+hre = no
+base_tax = 13
+base_production = 0
+base_manpower = 1
+is_city = yes
+fort_14th = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+1356.1.1 = {
+	add_core = GUY
+	set_province_flag = add_local_autonomy_25
+}
+1475.8.29 = {
+	remove_claim = ENG
+}
+1520.1.1 = {
+	owner = FRA
+	controller = FRA
+	remove_core = BOU
+}
+1520.5.5 = {
+	base_tax = 16
+	base_production = 1
+	base_manpower = 1
+}
+1527.1.1 = {
+	owner = DAL
+	controller = DAL
+	remove_core = AMG
+}
+1530.1.1 = {
+	fort_14th = yes
+}
+1530.1.2 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+}
+1560.1.1 = {
+	religion = reformed
+}
+1565.1.1 = {
+	unrest = 8
+}
+1568.9.1 = {
+	unrest = 15
+}
+1570.8.8 = {
+	unrest = 10
+}
+1573.9.1 = {
+	unrest = 15
+}
+1574.5.1 = {
+	unrest = 7
+}
+1584.1.1 = {
+	unrest = 12
+}
+1588.12.1 = {
+	unrest = 15
+}
+1594.1.1 = {
+	unrest = 10
+}
+1598.4.13 = {
+	unrest = 3
+}
+1598.5.2 = {
+	unrest = 0
+}
+1607.1.1 = {
+	owner = FRA
+	controller = FRA
+	remove_core = DAL
+}
+1636.1.1 = {
+	unrest = 5
+}
+1640.1.1 = {
+	fort_14th = no
+	fort_15th = yes
+}
+1645.1.1 = {
+	unrest = 0
+}
+1650.1.14 = {
+	unrest = 7
+}
+1651.4.1 = {
+	unrest = 4
+}
+1651.12.1 = {
+	unrest = 7
+}
+1652.10.21 = {
+	unrest = 0
+}
+1685.10.18 = {
+	unrest = 8
+}
+1686.1.17 = {
+	religion = catholic
+}
+1689.1.1 = {
+	unrest = 0
+}
+1700.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+1701.1.1 = {
+	unrest = 7
+}
+1702.1.1 = {
+	controller = REB
+}
+1705.1.1 = {
+	controller = FRA
+	unrest = 3
+}
+1710.1.1 = {
+	unrest = 0
+}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 131.200
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 131.200
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 90.200
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 106.600
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 123.000
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 135.300
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 151.700
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 172.199
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 180.399
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 218.581
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 290.437
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 348.890
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 0.000
+	}
+}

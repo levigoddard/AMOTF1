@@ -1,0 +1,261 @@
+country_decisions = {
+	restore_qocho = {
+		major = yes
+		potential = {
+			primary_culture = old_uyghur
+			religion = mahayana
+			NOT = {
+				exists = UIG
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = zungaria_area
+				area = tarim_basin_area
+				province_id = 2119
+			}
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			custom_trigger_tooltip = {
+				calc_true_if = {
+					central_asia_superregion = {
+						OR = {
+							area = zungaria_area
+							area = tarim_basin_area
+							province_id = 2119
+						}
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+					amount = 8
+				}
+				tooltip = qocho.tt
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = title_5
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = UIG
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = old_uyghur
+						culture = uyghur
+						culture = chaghatai
+					}
+					NOT = {
+						is_core = UIG
+					}
+				}
+				add_core = UIG
+			}
+			zungaria_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					NOT = {
+						is_permanent_claim = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					ai = yes
+					capital_scope = {
+						NOT = {
+							region = zungaria_region
+						}
+					}
+				}
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 3213
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

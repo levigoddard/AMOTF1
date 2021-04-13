@@ -1,0 +1,153 @@
+name = "Imjin War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 737
+}
+1592.1.1 = {
+	add_attacker = ODA
+	add_defender = JOS
+}
+1592.4.24 = {
+	battle = {
+		name = "Sangju"
+		location = 736
+		attacker = {
+			commander = "Konishi Yukinaga"
+			infantry = 8500
+			losses = 1
+			country = ODA
+		}
+		defender = {
+			commander = "Yi Il"
+			infantry = 900
+			losses = 34
+			country = JOS
+		}
+		result = yes
+	}
+}
+1592.4.28 = {
+	battle = {
+		name = "Ch'ungju"
+		location = 735
+		attacker = {
+			commander = "Konishi Yukinaga"
+			infantry = 17000
+			losses = 3
+			country = ODA
+		}
+		defender = {
+			commander = "Sin Lip"
+			infantry = 8000
+			losses = 38
+			country = JOS
+		}
+		result = yes
+	}
+}
+1592.8.14 = {
+	battle = {
+		name = "Hanan"
+		location = 1376
+		attacker = {
+			commander = "Wakizaka"
+			heavy_ship = 60
+			light_ship = 13
+			losses = 64
+			country = ODA
+		}
+		defender = {
+			commander = "Yi Sun-sin"
+			heavy_ship = 56
+			losses = 0
+			country = JOS
+		}
+		result = no
+	}
+}
+1593.1.1 = {
+	add_defender = MNG
+}
+1593.2.12 = {
+	battle = {
+		name = "Haengju"
+		location = 737
+		attacker = {
+			commander = "Ukita Hideie"
+			infantry = 30000
+			losses = 33
+			country = ODA
+		}
+		defender = {
+			commander = "Gwon Yul"
+			infantry = 2300
+			losses = 0
+			country = JOS
+		}
+		result = no
+	}
+}
+1597.7.16 = {
+	battle = {
+		name = "Chilcheollyang"
+		location = 1376
+		attacker = {
+			commander = "Todo Takatora"
+			heavy_ship = 750
+			losses = 1
+			country = ODA
+		}
+		defender = {
+			commander = "Won Gyan"
+			heavy_ship = 169
+			losses = 93
+			country = JOS
+		}
+		result = yes
+	}
+}
+1597.8.16 = {
+	battle = {
+		name = "Nanwon"
+		location = 737
+		attacker = {
+			commander = "Ukita Hideie"
+			infantry = 56800
+			losses = 1
+			country = ODA
+		}
+		defender = {
+			commander = "Yang Yuan"
+			infantry = 4300
+			losses = 87
+			country = JOS
+		}
+		result = yes
+	}
+}
+1597.10.26 = {
+	battle = {
+		name = "Myeongnyang"
+		location = 1376
+		attacker = {
+			commander = "Todo Takatora"
+			heavy_ship = 133
+			light_ship = 200
+			losses = 9
+			country = ODA
+		}
+		defender = {
+			commander = "Yi Sun-sin"
+			heavy_ship = 13
+			losses = 0
+			country = JOS
+		}
+		result = no
+	}
+}
+1598.10.1 = {
+	rem_attacker = ODA
+	rem_defender = MNG
+	rem_defender = JOS
+}

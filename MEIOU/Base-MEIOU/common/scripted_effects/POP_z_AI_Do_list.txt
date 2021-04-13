@@ -1,0 +1,1184 @@
+AIDoMoveCapital = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionMoveCapital
+		}
+		GetCEWeight = {
+			doPort = yes
+			return = aiDoMoveCapitalWeight
+		}
+		
+		GetMax = {
+			varName = aiDoMoveCapitalWeight
+			type = owned_province
+			cond = is_state
+			varClean = yes
+			return = aiDoMoveCapitalBest
+		}
+		
+		event_target:aiDoMoveCapitalBest = {
+			if = {
+				limit = {
+					is_capital = no
+				}
+				set_province_flag = aiDoMoveCapitalMoved@owner
+				
+				if = {
+					limit = {
+						NOT = {
+							has_building = bureaucracy_1
+							has_building = bureaucracy_2
+							has_building = bureaucracy_3
+							has_building = bureaucracy_4
+							has_building = bureaucracy_5
+						}
+					}
+					owner = {
+						capital_scope = {
+							trigger_switch = {
+								on_trigger = has_building
+								
+								bureaucracy_1 = {
+									remove_building = bureaucracy_1
+									
+									event_target:aiDoMoveCapitalBest = {
+										add_building = bureaucracy_1
+									}
+								}
+								bureaucracy_2 = {
+									remove_building = bureaucracy_2
+									
+									event_target:aiDoMoveCapitalBest = {
+										add_building = bureaucracy_2
+									}
+								}
+								bureaucracy_3 = {
+									remove_building = bureaucracy_3
+									
+									event_target:aiDoMoveCapitalBest = {
+										add_building = bureaucracy_3
+									}
+								}
+								bureaucracy_4 = {
+									remove_building = bureaucracy_4
+									
+									event_target:aiDoMoveCapitalBest = {
+										add_building = bureaucracy_4
+									}
+								}
+								bureaucracy_5 = {
+									remove_building = bureaucracy_5
+									
+									event_target:aiDoMoveCapitalBest = {
+										add_building = bureaucracy_5
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				owner = {
+					Effect_set_capital = {
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+}
+
+AIDoManageLoan = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionManageLoan
+		}
+		Export_num_of_loans = {
+			output = aiDoManageLoanLoan
+		}
+		export_to_variable = {
+			which = aiDoManageLoanDev
+			value = total_development
+		}
+							
+		multiply_variable = { which = aiDoManageLoanLoan which = aiDoManageLoanDev }
+		multiply_variable = { which = aiDoManageLoanLoan value = 0.35 }
+		
+		GetTreasury = {
+			who = THIS
+			return = aiDoManageLoanTreasury
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = aiDoManageLoanTreasury
+					which = aiDoManageLoanLoan
+				}
+			}
+			DoTreasury = {
+				who = THIS
+				spend = aiDoManageLoanLoan
+			}
+			
+			set_variable = { which = ducat_gain which = aiDoManageLoanLoan }
+							
+			scaled_ducat_gained_country = yes
+		}
+		else = {
+			DoTreasury = {
+				who = THIS
+				spend = aiDoManageLoanTreasury
+			}
+			
+			set_variable = { which = ducat_gain which = aiDoManageLoanTreasury }
+							
+			scaled_ducat_gained_country = yes
+		}
+		
+		set_variable = {
+			which = aiDoManageLoanLoan
+			value = 0
+		}
+		set_variable = {
+			which = aiDoManageLoanDev
+			value = 0
+		}
+		set_variable = {
+			which = aiDoManageLoanTreasury
+			value = 0
+		}
+	}
+}
+
+AIDoImpStab = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionImpStab
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = stability_policy_cooltime
+				}
+			}
+			# Set how much stability policy would be taken
+			set_variable = {
+				which = aiHasActionImpStabNum
+				value = 1
+			}
+			
+			if = {
+				limit = {
+					has_country_flag = aiHasActionEstRevoke
+				}
+				set_variable = {
+					which = aiHasActionImpStabNum
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					stability = 3
+				}
+				set_variable = {
+					which = aiHasActionImpStabNum
+					value = 0
+				}
+			}
+			else_if = {
+				limit = {
+					stability = -1
+					
+					NOT = {
+						stability = 0
+					}
+				}
+				set_variable = {
+					which = aiHasActionImpStabNum
+					value = 2
+				}
+			}
+			else = {
+				set_country_flag = aiHasActionImpStabCris
+				
+				set_variable = {
+					which = aiHasActionImpStabNum
+					value = 3
+				}
+			}
+			
+			# Set stability policy based on set variable
+			if = {
+				limit = {
+					check_variable = {
+						which = aiHasActionImpStabNum
+						value = 1
+					}
+				}
+				change_variable = {
+					which = aiTestDoImpStab
+					which = aiHasActionImpStabNum
+				}
+				add_country_modifier = {
+					name = stability_policy_cooltime
+					duration = 1825
+				}
+				
+				remove_country_modifier = stability_policy_1
+				remove_country_modifier = stability_policy_2
+				remove_country_modifier = stability_policy_3
+				
+				if = {
+					limit = {
+						check_variable = {
+							which = aiHasActionImpStabNum
+							value = 3
+						}
+					}
+					add_country_modifier = {
+						name = stability_policy_3
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = aiHasActionImpStabNum
+							value = 2
+						}
+					}
+					add_country_modifier = {
+						name = stability_policy_2
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = stability_policy_1
+						duration = -1
+					}
+				}
+				
+				export_to_variable = {
+					which = aiHasActionImpStabADM
+					value = ADM
+				}
+				export_to_variable = {
+					which = aiHasActionImpStabDIP
+					value = DIP
+				}
+				export_to_variable = {
+					which = aiHasActionImpStabMIL
+					value = MIL
+				}
+				
+				while = {
+					limit = {
+						check_variable = {
+							which = aiHasActionImpStabNum
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = aiHasActionImpStabNum
+						value = 1
+					}
+					
+					if = {
+						limit = {
+							check_variable = {
+								which = aiHasActionImpStabADM
+								which = aiHasActionImpStabDIP
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = aiHasActionImpStabADM
+									which = aiHasActionImpStabMIL
+								}
+							}
+							add_adm_power = -60
+							
+							subtract_variable = {
+								which = aiHasActionImpStabADM
+								value = 1
+							}
+						}
+						else = {
+							add_mil_power = -60
+							
+							subtract_variable = {
+								which = aiHasActionImpStabMIL
+								value = 1
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = aiHasActionImpStabDIP
+									which = aiHasActionImpStabMIL
+								}
+							}
+							add_dip_power = -60
+							
+							subtract_variable = {
+								which = aiHasActionImpStabDIP
+								value = 1
+							}
+						}
+						else = {
+							add_mil_power = -60
+							
+							subtract_variable = {
+								which = aiHasActionImpStabMIL
+								value = 1
+							}
+						}
+					}
+				}
+				
+				set_variable = {
+					which = aiHasActionImpStabADM
+					value = 0
+				}
+				set_variable = {
+					which = aiHasActionImpStabDIP
+					value = 0
+				}
+				set_variable = {
+					which = aiHasActionImpStabMIL
+					value = 0
+				}
+			}
+		}
+		
+		# Decentralize if crisis
+		if = {
+			limit = {
+				has_country_flag = aiHasActionImpStabCris
+			}
+			clr_country_flag = aiHasActionImpStabCris
+			
+			if = {
+				limit = {
+					absolutism = 10
+					
+					NOT = { stability = 1 }
+					
+					OR = {
+						ADM = 3
+						advisor = statesman
+					}
+					
+					is_at_war = no
+					
+					NOT = { has_country_modifier = stability_cooldown_decent }
+				}
+				add_absolutism = -10
+				
+				add_stability_1 = yes
+				
+				add_country_modifier = {
+					name = "appeased_with_decentralization"
+					duration = 1825
+				}
+				add_country_modifier = {
+					name = "stability_cooldown_decent"
+					duration = 1825
+				}
+				
+				add_adm_power = -100
+			}
+		}
+	}
+}
+
+AIDoEstRevoke = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionEstRevoke
+		}
+		if = {
+			limit = {
+				stability = 1
+				
+				check_variable = {
+					which = estate_lesser_nobles_weight_share
+					value = 0.05
+				}
+				
+				check_variable = {
+					which = privilege_corruption_LN
+					value = 0.001
+				}
+				
+				NOT = {
+					check_variable = {
+						which = LN_privileges_time_left
+						value = 1
+					}
+				}
+			}
+			country_event = {
+				id = POP_AI.103
+				days = 2
+			}
+		}
+		if = {
+			limit = {
+				# Will demote not long after
+				NOT = {
+					AND = {
+						has_country_flag = aiHasActionEstDemote
+						
+						OR = {
+							stability = 2
+							
+							AND = {
+								stability = 1
+								
+								NOT = {
+									average_effective_unrest = 5
+								}
+							}
+						}
+						
+						is_at_war = no
+				
+						check_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.31
+						}
+						
+						NOT = {
+							check_variable = {
+								which = promote_demote_nobles_time_left
+								value = 12
+							}
+						}
+					}
+				}
+				
+				stability = 1
+				
+				check_variable = {
+					which = estate_greater_nobles_weight_share
+					value = 0.05
+				}
+				
+				check_variable = {
+					which = privilege_corruption_GN
+					value = 0.001
+				}
+				
+				NOT = {
+					check_variable = {
+						which = GN_privileges_time_left
+						value = 1
+					}
+				}
+			}
+			country_event = {
+				id = POP_AI.104
+				days = 62
+			}
+		}
+		if = {
+			limit = {
+				stability = 1
+				
+				check_variable = {
+					which = estate_burghers_weight_share
+					value = 0.05
+				}
+				
+				check_variable = {
+					which = privilege_corruption_BG
+					value = 0.001
+				}
+				
+				NOT = {
+					check_variable = {
+						which = BG_privileges_time_left
+						value = 1
+					}
+				}
+			}
+			country_event = {
+				id = POP_AI.105
+				days = 122
+			}
+		}
+	}
+}
+
+AIDoEstGrant = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionEstGrant
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						stability = -2
+					}
+					
+					AND = {
+						NOT = {
+							stability = -1
+						}
+						
+						average_effective_unrest = 8
+					}
+					
+					NOT = {
+						check_variable = {
+							which = estate_burghers_loyalty
+							value = 0.11
+						}
+					}
+				}
+				
+				check_variable = {
+					which = estate_burghers_weight_share
+					value = 0.05
+				}
+				
+				NOT = {
+					check_variable = {
+						which = BG_privileges_time_left
+						value = 1
+					}
+				}
+			}
+			country_event = {
+				id = POP_AI.106
+				days = 2
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						stability = -2
+					}
+					
+					AND = {
+						NOT = {
+							stability = -1
+						}
+						
+						average_effective_unrest = 8
+					}
+					
+					NOT = {
+						has_country_flag = aiHasActionEstDemote
+						
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.11
+						}
+					}
+				}
+				
+				check_variable = {
+					which = estate_lesser_nobles_weight_share
+					value = 0.05
+				}
+				
+				NOT = {
+					check_variable = {
+						which = LN_privileges_time_left
+						value = 1
+					}
+				}
+			}
+			country_event = {
+				id = POP_AI.107
+				days = 4
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						stability = -2
+					}
+					
+					AND = {
+						NOT = {
+							stability = -1
+						}
+						
+						average_effective_unrest = 8
+					}
+					
+					NOT = {
+						check_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.11
+						}
+					}
+				}
+				
+				check_variable = {
+					which = estate_greater_nobles_weight_share
+					value = 0.05
+				}
+				
+				NOT = {
+					check_variable = {
+						which = GN_privileges_time_left
+						value = 1
+					}
+				}
+			}
+			country_event = {
+				id = POP_AI.108
+				days = 6
+			}
+		}
+	}
+}
+
+AIDoEstDemote = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionEstDemote
+		}
+		if = {
+			limit = {
+				OR = {
+					stability = 2
+					
+					AND = {
+						stability = 1
+						
+						NOT = {
+							average_effective_unrest = 5
+						}
+					}
+				}
+				
+				is_at_war = no
+				
+				check_variable = {
+					which = estate_greater_nobles_loyalty
+					value = 0.31
+				}
+				
+				OR = {
+					NOT = {
+						has_country_flag = aiHasAgendaInvasion
+						has_country_flag = aiHasAgendaDefense
+					}
+					
+					AND = {
+						NOT = {
+							has_country_flag = aiHasAgendaInvasion
+						}
+						
+						check_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.4
+						}
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.56
+						}
+					}
+					
+					AND = {
+						check_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.6
+						}
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.7
+						}
+					}
+				}
+				
+				NOT = {
+					check_variable = {
+						which = promote_demote_nobles_time_left
+						value = 1
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstDemote
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.008
+			}
+		}
+	}
+}
+
+AIDoEstFavor = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionEstFavor
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_greater_nobles_weight_share
+					value = 0.05
+				}
+				check_variable = {
+					which = estate_greater_nobles_loyalty
+					value = 0.11
+				}
+				
+				NOT = {
+					check_variable = {
+						which = estate_greater_nobles_loyalty
+						value = 0.65
+					}
+					
+					check_variable = {
+						which = GN_favor_time_left
+						value = 1
+					}
+				}
+				
+				OR = {
+					# Can grant corruption
+					NOT = {
+						corruption = 10
+					}
+					
+					# Can grant prestige
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = tmpPrestige
+							value = prestige
+						}
+						divide_variable = {
+							which = tmpPrestige
+							value = 60
+						}
+						
+						check_variable = {
+							which = tmpPrestige
+							which = estate_greater_nobles_weight_share
+						}
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstFavorGN
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.003
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = aiHasActionEstDemote
+				}
+				
+				check_variable = {
+					which = estate_lesser_nobles_weight_share
+					value = 0.05
+				}
+				check_variable = {
+					which = estate_lesser_nobles_loyalty
+					value = 0.11
+				}
+				
+				NOT = {
+					check_variable = {
+						which = estate_lesser_nobles_loyalty
+						value = 0.65
+					}
+					
+					check_variable = {
+						which = LN_favor_time_left
+						value = 1
+					}
+				}
+				
+				OR = {
+					# Can grant corruption
+					NOT = {
+						corruption = 10
+					}
+					
+					# Can grant prestige
+					variable_arithmetic_trigger = {
+						export_to_variable = {
+							which = tmpPrestige
+							value = prestige
+						}
+						divide_variable = {
+							which = tmpPrestige
+							value = 60
+						}
+						
+						check_variable = {
+							which = tmpPrestige
+							which = estate_lesser_nobles_weight_share
+						}
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstFavorLN
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.103
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_burghers_weight_share
+					value = 0.05
+				}
+				check_variable = {
+					which = estate_burghers_loyalty
+					value = 0.11
+				}
+				
+				NOT = {
+					check_variable = {
+						which = estate_burghers_loyalty
+						value = 0.65
+					}
+					
+					check_variable = {
+						which = BG_favor_time_left
+						value = 1
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstFavorBG
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.203
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_tribals_weight_share
+					value = 0.05
+				}
+				
+				NOT = {
+					check_variable = {
+						which = estate_tribals_loyalty
+						value = 0.65
+					}
+					
+					check_variable = {
+						which = TR_favor_time_left
+						value = 1
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstFavorTR
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.402
+			}
+		}
+	}
+}
+
+AIDoEstDemand = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionEstDemand
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_greater_nobles_weight_share
+					value = 0.05
+				}
+				check_variable = {
+					which = estate_greater_nobles_loyalty
+					value = 0.36
+				}
+				
+				NOT = {
+					check_variable = {
+						which = GN_demand_support_time_left
+						value = 1
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstDemandGN
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.005
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_lesser_nobles_weight_share
+					value = 0.05
+				}
+				
+				OR = {
+					check_variable = {
+						which = estate_lesser_nobles_loyalty
+						value = 0.36
+					}
+					
+					# AI is demoting and its loyalty will hit rock bottom anyway
+					AND = {
+						has_country_flag = aiHasActionEstDemote
+						
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.11
+						}
+						
+						NOT = {
+							check_variable = {
+								which = estate_lesser_nobles_loyalty
+								value = 0.41
+							}
+						}
+					}
+				}
+				
+				NOT = {
+					check_variable = {
+						which = LN_demand_support_time_left
+						value = 1
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstDemandLN
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.105
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_burghers_weight_share
+					value = 0.05
+				}
+				check_variable = {
+					which = estate_burghers_loyalty
+					value = 0.36
+				}
+				
+				NOT = {
+					check_variable = {
+						which = BG_demand_support_time_left
+						value = 1
+					}
+				}
+			}
+			change_variable = {
+				which = aiTestDoEstDemandBG
+				value = 1
+			}
+			country_event = {
+				id = POP_Estates_Interactions.205
+			}
+		}
+	}
+}
+
+AIDoDecWar = {
+	if = {
+		limit = {
+			has_country_flag = aiHasActionDecWar
+		}
+		save_event_target_as = aiDoDecWarRoot
+		
+		GetPlanInv = {
+			var = none
+			return = aiDoDecWarTarg
+		}
+		
+		set_variable = {
+			which = tmpCheck
+			value = 1
+		}
+		
+		if = {
+			limit = {
+				event_target:aiDoDecWarTarg = {
+					NOT = {
+						is_variable_equal = {
+							which = tmpCheck
+							value = 1
+						}
+					}
+				}
+			}
+			event_target:aiDoDecWarTarg = {
+				owner = {
+					save_event_target_as = aiDoDecWarTo
+				}
+			}
+			
+			if = {
+				limit = {
+					event_target:aiDoDecWarTo = {
+						OR = {
+							alliance_with = event_target:aiDoDecWarRoot
+							
+							marriage_with = event_target:aiDoDecWarRoot
+							
+							any_ally = {
+								alliance_with = event_target:aiDoDecWarRoot
+							}
+							
+							any_country = {
+								has_guaranteed = PREV
+								
+								OR = {
+									tag = event_target:aiDoDecWarRoot
+									
+									alliance_with = event_target:aiDoDecWarRoot
+								}
+							}
+							
+							overlord = {
+								OR = {
+									alliance_with = event_target:aiDoDecWarRoot
+							
+									marriage_with = event_target:aiDoDecWarRoot
+									
+									any_ally = {
+										alliance_with = event_target:aiDoDecWarRoot
+									}
+									
+									any_country = {
+										has_guaranteed = PREV
+										
+										OR = {
+											tag = event_target:aiDoDecWarRoot
+											
+											alliance_with = event_target:aiDoDecWarRoot
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				add_opinion = {
+					who = event_target:aiDoDecWarTo
+					modifier = opinion_invasion
+				}
+				
+				overlord = {
+					add_opinion = {
+						who = PREV
+						modifier = opinion_invasion
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						truce_with = event_target:aiDoDecWarTo
+					}
+				}
+				change_variable = {
+					which = aiTestDoDecWarFrom
+					value = 1
+				}
+				
+				event_target:aiDoDecWarTo = {
+					change_variable = {
+						which = aiTestDoDecWarTo
+						value = 1
+					}
+				}
+			
+				DecWar = {
+					to = event_target:aiDoDecWarTo
+				}
+				
+				set_country_flag = aiDoDecWarFrom
+				
+				event_target:aiDoDecWarTo = {
+					set_country_flag = aiDoDecWarTo@PREV
+				}
+				
+				export_to_variable = {
+					which = aiDoDecWarFromTreasury
+					value = treasury
+				}
+				
+				Export_num_of_loans = {
+					output = aiDoDecWarFromLoan
+				}
+				export_to_variable = {
+					which = aiDoDecWarFromDev
+					value = total_development
+				}
+				
+				multiply_variable = {
+					which = aiDoDecWarFromLoan
+					which = aiDoDecWarFromDev
+				}
+				multiply_variable = {
+					which = aiDoDecWarFromLoan
+					value = 0.35
+				}
+				
+				subtract_variable = {
+					which = aiDoDecWarFromTreasury
+					which = aiDoDecWarFromLoan
+				}
+				change_variable = {
+					which = aiDoDecWarFromTreasury
+					which = aiTreasuryGeneral
+				}
+				
+				set_variable = {
+					which = aiDoDecWarFromYear
+					which = year_ticker
+				}
+				set_variable = {
+					which = aiDoDecWarFromSurplus
+					which = country_actual_income
+				}
+				
+				set_variable = {
+					which = aiDoDecWarFromLoan
+					value = 0
+				}
+			}
+		}
+		
+		set_variable = {
+			which = tmpCheck
+			value = 0
+		}
+	}
+}

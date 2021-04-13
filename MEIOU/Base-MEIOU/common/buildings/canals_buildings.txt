@@ -1,0 +1,181 @@
+canal_level_1 = {
+	cost = 9999
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				owner = {
+					adm_tech = 5
+				}
+				NOT = {
+					has_province_modifier = canal_is_building
+				}
+				AND = {
+					NOT = {
+						has_building = canal_level_2
+						has_building = canal_level_3
+					}
+				}
+				NOT = {
+					has_building = canal_level_1
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = canal_level_2
+						has_building = canal_level_3
+					}
+				}
+				has_building = canal_level_1
+			}
+		}
+	}
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+canal_level_2 = {
+	cost = 9999
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = canal_level_1
+				owner = {
+					adm_tech = 16
+				}
+				NOT = {
+					has_province_modifier = canal_is_building
+				}
+				AND = {
+					NOT = {
+						has_building = canal_level_3
+					}
+				}
+				NOT = {
+					has_building = canal_level_2
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = canal_level_3
+					}
+				}
+				has_building = canal_level_2
+			}
+		}
+	}
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+canal_level_3 = {
+	cost = 9999
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = canal_level_2
+				owner = {
+					adm_tech = 40
+				}
+				NOT = {
+					has_province_modifier = canal_is_building
+				}
+				AND = {
+					always = yes
+				}
+				NOT = {
+					has_building = canal_level_3
+				}
+			}
+			AND = {
+				AND = {
+					always = yes
+				}
+				has_building = canal_level_3
+			}
+		}
+	}
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+upgrade_canal_build = {
+	cost = 0
+	time = 1
+	trigger = {
+		owner = {
+			ai = no
+		}
+		NOT = {
+			has_province_modifier = canal_is_building
+		}
+		NOT = {
+			has_province_modifier = mass_building_canal
+		}
+		OR = {
+			has_building = upgrade_canal_build
+			OR = {
+				AND = {
+					owner = {
+						adm_tech = 5
+					}
+					NOT = {
+						has_province_modifier = canal_is_building
+					}
+					AND = {
+						NOT = {
+							has_building = canal_level_2
+							has_building = canal_level_3
+						}
+					}
+					NOT = {
+						has_building = canal_level_1
+					}
+				}
+				AND = {
+					has_building = canal_level_1
+					owner = {
+						adm_tech = 16
+					}
+					NOT = {
+						has_province_modifier = canal_is_building
+					}
+					AND = {
+						NOT = {
+							has_building = canal_level_3
+						}
+					}
+					NOT = {
+						has_building = canal_level_2
+					}
+				}
+				AND = {
+					has_building = canal_level_2
+					owner = {
+						adm_tech = 40
+					}
+					NOT = {
+						has_province_modifier = canal_is_building
+					}
+					AND = {
+						always = yes
+					}
+					NOT = {
+						has_building = canal_level_3
+					}
+				}
+			}
+		}
+	}
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}

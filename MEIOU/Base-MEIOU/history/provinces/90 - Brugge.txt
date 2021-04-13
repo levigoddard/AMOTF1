@@ -1,0 +1,380 @@
+owner = FLA
+controller = FLA
+add_core = FLA
+capital = "Brugge"
+trade_goods = wheat
+culture = flemish
+religion = catholic
+hre = no
+base_tax = 15
+base_production = 11
+base_manpower = 1
+is_city = yes
+merchant_guild = yes
+road_network = yes
+temple = yes
+corporation_guild = yes
+warehouse = yes
+urban_infrastructure_2 = yes
+harbour_infrastructure_2 = yes
+local_fortification_1 = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+500.1.1 = {
+	add_permanent_province_modifier = {
+		name = urban_goods_luxury_cloth
+		duration = -1
+	}
+	set_province_flag = good_natural_place
+	add_permanent_province_modifier = {
+		name = "bruges_natural_harbour"
+		duration = -1
+	}
+	set_province_flag = has_natural_harbour
+	set_province_flag = has_small_natural_harbour
+}
+1385.1.1 = {
+	owner = BUR
+	controller = BUR
+	add_core = BUR
+	add_core = FRA
+}
+1425.1.1 = {
+	fort_14th = yes
+}
+1444.1.1 = {
+	remove_core = FRA
+}
+1453.7.23 = {
+	controller = BUR
+	revolt = {}
+}
+1477.1.5 = {
+	add_core = FRA
+}
+1477.1.5 = {
+	unrest = 10
+}
+1477.8.18 = {
+	unrest = 0
+}
+1482.3.27 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = BUR
+}
+1488.1.1 = {
+	controller = REB
+}
+1492.7.12 = {
+	controller = HAB
+	unrest = 0
+}
+1500.1.1 = {
+	road_network = yes
+}
+1510.1.1 = {
+	fort_14th = yes
+}
+1520.5.5 = {
+	base_tax = 16
+	base_production = 6
+	base_manpower = 1
+}
+1522.2.15 = {
+	shipyard = yes
+}
+1528.1.1 = {
+	unrest = 5
+}
+1529.8.3 = {
+	remove_core = FRA
+}
+1530.1.1 = {
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	remove_core = HAB
+}
+1530.1.3 = {
+	road_network = no
+	paved_road_network = yes
+}
+1530.1.5 = {
+	owner = BUR
+	controller = BUR
+	add_core = BUR
+	remove_core = SPA
+}
+1531.1.1 = {
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	remove_core = BUR
+}
+1537.8.15 = {
+	controller = REB
+}
+1540.4.30 = {
+	controller = HAB
+	unrest = 0
+}
+1548.6.26 = {
+	hre = yes
+}
+1549.11.4 = {
+	add_core = NED
+	remove_core = FLA
+}
+1556.1.14 = {
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	remove_core = HAB
+}
+1559.5.12 = {
+	unrest = 3
+}
+1560.1.1 = {}
+1565.1.1 = {
+	unrest = 5
+}
+1566.4.5 = {
+	unrest = 3
+}
+1566.8.1 = {
+	unrest = 4
+}
+1566.8.10 = {
+	controller = REB
+}
+1567.1.20 = {
+	controller = SPA
+}
+1567.9.10 = {
+	unrest = 5
+}
+1568.6.5 = {
+	unrest = 7
+}
+1569.1.1 = {
+	unrest = 11
+}
+1570.1.1 = {
+	unrest = 17
+}
+1572.1.1 = {
+	religion = reformed
+}
+1577.2.12 = {
+	unrest = 11
+}
+1577.10.28 = {
+	controller = REB
+}
+1579.1.6 = {
+	add_core = EBU
+}
+1579.1.23 = {
+	controller = NED
+	unrest = 0
+}
+1585.8.27 = {
+	controller = SPA
+	unrest = 5
+	religion = catholic
+	fort_14th = no
+	fort_15th = yes
+}
+1600.7.2 = {
+	controller = NED
+}
+1604.1.1 = {
+	controller = SPA
+}
+1648.1.30 = {
+	remove_core = NED
+	unrest = 0
+}
+1665.9.17 = {
+	add_claim = FRA
+}
+1672.5.1 = {
+	controller = FRA
+}
+1678.9.19 = {
+	controller = SPA
+}
+1706.6.1 = {
+	controller = ENG
+}
+1707.5.12 = {
+	controller = GBR
+}
+1713.4.11 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+	remove_core = SPA
+}
+1715.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+1715.9.1 = {
+	remove_core = FRA
+}
+1744.4.1 = {
+	controller = FRA
+}
+1744.7.1 = {
+	controller = HAB
+}
+1745.5.10 = {
+	controller = FRA
+}
+1748.10.18 = {
+	controller = HAB
+}
+1789.11.13 = {
+	controller = REB
+	add_core = EBU
+}
+1790.1.11 = {
+	owner = EBU
+	controller = EBU
+}
+1791.1.1 = {
+	owner = HAB
+	controller = HAB
+}
+1792.12.1 = {
+	controller = FRA
+}
+1793.3.18 = {
+	controller = HAB
+}
+1795.5.16 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+}
+1798.10.12 = {
+	controller = REB
+}
+1798.12.1 = {
+	controller = FRA
+}
+1806.7.12 = {
+	hre = no
+}
+1815.3.16 = {
+	owner = NED
+	controller = NED
+	add_core = NED
+	remove_core = FRA
+}
+1830.1.1 = {
+	owner = EBU
+	controller = EBU
+}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 192.828
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 75.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 150.828
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 117.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 30.410
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 141.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 116.262
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 98.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 198.828
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 69.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 211.183
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 71.250
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 223.320
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 60.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 188.033
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 77.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 208.787
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 78.500
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 266.603
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 89.750
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 318.124
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 134.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 422.089
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 198.000
+	}
+}

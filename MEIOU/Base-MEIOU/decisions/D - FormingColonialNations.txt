@@ -1,0 +1,1129 @@
+country_decisions = {
+	brazil_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_brazil = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_brazil
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_brazil
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_brazil
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = BRZ
+			}
+		}
+		effect = {
+			colonial_brazil = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_brazil = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = BRZ
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = BRZ_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	canada_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_canada = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_canada
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_canada
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_canada
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = CAN
+			}
+		}
+		effect = {
+			colonial_canada = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_canada = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = CAN
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	chile_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_chile = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_chile
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			NOT = {
+				exists = CHL
+			}
+			capital_scope = {
+				colonial_region = colonial_chile
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_chile
+				is_core = ROOT
+				value = 6
+			}
+		}
+		effect = {
+			colonial_chile = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_chile = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = CHL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	colombia_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_colombia = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_colombia
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_colombia
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_colombia
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = COL
+			}
+		}
+		effect = {
+			colonial_colombia = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_colombia = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = COL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	haiti_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_hispanola = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_hispanola
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_hispanola
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_hispanola
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = HAT
+			}
+		}
+		effect = {
+			colonial_hispanola = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_hispanola = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = HAT
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	la_plata_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_la_plata = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_la_plata
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_la_plata
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_la_plata
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = LAP
+			}
+		}
+		effect = {
+			colonial_la_plata = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_la_plata = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = LAP
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	louisiana_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_louisiana = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_louisiana
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_louisiana
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_louisiana
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = LOU
+			}
+		}
+		effect = {
+			colonial_louisiana = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_louisiana = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = LOU
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mexico_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			mexico_region = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			region = mexico_region
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				region = mexico_region
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				region = mexico_region
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = MEX
+			}
+		}
+		effect = {
+			mexico_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			mexico_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			zacatecas_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			zacatecas_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			zapotec_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			zapotec_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = MEX
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	paraguay_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_la_plata = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_la_plata
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			NOT = {
+				exists = PRG
+			}
+			owns_core_province = 775
+			owns_core_province = 1486
+			capital_scope = {
+				colonial_region = colonial_la_plata
+				is_core = ROOT
+			}
+		}
+		effect = {
+			colonial_la_plata = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_la_plata = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = PRG
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	peru_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_peru = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_peru
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_peru
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_peru
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = PEU
+			}
+		}
+		effect = {
+			colonial_peru = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_peru = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = PEU
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	quebec_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_canada = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_canada
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			NOT = {
+				exists = QUE
+			}
+			capital_scope = {
+				colonial_region = colonial_canada
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_canada
+				is_core = ROOT
+				value = 6
+			}
+		}
+		effect = {
+			colonial_canada = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_canada = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = QUE
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = quebecois_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	upca_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			central_america_region = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			region = central_america_region
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			NOT = {
+				exists = CAM
+			}
+			capital_scope = {
+				region = central_america_region
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				region = central_america_region
+				is_core = ROOT
+				value = 6
+			}
+		}
+		effect = {
+			central_america_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			central_america_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = CAM
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	usa_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_eastern_america = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_eastern_america
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			capital_scope = {
+				colonial_region = colonial_eastern_america
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_eastern_america
+				is_core = ROOT
+				value = 6
+			}
+			NOT = {
+				exists = USA
+			}
+		}
+		effect = {
+			colonial_eastern_america = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_eastern_america = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = USA
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = USA_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	venezuela_nation = {
+		major = yes
+		potential = {
+			OR = {
+				is_former_colonial_nation = yes
+				is_colonial_nation = yes
+			}
+			NOT = {
+				has_country_flag = changed_from_colonial_nation
+			}
+			colonial_colombia = {
+				owned_by = ROOT
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+		}
+		provinces_to_highlight = {
+			colonial_region = colonial_colombia
+		}
+		allow = {
+			adm_tech = 10
+			is_former_colonial_nation = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			NOT = {
+				exists = VNZ
+			}
+			capital_scope = {
+				colonial_region = colonial_colombia
+				is_core = ROOT
+			}
+			num_of_owned_provinces_with = {
+				colonial_region = colonial_colombia
+				is_core = ROOT
+				value = 6
+			}
+		}
+		effect = {
+			colonial_colombia = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			colonial_colombia = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = changed_from_colonial_nation
+			add_absolutism = 10
+			change_tag = VNZ
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

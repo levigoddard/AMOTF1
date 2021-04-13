@@ -1,0 +1,3137 @@
+country_event = {
+	id = title_change.1
+	title = "title_change.1.n"
+	desc = "title_change.1.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.41
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.42
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.2
+	title = "title_change.2.n"
+	desc = "title_change.2.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.41
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.42
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.3
+	title = "title_change.3.n"
+	desc = "title_change.3.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.41
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.42
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.4
+	title = "title_change.4.n"
+	desc = "title_change.4.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.41
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.42
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.11
+	title = "title_change.11.n"
+	desc = "title_change.11.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.12
+	title = "title_change.12.n"
+	desc = "title_change.12.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.13
+	title = "title_change.13.n"
+	desc = "title_change.13.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.14
+	title = "title_change.14.n"
+	desc = "title_change.14.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.21
+	title = "title_change.21.n"
+	desc = "title_change.21.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+			modifier = {
+				is_female = yes
+				NOT = {
+					piety = 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.45
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.46
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.22
+	title = "title_change.22.n"
+	desc = "title_change.22.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+			modifier = {
+				is_female = yes
+				NOT = {
+					piety = 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.45
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.46
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.23
+	title = "title_change.23.n"
+	desc = "title_change.23.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+			modifier = {
+				is_female = yes
+				NOT = {
+					piety = 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.45
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.46
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.24
+	title = "title_change.24.n"
+	desc = "title_change.24.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+			modifier = {
+				is_female = yes
+				NOT = {
+					piety = 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.45
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.46
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.25
+	title = "title_change.25.n"
+	desc = "title_change.25.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+			modifier = {
+				is_female = yes
+				NOT = {
+					piety = 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.45
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.46
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			add_country_modifier = {
+				name = title_6
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.26
+	title = "title_change.26.n"
+	desc = "title_change.26.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.27
+	title = "title_change.27.n"
+	desc = "title_change.27.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.28
+	title = "title_change.28.n"
+	desc = "title_change.28.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.29
+	title = "title_change.29.n"
+	desc = "title_change.29.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.36
+	title = "title_change.36.n"
+	desc = "title_change.36.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_legitimacy = 10
+			if = {
+				limit = {
+					NOT = {
+						overlord_of = ROOT
+					}
+				}
+				free_vassal = FROM
+				create_subject = {
+					who = FROM
+					subject_type = daimyo_vassal
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = title_change.37
+	title = "title_change.37.n"
+	desc = {
+		trigger = {
+			FROM = {
+				capital_scope = {
+					OR = {
+						area = north_kyushu_area
+						area = south_kyushu_area
+					}
+				}
+			}
+		}
+		desc = title_change.37.ta
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				capital_scope = {
+					OR = {
+						area = sanin_area
+						area = sanyo_area
+					}
+				}
+			}
+		}
+		desc = title_change.37.tb
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				capital_scope = {
+					area = shikoku_area
+				}
+			}
+		}
+		desc = title_change.37.tc
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				capital_scope = {
+					area = tohoku_area
+				}
+			}
+		}
+		desc = title_change.37.td
+	}
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							area = north_kyushu_area
+							area = south_kyushu_area
+						}
+					}
+				}
+				set_country_flag = kyushu_tandai
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							area = sanin_area
+							area = sanyo_area
+						}
+					}
+				}
+				set_country_flag = chugoku_tandai
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						area = shikoku_area
+					}
+				}
+				set_country_flag = shikoku_tandai
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						area = tohoku_area
+					}
+				}
+				set_country_flag = ou_tandai
+			}
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.38
+	title = "title_change.38.n"
+	desc = "title_change.38.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.HELLNO"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_refused
+			}
+			country_event = {
+				id = title_change.43
+				days = 5
+			}
+			add_country_modifier = {
+				name = "promotion_denied"
+				duration = 3000
+			}
+		}
+	}
+	option = {
+		name = "OPT.WHYNOT"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 150
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					who = FROM
+					value = 180
+				}
+				factor = 5
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = promotion_accepted
+			}
+			country_event = {
+				id = title_change.44
+				days = 5
+			}
+			add_country_modifier = {
+				name = "newly_promoted"
+				duration = 3000
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_known_country = {
+							has_country_flag = kyoto_kanrei
+						}
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+				set_country_flag = kyoto_kanrei
+			}
+			set_country_flag = kanrei_appointement
+			add_legitimacy = 10
+		}
+	}
+}
+country_event = {
+	id = title_change.41
+	title = "title_change.41.n"
+	desc = "title_change.41.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		clr_country_flag = promotion_requested
+		name = "OPT.UNFORTUNATE"
+		add_prestige = -25
+	}
+}
+country_event = {
+	id = title_change.42
+	title = "title_change.42.n"
+	desc = "title_change.42.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		clr_country_flag = promotion_requested
+		name = "OPT.HURRAH"
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = title_change.43
+	title = "title_change.43.n"
+	desc = "title_change.43.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		clr_country_flag = promotion_requested
+		name = "OPT.UNFORTUNATE"
+		add_prestige = -25
+	}
+}
+country_event = {
+	id = title_change.44
+	title = "title_change.44.n"
+	desc = "title_change.44.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		clr_country_flag = promotion_requested
+		name = "OPT.HURRAH"
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = title_change.45
+	title = "title_change.45.n"
+	desc = "title_change.45.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		clr_country_flag = promotion_requested
+		name = "OPT.UNFORTUNATE"
+		add_prestige = -25
+	}
+}
+country_event = {
+	id = title_change.46
+	title = "title_change.46.n"
+	desc = "title_change.46.t"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		clr_country_flag = promotion_requested
+		name = "OPT.HURRAH"
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = title_change.51
+	title = "title_change.51.n"
+	desc = "title_change.51.t"
+	picture = COURT_eventPicture
+	trigger = {
+		num_of_cities = 3
+		prestige = 10
+		OR = {
+			DIP = 2
+			MIL = 3
+			advisor = statesman
+		}
+		OR = {
+			AND = {
+				capital_scope = {
+					is_part_of_hre = yes
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				prestige = 20
+			}
+			AND = {
+				is_part_of_hre = yes
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				prestige = 20
+			}
+		}
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		has_country_modifier = title_1
+		has_regency = no
+		NOT = {
+			has_country_modifier = newly_promoted
+		}
+		NOT = {
+			has_country_modifier = promotion_denied
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 1.25
+			is_female = yes
+		}
+		modifier = {
+			factor = 0.9
+			stability = -1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 4
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 5
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 6
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 20
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 40
+		}
+	}
+	option = {
+		name = "OPT.VERYGOOD"
+		add_country_modifier = {
+			name = "newly_promoted"
+			duration = 3000
+		}
+		remove_country_modifier = title_1
+		remove_country_modifier = title_3
+		remove_country_modifier = title_4
+		remove_country_modifier = title_5
+		remove_country_modifier = title_6
+		add_country_modifier = {
+			name = title_2
+			duration = -1
+		}
+		clr_country_flag = title_1
+		clr_country_flag = title_2
+		clr_country_flag = title_3
+		clr_country_flag = title_4
+		clr_country_flag = title_5
+		clr_country_flag = title_6
+	}
+}
+country_event = {
+	id = title_change.52
+	title = "title_change.52.n"
+	desc = "title_change.52.t"
+	picture = COURT_eventPicture
+	trigger = {
+		num_of_cities = 5
+		prestige = 25
+		OR = {
+			DIP = 2
+			MIL = 3
+			advisor = statesman
+		}
+		OR = {
+			AND = {
+				capital_scope = {
+					is_part_of_hre = yes
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				prestige = 25
+			}
+			AND = {
+				is_part_of_hre = yes
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				prestige = 25
+			}
+		}
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		has_regency = no
+		has_country_modifier = title_2
+		NOT = {
+			has_country_modifier = newly_promoted
+		}
+		NOT = {
+			has_country_modifier = promotion_denied
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 1.25
+			is_female = yes
+		}
+		modifier = {
+			factor = 0.9
+			stability = -1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 4
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 5
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 6
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 20
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 40
+		}
+	}
+	option = {
+		name = "OPT.VERYGOOD"
+		add_country_modifier = {
+			name = "newly_promoted"
+			duration = 3000
+		}
+		remove_country_modifier = title_1
+		remove_country_modifier = title_2
+		remove_country_modifier = title_4
+		remove_country_modifier = title_5
+		remove_country_modifier = title_6
+		add_country_modifier = {
+			name = title_3
+			duration = -1
+		}
+		clr_country_flag = title_1
+		clr_country_flag = title_2
+		clr_country_flag = title_3
+		clr_country_flag = title_4
+		clr_country_flag = title_5
+		clr_country_flag = title_6
+		set_country_flag = title_3
+	}
+}
+country_event = {
+	id = title_change.53
+	title = "title_change.53.n"
+	desc = "title_change.53.t"
+	picture = COURT_eventPicture
+	trigger = {
+		num_of_cities = 7
+		prestige = 25
+		OR = {
+			DIP = 2
+			MIL = 3
+			advisor = statesman
+		}
+		OR = {
+			AND = {
+				capital_scope = {
+					is_part_of_hre = yes
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				prestige = 35
+			}
+			AND = {
+				is_part_of_hre = yes
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				prestige = 35
+			}
+		}
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		NOT = {
+			has_country_modifier = newly_promoted
+		}
+		NOT = {
+			has_country_modifier = promotion_denied
+		}
+		has_regency = no
+		has_country_modifier = title_3
+	}
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 1.25
+			is_female = yes
+		}
+		modifier = {
+			factor = 0.9
+			stability = -1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 4
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 5
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 6
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 20
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 40
+		}
+	}
+	option = {
+		name = "OPT.VERYGOOD"
+		add_country_modifier = {
+			name = "newly_promoted"
+			duration = 3000
+		}
+		remove_country_modifier = title_1
+		remove_country_modifier = title_2
+		remove_country_modifier = title_3
+		remove_country_modifier = title_5
+		remove_country_modifier = title_6
+		add_country_modifier = {
+			name = title_4
+			duration = -1
+		}
+		clr_country_flag = title_1
+		clr_country_flag = title_2
+		clr_country_flag = title_3
+		clr_country_flag = title_4
+		clr_country_flag = title_5
+		clr_country_flag = title_6
+	}
+}
+country_event = {
+	id = title_change.54
+	title = "title_change.54.n"
+	desc = "title_change.54.t"
+	picture = COURT_eventPicture
+	trigger = {
+		num_of_cities = 40
+		prestige = 45
+		OR = {
+			DIP = 3
+			MIL = 4
+			advisor = statesman
+		}
+		OR = {
+			AND = {
+				capital_scope = {
+					is_part_of_hre = yes
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				prestige = 55
+			}
+			AND = {
+				is_part_of_hre = yes
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				prestige = 55
+			}
+		}
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		NOT = {
+			has_country_modifier = newly_promoted
+		}
+		NOT = {
+			has_country_modifier = promotion_denied
+		}
+		has_regency = no
+		has_country_modifier = title_4
+	}
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 1.25
+			is_female = yes
+		}
+		modifier = {
+			factor = 0.9
+			stability = -1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 4
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 5
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 6
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 20
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 40
+		}
+	}
+	option = {
+		name = "OPT.VERYGOOD"
+		add_country_modifier = {
+			name = "newly_promoted"
+			duration = 3000
+		}
+		remove_country_modifier = title_1
+		remove_country_modifier = title_2
+		remove_country_modifier = title_3
+		remove_country_modifier = title_4
+		remove_country_modifier = title_6
+		add_country_modifier = {
+			name = title_5
+			duration = -1
+		}
+		clr_country_flag = title_1
+		clr_country_flag = title_2
+		clr_country_flag = title_3
+		clr_country_flag = title_4
+		clr_country_flag = title_5
+		clr_country_flag = title_6
+	}
+}
+country_event = {
+	id = title_change.55
+	title = "title_change.55.n"
+	desc = "title_change.55.t"
+	picture = COURT_eventPicture
+	trigger = {
+		num_of_cities = 60
+		prestige = 85
+		OR = {
+			DIP = 4
+			MIL = 5
+			advisor = statesman
+		}
+		OR = {
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				religion = catholic
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 190
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					is_part_of_hre = yes
+				}
+				NOT = {
+					religion = catholic
+				}
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				prestige = 95
+			}
+		}
+		OR = {
+			government = monarchy
+			government = tribal
+		}
+		has_regency = no
+		has_country_modifier = title_5
+		NOT = {
+			has_country_modifier = newly_promoted
+		}
+		NOT = {
+			has_country_modifier = promotion_denied
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 0.9
+			stability = -1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 3
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 4
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 5
+		}
+		modifier = {
+			factor = 0.9
+			DIP = 6
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 20
+		}
+		modifier = {
+			factor = 0.9
+			prestige = 40
+		}
+		modifier = {
+			factor = 1.25
+			is_female = yes
+		}
+	}
+	option = {
+		name = "OPT.VERYGOOD"
+		add_country_modifier = {
+			name = "newly_promoted"
+			duration = 3000
+		}
+		remove_country_modifier = title_1
+		remove_country_modifier = title_2
+		remove_country_modifier = title_3
+		remove_country_modifier = title_4
+		remove_country_modifier = title_5
+		add_country_modifier = {
+			name = title_6
+			duration = -1
+		}
+		clr_country_flag = title_1
+		clr_country_flag = title_2
+		clr_country_flag = title_3
+		clr_country_flag = title_4
+		clr_country_flag = title_5
+		clr_country_flag = title_6
+	}
+}

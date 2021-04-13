@@ -1,0 +1,6267 @@
+country_event = {
+	id = on_new_monarch.1
+	title = "on_new_monarch.1.t"
+	picture = DEATH_OF_HEIR_eventPicture
+	trigger = {
+		NOT = {
+			has_country_flag = had_regency
+		}
+		NOT = {
+			has_country_flag = ruler_prisonner_of_war
+		}
+		NOT = {
+			has_country_flag = influential_general_court
+		}
+		NOT = {
+			has_ruler_flag = ruler_prisoner_freed
+		}
+	}
+	desc = {
+		trigger = {
+			has_consort_regency = no
+			has_regency = no
+		}
+		desc = on_new_monarch.1.d
+	}
+	desc = {
+		trigger = {
+			has_consort_regency = yes
+			has_female_heir = no
+		}
+		desc = on_new_monarch.1.db
+	}
+	desc = {
+		trigger = {
+			has_consort_regency = no
+			has_regency = yes
+			has_female_heir = no
+		}
+		desc = on_new_monarch.1.dc
+	}
+	desc = {
+		trigger = {
+			has_consort_regency = yes
+			has_female_heir = yes
+		}
+		desc = on_new_monarch.1.dd
+	}
+	desc = {
+		trigger = {
+			has_consort_regency = no
+			has_regency = yes
+			has_female_heir = yes
+		}
+		desc = on_new_monarch.1.de
+	}
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				government = monarchy
+			}
+			add_country_modifier = {
+				name = mourning_of_monarch
+				duration = 182
+			}
+		}
+		if = {
+			limit = {
+				government = monarchy
+				NOT = {
+					religion_group = christian
+				}
+				NOT = {
+					religion_group = muslim
+				}
+				NOT = {
+					adm = 3
+				}
+				capital_scope = {
+					superregion = southeast_asia_superregion
+				}
+				check_variable = {
+					which = "Demesne_in_Indonesia"
+					value = 25
+				}
+			}
+			set_ruler_flag = weak_archipelagic_ruler
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_consort_regency = no
+					has_regency = no
+					NOT = {
+						has_ruler_flag = personality_set
+					}
+				}
+				country_event = {
+					id = on_new_monarch.2
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_consort_regency = yes
+						has_regency = yes
+					}
+				}
+				set_country_flag = had_regency
+			}
+			if = {
+				limit = {
+					has_country_flag = feudal_colonisation
+				}
+				every_subject_country = {
+					country_event = {
+						id = elections.706
+						days = 15
+					}
+				}
+			}
+		}
+	}
+	option = {
+		trigger = {
+			NOT = {
+				government = monarchy
+			}
+		}
+		name = "OPT.VERYWELL"
+		if = {
+			limit = {
+				has_country_flag = initialising
+			}
+			clr_country_flag = initialising
+		}
+	}
+	option = {
+		trigger = {
+			government = monarchy
+		}
+		name = "on_new_monarch.1.a"
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 3
+				NOT = {
+					stability = 1
+				}
+			}
+			modifier = {
+				factor = 5
+				NOT = {
+					stability = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_consort_regency = yes
+					has_regency = yes
+				}
+			}
+			add_heir_claim = 5
+		}
+		else = {
+			add_legitimacy = 5
+		}
+		add_prestige = 10
+		add_years_of_income = -0.35
+	}
+	option = {
+		trigger = {
+			government = monarchy
+		}
+		name = "on_new_monarch.1.b"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				NOT = {
+					stability = 1
+				}
+			}
+		}
+		random = {
+			chance = 20
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		add_years_of_income = -0.20
+	}
+	option = {
+		trigger = {
+			government = monarchy
+		}
+		name = "on_new_monarch.1.c"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				stability = 2
+			}
+		}
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		add_years_of_income = -0.10
+	}
+	option = {
+		trigger = {
+			government = monarchy
+		}
+		name = "on_new_monarch.1.e"
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				stability = 3
+			}
+		}
+		random = {
+			chance = 30
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		if = {
+			limit = {
+				OR = {
+					has_consort_regency = yes
+					has_regency = yes
+				}
+			}
+			add_heir_claim = -5
+		}
+		else = {
+			add_legitimacy = -5
+		}
+		add_prestige = -10
+	}
+}
+country_event = {
+	id = on_new_monarch.2
+	title = "EVT_AI"
+	desc = "EVT_AI"
+	picture = DEATH_OF_HEIR_eventPicture
+	trigger = {
+		NOT = {
+			has_ruler_flag = personality_set
+		}
+	}
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_ruler_flag = personality_set
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "Rights of Man"
+					}
+				}
+				if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						4 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = monarchy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						4 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.25
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.24
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						government = theocracy
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.22
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.23
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						4 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.09
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = no
+						NOT = {
+							government = monarchy
+						}
+						NOT = {
+							government = theocracy
+						}
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.06
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.14
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.21
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						piety = 0.20
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						MIL = 4
+					}
+					random_list = {
+						6 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						OR = {
+							ADM = 4
+							DIP = 4
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						3 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 4
+						}
+						NOT = {
+							DIP = 4
+						}
+						OR = {
+							ADM = 2
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.15
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						MIL = 4
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.02
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.08
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 4
+						}
+						MIL = 2
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.03
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						3 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						is_female = yes
+						NOT = {
+							piety = 0.20
+						}
+						NOT = {
+							ADM = 2
+						}
+						NOT = {
+							DIP = 2
+						}
+						NOT = {
+							MIL = 2
+						}
+					}
+					random_list = {
+						7 = {
+							country_event = {
+								id = personality.01
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.04
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.05
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.07
+							}
+						}
+						6 = {
+							country_event = {
+								id = personality.10
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.11
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.12
+							}
+						}
+						7 = {
+							country_event = {
+								id = personality.13
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "OPT.VERYWELL"
+		set_global_flag = courtsetup
+	}
+}
+country_event = {
+	id = on_new_monarch.3
+	title = EVT_AI
+	desc = EVT_AI
+	picture = DEATH_OF_HEIR_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		has_country_flag = had_regency
+		has_consort_regency = no
+		has_regency = no
+	}
+	option = {
+		name = OPT.VERYWELL
+		clr_country_flag = had_regency
+	}
+}

@@ -1,0 +1,82 @@
+owner = MPH
+controller = MPH
+add_core = MPH
+capital = "Kediri"
+trade_goods = rice
+culture = javan
+religion = hinduism
+hre = no
+base_tax = 27
+base_production = 0
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5
+	}
+}
+1356.1.1 = {
+	add_core = KMA
+}
+1501.1.1 = {
+	base_tax = 33
+}
+1517.1.1 = {
+	owner = DEM
+	controller = DEM
+	add_core = DEM
+}
+1570.1.1 = {
+	owner = MTR
+	controller = MTR
+	remove_core = MPH
+	religion = sunni
+}
+1600.1.1 = {
+	add_core = MTR
+}
+1613.1.1 = {
+	discovered_by = NED
+}
+1617.1.1 = {
+	unrest = 3
+}
+1630.1.1 = {
+	unrest = 1
+}
+1657.1.1 = {
+	unrest = 2
+}
+1677.7.13 = {
+	unrest = 0
+}
+1700.1.1 = {
+	trade_goods = lumber
+}
+1719.6.1 = {
+	unrest = 2
+}
+1721.1.1 = {
+	unrest = 0
+}
+1746.5.1 = {
+	unrest = 2
+}
+1755.2.13 = {
+	unrest = 2
+}
+1757.3.1 = {
+	unrest = 0
+}
+1812.7.1 = {
+	owner = GBR
+	controller = GBR
+}
+1816.1.1 = {
+	owner = NED
+	controller = NED
+}

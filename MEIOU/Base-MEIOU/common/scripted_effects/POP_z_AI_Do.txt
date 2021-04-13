@@ -1,0 +1,462 @@
+AIDoSpending = {
+	if = {
+		limit = {
+			is_at_war = no
+			
+			OR = {
+				has_country_flag = aiHasActionBuildForts
+				has_country_flag = aiHasActionBuildShipyards
+				has_country_flag = aiHasActionBuildPort
+				has_country_flag = aiHasActionBuildRoad
+				has_country_flag = aiHasActionBuildBureau
+				has_country_flag = aiHasActionBuildCity
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = aiHasActionBuildForts
+			}
+			GetFortWeight = {
+				return = aiWeightFort
+			}
+		}
+		else = {
+			every_owned_province = {
+				set_variable = {
+					which = aiWeightFort
+					value = -10
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = aiHasActionBuildShipyards
+			}
+			GetShipyardWeight = {
+				return = aiWeightShipyard
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = aiHasActionBuildPort
+			}
+			GetPortWeight = {
+				return = aiWeightPort
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = aiHasActionBuildRoad
+			}
+			GetRoadWeight = {
+				return = aiWeightRoad
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = aiHasActionBuildBureau
+			}
+			GetBureauWeight = {
+				return = aiWeightBureau
+			}
+		}
+		else = {
+			every_owned_province = {
+				set_variable = {
+					which = aiWeightBureau
+					value = -10
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = aiHasActionBuildCity
+			}
+			every_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				GetTreasury = {
+					who = owner
+					return = aiDoSpendingTreasury
+				}
+				
+				GetBestBuilding = {
+					root = State
+					urban = yes
+					rural = no
+					state = yes
+					budget = aiDoSpendingTreasury
+					buildWeight = aiDoSpendingWeight
+					buildInd = aiDoSpendingInd
+					buildPrice = aiDoSpendingPrice
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = aiDoSpendingInd
+								value = 38		# Last urban building
+							}
+						}
+					}
+					export_to_variable = {
+						which = aiDoSpendingLA
+						value = local_autonomy
+					}
+					
+					multiply_variable = {
+						which = aiDoSpendingLA
+						value = 0.006
+					}
+					subtract_variable = {
+						which = aiDoSpendingLA
+						value = 1
+					}
+					multiply_variable = {
+						which = aiDoSpendingLA
+						value = -1
+					}
+					
+					multiply_variable = {
+						which = aiDoSpendingWeight
+						which = aiDoSpendingLA
+					}
+					
+					set_variable = {
+						which = aiDoSpendingLA
+						value = 0
+					}
+				}
+			}
+		}
+		else = {
+			every_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				GetTreasury = {
+					who = owner
+					return = aiDoSpendingTreasury
+				}
+				
+				GetBestBuilding = {
+					root = State
+					urban = no
+					rural = no
+					state = yes
+					budget = aiDoSpendingTreasury
+					buildWeight = aiDoSpendingWeight
+					buildInd = aiDoSpendingInd
+					buildPrice = aiDoSpendingPrice
+				}
+			}
+		}
+		
+		set_country_flag = aiDoSpendingItr
+			
+		while = {
+			limit = {
+				has_country_flag = aiDoSpendingItr
+			}
+			clr_country_flag = aiDoSpendingItr
+			
+			GetMax = {
+				varName = aiDoSpendingWeight
+				type = owned_province
+				cond = is_city
+				varClean = no
+				return = aiDoSpendingBest
+			}
+			
+			set_variable = {
+				which = aiDoSpendingWeight
+				value = -1
+			}
+			
+			event_target:aiDoSpendingBest = {
+				GetTreasury = {
+					who = owner
+					return = aiDoSpendingTreasury
+				}
+				
+				if = {
+					limit = {
+						check_variable = {
+							which = aiDoSpendingInd
+							value = 1
+						}
+						
+						check_variable = {
+							which = aiDoSpendingTreasury
+							which = aiDoSpendingPrice
+						}
+					}
+					DoTreasury = {
+						who = owner
+						spend = aiDoSpendingPrice
+					}
+					DoBuilding = {
+						buildInd = aiDoSpendingInd
+					}
+					
+					PREV = {
+						set_country_flag = aiDoSpendingItr
+					}
+					
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = aiDoSpendingInd
+									value = 38		# Last urban building
+								}
+							}
+						}
+						remove_province_modifier = ai_built_city
+						
+						if = {
+							limit = {
+								has_global_flag = aiTesting
+							}
+							add_permanent_province_modifier = {
+								name = ai_built_city
+								duration = -1
+							}
+						}
+						else = {
+							add_province_modifier = {
+								name = ai_built_city
+								duration = 1825
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildCitySpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildCitySpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildCitySpent
+							value = 0
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = aiDoSpendingInd
+									value = 51
+								}
+							}
+						}
+						set_variable = {
+							which = aiTestBuildFortsSpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildFortsSpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildFortsSpent
+							value = 0
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = aiDoSpendingInd
+									value = 55
+								}
+							}
+						}
+						set_variable = {
+							which = aiTestBuildRoadSpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildRoadSpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildRoadSpent
+							value = 0
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = aiDoSpendingInd
+									value = 60
+								}
+							}
+						}
+						set_variable = {
+							which = aiTestBuildBureauSpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildBureauSpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildBureauSpent
+							value = 0
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = aiDoSpendingInd
+									value = 63
+								}
+							}
+						}
+						set_variable = {
+							which = aiTestBuildCanalSpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildCanalSpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildCanalSpent
+							value = 0
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = aiDoSpendingInd
+									value = 68
+								}
+							}
+						}
+						set_variable = {
+							which = aiTestBuildPortSpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildPortSpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildPortSpent
+							value = 0
+						}
+					}
+					else = {
+						set_variable = {
+							which = aiTestBuildShipyardSpent
+							which = aiDoSpendingPrice
+						}
+						
+						owner = {
+							change_variable = {
+								which = aiTestBuildShipyardSpent
+								which = PREV
+							}
+						}
+						
+						set_variable = {
+							which = aiTestBuildShipyardSpent
+							value = 0
+						}
+					}
+				}
+				
+				set_variable = {
+					which = aiDoSpendingTreasury
+					value = 0
+				}
+			}
+		}
+		
+		every_owned_province = {
+			set_variable = {
+				which = aiDoSpendingWeight
+				value = 0
+			}
+			set_variable = {
+				which = aiDoSpendingInd
+				value = 0
+			}
+			set_variable = {
+				which = aiDoSpendingSpent
+				value = 0
+			}
+			
+			set_variable = {
+				which = aiWeightFort
+				value = 0
+			}
+			set_variable = {
+				which = aiWeightPort
+				value = 0
+			}
+			set_variable = {
+				which = aiWeightShipyard
+				value = 0
+			}
+			set_variable = {
+				which = aiWeightRoad
+				value = 0
+			}
+			set_variable = {
+				which = aiWeightBureau
+				value = 0
+			}
+		}
+	}
+}
+
+AIDo = {
+	AIDoSpending = yes
+	
+	AIDoMoveCapital = yes
+	
+	AIDoImpStab = yes
+	
+	AIDoEstRevoke = yes
+	AIDoEstGrant = yes
+	AIDoEstDemote = yes
+	AIDoEstFavor = yes
+	AIDoEstDemand = yes
+	
+	AIDoDecWar = yes
+}

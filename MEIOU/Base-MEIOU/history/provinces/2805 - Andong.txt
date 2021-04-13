@@ -1,0 +1,69 @@
+owner = KOR
+controller = KOR
+add_core = KOR
+capital = "Andong"
+trade_goods = tea
+culture = korean
+religion = mahayana
+hre = no
+base_tax = 16
+base_production = 0
+base_manpower = 1
+is_city = yes
+marketplace = yes
+road_network = yes
+discovered_by = chinese
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 4
+	}
+}
+1308.1.1 = {
+	rename_capital = "Bokju"
+	change_province_name = "Bokju"
+}
+1361.1.1 = {
+	rename_capital = "Andong"
+	change_province_name = "Andong"
+}
+1392.6.5 = {
+	religion = confucianism
+	owner = JOS
+	controller = JOS
+	add_core = JOS
+	remove_core = KOR
+}
+1444.1.1 = {
+	base_tax = 34
+}
+1520.5.5 = {
+	base_tax = 41
+	base_manpower = 2
+}
+1592.4.24 = {
+	controller = ODA
+}
+1593.5.18 = {
+	controller = JOS
+	add_core = ODA
+}
+1597.1.1 = {
+	controller = ODA
+}
+1597.11.1 = {
+	controller = JOS
+	remove_core = ODA
+}
+1637.1.1 = {
+	add_core = MNG
+}
+1644.1.1 = {
+	add_core = QNG
+	remove_core = MNG
+}
+1653.1.1 = {
+	discovered_by = NED
+}
+1680.1.1 = {}

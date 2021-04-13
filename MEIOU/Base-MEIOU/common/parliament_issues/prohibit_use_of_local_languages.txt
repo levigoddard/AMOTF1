@@ -1,0 +1,40 @@
+prohibit_use_of_local_languages = {
+	category = 3
+	allow = {
+		any_owned_province = {
+			has_owner_accepted_culture = no
+		}
+		NOT = {
+			has_idea_group = humanist_ideas
+		}
+		always = no
+		stability = 0
+	}
+	effect = {
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+	}
+	modifier = {
+		culture_conversion_cost = -0.15
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			num_of_owned_provinces_with = {
+				value = 10
+				has_owner_accepted_culture = no
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+dependency = {
+	subject_type = "vassal"
+	first = WHI
+	second = BLU
+	start_date = 1350.1.1
+	end_date = 1361.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = MGH
+	second = CHG
+	start_date = 1360.1.1
+	end_date = 1361.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TIM
+	second = MIH
+	start_date = 1383.1.1
+	end_date = 1443.12.31
+}
+dependency = {
+	subject_type = "personal_union"
+	first = BLU
+	second = WHI
+	start_date = 1372.1.1
+	end_date = 1374.1.1
+}
+dependency = {
+	subject_type = "personal_union"
+	first = BLU
+	second = WHI
+	start_date = 1380.1.1
+	end_date = 1382.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = BLU
+	second = KHI
+	start_date = 1359.1.1
+	end_date = 1360.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = WHI
+	second = GAZ
+	start_date = 1336.1.1
+	end_date = 1382.1.1
+}

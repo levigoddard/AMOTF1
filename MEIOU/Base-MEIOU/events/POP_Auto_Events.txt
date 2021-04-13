@@ -1,0 +1,7108 @@
+namespace = POP_Auto
+country_event = {
+	id = POP_Auto.001
+	title = POP_Auto.001.tt
+	desc = POP_Auto.001.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = autoDo
+	}
+	option = {
+		name = POP_Auto.001.a
+		country_event = {
+			id = POP_Auto.101
+		}
+	}
+	option = {
+		name = POP_Auto.001.ab
+		country_event = {
+			id = POP_Auto.103
+		}
+	}
+	option = {
+		name = POP_Auto.001.ac
+		hidden_effect = {
+			country_event = {
+				id = POP_Auto.104
+			}
+		}
+	}
+	option = {
+		name = POP_Auto.001.c
+		hidden_effect = {
+			clr_country_flag = autoDo
+			clr_country_flag = autoSpending
+			clr_country_flag = autoSpendingFort
+			clr_country_flag = autoSpendingRoad
+			clr_country_flag = autoSpendingPort
+			clr_country_flag = autoSpendingCity
+			clr_country_flag = autoSpendingAll
+			clr_country_flag = autoStab
+			clr_country_flag = autoEstFavor
+			clr_country_flag = autoEstDemand
+			clr_country_flag = autoEstGrant
+			clr_country_flag = autoEstRevoke
+			clr_country_flag = autoEstDemote
+			clr_country_flag = autoEstLevy
+			clr_country_flag = autoEstCent
+			clr_country_flag = autoEstAll
+			clr_country_flag = aiEventsFired
+			clr_country_flag = aiHasAgendaMilitary
+			clr_country_flag = aiHasAgendaExpansion
+			clr_country_flag = aiHasAgendaGovernance
+			clr_country_flag = aiHasAgendaEconomy
+			clr_country_flag = aiHasAgendaOffense
+			clr_country_flag = aiHasAgendaDefense
+			clr_country_flag = aiHasAgendaInvasion
+			clr_country_flag = aiHasAgendaColonization
+			clr_country_flag = aiHasAgendaTrade
+			clr_country_flag = aiHasAgendaProduction
+			clr_country_flag = aiHasAgendaTech
+			clr_country_flag = aiHasAgendaReform
+			clr_country_flag = aiHasAgendaCE
+			clr_country_flag = aiHasActionManpower
+			clr_country_flag = aiHasActionBuildShipyards
+			clr_country_flag = aiHasActionBuildForts
+			clr_country_flag = aiHasActionWarchest
+			clr_country_flag = aiHasActionDuringWar
+			clr_country_flag = aiHasActionPlanInvasion
+			clr_country_flag = aiHasActionPlanColonization
+			clr_country_flag = aiHasActionDoColonization
+			clr_country_flag = aiHasActionGetCB
+			clr_country_flag = aiHasActionDecWar
+			clr_country_flag = aiHasActionBuildCity
+			clr_country_flag = aiHasActionEstLoyaltyImp
+			clr_country_flag = aiHasActionEstFavorSpend
+			clr_country_flag = aiHasActionEstDemote
+			clr_country_flag = aiHasActionEstPromote
+			clr_country_flag = aiHasActionEstPrivGrant
+			clr_country_flag = aiHasActionEstPrivRevoke
+			clr_country_flag = aiHasActionSolveDis
+			clr_country_flag = aiHasActionSolveObs
+			clr_country_flag = aiHasActionMoveCapital
+			clr_country_flag = aiHasActionManageVassal
+			clr_country_flag = aiHasActionEmbraceInst
+			clr_country_flag = aiHasActionEducation
+			clr_country_flag = aiHasActionArt
+			clr_country_flag = aiHasActionSaveTreasury
+			clr_country_flag = aiHasActionManageLoan
+			clr_country_flag = aiHasActionBuildBureau
+			clr_country_flag = aiHasActionBuildRoad
+			clr_country_flag = aiHasActionBuildPort
+			clr_country_flag = aiHasActionRebel
+			if = {
+				limit = {
+					ai = yes
+				}
+				set_variable = {
+					which = aiTreasuryGeneral
+					value = 0
+				}
+			}
+			set_variable = {
+				which = aiVarWarGain
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = POP_Auto.001.b
+	}
+}
+country_event = {
+	id = POP_Auto.101
+	title = POP_Auto.101.tt
+	desc = POP_Auto.101.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			export_to_variable = {
+				which = TempTreasuryLimit
+				value = monthly_income
+			}
+			multiply_variable = {
+				which = TempTreasuryLimit
+				value = 3
+			}
+			change_variable = {
+				which = TempTreasuryLimit
+				value = 200
+			}
+			if = {
+				limit = {
+					has_country_flag = aiHasActionWarchest
+				}
+				multiply_variable = {
+					which = TempTreasuryLimit
+					value = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = POP_Auto.101.a
+		set_country_flag = autoSpending
+		country_event = {
+			id = POP_Auto.102
+		}
+	}
+	option = {
+		name = POP_Auto.101.b
+		country_event = {
+			id = POP_Auto.001
+		}
+	}
+	after = {
+		set_variable = {
+			which = TempTreasuryLimit
+			value = 0
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.102
+	title = POP_Auto.102.tt
+	desc = POP_Auto.102.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = POP_Auto.102.a
+		trigger = {
+			NOT = {
+				has_country_flag = autoSpendingFort
+			}
+		}
+		set_country_flag = autoSpendingFort
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.ab
+		trigger = {
+			has_country_flag = autoSpendingFort
+		}
+		clr_country_flag = autoSpendingFort
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.b
+		trigger = {
+			NOT = {
+				has_country_flag = autoSpendingRoad
+			}
+		}
+		set_country_flag = autoSpendingRoad
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.bb
+		trigger = {
+			has_country_flag = autoSpendingRoad
+		}
+		clr_country_flag = autoSpendingRoad
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.c
+		trigger = {
+			NOT = {
+				has_country_flag = autoSpendingPort
+			}
+		}
+		set_country_flag = autoSpendingPort
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.cb
+		trigger = {
+			has_country_flag = autoSpendingPort
+		}
+		clr_country_flag = autoSpendingPort
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.d
+		trigger = {
+			NOT = {
+				has_country_flag = autoSpendingCity
+			}
+		}
+		set_country_flag = autoSpendingCity
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.db
+		trigger = {
+			has_country_flag = autoSpendingCity
+		}
+		clr_country_flag = autoSpendingCity
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.e
+		trigger = {
+			NOT = {
+				has_country_flag = autoSpendingAll
+			}
+		}
+		set_country_flag = autoSpendingAll
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.eb
+		trigger = {
+			has_country_flag = autoSpendingAll
+		}
+		clr_country_flag = autoSpendingAll
+		country_event = {
+			id = POP_Auto.1022
+		}
+	}
+	option = {
+		name = POP_Auto.102.f
+		country_event = {
+			id = POP_Auto.001
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.1022
+	title = POP_Auto.102.tt
+	desc = POP_Auto.102.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = no_localisation
+		country_event = {
+			id = POP_Auto.102
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.103
+	title = POP_Auto.103.tt
+	desc = POP_Auto.103.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = POP_Auto.103.b
+		trigger = {
+			NOT = {
+				has_country_flag = autoEstFavor
+			}
+		}
+		set_country_flag = autoEstFavor
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.bb
+		trigger = {
+			has_country_flag = autoEstFavor
+		}
+		clr_country_flag = autoEstFavor
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.c
+		trigger = {
+			NOT = {
+				has_country_flag = autoEstDemand
+			}
+		}
+		set_country_flag = autoEstDemand
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.cb
+		trigger = {
+			has_country_flag = autoEstDemand
+		}
+		clr_country_flag = autoEstDemand
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.d
+		trigger = {
+			NOT = {
+				has_country_flag = autoEstGrant
+			}
+		}
+		set_country_flag = autoEstGrant
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.db
+		trigger = {
+			has_country_flag = autoEstGrant
+		}
+		clr_country_flag = autoEstGrant
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.e
+		trigger = {
+			NOT = {
+				has_country_flag = autoEstRevoke
+			}
+		}
+		set_country_flag = autoEstRevoke
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.eb
+		trigger = {
+			has_country_flag = autoEstRevoke
+		}
+		clr_country_flag = autoEstRevoke
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.f
+		trigger = {
+			NOT = {
+				has_country_flag = autoEstDemote
+			}
+		}
+		set_country_flag = autoEstDemote
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.fb
+		trigger = {
+			has_country_flag = autoEstDemote
+		}
+		clr_country_flag = autoEstDemote
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.i
+		trigger = {
+			NOT = {
+				has_country_flag = autoEstAll
+			}
+		}
+		set_country_flag = autoEstAll
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.ib
+		trigger = {
+			has_country_flag = autoEstAll
+		}
+		clr_country_flag = autoEstAll
+		country_event = {
+			id = POP_Auto.1032
+		}
+	}
+	option = {
+		name = POP_Auto.103.j
+		country_event = {
+			id = POP_Auto.001
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.1032
+	title = POP_Auto.103.tt
+	desc = POP_Auto.103.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = no_localisation
+		country_event = {
+			id = POP_Auto.103
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.104
+	title = no_localisation
+	desc = no_localisation
+	picture = CITY_DEVELOPMENT_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = getPlanInvTarg
+		every_owned_province = {
+			limit = {
+				NOT = {
+					has_province_modifier = martial_law
+				}
+			}
+			every_neighbor_province = {
+				limit = {
+					NOT = {
+						owned_by = event_target:getPlanInvTarg
+						owner = {
+							OR = {
+								is_subject_of = event_target:getPlanInvTarg
+								overlord = {
+									is_subject_of = event_target:getPlanInvTarg
+								}
+							}
+						}
+					}
+				}
+				set_province_flag = getPlanInvCheck
+				owner = {
+					set_country_flag = getPlanInvCheck
+				}
+			}
+		}
+		every_subject_country = {
+			limit = {
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of_type = tributary_state
+					}
+					NOT = {
+						is_subject_of_type = close_tributary_state
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					NOT = {
+						has_province_modifier = martial_law
+					}
+				}
+				every_neighbor_province = {
+					limit = {
+						NOT = {
+							owned_by = event_target:getPlanInvTarg
+							owner = {
+								OR = {
+									is_subject_of = event_target:getPlanInvTarg
+									overlord = {
+										is_subject_of = event_target:getPlanInvTarg
+									}
+								}
+							}
+						}
+					}
+					set_province_flag = getPlanInvCheck
+					owner = {
+						set_country_flag = getPlanInvCheck
+					}
+				}
+			}
+		}
+		save_event_target_as = tmpAutoTarg
+		if = {
+			limit = {
+				always = yes
+			}
+			export_to_variable = {
+				which = AIMiscArmySize
+				value = army_size
+			}
+		}
+		else = {
+			set_variable = {
+				which = AIMiscArmySize
+				value = 0
+			}
+		}
+		export_to_variable = {
+			which = AIMiscLFL
+			value = land_forcelimit
+		}
+		export_to_variable = {
+			which = AIMiscManpow
+			value = manpower
+		}
+		set_variable = {
+			which = AIMiscArmyEstate
+			value = 0
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_tribals_loyalty
+					value = 0.11
+				}
+			}
+			set_variable = {
+				which = tmpArmyTR
+				which = estate_tribals_infantry_host
+			}
+			change_variable = {
+				which = tmpArmyTR
+				which = estate_tribals_cavalry_host
+			}
+			multiply_variable = {
+				which = tmpArmyTR
+				value = 1.25
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = tmpArmyTR
+			}
+			set_variable = {
+				which = tmpArmyTR
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_greater_nobles_loyalty
+					value = 0.11
+				}
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = estate_greater_nobles_infantry_total
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = estate_greater_nobles_cavalry_total
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = estate_greater_nobles_artillery_total
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_lesser_nobles_loyalty
+					value = 0.11
+				}
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = estate_lesser_nobles_infantry_total
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = estate_lesser_nobles_cavalry_total
+			}
+			change_variable = {
+				which = AIMiscArmyEstate
+				which = estate_lesser_nobles_artillery_total
+			}
+		}
+		multiply_variable = {
+			which = AIMiscArmyEstate
+			value = 0.85
+		}
+		if = {
+			limit = {
+				always = no
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = AIMiscManpow
+							which = AIMiscLFL
+						}
+					}
+				}
+				subtract_variable = {
+					which = AIMiscLFL
+					which = AIMiscManpow
+				}
+				multiply_variable = {
+					which = AIMiscLFL
+					value = 0.15
+				}
+				multiply_variable = {
+					which = AIMiscManpow
+					value = 0.3
+				}
+			}
+			else = {
+				subtract_variable = {
+					which = AIMiscManpow
+					which = AIMiscLFL
+				}
+				multiply_variable = {
+					which = AIMiscManpow
+					value = 0.15
+				}
+				multiply_variable = {
+					which = AIMiscLFL
+					value = 0.3
+				}
+			}
+			change_variable = {
+				which = AIMiscArmySize
+				which = AIMiscLFL
+			}
+			change_variable = {
+				which = AIMiscArmySize
+				which = AIMiscManpow
+			}
+		}
+		if = {
+			limit = {
+				always = yes
+			}
+			change_variable = {
+				which = AIMiscArmySize
+				which = AIMiscArmyEstate
+			}
+		}
+		set_variable = {
+			which = armySizeCheck
+			which = AIMiscArmySize
+		}
+		set_variable = {
+			which = AIMiscArmySize
+			value = 0
+		}
+		set_variable = {
+			which = AIMiscLFL
+			value = 0
+		}
+		set_variable = {
+			which = AIMiscManpow
+			value = 0
+		}
+		set_variable = {
+			which = AIMiscArmyEstate
+			value = 0
+		}
+		subtract_variable = {
+			which = armySizeCheck
+			value = 1
+		}
+		divide_variable = {
+			which = armySizeCheck
+			value = 2.5
+		}
+		set_variable = {
+			which = getPlanInvVal
+			value = 0.001
+		}
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			trigger_switch = {
+				on_trigger = is_subject_of_type
+				vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				colony = {
+					capital_scope = {
+						save_event_target_as = getPlanInvTarg_cap
+					}
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+								primitives = yes
+								any_owned_province = {
+									colonial_region = event_target:getPlanInvTarg_cap
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				daimyo_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							OR = {
+								overlord_of = PREV
+								AND = {
+									is_subject = yes
+									NOT = {
+										is_subject_of_type = daimyo_vassal
+									}
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				centralised_daimyo_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				warlord = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							OR = {
+								overlord_of = PREV
+								overlord = {
+									overlord_of = event_target:getPlanInvTarg
+								}
+								NOT = {
+									is_subject_of_type = warlord
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				personal_union = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				permanent_union = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				appanage_subject = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+								AND = {
+									overlord = {
+										overlord_of = event_target:getPlanInvTarg
+									}
+									is_subject_of_type = appanage_subject
+									is_subject_of_type = autonomous_vassal
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				autonomous_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+								AND = {
+									overlord = {
+										overlord_of = event_target:getPlanInvTarg
+									}
+									is_subject_of_type = appanage_subject
+									is_subject_of_type = autonomous_vassal
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				decentralized_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				rebellious_decentralized_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+								is_subject = no
+								AND = {
+									overlord = {
+										overlord_of = event_target:getPlanInvTarg
+									}
+									is_subject_of_type = decentralized_vassal
+									is_subject_of_type = rebellious_decentralized_vassal
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				subjugated_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+								AND = {
+									overlord = {
+										overlord_of = event_target:getPlanInvTarg
+									}
+									is_subject_of_type = decentralized_vassal
+									is_subject_of_type = rebellious_decentralized_vassal
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				rebellious_subjugated_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							overlord = {
+								overlord_of = event_target:getPlanInvTarg
+							}
+							NOT = {
+								is_subject_of_type = decentralized_vassal
+								is_subject_of_type = rebellious_decentralized_vassal
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				tributary_state = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							OR = {
+								overlord_of = PREV
+								AND = {
+									overlord = {
+										overlord_of = event_target:getPlanInvTarg
+									}
+									NOT = {
+										is_subject_of_type = tributary_state
+									}
+								}
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				close_tributary_state = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				march = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				overseas_fief = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				roman_territories = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				client_vassal = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				client_march = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+				protectorate = {
+					every_country = {
+						limit = {
+							has_country_flag = getPlanInvCheck
+							NOT = {
+								overlord_of = PREV
+							}
+						}
+						clr_country_flag = getPlanInvCheck
+						every_owned_province = {
+							clr_province_flag = getPlanInvCheck
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = getPlanInvCheck
+			}
+			clr_country_flag = getPlanInvCheck
+			if = {
+				limit = {
+					NOT = {
+						AND = {
+							event_target:getPlanInvTarg = {
+								is_subject = yes
+							}
+							OR = {
+								AND = {
+									is_subject = no
+								}
+							}
+						}
+						overlord = {
+							is_subject_of = event_target:getPlanInvTarg
+						}
+						AND = {
+							is_part_of_hre = yes
+							event_target:getPlanInvTarg = {
+								is_part_of_hre = yes
+							}
+							OR = {
+								event_target:getPlanInvTarg = {
+									is_emperor = yes
+								}
+								hre_reform_level = 6
+							}
+						}
+						AND = {
+							event_target:getPlanInvTarg = {
+								religion = catholic
+							}
+							OR = {
+								tag = PAP
+								overlord = {
+									OR = {
+										tag = PAP
+										tag = PA2
+									}
+								}
+							}
+						}
+						AND = {
+							has_global_flag = hundred_years_war
+							OR = {
+								AND = {
+									event_target:getPlanInvTarg = {
+										tag = FRA
+									}
+									NOT = {
+										tag = ENG
+										is_subject_of = ENG
+									}
+								}
+								AND = {
+									event_target:getPlanInvTarg = {
+										tag = ENG
+									}
+									NOT = {
+										tag = FRA
+										is_subject_of = FRA
+										tag = SCO
+										is_subject_of = SCO
+										tag = TLI
+										is_subject_of = TLI
+									}
+								}
+							}
+						}
+					}
+				}
+				save_event_target_as = getPlanInvTargDef
+				PREV = {
+					set_country_flag = aiInitDiploRelated
+					if = {
+						limit = {
+							always = yes
+						}
+						every_subject_country = {
+							limit = {
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+								AND = {
+									NOT = {
+										liberty_desire = 50
+										is_subject_of_type = tributary_state
+										is_subject_of_type = rebellious_decentralized_vassal
+										is_subject_of_type = rebellious_subjugated_vassal
+									}
+								}
+							}
+							set_country_flag = aiInitDiploRelated
+							every_subject_country = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+									AND = {
+										NOT = {
+											liberty_desire = 50
+											is_subject_of_type = tributary_state
+											is_subject_of_type = rebellious_decentralized_vassal
+											is_subject_of_type = rebellious_subjugated_vassal
+										}
+									}
+								}
+								set_country_flag = aiInitDiploRelated
+								every_subject_country = {
+									limit = {
+										NOT = {
+											tag = event_target:getPlanInvTarg
+										}
+										AND = {
+											NOT = {
+												liberty_desire = 50
+												is_subject_of_type = tributary_state
+												is_subject_of_type = rebellious_decentralized_vassal
+												is_subject_of_type = rebellious_subjugated_vassal
+											}
+										}
+									}
+									set_country_flag = aiInitDiploRelated
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							always = no
+						}
+						overlord = {
+							if = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									overlord = {
+										if = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+												every_subject_country = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+														AND = {
+															NOT = {
+																liberty_desire = 50
+																is_subject_of_type = tributary_state
+																is_subject_of_type = rebellious_decentralized_vassal
+																is_subject_of_type = rebellious_subjugated_vassal
+															}
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+													}
+												}
+											}
+										}
+									}
+								}
+								else = {
+									set_country_flag = aiInitDiploRelated
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+											AND = {
+												NOT = {
+													liberty_desire = 50
+													is_subject_of_type = tributary_state
+													is_subject_of_type = rebellious_decentralized_vassal
+													is_subject_of_type = rebellious_subjugated_vassal
+												}
+											}
+										}
+										set_country_flag = aiInitDiploRelated
+										every_subject_country = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+												AND = {
+													NOT = {
+														liberty_desire = 50
+														is_subject_of_type = tributary_state
+														is_subject_of_type = rebellious_decentralized_vassal
+														is_subject_of_type = rebellious_subjugated_vassal
+													}
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					every_country = {
+						limit = {
+							has_country_flag = aiInitDiploRelated
+						}
+						clr_country_flag = aiInitDiploRelated
+						if = {
+							limit = {
+								always = yes
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								export_to_variable = {
+									which = AIMiscArmySize
+									value = army_size
+								}
+							}
+							else = {
+								set_variable = {
+									which = AIMiscArmySize
+									value = 0
+								}
+							}
+							export_to_variable = {
+								which = AIMiscLFL
+								value = land_forcelimit
+							}
+							export_to_variable = {
+								which = AIMiscManpow
+								value = manpower
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_tribals_loyalty
+										value = 0.11
+									}
+								}
+								set_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_infantry_host
+								}
+								change_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_cavalry_host
+								}
+								multiply_variable = {
+									which = tmpArmyTR
+									value = 1.25
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = tmpArmyTR
+								}
+								set_variable = {
+									which = tmpArmyTR
+									value = 0
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_greater_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_artillery_total
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_lesser_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_artillery_total
+								}
+							}
+							multiply_variable = {
+								which = AIMiscArmyEstate
+								value = 0.85
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = AIMiscManpow
+												which = AIMiscLFL
+											}
+										}
+									}
+									subtract_variable = {
+										which = AIMiscLFL
+										which = AIMiscManpow
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.3
+									}
+								}
+								else = {
+									subtract_variable = {
+										which = AIMiscManpow
+										which = AIMiscLFL
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.3
+									}
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscLFL
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscManpow
+								}
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscArmyEstate
+								}
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = AIMiscArmySize
+							}
+							set_variable = {
+								which = AIMiscArmySize
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLFL
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscManpow
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							export_to_variable = {
+								which = AIMiscMilTech
+								value = mil_tech
+							}
+							export_to_variable = {
+								which = AIMiscLandMorale
+								value = modifier:land_morale
+							}
+							export_to_variable = {
+								which = AIMiscDisc
+								value = modifier:discipline
+							}
+							multiply_variable = {
+								which = AIMiscMilTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscLandMorale
+								value = 2
+							}
+							multiply_variable = {
+								which = AIMiscDisc
+								value = 5
+							}
+							change_variable = {
+								which = AIMiscMilTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscLandMorale
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscDisc
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscMilTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscLandMorale
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscDisc
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscMilTech
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscMilTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLandMorale
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscDisc
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmyQual
+								value = 0
+							}
+						}
+						if = {
+							limit = {
+								always = yes
+							}
+							export_to_variable = {
+								which = tmpAIInitDiploNavy
+								value = navy_size
+							}
+							export_to_variable = {
+								which = AIMiscDipTech
+								value = dip_tech
+							}
+							export_to_variable = {
+								which = AIMiscNavMorale
+								value = modifier:naval_morale
+							}
+							multiply_variable = {
+								which = AIMiscDipTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscNavMorale
+								value = 1.5
+							}
+							change_variable = {
+								which = AIMiscDipTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscNavMorale
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscDipTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscNavMorale
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscDipTech
+								}
+								change_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscNavMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscDipTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscNavMorale
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavyQual
+								value = 0
+							}
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploArmy
+							which = tmpAIInitDiploArmyQual
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploNavy
+							which = tmpAIInitDiploNavyQual
+						}
+						PREV = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = PREV
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								which = PREV
+							}
+							change_variable = {
+								which = aiInitDiploArmy
+								which = tmpAIInitDiploArmy
+							}
+							change_variable = {
+								which = aiInitDiploNavy
+								which = tmpAIInitDiploNavy
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+						}
+						set_variable = {
+							which = tmpAIInitDiploArmy
+							value = 0
+						}
+						set_variable = {
+							which = tmpAIInitDiploNavy
+							value = 0
+						}
+					}
+					divide_variable = {
+						which = aiInitDiploNavy
+						value = 2
+					}
+					set_variable = {
+						which = getPlanInvPowerAtt
+						which = aiInitDiploArmy
+					}
+					change_variable = {
+						which = getPlanInvPowerAtt
+						which = aiInitDiploNavy
+					}
+					divide_variable = {
+						which = getPlanInvPowerAtt
+						value = 50
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploArmyQual
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploNavyQual
+						value = 0
+					}
+					if = {
+						limit = {
+							coalition_target = event_target:getPlanInvTargDef
+						}
+						event_target:getPlanInvTargDef = {
+							every_country = {
+								limit = {
+									coalition_target = PREV
+									NOT = {
+										tag = event_target:getPlanInvTarg
+										war_with = event_target:getPlanInvTargDef
+									}
+								}
+								set_country_flag = aiInitDiploRelated
+								if = {
+									limit = {
+										always = yes
+									}
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+											AND = {
+												NOT = {
+													liberty_desire = 50
+													is_subject_of_type = tributary_state
+													is_subject_of_type = rebellious_decentralized_vassal
+													is_subject_of_type = rebellious_subjugated_vassal
+												}
+											}
+										}
+										set_country_flag = aiInitDiploRelated
+										every_subject_country = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+												AND = {
+													NOT = {
+														liberty_desire = 50
+														is_subject_of_type = tributary_state
+														is_subject_of_type = rebellious_decentralized_vassal
+														is_subject_of_type = rebellious_subjugated_vassal
+													}
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+											}
+										}
+									}
+								}
+								if = {
+									limit = {
+										always = no
+									}
+									overlord = {
+										if = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+											}
+											if = {
+												limit = {
+													is_subject = yes
+												}
+												overlord = {
+													if = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+														every_subject_country = {
+															limit = {
+																NOT = {
+																	tag = event_target:getPlanInvTarg
+																}
+																AND = {
+																	NOT = {
+																		liberty_desire = 50
+																		is_subject_of_type = tributary_state
+																		is_subject_of_type = rebellious_decentralized_vassal
+																		is_subject_of_type = rebellious_subjugated_vassal
+																	}
+																}
+															}
+															set_country_flag = aiInitDiploRelated
+															every_subject_country = {
+																limit = {
+																	NOT = {
+																		tag = event_target:getPlanInvTarg
+																	}
+																	AND = {
+																		NOT = {
+																			liberty_desire = 50
+																			is_subject_of_type = tributary_state
+																			is_subject_of_type = rebellious_decentralized_vassal
+																			is_subject_of_type = rebellious_subjugated_vassal
+																		}
+																	}
+																}
+																set_country_flag = aiInitDiploRelated
+																every_subject_country = {
+																	limit = {
+																		NOT = {
+																			tag = event_target:getPlanInvTarg
+																		}
+																		AND = {
+																			NOT = {
+																				liberty_desire = 50
+																				is_subject_of_type = tributary_state
+																				is_subject_of_type = rebellious_decentralized_vassal
+																				is_subject_of_type = rebellious_subjugated_vassal
+																			}
+																		}
+																	}
+																	set_country_flag = aiInitDiploRelated
+																}
+															}
+														}
+													}
+												}
+											}
+											else = {
+												set_country_flag = aiInitDiploRelated
+												every_subject_country = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+														AND = {
+															NOT = {
+																liberty_desire = 50
+																is_subject_of_type = tributary_state
+																is_subject_of_type = rebellious_decentralized_vassal
+																is_subject_of_type = rebellious_subjugated_vassal
+															}
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+														every_subject_country = {
+															limit = {
+																NOT = {
+																	tag = event_target:getPlanInvTarg
+																}
+																AND = {
+																	NOT = {
+																		liberty_desire = 50
+																		is_subject_of_type = tributary_state
+																		is_subject_of_type = rebellious_decentralized_vassal
+																		is_subject_of_type = rebellious_subjugated_vassal
+																	}
+																}
+															}
+															set_country_flag = aiInitDiploRelated
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = aiInitDiploArmy
+									value = 0
+								}
+								set_variable = {
+									which = aiInitDiploNavy
+									value = 0
+								}
+								every_country = {
+									limit = {
+										has_country_flag = aiInitDiploRelated
+									}
+									clr_country_flag = aiInitDiploRelated
+									if = {
+										limit = {
+											always = yes
+										}
+										if = {
+											limit = {
+												always = yes
+											}
+											export_to_variable = {
+												which = AIMiscArmySize
+												value = army_size
+											}
+										}
+										else = {
+											set_variable = {
+												which = AIMiscArmySize
+												value = 0
+											}
+										}
+										export_to_variable = {
+											which = AIMiscLFL
+											value = land_forcelimit
+										}
+										export_to_variable = {
+											which = AIMiscManpow
+											value = manpower
+										}
+										set_variable = {
+											which = AIMiscArmyEstate
+											value = 0
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = estate_tribals_loyalty
+													value = 0.11
+												}
+											}
+											set_variable = {
+												which = tmpArmyTR
+												which = estate_tribals_infantry_host
+											}
+											change_variable = {
+												which = tmpArmyTR
+												which = estate_tribals_cavalry_host
+											}
+											multiply_variable = {
+												which = tmpArmyTR
+												value = 1.25
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = tmpArmyTR
+											}
+											set_variable = {
+												which = tmpArmyTR
+												value = 0
+											}
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = estate_greater_nobles_loyalty
+													value = 0.11
+												}
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = estate_greater_nobles_infantry_total
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = estate_greater_nobles_cavalry_total
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = estate_greater_nobles_artillery_total
+											}
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = estate_lesser_nobles_loyalty
+													value = 0.11
+												}
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = estate_lesser_nobles_infantry_total
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = estate_lesser_nobles_cavalry_total
+											}
+											change_variable = {
+												which = AIMiscArmyEstate
+												which = estate_lesser_nobles_artillery_total
+											}
+										}
+										multiply_variable = {
+											which = AIMiscArmyEstate
+											value = 0.85
+										}
+										if = {
+											limit = {
+												always = yes
+											}
+											if = {
+												limit = {
+													NOT = {
+														check_variable = {
+															which = AIMiscManpow
+															which = AIMiscLFL
+														}
+													}
+												}
+												subtract_variable = {
+													which = AIMiscLFL
+													which = AIMiscManpow
+												}
+												multiply_variable = {
+													which = AIMiscLFL
+													value = 0.15
+												}
+												multiply_variable = {
+													which = AIMiscManpow
+													value = 0.3
+												}
+											}
+											else = {
+												subtract_variable = {
+													which = AIMiscManpow
+													which = AIMiscLFL
+												}
+												multiply_variable = {
+													which = AIMiscManpow
+													value = 0.15
+												}
+												multiply_variable = {
+													which = AIMiscLFL
+													value = 0.3
+												}
+											}
+											change_variable = {
+												which = AIMiscArmySize
+												which = AIMiscLFL
+											}
+											change_variable = {
+												which = AIMiscArmySize
+												which = AIMiscManpow
+											}
+										}
+										if = {
+											limit = {
+												always = yes
+											}
+											change_variable = {
+												which = AIMiscArmySize
+												which = AIMiscArmyEstate
+											}
+										}
+										set_variable = {
+											which = tmpAIInitDiploArmy
+											which = AIMiscArmySize
+										}
+										set_variable = {
+											which = AIMiscArmySize
+											value = 0
+										}
+										set_variable = {
+											which = AIMiscLFL
+											value = 0
+										}
+										set_variable = {
+											which = AIMiscManpow
+											value = 0
+										}
+										set_variable = {
+											which = AIMiscArmyEstate
+											value = 0
+										}
+										export_to_variable = {
+											which = AIMiscMilTech
+											value = mil_tech
+										}
+										export_to_variable = {
+											which = AIMiscLandMorale
+											value = modifier:land_morale
+										}
+										export_to_variable = {
+											which = AIMiscDisc
+											value = modifier:discipline
+										}
+										multiply_variable = {
+											which = AIMiscMilTech
+											value = 0.1
+										}
+										multiply_variable = {
+											which = AIMiscLandMorale
+											value = 2
+										}
+										multiply_variable = {
+											which = AIMiscDisc
+											value = 5
+										}
+										change_variable = {
+											which = AIMiscMilTech
+											value = 1
+										}
+										change_variable = {
+											which = AIMiscLandMorale
+											value = 1
+										}
+										change_variable = {
+											which = AIMiscDisc
+											value = 1
+										}
+										if = {
+											limit = {
+												OR = {
+													NOT = {
+														check_variable = {
+															which = AIMiscMilTech
+															value = 0.001
+														}
+													}
+													NOT = {
+														check_variable = {
+															which = AIMiscLandMorale
+															value = 0.001
+														}
+													}
+													NOT = {
+														check_variable = {
+															which = AIMiscDisc
+															value = 0.001
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = tmpAIInitDiploArmyQual
+												value = 0
+											}
+										}
+										else = {
+											set_variable = {
+												which = tmpAIInitDiploArmyQual
+												which = AIMiscMilTech
+											}
+											multiply_variable = {
+												which = tmpAIInitDiploArmyQual
+												which = AIMiscLandMorale
+											}
+											multiply_variable = {
+												which = tmpAIInitDiploArmyQual
+												which = AIMiscLandMorale
+											}
+										}
+										set_variable = {
+											which = AIMiscMilTech
+											value = 0
+										}
+										set_variable = {
+											which = AIMiscLandMorale
+											value = 0
+										}
+										set_variable = {
+											which = AIMiscDisc
+											value = 0
+										}
+									}
+									else = {
+										set_variable = {
+											which = tmpAIInitDiploArmy
+											value = 0
+										}
+										set_variable = {
+											which = tmpAIInitDiploArmyQual
+											value = 0
+										}
+									}
+									if = {
+										limit = {
+											always = yes
+										}
+										export_to_variable = {
+											which = tmpAIInitDiploNavy
+											value = navy_size
+										}
+										export_to_variable = {
+											which = AIMiscDipTech
+											value = dip_tech
+										}
+										export_to_variable = {
+											which = AIMiscNavMorale
+											value = modifier:naval_morale
+										}
+										multiply_variable = {
+											which = AIMiscDipTech
+											value = 0.1
+										}
+										multiply_variable = {
+											which = AIMiscNavMorale
+											value = 1.5
+										}
+										change_variable = {
+											which = AIMiscDipTech
+											value = 1
+										}
+										change_variable = {
+											which = AIMiscNavMorale
+											value = 1
+										}
+										if = {
+											limit = {
+												OR = {
+													NOT = {
+														check_variable = {
+															which = AIMiscDipTech
+															value = 0.001
+														}
+													}
+													NOT = {
+														check_variable = {
+															which = AIMiscNavMorale
+															value = 0.001
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = tmpAIInitDiploNavyQual
+												value = 0
+											}
+										}
+										else = {
+											set_variable = {
+												which = tmpAIInitDiploNavyQual
+												which = AIMiscDipTech
+											}
+											change_variable = {
+												which = tmpAIInitDiploNavyQual
+												which = AIMiscNavMorale
+											}
+										}
+										set_variable = {
+											which = AIMiscDipTech
+											value = 0
+										}
+										set_variable = {
+											which = AIMiscNavMorale
+											value = 0
+										}
+									}
+									else = {
+										set_variable = {
+											which = tmpAIInitDiploNavy
+											value = 0
+										}
+										set_variable = {
+											which = tmpAIInitDiploNavyQual
+											value = 0
+										}
+									}
+									multiply_variable = {
+										which = tmpAIInitDiploArmy
+										which = tmpAIInitDiploArmyQual
+									}
+									multiply_variable = {
+										which = tmpAIInitDiploNavy
+										which = tmpAIInitDiploNavyQual
+									}
+									PREV = {
+										set_variable = {
+											which = tmpAIInitDiploArmy
+											which = PREV
+										}
+										set_variable = {
+											which = tmpAIInitDiploNavy
+											which = PREV
+										}
+										change_variable = {
+											which = aiInitDiploArmy
+											which = tmpAIInitDiploArmy
+										}
+										change_variable = {
+											which = aiInitDiploNavy
+											which = tmpAIInitDiploNavy
+										}
+										set_variable = {
+											which = tmpAIInitDiploArmy
+											value = 0
+										}
+										set_variable = {
+											which = tmpAIInitDiploNavy
+											value = 0
+										}
+									}
+									set_variable = {
+										which = tmpAIInitDiploArmy
+										value = 0
+									}
+									set_variable = {
+										which = tmpAIInitDiploNavy
+										value = 0
+									}
+								}
+								divide_variable = {
+									which = aiInitDiploNavy
+									value = 2
+								}
+								set_variable = {
+									which = getPlanInvPowerAtt
+									which = aiInitDiploArmy
+								}
+								change_variable = {
+									which = getPlanInvPowerAtt
+									which = aiInitDiploNavy
+								}
+								divide_variable = {
+									which = getPlanInvPowerAtt
+									value = 50
+								}
+								set_variable = {
+									which = aiInitDiploArmy
+									value = 0
+								}
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									value = 0
+								}
+								set_variable = {
+									which = aiInitDiploNavy
+									value = 0
+								}
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									value = 0
+								}
+								event_target:getPlanInvTarg = {
+									change_variable = {
+										which = getPlanInvPowerAtt
+										which = PREV
+									}
+								}
+								set_variable = {
+									which = getPlanInvPowerAtt
+									value = 0
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							event_target:getPlanInvTargDef = {
+								is_at_war = yes
+							}
+						}
+						every_country = {
+							limit = {
+								war_with = event_target:getPlanInvTargDef
+							}
+							set_country_flag = aiInitDiploRelated
+							if = {
+								limit = {
+									always = yes
+								}
+								every_subject_country = {
+									limit = {
+										NOT = {
+											tag = event_target:getPlanInvTarg
+										}
+										AND = {
+											NOT = {
+												liberty_desire = 50
+												is_subject_of_type = tributary_state
+												is_subject_of_type = rebellious_decentralized_vassal
+												is_subject_of_type = rebellious_subjugated_vassal
+											}
+										}
+									}
+									set_country_flag = aiInitDiploRelated
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+											AND = {
+												NOT = {
+													liberty_desire = 50
+													is_subject_of_type = tributary_state
+													is_subject_of_type = rebellious_decentralized_vassal
+													is_subject_of_type = rebellious_subjugated_vassal
+												}
+											}
+										}
+										set_country_flag = aiInitDiploRelated
+										every_subject_country = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+												AND = {
+													NOT = {
+														liberty_desire = 50
+														is_subject_of_type = tributary_state
+														is_subject_of_type = rebellious_decentralized_vassal
+														is_subject_of_type = rebellious_subjugated_vassal
+													}
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+										}
+									}
+								}
+							}
+							if = {
+								limit = {
+									always = no
+								}
+								overlord = {
+									if = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+										}
+										if = {
+											limit = {
+												is_subject = yes
+											}
+											overlord = {
+												if = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+														every_subject_country = {
+															limit = {
+																NOT = {
+																	tag = event_target:getPlanInvTarg
+																}
+																AND = {
+																	NOT = {
+																		liberty_desire = 50
+																		is_subject_of_type = tributary_state
+																		is_subject_of_type = rebellious_decentralized_vassal
+																		is_subject_of_type = rebellious_subjugated_vassal
+																	}
+																}
+															}
+															set_country_flag = aiInitDiploRelated
+															every_subject_country = {
+																limit = {
+																	NOT = {
+																		tag = event_target:getPlanInvTarg
+																	}
+																	AND = {
+																		NOT = {
+																			liberty_desire = 50
+																			is_subject_of_type = tributary_state
+																			is_subject_of_type = rebellious_decentralized_vassal
+																			is_subject_of_type = rebellious_subjugated_vassal
+																		}
+																	}
+																}
+																set_country_flag = aiInitDiploRelated
+															}
+														}
+													}
+												}
+											}
+										}
+										else = {
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+												every_subject_country = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+														AND = {
+															NOT = {
+																liberty_desire = 50
+																is_subject_of_type = tributary_state
+																is_subject_of_type = rebellious_decentralized_vassal
+																is_subject_of_type = rebellious_subjugated_vassal
+															}
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+							set_variable = {
+								which = aiInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = aiInitDiploNavy
+								value = 0
+							}
+							every_country = {
+								limit = {
+									has_country_flag = aiInitDiploRelated
+								}
+								clr_country_flag = aiInitDiploRelated
+								if = {
+									limit = {
+										always = yes
+									}
+									if = {
+										limit = {
+											always = yes
+										}
+										export_to_variable = {
+											which = AIMiscArmySize
+											value = army_size
+										}
+									}
+									else = {
+										set_variable = {
+											which = AIMiscArmySize
+											value = 0
+										}
+									}
+									export_to_variable = {
+										which = AIMiscLFL
+										value = land_forcelimit
+									}
+									export_to_variable = {
+										which = AIMiscManpow
+										value = manpower
+									}
+									set_variable = {
+										which = AIMiscArmyEstate
+										value = 0
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = estate_tribals_loyalty
+												value = 0.11
+											}
+										}
+										set_variable = {
+											which = tmpArmyTR
+											which = estate_tribals_infantry_host
+										}
+										change_variable = {
+											which = tmpArmyTR
+											which = estate_tribals_cavalry_host
+										}
+										multiply_variable = {
+											which = tmpArmyTR
+											value = 1.25
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = tmpArmyTR
+										}
+										set_variable = {
+											which = tmpArmyTR
+											value = 0
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = estate_greater_nobles_loyalty
+												value = 0.11
+											}
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = estate_greater_nobles_infantry_total
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = estate_greater_nobles_cavalry_total
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = estate_greater_nobles_artillery_total
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = estate_lesser_nobles_loyalty
+												value = 0.11
+											}
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = estate_lesser_nobles_infantry_total
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = estate_lesser_nobles_cavalry_total
+										}
+										change_variable = {
+											which = AIMiscArmyEstate
+											which = estate_lesser_nobles_artillery_total
+										}
+									}
+									multiply_variable = {
+										which = AIMiscArmyEstate
+										value = 0.85
+									}
+									if = {
+										limit = {
+											always = yes
+										}
+										if = {
+											limit = {
+												NOT = {
+													check_variable = {
+														which = AIMiscManpow
+														which = AIMiscLFL
+													}
+												}
+											}
+											subtract_variable = {
+												which = AIMiscLFL
+												which = AIMiscManpow
+											}
+											multiply_variable = {
+												which = AIMiscLFL
+												value = 0.15
+											}
+											multiply_variable = {
+												which = AIMiscManpow
+												value = 0.3
+											}
+										}
+										else = {
+											subtract_variable = {
+												which = AIMiscManpow
+												which = AIMiscLFL
+											}
+											multiply_variable = {
+												which = AIMiscManpow
+												value = 0.15
+											}
+											multiply_variable = {
+												which = AIMiscLFL
+												value = 0.3
+											}
+										}
+										change_variable = {
+											which = AIMiscArmySize
+											which = AIMiscLFL
+										}
+										change_variable = {
+											which = AIMiscArmySize
+											which = AIMiscManpow
+										}
+									}
+									if = {
+										limit = {
+											always = yes
+										}
+										change_variable = {
+											which = AIMiscArmySize
+											which = AIMiscArmyEstate
+										}
+									}
+									set_variable = {
+										which = tmpAIInitDiploArmy
+										which = AIMiscArmySize
+									}
+									set_variable = {
+										which = AIMiscArmySize
+										value = 0
+									}
+									set_variable = {
+										which = AIMiscLFL
+										value = 0
+									}
+									set_variable = {
+										which = AIMiscManpow
+										value = 0
+									}
+									set_variable = {
+										which = AIMiscArmyEstate
+										value = 0
+									}
+									export_to_variable = {
+										which = AIMiscMilTech
+										value = mil_tech
+									}
+									export_to_variable = {
+										which = AIMiscLandMorale
+										value = modifier:land_morale
+									}
+									export_to_variable = {
+										which = AIMiscDisc
+										value = modifier:discipline
+									}
+									multiply_variable = {
+										which = AIMiscMilTech
+										value = 0.1
+									}
+									multiply_variable = {
+										which = AIMiscLandMorale
+										value = 2
+									}
+									multiply_variable = {
+										which = AIMiscDisc
+										value = 5
+									}
+									change_variable = {
+										which = AIMiscMilTech
+										value = 1
+									}
+									change_variable = {
+										which = AIMiscLandMorale
+										value = 1
+									}
+									change_variable = {
+										which = AIMiscDisc
+										value = 1
+									}
+									if = {
+										limit = {
+											OR = {
+												NOT = {
+													check_variable = {
+														which = AIMiscMilTech
+														value = 0.001
+													}
+												}
+												NOT = {
+													check_variable = {
+														which = AIMiscLandMorale
+														value = 0.001
+													}
+												}
+												NOT = {
+													check_variable = {
+														which = AIMiscDisc
+														value = 0.001
+													}
+												}
+											}
+										}
+										set_variable = {
+											which = tmpAIInitDiploArmyQual
+											value = 0
+										}
+									}
+									else = {
+										set_variable = {
+											which = tmpAIInitDiploArmyQual
+											which = AIMiscMilTech
+										}
+										multiply_variable = {
+											which = tmpAIInitDiploArmyQual
+											which = AIMiscLandMorale
+										}
+										multiply_variable = {
+											which = tmpAIInitDiploArmyQual
+											which = AIMiscLandMorale
+										}
+									}
+									set_variable = {
+										which = AIMiscMilTech
+										value = 0
+									}
+									set_variable = {
+										which = AIMiscLandMorale
+										value = 0
+									}
+									set_variable = {
+										which = AIMiscDisc
+										value = 0
+									}
+								}
+								else = {
+									set_variable = {
+										which = tmpAIInitDiploArmy
+										value = 0
+									}
+									set_variable = {
+										which = tmpAIInitDiploArmyQual
+										value = 0
+									}
+								}
+								if = {
+									limit = {
+										always = yes
+									}
+									export_to_variable = {
+										which = tmpAIInitDiploNavy
+										value = navy_size
+									}
+									export_to_variable = {
+										which = AIMiscDipTech
+										value = dip_tech
+									}
+									export_to_variable = {
+										which = AIMiscNavMorale
+										value = modifier:naval_morale
+									}
+									multiply_variable = {
+										which = AIMiscDipTech
+										value = 0.1
+									}
+									multiply_variable = {
+										which = AIMiscNavMorale
+										value = 1.5
+									}
+									change_variable = {
+										which = AIMiscDipTech
+										value = 1
+									}
+									change_variable = {
+										which = AIMiscNavMorale
+										value = 1
+									}
+									if = {
+										limit = {
+											OR = {
+												NOT = {
+													check_variable = {
+														which = AIMiscDipTech
+														value = 0.001
+													}
+												}
+												NOT = {
+													check_variable = {
+														which = AIMiscNavMorale
+														value = 0.001
+													}
+												}
+											}
+										}
+										set_variable = {
+											which = tmpAIInitDiploNavyQual
+											value = 0
+										}
+									}
+									else = {
+										set_variable = {
+											which = tmpAIInitDiploNavyQual
+											which = AIMiscDipTech
+										}
+										change_variable = {
+											which = tmpAIInitDiploNavyQual
+											which = AIMiscNavMorale
+										}
+									}
+									set_variable = {
+										which = AIMiscDipTech
+										value = 0
+									}
+									set_variable = {
+										which = AIMiscNavMorale
+										value = 0
+									}
+								}
+								else = {
+									set_variable = {
+										which = tmpAIInitDiploNavy
+										value = 0
+									}
+									set_variable = {
+										which = tmpAIInitDiploNavyQual
+										value = 0
+									}
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmy
+									which = tmpAIInitDiploArmyQual
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploNavy
+									which = tmpAIInitDiploNavyQual
+								}
+								PREV = {
+									set_variable = {
+										which = tmpAIInitDiploArmy
+										which = PREV
+									}
+									set_variable = {
+										which = tmpAIInitDiploNavy
+										which = PREV
+									}
+									change_variable = {
+										which = aiInitDiploArmy
+										which = tmpAIInitDiploArmy
+									}
+									change_variable = {
+										which = aiInitDiploNavy
+										which = tmpAIInitDiploNavy
+									}
+									set_variable = {
+										which = tmpAIInitDiploArmy
+										value = 0
+									}
+									set_variable = {
+										which = tmpAIInitDiploNavy
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploArmy
+									value = 0
+								}
+								set_variable = {
+									which = tmpAIInitDiploNavy
+									value = 0
+								}
+							}
+							divide_variable = {
+								which = aiInitDiploNavy
+								value = 2
+							}
+							set_variable = {
+								which = getPlanInvPowerAtt
+								which = aiInitDiploArmy
+							}
+							change_variable = {
+								which = getPlanInvPowerAtt
+								which = aiInitDiploNavy
+							}
+							divide_variable = {
+								which = getPlanInvPowerAtt
+								value = 50
+							}
+							set_variable = {
+								which = aiInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmyQual
+								value = 0
+							}
+							set_variable = {
+								which = aiInitDiploNavy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavyQual
+								value = 0
+							}
+							multiply_variable = {
+								which = getPlanInvPowerAtt
+								value = 0.25
+							}
+							event_target:getPlanInvTarg = {
+								change_variable = {
+									which = getPlanInvPowerAtt
+									which = PREV
+								}
+							}
+							set_variable = {
+								which = getPlanInvPowerAtt
+								value = 0
+							}
+						}
+					}
+					PREV = {
+						set_variable = {
+							which = getPlanInvPowerAtt
+							which = PREV
+						}
+					}
+					set_variable = {
+						which = getPlanInvPowerAtt
+						value = 0
+					}
+				}
+				overlord = {
+					if = {
+						limit = {
+							is_subject = yes
+						}
+						overlord = {
+							save_event_target_as = tmpOverlordDef
+						}
+					}
+					else = {
+						save_event_target_as = tmpOverlordDef
+					}
+				}
+				event_target:getPlanInvTarg = {
+					overlord = {
+						if = {
+							limit = {
+								is_subject = yes
+							}
+							overlord = {
+								save_event_target_as = tmpOverlordAtt
+							}
+						}
+						else = {
+							save_event_target_as = tmpOverlordAtt
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_subject = yes
+						event_target:getPlanInvTarg = {
+							is_subject = yes
+						}
+						event_target:tmpOverlordAtt = {
+							tag = event_target:tmpOverlordDef
+						}
+					}
+					set_country_flag = aiInitDiploRelated
+					if = {
+						limit = {
+							always = yes
+						}
+						every_subject_country = {
+							limit = {
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+								AND = {
+									NOT = {
+										liberty_desire = 50
+										is_subject_of_type = tributary_state
+										is_subject_of_type = rebellious_decentralized_vassal
+										is_subject_of_type = rebellious_subjugated_vassal
+									}
+								}
+							}
+							set_country_flag = aiInitDiploRelated
+							every_subject_country = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+									AND = {
+										NOT = {
+											liberty_desire = 50
+											is_subject_of_type = tributary_state
+											is_subject_of_type = rebellious_decentralized_vassal
+											is_subject_of_type = rebellious_subjugated_vassal
+										}
+									}
+								}
+								set_country_flag = aiInitDiploRelated
+								every_subject_country = {
+									limit = {
+										NOT = {
+											tag = event_target:getPlanInvTarg
+										}
+										AND = {
+											NOT = {
+												liberty_desire = 50
+												is_subject_of_type = tributary_state
+												is_subject_of_type = rebellious_decentralized_vassal
+												is_subject_of_type = rebellious_subjugated_vassal
+											}
+										}
+									}
+									set_country_flag = aiInitDiploRelated
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							always = no
+						}
+						overlord = {
+							if = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									overlord = {
+										if = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+												every_subject_country = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+														AND = {
+															NOT = {
+																liberty_desire = 50
+																is_subject_of_type = tributary_state
+																is_subject_of_type = rebellious_decentralized_vassal
+																is_subject_of_type = rebellious_subjugated_vassal
+															}
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+													}
+												}
+											}
+										}
+									}
+								}
+								else = {
+									set_country_flag = aiInitDiploRelated
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+											AND = {
+												NOT = {
+													liberty_desire = 50
+													is_subject_of_type = tributary_state
+													is_subject_of_type = rebellious_decentralized_vassal
+													is_subject_of_type = rebellious_subjugated_vassal
+												}
+											}
+										}
+										set_country_flag = aiInitDiploRelated
+										every_subject_country = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+												AND = {
+													NOT = {
+														liberty_desire = 50
+														is_subject_of_type = tributary_state
+														is_subject_of_type = rebellious_decentralized_vassal
+														is_subject_of_type = rebellious_subjugated_vassal
+													}
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					every_country = {
+						limit = {
+							has_country_flag = aiInitDiploRelated
+						}
+						clr_country_flag = aiInitDiploRelated
+						if = {
+							limit = {
+								always = yes
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								export_to_variable = {
+									which = AIMiscArmySize
+									value = army_size
+								}
+							}
+							else = {
+								set_variable = {
+									which = AIMiscArmySize
+									value = 0
+								}
+							}
+							export_to_variable = {
+								which = AIMiscLFL
+								value = land_forcelimit
+							}
+							export_to_variable = {
+								which = AIMiscManpow
+								value = manpower
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_tribals_loyalty
+										value = 0.11
+									}
+								}
+								set_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_infantry_host
+								}
+								change_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_cavalry_host
+								}
+								multiply_variable = {
+									which = tmpArmyTR
+									value = 1.25
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = tmpArmyTR
+								}
+								set_variable = {
+									which = tmpArmyTR
+									value = 0
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_greater_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_artillery_total
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_lesser_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_artillery_total
+								}
+							}
+							multiply_variable = {
+								which = AIMiscArmyEstate
+								value = 0.85
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = AIMiscManpow
+												which = AIMiscLFL
+											}
+										}
+									}
+									subtract_variable = {
+										which = AIMiscLFL
+										which = AIMiscManpow
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.3
+									}
+								}
+								else = {
+									subtract_variable = {
+										which = AIMiscManpow
+										which = AIMiscLFL
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.3
+									}
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscLFL
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscManpow
+								}
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscArmyEstate
+								}
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = AIMiscArmySize
+							}
+							set_variable = {
+								which = AIMiscArmySize
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLFL
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscManpow
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							export_to_variable = {
+								which = AIMiscMilTech
+								value = mil_tech
+							}
+							export_to_variable = {
+								which = AIMiscLandMorale
+								value = modifier:land_morale
+							}
+							export_to_variable = {
+								which = AIMiscDisc
+								value = modifier:discipline
+							}
+							multiply_variable = {
+								which = AIMiscMilTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscLandMorale
+								value = 2
+							}
+							multiply_variable = {
+								which = AIMiscDisc
+								value = 5
+							}
+							change_variable = {
+								which = AIMiscMilTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscLandMorale
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscDisc
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscMilTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscLandMorale
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscDisc
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscMilTech
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscMilTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLandMorale
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscDisc
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmyQual
+								value = 0
+							}
+						}
+						if = {
+							limit = {
+								always = yes
+							}
+							export_to_variable = {
+								which = tmpAIInitDiploNavy
+								value = navy_size
+							}
+							export_to_variable = {
+								which = AIMiscDipTech
+								value = dip_tech
+							}
+							export_to_variable = {
+								which = AIMiscNavMorale
+								value = modifier:naval_morale
+							}
+							multiply_variable = {
+								which = AIMiscDipTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscNavMorale
+								value = 1.5
+							}
+							change_variable = {
+								which = AIMiscDipTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscNavMorale
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscDipTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscNavMorale
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscDipTech
+								}
+								change_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscNavMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscDipTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscNavMorale
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavyQual
+								value = 0
+							}
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploArmy
+							which = tmpAIInitDiploArmyQual
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploNavy
+							which = tmpAIInitDiploNavyQual
+						}
+						PREV = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = PREV
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								which = PREV
+							}
+							change_variable = {
+								which = aiInitDiploArmy
+								which = tmpAIInitDiploArmy
+							}
+							change_variable = {
+								which = aiInitDiploNavy
+								which = tmpAIInitDiploNavy
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+						}
+						set_variable = {
+							which = tmpAIInitDiploArmy
+							value = 0
+						}
+						set_variable = {
+							which = tmpAIInitDiploNavy
+							value = 0
+						}
+					}
+					divide_variable = {
+						which = aiInitDiploNavy
+						value = 2
+					}
+					set_variable = {
+						which = getPlanInvPowerDef
+						which = aiInitDiploArmy
+					}
+					change_variable = {
+						which = getPlanInvPowerDef
+						which = aiInitDiploNavy
+					}
+					divide_variable = {
+						which = getPlanInvPowerDef
+						value = 50
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploArmyQual
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploNavyQual
+						value = 0
+					}
+				}
+				else = {
+					set_country_flag = aiInitDiploRelated
+					if = {
+						limit = {
+							always = yes
+						}
+						every_subject_country = {
+							limit = {
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+								AND = {
+									NOT = {
+										liberty_desire = 50
+										is_subject_of_type = tributary_state
+										is_subject_of_type = rebellious_decentralized_vassal
+										is_subject_of_type = rebellious_subjugated_vassal
+									}
+								}
+							}
+							set_country_flag = aiInitDiploRelated
+							every_subject_country = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+									AND = {
+										NOT = {
+											liberty_desire = 50
+											is_subject_of_type = tributary_state
+											is_subject_of_type = rebellious_decentralized_vassal
+											is_subject_of_type = rebellious_subjugated_vassal
+										}
+									}
+								}
+								set_country_flag = aiInitDiploRelated
+								every_subject_country = {
+									limit = {
+										NOT = {
+											tag = event_target:getPlanInvTarg
+										}
+										AND = {
+											NOT = {
+												liberty_desire = 50
+												is_subject_of_type = tributary_state
+												is_subject_of_type = rebellious_decentralized_vassal
+												is_subject_of_type = rebellious_subjugated_vassal
+											}
+										}
+									}
+									set_country_flag = aiInitDiploRelated
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							always = yes
+						}
+						overlord = {
+							if = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									overlord = {
+										if = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+												every_subject_country = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+														AND = {
+															NOT = {
+																liberty_desire = 50
+																is_subject_of_type = tributary_state
+																is_subject_of_type = rebellious_decentralized_vassal
+																is_subject_of_type = rebellious_subjugated_vassal
+															}
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+													}
+												}
+											}
+										}
+									}
+								}
+								else = {
+									set_country_flag = aiInitDiploRelated
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+											AND = {
+												NOT = {
+													liberty_desire = 50
+													is_subject_of_type = tributary_state
+													is_subject_of_type = rebellious_decentralized_vassal
+													is_subject_of_type = rebellious_subjugated_vassal
+												}
+											}
+										}
+										set_country_flag = aiInitDiploRelated
+										every_subject_country = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+												AND = {
+													NOT = {
+														liberty_desire = 50
+														is_subject_of_type = tributary_state
+														is_subject_of_type = rebellious_decentralized_vassal
+														is_subject_of_type = rebellious_subjugated_vassal
+													}
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					every_country = {
+						limit = {
+							has_country_flag = aiInitDiploRelated
+						}
+						clr_country_flag = aiInitDiploRelated
+						if = {
+							limit = {
+								always = yes
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								export_to_variable = {
+									which = AIMiscArmySize
+									value = army_size
+								}
+							}
+							else = {
+								set_variable = {
+									which = AIMiscArmySize
+									value = 0
+								}
+							}
+							export_to_variable = {
+								which = AIMiscLFL
+								value = land_forcelimit
+							}
+							export_to_variable = {
+								which = AIMiscManpow
+								value = manpower
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_tribals_loyalty
+										value = 0.11
+									}
+								}
+								set_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_infantry_host
+								}
+								change_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_cavalry_host
+								}
+								multiply_variable = {
+									which = tmpArmyTR
+									value = 1.25
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = tmpArmyTR
+								}
+								set_variable = {
+									which = tmpArmyTR
+									value = 0
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_greater_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_artillery_total
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_lesser_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_artillery_total
+								}
+							}
+							multiply_variable = {
+								which = AIMiscArmyEstate
+								value = 0.85
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = AIMiscManpow
+												which = AIMiscLFL
+											}
+										}
+									}
+									subtract_variable = {
+										which = AIMiscLFL
+										which = AIMiscManpow
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.3
+									}
+								}
+								else = {
+									subtract_variable = {
+										which = AIMiscManpow
+										which = AIMiscLFL
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.3
+									}
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscLFL
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscManpow
+								}
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscArmyEstate
+								}
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = AIMiscArmySize
+							}
+							set_variable = {
+								which = AIMiscArmySize
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLFL
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscManpow
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							export_to_variable = {
+								which = AIMiscMilTech
+								value = mil_tech
+							}
+							export_to_variable = {
+								which = AIMiscLandMorale
+								value = modifier:land_morale
+							}
+							export_to_variable = {
+								which = AIMiscDisc
+								value = modifier:discipline
+							}
+							multiply_variable = {
+								which = AIMiscMilTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscLandMorale
+								value = 2
+							}
+							multiply_variable = {
+								which = AIMiscDisc
+								value = 5
+							}
+							change_variable = {
+								which = AIMiscMilTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscLandMorale
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscDisc
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscMilTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscLandMorale
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscDisc
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscMilTech
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscMilTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLandMorale
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscDisc
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmyQual
+								value = 0
+							}
+						}
+						if = {
+							limit = {
+								always = yes
+							}
+							export_to_variable = {
+								which = tmpAIInitDiploNavy
+								value = navy_size
+							}
+							export_to_variable = {
+								which = AIMiscDipTech
+								value = dip_tech
+							}
+							export_to_variable = {
+								which = AIMiscNavMorale
+								value = modifier:naval_morale
+							}
+							multiply_variable = {
+								which = AIMiscDipTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscNavMorale
+								value = 1.5
+							}
+							change_variable = {
+								which = AIMiscDipTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscNavMorale
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscDipTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscNavMorale
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscDipTech
+								}
+								change_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscNavMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscDipTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscNavMorale
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavyQual
+								value = 0
+							}
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploArmy
+							which = tmpAIInitDiploArmyQual
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploNavy
+							which = tmpAIInitDiploNavyQual
+						}
+						PREV = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = PREV
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								which = PREV
+							}
+							change_variable = {
+								which = aiInitDiploArmy
+								which = tmpAIInitDiploArmy
+							}
+							change_variable = {
+								which = aiInitDiploNavy
+								which = tmpAIInitDiploNavy
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+						}
+						set_variable = {
+							which = tmpAIInitDiploArmy
+							value = 0
+						}
+						set_variable = {
+							which = tmpAIInitDiploNavy
+							value = 0
+						}
+					}
+					divide_variable = {
+						which = aiInitDiploNavy
+						value = 2
+					}
+					set_variable = {
+						which = getPlanInvPowerDef
+						which = aiInitDiploArmy
+					}
+					change_variable = {
+						which = getPlanInvPowerDef
+						which = aiInitDiploNavy
+					}
+					divide_variable = {
+						which = getPlanInvPowerDef
+						value = 50
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploArmyQual
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploNavyQual
+						value = 0
+					}
+					overlord = {
+						every_ally = {
+							limit = {
+								NOT = {
+									is_subject = yes
+									NOT = {
+										is_subject_of_type = tributary_state
+									}
+									NOT = {
+										is_subject_of_type = close_tributary_state
+									}
+								}
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+							}
+							set_country_flag = getPowerDefAlly
+						}
+						if = {
+							limit = {
+								is_part_of_hre = yes
+								is_emperor = no
+								OR = {
+									is_subject = no
+									overlord = {
+										is_emperor = no
+										OR = {
+											is_subject = no
+											overlord = {
+												is_emperor = no
+											}
+										}
+									}
+								}
+								OR = {
+									AND = {
+										OR = {
+											has_reform = free_city
+											has_reform = imperial_city
+											has_reform = trading_city_legacy
+										}
+									}
+									event_target:getPlanInvTarg = {
+										is_part_of_hre = no
+									}
+								}
+							}
+							emperor = {
+								if = {
+									limit = {
+										NOT = {
+											tag = event_target:getPlanInvTarg
+										}
+									}
+									set_country_flag = getPowerDefAlly
+									every_ally = {
+										limit = {
+											NOT = {
+												is_subject = yes
+												NOT = {
+													is_subject_of_type = tributary_state
+												}
+												NOT = {
+													is_subject_of_type = close_tributary_state
+												}
+											}
+										}
+										set_country_flag = getPowerDefAlly
+									}
+								}
+							}
+						}
+						every_country = {
+							limit = {
+								has_guaranteed = PREV
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+							}
+							set_country_flag = getPowerDefAlly
+						}
+						if = {
+							limit = {
+								coalition_target = event_target:getPlanInvTarg
+							}
+							every_country = {
+								limit = {
+									coalition_target = event_target:getPlanInvTarg
+									NOT = {
+										tag = PREV
+										overlord_of = PREV
+									}
+								}
+								set_country_flag = getPowerDefAlly
+							}
+						}
+						if = {
+							limit = {
+								is_in_trade_league = yes
+							}
+							every_country = {
+								limit = {
+									is_in_trade_league_with = PREV
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+								}
+								set_country_flag = getPowerDefAlly
+							}
+						}
+					}
+				}
+				every_ally = {
+					limit = {
+						NOT = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						NOT = {
+							tag = event_target:getPlanInvTarg
+						}
+					}
+					set_country_flag = getPowerDefAlly
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						is_emperor = no
+						OR = {
+							is_subject = no
+							overlord = {
+								is_emperor = no
+								OR = {
+									is_subject = no
+									overlord = {
+										is_emperor = no
+									}
+								}
+							}
+						}
+						OR = {
+							AND = {
+								OR = {
+									has_reform = free_city
+									has_reform = imperial_city
+									has_reform = trading_city_legacy
+								}
+							}
+							event_target:getPlanInvTarg = {
+								is_part_of_hre = no
+							}
+						}
+					}
+					emperor = {
+						if = {
+							limit = {
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+							}
+							set_country_flag = getPowerDefAlly
+							every_ally = {
+								limit = {
+									NOT = {
+										is_subject = yes
+										NOT = {
+											is_subject_of_type = tributary_state
+										}
+										NOT = {
+											is_subject_of_type = close_tributary_state
+										}
+									}
+								}
+								set_country_flag = getPowerDefAlly
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						has_guaranteed = PREV
+						NOT = {
+							tag = event_target:getPlanInvTarg
+						}
+					}
+					set_country_flag = getPowerDefAlly
+				}
+				if = {
+					limit = {
+						coalition_target = event_target:getPlanInvTarg
+					}
+					every_country = {
+						limit = {
+							coalition_target = event_target:getPlanInvTarg
+							NOT = {
+								tag = PREV
+								overlord_of = PREV
+							}
+						}
+						set_country_flag = getPowerDefAlly
+					}
+				}
+				if = {
+					limit = {
+						is_in_trade_league = yes
+					}
+					every_country = {
+						limit = {
+							is_in_trade_league_with = PREV
+							NOT = {
+								tag = event_target:getPlanInvTarg
+							}
+						}
+						set_country_flag = getPowerDefAlly
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = getPowerDefAlly
+					}
+					clr_country_flag = getPowerDefAlly
+					set_country_flag = aiInitDiploRelated
+					if = {
+						limit = {
+							always = yes
+						}
+						every_subject_country = {
+							limit = {
+								NOT = {
+									tag = event_target:getPlanInvTarg
+								}
+								AND = {
+									NOT = {
+										liberty_desire = 50
+										is_subject_of_type = tributary_state
+										is_subject_of_type = rebellious_decentralized_vassal
+										is_subject_of_type = rebellious_subjugated_vassal
+									}
+								}
+							}
+							set_country_flag = aiInitDiploRelated
+							every_subject_country = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+									AND = {
+										NOT = {
+											liberty_desire = 50
+											is_subject_of_type = tributary_state
+											is_subject_of_type = rebellious_decentralized_vassal
+											is_subject_of_type = rebellious_subjugated_vassal
+										}
+									}
+								}
+								set_country_flag = aiInitDiploRelated
+								every_subject_country = {
+									limit = {
+										NOT = {
+											tag = event_target:getPlanInvTarg
+										}
+										AND = {
+											NOT = {
+												liberty_desire = 50
+												is_subject_of_type = tributary_state
+												is_subject_of_type = rebellious_decentralized_vassal
+												is_subject_of_type = rebellious_subjugated_vassal
+											}
+										}
+									}
+									set_country_flag = aiInitDiploRelated
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							always = no
+						}
+						overlord = {
+							if = {
+								limit = {
+									NOT = {
+										tag = event_target:getPlanInvTarg
+									}
+								}
+								if = {
+									limit = {
+										is_subject = yes
+									}
+									overlord = {
+										if = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+												every_subject_country = {
+													limit = {
+														NOT = {
+															tag = event_target:getPlanInvTarg
+														}
+														AND = {
+															NOT = {
+																liberty_desire = 50
+																is_subject_of_type = tributary_state
+																is_subject_of_type = rebellious_decentralized_vassal
+																is_subject_of_type = rebellious_subjugated_vassal
+															}
+														}
+													}
+													set_country_flag = aiInitDiploRelated
+													every_subject_country = {
+														limit = {
+															NOT = {
+																tag = event_target:getPlanInvTarg
+															}
+															AND = {
+																NOT = {
+																	liberty_desire = 50
+																	is_subject_of_type = tributary_state
+																	is_subject_of_type = rebellious_decentralized_vassal
+																	is_subject_of_type = rebellious_subjugated_vassal
+																}
+															}
+														}
+														set_country_flag = aiInitDiploRelated
+													}
+												}
+											}
+										}
+									}
+								}
+								else = {
+									set_country_flag = aiInitDiploRelated
+									every_subject_country = {
+										limit = {
+											NOT = {
+												tag = event_target:getPlanInvTarg
+											}
+											AND = {
+												NOT = {
+													liberty_desire = 50
+													is_subject_of_type = tributary_state
+													is_subject_of_type = rebellious_decentralized_vassal
+													is_subject_of_type = rebellious_subjugated_vassal
+												}
+											}
+										}
+										set_country_flag = aiInitDiploRelated
+										every_subject_country = {
+											limit = {
+												NOT = {
+													tag = event_target:getPlanInvTarg
+												}
+												AND = {
+													NOT = {
+														liberty_desire = 50
+														is_subject_of_type = tributary_state
+														is_subject_of_type = rebellious_decentralized_vassal
+														is_subject_of_type = rebellious_subjugated_vassal
+													}
+												}
+											}
+											set_country_flag = aiInitDiploRelated
+											every_subject_country = {
+												limit = {
+													NOT = {
+														tag = event_target:getPlanInvTarg
+													}
+													AND = {
+														NOT = {
+															liberty_desire = 50
+															is_subject_of_type = tributary_state
+															is_subject_of_type = rebellious_decentralized_vassal
+															is_subject_of_type = rebellious_subjugated_vassal
+														}
+													}
+												}
+												set_country_flag = aiInitDiploRelated
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					every_country = {
+						limit = {
+							has_country_flag = aiInitDiploRelated
+						}
+						clr_country_flag = aiInitDiploRelated
+						if = {
+							limit = {
+								always = yes
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								export_to_variable = {
+									which = AIMiscArmySize
+									value = army_size
+								}
+							}
+							else = {
+								set_variable = {
+									which = AIMiscArmySize
+									value = 0
+								}
+							}
+							export_to_variable = {
+								which = AIMiscLFL
+								value = land_forcelimit
+							}
+							export_to_variable = {
+								which = AIMiscManpow
+								value = manpower
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_tribals_loyalty
+										value = 0.11
+									}
+								}
+								set_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_infantry_host
+								}
+								change_variable = {
+									which = tmpArmyTR
+									which = estate_tribals_cavalry_host
+								}
+								multiply_variable = {
+									which = tmpArmyTR
+									value = 1.25
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = tmpArmyTR
+								}
+								set_variable = {
+									which = tmpArmyTR
+									value = 0
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_greater_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_greater_nobles_artillery_total
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = estate_lesser_nobles_loyalty
+										value = 0.11
+									}
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_infantry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_cavalry_total
+								}
+								change_variable = {
+									which = AIMiscArmyEstate
+									which = estate_lesser_nobles_artillery_total
+								}
+							}
+							multiply_variable = {
+								which = AIMiscArmyEstate
+								value = 0.85
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = AIMiscManpow
+												which = AIMiscLFL
+											}
+										}
+									}
+									subtract_variable = {
+										which = AIMiscLFL
+										which = AIMiscManpow
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.3
+									}
+								}
+								else = {
+									subtract_variable = {
+										which = AIMiscManpow
+										which = AIMiscLFL
+									}
+									multiply_variable = {
+										which = AIMiscManpow
+										value = 0.15
+									}
+									multiply_variable = {
+										which = AIMiscLFL
+										value = 0.3
+									}
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscLFL
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscManpow
+								}
+							}
+							if = {
+								limit = {
+									always = yes
+								}
+								change_variable = {
+									which = AIMiscArmySize
+									which = AIMiscArmyEstate
+								}
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = AIMiscArmySize
+							}
+							set_variable = {
+								which = AIMiscArmySize
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLFL
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscManpow
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscArmyEstate
+								value = 0
+							}
+							export_to_variable = {
+								which = AIMiscMilTech
+								value = mil_tech
+							}
+							export_to_variable = {
+								which = AIMiscLandMorale
+								value = modifier:land_morale
+							}
+							export_to_variable = {
+								which = AIMiscDisc
+								value = modifier:discipline
+							}
+							multiply_variable = {
+								which = AIMiscMilTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscLandMorale
+								value = 2
+							}
+							multiply_variable = {
+								which = AIMiscDisc
+								value = 5
+							}
+							change_variable = {
+								which = AIMiscMilTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscLandMorale
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscDisc
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscMilTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscLandMorale
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscDisc
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscMilTech
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+								multiply_variable = {
+									which = tmpAIInitDiploArmyQual
+									which = AIMiscLandMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscMilTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscLandMorale
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscDisc
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmyQual
+								value = 0
+							}
+						}
+						if = {
+							limit = {
+								always = yes
+							}
+							export_to_variable = {
+								which = tmpAIInitDiploNavy
+								value = navy_size
+							}
+							export_to_variable = {
+								which = AIMiscDipTech
+								value = dip_tech
+							}
+							export_to_variable = {
+								which = AIMiscNavMorale
+								value = modifier:naval_morale
+							}
+							multiply_variable = {
+								which = AIMiscDipTech
+								value = 0.1
+							}
+							multiply_variable = {
+								which = AIMiscNavMorale
+								value = 1.5
+							}
+							change_variable = {
+								which = AIMiscDipTech
+								value = 1
+							}
+							change_variable = {
+								which = AIMiscNavMorale
+								value = 1
+							}
+							if = {
+								limit = {
+									OR = {
+										NOT = {
+											check_variable = {
+												which = AIMiscDipTech
+												value = 0.001
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = AIMiscNavMorale
+												value = 0.001
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscDipTech
+								}
+								change_variable = {
+									which = tmpAIInitDiploNavyQual
+									which = AIMiscNavMorale
+								}
+							}
+							set_variable = {
+								which = AIMiscDipTech
+								value = 0
+							}
+							set_variable = {
+								which = AIMiscNavMorale
+								value = 0
+							}
+						}
+						else = {
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavyQual
+								value = 0
+							}
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploArmy
+							which = tmpAIInitDiploArmyQual
+						}
+						multiply_variable = {
+							which = tmpAIInitDiploNavy
+							which = tmpAIInitDiploNavyQual
+						}
+						PREV = {
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								which = PREV
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								which = PREV
+							}
+							change_variable = {
+								which = aiInitDiploArmy
+								which = tmpAIInitDiploArmy
+							}
+							change_variable = {
+								which = aiInitDiploNavy
+								which = tmpAIInitDiploNavy
+							}
+							set_variable = {
+								which = tmpAIInitDiploArmy
+								value = 0
+							}
+							set_variable = {
+								which = tmpAIInitDiploNavy
+								value = 0
+							}
+						}
+						set_variable = {
+							which = tmpAIInitDiploArmy
+							value = 0
+						}
+						set_variable = {
+							which = tmpAIInitDiploNavy
+							value = 0
+						}
+					}
+					divide_variable = {
+						which = aiInitDiploNavy
+						value = 2
+					}
+					set_variable = {
+						which = getPlanInvPowerDef
+						which = aiInitDiploArmy
+					}
+					change_variable = {
+						which = getPlanInvPowerDef
+						which = aiInitDiploNavy
+					}
+					divide_variable = {
+						which = getPlanInvPowerDef
+						value = 50
+					}
+					set_variable = {
+						which = aiInitDiploArmy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploArmyQual
+						value = 0
+					}
+					set_variable = {
+						which = aiInitDiploNavy
+						value = 0
+					}
+					set_variable = {
+						which = tmpAIInitDiploNavyQual
+						value = 0
+					}
+					PREV = {
+						change_variable = {
+							which = getPlanInvPowerDef
+							which = PREV
+						}
+					}
+					set_variable = {
+						which = getPlanInvPowerDef
+						value = 0
+					}
+				}
+				multiply_variable = {
+					which = getPlanInvPowerDef
+					value = 1.25
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = getPlanInvPowerAtt
+							which = getPlanInvPowerDef
+						}
+					}
+					set_variable = {
+						which = tmpAtt
+						which = getPlanInvPowerAtt
+					}
+					set_variable = {
+						which = tmpDef
+						which = getPlanInvPowerDef
+					}
+					multiply_variable = {
+						which = tmpAtt
+						which = tmpAtt
+					}
+					multiply_variable = {
+						which = tmpDef
+						which = tmpDef
+					}
+					subtract_variable = {
+						which = tmpAtt
+						which = tmpDef
+					}
+					set_variable = {
+						which = inp_m_exp
+						which = tmpAtt
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = inp_m_exp
+									value = 0
+								}
+							}
+						}
+						set_variable = {
+							which = exp_val
+							value = 0
+						}
+						change_variable = {
+							which = err.math.exp.undef
+							value = 1
+						}
+					}
+					else_if = {
+						limit = {
+							is_variable_equal = {
+								which = inp_m_exp
+								value = 0
+							}
+						}
+						set_variable = {
+							which = exp_val
+							value = 0
+						}
+					}
+					else = {
+						set_variable = {
+							which = exp_m_exp
+							value = 0.5
+						}
+						set_variable = {
+							which = int_m_exp
+							which = exp_m_exp
+						}
+						multiply_variable = {
+							which = int_m_exp
+							value = 0.001
+						}
+						multiply_variable = {
+							which = int_m_exp
+							value = 1000
+						}
+						set_variable = {
+							which = dec_m_exp
+							which = exp_m_exp
+						}
+						subtract_variable = {
+							which = dec_m_exp
+							which = int_m_exp
+						}
+						set_variable = {
+							which = inp
+							which = inp_m_exp
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = inp
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = ln_val
+								value = 0
+							}
+							change_variable = {
+								which = err.math.ln.undef
+								value = 1
+							}
+						}
+						else = {
+							set_variable = {
+								which = ln_val
+								value = 0
+							}
+							set_variable = {
+								which = scale
+								value = 10000
+							}
+							set_variable = {
+								which = k
+								value = 0
+							}
+							set_variable = {
+								which = k_div
+								which = scale
+							}
+							while = {
+								limit = {
+									check_variable = {
+										which = inp
+										value = 2.001
+									}
+								}
+								multiply_variable = {
+									which = inp
+									value = 0.5
+								}
+								change_variable = {
+									which = ln_val
+									value = 6931.472
+								}
+							}
+							while = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = inp
+											value = 1
+										}
+									}
+								}
+								multiply_variable = {
+									which = inp
+									value = 2
+								}
+								subtract_variable = {
+									which = ln_val
+									value = 6931.472
+								}
+							}
+							multiply_variable = {
+								which = inp
+								which = scale
+							}
+							while = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = k
+											value = 10
+										}
+									}
+								}
+								change_variable = {
+									which = k
+									value = 1
+								}
+								multiply_variable = {
+									which = k_div
+									value = 0.5
+								}
+								set_variable = {
+									which = t_m_ln
+									which = scale
+								}
+								change_variable = {
+									which = t_m_ln
+									which = k_div
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = inp
+											which = t_m_ln
+										}
+									}
+									divide_variable = {
+										which = inp
+										which = t_m_ln
+									}
+									multiply_variable = {
+										which = inp
+										which = scale
+									}
+									set_variable = {
+										which = lt_ind
+										which = k
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = lt_ind
+												value = 6
+											}
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = lt_ind
+													value = 8
+												}
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 9
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 10
+														}
+													}
+													set_variable = {
+														which = lt_val
+														value = 9.761
+													}
+												}
+												else = {
+													set_variable = {
+														which = lt_val
+														value = 19.512
+													}
+												}
+											}
+											else = {
+												set_variable = {
+													which = lt_val
+													value = 38.986
+												}
+											}
+										}
+										else = {
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 7
+													}
+												}
+												set_variable = {
+													which = lt_val
+													value = 77.821
+												}
+											}
+											else = {
+												set_variable = {
+													which = lt_val
+													value = 155.042
+												}
+											}
+										}
+									}
+									else = {
+										if = {
+											limit = {
+												check_variable = {
+													which = lt_ind
+													value = 3
+												}
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 4
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 5
+														}
+													}
+													set_variable = {
+														which = lt_val
+														value = 307.717
+													}
+												}
+												else = {
+													set_variable = {
+														which = lt_val
+														value = 606.246
+													}
+												}
+											}
+											else = {
+												set_variable = {
+													which = lt_val
+													value = 1177.83
+												}
+											}
+										}
+										else = {
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 2
+													}
+												}
+												set_variable = {
+													which = lt_val
+													value = 2231.436
+												}
+											}
+											else = {
+												set_variable = {
+													which = lt_val
+													value = 4054.651
+												}
+											}
+										}
+									}
+									set_variable = {
+										which = lt_ind
+										value = 0
+									}
+									change_variable = {
+										which = ln_val
+										which = lt_val
+									}
+								}
+								set_variable = {
+									which = t_m_ln
+									value = 0
+								}
+							}
+							divide_variable = {
+								which = ln_val
+								value = 10000
+							}
+							set_variable = {
+								which = scale
+								value = 0
+							}
+							set_variable = {
+								which = k
+								value = 0
+							}
+							set_variable = {
+								which = k_div
+								value = 0
+							}
+							set_variable = {
+								which = lt_val
+								value = 0
+							}
+						}
+						set_variable = {
+							which = inp
+							value = 0
+						}
+						multiply_variable = {
+							which = dec_m_exp
+							which = ln_val
+						}
+						set_variable = {
+							which = math.e.expnt
+							which = dec_m_exp
+						}
+						set_variable = {
+							which = math.e.return
+							value = 1
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = math.e.expnt
+										value = -6.999
+									}
+								}
+							}
+							set_variable = {
+								which = exp_val
+								value = 0
+							}
+						}
+						else = {
+							while = {
+								limit = {
+									check_variable = {
+										which = math.e.expnt
+										value = 1
+									}
+								}
+								subtract_variable = {
+									which = math.e.expnt
+									value = 1
+								}
+								multiply_variable = {
+									which = math.e.return
+									value = 2.718
+								}
+							}
+							while = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = math.e.expnt
+											value = 0
+										}
+									}
+								}
+								change_variable = {
+									which = math.e.expnt
+									value = 1
+								}
+								divide_variable = {
+									which = math.e.return
+									value = 2.718
+								}
+							}
+							set_variable = {
+								which = math.e.sm
+								value = 1
+							}
+							if = {
+								limit = {
+									NOT = {
+										is_variable_equal = {
+											which = math.e.expnt
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = math.e.sq
+									which = math.e.expnt
+								}
+								multiply_variable = {
+									which = math.e.sq
+									which = math.e.expnt
+								}
+								set_variable = {
+									which = math.e.fct
+									value = 2
+								}
+								set_variable = {
+									which = math.e.fctl
+									value = 2
+								}
+								set_variable = {
+									which = math.e.a1
+									which = math.e.sq
+								}
+								set_variable = {
+									which = math.e.a2
+									which = math.e.expnt
+								}
+								set_variable = {
+									which = math.e.a3
+									value = 2
+								}
+								set_variable = {
+									which = math.e.tmp
+									which = math.e.a2
+								}
+								multiply_variable = {
+									which = math.e.tmp
+									which = math.e.a3
+								}
+								change_variable = {
+									which = math.e.tmp
+									which = math.e.a1
+								}
+								divide_variable = {
+									which = math.e.tmp
+									which = math.e.fct
+								}
+								change_variable = {
+									which = math.e.sm
+									which = math.e.tmp
+								}
+								set_variable = {
+									which = math.e.prec
+									value = 3
+								}
+								subtract_variable = {
+									which = math.e.prec
+									value = 1
+								}
+								while = {
+									limit = {
+										check_variable = {
+											which = math.e.prec
+											value = 1
+										}
+									}
+									subtract_variable = {
+										which = math.e.prec
+										value = 1
+									}
+									change_variable = {
+										which = math.e.fctl
+										value = 1
+									}
+									multiply_variable = {
+										which = math.e.fct
+										which = math.e.fctl
+									}
+									change_variable = {
+										which = math.e.fctl
+										value = 1
+									}
+									multiply_variable = {
+										which = math.e.fct
+										which = math.e.fctl
+									}
+									multiply_variable = {
+										which = math.e.a1
+										which = math.e.sq
+									}
+									multiply_variable = {
+										which = math.e.a2
+										which = math.e.sq
+									}
+									change_variable = {
+										which = math.e.a3
+										value = 2
+									}
+									set_variable = {
+										which = math.e.tmp
+										which = math.e.a2
+									}
+									multiply_variable = {
+										which = math.e.tmp
+										which = math.e.a3
+									}
+									change_variable = {
+										which = math.e.tmp
+										which = math.e.a1
+									}
+									divide_variable = {
+										which = math.e.tmp
+										which = math.e.fct
+									}
+									change_variable = {
+										which = math.e.sm
+										which = math.e.tmp
+									}
+								}
+							}
+							multiply_variable = {
+								which = math.e.return
+								which = math.e.sm
+							}
+							set_variable = {
+								which = exp_val
+								which = math.e.return
+							}
+							set_variable = {
+								which = math.e.sm
+								value = 0
+							}
+							set_variable = {
+								which = math.e.tmp
+								value = 0
+							}
+							set_variable = {
+								which = math.e.a1
+								value = 0
+							}
+							set_variable = {
+								which = math.e.a2
+								value = 0
+							}
+							set_variable = {
+								which = math.e.a3
+								value = 0
+							}
+							set_variable = {
+								which = math.e.fctl
+								value = 0
+							}
+							set_variable = {
+								which = math.e.fct
+								value = 0
+							}
+							set_variable = {
+								which = math.e.prec
+								value = 0
+							}
+							set_variable = {
+								which = math.e.sq
+								value = 0
+							}
+						}
+						set_variable = {
+							which = math.e.expnt
+							value = 0
+						}
+						set_variable = {
+							which = math.e.return
+							value = 0
+						}
+						while = {
+							limit = {
+								check_variable = {
+									which = int_m_exp
+									value = 1
+								}
+							}
+							subtract_variable = {
+								which = int_m_exp
+								value = 1
+							}
+							multiply_variable = {
+								which = exp_val
+								which = inp_m_exp
+							}
+						}
+						set_variable = {
+							which = exp_m_exp
+							value = 0
+						}
+						set_variable = {
+							which = int_m_exp
+							value = 0
+						}
+						set_variable = {
+							which = dec_m_exp
+							value = 0
+						}
+						set_variable = {
+							which = ln_val
+							value = 0
+						}
+					}
+					set_variable = {
+						which = inp_m_exp
+						value = 0
+					}
+					set_variable = {
+						which = getPlanInvPowerLanch
+						which = getPlanInvPowerAtt
+					}
+					subtract_variable = {
+						which = getPlanInvPowerLanch
+						which = exp_val
+					}
+					divide_variable = {
+						which = getPlanInvPowerLanch
+						which = getPlanInvPowerAtt
+					}
+					if = {
+						limit = {
+							always = yes
+						}
+						set_variable = {
+							which = getPlanInvPowerAtt
+							value = 0
+						}
+						set_variable = {
+							which = getPlanInvPowerDef
+							value = 0
+						}
+					}
+					set_variable = {
+						which = tmpAtt
+						value = 0
+					}
+					set_variable = {
+						which = tmpDef
+						value = 0
+					}
+					set_variable = {
+						which = exp_val
+						value = 0
+					}
+				}
+				else = {
+					set_variable = {
+						which = getPlanInvPowerLanch
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = getPlanInvPowerLanch
+								value = 1
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_flag = getPlanInvCheck
+						}
+						set_variable = {
+							which = armySizeCheck
+							which = event_target:getPlanInvTarg
+						}
+						export_to_variable = {
+							which = getPlanInvFortLevel
+							value = trigger_value:fort_level
+						}
+						subtract_variable = {
+							which = getPlanInvFortLevel
+							value = 1
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = armySizeCheck
+									which = getPlanInvFortLevel
+								}
+							}
+							set_variable = {
+								which = getPlanInvPowerLanch
+								which = owner
+							}
+							subtract_variable = {
+								which = getPlanInvPowerLanch
+								value = 1
+							}
+							multiply_variable = {
+								which = getPlanInvPowerLanch
+								which = getPlanInvPowerLanch
+							}
+							set_variable = {
+								which = getPlanInvCE
+								value = 300
+							}
+							every_neighbor_province = {
+								limit = {
+									NOT = {
+										has_province_modifier = martial_law
+									}
+									OR = {
+										owned_by = event_target:getPlanInvTarg
+										owner = {
+											OR = {
+												is_subject_of = event_target:getPlanInvTarg
+												overlord = {
+													is_subject_of = event_target:getPlanInvTarg
+												}
+											}
+										}
+									}
+								}
+								if = {
+									limit = {
+										owner = {
+											OR = {
+												is_subject_of = event_target:getPlanInvTarg
+												overlord = {
+													is_subject_of = event_target:getPlanInvTarg
+												}
+											}
+										}
+									}
+									set_variable = {
+										which = getPlanInvCE
+										which = runner_final_time_overlord
+									}
+								}
+								else = {
+									set_variable = {
+										which = getPlanInvCE
+										which = runner_final_time
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = getPlanInvCE
+												which = PREV
+											}
+										}
+									}
+									PREV = {
+										set_variable = {
+											which = getPlanInvCE
+											which = PREV
+										}
+									}
+								}
+								set_variable = {
+									which = getPlanInvCE
+									value = 0
+								}
+							}
+							if = {
+								limit = {
+									event_target:getPlanInvTarg = {
+										government = nomad
+									}
+								}
+								subtract_variable = {
+									which = getPlanInvCE
+									value = 120
+								}
+								multiply_variable = {
+									which = getPlanInvCE
+									value = -0.1
+								}
+							}
+							else = {
+								subtract_variable = {
+									which = getPlanInvCE
+									value = 60
+								}
+								multiply_variable = {
+									which = getPlanInvCE
+									value = -0.2
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = getPlanInvCE
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = getPlanInvCE
+									value = 0
+								}
+							}
+							set_variable = {
+								which = getPlanInvVal
+								value = 1
+							}
+							if = {
+								limit = {
+									event_target:getPlanInvTarg = {
+										OR = {
+											accepted_culture = PREV
+											primary_culture = PREV
+											culture_group = PREV
+										}
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											event_target:getPlanInvTarg = {
+												total_development = 50
+											}
+										}
+									}
+									change_variable = {
+										which = getPlanInvVal
+										value = 4
+									}
+								}
+								else_if = {
+									limit = {
+										event_target:getPlanInvTarg = {
+											total_development = 1000
+										}
+									}
+									change_variable = {
+										which = getPlanInvVal
+										value = 1
+									}
+								}
+								else = {
+									change_variable = {
+										which = getPlanInvVal
+										value = 2
+									}
+								}
+							}
+							if = {
+								limit = {
+									event_target:getPlanInvTarg = {
+										religion = PREV
+									}
+								}
+								change_variable = {
+									which = getPlanInvVal
+									value = 0.5
+								}
+							}
+							if = {
+								limit = {
+									event_target:getPlanInvTarg = {
+										religion_group = PREV
+										NOT = {
+											AND = {
+												PREV = {
+													religion = catholic
+												}
+												religion = orthodox
+											}
+										}
+									}
+								}
+								change_variable = {
+									which = getPlanInvVal
+									value = 0.5
+								}
+							}
+							if = {
+								limit = {
+									is_core = event_target:getPlanInvTarg
+								}
+								change_variable = {
+									which = getPlanInvVal
+									value = 100
+								}
+							}
+							if = {
+								limit = {
+									is_claim = event_target:getPlanInvTarg
+								}
+								change_variable = {
+									which = getPlanInvVal
+									value = 0.5
+								}
+							}
+							if = {
+								limit = {
+									has_province_flag = tribals_control_province
+									NOT = {
+										event_target:getPlanInvTarg = {
+											OR = {
+												government = tribal
+												government = nomad
+											}
+										}
+									}
+								}
+								multiply_variable = {
+									which = getPlanInvVal
+									value = 0.5
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = getPlanInvVal
+											value = 0.001
+										}
+									}
+								}
+								set_variable = {
+									which = getPlanInvVal
+									value = 0.001
+								}
+							}
+							multiply_variable = {
+								which = getPlanInvVal
+								which = aiProvValue
+							}
+							multiply_variable = {
+								which = getPlanInvVal
+								which = getPlanInvCE
+							}
+							multiply_variable = {
+								which = getPlanInvVal
+								which = getPlanInvPowerLanch
+							}
+							if = {
+								limit = {
+									owner = {
+										OR = {
+											event_target:getPlanInvTarg = {
+												is_subject_of = PREV
+											}
+											alliance_with = event_target:getPlanInvTarg
+											marriage_with = event_target:getPlanInvTarg
+											truce_with = event_target:getPlanInvTarg
+											any_ally = {
+												alliance_with = event_target:getPlanInvTarg
+											}
+											any_country = {
+												has_guaranteed = PREV
+												OR = {
+													tag = event_target:getPlanInvTarg
+													alliance_with = event_target:getPlanInvTarg
+												}
+											}
+											overlord = {
+												OR = {
+													alliance_with = event_target:getPlanInvTarg
+													marriage_with = event_target:getPlanInvTarg
+													any_ally = {
+														alliance_with = event_target:getPlanInvTarg
+													}
+													any_country = {
+														has_guaranteed = PREV
+														OR = {
+															tag = event_target:getPlanInvTarg
+															alliance_with = event_target:getPlanInvTarg
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+								multiply_variable = {
+									which = getPlanInvVal
+									value = 0.5
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = getPlanInvVal
+										which = event_target:tmpAutoTarg
+									}
+								}
+								event_target:tmpAutoTarg = {
+									set_variable = {
+										which = getPlanInvVal
+										value = 0
+									}
+								}
+								save_event_target_as = tmpAutoTarg
+							}
+							else = {
+								set_variable = {
+									which = getPlanInvVal
+									value = 0
+								}
+							}
+							set_variable = {
+								which = getPlanInvCE
+								value = 0
+							}
+							set_variable = {
+								which = getPlanInvPowerLanch
+								value = 0
+							}
+						}
+						set_variable = {
+							which = armySizeCheck
+							value = 0
+						}
+						set_variable = {
+							which = getPlanInvFortLevel
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = getPlanInvPowerAtt
+					value = 0
+				}
+				set_variable = {
+					which = getPlanInvPowerDef
+					value = 0
+				}
+				set_variable = {
+					which = getPlanInvPowerLanch
+					value = 0
+				}
+			}
+			every_owned_province = {
+				clr_province_flag = getPlanInvCheck
+			}
+		}
+		event_target:tmpAutoTarg = {
+			set_variable = {
+				which = none
+				value = 102842.336
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_variable_equal = {
+							which = tmpAutoVar
+							value = 102842.336
+						}
+					}
+				}
+				set_variable = {
+					which = tmpAutoVar
+					which = getPlanInvVal
+				}
+			}
+			set_variable = {
+				which = none
+				value = 0
+			}
+			set_variable = {
+				which = getPlanInvVal
+				value = 0
+			}
+		}
+		set_variable = {
+			which = getPlanInvVal
+			value = 0
+		}
+		set_variable = {
+			which = armySizeCheck
+			value = 0
+		}
+		set_variable = {
+			which = tmpCheck
+			value = 89388.351
+		}
+		event_target:tmpAutoTarg = {
+			if = {
+				limit = {
+					is_variable_equal = {
+						which = tmpCheck
+						value = 89388.351
+					}
+				}
+				country_event = {
+					id = POP_Auto.1041
+				}
+			}
+			else = {
+				province_event = {
+					id = POP_Auto.1042
+				}
+			}
+		}
+		set_variable = {
+			which = tmpCheck
+			value = 0
+		}
+		set_variable = {
+			which = tmpAutoVar
+			value = 0
+		}
+	}
+	option = {
+		name = no_localisation
+	}
+}
+country_event = {
+	id = POP_Auto.1041
+	title = POP_Auto.1041.t
+	desc = POP_Auto.1041.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = POP_Auto.1041.a
+		country_event = {
+			id = POP_Auto.001
+		}
+	}
+}
+province_event = {
+	id = POP_Auto.1042
+	title = no_localisation
+	desc = no_localisation
+	picture = CITY_DEVELOPMENT_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = no_localisation
+		FROM = {
+			country_event = {
+				id = POP_Auto.10421
+			}
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.10421
+	title = POP_Auto.10421.t
+	desc = POP_Auto.10421.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = POP_Auto.10421.a
+		hidden_effect = {
+			FROM = {
+				set_variable = {
+					which = tmpAutoVar
+					value = 0
+				}
+			}
+			country_event = {
+				id = POP_Auto.001
+			}
+		}
+	}
+}
+country_event = {
+	id = POP_Auto.201
+	title = POP_Auto.201.tt
+	desc = POP_Auto.201.ds
+	picture = CITY_DEVELOPMENT_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		export_to_variable = {
+			which = tmpTreasury
+			value = treasury
+		}
+		change_variable = {
+			which = tmpTreasury
+			which = aiTreasuryGeneral
+		}
+		export_to_variable = {
+			which = tempTreasuryChange
+			value = treasury
+		}
+		subtract_variable = {
+			which = tempTreasuryChange
+			which = tmpTreasury
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = tempTreasuryChange
+					value = 0
+				}
+			}
+			set_variable = {
+				which = ducat_cost
+				which = tempTreasuryChange
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 65536
+					}
+				}
+				add_treasury = -65536
+				subtract_variable = {
+					which = ducat_cost
+					value = 65536
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 32768
+					}
+				}
+				add_treasury = -32768
+				subtract_variable = {
+					which = ducat_cost
+					value = 32768
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 16384
+					}
+				}
+				add_treasury = -16384
+				subtract_variable = {
+					which = ducat_cost
+					value = 16384
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 8192
+					}
+				}
+				add_treasury = -8192
+				subtract_variable = {
+					which = ducat_cost
+					value = 8192
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 4096
+					}
+				}
+				add_treasury = -4096
+				subtract_variable = {
+					which = ducat_cost
+					value = 4096
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 2048
+					}
+				}
+				add_treasury = -2048
+				subtract_variable = {
+					which = ducat_cost
+					value = 2048
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 1024
+					}
+				}
+				add_treasury = -1024
+				subtract_variable = {
+					which = ducat_cost
+					value = 1024
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 512
+					}
+				}
+				add_treasury = -512
+				subtract_variable = {
+					which = ducat_cost
+					value = 512
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 256
+					}
+				}
+				add_treasury = -256
+				subtract_variable = {
+					which = ducat_cost
+					value = 256
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 128
+					}
+				}
+				add_treasury = -128
+				subtract_variable = {
+					which = ducat_cost
+					value = 128
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 64
+					}
+				}
+				add_treasury = -64
+				subtract_variable = {
+					which = ducat_cost
+					value = 64
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 32
+					}
+				}
+				add_treasury = -32
+				subtract_variable = {
+					which = ducat_cost
+					value = 32
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 16
+					}
+				}
+				add_treasury = -16
+				subtract_variable = {
+					which = ducat_cost
+					value = 16
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 8
+					}
+				}
+				add_treasury = -8
+				subtract_variable = {
+					which = ducat_cost
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 4
+					}
+				}
+				add_treasury = -4
+				subtract_variable = {
+					which = ducat_cost
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 2
+					}
+				}
+				add_treasury = -2
+				subtract_variable = {
+					which = ducat_cost
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 1
+					}
+				}
+				add_treasury = -1
+				subtract_variable = {
+					which = ducat_cost
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.5
+					}
+				}
+				add_treasury = -0.5
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.25
+					}
+				}
+				add_treasury = -0.25
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.25
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_cost
+						value = 0.125
+					}
+				}
+				add_treasury = -0.125
+				subtract_variable = {
+					which = ducat_cost
+					value = 0.125
+				}
+			}
+			set_variable = {
+				which = ducat_cost
+				value = 0
+			}
+		}
+		else = {
+			set_variable = {
+				which = ducat_gain
+				which = tempTreasuryChange
+			}
+			multiply_variable = {
+				which = ducat_gain
+				value = -1
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 65536
+					}
+				}
+				add_treasury = 65536
+				subtract_variable = {
+					which = ducat_gain
+					value = 65536
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 32768
+					}
+				}
+				add_treasury = 32768
+				subtract_variable = {
+					which = ducat_gain
+					value = 32768
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 16384
+					}
+				}
+				add_treasury = 16384
+				subtract_variable = {
+					which = ducat_gain
+					value = 16384
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 8192
+					}
+				}
+				add_treasury = 8192
+				subtract_variable = {
+					which = ducat_gain
+					value = 8192
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 4096
+					}
+				}
+				add_treasury = 4096
+				subtract_variable = {
+					which = ducat_gain
+					value = 4096
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 2048
+					}
+				}
+				add_treasury = 2048
+				subtract_variable = {
+					which = ducat_gain
+					value = 2048
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 1024
+					}
+				}
+				add_treasury = 1024
+				subtract_variable = {
+					which = ducat_gain
+					value = 1024
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 512
+					}
+				}
+				add_treasury = 512
+				subtract_variable = {
+					which = ducat_gain
+					value = 512
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 256
+					}
+				}
+				add_treasury = 256
+				subtract_variable = {
+					which = ducat_gain
+					value = 256
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 128
+					}
+				}
+				add_treasury = 128
+				subtract_variable = {
+					which = ducat_gain
+					value = 128
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 64
+					}
+				}
+				add_treasury = 64
+				subtract_variable = {
+					which = ducat_gain
+					value = 64
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 32
+					}
+				}
+				add_treasury = 32
+				subtract_variable = {
+					which = ducat_gain
+					value = 32
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 16
+					}
+				}
+				add_treasury = 16
+				subtract_variable = {
+					which = ducat_gain
+					value = 16
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 8
+					}
+				}
+				add_treasury = 8
+				subtract_variable = {
+					which = ducat_gain
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 4
+					}
+				}
+				add_treasury = 4
+				subtract_variable = {
+					which = ducat_gain
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 2
+					}
+				}
+				add_treasury = 2
+				subtract_variable = {
+					which = ducat_gain
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 1
+					}
+				}
+				add_treasury = 1
+				subtract_variable = {
+					which = ducat_gain
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 0.5
+					}
+				}
+				add_treasury = 0.5
+				subtract_variable = {
+					which = ducat_gain
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 0.25
+					}
+				}
+				add_treasury = 0.25
+				subtract_variable = {
+					which = ducat_gain
+					value = 0.25
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ducat_gain
+						value = 0.125
+					}
+				}
+				add_treasury = 0.125
+				subtract_variable = {
+					which = ducat_gain
+					value = 0.125
+				}
+			}
+			set_variable = {
+				which = ducat_gain
+				value = 0
+			}
+		}
+		set_variable = {
+			which = tempTreasuryChange
+			value = 0
+		}
+		set_variable = {
+			which = tmpTreasury
+			value = 0
+		}
+		set_variable = {
+			which = aiTreasuryGeneral
+			value = 0
+		}
+	}
+	option = {
+		name = exit
+	}
+}

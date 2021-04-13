@@ -1,0 +1,83 @@
+country_event = {
+	id = cleanup.9600
+	title = "EVTNAME9600"
+	desc = "EVTDESC9600"
+	picture = REFORM_eventPicture
+	trigger = {
+		exists = PAP
+		NOT = {
+			has_opinion = {
+				who = PAP
+				value = 0
+			}
+		}
+		religion = catholic
+		OR = {
+			has_regency = no
+			has_consort_regency = yes
+		}
+		government = monarchy
+		any_owned_province = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		NOT = {
+			has_country_flag = submission_of_the_clergy
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 0.9
+			dominant_religion = reformed
+		}
+		modifier = {
+			factor = 0.9
+			dominant_religion = protestant
+		}
+		modifier = {
+			factor = 0.9
+			advisor = statesman
+		}
+		modifier = {
+			factor = 1.2
+			advisor = theologian
+		}
+		modifier = {
+			factor = 1.2
+			dip = 4
+		}
+	}
+	option = {
+		name = "EVTOPTA9600"
+		set_country_flag = submission_of_the_clergy
+		add_absolutism = 10
+		add_prestige = 5
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		add_papal_influence = -25
+		add_opinion = {
+			who = PAP
+			modifier = opinion_loyal_to_king
+		}
+	}
+	option = {
+		name = "EVTOPTB9600"
+		set_country_flag = submission_of_the_clergy
+		add_opinion = {
+			who = PAP
+			modifier = opinion_loyal_to_pope
+		}
+		add_papal_influence = 10
+	}
+}

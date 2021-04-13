@@ -1,0 +1,4714 @@
+namespace = flavor_svp
+country_event = {
+	id = flavor_svp.99
+	title = "flavor_svp.99.title"
+	desc = "flavor_svp.99.desc"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.99.a"
+		subtract_variable = {
+			which = dutch_rebellion_desire
+			value = 1
+		}
+		country_event = {
+			id = flavor_svp.99
+			days = 3650
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.0
+	title = "flavor_svp.0.title"
+	desc = {
+		trigger = {
+			check_variable = {
+				which = dutch_rebellion_desire
+				value = 0.001
+			}
+		}
+		desc = "flavor_svp.0.desca"
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = dutch_rebellion_desire
+					value = 0.001
+				}
+			}
+		}
+		desc = "flavor_svp.0.descb"
+	}
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.0.a"
+	}
+}
+country_event = {
+	id = flavor_svp.1
+	title = "flavor_svp.1.title"
+	desc = "flavor_svp.1.desc"
+	picture = LIBERUM_VETO_eventPicture
+	trigger = {
+		NOT = {
+			has_global_flag = dutch_rebellion_end
+		}
+		NOT = {
+			tag = NED
+		}
+		NOT = {
+			tag = SVP
+		}
+		NOT = {
+			has_country_flag = svp_estates_general
+		}
+		NOT = {
+			culture_group = low_frankish
+		}
+		is_subject = no
+		check_variable = {
+			which = "Cores_on_the_Netherlands"
+			value = 13
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "flavor_svp.1.a"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			set_global_flag = dutch_rebellion_start
+			set_country_flag = svp_estates_general
+			REB = {
+				set_variable = {
+					which = dutch_rebellion_desire
+					value = 8
+				}
+				country_event = {
+					id = flavor_svp.99
+					days = 3650
+				}
+			}
+			add_country_modifier = {
+				name = svp_centralized_recently
+				duration = 10950
+			}
+			add_country_modifier = {
+				name = svp_demanded_tax_recently
+				duration = 3650
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = low_countries_region
+					region = belgii_region
+				}
+			}
+			add_province_modifier = {
+				name = estates_general_1
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.1.b"
+		ai_chance = {
+			factor = 0
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 88
+					province_id = 2307
+					province_id = 2353
+				}
+				NOT = {
+					has_province_modifier = county_of_artois
+				}
+			}
+			add_permanent_province_modifier = {
+				name = county_of_artois
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 87
+					province_id = 90
+					province_id = 2363
+				}
+				NOT = {
+					has_province_modifier = county_of_flanders
+				}
+			}
+			add_permanent_province_modifier = {
+				name = county_of_flanders
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				province_id = 2364
+				NOT = {
+					has_province_modifier = county_of_namur
+				}
+			}
+			add_permanent_province_modifier = {
+				name = county_of_namur
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				province_id = 91
+				NOT = {
+					has_province_modifier = county_of_hainaut
+				}
+			}
+			add_permanent_province_modifier = {
+				name = county_of_hainaut
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				province_id = 96
+				NOT = {
+					has_province_modifier = county_of_zeeland
+				}
+			}
+			add_permanent_province_modifier = {
+				name = county_of_zeeland
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 97
+					province_id = 2370
+				}
+				NOT = {
+					has_province_modifier = county_of_holland
+				}
+			}
+			add_permanent_province_modifier = {
+				name = county_of_holland
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 92
+					province_id = 2367
+					province_id = 95
+					province_id = 2360
+				}
+				NOT = {
+					has_province_modifier = duchy_of_brabant
+				}
+			}
+			add_permanent_province_modifier = {
+				name = duchy_of_brabant
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				province_id = 2795
+				NOT = {
+					has_province_modifier = duchy_of_limburg
+				}
+			}
+			add_permanent_province_modifier = {
+				name = duchy_of_limburg
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 94
+					province_id = 1511
+				}
+				NOT = {
+					has_province_modifier = duchy_of_luxembourg
+				}
+			}
+			add_permanent_province_modifier = {
+				name = duchy_of_luxembourg
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				province_id = 98
+				NOT = {
+					has_province_modifier = lordship_of_utrecht
+				}
+			}
+			add_permanent_province_modifier = {
+				name = lordship_of_utrecht
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				province_id = 1371
+				NOT = {
+					has_province_modifier = lordship_of_frisia
+				}
+			}
+			add_permanent_province_modifier = {
+				name = lordship_of_frisia
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 99
+					province_id = 2449
+				}
+				NOT = {
+					has_province_modifier = duchy_of_guelders
+				}
+			}
+			add_permanent_province_modifier = {
+				name = duchy_of_guelders
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 1372
+					province_id = 2450
+				}
+				NOT = {
+					has_province_modifier = lordship_of_overijssel
+				}
+			}
+			add_permanent_province_modifier = {
+				name = lordship_of_overijssel
+				duration = -1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 93
+					province_id = 2451
+				}
+				NOT = {
+					has_province_modifier = bishopric_of_liege
+				}
+			}
+			add_permanent_province_modifier = {
+				name = bishopric_of_liege
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = flavor_svp.1.c
+		ai_chance = {
+			factor = 0
+		}
+		set_global_flag = dutch_rebellion_start
+		hidden_effect = {
+			REB = {
+				set_variable = {
+					which = dutch_rebellion_desire
+					value = 25
+				}
+			}
+			set_country_flag = svp_abolished_estates
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = belgii_region
+					region = low_countries_region
+				}
+			}
+			add_unrest = 15
+		}
+		custom_tooltip = flavor_svp_danger_tooltip
+	}
+}
+country_event = {
+	id = flavor_svp.2
+	title = "flavor_svp.2.title"
+	desc = "flavor_svp.2.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.2.a
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 12
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 14
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 16
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 18
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = flavor_svp.3
+			}
+		}
+	}
+	option = {
+		name = flavor_svp.2.b
+		ai_chance = {
+			factor = 20
+		}
+		FROM = {
+			country_event = {
+				id = flavor_svp.4
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.3
+	title = "flavor_svp.3.title"
+	desc = "flavor_svp.3.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.3.a
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_country_flag = svp_estates_general
+						any_owned_province = {
+							has_province_modifier = estates_general_1
+						}
+					}
+					AND = {
+						has_country_flag = svp_creator
+						SVP = {
+							is_subject_of = ROOT
+							any_owned_province = {
+								has_province_modifier = estates_general_1
+							}
+						}
+					}
+				}
+			}
+			add_treasury = 100
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						has_country_flag = svp_estates_general
+						any_owned_province = {
+							has_province_modifier = estates_general_2
+						}
+					}
+					AND = {
+						has_country_flag = svp_creator
+						SVP = {
+							is_subject_of = ROOT
+							any_owned_province = {
+								has_province_modifier = estates_general_2
+							}
+						}
+					}
+				}
+			}
+			add_treasury = 150
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						has_country_flag = svp_estates_general
+						any_owned_province = {
+							has_province_modifier = estates_general_3
+						}
+					}
+					AND = {
+						has_country_flag = svp_creator
+						SVP = {
+							is_subject_of = ROOT
+							any_owned_province = {
+								has_province_modifier = estates_general_3
+							}
+						}
+					}
+				}
+			}
+			add_treasury = 200
+		}
+		else = {
+			add_treasury = 100
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.4
+	title = "flavor_svp.4.title"
+	desc = "flavor_svp.4.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.4.a
+		add_prestige = -5
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.5
+	title = "flavor_svp.5.title"
+	desc = "flavor_svp.5.desc"
+	picture = RELIGION_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_global_flag = dutch_rebellion_start
+		OR = {
+			AND = {
+				has_country_flag = svp_creator
+				SVP = {
+					is_subject_of = ROOT
+					any_owned_province = {
+						OR = {
+							religion = protestant
+							religion = reformed
+						}
+					}
+				}
+			}
+			AND = {
+				has_country_flag = svp_estates_general
+				any_owned_province = {
+					OR = {
+						has_province_modifier = estates_general_1
+						has_province_modifier = estates_general_2
+						has_province_modifier = estates_general_3
+					}
+					OR = {
+						religion = protestant
+						religion = reformed
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = flavor_svp.5.a
+		ai_chance = {
+			factor = 75
+		}
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			add_country_modifier = {
+				name = svp_new_bishoprics
+				duration = -1
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+				}
+				add_unrest = 2
+			}
+		}
+		else = {
+			SVP = {
+				add_country_modifier = {
+					name = svp_new_bishoprics
+					duration = -1
+				}
+				every_owned_province = {
+					add_unrest = 2
+				}
+			}
+		}
+		custom_tooltip = flavor_svp_danger_tooltip
+	}
+	option = {
+		name = flavor_svp.5.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_modifier = inquisition_a
+					has_country_modifier = inquisition_b
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.6
+	title = "flavor_svp.6.title"
+	desc = "flavor_svp.6.desc"
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_global_flag = dutch_rebellion_start
+		OR = {
+			has_country_flag = svp_inquisition
+			has_country_modifier = svp_new_bishoprics
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = flavor_svp.6.a
+		ai_chance = {
+			factor = 60
+		}
+		remove_country_modifier = svp_new_bishoprics
+		clr_country_flag = svp_inquisition
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			set_variable = {
+				which = inquisition
+				value = 0
+			}
+		}
+		else = {
+			set_variable = {
+				which = inquisition
+				value = 0
+			}
+			SVP = {
+				set_variable = {
+					which = inquisition
+					value = 0
+				}
+			}
+		}
+		hidden_effect = {
+			REB = {
+				subtract_variable = {
+					which = dutch_rebellion_desire
+					value = 3
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_svp.6.b
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+				}
+				add_unrest = 2
+			}
+		}
+		custom_tooltip = flavor_svp_danger_tooltip
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 3
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.7
+	title = "flavor_svp.7.title"
+	desc = "flavor_svp.7.desc"
+	picture = CONQUEST_eventPicture
+	trigger = {
+		any_owned_province = {
+			OR = {
+				has_province_modifier = estates_general_1
+				has_province_modifier = estates_general_2
+				has_province_modifier = estates_general_3
+			}
+		}
+		any_owned_province = {
+			OR = {
+				region = low_countries_region
+				region = belgii_region
+			}
+			is_core = ROOT
+			NOT = {
+				OR = {
+					has_province_modifier = estates_general_1
+					has_province_modifier = estates_general_2
+					has_province_modifier = estates_general_3
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "flavor_svp.7.a"
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = low_countries_region
+					region = belgii_region
+				}
+				is_core = ROOT
+				NOT = {
+					OR = {
+						has_province_modifier = estates_general_1
+						has_province_modifier = estates_general_2
+						has_province_modifier = estates_general_3
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						any_owned_province = {
+							has_province_modifier = estates_general_1
+						}
+					}
+				}
+				add_province_modifier = {
+					name = estates_general_1
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						any_owned_province = {
+							has_province_modifier = estates_general_2
+						}
+					}
+				}
+				add_province_modifier = {
+					name = estates_general_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = estates_general_3
+					duration = -1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.9
+	title = "flavor_svp.9.title"
+	desc = "flavor_svp.9.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.9.a
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 12
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 14
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 16
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				REB = {
+					check_variable = {
+						which = dutch_rebellion_desire
+						value = 18
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = flavor_svp.10
+			}
+		}
+	}
+	option = {
+		name = flavor_svp.9.b
+		ai_chance = {
+			factor = 20
+		}
+		FROM = {
+			country_event = {
+				id = flavor_svp.11
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.10
+	title = "flavor_svp.10.title"
+	desc = "flavor_svp.10.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.3.a
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_country_flag = svp_estates_general
+						any_owned_province = {
+							has_province_modifier = estates_general_1
+						}
+					}
+					AND = {
+						has_country_flag = svp_creator
+						SVP = {
+							is_subject_of = ROOT
+							any_owned_province = {
+								has_province_modifier = estates_general_1
+							}
+						}
+					}
+				}
+			}
+			add_manpower = 3
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						has_country_flag = svp_estates_general
+						any_owned_province = {
+							has_province_modifier = estates_general_2
+						}
+					}
+					AND = {
+						has_country_flag = svp_creator
+						SVP = {
+							is_subject_of = ROOT
+							any_owned_province = {
+								has_province_modifier = estates_general_2
+							}
+						}
+					}
+				}
+			}
+			add_manpower = 5
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						has_country_flag = svp_estates_general
+						any_owned_province = {
+							has_province_modifier = estates_general_3
+						}
+					}
+					AND = {
+						has_country_flag = svp_creator
+						SVP = {
+							is_subject_of = ROOT
+							any_owned_province = {
+								has_province_modifier = estates_general_3
+							}
+						}
+					}
+				}
+			}
+			add_manpower = 7
+		}
+		else = {
+			add_manpower = 3
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.11
+	title = "flavor_svp.11.title"
+	desc = "flavor_svp.11.desc"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.11.a
+		add_prestige = -5
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.100
+	title = "flavor_svp.100.title"
+	desc = "flavor_svp.100.desc"
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = beeldenstorm_happened
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			add_stability = -1
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+					OR = {
+						check_variable = {
+							which = protestant
+							value = 4
+						}
+						religion = protestant
+					}
+					controlled_by = ROOT
+				}
+				spawn_rebels = {
+					type = protestant_rebels
+					size = 4
+					unrest = 10
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+					OR = {
+						check_variable = {
+							which = protestant
+							value = 4
+						}
+						religion = protestant
+					}
+					controlled_by = ROOT
+				}
+				spawn_rebels = {
+					type = protestant_rebels
+					size = 4
+					unrest = 10
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+					OR = {
+						check_variable = {
+							which = reformed
+							value = 4
+						}
+						religion = reformed
+					}
+					controlled_by = ROOT
+				}
+				spawn_rebels = {
+					type = reformed_rebels
+					size = 4
+					unrest = 10
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+					OR = {
+						check_variable = {
+							which = reformed
+							value = 4
+						}
+						religion = reformed
+					}
+					controlled_by = ROOT
+				}
+				spawn_rebels = {
+					type = reformed_rebels
+					size = 4
+					unrest = 10
+					win = yes
+				}
+			}
+		}
+		else = {
+			add_stability = -1
+			SVP = {
+				random_owned_province = {
+					limit = {
+						OR = {
+							region = low_countries_region
+							region = belgii_region
+						}
+						check_variable = {
+							which = protestant
+							value = 4
+						}
+						controlled_by = SVP
+					}
+					spawn_rebels = {
+						type = protestant_rebels
+						size = 4
+						unrest = 10
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							region = low_countries_region
+							region = belgii_region
+						}
+						check_variable = {
+							which = protestant
+							value = 4
+						}
+						controlled_by = SVP
+					}
+					spawn_rebels = {
+						type = protestant_rebels
+						size = 3
+						unrest = 10
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							region = low_countries_region
+							region = belgii_region
+						}
+						OR = {
+							check_variable = {
+								which = reformed
+								value = 4
+							}
+							religion = reformed
+						}
+						controlled_by = SVP
+					}
+					spawn_rebels = {
+						type = reformed_rebels
+						size = 4
+						unrest = 10
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							region = low_countries_region
+							region = belgii_region
+						}
+						OR = {
+							check_variable = {
+								which = reformed
+								value = 4
+							}
+							religion = reformed
+						}
+						controlled_by = SVP
+					}
+					spawn_rebels = {
+						type = reformed_rebels
+						size = 3
+						unrest = 10
+						win = yes
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.100.a"
+		ai_chance = {
+			factor = 25
+		}
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			disband_rebels = protestant_rebels
+			disband_rebels = reformed_rebels
+			end_disaster = beeldenstorm
+		}
+		else = {
+			SVP = {
+				disband_rebels = protestant_rebels
+				disband_rebels = reformed_rebels
+			}
+			end_disaster = beeldenstorm
+		}
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+				}
+				add_province_modifier = {
+					name = beeldenstorm_compromise
+					duration = 18250
+				}
+			}
+		}
+		else = {
+			SVP = {
+				every_owned_province = {
+					add_province_modifier = {
+						name = beeldenstorm_compromise
+						duration = 18250
+					}
+				}
+			}
+		}
+		country_event = {
+			id = flavor_svp.199
+			days = 5
+		}
+	}
+	option = {
+		name = "flavor_svp.100.b"
+		ai_chance = {
+			factor = 75
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = SPA
+					tag = CAS
+				}
+			}
+			define_general = {
+				fire = 5
+				shock = 5
+				manuever = 6
+				siege = 0
+				name = "Fernando Alvarez de Toledo"
+				trait = ruthless_personality
+			}
+		}
+		else = {
+			create_general = {
+				tradition = 100
+			}
+		}
+		custom_tooltip = flavor_svp_danger_tooltip
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 3
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.101
+	title = "flavor_svp.101.title"
+	desc = "flavor_svp.101.desc"
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_svp.101.a
+		ai_chance = {
+			factor = 25
+		}
+		add_treasury = 500
+		add_stability = -1
+		custom_tooltip = flavor_svp_danger_tooltip
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 4
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_svp.101.b
+		ai_chance = {
+			factor = 75
+		}
+		add_legitimacy = 10
+	}
+}
+country_event = {
+	id = flavor_svp.102
+	title = "flavor_svp.102.title"
+	desc = "flavor_svp.102.desc"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = flavor_svp.102.a
+		ai_chance = {
+			factor = 25
+		}
+		add_stability = -1
+		if = {
+			limit = {
+				has_country_flag = svp_estates_general
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+				}
+				add_unrest = -10
+			}
+		}
+		else = {
+			SVP = {
+				every_owned_province = {
+					add_unrest = -10
+				}
+			}
+		}
+		custom_tooltip = flavor_svp_danger_tooltip
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = dutch_rebellion_desire
+					value = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_svp.102.b
+		ai_chance = {
+			factor = 75
+		}
+		add_legitimacy = 10
+	}
+}
+country_event = {
+	id = flavor_svp.199
+	title = "flavor_svp.199.title"
+	desc = "flavor_svp.199.desc"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = flavor_svp.199.a
+		custom_tooltip = stability_points_gained_100
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 100
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.200
+	title = "flavor_svp.200.title"
+	desc = "flavor_svp.200.desc"
+	picture = BURGUNDY_COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.200.a"
+	}
+}
+country_event = {
+	id = flavor_svp.201
+	title = "flavor_svp.201.title"
+	desc = "flavor_svp.201.desc"
+	picture = BURGUNDY_COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.201.a"
+	}
+}
+country_event = {
+	id = flavor_svp.1001
+	title = "flavor_svp.1001.title"
+	desc = "flavor_svp.1001.desc"
+	picture = ANGRY_MOB_eventPicture
+	major = yes
+	fire_only_once = yes
+	trigger = {
+		has_global_flag = dutch_rebellion_start
+		OR = {
+			AND = {
+				has_country_flag = svp_creator
+				SVP = {
+					is_subject_of = ROOT
+					check_variable = {
+						which = "Cores_on_the_Netherlands"
+						value = 10
+					}
+				}
+			}
+			AND = {
+				OR = {
+					has_country_flag = svp_estates_general
+					has_country_flag = svp_abolished_estates
+				}
+				NOT = {
+					exists = SVP
+				}
+				check_variable = {
+					which = "Demesne_in_the_Netherlands"
+					value = 10
+				}
+			}
+		}
+		NOT = {
+			exists = NED
+		}
+		REB = {
+			check_variable = {
+				which = dutch_rebellion_desire
+				value = 22
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 0.75
+			REB = {
+				check_variable = {
+					which = dutch_rebellion_desire
+					value = 23
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			REB = {
+				check_variable = {
+					which = dutch_rebellion_desire
+					value = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 0.50
+			REB = {
+				check_variable = {
+					which = dutch_rebellion_desire
+					value = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			REB = {
+				check_variable = {
+					which = dutch_rebellion_desire
+					value = 40
+				}
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			REB = {
+				set_variable = {
+					which = ned_core_count
+					value = 0
+				}
+				set_variable = {
+					which = dutch_rebellion_desire
+					value = -1000
+				}
+			}
+			holland_area = {
+				if = {
+					limit = {
+						OR = {
+							owned_by = SVP
+							owned_by = ROOT
+						}
+						NOT = {
+							REB = {
+								check_variable = {
+									which = ned_core_count
+									value = 11
+								}
+							}
+						}
+					}
+					set_province_flag = ned_core
+					REB = {
+						change_variable = {
+							which = ned_core_count
+							value = 1
+						}
+					}
+				}
+			}
+			gelderland_area = {
+				if = {
+					limit = {
+						NOT = {
+							province_id = 2449
+						}
+						OR = {
+							owned_by = SVP
+							owned_by = ROOT
+						}
+						NOT = {
+							REB = {
+								check_variable = {
+									which = ned_core_count
+									value = 11
+								}
+							}
+						}
+					}
+					set_province_flag = ned_core
+					REB = {
+						change_variable = {
+							which = ned_core_count
+							value = 1
+						}
+					}
+				}
+			}
+			frisia_area = {
+				if = {
+					limit = {
+						OR = {
+							owned_by = SVP
+							owned_by = ROOT
+						}
+						NOT = {
+							REB = {
+								check_variable = {
+									which = ned_core_count
+									value = 11
+								}
+							}
+						}
+					}
+					set_province_flag = ned_core
+					REB = {
+						change_variable = {
+							which = ned_core_count
+							value = 1
+						}
+					}
+				}
+			}
+			flanders_area = {
+				if = {
+					limit = {
+						NOT = {
+							province_id = 87
+						}
+						NOT = {
+							province_id = 90
+						}
+						OR = {
+							owned_by = SVP
+							owned_by = ROOT
+						}
+						NOT = {
+							REB = {
+								check_variable = {
+									which = ned_core_count
+									value = 11
+								}
+							}
+						}
+					}
+					set_province_flag = ned_core
+					REB = {
+						change_variable = {
+							which = ned_core_count
+							value = 1
+						}
+					}
+				}
+			}
+			95 = {
+				if = {
+					limit = {
+						OR = {
+							owned_by = SVP
+							owned_by = ROOT
+						}
+						NOT = {
+							REB = {
+								check_variable = {
+									which = ned_core_count
+									value = 11
+								}
+							}
+						}
+					}
+					set_province_flag = ned_core
+					REB = {
+						change_variable = {
+							which = ned_core_count
+							value = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 11
+							}
+						}
+					}
+				}
+				brabant_area = {
+					if = {
+						limit = {
+							NOT = {
+								has_province_flag = ned_core
+							}
+							NOT = {
+								province_id = 92
+							}
+							OR = {
+								owned_by = SVP
+								owned_by = ROOT
+							}
+							NOT = {
+								REB = {
+									check_variable = {
+										which = ned_core_count
+										value = 11
+									}
+								}
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 10
+							}
+						}
+					}
+				}
+				SVP = {
+					random_owned_province = {
+						limit = {
+							NOT = {
+								has_province_flag = ned_core
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 10
+							}
+						}
+					}
+				}
+				SVP = {
+					random_owned_province = {
+						limit = {
+							NOT = {
+								has_province_flag = ned_core
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 10
+							}
+						}
+					}
+				}
+				SVP = {
+					random_owned_province = {
+						limit = {
+							NOT = {
+								has_province_flag = ned_core
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 10
+							}
+						}
+					}
+				}
+				ROOT = {
+					random_owned_province = {
+						limit = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+							NOT = {
+								has_province_flag = ned_core
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 10
+							}
+						}
+					}
+				}
+				ROOT = {
+					random_owned_province = {
+						limit = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+							NOT = {
+								has_province_flag = ned_core
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						REB = {
+							check_variable = {
+								which = ned_core_count
+								value = 10
+							}
+						}
+					}
+				}
+				ROOT = {
+					random_owned_province = {
+						limit = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+							NOT = {
+								has_province_flag = ned_core
+							}
+						}
+						set_province_flag = ned_core
+						REB = {
+							change_variable = {
+								which = ned_core_count
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			low_countries_region = {
+				if = {
+					limit = {
+						has_province_flag = ned_core
+					}
+					add_core = NED
+					remove_core = SVP
+					remove_core = ROOT
+					cede_province = NED
+				}
+			}
+			belgii_region = {
+				if = {
+					limit = {
+						has_province_flag = ned_core
+					}
+					add_core = NED
+					remove_core = SVP
+					remove_core = ROOT
+					cede_province = NED
+				}
+			}
+			NED = {
+				if = {
+					limit = {
+						owns = 2370
+					}
+					set_capital = 2370
+				}
+			}
+			low_countries_region = {
+				if = {
+					limit = {
+						NOT = {
+							is_core = NED
+						}
+					}
+					add_permanent_claim = NED
+				}
+			}
+			belgii_region = {
+				if = {
+					limit = {
+						NOT = {
+							is_core = NED
+						}
+					}
+					add_permanent_claim = NED
+				}
+			}
+			if = {
+				limit = {
+					SVP = {
+						exists = yes
+					}
+				}
+				low_countries_region = {
+					if = {
+						limit = {
+							NOT = {
+								is_core = SVP
+							}
+						}
+						add_permanent_claim = SVP
+					}
+				}
+				belgii_region = {
+					if = {
+						limit = {
+							NOT = {
+								is_core = SVP
+							}
+						}
+						add_permanent_claim = SVP
+					}
+				}
+			}
+			else = {
+				low_countries_region = {
+					if = {
+						limit = {
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				belgii_region = {
+					if = {
+						limit = {
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+			NED = {
+				every_owned_province = {
+					set_local_autonomy = 0
+				}
+			}
+			NED = {
+				add_treasury = 200
+			}
+			NED = {
+				capital_scope = {
+					if = {
+						limit = {
+							AND = {
+								has_building = fort_17th
+								owner = {
+									mil_tech = 41
+								}
+								AND = {
+									always = yes
+								}
+								NOT = {
+									has_building = fort_18th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_18th
+					}
+					else_if = {
+						limit = {
+							AND = {
+								has_building = fort_16th
+								owner = {
+									mil_tech = 35
+								}
+								AND = {
+									NOT = {
+										has_building = fort_18th
+									}
+								}
+								NOT = {
+									has_building = fort_17th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_17th
+					}
+					else_if = {
+						limit = {
+							AND = {
+								has_building = fort_15th
+								owner = {
+									mil_tech = 26
+								}
+								AND = {
+									NOT = {
+										has_building = fort_17th
+										has_building = fort_18th
+									}
+								}
+								NOT = {
+									has_building = fort_16th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_16th
+					}
+					else_if = {
+						limit = {
+							AND = {
+								has_building = fort_14th
+								owner = {
+									mil_tech = 15
+								}
+								AND = {
+									NOT = {
+										has_building = fort_16th
+										has_building = fort_17th
+										has_building = fort_18th
+									}
+								}
+								NOT = {
+									has_building = fort_15th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_15th
+					}
+					else = {
+						add_building = fort_14th
+					}
+					infantry = NED
+					infantry = NED
+					infantry = NED
+					infantry = NED
+					infantry = NED
+					infantry = NED
+					infantry = NED
+					infantry = NED
+					cavalry = NED
+					cavalry = NED
+					artillery = NED
+					artillery = NED
+				}
+				random_owned_province = {
+					limit = {
+						is_capital = no
+						NOT = {
+							has_building = fort_14th
+						}
+						NOT = {
+							has_building = fort_15th
+						}
+						NOT = {
+							has_building = fort_16th
+						}
+						NOT = {
+							has_building = fort_17th
+						}
+						NOT = {
+							has_building = fort_18th
+						}
+					}
+					if = {
+						limit = {
+							AND = {
+								has_building = fort_17th
+								owner = {
+									mil_tech = 41
+								}
+								AND = {
+									always = yes
+								}
+								NOT = {
+									has_building = fort_18th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_18th
+					}
+					else_if = {
+						limit = {
+							AND = {
+								has_building = fort_16th
+								owner = {
+									mil_tech = 35
+								}
+								AND = {
+									NOT = {
+										has_building = fort_18th
+									}
+								}
+								NOT = {
+									has_building = fort_17th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_17th
+					}
+					else_if = {
+						limit = {
+							AND = {
+								has_building = fort_15th
+								owner = {
+									mil_tech = 26
+								}
+								AND = {
+									NOT = {
+										has_building = fort_17th
+										has_building = fort_18th
+									}
+								}
+								NOT = {
+									has_building = fort_16th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_16th
+					}
+					else_if = {
+						limit = {
+							AND = {
+								has_building = fort_14th
+								owner = {
+									mil_tech = 15
+								}
+								AND = {
+									NOT = {
+										has_building = fort_16th
+										has_building = fort_17th
+										has_building = fort_18th
+									}
+								}
+								NOT = {
+									has_building = fort_15th
+								}
+								NOT = {
+									has_province_modifier = fort_is_building
+								}
+							}
+						}
+						add_building = fort_15th
+					}
+					else = {
+						add_building = fort_14th
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					heavy_ship = NED
+					heavy_ship = NED
+					heavy_ship = NED
+					heavy_ship = NED
+					heavy_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+					light_ship = NED
+				}
+			}
+			NED = {
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+				swap_non_generic_missions = yes
+			}
+			every_known_country = {
+				limit = {
+					is_rival = ROOT
+				}
+				country_event = {
+					id = flavor_svp.1002
+					days = 10
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_emperor = yes
+						is_part_of_hre = yes
+					}
+				}
+				NED = {
+					set_in_empire = no
+					swap_non_generic_missions = yes
+				}
+			}
+			if = {
+				limit = {
+					SVP = {
+						exists = yes
+					}
+				}
+				create_union = SVP
+			}
+			NED = {
+				every_owned_province = {
+					remove_province_modifier = estates_general_1
+					remove_province_modifier = estates_general_2
+					remove_province_modifier = estates_general_3
+				}
+			}
+			clr_global_flag = dutch_rebellion_start
+			set_global_flag = dutch_rebellion_end
+		}
+	}
+	option = {
+		name = "flavor_svp.1001.a"
+		ROOT = {
+			declare_war_with_cb = {
+				who = NED
+				casus_belli = cb_overlord_attacking_independence_war
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_svp.1002
+	title = "flavor_svp.1002.title"
+	desc = "flavor_svp.1002.desc"
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.1002.a"
+		ai_chance = {
+			factor = 60
+		}
+		trigger = {
+			NOT = {
+				war_exhaustion = 10
+			}
+		}
+		create_alliance = NED
+		hidden_effect = {
+			NED = {
+				country_event = {
+					id = flavor_svp.1004
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.1002.b"
+		trigger = {
+			treasury = 200
+			manpower = 5000
+		}
+		ai_chance = {
+			factor = 40
+		}
+		add_treasury = -200
+		add_manpower = -5000
+		hidden_effect = {
+			NED = {
+				country_event = {
+					id = flavor_svp.1005
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.1002.c"
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}
+country_event = {
+	id = flavor_svp.1004
+	title = "flavor_svp.1004.title"
+	desc = "flavor_svp.1004.desc"
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.1004.a"
+	}
+}
+country_event = {
+	id = flavor_svp.1005
+	title = "flavor_svp.1005.title"
+	desc = "flavor_svp.1005.desc"
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_svp.1005.a"
+		add_treasury = 200
+		add_manpower = 5000
+	}
+}
+country_event = {
+	id = flavor_svp.16
+	title = "flavor_svp.EVTNAME16"
+	desc = "flavor_svp.EVTDESC16"
+	picture = DIPLOMACY_eventPicture
+	major = yes
+	trigger = {
+		culture_group = low_frankish
+		NOT = {
+			num_of_cities = 3
+		}
+		NOT = {
+			tag = NED
+		}
+		NED = {
+			exists = yes
+			ai = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		is_at_war = no
+		all_owned_province = {
+			OR = {
+				region = belgii_region
+				region = low_countries_region
+			}
+		}
+		ai = yes
+	}
+	mean_time_to_happen = {
+		years = 50
+		modifier = {
+			factor = 0.75
+			primary_culture = dutch
+		}
+		modifier = {
+			factor = 1.25
+			primary_culture = flemish
+		}
+		modifier = {
+			factor = 1.25
+			primary_culture = brabantian
+		}
+		modifier = {
+			factor = 0.9
+			has_opinion = {
+				who = NED
+				value = 50
+			}
+		}
+		modifier = {
+			factor = 0.9
+			has_opinion = {
+				who = NED
+				value = 100
+			}
+		}
+		modifier = {
+			factor = 0.9
+			has_opinion = {
+				who = NED
+				value = 150
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				has_opinion = {
+					who = NED
+					value = -50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				has_opinion = {
+					who = NED
+					value = -100
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				has_opinion = {
+					who = NED
+					value = -150
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.EVTOPTA16"
+		every_owned_province = {
+			add_core = NED
+		}
+		NED = {
+			inherit = PREV
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.501
+	title = flavor_svp.501.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_artois
+					}
+					remove_province_modifier = county_of_artois
+				}
+			}
+			custom_tooltip = abrogate_cart_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.502
+	title = flavor_svp.502.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_flanders
+					}
+					remove_province_modifier = county_of_flanders
+				}
+			}
+			custom_tooltip = abrogate_cfla_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.503
+	title = flavor_svp.503.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = lordship_of_mechelen
+					}
+					remove_province_modifier = lordship_of_mechelen
+				}
+			}
+			custom_tooltip = abrogate_lmec_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.504
+	title = flavor_svp.504.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_namur
+					}
+					remove_province_modifier = county_of_namur
+				}
+			}
+			custom_tooltip = abrogate_cnam_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.505
+	title = flavor_svp.505.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_hainaut
+					}
+					remove_province_modifier = county_of_hainaut
+				}
+			}
+			custom_tooltip = abrogate_chai_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.506
+	title = flavor_svp.506.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_zeeland
+					}
+					remove_province_modifier = county_of_zeeland
+				}
+			}
+			custom_tooltip = abrogate_czee_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.507
+	title = flavor_svp.507.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_holland
+					}
+					remove_province_modifier = county_of_holland
+				}
+			}
+			custom_tooltip = abrogate_chol_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.508
+	title = flavor_svp.508.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = duchy_of_brabant
+					}
+					remove_province_modifier = duchy_of_brabant
+				}
+			}
+			custom_tooltip = abrogate_dbrb_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.509
+	title = flavor_svp.509.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = duchy_of_limburg
+					}
+					remove_province_modifier = duchy_of_limburg
+				}
+			}
+			custom_tooltip = abrogate_dlim_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.510
+	title = flavor_svp.510.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = duchy_of_luxembourg
+					}
+					remove_province_modifier = duchy_of_luxembourg
+				}
+			}
+			custom_tooltip = abrogate_dlux_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.511
+	title = flavor_svp.511.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = lordship_of_utrecht
+					}
+					remove_province_modifier = lordship_of_utrecht
+				}
+			}
+			custom_tooltip = abrogate_lutr_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.512
+	title = flavor_svp.512.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = lordship_of_frisia
+					}
+					remove_province_modifier = lordship_of_frisia
+				}
+			}
+			custom_tooltip = abrogate_lfri_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.513
+	title = flavor_svp.513.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = duchy_of_guelders
+					}
+					remove_province_modifier = duchy_of_guelders
+				}
+			}
+			custom_tooltip = abrogate_dgel_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.514
+	title = flavor_svp.514.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = lordship_of_groningen
+					}
+					remove_province_modifier = lordship_of_groningen
+				}
+			}
+			custom_tooltip = abrogate_lgro_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.515
+	title = flavor_svp.515.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = lordship_of_overijssel
+					}
+					remove_province_modifier = lordship_of_overijssel
+				}
+			}
+			custom_tooltip = abrogate_love_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.516
+	title = flavor_svp.516.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = county_of_zutphen
+					}
+					remove_province_modifier = county_of_zutphen
+				}
+			}
+			custom_tooltip = abrogate_czut_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.517
+	title = flavor_svp.517.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = bishopric_of_tournai
+					}
+					remove_province_modifier = bishopric_of_tournai
+				}
+			}
+			custom_tooltip = abrogate_btou_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}
+province_event = {
+	id = flavor_svp.518
+	title = flavor_svp.518.name
+	desc = flavor_svp.abr.desc
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					mil_power = 25
+				}
+			}
+			custom_tooltip = abr_mil_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_mil_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					adm_power = 25
+				}
+			}
+			custom_tooltip = abr_adm_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_adm_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					dip_power = 25
+				}
+			}
+			custom_tooltip = abr_dip_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_dip_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					absolutism = 45
+				}
+			}
+			custom_tooltip = abr_abs_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_abs_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_owned_provinces_with = {
+						value = 10
+						OR = {
+							region = belgii_region
+							region = low_countries_region
+						}
+					}
+				}
+			}
+			custom_tooltip = abr_pwr_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_pwr_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					is_at_war = no
+				}
+			}
+			custom_tooltip = abr_war_ok_tooltip
+		}
+		else = {
+			custom_tooltip = abr_war_nok_tooltip
+			hidden_effect = {
+				set_province_flag = abrogation_impossible
+			}
+		}
+	}
+	option = {
+		name = "flavor_svp.abr.opta"
+		trigger = {
+			NOT = {
+				has_province_flag = abrogation_impossible
+			}
+		}
+		owner = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = bishopric_of_liege
+					}
+					remove_province_modifier = bishopric_of_liege
+				}
+			}
+			custom_tooltip = abrogate_blie_tt
+		}
+	}
+	option = {
+		name = exit
+		highlight = yes
+	}
+	after = {
+		hidden_effect = {
+			clr_province_flag = abrogation_impossible
+		}
+	}
+}

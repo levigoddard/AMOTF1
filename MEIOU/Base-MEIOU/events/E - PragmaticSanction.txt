@@ -1,0 +1,101 @@
+country_event = {
+	id = pragmatic_sanction.1
+	title = "pragmatic_sanction.EVTNAME1"
+	desc = "pragmatic_sanction.EVTDESC1"
+	picture = REFORM_eventPicture
+	trigger = {
+		has_global_flag = pragmatic_sanction
+		hre_size = 1
+		NOT = {
+			has_country_flag = pragmatic_sanction
+		}
+		capital_scope = {
+			continent = europe
+		}
+		government_rank = 3
+		OR = {
+			has_country_modifier = title_5
+			has_country_modifier = title_6
+		}
+		NOT = {
+			is_emperor = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	immediate = {
+		set_country_flag = pragmatic_sanction
+	}
+	option = {
+		name = "pragmatic_sanction.EVTOPTA1"
+		ai_chance = {
+			factor = 25
+		}
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = pro_pragmatic_sanction
+			}
+		}
+	}
+	option = {
+		name = "pragmatic_sanction.EVTOPTC1"
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = anti_pragmatic_sanction
+			}
+		}
+	}
+}
+country_event = {
+	id = pragmatic_sanction.2
+	title = "pragmatic_sanction.EVTNAME2"
+	desc = "pragmatic_sanction.EVTDESC2"
+	picture = REFORM_eventPicture
+	major = yes
+	trigger = {
+		is_emperor = yes
+		has_female_heir = yes
+		allows_female_emperor = no
+		government_rank = 3
+		NOT = {
+			has_global_flag = pragmatic_sanction
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	immediate = {
+		set_global_flag = pragmatic_sanction
+	}
+	option = {
+		name = "pragmatic_sanction.EVTOPTA2"
+		add_legitimacy = -25
+		set_allow_female_emperor = yes
+	}
+}

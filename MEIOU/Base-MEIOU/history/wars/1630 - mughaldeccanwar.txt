@@ -1,0 +1,24 @@
+name = "Mughal-Deccan War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2243
+}
+1630.1.1 = {
+	add_attacker = MUG
+	add_defender = BAS
+	add_defender = GOC
+	add_defender = BIJ
+}
+1633.7.27 = {
+	rem_defender = BIJ
+	rem_defender = GOC
+	rem_defender = BAS
+	add_defender = GOC
+	add_defender = BIJ
+}
+1636.1.1 = {
+	rem_attacker = MUG
+	rem_defender = BIJ
+	rem_defender = GOC
+}

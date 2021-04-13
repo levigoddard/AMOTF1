@@ -1,0 +1,1329 @@
+namespace = dg_ibadi
+country_event = {
+	id = dg_ibadi.001
+	title = dg_ibadi.001.t
+	desc = dg_ibadi.001.d
+	picture = muslim_minority_advisor
+	trigger = {
+		religion = ibadi
+		any_owned_province = {
+			NOT = {
+				religion = ibadi
+			}
+		}
+		NOT = {
+			has_country_modifier = religious_tolerance
+		}
+		NOT = {
+			has_country_modifier = religious_intolerance
+		}
+		piety = -0.60
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_major
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+	}
+	option = {
+		name = dg_ibadi.001.a
+		ai_chance = {
+			factor = 50
+		}
+		add_country_modifier = {
+			name = religious_tolerance
+			duration = 2000
+		}
+	}
+	option = {
+		name = dg_ibadi.001.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					religious_unity = 0.80
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					religious_unity = 0.60
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					religious_unity = 0.40
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					religious_unity = 0.20
+				}
+				factor = 0
+			}
+		}
+		add_country_modifier = {
+			name = religious_intolerance
+			duration = 2000
+		}
+	}
+}
+country_event = {
+	id = dg_ibadi.002
+	title = dg_ibadi.002.t
+	desc = dg_ibadi.002.d
+	picture = muslim_army
+	trigger = {
+		religion = ibadi
+		at_war_with_religious_enemy = yes
+		is_defender_of_faith = no
+		NOT = {
+			war_score = 1
+		}
+		NOT = {
+			has_country_flag = imam_elected_defence
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			NOT = {
+				war_score = -25
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				war_score = -50
+			}
+			factor = 0.7
+		}
+	}
+	immediate = {
+		set_country_flag = imam_elected_defence
+	}
+	option = {
+		name = dg_ibadi.002.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				num_of_generals = 1
+				factor = 0.7
+			}
+			modifier = {
+				num_of_generals = 2
+				factor = 0.7
+			}
+			modifier = {
+				num_of_generals = 3
+				factor = 0.7
+			}
+			modifier = {
+				num_of_generals = 4
+				factor = 0.7
+			}
+			modifier = {
+				army_tradition = 20
+				factor = 0.7
+			}
+			modifier = {
+				army_tradition = 40
+				factor = 0.7
+			}
+			modifier = {
+				army_tradition = 60
+				factor = 0.7
+			}
+			modifier = {
+				army_tradition = 80
+				factor = 0.7
+			}
+			modifier = {
+				piety = 0.60
+				factor = 1.4
+			}
+			modifier = {
+				piety = 0.20
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 0.5
+			}
+		}
+		create_general = {
+			tradition = 0
+		}
+		set_country_flag = elected_imam
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 500
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 250
+			}
+		}
+	}
+	option = {
+		name = dg_ibadi.002.b
+		trigger = {
+			piety = 0.60
+			patriarch_authority = 0.60
+			NOT = {
+				government = theocracy
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+		change_government = theocracy
+		add_government_reform = ruling_clergy_reform
+		add_government_reform = council_reform
+		add_government_reform = churchmen_rule
+		set_legacy_government = theocratic_government
+		kill_ruler = yes
+		create_general = {
+			tradition = 50
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 4000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_country_modifier = {
+				name = morale_boost
+				duration = 500
+			}
+		}
+	}
+	option = {
+		name = dg_ibadi.002.c
+		trigger = {
+			NOT = {
+				government = theocracy
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				government = monarchy
+				factor = 1.4
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = decreased_morale
+				duration = 1000
+			}
+			add_legitimacy = 4
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = decreased_morale
+				duration = 500
+			}
+			add_legitimacy = 3
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = decreased_morale
+				duration = 250
+			}
+			add_legitimacy = 2
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_country_modifier = {
+				name = decreased_morale
+				duration = 125
+			}
+			add_legitimacy = 1
+		}
+	}
+}
+province_event = {
+	id = dg_ibadi.003
+	title = dg_ibadi.003.t
+	desc = dg_ibadi.003.d
+	picture = muslim_jihad
+	trigger = {
+		OR = {
+			religion = sunni
+			religion = shiite
+		}
+		has_owner_religion = yes
+		has_owner_culture = no
+		has_owner_accepted_culture = no
+		NOT = {
+			AND = {
+				OR = {
+					superregion = near_east_superregion
+					superregion = anatolia_superregion
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 416
+		modifier = {
+			unrest = 5
+			factor = 0.7
+		}
+		modifier = {
+			unrest = 10
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = ibadi
+				value = 2
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_neighbor_province = {
+				check_variable = {
+					which = ibadi
+					value = 2
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+	}
+	option = {
+		name = dg_ibadi.003.a
+		ai_chance = {
+			factor = 80
+		}
+		owner = {
+			every_owned_province = {
+				limit = {
+					culture = ROOT
+					has_owner_religion = yes
+				}
+				custom_tooltip = ibadi_20
+				hidden_effect = {
+					change_variable = {
+						which = province_religion
+						value = -4
+					}
+					change_variable = {
+						which = ibadi
+						value = 4
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_ibadi.003.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_cities = 3
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_cities = 5
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 10
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 40
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 80
+				}
+				factor = 0.7
+			}
+		}
+		trigger = {
+			owner = {
+				capital_scope = {
+					check_variable = {
+						which = ibadi
+						value = 4
+					}
+				}
+			}
+		}
+		owner = {
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = ibadi
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ibadi_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = ibadi_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = ibadi_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = ibadi
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = ibadi
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = ibadi
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_ibadi
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = ibadi
+			every_owned_province = {
+				limit = {
+					religion_group = muslim
+					has_owner_religion = yes
+					has_owner_culture = yes
+				}
+				custom_tooltip = ibadi_20
+				hidden_effect = {
+					change_variable = {
+						which = province_religion
+						value = -5
+					}
+					change_variable = {
+						which = ibadi
+						value = 5
+					}
+				}
+			}
+		}
+		custom_tooltip = ibadi_50
+		hidden_effect = {
+			set_province_flag = local_heresy
+			change_variable = {
+				which = province_religion
+				value = -10
+			}
+			change_variable = {
+				which = ibadi
+				value = 10
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_ibadi.005
+	title = dg_ibadi.005.t
+	desc = dg_ibadi.005.d
+	picture = muslim_arab_raid
+	trigger = {
+		AND = {
+			OR = {
+				superregion = near_east_superregion
+				superregion = anatolia_superregion
+			}
+		}
+		OR = {
+			religion = sunni
+			religion = shiite
+		}
+		NOT = {
+			is_religion_enabled = wahhabi
+		}
+		AND = {
+			culture_group = arabian
+		}
+		owner = {
+			NOT = {
+				num_of_cities = 10
+			}
+		}
+		NOT = {
+			owner = {
+				religion = ibadi
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 250
+		modifier = {
+			has_owner_culture = no
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				is_core = ROOT
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				owner = {
+					culture_group = ROOT
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = ibadi
+				value = 2
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_neighbor_province = {
+				check_variable = {
+					which = ibadi
+					value = 2
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 5
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 10
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 20
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 40
+			}
+			factor = 1.6
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 80
+			}
+			factor = 1.6
+		}
+	}
+	option = {
+		name = dg_ibadi.005.a
+		ai_chance = {
+			factor = 80
+		}
+		custom_tooltip = ibadi_20
+		hidden_effect = {
+			change_variable = {
+				which = province_religion
+				value = -4
+			}
+			change_variable = {
+				which = ibadi
+				value = 4
+			}
+		}
+		every_neighbor_province = {
+			limit = {
+				religion_group = muslim
+				has_owner_religion = yes
+				culture = ROOT
+			}
+			custom_tooltip = ibadi_20
+			hidden_effect = {
+				change_variable = {
+					which = province_religion
+					value = -2
+				}
+				change_variable = {
+					which = ibadi
+					value = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_ibadi.005.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_cities = 3
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						num_of_cities = 5
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 10
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 40
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_cities = 80
+				}
+				factor = 0.7
+			}
+		}
+		trigger = {
+			owner = {
+				capital_scope = {
+					check_variable = {
+						which = ibadi
+						value = 4
+					}
+				}
+			}
+		}
+		owner = {
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = ibadi
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = ibadi_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = ibadi_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = ibadi_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = ibadi
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = ibadi
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = ibadi
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_ibadi
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = ibadi
+			every_owned_province = {
+				limit = {
+					religion_group = muslim
+					has_owner_religion = yes
+					has_owner_culture = yes
+				}
+				custom_tooltip = ibadi_20
+				hidden_effect = {
+					change_variable = {
+						which = province_religion
+						value = -4
+					}
+					change_variable = {
+						which = ibadi
+						value = 4
+					}
+				}
+			}
+		}
+		custom_tooltip = ibadi_40
+		hidden_effect = {
+			change_variable = {
+				which = province_religion
+				value = -8
+			}
+			change_variable = {
+				which = ibadi
+				value = 8
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+estate_freeholders = {
+	icon = 9
+	color = { 100 0 50 }
+	keep_on_conquest = no
+	min_territory = 0
+	min_provinces_to_want_territory = 999
+	trigger = {
+		always = no
+	}
+	province_trigger = {}
+	min_autonomy = 0
+	province_modifier_happy = {}
+	province_modifier_neutral = {}
+	province_modifier_angry = {}
+	base_influence = 0
+	influence_modifier = {
+		desc = freeholders_influence_50
+		trigger = {
+			has_country_flag = freeholders_influence_50
+		}
+		influence = 50
+	}
+	influence_modifier = {
+		desc = freeholders_influence_25
+		trigger = {
+			has_country_flag = freeholders_influence_25
+		}
+		influence = 25
+	}
+	influence_modifier = {
+		desc = freeholders_influence_13
+		trigger = {
+			has_country_flag = freeholders_influence_13
+		}
+		influence = 13
+	}
+	influence_modifier = {
+		desc = freeholders_influence_6
+		trigger = {
+			has_country_flag = freeholders_influence_6
+		}
+		influence = 6
+	}
+	influence_modifier = {
+		desc = freeholders_influence_3
+		trigger = {
+			has_country_flag = freeholders_influence_3
+		}
+		influence = 3
+	}
+	influence_modifier = {
+		desc = freeholders_influence_2
+		trigger = {
+			has_country_flag = freeholders_influence_2
+		}
+		influence = 2
+	}
+	influence_modifier = {
+		desc = freeholders_influence_1
+		trigger = {
+			has_country_flag = freeholders_influence_1
+		}
+		influence = 1
+	}
+	ai_grant_province = {}
+}

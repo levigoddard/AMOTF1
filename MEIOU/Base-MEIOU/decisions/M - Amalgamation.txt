@@ -1,0 +1,542 @@
+country_decisions = {
+	unite_nepal = {
+		major = yes
+		potential = {
+			tag = NPL
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1768
+			}
+		}
+		effect = {
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = hereditary_elite
+			hidden_effect = {
+				set_legacy_government = despotic_monarchy
+			}
+			set_legacy_government = feudal_monarchy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			define_ruler = {
+				name = "Prithvi Narayana"
+				dynasty = "Shah"
+				DIP = 6
+				ADM = 5
+				MIL = 6
+			}
+			define_heir = {
+				claim = 100
+				name = "Pratapa Simha"
+				dynasty = "Shah"
+				DIP = 3
+				ADM = 1
+				MIL = 5
+			}
+			562 = {
+				add_permanent_claim = NPL
+			}
+			523 = {
+				add_permanent_claim = NPL
+			}
+			2701 = {
+				add_permanent_claim = NPL
+			}
+			3113 = {
+				add_permanent_claim = NPL
+			}
+			3112 = {
+				add_permanent_claim = NPL
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_bhutan = {
+		major = yes
+		potential = {
+			tag = BHU
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1616
+			}
+		}
+		effect = {
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = hereditary_elite
+			hidden_effect = {
+				set_legacy_government = despotic_monarchy
+			}
+			set_legacy_government = feudal_monarchy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			define_ruler = {
+				name = "Ngawang Namgyal"
+				dynasty = "Wangchuck"
+				DIP = 6
+				ADM = 6
+				MIL = 5
+			}
+			define_heir = {
+				claim = 100
+				name = "Pekar Jungney"
+				dynasty = "Wangchuck"
+				DIP = 3
+				ADM = 3
+				MIL = 3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_sikkim = {
+		major = yes
+		potential = {
+			tag = SKK
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1642
+			}
+		}
+		effect = {
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = hereditary_elite
+			hidden_effect = {
+				set_legacy_government = despotic_monarchy
+			}
+			set_legacy_government = feudal_monarchy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			define_ruler = {
+				name = "Phuntsog"
+				dynasty = "Namgyal"
+				DIP = 3
+				ADM = 4
+				MIL = 3
+			}
+			define_heir = {
+				claim = 100
+				name = "Tensung"
+				dynasty = "Namgyal"
+				DIP = 2
+				ADM = 3
+				MIL = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_derbent = {
+		major = yes
+		potential = {
+			tag = GAZ
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1550
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = tribal_federation
+			set_legacy_government = tribal_federation_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_circasia = {
+		major = yes
+		potential = {
+			tag = CIR
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1777
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = tribal_federation
+			set_legacy_government = tribal_federation_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_baluchistan = {
+		major = yes
+		potential = {
+			tag = BAL
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1666
+			}
+		}
+		effect = {
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = hereditary_elite
+			hidden_effect = {
+				set_legacy_government = despotic_monarchy
+			}
+			set_legacy_government = feudal_monarchy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_4
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			define_ruler = {
+				name = "Ahmad"
+				dynasty = "Mirwani"
+				DIP = 5
+				ADM = 3
+				MIL = 5
+			}
+			define_heir = {
+				claim = 100
+				name = "Mehrab"
+				dynasty = "Mirwani"
+				DIP = 3
+				ADM = 3
+				MIL = 3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_turkomans = {
+		major = yes
+		potential = {
+			tag = KHO
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1511
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = tribal_federation
+			set_legacy_government = tribal_federation_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_3
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			set_country_flag = title_3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_manipur = {
+		major = yes
+		potential = {
+			tag = MLB
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1800
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = tribal_kingdom
+			set_legacy_government = tribal_kingdom_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_tripura = {
+		major = yes
+		potential = {
+			tag = TPR
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_year = 1463
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = tribal_kingdom
+			set_legacy_government = tribal_kingdom_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_under_the_wahabis = {
+		major = yes
+		potential = {
+			OR = {
+				tag = ANZ
+				tag = SMM
+				tag = BHA
+				tag = BTA
+				tag = BKI
+				tag = BYA
+				tag = BKA
+			}
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			OR = {
+				ai = no
+				is_religion_enabled = wahhabi
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = tribal_kingdom
+			set_legacy_government = tribal_kingdom_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_5
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_2
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	no_war_amalgamation = {
+		major = yes
+		potential = {
+			AND = {
+				OR = {
+					has_reform = tribal_amalgamation
+					has_reform = tribal_democracy_legacy
+				}
+			}
+		}
+		allow = {
+			is_at_war = yes
+		}
+		effect = {
+			every_country = {
+				limit = {
+					war_with = ROOT
+				}
+				white_peace = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

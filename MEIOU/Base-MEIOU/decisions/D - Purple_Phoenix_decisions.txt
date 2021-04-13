@@ -1,0 +1,40 @@
+country_decisions = {
+	rebuild_theodosian_walls = {
+		potential = {
+			owns = 1402
+			NOT = {
+				1402 = {
+					has_building = theodosian_walls
+				}
+			}
+		}
+		allow = {
+			1402 = {
+				controlled_by = owner
+				has_siege = no
+			}
+			treasury = 200
+			stability = 0
+			OR = {
+				advisor = fortification_expert
+				MIL = 4
+			}
+		}
+		effect = {
+			1402 = {
+				add_building = theodosian_walls
+			}
+			add_treasury = -200
+			add_legitimacy = 1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					treasury = 200
+				}
+				factor = 0
+			}
+		}
+	}
+}

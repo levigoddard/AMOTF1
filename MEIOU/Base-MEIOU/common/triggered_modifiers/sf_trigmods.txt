@@ -1,0 +1,27 @@
+order_war_same = {
+	potential = {
+		AND = {
+			OR = {
+				has_reform = monastic_order_reform
+				has_reform = monastic_order_government
+			}
+		}
+	}
+	trigger = {
+		any_country = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			defensive_war_with = ROOT
+			religion_group = ROOT
+		}
+	}
+	manpower_recovery_speed = -0.10
+	global_regiment_recruit_speed = 0.10
+	global_manpower_modifier = -0.10
+	mercenary_cost = 0.25
+}

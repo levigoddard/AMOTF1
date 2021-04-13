@@ -1,0 +1,48 @@
+composer = {
+	monarch_power = ADM
+	prestige = 0.20
+	prestige_decay = -0.025
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 1.25
+			AND = {
+				has_province_flag = has_art_center_modifier
+			}
+		}
+		modifier = {
+			factor = 0.33
+			NOT = {
+				AND = {
+					OR = {
+						has_building = art_corporation
+						has_building = fine_arts_academy
+						has_building = opera
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_building = opera
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = composer
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				has_idea_group = culture_ideas
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

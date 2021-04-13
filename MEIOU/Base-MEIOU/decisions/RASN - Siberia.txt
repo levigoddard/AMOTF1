@@ -1,0 +1,124 @@
+country_decisions = {
+	settle_in_yakutia = {
+		major = yes
+		potential = {
+			tag = SAK
+			government = tribal
+			NOT = {
+				has_country_flag = settled_in_yakutia
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 2157
+		}
+		allow = {
+			owns = 2157
+		}
+		effect = {
+			2157 = {}
+			4194 = {
+				change_culture = yakut
+				add_core = SAK
+				cede_province = SAK
+			}
+			change_government = tribal
+			add_government_reform = tribal_federation
+			set_legacy_government = tribal_federation_legacy
+			set_country_flag = settled_in_yakutia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	return_to_the_steppe = {
+		major = yes
+		potential = {
+			technology_group = mongol_tech
+			government = tribal
+			NOT = {
+				has_country_flag = settled_in_yakutia
+			}
+		}
+		provinces_to_highlight = {
+			AND = {
+				OR = {
+					has_terrain = grass_flats
+					has_terrain = grass_hills
+				}
+				OR = {
+					region = steppes_region
+					superregion = central_asia_superregion
+				}
+			}
+		}
+		allow = {
+			any_owned_province = {
+				AND = {
+					OR = {
+						has_terrain = grass_flats
+						has_terrain = grass_hills
+					}
+					OR = {
+						region = steppes_region
+						superregion = central_asia_superregion
+					}
+				}
+			}
+		}
+		effect = {
+			change_government = tribal
+			add_government_reform = steppe_horde
+			set_legacy_government = steppe_horde_legacy
+			change_technology_group = steppestech
+			change_unit_type = steppestech
+			swap_free_idea_group = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	accept_eastern_technology = {
+		major = yes
+		potential = {
+			technology_group = mongol_tech
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = nomad_reform
+						has_reform = native_council_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			any_neighbor_country = {
+				technology_group = eastern
+			}
+			has_institution = legalism
+			adm_power = 500
+		}
+		effect = {
+			add_adm_power = -500
+			change_technology_group = eastern
+			change_unit_type = eastern
+			swap_free_idea_group = yes
+			add_stability = -3
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

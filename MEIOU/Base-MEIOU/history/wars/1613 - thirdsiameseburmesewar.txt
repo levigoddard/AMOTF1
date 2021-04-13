@@ -1,0 +1,14 @@
+name = "Third Siamese-Burmese War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 600
+}
+1613.1.1 = {
+	add_attacker = TAU
+	add_defender = AYU
+}
+1618.1.1 = {
+	rem_attacker = TAU
+	rem_defender = AYU
+}

@@ -1,0 +1,101 @@
+owner = DAI
+controller = DAI
+add_core = DAI
+capital = "Tay Do"
+trade_goods = tea
+culture = vietnamese
+religion = mahayana
+hre = no
+base_tax = 8
+base_production = 0
+base_manpower = 0
+is_city = yes
+temple = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 4
+	}
+}
+1372.1.1 = {
+	controller = CHA
+}
+1390.1.1 = {
+	controller = DAI
+}
+1407.6.17 = {
+	owner = MNG
+	controller = MNG
+}
+1425.1.1 = {
+	religion = confucianism
+}
+1427.1.1 = {
+	owner = DAI
+	controller = DAI
+}
+1501.1.1 = {
+	base_tax = 10
+}
+1520.1.1 = {
+	owner = TOK
+	controller = TOK
+	add_core = TOK
+	capital = "Thanh Hoa"
+}
+1524.1.1 = {
+	owner = DAI
+	controller = DAI
+	remove_core = TOK
+}
+1527.6.15 = {
+	owner = ANN
+	controller = ANN
+	add_core = ANN
+}
+1530.1.1 = {
+	owner = DAI
+	controller = DAI
+}
+1533.1.1 = {
+	owner = ANN
+	controller = ANN
+}
+1545.1.1 = {
+	owner = TOK
+	controller = TOK
+	add_core = TOK
+}
+1730.1.1 = {
+	unrest = 5
+}
+1731.1.1 = {
+	unrest = 0
+}
+1769.1.1 = {
+	unrest = 6
+}
+1776.1.1 = {
+	unrest = 0
+	owner = DAI
+	controller = DAI
+	add_core = DAI
+}
+1786.1.1 = {
+	unrest = 5
+}
+1787.1.1 = {
+	unrest = 0
+}
+1802.7.22 = {
+	owner = ANN
+	controller = ANN
+	remove_core = DAI
+}
+1883.8.25 = {
+	owner = FRA
+	controller = FRA
+}

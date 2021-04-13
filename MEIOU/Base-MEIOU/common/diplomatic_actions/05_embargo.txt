@@ -1,0 +1,54 @@
+embargoaction = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

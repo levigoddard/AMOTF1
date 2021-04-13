@@ -1,0 +1,14 @@
+extended_peacetime_officer_commissions = {
+	category = 1
+	allow = {
+		mil_tech = 22
+	}
+	effect = {}
+	modifier = {
+		army_tradition_decay = -0.01
+		land_maintenance_modifier = 0.05
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

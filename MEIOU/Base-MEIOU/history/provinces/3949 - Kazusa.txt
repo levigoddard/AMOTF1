@@ -1,0 +1,71 @@
+owner = KYO
+controller = KYO
+add_core = KYO
+capital = "Owotaki"
+trade_goods = rice
+culture = kanto
+religion = mahayana
+hre = no
+base_tax = 13
+base_production = 0
+base_manpower = 1
+is_city = yes
+canal_level_1 = yes
+discovered_by = chinese
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5.5
+	}
+}
+1362.1.1 = {
+	remove_core = KYO
+	add_core = CHB
+	owner = CHB
+	controller = CHB
+}
+1364.1.1 = {
+	controller = JAP
+}
+1364.6.6 = {
+	remove_core = CHB
+	add_core = USG
+	owner = USG
+	controller = USG
+}
+1418.1.1 = {
+	remove_core = USG
+	add_core = UTN
+	owner = UTN
+	controller = UTN
+}
+1420.1.1 = {
+	remove_core = UTN
+	add_core = USG
+	owner = USG
+	controller = USG
+}
+1448.1.1 = {
+	remove_core = USG
+	add_core = CHB
+	owner = CHB
+	controller = CHB
+}
+1490.1.1 = {
+	owner = HJO
+	controller = HJO
+}
+1501.1.1 = {
+	base_tax = 23
+	base_manpower = 2
+}
+1542.1.1 = {
+	discovered_by = POR
+}
+1590.8.4 = {
+	owner = ODA
+	controller = ODA
+}
+1603.1.1 = {
+	capital = "Mito"
+}

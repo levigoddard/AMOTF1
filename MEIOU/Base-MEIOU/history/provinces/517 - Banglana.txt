@@ -1,0 +1,57 @@
+owner = GUJ
+controller = GUJ
+add_core = GUJ
+capital = "Mayuragiri"
+trade_goods = millet
+culture = gujarati
+religion = hinduism
+hre = no
+base_tax = 11
+base_production = 0
+base_manpower = 1
+is_city = yes
+farm_estate = yes
+discovered_by = indian
+discovered_by = muslim
+discovered_by = steppestech
+discovered_by = turkishtech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 6
+	}
+	add_permanent_province_modifier = {
+		name = dharampur_state
+		duration = -1
+	}
+}
+1498.1.1 = {
+	discovered_by = POR
+}
+1511.1.1 = {
+	base_tax = 15
+}
+1530.2.3 = {
+	add_permanent_claim = MUG
+}
+1573.6.1 = {
+	owner = MUG
+	controller = MUG
+	capital = "Khuldabad"
+}
+1623.1.1 = {
+	add_core = MUG
+}
+1650.1.1 = {
+	add_core = MAR
+}
+1674.1.1 = {
+	owner = MAR
+	controller = MAR
+	remove_core = MUG
+	capital = "Nashik"
+}
+1818.6.3 = {
+	owner = GBR
+	controller = GBR
+}

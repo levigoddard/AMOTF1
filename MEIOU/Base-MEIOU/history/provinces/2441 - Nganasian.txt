@@ -1,0 +1,6 @@
+culture = nenet
+religion = tengri_pagan_reformed
+discovered_by = OBD
+1478.1.1 = {
+	discovered_by = MOS
+}

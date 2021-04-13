@@ -1,0 +1,6661 @@
+byz_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		has_country_flag = e_of_ero
+	}
+	has_country_shield = yes
+	byz_recover_greece = {
+		icon = mission_parthenon
+		required_missions = {}
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			region = greece_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+				OR = {
+					area = aegean_area
+					province_id = 142
+					province_id = 1436
+				}
+			}
+		}
+		trigger = {
+			greece_region = {
+				type = all
+				OR = {
+					area = aegean_area
+					province_id = 142
+					province_id = 1436
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "byzantium_resurgent"
+				duration = 3650
+			}
+			east_bulgaria_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			west_bulgaria_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			macedonia_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			greece_region = {
+				limit = {
+					NOT = {
+						area = aegean_area
+						province_id = 142
+						province_id = 1436
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				greece_region = {
+					limit = {
+						NOT = {
+							area = aegean_area
+							province_id = 142
+							province_id = 1436
+							is_core = ROOT
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 12.5
+			}
+		}
+	}
+	byz_recover_albania = {
+		icon = mission_pf_soldier
+		required_missions = { byz_recover_greece }
+		position = 2
+		provinces_to_highlight = {
+			area = albania_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			central_balkan_region = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			142 = {
+				add_permanent_claim = ROOT
+			}
+			1436 = {
+				add_permanent_claim = ROOT
+			}
+			albania_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 4
+			}
+		}
+	}
+	byz_recover_serbia = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { byz_recover_albania }
+		provinces_to_highlight = {
+			region = central_balkan_region
+			NOT = {
+				area = albania_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			central_balkan_region = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					area = albania_area
+				}
+			}
+		}
+		effect = {
+			bosnia_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			east_adriatic_coast_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			1450 = {
+				add_permanent_claim = ROOT
+			}
+			central_balkan_region = {
+				limit = {
+					NOT = {
+						area = albania_area
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 4
+			}
+		}
+	}
+	byz_recover_illyria = {
+		icon = mission_conquer_5_states
+		required_missions = { byz_recover_serbia }
+		provinces_to_highlight = {
+			OR = {
+				region = west_balkan_region
+				area = carinthia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			west_balkan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			carinthia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			venetia_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			west_balkan_region = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			carinthia_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+		}
+	}
+	byz_destroy_venice = {
+		icon = mission_conquer_50_development
+		required_missions = { byz_recover_illyria }
+		provinces_to_highlight = {
+			area = venetia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			venetia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = {
+				exists = VEN
+			}
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+	byz_recover_sicily = {
+		icon = mission_sea_battles
+		required_missions = { byz_recover_naples }
+		provinces_to_highlight = {
+			region = sicily_region
+			NOT = {
+				province_id = 126
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			sicily_region = {
+				type = all
+				OR = {
+					province_id = 126
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			sicily_region = {
+				limit = {
+					NOT = {
+						province_id = 126
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+		}
+	}
+	byz_recover_tunis = {
+		icon = mission_pf_soldier
+		required_missions = { byz_recover_sicily }
+		provinces_to_highlight = {
+			OR = {
+				region = east_maghreb_region
+				area = kabylia_area
+			}
+			NOT = {
+				area = tripolitania_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			east_maghreb_region = {
+				type = all
+				OR = {
+					area = tripolitania_area
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			east_maghreb_region = {
+				limit = {
+					NOT = {
+						area = tripolitania_area
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			kabylia_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+		}
+	}
+	byz_recover_mauretania = {
+		icon = mission_arabian_fort
+		required_missions = { byz_recover_tunis }
+		provinces_to_highlight = {
+			OR = {
+				region = central_maghreb_region
+				region = west_maghreb_region
+			}
+			NOT = {
+				area = kabylia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			central_maghreb_region = {
+				type = all
+				OR = {
+					area = kabylia_area
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			west_maghreb_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			central_maghreb_region = {
+				limit = {
+					NOT = {
+						area = kabylia_area
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 365
+				}
+			}
+			west_maghreb_region = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 365
+				}
+			}
+		}
+	}
+}
+byz_slot_6 = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		has_country_flag = e_of_ero
+	}
+	has_country_shield = yes
+	byz_restore_konstantinoupolis = {
+		icon = mission_hagia_sophia
+		required_missions = {}
+		provinces_to_highlight = {
+			province_id = 1402
+			OR = {
+				NOT = {
+					base_production = 20
+				}
+				NOT = {
+					is_core = ROOT
+				}
+				NOT = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		trigger = {
+			country_or_non_sovereign_subject_holds = 1402
+			is_core = 1402
+			1402 = {
+				base_production = 20
+			}
+		}
+		effect = {
+			1402 = {
+				add_province_modifier = {
+					name = "mission_medium_urban_gravity"
+					duration = 7300
+				}
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+			add_prestige = 10
+			add_legitimacy = 5
+			add_horde_unity = 5
+			add_republican_tradition = 5
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+	}
+	byz_recover_bulgaria = {
+		icon = mission_unite_home_region
+		required_missions = { byz_recover_greece }
+		provinces_to_highlight = {
+			OR = {
+				area = east_bulgaria_area
+				area = west_bulgaria_area
+				area = dobrogea_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			east_bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dobrogea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			east_bulgaria_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			west_bulgaria_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			dobrogea_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 4
+			}
+		}
+	}
+	byz_foothold_in_italy = {
+		icon = mission_cannons_firing
+		required_missions = { byz_recover_bulgaria byz_recover_albania }
+		provinces_to_highlight = {
+			OR = {
+				area = apulia_area
+				province_id = 142
+				province_id = 1436
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 142
+			owns_or_non_sovereign_subject_of = 1436
+		}
+		effect = {
+			apulia_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			142 = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			1436 = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 2
+			}
+		}
+	}
+	byz_recover_naples = {
+		icon = mission_cannons_firing
+		position = 5
+		required_missions = { byz_foothold_in_italy }
+		provinces_to_highlight = {
+			region = naples_region
+			NOT = {
+				area = apulia_area
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			naples_region = {
+				type = all
+				OR = {
+					area = apulia_area
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			naples_region = {
+				limit = {
+					NOT = {
+						area = apulia_area
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 2
+			}
+		}
+	}
+	byz_recover_rome = {
+		icon = mission_pf_cross
+		required_missions = { byz_recover_naples }
+		provinces_to_highlight = {
+			area = lazio_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			lazio_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			lazio_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 2
+			}
+		}
+	}
+	byz_recover_west_islands = {
+		icon = mission_invade_island
+		required_missions = { byz_recover_sicily }
+		provinces_to_highlight = {
+			OR = {
+				area = corsica_sardinia_area
+				area = baleares_area
+				province_id = 126
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			126 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			corsica_sardinia_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			baleares_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			126 = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+		}
+	}
+	byz_recover_south_spain = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { byz_recover_west_islands byz_recover_tunis }
+		provinces_to_highlight = {
+			OR = {
+				area = lower_guadalquivir_area
+				area = upper_guadalquivir_area
+				area = upper_andalucia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			lower_guadalquivir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_guadalquivir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			upper_andalucia_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 365
+				}
+			}
+			upper_guadalquivir_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 365
+				}
+			}
+			lower_guadalquivir_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 365
+				}
+			}
+		}
+	}
+	byz_recover_spain = {
+		icon = mission_unite_home_region
+		required_missions = { byz_recover_south_spain }
+		provinces_to_highlight = {
+			superregion = iberia_superregion
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			iberia_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+	byz_recover_britannia = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { byz_recover_france }
+		provinces_to_highlight = {
+			OR = {
+				region = south_england_region
+				region = north_england_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			south_england_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_england_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+}
+byz_slot_7 = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		has_country_flag = e_of_ero
+	}
+	has_country_shield = yes
+	byz_recover_the_coast_of_asia_minor = {
+		icon = mission_galleys_in_port
+		required_missions = {}
+		provinces_to_highlight = {
+			OR = {
+				area = manisa_area
+				area = aydin_area
+				AND = {
+					area = hudavendigar_area
+					has_port = yes
+				}
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			manisa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				OR = {
+					has_port = no
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			manisa_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				manisa_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+			aydin_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				aydin_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+			hudavendigar_area = {
+				limit = {
+					has_port = no
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				hudavendigar_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 12.5
+			}
+		}
+	}
+	byz_recover_east_islands = {
+		icon = mission_aegean_map
+		required_missions = { byz_recover_the_coast_of_asia_minor }
+		provinces_to_highlight = {
+			area = aegean_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			aegean_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			aegean_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				aegean_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+		}
+	}
+	byz_recover_tripoli = {
+		icon = mission_arabian_fort
+		required_missions = { byz_recover_east_islands }
+		provinces_to_highlight = {
+			OR = {
+				area = tripolitania_area
+				area = cyrenaica_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cyrenaica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tripolitania_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			cyrenaica_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+		}
+	}
+	byz_recover_antioch = {
+		icon = mission_pf_cross
+		position = 4
+		required_missions = { byz_recover_central_anatolia }
+		provinces_to_highlight = {
+			OR = {
+				area = aleppo_area
+				area = cilicia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cilicia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			aleppo_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			cilicia_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			hidden_effect = {
+				cilicia_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+		}
+	}
+	byz_recover_jerusalem = {
+		icon = mission_pf_cross
+		required_missions = { byz_recover_antioch }
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = palestine_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			syria_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			palestine_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+		}
+	}
+	byz_recover_egypt = {
+		icon = mission_pf_cross
+		provinces_to_highlight = {
+			region = egypt_region
+			is_empty = no
+			NOT = {
+				area = cyrenaica_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		required_missions = { byz_recover_jerusalem }
+		trigger = {
+			egypt_region = {
+				type = all
+				OR = {
+					area = cyrenaica_area
+					is_empty = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			egypt_region = {
+				limit = {
+					NOT = {
+						OR = {
+							area = cyrenaica_area
+							is_empty = yes
+						}
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+		}
+	}
+	byz_recover_central_italy = {
+		icon = mission_pf_map_table
+		required_missions = { byz_recover_rome }
+		provinces_to_highlight = {
+			OR = {
+				area = tuscany_area
+				area = emilia_romagna_area
+				area = marche_area
+				area = siena_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marche_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			siena_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tuscany_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			emilia_romagna_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			marche_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			siena_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1095
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 2
+			}
+		}
+	}
+	byz_recover_north_italy = {
+		icon = mission_iron_crown
+		required_missions = { byz_recover_central_italy }
+		provinces_to_highlight = {
+			region = west_italy_region
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			west_italy_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			west_italy_region = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 365
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 2
+			}
+		}
+	}
+	byz_recover_france = {
+		icon = mission_cannons_firing
+		required_missions = { byz_recover_north_italy }
+		provinces_to_highlight = {
+			superregion = france_superregion
+			NOT = {
+				region = belgii_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			france_superregion = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					region = belgii_region
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+	byz_to_the_rhine_and_danube = {
+		icon = mission_empire
+		required_missions = { byz_recover_france }
+		provinces_to_highlight = {
+			province_group = roman_dejure_group
+			OR = {
+				region = belgii_region
+				superregion = germany_superregion
+				superregion = greater_austrian_circle_superregion
+				area = transdanubia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			roman_dejure_group = {
+				type = all
+				OR = {
+					region = belgii_region
+					superregion = germany_superregion
+					superregion = greater_austrian_circle_superregion
+					area = transdanubia_area
+				}
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 10
+			add_horde_unity = 10
+			add_republican_tradition = 10
+			add_prestige = 15
+		}
+	}
+}
+byz_slot_8 = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		has_country_flag = e_of_ero
+	}
+	has_country_shield = yes
+	byz_stabilize_the_empire = {
+		icon = mission_high_income
+		required_missions = {}
+		provinces_to_highlight = {
+			always = no
+		}
+		trigger = {
+			stability = 2
+			is_at_war = no
+			NOT = {
+				average_home_autonomy = 50
+			}
+			NOT = {
+				average_effective_unrest = 5
+			}
+			num_of_cities = 25
+			prestige = -20
+			legitimacy_equivalent = 80
+			has_heir = yes
+			NOT = {
+				has_country_modifier = obstacle_succession
+			}
+			NOT = {
+				has_country_modifier = obstacle_military_administration
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_greater_nobles_weight_share
+						value = 0.01
+					}
+				}
+				tooltip = {
+					add_estate_loyalty = {
+						estate = estate_greater_nobles
+						loyalty = 5
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = greater_nobles_loyalty_added
+						value = 5
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 64
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 64
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.64
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 64
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 32
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 32
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.32
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 32
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 16
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 16
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.16
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 16
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 8
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 8
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.08
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 4
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 4
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.04
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 2
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 2
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.02
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_added
+								value = 1
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = 1
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.01
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_added
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = estate_greater_nobles_loyalty
+								value = 1
+							}
+						}
+						set_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 1
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_flag = greater_nobles_control_province
+						}
+						hidden_effect = {
+							set_variable = {
+								which = estate_greater_nobles_loyalty
+								which = owner
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								which = EstateProv_Unrest
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = estate_greater_nobles_loyalty
+							}
+							set_variable = {
+								which = estate_greater_nobles_loyalty
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0.6
+									}
+								}
+								set_province_flag = loss
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.6
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_Unrest
+											value = 0.401
+										}
+									}
+								}
+								set_province_flag = gain
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.4
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+							}
+							else = {
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								value = 16.62
+							}
+							set_variable = {
+								which = inp_m_exp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = inp_m_exp
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+								change_variable = {
+									which = err.math.exp.undef
+									value = 1
+								}
+							}
+							else_if = {
+								limit = {
+									is_variable_equal = {
+										which = inp_m_exp
+										value = 0
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = exp_m_exp
+									value = 1.7
+								}
+								set_variable = {
+									which = int_m_exp
+									which = exp_m_exp
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 0.001
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 1000
+								}
+								set_variable = {
+									which = dec_m_exp
+									which = exp_m_exp
+								}
+								subtract_variable = {
+									which = dec_m_exp
+									which = int_m_exp
+								}
+								set_variable = {
+									which = inp
+									which = inp_m_exp
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = inp
+												value = 0.001
+											}
+										}
+									}
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									change_variable = {
+										which = err.math.ln.undef
+										value = 1
+									}
+								}
+								else = {
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									set_variable = {
+										which = scale
+										value = 10000
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										which = scale
+									}
+									while = {
+										limit = {
+											check_variable = {
+												which = inp
+												value = 2.001
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 0.5
+										}
+										change_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = inp
+													value = 1
+												}
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 2
+										}
+										subtract_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									multiply_variable = {
+										which = inp
+										which = scale
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = k
+													value = 10
+												}
+											}
+										}
+										change_variable = {
+											which = k
+											value = 1
+										}
+										multiply_variable = {
+											which = k_div
+											value = 0.5
+										}
+										set_variable = {
+											which = t_m_ln
+											which = scale
+										}
+										change_variable = {
+											which = t_m_ln
+											which = k_div
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = inp
+													which = t_m_ln
+												}
+											}
+											divide_variable = {
+												which = inp
+												which = t_m_ln
+											}
+											multiply_variable = {
+												which = inp
+												which = scale
+											}
+											set_variable = {
+												which = lt_ind
+												which = k
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 6
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 8
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 9
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 10
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 9.761
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 19.512
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 38.986
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 7
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 77.821
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 155.042
+														}
+													}
+												}
+											}
+											else = {
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 3
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 4
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 5
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 307.717
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 606.246
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 1177.83
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 2
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 2231.436
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 4054.651
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = lt_ind
+												value = 0
+											}
+											change_variable = {
+												which = ln_val
+												which = lt_val
+											}
+										}
+										set_variable = {
+											which = t_m_ln
+											value = 0
+										}
+									}
+									divide_variable = {
+										which = ln_val
+										value = 10000
+									}
+									set_variable = {
+										which = scale
+										value = 0
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										value = 0
+									}
+									set_variable = {
+										which = lt_val
+										value = 0
+									}
+								}
+								set_variable = {
+									which = inp
+									value = 0
+								}
+								multiply_variable = {
+									which = dec_m_exp
+									which = ln_val
+								}
+								set_variable = {
+									which = math.e.expnt
+									which = dec_m_exp
+								}
+								set_variable = {
+									which = math.e.return
+									value = 1
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = math.e.expnt
+												value = -6.999
+											}
+										}
+									}
+									set_variable = {
+										which = exp_val
+										value = 0
+									}
+								}
+								else = {
+									while = {
+										limit = {
+											check_variable = {
+												which = math.e.expnt
+												value = 1
+											}
+										}
+										subtract_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										multiply_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										change_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										divide_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 1
+									}
+									if = {
+										limit = {
+											NOT = {
+												is_variable_equal = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										multiply_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.fct
+											value = 2
+										}
+										set_variable = {
+											which = math.e.fctl
+											value = 2
+										}
+										set_variable = {
+											which = math.e.a1
+											which = math.e.sq
+										}
+										set_variable = {
+											which = math.e.a2
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.a3
+											value = 2
+										}
+										set_variable = {
+											which = math.e.tmp
+											which = math.e.a2
+										}
+										multiply_variable = {
+											which = math.e.tmp
+											which = math.e.a3
+										}
+										change_variable = {
+											which = math.e.tmp
+											which = math.e.a1
+										}
+										divide_variable = {
+											which = math.e.tmp
+											which = math.e.fct
+										}
+										change_variable = {
+											which = math.e.sm
+											which = math.e.tmp
+										}
+										set_variable = {
+											which = math.e.prec
+											value = 3
+										}
+										subtract_variable = {
+											which = math.e.prec
+											value = 1
+										}
+										while = {
+											limit = {
+												check_variable = {
+													which = math.e.prec
+													value = 1
+												}
+											}
+											subtract_variable = {
+												which = math.e.prec
+												value = 1
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											multiply_variable = {
+												which = math.e.a1
+												which = math.e.sq
+											}
+											multiply_variable = {
+												which = math.e.a2
+												which = math.e.sq
+											}
+											change_variable = {
+												which = math.e.a3
+												value = 2
+											}
+											set_variable = {
+												which = math.e.tmp
+												which = math.e.a2
+											}
+											multiply_variable = {
+												which = math.e.tmp
+												which = math.e.a3
+											}
+											change_variable = {
+												which = math.e.tmp
+												which = math.e.a1
+											}
+											divide_variable = {
+												which = math.e.tmp
+												which = math.e.fct
+											}
+											change_variable = {
+												which = math.e.sm
+												which = math.e.tmp
+											}
+										}
+									}
+									multiply_variable = {
+										which = math.e.return
+										which = math.e.sm
+									}
+									set_variable = {
+										which = exp_val
+										which = math.e.return
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 0
+									}
+									set_variable = {
+										which = math.e.tmp
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a1
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a2
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a3
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fctl
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fct
+										value = 0
+									}
+									set_variable = {
+										which = math.e.prec
+										value = 0
+									}
+									set_variable = {
+										which = math.e.sq
+										value = 0
+									}
+								}
+								set_variable = {
+									which = math.e.expnt
+									value = 0
+								}
+								set_variable = {
+									which = math.e.return
+									value = 0
+								}
+								while = {
+									limit = {
+										check_variable = {
+											which = int_m_exp
+											value = 1
+										}
+									}
+									subtract_variable = {
+										which = int_m_exp
+										value = 1
+									}
+									multiply_variable = {
+										which = exp_val
+										which = inp_m_exp
+									}
+								}
+								set_variable = {
+									which = exp_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = int_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = dec_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = ln_val
+									value = 0
+								}
+							}
+							set_variable = {
+								which = inp_m_exp
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = exp_val
+							}
+							set_variable = {
+								which = exp_val
+								value = 0
+							}
+							export_to_variable = {
+								which = EstateProv_LA
+								value = local_autonomy
+							}
+							multiply_variable = {
+								which = EstateProv_LA
+								value = 0.008
+							}
+							change_variable = {
+								which = EstateProv_LA
+								value = 0.2
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								which = EstateProv_LA
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									has_province_flag = loss
+								}
+								clr_province_flag = loss
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							else_if = {
+								limit = {
+									has_province_flag = gain
+								}
+								clr_province_flag = gain
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.1
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_UnrestSave
+										value = 0.001
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = EstateProv_Unrest
+												value = 0.001
+											}
+										}
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_25.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_12.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_6.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_3.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_1.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.1
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.1
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_UnrestSave
+											value = 0
+										}
+									}
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_LA
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								value = 0
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_lesser_nobles_weight_share
+						value = 0.01
+					}
+				}
+				tooltip = {
+					add_estate_loyalty = {
+						estate = estate_lesser_nobles
+						loyalty = 10
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = lesser_nobles_loyalty_added
+						value = 10
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 64
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 64
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.64
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 64
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 32
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 32
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.32
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 32
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 16
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 16
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.16
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 16
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 8
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 8
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.08
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 4
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 4
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.04
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 2
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 2
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.02
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_added
+								value = 1
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = 1
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.01
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_added
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = estate_lesser_nobles_loyalty
+								value = 1
+							}
+						}
+						set_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 1
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_flag = lesser_nobles_control_province
+						}
+						hidden_effect = {
+							set_variable = {
+								which = estate_lesser_nobles_loyalty
+								which = owner
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								which = EstateProv_Unrest
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = estate_lesser_nobles_loyalty
+							}
+							set_variable = {
+								which = estate_lesser_nobles_loyalty
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0.6
+									}
+								}
+								set_province_flag = loss
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.6
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_Unrest
+											value = 0.401
+										}
+									}
+								}
+								set_province_flag = gain
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.4
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+							}
+							else = {
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								value = 16.62
+							}
+							set_variable = {
+								which = inp_m_exp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = inp_m_exp
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+								change_variable = {
+									which = err.math.exp.undef
+									value = 1
+								}
+							}
+							else_if = {
+								limit = {
+									is_variable_equal = {
+										which = inp_m_exp
+										value = 0
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = exp_m_exp
+									value = 1.7
+								}
+								set_variable = {
+									which = int_m_exp
+									which = exp_m_exp
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 0.001
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 1000
+								}
+								set_variable = {
+									which = dec_m_exp
+									which = exp_m_exp
+								}
+								subtract_variable = {
+									which = dec_m_exp
+									which = int_m_exp
+								}
+								set_variable = {
+									which = inp
+									which = inp_m_exp
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = inp
+												value = 0.001
+											}
+										}
+									}
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									change_variable = {
+										which = err.math.ln.undef
+										value = 1
+									}
+								}
+								else = {
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									set_variable = {
+										which = scale
+										value = 10000
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										which = scale
+									}
+									while = {
+										limit = {
+											check_variable = {
+												which = inp
+												value = 2.001
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 0.5
+										}
+										change_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = inp
+													value = 1
+												}
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 2
+										}
+										subtract_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									multiply_variable = {
+										which = inp
+										which = scale
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = k
+													value = 10
+												}
+											}
+										}
+										change_variable = {
+											which = k
+											value = 1
+										}
+										multiply_variable = {
+											which = k_div
+											value = 0.5
+										}
+										set_variable = {
+											which = t_m_ln
+											which = scale
+										}
+										change_variable = {
+											which = t_m_ln
+											which = k_div
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = inp
+													which = t_m_ln
+												}
+											}
+											divide_variable = {
+												which = inp
+												which = t_m_ln
+											}
+											multiply_variable = {
+												which = inp
+												which = scale
+											}
+											set_variable = {
+												which = lt_ind
+												which = k
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 6
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 8
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 9
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 10
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 9.761
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 19.512
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 38.986
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 7
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 77.821
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 155.042
+														}
+													}
+												}
+											}
+											else = {
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 3
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 4
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 5
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 307.717
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 606.246
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 1177.83
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 2
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 2231.436
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 4054.651
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = lt_ind
+												value = 0
+											}
+											change_variable = {
+												which = ln_val
+												which = lt_val
+											}
+										}
+										set_variable = {
+											which = t_m_ln
+											value = 0
+										}
+									}
+									divide_variable = {
+										which = ln_val
+										value = 10000
+									}
+									set_variable = {
+										which = scale
+										value = 0
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										value = 0
+									}
+									set_variable = {
+										which = lt_val
+										value = 0
+									}
+								}
+								set_variable = {
+									which = inp
+									value = 0
+								}
+								multiply_variable = {
+									which = dec_m_exp
+									which = ln_val
+								}
+								set_variable = {
+									which = math.e.expnt
+									which = dec_m_exp
+								}
+								set_variable = {
+									which = math.e.return
+									value = 1
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = math.e.expnt
+												value = -6.999
+											}
+										}
+									}
+									set_variable = {
+										which = exp_val
+										value = 0
+									}
+								}
+								else = {
+									while = {
+										limit = {
+											check_variable = {
+												which = math.e.expnt
+												value = 1
+											}
+										}
+										subtract_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										multiply_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										change_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										divide_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 1
+									}
+									if = {
+										limit = {
+											NOT = {
+												is_variable_equal = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										multiply_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.fct
+											value = 2
+										}
+										set_variable = {
+											which = math.e.fctl
+											value = 2
+										}
+										set_variable = {
+											which = math.e.a1
+											which = math.e.sq
+										}
+										set_variable = {
+											which = math.e.a2
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.a3
+											value = 2
+										}
+										set_variable = {
+											which = math.e.tmp
+											which = math.e.a2
+										}
+										multiply_variable = {
+											which = math.e.tmp
+											which = math.e.a3
+										}
+										change_variable = {
+											which = math.e.tmp
+											which = math.e.a1
+										}
+										divide_variable = {
+											which = math.e.tmp
+											which = math.e.fct
+										}
+										change_variable = {
+											which = math.e.sm
+											which = math.e.tmp
+										}
+										set_variable = {
+											which = math.e.prec
+											value = 3
+										}
+										subtract_variable = {
+											which = math.e.prec
+											value = 1
+										}
+										while = {
+											limit = {
+												check_variable = {
+													which = math.e.prec
+													value = 1
+												}
+											}
+											subtract_variable = {
+												which = math.e.prec
+												value = 1
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											multiply_variable = {
+												which = math.e.a1
+												which = math.e.sq
+											}
+											multiply_variable = {
+												which = math.e.a2
+												which = math.e.sq
+											}
+											change_variable = {
+												which = math.e.a3
+												value = 2
+											}
+											set_variable = {
+												which = math.e.tmp
+												which = math.e.a2
+											}
+											multiply_variable = {
+												which = math.e.tmp
+												which = math.e.a3
+											}
+											change_variable = {
+												which = math.e.tmp
+												which = math.e.a1
+											}
+											divide_variable = {
+												which = math.e.tmp
+												which = math.e.fct
+											}
+											change_variable = {
+												which = math.e.sm
+												which = math.e.tmp
+											}
+										}
+									}
+									multiply_variable = {
+										which = math.e.return
+										which = math.e.sm
+									}
+									set_variable = {
+										which = exp_val
+										which = math.e.return
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 0
+									}
+									set_variable = {
+										which = math.e.tmp
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a1
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a2
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a3
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fctl
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fct
+										value = 0
+									}
+									set_variable = {
+										which = math.e.prec
+										value = 0
+									}
+									set_variable = {
+										which = math.e.sq
+										value = 0
+									}
+								}
+								set_variable = {
+									which = math.e.expnt
+									value = 0
+								}
+								set_variable = {
+									which = math.e.return
+									value = 0
+								}
+								while = {
+									limit = {
+										check_variable = {
+											which = int_m_exp
+											value = 1
+										}
+									}
+									subtract_variable = {
+										which = int_m_exp
+										value = 1
+									}
+									multiply_variable = {
+										which = exp_val
+										which = inp_m_exp
+									}
+								}
+								set_variable = {
+									which = exp_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = int_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = dec_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = ln_val
+									value = 0
+								}
+							}
+							set_variable = {
+								which = inp_m_exp
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = exp_val
+							}
+							set_variable = {
+								which = exp_val
+								value = 0
+							}
+							export_to_variable = {
+								which = EstateProv_LA
+								value = local_autonomy
+							}
+							multiply_variable = {
+								which = EstateProv_LA
+								value = 0.008
+							}
+							change_variable = {
+								which = EstateProv_LA
+								value = 0.2
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								which = EstateProv_LA
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									has_province_flag = loss
+								}
+								clr_province_flag = loss
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							else_if = {
+								limit = {
+									has_province_flag = gain
+								}
+								clr_province_flag = gain
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.1
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_UnrestSave
+										value = 0.001
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = EstateProv_Unrest
+												value = 0.001
+											}
+										}
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_25.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_12.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_6.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_3.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_1.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.1
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.1
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_UnrestSave
+											value = 0
+										}
+									}
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_LA
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								value = 0
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_burghers_weight_share
+						value = 0.01
+					}
+				}
+				tooltip = {
+					add_estate_loyalty = {
+						estate = estate_city_burghers
+						loyalty = 10
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = burghers_loyalty_added
+						value = 10
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 64
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 64
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.64
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 64
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 32
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 32
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.32
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 32
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 16
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 16
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.16
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 16
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 8
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 8
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.08
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 4
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 4
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.04
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 2
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 2
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.02
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = burghers_loyalty_added
+								value = 1
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_city_burghers
+							loyalty = 1
+						}
+						change_variable = {
+							which = estate_burghers_loyalty
+							value = 0.01
+						}
+						subtract_variable = {
+							which = burghers_loyalty_added
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = estate_burghers_loyalty
+								value = 1
+							}
+						}
+						set_variable = {
+							which = estate_burghers_loyalty
+							value = 1
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_flag = burghers_control_province
+						}
+						hidden_effect = {
+							set_variable = {
+								which = estate_burghers_loyalty
+								which = owner
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								which = EstateProv_Unrest
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = estate_burghers_loyalty
+							}
+							set_variable = {
+								which = estate_burghers_loyalty
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0.6
+									}
+								}
+								set_province_flag = loss
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.6
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_Unrest
+											value = 0.401
+										}
+									}
+								}
+								set_province_flag = gain
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.4
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+							}
+							else = {
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								value = 16.62
+							}
+							set_variable = {
+								which = inp_m_exp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = inp_m_exp
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+								change_variable = {
+									which = err.math.exp.undef
+									value = 1
+								}
+							}
+							else_if = {
+								limit = {
+									is_variable_equal = {
+										which = inp_m_exp
+										value = 0
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = exp_m_exp
+									value = 1.7
+								}
+								set_variable = {
+									which = int_m_exp
+									which = exp_m_exp
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 0.001
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 1000
+								}
+								set_variable = {
+									which = dec_m_exp
+									which = exp_m_exp
+								}
+								subtract_variable = {
+									which = dec_m_exp
+									which = int_m_exp
+								}
+								set_variable = {
+									which = inp
+									which = inp_m_exp
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = inp
+												value = 0.001
+											}
+										}
+									}
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									change_variable = {
+										which = err.math.ln.undef
+										value = 1
+									}
+								}
+								else = {
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									set_variable = {
+										which = scale
+										value = 10000
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										which = scale
+									}
+									while = {
+										limit = {
+											check_variable = {
+												which = inp
+												value = 2.001
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 0.5
+										}
+										change_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = inp
+													value = 1
+												}
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 2
+										}
+										subtract_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									multiply_variable = {
+										which = inp
+										which = scale
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = k
+													value = 10
+												}
+											}
+										}
+										change_variable = {
+											which = k
+											value = 1
+										}
+										multiply_variable = {
+											which = k_div
+											value = 0.5
+										}
+										set_variable = {
+											which = t_m_ln
+											which = scale
+										}
+										change_variable = {
+											which = t_m_ln
+											which = k_div
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = inp
+													which = t_m_ln
+												}
+											}
+											divide_variable = {
+												which = inp
+												which = t_m_ln
+											}
+											multiply_variable = {
+												which = inp
+												which = scale
+											}
+											set_variable = {
+												which = lt_ind
+												which = k
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 6
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 8
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 9
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 10
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 9.761
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 19.512
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 38.986
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 7
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 77.821
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 155.042
+														}
+													}
+												}
+											}
+											else = {
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 3
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 4
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 5
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 307.717
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 606.246
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 1177.83
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 2
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 2231.436
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 4054.651
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = lt_ind
+												value = 0
+											}
+											change_variable = {
+												which = ln_val
+												which = lt_val
+											}
+										}
+										set_variable = {
+											which = t_m_ln
+											value = 0
+										}
+									}
+									divide_variable = {
+										which = ln_val
+										value = 10000
+									}
+									set_variable = {
+										which = scale
+										value = 0
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										value = 0
+									}
+									set_variable = {
+										which = lt_val
+										value = 0
+									}
+								}
+								set_variable = {
+									which = inp
+									value = 0
+								}
+								multiply_variable = {
+									which = dec_m_exp
+									which = ln_val
+								}
+								set_variable = {
+									which = math.e.expnt
+									which = dec_m_exp
+								}
+								set_variable = {
+									which = math.e.return
+									value = 1
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = math.e.expnt
+												value = -6.999
+											}
+										}
+									}
+									set_variable = {
+										which = exp_val
+										value = 0
+									}
+								}
+								else = {
+									while = {
+										limit = {
+											check_variable = {
+												which = math.e.expnt
+												value = 1
+											}
+										}
+										subtract_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										multiply_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										change_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										divide_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 1
+									}
+									if = {
+										limit = {
+											NOT = {
+												is_variable_equal = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										multiply_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.fct
+											value = 2
+										}
+										set_variable = {
+											which = math.e.fctl
+											value = 2
+										}
+										set_variable = {
+											which = math.e.a1
+											which = math.e.sq
+										}
+										set_variable = {
+											which = math.e.a2
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.a3
+											value = 2
+										}
+										set_variable = {
+											which = math.e.tmp
+											which = math.e.a2
+										}
+										multiply_variable = {
+											which = math.e.tmp
+											which = math.e.a3
+										}
+										change_variable = {
+											which = math.e.tmp
+											which = math.e.a1
+										}
+										divide_variable = {
+											which = math.e.tmp
+											which = math.e.fct
+										}
+										change_variable = {
+											which = math.e.sm
+											which = math.e.tmp
+										}
+										set_variable = {
+											which = math.e.prec
+											value = 3
+										}
+										subtract_variable = {
+											which = math.e.prec
+											value = 1
+										}
+										while = {
+											limit = {
+												check_variable = {
+													which = math.e.prec
+													value = 1
+												}
+											}
+											subtract_variable = {
+												which = math.e.prec
+												value = 1
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											multiply_variable = {
+												which = math.e.a1
+												which = math.e.sq
+											}
+											multiply_variable = {
+												which = math.e.a2
+												which = math.e.sq
+											}
+											change_variable = {
+												which = math.e.a3
+												value = 2
+											}
+											set_variable = {
+												which = math.e.tmp
+												which = math.e.a2
+											}
+											multiply_variable = {
+												which = math.e.tmp
+												which = math.e.a3
+											}
+											change_variable = {
+												which = math.e.tmp
+												which = math.e.a1
+											}
+											divide_variable = {
+												which = math.e.tmp
+												which = math.e.fct
+											}
+											change_variable = {
+												which = math.e.sm
+												which = math.e.tmp
+											}
+										}
+									}
+									multiply_variable = {
+										which = math.e.return
+										which = math.e.sm
+									}
+									set_variable = {
+										which = exp_val
+										which = math.e.return
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 0
+									}
+									set_variable = {
+										which = math.e.tmp
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a1
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a2
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a3
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fctl
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fct
+										value = 0
+									}
+									set_variable = {
+										which = math.e.prec
+										value = 0
+									}
+									set_variable = {
+										which = math.e.sq
+										value = 0
+									}
+								}
+								set_variable = {
+									which = math.e.expnt
+									value = 0
+								}
+								set_variable = {
+									which = math.e.return
+									value = 0
+								}
+								while = {
+									limit = {
+										check_variable = {
+											which = int_m_exp
+											value = 1
+										}
+									}
+									subtract_variable = {
+										which = int_m_exp
+										value = 1
+									}
+									multiply_variable = {
+										which = exp_val
+										which = inp_m_exp
+									}
+								}
+								set_variable = {
+									which = exp_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = int_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = dec_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = ln_val
+									value = 0
+								}
+							}
+							set_variable = {
+								which = inp_m_exp
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = exp_val
+							}
+							set_variable = {
+								which = exp_val
+								value = 0
+							}
+							export_to_variable = {
+								which = EstateProv_LA
+								value = local_autonomy
+							}
+							multiply_variable = {
+								which = EstateProv_LA
+								value = 0.008
+							}
+							change_variable = {
+								which = EstateProv_LA
+								value = 0.2
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								which = EstateProv_LA
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									has_province_flag = loss
+								}
+								clr_province_flag = loss
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							else_if = {
+								limit = {
+									has_province_flag = gain
+								}
+								clr_province_flag = gain
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.1
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_UnrestSave
+										value = 0.001
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = EstateProv_Unrest
+												value = 0.001
+											}
+										}
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_25.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_12.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_6.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_3.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_1.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.1
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.1
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_UnrestSave
+											value = 0
+										}
+									}
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_LA
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								value = 0
+							}
+						}
+					}
+				}
+			}
+			add_country_modifier = {
+				name = "mission_byz_stability_restored"
+				duration = 5475
+			}
+		}
+	}
+	byz_recover_west_anatolia = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { byz_recover_the_coast_of_asia_minor }
+		provinces_to_highlight = {
+			OR = {
+				area = kutahya_area
+				AND = {
+					area = hudavendigar_area
+					has_port = no
+				}
+				area = kastamonu_area
+				area = teke_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			kutahya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				OR = {
+					has_port = yes
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			kastamonu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			teke_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			karaman_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			rum_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			dulkadir_area = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			kutahya_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			hudavendigar_area = {
+				limit = {
+					NOT = {
+						has_port = yes
+					}
+				}
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			kastamonu_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				kastamonu_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						OR = {
+							culture = ROOT
+							culture = pontic
+						}
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+			teke_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 6.25
+			}
+		}
+	}
+	byz_recover_central_anatolia = {
+		icon = mission_pf_soldier
+		required_missions = { byz_recover_west_anatolia }
+		provinces_to_highlight = {
+			OR = {
+				area = karaman_area
+				area = rum_area
+				area = dulkadir_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dulkadir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			karaman_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			rum_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			dulkadir_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Purple Phoenix"
+				}
+				add_prestige = 5
+				add_army_tradition = 6.25
+			}
+		}
+	}
+	byz_armenian_highlands = {
+		icon = mission_pf_map_table
+		required_missions = { byz_recover_central_anatolia }
+		provinces_to_highlight = {
+			OR = {
+				area = north_kurdistan_area
+				area = erzurum_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			north_kurdistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			erzurum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			north_kurdistan_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+			erzurum_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 1825
+				}
+			}
+		}
+	}
+	byz_recover_trebizond = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { byz_armenian_highlands }
+		provinces_to_highlight = {
+			area = trebizond_area
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			trebizond_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			trebizond_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				trebizond_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						OR = {
+							culture = ROOT
+							culture = pontic
+						}
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+		}
+	}
+	byz_recover_crimea = {
+		icon = mission_galleys_in_port
+		required_missions = { byz_recover_trebizond }
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			crimea_area = {
+				add_province_modifier = {
+					name = "faster_integration"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				crimea_area = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+						OR = {
+							culture = ROOT
+							culture = pontic
+						}
+						religion = ROOT
+					}
+					add_territorial_core = ROOT
+				}
+			}
+			custom_tooltip = byz_mis_territorial_cores_tt
+		}
+	}
+	byz_the_pentarchy = {
+		icon = mission_pf_cross
+		required_missions = { byz_recover_rome byz_recover_egypt }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2530
+				province_id = 1402
+				province_id = 358
+				province_id = 379
+				province_id = 332
+			}
+			OR = {
+				NOT = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				NOT = {
+					religion = ROOT
+				}
+			}
+		}
+		trigger = {
+			owns = 2530
+			2530 = {
+				religion = ROOT
+			}
+			owns = 1402
+			1402 = {
+				religion = ROOT
+			}
+			owns = 358
+			358 = {
+				religion = ROOT
+			}
+			owns = 379
+			379 = {
+				religion = ROOT
+			}
+			owns = 332
+			332 = {
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mission_byz_pentarchy"
+				duration = 1095
+			}
+		}
+	}
+	byz_restore_rome_to_glory = {
+		icon = mission_pf_cross
+		required_missions = { byz_recover_central_italy }
+		provinces_to_highlight = {
+			province_id = 2530
+			OR = {
+				NOT = {
+					base_production = 20
+				}
+				NOT = {
+					is_core = ROOT
+				}
+				NOT = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		trigger = {
+			country_or_non_sovereign_subject_holds = 2530
+			is_core = 2530
+			2530 = {
+				base_production = 20
+			}
+		}
+		effect = {
+			2530 = {
+				add_province_modifier = {
+					name = "mission_medium_urban_gravity"
+					duration = 7300
+				}
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+			add_prestige = 10
+			add_legitimacy = 5
+			add_horde_unity = 5
+			add_republican_tradition = 5
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+	}
+	byz_depose_false_emperor = {
+		icon = mission_empire
+		required_missions = { byz_recover_north_italy }
+		provinces_to_highlight = {
+			is_part_of_hre = yes
+		}
+		trigger = {
+			NOT = {
+				hre_size = 1
+			}
+		}
+		effect = {
+			add_legitimacy = 25
+			add_horde_unity = 25
+			add_republican_tradition = 25
+		}
+	}
+}

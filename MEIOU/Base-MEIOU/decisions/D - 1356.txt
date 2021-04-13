@@ -1,0 +1,76 @@
+country_decisions = {
+	ramazanid_beylik = {
+		potential = {
+			tag = MAM
+			religion_group = muslim
+			government = monarchy
+			NOT = {
+				exists = RAM
+			}
+			NOT = {
+				has_country_flag = ramazanid_beylik_indp
+			}
+			OR = {
+				owns = 1755
+				owns = 327
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 1755
+			owns = 327
+		}
+		effect = {
+			set_country_flag = ramazanid_beylik_indp
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 1755
+						province_id = 327
+					}
+				}
+				add_core = RAM
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			release = RAM
+			create_alliance = RAM
+			RAM = {
+				change_religion = sunni
+				define_ruler = {
+					name = "Ramazan Beg"
+					dynasty = "Ramazanoglu"
+					DIP = 2
+					ADM = 3
+					MIL = 5
+				}
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_1
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				add_manpower = 10
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

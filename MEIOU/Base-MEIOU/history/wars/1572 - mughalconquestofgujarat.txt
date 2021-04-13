@@ -1,0 +1,14 @@
+name = "Mughal Conquest of Gujarat"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 516
+}
+1572.1.1 = {
+	add_attacker = MUG
+	add_defender = GUJ
+}
+1573.6.1 = {
+	rem_attacker = MUG
+	rem_defender = GUJ
+}

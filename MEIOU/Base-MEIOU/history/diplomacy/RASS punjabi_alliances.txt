@@ -1,0 +1,59 @@
+alliance = {
+	first = KSH
+	second = MUL
+	start_date = 1399.1.1
+	end_date = 1423.1.1
+}
+guarantee = {
+	first = TIM
+	second = MUL
+	start_date = 1399.1.1
+	end_date = 1409.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = KHO
+	second = MUL
+	start_date = 1409.1.1
+	end_date = 1422.1.1
+}
+alliance = {
+	first = PUN
+	second = SAM
+	start_date = 1420.1.1
+	end_date = 1442.1.1
+}
+alliance = {
+	first = PUN
+	second = KHO
+	start_date = 1420.1.1
+	end_date = 1442.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = DUR
+	second = LDK
+	start_date = 1752.1.1
+	end_date = 1809.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = PUN
+	second = BHW
+	start_date = 1818.1.1
+	end_date = 1838.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = GBR
+	second = PTA
+	start_date = 1803.1.1
+	end_date = 1946.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = PUN
+	second = KGR
+	start_date = 1806.1.1
+	end_date = 1848.1.1
+}

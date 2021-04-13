@@ -1,0 +1,12 @@
+country_event = {
+	id = spanish_colonial.003
+	title = spanish_colonial.003.t
+	desc = spanish_colonial.003.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = spanish_colonial.001.a
+		add_treasury = 1000
+		add_inflation = 4
+	}
+}

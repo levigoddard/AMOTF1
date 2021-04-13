@@ -1,0 +1,187 @@
+dependency = {
+	subject_type = "vassal"
+	first = MOS
+	second = ROS
+	start_date = 1328.1.1
+	end_date = 1474.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = MOS
+	second = GLC
+	start_date = 1328.1.1
+	end_date = 1364.1.1
+}
+alliance = {
+	first = NOV
+	second = PSK
+	start_date = 1356.1.1
+	end_date = 1510.1.24
+}
+dependency = {
+	subject_type = "vassal"
+	first = MOS
+	second = PRM
+	start_date = 1472.1.1
+	end_date = 1505.4.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = RUS
+	second = ZAZ
+	start_date = 1654.1.1
+	end_date = 1735.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = RUS
+	second = KUR
+	start_date = 1710.11.11
+	end_date = 1795.10.23
+}
+alliance = {
+	first = MOS
+	second = DEN
+	start_date = 1493.11.4
+	end_date = 1503.1.1
+}
+alliance = {
+	first = RUS
+	second = SWE
+	start_date = 1567.2.16
+	end_date = 1568.9.29
+}
+alliance = {
+	first = RUS
+	second = SWE
+	start_date = 1609.2.28
+	end_date = 1610.7.19
+}
+alliance = {
+	first = RUS
+	second = PLC
+	start_date = 1686.5.6
+	end_date = 1699.1.26
+}
+alliance = {
+	first = RUS
+	second = PLC
+	start_date = 1699.11.22
+	end_date = 1706.9.24
+}
+alliance = {
+	first = RUS
+	second = PLC
+	start_date = 1709.8.8
+	end_date = 1721.1.1
+}
+alliance = {
+	first = RUS
+	second = SAX
+	start_date = 1699.11.22
+	end_date = 1706.9.24
+}
+alliance = {
+	first = RUS
+	second = SAX
+	start_date = 1709.8.8
+	end_date = 1721.1.1
+}
+alliance = {
+	first = RUS
+	second = DEN
+	start_date = 1699.11.22
+	end_date = 1700.8.18
+}
+alliance = {
+	first = RUS
+	second = DEN
+	start_date = 1709.10.28
+	end_date = 1721.1.1
+}
+alliance = {
+	first = RUS
+	second = PRU
+	start_date = 1715.1.1
+	end_date = 1721.1.1
+}
+alliance = {
+	first = RUS
+	second = HAN
+	start_date = 1715.1.1
+	end_date = 1721.1.1
+}
+alliance = {
+	first = RUS
+	second = PRU
+	start_date = 1762.5.22
+	end_date = 1762.7.17
+}
+alliance = {
+	first = RUS
+	second = PRU
+	start_date = 1764.4.11
+	end_date = 1781.5.1
+}
+alliance = {
+	first = RUS
+	second = GEO
+	start_date = 1783.7.24
+	end_date = 1801.1.18
+}
+alliance = {
+	first = RUS
+	second = GBR
+	start_date = 1798.12.24
+	end_date = 1801.10.8
+}
+alliance = {
+	first = RUS
+	second = HAB
+	start_date = 1798.12.24
+	end_date = 1801.2.9
+}
+alliance = {
+	first = RUS
+	second = SIC
+	start_date = 1798.12.24
+	end_date = 1801.3.18
+}
+alliance = {
+	first = RUS
+	second = POR
+	start_date = 1798.12.24
+	end_date = 1801.9.1
+}
+alliance = {
+	first = RUS
+	second = TUR
+	start_date = 1798.12.24
+	end_date = 1801.2.9
+}
+alliance = {
+	first = RUS
+	second = BAV
+	start_date = 1799.1.1
+	end_date = 1801.2.9
+}
+royal_marriage = {
+	first = MOS
+	second = TVE
+	start_date = 1452.1.1
+	end_date = 1467.1.1
+}
+dependency = {
+	subject_type = "personal_union"
+	first = RUS
+	second = FIN
+	start_date = 1809.9.17
+	end_date = 1917.12.6
+}
+dependency = {
+	subject_type = "personal_union"
+	first = RUS
+	second = POL
+	start_date = 1815.6.9
+	end_date = 1916.1.1
+}

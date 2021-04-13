@@ -1,0 +1,4898 @@
+namespace = plaguetracker
+country_event = {
+	id = plaguetracker.001
+	title = "no_localisation"
+	desc = "no_localisation"
+	picture = "all_refugees"
+	hidden = yes
+	trigger = {
+		tag = AAA
+		check_variable = {
+			which = PT_L_rural
+			value = 0.001
+		}
+		NOT = {
+			has_global_flag = plague_begun
+		}
+		has_global_flag = PT_L_init
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		if = {
+			limit = {
+				check_variable = {
+					which = PT_L_inc
+					value = 72
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = PT_L_inc
+						value = 112
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = PT_L_inc
+							value = 136
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 144
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 148
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 150
+									}
+								}
+								set_variable = {
+									which = PT_L_rural_150
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_150
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_150
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_150
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_150
+									which = PT_L_sr
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 149
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_149
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_149
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_149
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_149
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_149
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_148
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_148
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_148
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_148
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_148
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 146
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 147
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_147
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_147
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_147
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_147
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_147
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_146
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_146
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_146
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_146
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_146
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 145
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_145
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_145
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_145
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_145
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_145
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_144
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_144
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_144
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_144
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_144
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 140
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 142
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 143
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_143
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_143
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_143
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_143
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_143
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_142
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_142
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_142
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_142
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_142
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 141
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_141
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_141
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_141
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_141
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_141
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_140
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_140
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_140
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_140
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_140
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 138
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 139
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_139
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_139
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_139
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_139
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_139
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_138
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_138
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_138
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_138
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_138
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 137
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_137
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_137
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_137
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_137
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_137
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_136
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_136
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_136
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_136
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_136
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 120
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 128
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 132
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 134
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 135
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_135
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_135
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_135
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_135
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_135
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_134
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_134
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_134
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_134
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_134
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 133
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_133
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_133
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_133
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_133
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_133
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_132
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_132
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_132
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_132
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_132
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 130
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 131
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_131
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_131
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_131
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_131
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_131
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_130
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_130
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_130
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_130
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_130
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 129
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_129
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_129
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_129
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_129
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_129
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_128
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_128
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_128
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_128
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_128
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 124
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 126
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 127
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_127
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_127
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_127
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_127
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_127
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_126
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_126
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_126
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_126
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_126
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 125
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_125
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_125
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_125
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_125
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_125
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_124
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_124
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_124
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_124
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_124
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 122
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 123
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_123
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_123
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_123
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_123
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_123
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_122
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_122
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_122
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_122
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_122
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 121
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_121
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_121
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_121
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_121
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_121
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_120
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_120
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_120
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_120
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_120
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 116
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 118
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 119
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_119
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_119
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_119
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_119
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_119
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_118
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_118
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_118
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_118
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_118
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 117
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_117
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_117
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_117
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_117
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_117
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_116
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_116
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_116
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_116
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_116
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 114
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 115
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_115
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_115
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_115
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_115
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_115
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_114
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_114
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_114
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_114
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_114
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 113
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_113
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_113
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_113
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_113
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_113
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_112
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_112
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_112
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_112
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_112
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = PT_L_inc
+							value = 88
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 96
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 104
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 108
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 110
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 111
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_111
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_111
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_111
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_111
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_111
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_110
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_110
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_110
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_110
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_110
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 109
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_109
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_109
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_109
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_109
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_109
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_108
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_108
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_108
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_108
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_108
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 106
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 107
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_107
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_107
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_107
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_107
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_107
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_106
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_106
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_106
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_106
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_106
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 105
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_105
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_105
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_105
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_105
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_105
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_104
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_104
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_104
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_104
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_104
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 102
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 103
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_103
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_103
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_103
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_103
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_103
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_102
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_102
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_102
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_102
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_102
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 101
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_101
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_101
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_101
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_101
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_101
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_100
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_100
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_100
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_100
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_100
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 98
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 99
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_99
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_99
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_99
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_99
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_99
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_98
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_98
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_98
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_98
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_98
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 97
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_97
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_97
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_97
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_97
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_97
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_96
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_96
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_96
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_96
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_96
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 92
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 94
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 95
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_95
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_95
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_95
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_95
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_95
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_94
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_94
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_94
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_94
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_94
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 93
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_93
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_93
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_93
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_93
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_93
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_92
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_92
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_92
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_92
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_92
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 90
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 91
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_91
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_91
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_91
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_91
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_91
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_90
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_90
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_90
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_90
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_90
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 89
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_89
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_89
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_89
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_89
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_89
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_88
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_88
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_88
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_88
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_88
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 80
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 84
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 86
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 87
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_87
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_87
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_87
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_87
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_87
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_86
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_86
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_86
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_86
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_86
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 85
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_85
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_85
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_85
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_85
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_85
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_84
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_84
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_84
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_84
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_84
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 82
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 83
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_83
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_83
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_83
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_83
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_83
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_82
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_82
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_82
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_82
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_82
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 81
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_81
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_81
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_81
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_81
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_81
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_80
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_80
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_80
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_80
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_80
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 76
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 78
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 79
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_79
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_79
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_79
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_79
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_79
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_78
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_78
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_78
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_78
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_78
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 77
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_77
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_77
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_77
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_77
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_77
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_76
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_76
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_76
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_76
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_76
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 74
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 75
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_75
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_75
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_75
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_75
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_75
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_74
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_74
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_74
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_74
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_74
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 73
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_73
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_73
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_73
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_73
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_73
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_72
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_72
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_72
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_72
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_72
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = PT_L_inc
+						value = 32
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = PT_L_inc
+							value = 48
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 56
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 64
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 68
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 70
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 71
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_71
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_71
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_71
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_71
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_71
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_70
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_70
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_70
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_70
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_70
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 69
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_69
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_69
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_69
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_69
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_69
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_68
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_68
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_68
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_68
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_68
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 66
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 67
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_67
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_67
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_67
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_67
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_67
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_66
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_66
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_66
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_66
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_66
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 65
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_65
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_65
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_65
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_65
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_65
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_64
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_64
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_64
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_64
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_64
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 60
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 62
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 63
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_63
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_63
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_63
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_63
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_63
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_62
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_62
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_62
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_62
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_62
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 61
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_61
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_61
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_61
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_61
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_61
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_60
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_60
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_60
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_60
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_60
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 58
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 59
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_59
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_59
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_59
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_59
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_59
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_58
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_58
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_58
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_58
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_58
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 57
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_57
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_57
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_57
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_57
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_57
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_56
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_56
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_56
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_56
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_56
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 52
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 54
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 55
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_55
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_55
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_55
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_55
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_55
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_54
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_54
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_54
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_54
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_54
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 53
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_53
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_53
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_53
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_53
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_53
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_52
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_52
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_52
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_52
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_52
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 50
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 51
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_51
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_51
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_51
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_51
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_51
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_50
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_50
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_50
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_50
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_50
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 49
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_49
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_49
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_49
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_49
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_49
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_48
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_48
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_48
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_48
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_48
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 40
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 44
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 46
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 47
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_47
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_47
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_47
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_47
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_47
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_46
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_46
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_46
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_46
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_46
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 45
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_45
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_45
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_45
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_45
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_45
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_44
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_44
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_44
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_44
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_44
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 42
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 43
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_43
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_43
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_43
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_43
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_43
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_42
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_42
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_42
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_42
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_42
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 41
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_41
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_41
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_41
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_41
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_41
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_40
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_40
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_40
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_40
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_40
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 36
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 38
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 39
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_39
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_39
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_39
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_39
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_39
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_38
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_38
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_38
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_38
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_38
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 37
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_37
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_37
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_37
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_37
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_37
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_36
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_36
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_36
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_36
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_36
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 34
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 35
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_35
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_35
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_35
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_35
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_35
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_34
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_34
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_34
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_34
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_34
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 33
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_33
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_33
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_33
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_33
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_33
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_32
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_32
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_32
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_32
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_32
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = PT_L_inc
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 16
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 24
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 28
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 30
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 31
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_31
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_31
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_31
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_31
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_31
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_30
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_30
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_30
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_30
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_30
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 29
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_29
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_29
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_29
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_29
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_29
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_28
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_28
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_28
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_28
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_28
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 26
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 27
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_27
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_27
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_27
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_27
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_27
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_26
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_26
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_26
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_26
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_26
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 25
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_25
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_25
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_25
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_25
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_25
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_24
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_24
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_24
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_24
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_24
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 20
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 22
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 23
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_23
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_23
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_23
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_23
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_23
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_22
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_22
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_22
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_22
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_22
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 21
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_21
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_21
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_21
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_21
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_21
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_20
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_20
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_20
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_20
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_20
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 18
+										}
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 19
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_19
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_19
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_19
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_19
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_19
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_18
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_18
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_18
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_18
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_18
+											which = PT_L_sr
+										}
+									}
+								}
+								else = {
+									if = {
+										limit = {
+											check_variable = {
+												which = PT_L_inc
+												value = 17
+											}
+										}
+										set_variable = {
+											which = PT_L_rural_17
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_17
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_17
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_17
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_17
+											which = PT_L_sr
+										}
+									}
+									else = {
+										set_variable = {
+											which = PT_L_rural_16
+											which = PT_L_rural
+										}
+										set_variable = {
+											which = PT_L_urban_16
+											which = PT_L_urban
+										}
+										set_variable = {
+											which = PT_L_time_16
+											which = PT_L_time
+										}
+										set_variable = {
+											which = PT_L_strength_16
+											which = PT_L_strength
+										}
+										set_variable = {
+											which = PT_L_sr_16
+											which = PT_L_sr
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 12
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 14
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 15
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_15
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_15
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_15
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_15
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_15
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_14
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_14
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_14
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_14
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_14
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 13
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_13
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_13
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_13
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_13
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_13
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_12
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_12
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_12
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_12
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_12
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 10
+									}
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 11
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_11
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_11
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_11
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_11
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_11
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_10
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_10
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_10
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_10
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_10
+										which = PT_L_sr
+									}
+								}
+							}
+							else = {
+								if = {
+									limit = {
+										check_variable = {
+											which = PT_L_inc
+											value = 9
+										}
+									}
+									set_variable = {
+										which = PT_L_rural_9
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_9
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_9
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_9
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_9
+										which = PT_L_sr
+									}
+								}
+								else = {
+									set_variable = {
+										which = PT_L_rural_8
+										which = PT_L_rural
+									}
+									set_variable = {
+										which = PT_L_urban_8
+										which = PT_L_urban
+									}
+									set_variable = {
+										which = PT_L_time_8
+										which = PT_L_time
+									}
+									set_variable = {
+										which = PT_L_strength_8
+										which = PT_L_strength
+									}
+									set_variable = {
+										which = PT_L_sr_8
+										which = PT_L_sr
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = {
+								which = PT_L_inc
+								value = 4
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 6
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 7
+									}
+								}
+								set_variable = {
+									which = PT_L_rural_7
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_7
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_7
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_7
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_7
+									which = PT_L_sr
+								}
+							}
+							else = {
+								set_variable = {
+									which = PT_L_rural_6
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_6
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_6
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_6
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_6
+									which = PT_L_sr
+								}
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 5
+									}
+								}
+								set_variable = {
+									which = PT_L_rural_5
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_5
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_5
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_5
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_5
+									which = PT_L_sr
+								}
+							}
+							else = {
+								set_variable = {
+									which = PT_L_rural_4
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_4
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_4
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_4
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_4
+									which = PT_L_sr
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									which = PT_L_inc
+									value = 2
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = PT_L_inc
+										value = 3
+									}
+								}
+								set_variable = {
+									which = PT_L_rural_3
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_3
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_3
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_3
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_3
+									which = PT_L_sr
+								}
+							}
+							else = {
+								set_variable = {
+									which = PT_L_rural_2
+									which = PT_L_rural
+								}
+								set_variable = {
+									which = PT_L_urban_2
+									which = PT_L_urban
+								}
+								set_variable = {
+									which = PT_L_time_2
+									which = PT_L_time
+								}
+								set_variable = {
+									which = PT_L_strength_2
+									which = PT_L_strength
+								}
+								set_variable = {
+									which = PT_L_sr_2
+									which = PT_L_sr
+								}
+							}
+						}
+						else = {
+							set_variable = {
+								which = PT_L_rural_1
+								which = PT_L_rural
+							}
+							set_variable = {
+								which = PT_L_urban_1
+								which = PT_L_urban
+							}
+							set_variable = {
+								which = PT_L_time_1
+								which = PT_L_time
+							}
+							set_variable = {
+								which = PT_L_strength_1
+								which = PT_L_strength
+							}
+							set_variable = {
+								which = PT_L_sr_1
+								which = PT_L_sr
+							}
+						}
+					}
+				}
+			}
+		}
+		set_variable = {
+			which = PT_L_rural
+			value = 0
+		}
+		set_variable = {
+			which = PT_L_urban
+			value = 0
+		}
+		set_variable = {
+			which = PT_L_time
+			value = 0
+		}
+		set_variable = {
+			which = PT_L_strength
+			value = 0
+		}
+		set_variable = {
+			which = PT_L_sr
+			value = 0
+		}
+		clr_global_flag = PT_L_time_set
+		change_variable = {
+			which = PT_L_inc
+			value = 1
+		}
+	}
+	option = {
+		name = "no_localisation"
+	}
+}
+country_event = {
+	id = plaguetracker.902
+	title = "no_localisation"
+	desc = "no_localisation"
+	picture = "all_refugees"
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "no_localisation"
+		FROM = {
+			country_event = {
+				id = plaguetracker.002
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.002
+	title = "plaguetracker.002.title"
+	desc = "plaguetracker.002.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.002.oX"
+	}
+	option = {
+		name = "plaguetracker.002.o1"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 2
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.101
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o16"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 17
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.102
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o31"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 32
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.103
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o46"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 47
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.104
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o61"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 62
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.105
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o76"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 77
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.106
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o91"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 92
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.107
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o106"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 107
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.108
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o121"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 122
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.109
+			}
+		}
+	}
+	option = {
+		name = "plaguetracker.002.o136"
+		trigger = {
+			FROM = {
+				check_variable = {
+					which = PT_L_inc
+					value = 137
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = plaguetracker.110
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.101
+	title = "plaguetracker.101.title"
+	desc = "plaguetracker.101.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.102
+	title = "plaguetracker.102.title"
+	desc = "plaguetracker.102.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.103
+	title = "plaguetracker.103.title"
+	desc = "plaguetracker.103.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.104
+	title = "plaguetracker.104.title"
+	desc = "plaguetracker.104.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.105
+	title = "plaguetracker.105.title"
+	desc = "plaguetracker.105.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.106
+	title = "plaguetracker.106.title"
+	desc = "plaguetracker.106.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.107
+	title = "plaguetracker.107.title"
+	desc = "plaguetracker.107.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.108
+	title = "plaguetracker.108.title"
+	desc = "plaguetracker.108.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.109
+	title = "plaguetracker.109.title"
+	desc = "plaguetracker.109.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plaguetracker.110
+	title = "plaguetracker.110.title"
+	desc = "plaguetracker.110.desc"
+	picture = "PLAGUE_eventPicture"
+	is_triggered_only = yes
+	option = {
+		name = "plaguetracker.back"
+		hidden_effect = {
+			AAA = {
+				country_event = {
+					id = plaguetracker.902
+				}
+			}
+		}
+	}
+}

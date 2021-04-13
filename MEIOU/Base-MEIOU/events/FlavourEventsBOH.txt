@@ -1,0 +1,459 @@
+country_event = {
+	id = flavor_boh.4
+	title = flavor_boh.4.t
+	desc = flavor_boh.4.d
+	picture = FORT_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = BOH
+		owns = 266
+		is_year = 1493
+	}
+	mean_time_to_happen = {
+		months = 32
+	}
+	option = {
+		name = flavor_boh.4.a
+		add_prestige = 25
+	}
+}
+country_event = {
+	id = flavor_boh.5
+	title = flavor_boh.5.t
+	desc = flavor_boh.5.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = BOH
+		is_year = 1500
+		NOT = {
+			ADM = 4
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = flavor_boh.5.a
+		ai_chance = {
+			factor = 90
+		}
+		add_ruler_modifier = {
+			name = boh_strong_nobles
+		}
+	}
+	option = {
+		name = flavor_boh.5.b
+		add_stability = -3
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -15
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}
+country_event = {
+	id = flavor_boh.6
+	title = flavor_boh.6.t
+	desc = flavor_boh.6.d
+	picture = INVENTION_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = BOH
+		is_year = 1599
+		owns = 268
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = flavor_boh.6.a
+		trigger = {
+			num_of_ports = 1
+		}
+		ai_chance = {
+			factor = 90
+		}
+		add_navy_tradition = 10
+	}
+	option = {
+		name = flavor_boh.6.b
+		add_army_tradition = 10
+	}
+}
+country_event = {
+	id = flavor_boh.8
+	title = flavor_boh.8.t
+	desc = flavor_boh.8.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = BOH
+		is_emperor = no
+		religion = catholic
+		any_owned_province = {
+			religion = protestant
+			culture = czech
+		}
+		is_year = 1580
+	}
+	option = {
+		name = flavor_boh.8.a
+		ai_chance = {
+			factor = 90
+		}
+		change_religion = protestant
+		if = {
+			limit = {
+				emperor = {
+					religion = catholic
+				}
+			}
+			emperor = {
+				add_casus_belli = {
+					target = BOH
+					type = cb_religious_conformance
+					months = 1200
+				}
+				add_opinion = {
+					who = root
+					modifier = boh_protestant_king
+				}
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				is_emperor = no
+				religion = catholic
+				num_of_cities = 5
+			}
+			add_casus_belli = {
+				target = BOH
+				type = cb_religious_conformance
+				months = 1200
+			}
+			add_opinion = {
+				who = root
+				modifier = boh_protestant_king
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_boh.9
+	title = flavor_boh.9.name
+	desc = flavor_boh.9.desc
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = BOH
+		owns = 1858
+		exists = HUN
+		exists = HAB
+		HUN = {
+			has_ruler = "Louis the Great"
+		}
+		ROOT = {
+			NOT = {
+				war_with = HAB
+			}
+			NOT = {
+				war_with = HUN
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+		modifier = {
+			factor = 0.2
+			HUN = {
+				alliance_with = HAB
+			}
+		}
+	}
+	option = {
+		name = "flavor_boh.9.opta"
+		ai_chance = {
+			factor = 90
+		}
+		BOH = {
+			add_prestige = 10
+		}
+		1858 = {
+			cede_province = HUN
+			add_core = HUN
+			remove_core = BOH
+		}
+		HUN = {
+			add_opinion = {
+				who = HAB
+				modifier = alliance_broken
+			}
+		}
+		HAB = {
+			country_event = {
+				id = flavor_boh.11
+			}
+		}
+		HUN = {
+			country_event = {
+				id = flavor_boh.10
+			}
+		}
+	}
+	option = {
+		name = "flavor_boh.9.optb"
+		ai_chance = {
+			factor = 10
+		}
+		HUN = {
+			add_opinion = {
+				who = BOH
+				modifier = conflict_heats_up
+			}
+			country_event = {
+				id = flavor_boh.13
+			}
+		}
+		HAB = {
+			add_opinion = {
+				who = BOH
+				modifier = conflict_heats_up
+			}
+			country_event = {
+				id = flavor_boh.12
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_boh.10
+	title = flavor_boh.10.name
+	desc = flavor_boh.10.desc
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_boh.10.opta"
+		ai_chance = {
+			factor = 90
+		}
+		add_prestige = 10
+		if = {
+			limit = {
+				exists = PAD
+				PAD = {
+					alliance_with = HUN
+				}
+			}
+			1858 = {
+				cede_province = PAD
+				add_core = PAD
+				remove_core = HUN
+			}
+			add_opinion = {
+				who = AQU
+				modifier = alliance_broken
+			}
+			add_opinion = {
+				who = GOR
+				modifier = alliance_broken
+			}
+			PAD = {
+				country_event = {
+					id = flavor_boh.14
+				}
+			}
+			AQU = {
+				country_event = {
+					id = flavor_boh.15
+				}
+			}
+			GOR = {
+				country_event = {
+					id = flavor_boh.15
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					AND = {
+						exists = PAD
+						PAD = {
+							alliance_with = HUN
+						}
+					}
+				}
+				exists = AQU
+				AQU = {
+					alliance_with = HUN
+				}
+			}
+			1858 = {
+				cede_province = AQU
+				add_core = AQU
+				remove_core = HUN
+			}
+			add_opinion = {
+				who = GOR
+				modifier = alliance_broken
+			}
+			AQU = {
+				country_event = {
+					id = flavor_boh.14
+				}
+			}
+			GOR = {
+				country_event = {
+					id = flavor_boh.15
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					AND = {
+						exists = PAD
+						PAD = {
+							alliance_with = HUN
+						}
+					}
+					AND = {
+						exists = AQU
+						AQU = {
+							alliance_with = HUN
+						}
+					}
+				}
+				exists = GOR
+				GOR = {
+					alliance_with = HUN
+				}
+			}
+			1858 = {
+				cede_province = GOR
+				add_core = GOR
+				remove_core = HUN
+			}
+			GOR = {
+				country_event = {
+					id = flavor_boh.13
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_boh.10.optb"
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = -10
+		add_opinion = {
+			who = PAD
+			modifier = alliance_broken
+		}
+		add_opinion = {
+			who = AQU
+			modifier = alliance_broken
+		}
+		add_opinion = {
+			who = GOR
+			modifier = alliance_broken
+		}
+		PAD = {
+			country_event = {
+				id = flavor_boh.15
+			}
+		}
+		AQU = {
+			country_event = {
+				id = flavor_boh.15
+			}
+		}
+		GOR = {
+			country_event = {
+				id = flavor_boh.15
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_boh.11
+	title = flavor_boh.11.name
+	desc = flavor_boh.11.desc
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_boh.11.opta"
+	}
+}
+country_event = {
+	id = flavor_boh.12
+	title = flavor_boh.12.name
+	desc = flavor_boh.12.desc
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_boh.12.opta"
+	}
+}
+country_event = {
+	id = flavor_boh.13
+	title = flavor_boh.13.name
+	desc = flavor_boh.13.desc
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_boh.13.opta"
+	}
+}
+country_event = {
+	id = flavor_boh.14
+	title = flavor_boh.14.name
+	desc = flavor_boh.14.desc
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_boh.14.opta"
+	}
+}
+country_event = {
+	id = flavor_boh.15
+	title = flavor_boh.15.name
+	desc = flavor_boh.15.desc
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_boh.15.opta"
+	}
+}

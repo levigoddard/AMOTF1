@@ -1,0 +1,1077 @@
+# List of all action evaluation scripts, as well as their descriptions
+# Military
+# Action related to saving and using manpower
+AIEvalActionManpower = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Military / Spending
+# Action related to building new shipyards
+# with the purpose of increasing fleet size
+AIEvalActionBuildShipyards = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionBuildShipyards
+		}
+		clr_country_flag = aiEvalActionBuildShipyards
+		
+		set_variable = {
+			which = tmpNatHarb
+			value = 0
+		}
+		set_variable = {
+			which = tmpFullHarb
+			value = 0
+		}
+		
+		every_owned_province = {
+			if = {
+				limit = {
+					has_province_flag = has_natural_harbour
+				}
+				PREV = {
+					change_variable = {
+						which = tmpNatHarb
+						value = 1
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_port = yes
+					
+					can_build_military_harbour_1 = no
+					can_build_military_harbour_2 = no
+					can_build_military_harbour_3 = no
+					can_build_military_harbour_4 = no
+				}
+				PREV = {
+					change_variable = {
+						which = tmpFullHarb
+						value = 1
+					}
+				}
+			}
+		}
+		
+		# If num of full harbours >= num of natural harbours, stop
+		if = {
+			limit = {
+				check_variable = {
+					which = tmpFullHarb
+					which = tmpNatHarb
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+		else = {
+			export_to_variable = {
+				which = $return$
+				value = naval_forcelimit
+			}
+			export_to_variable = {
+				which = tmpTotalDev
+				value = total_development
+			}
+			divide_variable = {
+				which = $return$
+				which = tmpTotalDev
+			}
+			
+			subtract_variable = {
+				which = $return$
+				value = 0.25
+			}
+			multiply_variable = {
+				which = $return$
+				value = -16
+			}
+			
+			set_variable = {
+				which = tmpTotalDev
+				value = 0
+			}
+		}
+		
+		set_variable = {
+			which = tmpNatHarb
+			value = 0
+		}
+		set_variable = {
+			which = tmpFullHarb
+			value = 0
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Military / Defensive / Spending
+# Action related to building new forts
+# With the intention of obtaining border security
+AIEvalActionBuildForts = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionBuildForts
+		}
+		clr_country_flag = aiEvalActionBuildForts
+		
+		if = {
+			limit = {
+				any_owned_province = {
+					CanBuildFort = yes
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Military / Spending
+# Action related to saving warchest
+# an emergency fund that will be tapped during war
+AIEvalActionWarchest = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionWarchest
+		}
+		clr_country_flag = aiEvalActionWarchest
+		
+		set_variable = {
+			which = $return$
+			value = 3
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Expansion / Colonization
+# Action related to planning colonizations for various purposes
+AIEvalActionPlanColonization = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Expansion / Colonization
+# Action related to doing colonization, including its preparation
+AIEvalActionDoColonization = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Expansion / Invasion / Diplo
+# Action related to acquiring CBs on appropriate states
+AIEvalActionGetCB = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Expansion / Invasion / Diplo
+# Action related to declaring war on appropriate states
+AIEvalActionDecWar = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionDecWar
+		}
+		clr_country_flag = aiEvalActionDecWar
+		
+		if = {
+			limit = {
+				has_global_flag = AI_warchest_init
+				is_at_war = no
+				stability = -1
+				is_year = 1359
+				NOT = {
+					corruption = 30
+					war_exhaustion = 5
+					num_of_revolts = 2
+					num_of_loans = 2
+					average_effective_unrest = 6
+				}
+				
+				OR = {
+					AND = {
+						manpower = 2
+						manpower_percentage = 0.8
+					}
+					AND = {
+						manpower = 5
+						manpower_percentage = 0.7
+					}
+					AND = {
+						manpower = 10
+						manpower_percentage = 0.6
+					}
+					AND = {
+						manpower = 20
+						manpower_percentage = 0.5
+					}
+					AND = {
+						manpower = 30
+						manpower_percentage = 0.4
+					}
+					AND = {
+						manpower = 50
+						manpower_percentage = 0.3
+					}
+				}
+				
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = tmpTreasury
+						value = treasury
+					}
+					export_to_variable = {
+						which = tmpInc
+						value = monthly_income
+					}
+					
+					change_variable = {
+						which = tmpTreasury
+						which = aiTreasuryGeneral
+					}
+					
+					multiply_variable = {
+						which = tmpInc
+						value = 6
+					}
+					change_variable = {
+						which = tmpInc
+						value = 100
+					}
+					
+					check_variable = {
+						which = tmpTreasury
+						which = tmpInc
+					}
+				}
+			}
+			GetSizeArmy = {
+				state = yes
+				estate = yes
+				rest = no
+				return = tmpCheck
+			}
+			
+			if = {
+				limit = {
+					check_variable = {
+						which = tmpCheck
+						value = 6
+					}
+				}
+				set_variable = {
+					which = $return$
+					value = 3
+				}
+			}
+			
+			set_variable = {
+				which = tmpCheck
+				value = 0
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Economy / Spending
+# Action related to building up cities
+AIEvalActionBuildCity = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionBuildCity
+		}
+		clr_country_flag = aiEvalActionBuildCity
+		
+		set_variable = {
+			which = $return$
+			value = 3
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance
+# Action related to improving estate loyalty
+AIEvalActionEstFavor = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionEstFavor
+		}
+		clr_country_flag = aiEvalActionEstFavor
+		
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						check_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.65
+						}
+					}
+					NOT = {
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.65
+						}
+					}
+					NOT = {
+						check_variable = {
+							which = estate_burghers_loyalty
+							value = 0.65
+						}
+					}
+					NOT = {
+						check_variable = {
+							which = estate_tribals_loyalty
+							value = 0.65
+						}
+					}
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance
+# Action related to spending estate favors
+AIEvalActionEstDemand = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionEstDemand
+		}
+		clr_country_flag = aiEvalActionEstDemand
+		
+		if = {
+			limit = {
+				OR = {
+					check_variable = {
+						which = estate_greater_nobles_loyalty
+						value = 0.36
+					}
+					check_variable = {
+						which = estate_lesser_nobles_loyalty
+						value = 0.36
+					}
+					check_variable = {
+						which = estate_burghers_loyalty
+						value = 0.36
+					}
+					
+					# AI is demoting and its loyalty will hit rock bottom anyway
+					AND = {
+						has_country_flag = aiHasActionEstDemote
+						
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.11
+						}
+						
+						NOT = {
+							check_variable = {
+								which = estate_lesser_nobles_loyalty
+								value = 0.41
+							}
+						}
+					}
+				}
+				
+				OR = {
+					NOT = {
+						legitimacy = 50
+					}
+					
+					num_of_loans = 3
+					
+					average_effective_unrest = 5
+					
+					AND = {
+						is_at_war = yes
+						
+						NOT = {
+							is_in_war = {
+								war_score = -15
+							}
+						}
+					}
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / Reform
+# Action related to demoting powerful estates
+AIEvalActionEstDemote = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionEstDemote
+		}
+		clr_country_flag = aiEvalActionEstDemote
+		
+		if = {
+			limit = {
+				num_of_cities = 10
+				
+				check_variable = {
+					which = estate_greater_nobles_weight_share
+					which = estate_lesser_nobles_weight_share
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance
+# Action related to granting new privileges
+AIEvalActionEstGrant = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionEstGrant
+		}
+		clr_country_flag = aiEvalActionEstGrant
+		
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						stability = -2
+					}
+					
+					AND = {
+						NOT = {
+							stability = -1
+						}
+						
+						average_effective_unrest = 8
+					}
+					
+					NOT = {
+						check_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.11
+						}
+					}
+					
+					NOT = {
+						check_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.11
+						}
+					}
+					
+					NOT = {
+						check_variable = {
+							which = estate_burghers_loyalty
+							value = 0.11
+						}
+					}
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / Reform
+# Action related to revoking old privileges
+AIEvalActionEstRevoke = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionEstRevoke
+		}
+		clr_country_flag = aiEvalActionEstRevoke
+		
+		if = {
+			limit = {
+				stability = 1
+				
+				OR = {
+					stability = 2
+					
+					check_variable = {
+						which = stability_points
+						value = 100
+					}
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance
+# Action related to preventing new disasters and solving old ones
+AIEvalActionSolveDis = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Governance / Reform
+# Action related to solving obstacle modifiers
+AIEvalActionSolveObs = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Governance / Reform
+# Action related to managing stability
+AIEvalActionImpStab = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionImpStab
+		}
+		clr_country_flag = aiEvalActionImpStab
+		
+		set_variable = {
+			which = $return$
+			value = 3
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / CE
+# Action related to moving capital
+AIEvalActionMoveCapital = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionMoveCapital
+		}
+		set_variable = {
+			which = $return$
+			value = 3
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / Tech / Spending
+# Action related to embracing institution, including saving up for it
+AIEvalActionEmbraceInst = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Governance / Tech / Spending
+# Action related to improving / maintaining proper education and art
+AIEvalActionEduArt = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionEduArt
+		}
+		clr_country_flag = aiEvalActionEduArt
+		
+		set_variable = {
+			which = $return$
+			value = 3
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / Spending
+# Action related to saving up treasury as an all-purpose back up fund
+AIEvalActionSaveTreasury = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionSaveTreasury
+		}
+		clr_country_flag = aiEvalActionSaveTreasury
+		
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = aiHasActionManageLoan
+					has_country_flag = aiHasActionBuildForts
+					has_country_flag = aiHasActionBuildShipyards
+					has_country_flag = aiHasActionEduArt
+					has_country_flag = aiHasActionBuildRoad
+					has_country_flag = aiHasActionBuildPort
+					has_country_flag = aiHasActionBuildBureau
+					has_country_flag = aiHasActionBuildCity
+					has_country_flag = aiHasActionWarchest
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / Spending
+# Action related to managing loans, making new ones or removing old
+AIEvalActionManageLoan = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionManageLoan
+		}
+		clr_country_flag = aiEvalActionManageLoan
+		
+		if = {
+			limit = {
+				num_of_loans = 2
+				
+				NOT = {
+					is_at_war = yes
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / CE / Spending
+# Action related to building and getting funding for bureaucracy buildings
+AIEvalActionBuildBureau = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionBuildBureau
+		}
+		clr_country_flag = aiEvalActionBuildBureau
+		
+		if = {
+			limit = {
+				total_development = 200
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = capital_num
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = $return$
+					value = 3
+				}
+			}
+			else = {
+				export_to_variable = {
+					which = tmpTotalDev
+					value = total_development
+				}
+				
+				set_variable = {
+					which = tmpSubtract
+					which = capital_num
+				}
+				multiply_variable = {
+					which = tmpSubtract
+					value = 300
+				}
+				
+				set_variable = {
+					which = $return$
+					which = tmpTotalDev
+				}
+				subtract_variable = {
+					which = $return$
+					which = tmpSubtract
+				}
+				divide_variable = {
+					which = $return$
+					which = tmpTotalDev
+				}
+				multiply_variable = {
+					which = $return$
+					value = 6
+				}
+					
+				set_variable = {
+					which = tmpTotalDev
+					value = 0
+				}
+				set_variable = {
+					which = tmpSubtract
+					value = 0
+				}
+
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / CE / Spending
+# Action related to building and getting funding for roads
+AIEvalActionBuildRoad = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionBuildRoad
+		}
+		clr_country_flag = aiEvalActionBuildRoad
+		
+		if = {
+			limit = {
+				any_owned_province = {
+					NOT = {
+						local_autonomy = 100
+					}
+					
+					CanBuildRoad = yes
+				}
+			}
+			set_variable = {
+				which = $return$
+				value = 3
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance / CE / Spending
+# Action related to building and getting funding for ports
+AIEvalActionBuildPort = {
+	if = {
+		limit = {
+			has_country_flag = aiEvalActionBuildPort
+		}
+		clr_country_flag = aiEvalActionBuildPort
+		
+		if = {
+			limit = {
+				any_owned_province = {
+					CanBuildPort = yes
+				}
+			}
+			export_to_variable = {
+				which = tmpDevTotal
+				value = total_development
+			}
+			
+			set_variable = {
+				which = $return$
+				value = 0
+			}
+			
+			every_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_province_flag = tmpFlag
+						}
+					}
+					set_province_flag = tmpFlag
+				
+					set_variable = {
+						which = $return$
+						which = devPointTotal
+					}
+				}
+				else = {
+					set_variable = {
+						which = $return$
+						value = 0
+					}
+				}
+				
+				every_neighbor_province = {
+					limit = {
+						owned_by = PREV
+						
+						NOT = {
+							has_province_flag = tmpFlag
+						}
+					}
+					set_province_flag = tmpFlag
+				
+					set_variable = {
+						which = $return$
+						which = devPointTotal
+					}
+					
+					PREV = {
+						change_variable = {
+							which = $return$
+							which = PREV
+						}
+					}
+					
+					set_variable = {
+						which = $return$
+						value = 0
+					}
+				}
+				
+				PREV = {
+					change_variable = {
+						which = $return$
+						which = PREV
+					}
+				}
+				
+				set_variable = {
+					which = $return$
+					value = 0
+				}
+			}
+			
+			multiply_variable = {
+				which = $return$
+				value = 4
+			}
+			divide_variable = {
+				which = $return$
+				which = tmpDevTotal
+			}
+			subtract_variable = {
+				which = $return$
+				value = 1
+			}
+			multiply_variable = {
+				which = $return$
+				value = 3
+			}
+			
+			every_owned_province = {
+				clr_province_flag = tmpFlag
+			}
+			
+			set_variable = {
+				which = tmpDevTotal
+				value = 0
+			}
+		}
+		else = {
+			set_variable = {
+				which = $return$
+				value = -3
+			}
+		}
+	}
+	else = {
+		set_variable = {
+			which = $return$
+			value = -3
+		}
+	}
+}
+
+# Governance
+# Action related to managing vassals, setting roles improving relationships etc
+AIEvalActionManageVassal = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}
+
+# Governance
+# Action related to managing rebels
+AIEvalActionRebel = {
+	set_variable = {
+		which = $return$
+		value = 0
+	}
+}

@@ -1,0 +1,208 @@
+owner = NRM
+controller = NRM
+capital = "Alençon"
+trade_goods = livestock
+culture = normand
+religion = catholic
+hre = no
+base_tax = 14
+base_production = 0
+base_manpower = 0
+is_city = yes
+local_fortification_1 = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+1343.1.1 = {
+	add_permanent_claim = NAV
+	add_permanent_claim = FRA
+	add_core = NRM
+}
+1424.8.17 = {
+	owner = ENG
+	controller = ENG
+}
+1449.7.17 = {
+	owner = NRM
+	controller = NRM
+}
+1475.8.29 = {
+	remove_core = ENG
+}
+1520.5.5 = {
+	base_tax = 11
+	base_production = 1
+}
+1524.1.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+}
+1560.1.1 = {
+	religion = reformed
+}
+1562.3.1 = {
+	unrest = 3
+}
+1563.3.19 = {
+	unrest = 0
+}
+1565.1.1 = {
+	unrest = 8
+}
+1568.9.1 = {
+	unrest = 15
+}
+1570.8.8 = {
+	unrest = 10
+}
+1573.9.1 = {
+	unrest = 15
+}
+1574.5.1 = {
+	unrest = 7
+}
+1584.1.1 = {
+	unrest = 12
+}
+1588.12.1 = {
+	unrest = 15
+}
+1594.1.1 = {
+	unrest = 10
+}
+1598.4.13 = {
+	unrest = 3
+}
+1598.5.2 = {
+	unrest = 0
+}
+1640.1.1 = {
+	fort_14th = no
+	fort_15th = yes
+}
+1650.1.14 = {
+	unrest = 7
+}
+1651.4.1 = {
+	unrest = 4
+}
+1651.12.1 = {
+	unrest = 7
+}
+1652.10.21 = {
+	unrest = 0
+}
+1685.10.18 = {
+	unrest = 8
+}
+1686.1.17 = {
+	religion = catholic
+	unrest = 0
+}
+1710.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+1786.1.1 = {
+	base_tax = 6
+	base_production = 6
+}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 142.526
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 142.526
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 97.986
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 115.802
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 133.618
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 146.980
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 164.795
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 187.065
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 180.973
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 15.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 180.690
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 17.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 200.422
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 19.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 235.318
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 21.000
+	}
+}

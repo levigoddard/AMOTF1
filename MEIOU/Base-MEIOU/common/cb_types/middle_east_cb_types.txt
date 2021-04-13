@@ -1,0 +1,96 @@
+cb_persian_unification = {
+	war_goal = unify_persia
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12000
+	prerequisites = {
+		OR = {
+			tag = PER
+			tag = TIM
+		}
+		FROM = {
+			culture_group = persian_group
+			OR = {
+				khorasan_region = {
+					owned_by = PREV
+				}
+				persia_region = {
+					owned_by = PREV
+				}
+				afghanistan_region = {
+					owned_by = PREV
+				}
+			}
+		}
+		is_neighbor_of = FROM
+		NOT = {
+			overlord_of = FROM
+		}
+		AND = {
+			OR = {
+				ai = yes
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							ai = no
+						}
+						amount = 2
+					}
+				}
+			}
+		}
+	}
+}
+cb_moroccan_unification = {
+	war_goal = unify_morocco
+	is_triggered_only = yes
+	valid_for_subject = no
+	months = 12000
+	prerequisites = {
+		OR = {
+			tag = MOR
+			tag = FEZ
+			tag = TFL
+			tag = SOS
+		}
+		is_neighbor_of = FROM
+		FROM = {
+			OR = {
+				owns = 1533
+				owns = 334
+				owns = 2971
+				tafilalt_area = {
+					owned_by = PREV
+				}
+				sus_area = {
+					owned_by = PREV
+				}
+				anfa_area = {
+					owned_by = PREV
+				}
+				marrekesh_area = {
+					owned_by = PREV
+				}
+				fez_area = {
+					owned_by = PREV
+				}
+			}
+		}
+		NOT = {
+			overlord_of = FROM
+		}
+		AND = {
+			OR = {
+				ai = yes
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							ai = no
+						}
+						amount = 2
+					}
+				}
+			}
+		}
+	}
+}

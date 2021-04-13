@@ -1,0 +1,4 @@
+discovered_by = hawaii_tech
+1769.8.1 = {
+	discovered_by = GBR
+}

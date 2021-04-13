@@ -1,0 +1,43 @@
+owner = KED
+controller = KED
+add_core = KED
+capital = "Penang"
+trade_goods = fish
+culture = malayan
+religion = buddhism
+hre = no
+base_tax = 3
+base_production = 0
+base_manpower = 0
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5.5
+	}
+}
+1356.1.1 = {
+	add_core = MLC
+}
+1400.1.1 = {}
+1450.1.1 = {}
+1500.1.1 = {
+	religion = sunni
+}
+1501.1.1 = {
+	base_tax = 4
+}
+1594.5.1 = {
+	discovered_by = western
+}
+1786.8.11 = {
+	owner = GBR
+	controller = GBR
+	add_core = GBR
+	remove_core = KED
+	remove_core = MLC
+}

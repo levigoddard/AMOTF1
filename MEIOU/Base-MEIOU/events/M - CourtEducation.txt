@@ -1,0 +1,2535 @@
+namespace = CourtEduWiz
+country_event = {
+	id = CourtEduWiz.200
+	title = "CourtEduWiz.200.t"
+	desc = "CourtEduWiz.200.d"
+	picture = catholic_court
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = court_loss_L
+				value = 0
+			}
+			set_variable = {
+				which = court_loss_L
+				which = court_target_L
+			}
+			multiply_variable = {
+				which = court_loss_L
+				value = 0.05
+			}
+			set_variable = {
+				which = court_increase_cost
+				value = 0
+			}
+			set_variable = {
+				which = court_increase_cost
+				value = 1
+			}
+			set_variable = {
+				which = court_cost_ticker
+				value = 0
+			}
+			set_variable = {
+				which = court_cost_ticker
+				which = court_target_L
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = court_cost_ticker
+						value = 0.001
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = court_cost_ticker
+								value = 40
+							}
+						}
+					}
+					multiply_variable = {
+						which = court_increase_cost
+						value = 1.05
+					}
+					subtract_variable = {
+						which = court_cost_ticker
+						value = 5
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = court_cost_ticker
+								value = 70
+							}
+						}
+					}
+					multiply_variable = {
+						which = court_increase_cost
+						value = 1.1
+					}
+					subtract_variable = {
+						which = court_cost_ticker
+						value = 5
+					}
+				}
+				else = {
+					multiply_variable = {
+						which = court_increase_cost
+						value = 1.15
+					}
+					subtract_variable = {
+						which = court_cost_ticker
+						value = 5
+					}
+				}
+			}
+			multiply_variable = {
+				which = court_loss_L
+				which = court_increase_cost
+			}
+			set_variable = {
+				which = costlier_with_time_factor
+				value = 0
+			}
+			set_variable = {
+				which = costlier_with_time_factor
+				which = year_ticker
+			}
+			divide_variable = {
+				which = costlier_with_time_factor
+				value = 500
+			}
+			change_variable = {
+				which = costlier_with_time_factor
+				value = 1
+			}
+			divide_variable = {
+				which = court_loss_L
+				which = costlier_with_time_factor
+			}
+			divide_variable = {
+				which = court_loss_L
+				value = 2
+			}
+			set_variable = {
+				which = court_clients
+				value = 0
+			}
+			set_variable = {
+				which = court_clients
+				which = upper_pop_non_overseas
+			}
+			set_variable = {
+				which = court_clients_vassal
+				value = 0
+			}
+			every_subject_country = {
+				limit = {
+					exists = yes
+				}
+				set_variable = {
+					which = court_clients_vassal
+					value = 0
+				}
+				set_variable = {
+					which = court_clients_vassal
+					which = upper_pop_non_overseas
+				}
+				multiply_variable = {
+					which = court_clients_vassal
+					value = 0.5
+				}
+				PREV = {
+					change_variable = {
+						which = court_clients_vassal
+						which = PREV
+					}
+				}
+				set_variable = {
+					which = court_clients_vassal
+					value = 0
+				}
+			}
+			change_variable = {
+				which = court_clients
+				which = court_clients_vassal
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = court_clients
+						value = 0.1
+					}
+				}
+				multiply_variable = {
+					which = court_loss_L
+					which = court_clients
+				}
+			}
+			set_variable = {
+				which = court_missing_endowment
+				which = court_loss_L
+			}
+			if = {
+				limit = {
+					has_country_flag = BG_appoint_as_court_suppliers_1
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					BG_appoint_as_court_suppliers_1_20 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.09
+						}
+					}
+					BG_appoint_as_court_suppliers_1_40 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.18
+						}
+					}
+					BG_appoint_as_court_suppliers_1_60 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.27
+						}
+					}
+					BG_appoint_as_court_suppliers_1_80 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.36
+						}
+					}
+					BG_appoint_as_court_suppliers_1_100 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.45
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = BG_appoint_as_court_suppliers_2
+				}
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					BG_appoint_as_court_suppliers_2_20 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.18
+						}
+					}
+					BG_appoint_as_court_suppliers_2_40 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.36
+						}
+					}
+					BG_appoint_as_court_suppliers_2_60 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.54
+						}
+					}
+					BG_appoint_as_court_suppliers_2_80 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.72
+						}
+					}
+					BG_appoint_as_court_suppliers_2_100 = {
+						multiply_variable = {
+							which = court_loss_L
+							value = 1.9
+						}
+					}
+				}
+			}
+			set_variable = {
+				which = court_capital_bonus
+				value = 0
+			}
+			set_variable = {
+				which = court_capital_bonus
+				which = capital_maintenance
+			}
+			multiply_variable = {
+				which = court_capital_bonus
+				value = 0.5
+			}
+			subtract_variable = {
+				which = court_loss_L
+				which = court_capital_bonus
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = court_loss_L
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = court_loss_L
+					value = 0
+				}
+			}
+			multiply_variable = {
+				which = court_missing_endowment
+				value = 7.5
+			}
+			subtract_variable = {
+				which = court_missing_endowment
+				which = court_money_endowed
+			}
+			multiply_variable = {
+				which = court_missing_endowment
+				value = 0.001
+			}
+			multiply_variable = {
+				which = court_missing_endowment
+				value = 1000
+			}
+			set_variable = {
+				which = court_state_contribute
+				which = court_loss_L
+			}
+			country_event = {
+				id = miscexpenses.002
+			}
+			set_variable = {
+				which = court_cost_ticker
+				value = 0
+			}
+			set_variable = {
+				which = court_clients
+				value = 0
+			}
+			set_variable = {
+				which = court_clients_vassal
+				value = 0
+			}
+			set_variable = {
+				which = court_increase_cost
+				value = 0
+			}
+			set_variable = {
+				which = costlier_with_time_factor
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o1"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o2"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			set_variable = {
+				which = court_target_L
+				value = 18
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o3"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			set_variable = {
+				which = court_target_L
+				value = 34
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o4"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			set_variable = {
+				which = court_target_L
+				value = 50
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o5"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			set_variable = {
+				which = court_target_L
+				value = 70
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o6"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			set_variable = {
+				which = court_target_L
+				value = 95
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o40"
+		hidden_effect = {
+			change_variable = {
+				which = court_target_L
+				value = 1
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o41"
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						which = court_target_L
+						value = 1
+					}
+				}
+				subtract_variable = {
+					which = court_target_L
+					value = 1
+				}
+			}
+			else = {
+				set_variable = {
+					which = court_target_L
+					value = 0
+				}
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o7"
+		hidden_effect = {
+			set_variable = {
+				which = court_target_L
+				value = 0
+			}
+			set_variable = {
+				which = court_state_contribute
+				value = 0
+			}
+			country_event = {
+				id = CourtEduWiz.299
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.back"
+		highlight = yes
+		hidden_effect = {
+			set_variable = {
+				which = treasury_L
+				value = 0
+			}
+			export_to_variable = {
+				which = treasury_L
+				value = treasury
+			}
+			multiply_variable = {
+				which = treasury_L
+				value = 0.5
+			}
+			if = {
+				limit = {
+					ai = no
+					check_variable = {
+						which = court_missing_endowment
+						value = 1
+					}
+					check_variable = {
+						which = treasury_L
+						which = court_missing_endowment
+					}
+				}
+				country_event = {
+					id = CourtEduWiz.201
+				}
+			}
+			else = {
+				set_variable = {
+					which = treasury_L
+					value = 0
+				}
+				set_variable = {
+					which = court_missing_endowment
+					value = 0
+				}
+				country_event = {
+					id = court.100
+				}
+			}
+		}
+	}
+	after = {
+		set_variable = {
+			which = court_loss_L
+			value = 0
+		}
+	}
+}
+country_event = {
+	id = CourtEduWiz.300
+	title = "CourtEduWiz.300.t"
+	desc = "CourtEduWiz.300.d"
+	picture = all_cleric_scientist
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = university_education_multiplier
+				value = 0
+			}
+			every_owned_province = {
+				limit = {
+					is_city = yes
+				}
+				PREV = {
+					change_variable = {
+						which = university_education_multiplier
+						which = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = upper_pop_non_overseas
+						value = 0.1
+					}
+				}
+				divide_variable = {
+					which = university_education_multiplier
+					which = upper_pop_non_overseas
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = university_education_multiplier
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = university_education_multiplier
+					value = 0
+				}
+			}
+			change_variable = {
+				which = university_education_multiplier
+				value = 1
+			}
+			set_variable = {
+				which = education_loss_L
+				value = 0
+			}
+			set_variable = {
+				which = education_loss_L
+				which = education_target_L
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = upper_pop_non_overseas
+						value = 0.1
+					}
+				}
+				multiply_variable = {
+					which = education_loss_L
+					which = upper_pop_non_overseas
+				}
+			}
+			multiply_variable = {
+				which = education_loss_L
+				value = 0.05
+			}
+			set_variable = {
+				which = education_increase_cost
+				value = 0
+			}
+			set_variable = {
+				which = education_increase_cost
+				value = 1
+			}
+			set_variable = {
+				which = education_cost_ticker
+				which = education_target_L
+			}
+			divide_variable = {
+				which = education_loss_L
+				which = university_education_multiplier
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = education_cost_ticker
+						value = 0.001
+					}
+				}
+				multiply_variable = {
+					which = education_increase_cost
+					value = 1.125
+				}
+				subtract_variable = {
+					which = education_cost_ticker
+					value = 5
+				}
+			}
+			set_variable = {
+				which = costlier_with_time_factor
+				value = 0
+			}
+			set_variable = {
+				which = costlier_with_time_factor
+				which = year_ticker
+			}
+			divide_variable = {
+				which = costlier_with_time_factor
+				value = 500
+			}
+			change_variable = {
+				which = costlier_with_time_factor
+				value = 1
+			}
+			divide_variable = {
+				which = education_loss_L
+				which = costlier_with_time_factor
+			}
+			divide_variable = {
+				which = education_loss_L
+				value = 1.3
+			}
+			multiply_variable = {
+				which = education_loss_L
+				which = education_increase_cost
+			}
+			set_variable = {
+				which = education_missing_endowment
+				which = education_loss_L
+			}
+			subtract_variable = {
+				which = education_loss_L
+				which = education_church_contribute
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = education_loss_L
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = education_loss_L
+					value = 0
+				}
+			}
+			multiply_variable = {
+				which = education_missing_endowment
+				value = 15
+			}
+			subtract_variable = {
+				which = education_missing_endowment
+				which = education_money_endowed
+			}
+			multiply_variable = {
+				which = education_missing_endowment
+				value = 0.001
+			}
+			multiply_variable = {
+				which = education_missing_endowment
+				value = 1000
+			}
+			set_variable = {
+				which = education_state_contribute
+				which = education_loss_L
+			}
+			country_event = {
+				id = miscexpenses.002
+			}
+			set_variable = {
+				which = education_cost_ticker
+				value = 0
+			}
+			set_variable = {
+				which = costlier_with_time_factor
+				value = 0
+			}
+			set_variable = {
+				which = education_increase_cost
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o21"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o22"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 13
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o23"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 24
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o24"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 34
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o25"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 45
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o26"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 55
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o28"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 70
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o29"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 85
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o30"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_target_L
+				value = 105
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o42"
+		hidden_effect = {
+			change_variable = {
+				which = education_target_L
+				value = 1
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o43"
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						which = education_target_L
+						value = 1
+					}
+				}
+				subtract_variable = {
+					which = education_target_L
+					value = 1
+				}
+			}
+			else = {
+				set_variable = {
+					which = education_target_L
+					value = 0
+				}
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.o27"
+		hidden_effect = {
+			set_variable = {
+				which = education_target_L
+				value = 0
+			}
+			set_variable = {
+				which = education_state_contribute
+				value = 0
+			}
+			country_event = {
+				id = CourtEduWiz.399
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.200.back"
+		highlight = yes
+		hidden_effect = {
+			set_variable = {
+				which = education_loss_disp_L
+				value = 0
+			}
+			set_variable = {
+				which = treasury_L
+				value = 0
+			}
+			export_to_variable = {
+				which = treasury_L
+				value = treasury
+			}
+			multiply_variable = {
+				which = treasury_L
+				value = 0.5
+			}
+			if = {
+				limit = {
+					ai = no
+					check_variable = {
+						which = education_missing_endowment
+						value = 1
+					}
+					check_variable = {
+						which = treasury_L
+						which = education_missing_endowment
+					}
+				}
+				country_event = {
+					id = CourtEduWiz.202
+				}
+			}
+			else = {
+				set_variable = {
+					which = treasury_L
+					value = 0
+				}
+				set_variable = {
+					which = education_missing_endowment
+					value = 0
+				}
+				country_event = {
+					id = POP_Estates_Interactions.302
+				}
+			}
+		}
+	}
+	after = {
+		set_variable = {
+			which = education_loss_L
+			value = 0
+		}
+	}
+}
+country_event = {
+	id = CourtEduWiz.299
+	title = "CourtEduWiz.299.t"
+	desc = "no_localisation"
+	picture = CITY_DEVELOPMENT_AU_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "no_localisation"
+		country_event = {
+			id = CourtEduWiz.200
+		}
+	}
+}
+country_event = {
+	id = CourtEduWiz.399
+	title = "CourtEduWiz.399.t"
+	desc = "no_localisation"
+	picture = CITY_DEVELOPMENT_AU_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "no_localisation"
+		country_event = {
+			id = CourtEduWiz.300
+		}
+	}
+}
+country_event = {
+	id = CourtEduWiz.201
+	title = "CourtEduWiz.201.t"
+	desc = "CourtEduWiz.201.d"
+	picture = all_news
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		hidden_effect = {
+			multiply_variable = {
+				which = treasury_L
+				value = 2
+			}
+			set_variable = {
+				which = court_missing_endowment_half
+				value = 0
+			}
+			set_variable = {
+				which = court_missing_endowment_half
+				which = court_missing_endowment
+			}
+			multiply_variable = {
+				which = court_missing_endowment_half
+				value = 0.5
+			}
+			set_variable = {
+				which = court_missing_endowment_more
+				value = 0
+			}
+			set_variable = {
+				which = court_missing_endowment_more
+				which = court_missing_endowment
+			}
+			multiply_variable = {
+				which = court_missing_endowment_more
+				value = 1.5
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.201.o4"
+		trigger = {
+			check_variable = {
+				which = treasury_L
+				which = court_missing_endowment_more
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = ducat_loss
+				value = 0
+			}
+			set_variable = {
+				which = ducat_loss
+				which = court_missing_endowment_more
+			}
+			change_variable = {
+				which = court_money_endowed
+				which = ducat_loss
+			}
+			set_variable = {
+				which = court_missing_endowment
+				value = 0
+			}
+			custom_tooltip = scaled_ducat_loss_tooltip
+			hidden_effect = {
+				set_variable = {
+					which = temp_loss
+					which = ducat_loss
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16384
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16384
+					}
+					add_treasury = -16384
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8192
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8192
+					}
+					add_treasury = -8192
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4096
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4096
+					}
+					add_treasury = -4096
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2048
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2048
+					}
+					add_treasury = -2048
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1024
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1024
+					}
+					add_treasury = -1024
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 512
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 512
+					}
+					add_treasury = -512
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 256
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 256
+					}
+					add_treasury = -256
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 128
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 128
+					}
+					add_treasury = -128
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 64
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 64
+					}
+					add_treasury = -64
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 32
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 32
+					}
+					add_treasury = -32
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16
+					}
+					add_treasury = -16
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8
+					}
+					add_treasury = -8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4
+					}
+					add_treasury = -4
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2
+					}
+					add_treasury = -2
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1
+					}
+					add_treasury = -1
+				}
+				set_variable = {
+					which = temp_loss
+					value = 0
+				}
+			}
+		}
+		custom_tooltip = CourtEduWiz_cmore_tooltip
+	}
+	option = {
+		name = "CourtEduWiz.201.o1"
+		trigger = {
+			check_variable = {
+				which = treasury_L
+				which = court_missing_endowment
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = ducat_loss
+				value = 0
+			}
+			set_variable = {
+				which = ducat_loss
+				which = court_missing_endowment
+			}
+			change_variable = {
+				which = court_money_endowed
+				which = ducat_loss
+			}
+			set_variable = {
+				which = court_missing_endowment
+				value = 0
+			}
+			custom_tooltip = scaled_ducat_loss_tooltip
+			hidden_effect = {
+				set_variable = {
+					which = temp_loss
+					which = ducat_loss
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16384
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16384
+					}
+					add_treasury = -16384
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8192
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8192
+					}
+					add_treasury = -8192
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4096
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4096
+					}
+					add_treasury = -4096
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2048
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2048
+					}
+					add_treasury = -2048
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1024
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1024
+					}
+					add_treasury = -1024
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 512
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 512
+					}
+					add_treasury = -512
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 256
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 256
+					}
+					add_treasury = -256
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 128
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 128
+					}
+					add_treasury = -128
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 64
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 64
+					}
+					add_treasury = -64
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 32
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 32
+					}
+					add_treasury = -32
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16
+					}
+					add_treasury = -16
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8
+					}
+					add_treasury = -8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4
+					}
+					add_treasury = -4
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2
+					}
+					add_treasury = -2
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1
+					}
+					add_treasury = -1
+				}
+				set_variable = {
+					which = temp_loss
+					value = 0
+				}
+			}
+		}
+		custom_tooltip = CourtEduWiz_cfull_tooltip
+	}
+	option = {
+		name = "CourtEduWiz.201.o3"
+		hidden_effect = {
+			set_variable = {
+				which = ducat_loss
+				value = 0
+			}
+			set_variable = {
+				which = ducat_loss
+				which = court_missing_endowment_half
+			}
+			change_variable = {
+				which = court_money_endowed
+				which = ducat_loss
+			}
+			subtract_variable = {
+				which = court_missing_endowment
+				which = ducat_loss
+			}
+			custom_tooltip = scaled_ducat_loss_tooltip
+			hidden_effect = {
+				set_variable = {
+					which = temp_loss
+					which = ducat_loss
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16384
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16384
+					}
+					add_treasury = -16384
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8192
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8192
+					}
+					add_treasury = -8192
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4096
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4096
+					}
+					add_treasury = -4096
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2048
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2048
+					}
+					add_treasury = -2048
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1024
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1024
+					}
+					add_treasury = -1024
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 512
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 512
+					}
+					add_treasury = -512
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 256
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 256
+					}
+					add_treasury = -256
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 128
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 128
+					}
+					add_treasury = -128
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 64
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 64
+					}
+					add_treasury = -64
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 32
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 32
+					}
+					add_treasury = -32
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16
+					}
+					add_treasury = -16
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8
+					}
+					add_treasury = -8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4
+					}
+					add_treasury = -4
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2
+					}
+					add_treasury = -2
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1
+					}
+					add_treasury = -1
+				}
+				set_variable = {
+					which = temp_loss
+					value = 0
+				}
+			}
+		}
+		custom_tooltip = CourtEduWiz_chalf_tooltip
+	}
+	option = {
+		name = "CourtEduWiz.201.o2"
+	}
+	after = {
+		set_variable = {
+			which = court_missing_endowment
+			value = 0
+		}
+		set_variable = {
+			which = court_missing_endowment_half
+			value = 0
+		}
+		set_variable = {
+			which = court_missing_endowment_more
+			value = 0
+		}
+		set_variable = {
+			which = treasury_L
+			value = 0
+		}
+		set_variable = {
+			which = ducat_loss
+			value = 0
+		}
+		country_event = {
+			id = court.100
+		}
+	}
+}
+country_event = {
+	id = CourtEduWiz.202
+	title = "CourtEduWiz.202.t"
+	desc = "CourtEduWiz.202.d"
+	picture = all_news
+	is_triggered_only = yes
+	hidden = no
+	immediate = {
+		hidden_effect = {
+			multiply_variable = {
+				which = treasury_L
+				value = 2
+			}
+			set_variable = {
+				which = education_missing_endowment_half
+				value = 0
+			}
+			set_variable = {
+				which = education_missing_endowment_half
+				which = education_missing_endowment
+			}
+			multiply_variable = {
+				which = education_missing_endowment_half
+				value = 0.5
+			}
+			set_variable = {
+				which = education_missing_endowment_more
+				value = 0
+			}
+			set_variable = {
+				which = education_missing_endowment_more
+				which = education_missing_endowment
+			}
+			multiply_variable = {
+				which = education_missing_endowment_more
+				value = 1.5
+			}
+		}
+	}
+	option = {
+		name = "CourtEduWiz.201.o4"
+		trigger = {
+			check_variable = {
+				which = treasury_L
+				which = education_missing_endowment_more
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = ducat_loss
+				value = 0
+			}
+			set_variable = {
+				which = ducat_loss
+				which = education_missing_endowment_more
+			}
+			change_variable = {
+				which = education_money_endowed
+				which = ducat_loss
+			}
+			set_variable = {
+				which = education_missing_endowment
+				value = 0
+			}
+			custom_tooltip = scaled_ducat_loss_tooltip
+			hidden_effect = {
+				set_variable = {
+					which = temp_loss
+					which = ducat_loss
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16384
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16384
+					}
+					add_treasury = -16384
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8192
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8192
+					}
+					add_treasury = -8192
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4096
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4096
+					}
+					add_treasury = -4096
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2048
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2048
+					}
+					add_treasury = -2048
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1024
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1024
+					}
+					add_treasury = -1024
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 512
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 512
+					}
+					add_treasury = -512
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 256
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 256
+					}
+					add_treasury = -256
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 128
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 128
+					}
+					add_treasury = -128
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 64
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 64
+					}
+					add_treasury = -64
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 32
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 32
+					}
+					add_treasury = -32
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16
+					}
+					add_treasury = -16
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8
+					}
+					add_treasury = -8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4
+					}
+					add_treasury = -4
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2
+					}
+					add_treasury = -2
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1
+					}
+					add_treasury = -1
+				}
+				set_variable = {
+					which = temp_loss
+					value = 0
+				}
+			}
+		}
+		custom_tooltip = CourtEduWiz_emore_tooltip
+	}
+	option = {
+		name = "CourtEduWiz.201.o1"
+		trigger = {
+			check_variable = {
+				which = treasury_L
+				which = education_missing_endowment
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = ducat_loss
+				value = 0
+			}
+			set_variable = {
+				which = ducat_loss
+				which = education_missing_endowment
+			}
+			change_variable = {
+				which = education_money_endowed
+				which = ducat_loss
+			}
+			set_variable = {
+				which = education_missing_endowment
+				value = 0
+			}
+			custom_tooltip = scaled_ducat_loss_tooltip
+			hidden_effect = {
+				set_variable = {
+					which = temp_loss
+					which = ducat_loss
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16384
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16384
+					}
+					add_treasury = -16384
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8192
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8192
+					}
+					add_treasury = -8192
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4096
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4096
+					}
+					add_treasury = -4096
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2048
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2048
+					}
+					add_treasury = -2048
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1024
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1024
+					}
+					add_treasury = -1024
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 512
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 512
+					}
+					add_treasury = -512
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 256
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 256
+					}
+					add_treasury = -256
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 128
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 128
+					}
+					add_treasury = -128
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 64
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 64
+					}
+					add_treasury = -64
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 32
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 32
+					}
+					add_treasury = -32
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16
+					}
+					add_treasury = -16
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8
+					}
+					add_treasury = -8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4
+					}
+					add_treasury = -4
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2
+					}
+					add_treasury = -2
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1
+					}
+					add_treasury = -1
+				}
+				set_variable = {
+					which = temp_loss
+					value = 0
+				}
+			}
+		}
+		custom_tooltip = CourtEduWiz_efull_tooltip
+	}
+	option = {
+		name = "CourtEduWiz.201.o3"
+		hidden_effect = {
+			set_variable = {
+				which = ducat_loss
+				value = 0
+			}
+			set_variable = {
+				which = ducat_loss
+				which = education_missing_endowment_half
+			}
+			change_variable = {
+				which = education_money_endowed
+				which = ducat_loss
+			}
+			subtract_variable = {
+				which = education_missing_endowment
+				which = ducat_loss
+			}
+			custom_tooltip = scaled_ducat_loss_tooltip
+			hidden_effect = {
+				set_variable = {
+					which = temp_loss
+					which = ducat_loss
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16384
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16384
+					}
+					add_treasury = -16384
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8192
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8192
+					}
+					add_treasury = -8192
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4096
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4096
+					}
+					add_treasury = -4096
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2048
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2048
+					}
+					add_treasury = -2048
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1024
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1024
+					}
+					add_treasury = -1024
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 512
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 512
+					}
+					add_treasury = -512
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 256
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 256
+					}
+					add_treasury = -256
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 128
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 128
+					}
+					add_treasury = -128
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 64
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 64
+					}
+					add_treasury = -64
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 32
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 32
+					}
+					add_treasury = -32
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 16
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 16
+					}
+					add_treasury = -16
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 8
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 8
+					}
+					add_treasury = -8
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 4
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 4
+					}
+					add_treasury = -4
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 2
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 2
+					}
+					add_treasury = -2
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = temp_loss
+							value = 1
+						}
+					}
+					subtract_variable = {
+						which = temp_loss
+						value = 1
+					}
+					add_treasury = -1
+				}
+				set_variable = {
+					which = temp_loss
+					value = 0
+				}
+			}
+		}
+		custom_tooltip = CourtEduWiz_ehalf_tooltip
+	}
+	option = {
+		name = "CourtEduWiz.201.o2"
+	}
+	after = {
+		set_variable = {
+			which = education_missing_endowment
+			value = 0
+		}
+		set_variable = {
+			which = education_missing_endowment_half
+			value = 0
+		}
+		set_variable = {
+			which = education_missing_endowment_more
+			value = 0
+		}
+		set_variable = {
+			which = treasury_L
+			value = 0
+		}
+		set_variable = {
+			which = ducat_loss
+			value = 0
+		}
+		country_event = {
+			id = POP_Estates_Interactions.302
+		}
+	}
+}

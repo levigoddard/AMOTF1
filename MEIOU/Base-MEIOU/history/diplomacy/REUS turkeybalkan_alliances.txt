@@ -1,0 +1,221 @@
+alliance = {
+	first = BYZ
+	second = SER
+	start_date = 1352.1.1
+	end_date = 1357.1.1
+}
+alliance = {
+	first = BUL
+	second = SER
+	start_date = 1352.1.1
+	end_date = 1357.1.1
+}
+alliance = {
+	first = BYZ
+	second = GEN
+	start_date = 1450.1.1
+	end_date = 1453.5.29
+}
+alliance = {
+	first = TSL
+	second = ALB
+	start_date = 1333.1.1
+	end_date = 1371.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = BUL
+	second = VID
+	start_date = 1356.1.1
+	end_date = 1371.2.16
+}
+dependency = {
+	subject_type = "vassal"
+	first = BUL
+	second = DOB
+	start_date = 1356.1.1
+	end_date = 1371.2.16
+}
+dependency = {
+	subject_type = "personal_union"
+	first = MON
+	second = ALB
+	start_date = 1382.1.1
+	end_date = 1385.1.1
+}
+guarantee = {
+	first = BYZ
+	second = MOE
+	start_date = 1356.1.1
+	end_date = 1383.4.26
+}
+alliance = {
+	first = BYZ
+	second = MOE
+	start_date = 1383.4.26
+	end_date = 1454.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = MEN
+	start_date = 1390.1.1
+	end_date = 1402.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = MEN
+	start_date = 1414.1.1
+	end_date = 1424.1.1
+}
+dependency = {
+	subject_type = "personal_union"
+	first = WAL
+	second = TRA
+	start_date = 1599.1.1
+	end_date = 1601.1.1
+}
+dependency = {
+	subject_type = "personal_union"
+	first = WAL
+	second = MOL
+	start_date = 1600.1.1
+	end_date = 1601.1.1
+}
+alliance = {
+	first = TUR
+	second = TRA
+	start_date = 1528.2.28
+	end_date = 1562.6.1
+}
+alliance = {
+	first = TUR
+	second = HUN
+	start_date = 1528.2.28
+	end_date = 1562.6.1
+}
+alliance = {
+	first = TUR
+	second = PRU
+	start_date = 1790.1.1
+	end_date = 1800.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = MOE
+	second = ATH
+	start_date = 1453.5.30
+	end_date = 1458.8.1
+}
+march = {
+	first = TUR
+	second = CRI
+	start_date = 1475.6.1
+	end_date = 1777.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = RUS
+	second = CRI
+	start_date = 1777.1.1
+	end_date = 1783.7.21
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = WAL
+	start_date = 1418.1.1
+	end_date = 1443.10.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = WAL
+	start_date = 1445.1.1
+	end_date = 1456.4.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = HUN
+	second = WAL
+	start_date = 1456.4.1
+	end_date = 1462.11.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = WAL
+	start_date = 1462.11.1
+	end_date = 1599.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = WAL
+	start_date = 1601.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = TRA
+	start_date = 1601.1.1
+	end_date = 1699.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = RAG
+	start_date = 1528.1.1
+	end_date = 1806.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = CEP
+	start_date = 1799.3.1
+	end_date = 1807.7.7
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = SER
+	start_date = 1817.1.1
+	end_date = 1850.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = EGY
+	start_date = 1805.1.1
+	end_date = 1831.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = HEJ
+	start_date = 1818.6.1
+	end_date = 1916.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = TUR
+	second = CIR
+	start_date = 1555.1.1
+	end_date = 1774.7.21
+}
+dependency = {
+	subject_type = "decentralized_vassal"
+	first = ERE
+	second = CNK
+	start_date = 1356.1.1
+	end_date = 1371.2.16
+}
+dependency = {
+	subject_type = "decentralized_vassal"
+	first = ERE
+	second = ERZ
+	start_date = 1356.1.1
+	end_date = 1380.1.1
+}

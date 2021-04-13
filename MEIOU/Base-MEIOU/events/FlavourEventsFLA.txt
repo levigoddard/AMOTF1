@@ -1,0 +1,26 @@
+country_event = {
+	id = flavor_fla.1
+	title = "flavor_fla.1.n"
+	desc = "flavor_fla.1.t"
+	picture = BURGUNDIAN_PRESENTATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = FLA
+		is_at_war = no
+		NOT = {
+			has_ruler = "Louis II"
+		}
+		ai = yes
+		ARS = {
+			has_ruler = "Margarethe III"
+		}
+		exists = ARS
+	}
+	option = {
+		name = "flavor_fla.1.a"
+		ARS = {
+			inherit = FLA
+		}
+	}
+}

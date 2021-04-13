@@ -1,0 +1,117 @@
+country_event = {
+	id = flavor_kor.1
+	title = "flavor_kor.EVTNAME1"
+	desc = "flavor_kor.EVTDESC1"
+	picture = MILITARY_CAMP_eventPicture
+	fire_only_once = yes
+	trigger = {
+		primary_culture = korean
+		is_neighbor_of = MCH
+		is_year = 1600
+		NOT = {
+			is_year = 1700
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_kor.EVTOPTA1"
+		every_owned_province = {
+			every_neighbor_province = {
+				limit = {
+					owned_by = MCH
+					controlled_by = MCH
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_kor.5
+	title = "flavor_kor.EVTNAME5"
+	desc = "flavor_kor.EVTDESC5"
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	trigger = {
+		primary_culture = korean
+		is_year = 1608
+		NOT = {
+			is_year = 1633
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_kor.EVTOPTOK"
+		736 = {
+			add_province_modifier = {
+				name = "mission_medium_urban_gravity"
+				duration = 7300
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+		}
+		730 = {
+			add_province_modifier = {
+				name = "mission_medium_urban_gravity"
+				duration = 7300
+			}
+			custom_tooltip = desc_mission_medium_urban_gravity_tt
+		}
+	}
+}
+country_event = {
+	id = 10500
+	title = "EVTNAME10500"
+	desc = "EVTDESC10500"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = JOS
+		NOT = {
+			is_year = 1500
+		}
+	}
+	mean_time_to_happen = {
+		years = 166
+		modifier = {
+			factor = 2.0
+			NOT = {
+				adm = 1
+			}
+		}
+		modifier = {
+			factor = 0.8
+			adm = 4
+		}
+		modifier = {
+			factor = 0.5
+			adm = 5
+		}
+	}
+	option = {
+		name = "EVTOPTA10500"
+		add_adm_power = 100
+		add_prestige = 10
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+	}
+	option = {
+		name = "EVTOPTB10500"
+		ai_chance = {
+			factor = 40
+		}
+	}
+}

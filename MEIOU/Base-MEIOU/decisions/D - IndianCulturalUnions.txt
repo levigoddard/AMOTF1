@@ -1,0 +1,458 @@
+country_decisions = {
+	ruler_of_the_deccan = {
+		potential = {
+			culture_group = deccan_group
+			check_variable = {
+				which = "Demesne_in_India"
+				value = 45
+			}
+			NOT = {
+				has_country_flag = ruler_of_the_deccan_flag
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns = 3164
+			owns = 2681
+			owns = 546
+			owns = 544
+			owns = 1587
+			owns = 540
+			OR = {
+				total_development = 1500
+				adm_tech = 44
+			}
+			OR = {
+				ADM = 5
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			set_country_flag = ruler_of_the_deccan_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ruler_of_the_ganges = {
+		potential = {
+			culture_group = eastern_aryan
+			check_variable = {
+				which = "Demesne_in_India"
+				value = 25
+			}
+			NOT = {
+				has_country_flag = ruler_of_the_ganges_flag
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns = 560
+			owns = 561
+			owns = 2696
+			owns = 2693
+			owns = 2688
+			OR = {
+				total_development = 650
+				adm_tech = 44
+			}
+			OR = {
+				ADM = 5
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			set_country_flag = ruler_of_the_ganges_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ruler_of_dravidia = {
+		potential = {
+			culture_group = dravidian
+			check_variable = {
+				which = "Demesne_in_India"
+				value = 15
+			}
+			NOT = {
+				has_country_flag = ruler_of_dravidia_flag
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns = 534
+			owns = 535
+			owns = 538
+			owns = 541
+			owns = 2674
+			OR = {
+				total_development = 230
+				adm_tech = 44
+			}
+			OR = {
+				ADM = 5
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			set_country_flag = ruler_of_dravidia_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_raj = {
+		potential = {
+			culture_group = rajput
+			NOT = {
+				religion_group = muslim
+			}
+			check_variable = {
+				which = "Demesne_in_India"
+				value = 10
+			}
+			NOT = {
+				has_country_flag = ruler_of_the_raj_flag
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 512
+				province_id = 2718
+				province_id = 2707
+				province_id = 525
+				province_id = 2706
+				province_id = 2719
+				province_id = 520
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 512
+			owns = 2718
+			owns = 2707
+			owns = 525
+			owns = 2706
+			owns = 2719
+			owns = 520
+			OR = {
+				total_development = 200
+				adm_tech = 44
+			}
+			OR = {
+				ADM = 4
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			set_country_flag = ruler_of_the_raj_flag
+			west_india_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = RAJ
+				}
+				add_core = RAJ
+			}
+			west_india_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = RAJ
+			}
+			gujarat_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = RAJ
+				}
+				add_core = RAJ
+			}
+			gujarat_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = RAJ
+			}
+			if = {
+				limit = {
+					owns = 511
+				}
+				511 = {
+					add_core = RAJ
+				}
+			}
+			else = {
+				511 = {
+					add_permanent_claim = RAJ
+				}
+			}
+			change_tag = RAJ
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unite_raj_outside = {
+		potential = {
+			check_variable = {
+				which = "Demesne_in_India"
+				value = 66
+			}
+			NOT = {
+				culture_group = rajput
+			}
+			NOT = {
+				has_country_flag = unite_the_raj_flag
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 512
+				province_id = 2718
+				province_id = 2707
+				province_id = 525
+				province_id = 2706
+				province_id = 2719
+				province_id = 520
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns_or_non_sovereign_subject_of = 512
+			owns_or_non_sovereign_subject_of = 2718
+			owns_or_non_sovereign_subject_of = 2707
+			owns_or_non_sovereign_subject_of = 525
+			owns_or_non_sovereign_subject_of = 2706
+			owns_or_non_sovereign_subject_of = 2719
+			owns_or_non_sovereign_subject_of = 520
+			OR = {
+				total_development = 1000
+				adm_tech = 44
+			}
+			OR = {
+				ADM = 5
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			set_country_flag = unite_the_raj_flag
+			if = {
+				limit = {
+					MEW = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = MEW
+			}
+			if = {
+				limit = {
+					HDT = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = HDT
+			}
+			if = {
+				limit = {
+					ALR = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = ALR
+			}
+			if = {
+				limit = {
+					NAG = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = NAG
+			}
+			if = {
+				limit = {
+					MAW = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = MAW
+			}
+			if = {
+				limit = {
+					JAU = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = JAU
+			}
+			if = {
+				limit = {
+					BIK = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = BIK
+			}
+			if = {
+				limit = {
+					JSL = {
+						vassal_of = ROOT
+					}
+				}
+				inherit = JSL
+			}
+			every_country = {
+				limit = {
+					is_subject_of = ROOT
+				}
+				every_owned_province = {
+					limit = {
+						AND = {
+							continent = indian_continent
+							OR = {
+								superregion = west_india_superregion
+								superregion = north_india_superregion
+								superregion = rajputana_superregion
+								superregion = east_india_superregion
+								superregion = central_india_superregion
+								superregion = south_india_superregion
+							}
+						}
+					}
+					cede_province = ROOT
+				}
+			}
+			west_india_region = {
+				add_core = RAJ
+				hidden_effect = {
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
+			511 = {
+				add_core = RAJ
+				hidden_effect = {
+					remove_core = ROOT
+					remove_claim = ROOT
+				}
+			}
+			create_vassal = RAJ
+			RAJ = {
+				if = {
+					limit = {
+						government = monarchy
+						NOT = {
+							has_country_modifier = title_5
+							has_country_modifier = title_6
+							has_country_modifier = title_4
+						}
+					}
+					remove_country_modifier = title_1
+					remove_country_modifier = title_2
+					remove_country_modifier = title_3
+					remove_country_modifier = title_5
+					remove_country_modifier = title_6
+					add_country_modifier = {
+						name = title_4
+						duration = -1
+					}
+					clr_country_flag = title_1
+					clr_country_flag = title_2
+					clr_country_flag = title_3
+					clr_country_flag = title_4
+					clr_country_flag = title_5
+					clr_country_flag = title_6
+				}
+				if = {
+					limit = {
+						NOT = {
+							AND = {
+								OR = {
+									AND = {
+										has_reform = divine_right
+										has_reform = delegated_rulers
+										has_reform = hereditary_elite
+									}
+									has_reform = feudal_monarchy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										has_reform = divine_right
+										has_reform = delegated_rulers
+										has_reform = military_elite
+									}
+									has_reform = despotic_monarchy
+								}
+							}
+						}
+						NOT = {
+							technology_group = western
+						}
+					}
+					change_government = monarchy
+					add_government_reform = divine_right
+					add_government_reform = delegated_rulers
+					add_government_reform = military_elite
+					set_legacy_government = despotic_monarchy
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

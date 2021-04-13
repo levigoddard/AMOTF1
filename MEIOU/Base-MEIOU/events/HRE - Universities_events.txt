@@ -1,0 +1,1207 @@
+namespace = hre_universities
+country_event = {
+	id = hre_universities.001
+	title = "hre_universities.001.t"
+	desc = "hre_universities.001.d"
+	picture = UNIVERSITY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = HAB
+		owns = 83
+		83 = {
+			NOT = {
+				has_building = small_university
+			}
+		}
+		is_year = 1362
+		NOT = {
+			is_year = 1420
+		}
+	}
+	mean_time_to_happen = {
+		years = 4
+	}
+	option = {
+		name = "hre_universities.001.EVTOPTA"
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				ai = yes
+			}
+			add_years_of_income = -0.10
+			add_prestige = 5
+			83 = {
+				add_building = small_university
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			add_years_of_income = -0.25
+			add_prestige = 5
+			83 = {
+				add_building = small_university
+			}
+		}
+	}
+	option = {
+		name = "hre_universities.001.EVTOPTB"
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = hre_universities.002
+	title = "hre_universities.002.t"
+	desc = "hre_universities.002.d"
+	picture = UNIVERSITY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = HUN
+		owns = 153
+		153 = {
+			NOT = {
+				has_building = small_university
+			}
+		}
+		is_year = 1364
+		NOT = {
+			is_year = 1420
+		}
+	}
+	mean_time_to_happen = {
+		years = 4
+	}
+	option = {
+		name = "hre_universities.002.EVTOPTA"
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				ai = yes
+			}
+			add_years_of_income = -0.10
+			add_prestige = 5
+			153 = {
+				add_building = small_university
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			add_years_of_income = -0.25
+			add_prestige = 5
+			153 = {
+				add_building = small_university
+			}
+		}
+	}
+	option = {
+		name = "hre_universities.002.EVTOPTB"
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = hre_universities.100
+	title = "hre_universities.100.t"
+	desc = "hre_universities.100.d"
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					AND = {
+						OR = {
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					religion = catholic
+				}
+			}
+			capital_scope = {
+				set_province_flag = option_for_university
+				save_event_target_as = option_for_university_1
+			}
+			set_country_flag = option_for_university_1
+		}
+		else_if = {
+			limit = {
+				capital_scope = {
+					AND = {
+						OR = {
+							has_building = town_hall
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					check_variable = {
+						which = urban_pop
+						value = 1
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+				}
+			}
+			capital_scope = {
+				set_province_flag = option_for_university
+				save_event_target_as = option_for_university_1
+			}
+			set_country_flag = option_for_university_1
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					AND = {
+						OR = {
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+			}
+			random_owned_province = {
+				limit = {
+					AND = {
+						OR = {
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+				set_province_flag = option_for_university
+				save_event_target_as = option_for_university_2
+			}
+			set_country_flag = option_for_university_2
+		}
+		else_if = {
+			limit = {
+				any_owned_province = {
+					AND = {
+						OR = {
+							has_building = town_hall
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					check_variable = {
+						which = urban_pop
+						value = 1
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+			}
+			random_owned_province = {
+				limit = {
+					AND = {
+						OR = {
+							has_building = town_hall
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					check_variable = {
+						which = urban_pop
+						value = 1
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+				set_province_flag = option_for_university
+				save_event_target_as = option_for_university_2
+			}
+			set_country_flag = option_for_university_2
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					AND = {
+						OR = {
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+			}
+			random_owned_province = {
+				limit = {
+					AND = {
+						OR = {
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+				set_province_flag = option_for_university
+				save_event_target_as = option_for_university_3
+			}
+			set_country_flag = option_for_university_3
+		}
+		else_if = {
+			limit = {
+				any_owned_province = {
+					AND = {
+						OR = {
+							has_building = town_hall
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					check_variable = {
+						which = urban_pop
+						value = 1
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+			}
+			random_owned_province = {
+				limit = {
+					AND = {
+						OR = {
+							has_building = town_hall
+							has_building = urban_infrastructure_1
+							has_building = urban_infrastructure_2
+							has_building = urban_infrastructure_3
+							has_building = urban_infrastructure_4
+							has_building = urban_infrastructure_5
+						}
+					}
+					check_variable = {
+						which = urban_pop
+						value = 1
+					}
+					NOT = {
+						has_building = small_university
+						has_building = medium_university
+						has_building = big_university
+					}
+					NOT = {
+						has_province_flag = option_for_university
+					}
+					religion = catholic
+				}
+				set_province_flag = option_for_university
+				save_event_target_as = option_for_university_3
+			}
+			set_country_flag = option_for_university_3
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					any_province = {
+						region = PREV
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							OR = {
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						NOT = {
+							has_province_flag = option_for_university
+						}
+						religion = catholic
+						owner = {
+							religion = catholic
+						}
+					}
+				}
+			}
+			capital_scope = {
+				random_province = {
+					limit = {
+						region = PREV
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							OR = {
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						NOT = {
+							has_province_flag = option_for_university
+						}
+						religion = catholic
+						owner = {
+							religion = catholic
+						}
+					}
+					set_province_flag = option_for_university
+					save_event_target_as = option_for_university_4
+				}
+			}
+			set_country_flag = option_for_university_4
+		}
+		else_if = {
+			limit = {
+				capital_scope = {
+					any_province = {
+						region = PREV
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							OR = {
+								has_building = town_hall
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						check_variable = {
+							which = urban_pop
+							value = 2
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						NOT = {
+							has_province_flag = option_for_university
+						}
+						religion = catholic
+						owner = {
+							religion = catholic
+						}
+					}
+				}
+			}
+			capital_scope = {
+				random_province = {
+					limit = {
+						region = PREV
+						NOT = {
+							owned_by = ROOT
+						}
+						AND = {
+							OR = {
+								has_building = town_hall
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						check_variable = {
+							which = urban_pop
+							value = 2
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						NOT = {
+							has_province_flag = option_for_university
+						}
+						religion = catholic
+						owner = {
+							religion = catholic
+						}
+					}
+					set_province_flag = option_for_university
+					save_event_target_as = option_for_university_4
+				}
+			}
+			set_country_flag = option_for_university_4
+		}
+	}
+	option = {
+		name = "hre_universities.100.EVTOPTA"
+		trigger = {
+			has_country_flag = option_for_university_1
+		}
+		ai_chance = {
+			factor = 40
+		}
+		event_target:option_for_university_1 = {
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 50
+						}
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 50
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 100
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 100
+					}
+				}
+				else = {
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+			}
+			add_building = small_university
+			every_province = {
+				limit = {
+					is_capital = yes
+					region = PREV
+				}
+				owner = {
+					set_country_flag = region_has_papal_charter_university
+				}
+			}
+		}
+	}
+	option = {
+		name = "hre_universities.100.EVTOPTB"
+		trigger = {
+			has_country_flag = option_for_university_2
+		}
+		ai_chance = {
+			factor = 25
+		}
+		event_target:option_for_university_2 = {
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 50
+						}
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 50
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 100
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 100
+					}
+				}
+				else = {
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+			}
+			add_building = small_university
+			every_province = {
+				limit = {
+					is_capital = yes
+					region = PREV
+				}
+				owner = {
+					set_country_flag = region_has_papal_charter_university
+				}
+			}
+		}
+	}
+	option = {
+		name = "hre_universities.100.EVTOPTC"
+		trigger = {
+			has_country_flag = option_for_university_3
+		}
+		ai_chance = {
+			factor = 25
+		}
+		event_target:option_for_university_3 = {
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 50
+						}
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 50
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 100
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 100
+					}
+				}
+				else = {
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+			}
+			add_building = small_university
+			every_province = {
+				limit = {
+					is_capital = yes
+					region = PREV
+				}
+				owner = {
+					set_country_flag = region_has_papal_charter_university
+				}
+			}
+		}
+	}
+	option = {
+		name = "hre_universities.100.EVTOPTD"
+		trigger = {
+			has_country_flag = option_for_university_4
+		}
+		ai_chance = {
+			factor = 10
+		}
+		event_target:option_for_university_4 = {
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 50
+						}
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 50
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_urban_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 100
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = "wealth_rural_fluid"
+							value = 100
+						}
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 100
+					}
+				}
+				else = {
+					subtract_variable = {
+						which = "wealth_urban_fluid"
+						value = 50
+					}
+					subtract_variable = {
+						which = "wealth_rural_fluid"
+						value = 50
+					}
+				}
+			}
+			add_building = small_university
+			province_event = {
+				id = hre_universities.101
+			}
+			every_province = {
+				limit = {
+					is_capital = yes
+					region = PREV
+				}
+				owner = {
+					set_country_flag = region_has_papal_charter_university
+				}
+			}
+		}
+	}
+	option = {
+		name = "hre_universities.100.EVTOPTE"
+		trigger = {
+			OR = {
+				has_country_flag = option_for_university_1
+				has_country_flag = option_for_university_2
+				has_country_flag = option_for_university_3
+				has_country_flag = option_for_university_4
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+		add_treasury = 100
+	}
+	option = {
+		name = "hre_universities.100.EVTOPTF"
+		trigger = {
+			NOT = {
+				has_country_flag = option_for_university_1
+				has_country_flag = option_for_university_2
+				has_country_flag = option_for_university_3
+				has_country_flag = option_for_university_4
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		add_treasury = 100
+	}
+	after = {
+		clr_country_flag = option_for_university_1
+		clr_country_flag = option_for_university_2
+		clr_country_flag = option_for_university_3
+		clr_country_flag = option_for_university_4
+		event_target:option_for_university_1 = {
+			clr_province_flag = option_for_university
+		}
+		event_target:option_for_university_2 = {
+			clr_province_flag = option_for_university
+		}
+		event_target:option_for_university_3 = {
+			clr_province_flag = option_for_university
+		}
+		event_target:option_for_university_4 = {
+			clr_province_flag = option_for_university
+		}
+	}
+}
+province_event = {
+	id = hre_universities.101
+	title = "hre_universities.101.t"
+	desc = "hre_universities.101.d"
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.GOOD1"
+	}
+}
+country_event = {
+	id = hre_universities.102
+	title = "hre_universities.102.t"
+	desc = "hre_universities.102.d"
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.VERYWELL"
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 4
+				AVI = {
+					num_of_cities = 1
+					AND = {
+						OR = {
+							has_reform = papacy_reform
+							has_reform = papal_government
+						}
+					}
+				}
+				from = {
+					has_country_flag = support_roman_pope
+				}
+			}
+			modifier = {
+				factor = 0.85
+				from = {
+					NOT = {
+						piety = -0.66
+					}
+				}
+			}
+			modifier = {
+				factor = 0.85
+				from = {
+					NOT = {
+						piety = -0.33
+					}
+				}
+			}
+			modifier = {
+				factor = 0.85
+				from = {
+					NOT = {
+						piety = 0
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				from = {
+					piety = 0.25
+				}
+			}
+			modifier = {
+				factor = 1.1
+				from = {
+					piety = 0.50
+				}
+			}
+			modifier = {
+				factor = 1.1
+				from = {
+					piety = 0.75
+				}
+			}
+			modifier = {
+				factor = 0.85
+				from = {
+					NOT = {
+						patriarch_authority = 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.85
+				from = {
+					NOT = {
+						patriarch_authority = 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.15
+				from = {
+					patriarch_authority = 0.55
+				}
+			}
+			modifier = {
+				factor = 1.15
+				from = {
+					patriarch_authority = 0.60
+				}
+			}
+			modifier = {
+				factor = 1.15
+				from = {
+					patriarch_authority = 0.75
+				}
+			}
+			modifier = {
+				factor = 0.5
+				from = {
+					check_variable = {
+						which = university_education_multiplier
+						value = 1.05
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				from = {
+					check_variable = {
+						which = university_education_multiplier
+						value = 1.1
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				from = {
+					check_variable = {
+						which = university_education_multiplier
+						value = 1.15
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				from = {
+					check_variable = {
+						which = university_education_multiplier
+						value = 1.2
+					}
+				}
+			}
+		}
+		from = {
+			country_event = {
+				id = hre_universities.100
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = "OPT.NOWAY"
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 1.5
+				owner = {
+					NOT = {
+						has_opinion = {
+							who = from
+							value = -90
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				owner = {
+					NOT = {
+						has_opinion = {
+							who = from
+							value = -70
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.35
+				owner = {
+					NOT = {
+						has_opinion = {
+							who = from
+							value = -50
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.35
+				owner = {
+					NOT = {
+						has_opinion = {
+							who = from
+							value = -30
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				owner = {
+					NOT = {
+						has_opinion = {
+							who = from
+							value = -10
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.2
+				owner = {
+					NOT = {
+						has_opinion = {
+							who = from
+							value = 10
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					has_opinion = {
+						who = from
+						value = 30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					has_opinion = {
+						who = from
+						value = 50
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					has_opinion = {
+						who = from
+						value = 70
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					has_opinion = {
+						who = from
+						value = 90
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				from = {
+					NOT = {
+						check_variable = {
+							which = upper_pop_non_overseas
+							value = 3
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				from = {
+					check_variable = {
+						which = upper_pop_non_overseas
+						value = 5
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				from = {
+					check_variable = {
+						which = upper_pop_non_overseas
+						value = 12
+					}
+				}
+			}
+		}
+		from = {
+			country_event = {
+				id = hre_universities.103
+				days = 30
+			}
+		}
+	}
+}
+country_event = {
+	id = hre_universities.103
+	title = "hre_universities.103.t"
+	desc = "hre_universities.103.d"
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "OPT.OHWELL"
+		add_treasury = 100
+	}
+}

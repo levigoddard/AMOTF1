@@ -1,0 +1,6007 @@
+country_event = {
+	id = harem_events.1
+	title = harem_events.1.t
+	picture = 3_SONS_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		NOT = {
+			has_country_flag = primogeniture_succession
+		}
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		ruler_age = 30
+		has_heir = no
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+			government = monarchy
+		}
+		desc = harem_events.1.de
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+			NOT = {
+				government = monarchy
+			}
+		}
+		desc = harem_events.1.df
+	}
+	desc = {
+		trigger = {
+			is_female = yes
+		}
+		desc = harem_events.1.female
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			is_female = no
+			NOT = {
+				owns = 384
+			}
+			NOT = {
+				owns = 385
+			}
+			OR = {
+				NOT = {
+					owns = 3875
+				}
+				NOT = {
+					owns = 1402
+				}
+				NOT = {
+					owns = 2552
+				}
+			}
+			NOT = {
+				owns = 361
+			}
+		}
+		desc = harem_events.1.da
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			is_female = no
+			NOT = {
+				owns = 384
+			}
+			NOT = {
+				owns = 385
+			}
+			owns = 3875
+			owns = 1402
+			owns = 2552
+			NOT = {
+				owns = 361
+			}
+		}
+		desc = harem_events.1.db
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			is_female = no
+			owns = 384
+			owns = 385
+			owns = 3875
+			owns = 1402
+			owns = 2552
+			NOT = {
+				owns = 361
+			}
+		}
+		desc = harem_events.1.dc
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			is_female = no
+			owns = 384
+			owns = 385
+			owns = 3875
+			owns = 1402
+			owns = 2552
+			owns = 361
+		}
+		desc = harem_events.1.dd
+	}
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				33 = {
+					set_country_flag = harem_fairest_heir
+				}
+				33 = {
+					set_country_flag = harem_strong_heir
+				}
+				33 = {
+					set_country_flag = harem_leadership_heir
+				}
+				1 = {
+					set_country_flag = harem_genious_heir
+				}
+			}
+			random_list = {
+				33 = {
+					set_country_flag = harem_studious_heir
+				}
+				33 = {
+					set_country_flag = harem_pious_heir
+				}
+				33 = {
+					set_country_flag = harem_inquisitive_heir
+				}
+			}
+			random_list = {
+				33 = {
+					set_country_flag = harem_gregarious_heir
+				}
+				33 = {
+					set_country_flag = harem_entrepreneurial_heir
+				}
+				33 = {
+					set_country_flag = harem_generous_heir
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = harem_events.1.a
+		trigger = {
+			ai = no
+			has_country_flag = harem_pious_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			ADM = 1
+			max_random_dip = 5
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.b
+		trigger = {
+			ai = no
+			has_country_flag = harem_strong_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			MIL = 1
+			max_random_dip = 5
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.c
+		trigger = {
+			ai = no
+			has_country_flag = harem_studious_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			ADM = 1
+			max_random_mil = 5
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.e
+		trigger = {
+			ai = no
+			has_country_flag = harem_leadership_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			MIL = 1
+			max_random_adm = 5
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.d
+		trigger = {
+			ai = no
+			has_country_flag = harem_gregarious_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			DIP = 1
+			max_random_mil = 5
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.f
+		trigger = {
+			ai = no
+			has_country_flag = harem_fairest_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.g
+		trigger = {
+			ai = no
+			has_country_flag = harem_entrepreneurial_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			DIP = 1
+			max_random_adm = 5
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.h
+		trigger = {
+			has_country_flag = harem_inquisitive_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.i
+		trigger = {
+			ai = no
+			has_country_flag = harem_genious_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			DIP = 1
+			MIL = 1
+			ADM = 1
+			age = 10
+		}
+	}
+	option = {
+		name = harem_events.1.j
+		trigger = {
+			ai = no
+			has_country_flag = harem_generous_heir
+		}
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			age = 10
+		}
+	}
+	option = {
+		trigger = {
+			ai = yes
+		}
+		name = harem_events.1.j
+		clr_country_flag = harem_pious_heir
+		clr_country_flag = harem_strong_heir
+		clr_country_flag = harem_leadership_heir
+		clr_country_flag = harem_genious_heir
+		clr_country_flag = harem_studious_heir
+		clr_country_flag = harem_inquisitive_heir
+		clr_country_flag = harem_gregarious_heir
+		clr_country_flag = harem_entrepreneurial_heir
+		clr_country_flag = harem_generous_heir
+		clr_country_flag = harem_fairest_heir
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			age = 10
+			ADM = 1
+			DIP = 1
+			MIL = 1
+		}
+	}
+}
+country_event = {
+	id = harem_events.2
+	title = harem_events.2.t
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		desc = "harem_events.2.d"
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				AND = {
+					AND = {
+						OR = {
+							has_reform = competitive_inheritance
+							has_reform = ottoman_government_legacy
+						}
+					}
+					religion_group = muslim
+				}
+			}
+		}
+		desc = "harem_events.2.d2"
+	}
+	desc = harem_events.2.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	trigger = {
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		has_heir = no
+		has_dlc = "Rights of Man"
+	}
+	immediate = {
+		hidden_effect = {
+			define_ruler = {
+				dynasty = ROOT
+				male = yes
+				age = 25
+				max_random_adm = 4
+				max_random_mil = 4
+				max_random_dip = 4
+			}
+		}
+	}
+	is_triggered_only = yes
+	option = {
+		name = harem_events.2.a
+		custom_tooltip = harem_events.2.a.tt
+	}
+}
+country_event = {
+	id = harem_events.3
+	title = harem_events.3.t
+	desc = harem_events.3.d
+	picture = 3_SONS_eventPicture
+	trigger = {
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		has_dlc = "Rights of Man"
+		has_heir = yes
+		ruler_age = 30
+		has_regency = no
+		heir_age = 15
+		NOT = {
+			heir_age = 25
+		}
+		NOT = {
+			has_ruler_flag = sancaga_cikma
+		}
+		NOT = {
+			heir_dip = 5
+		}
+		NOT = {
+			heir_adm = 5
+		}
+		NOT = {
+			heir_mil = 5
+		}
+		num_of_cities = 15
+		any_owned_province = {
+			has_owner_culture = yes
+			NOT = {
+				any_neighbor_province = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owns = 1441
+				}
+				random_list = {
+					80 = {
+						1441 = {
+							save_event_target_as = sancaga_cikma_province
+						}
+					}
+					20 = {
+						random_owned_province = {
+							limit = {
+								has_owner_culture = yes
+								NOT = {
+									any_neighbor_province = {
+										NOT = {
+											owned_by = ROOT
+										}
+									}
+								}
+							}
+							save_event_target_as = sancaga_cikma_province
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						owns = 1441
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_owner_culture = yes
+						NOT = {
+							any_neighbor_province = {
+								NOT = {
+									owned_by = ROOT
+								}
+							}
+						}
+					}
+					save_event_target_as = sancaga_cikma_province
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1000
+	}
+	option = {
+		name = harem_events.3.a
+		custom_tooltip = harem_events.3.a.tt
+		set_ruler_flag = sancaga_cikma
+		event_target:sancaga_cikma_province = {
+			add_province_modifier = {
+				name = "heir_in_training"
+				duration = 1825
+			}
+		}
+	}
+	option = {
+		name = harem_events.3.b
+		custom_tooltip = harem_events.3.b.tt
+		set_ruler_flag = sancaga_cikma
+	}
+}
+country_event = {
+	id = harem_events.4
+	title = harem_events.4.t
+	desc = harem_events.4.d
+	picture = 3_SONS_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		has_ruler_flag = sancaga_cikma
+		NOT = {
+			has_ruler_flag = returned_from_sancaga_sikma_province
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = heir_in_training
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = harem_events.4.a
+		set_ruler_flag = returned_from_sancaga_sikma_province
+		custom_tooltip = harem_events.4.a.tt
+	}
+}
+country_event = {
+	id = harem_events.5
+	title = harem_events.5.t
+	picture = 3_SONS_eventPicture
+	desc = {
+		desc = harem_events.5.db
+		trigger = {
+			OR = {
+				NOT = {
+					is_year = 1465
+				}
+				NOT = {
+					capital = 1402
+				}
+			}
+		}
+	}
+	desc = {
+		desc = harem_events.5.da
+		trigger = {
+			is_year = 1465
+			capital = 1402
+		}
+	}
+	trigger = {
+		has_ruler_flag = sancaga_cikma
+		has_dlc = "Rights of Man"
+		NOT = {
+			has_ruler_flag = returned_from_sancaga_sikma_province
+		}
+		any_owned_province = {
+			has_province_modifier = heir_in_training
+		}
+	}
+	mean_time_to_happen = {
+		months = 60
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = heir_in_training
+				}
+				remove_province_modifier = heir_in_training
+				save_event_target_as = heir_revolter
+			}
+		}
+	}
+	option = {
+		name = harem_events.5.a
+		set_ruler_flag = returned_from_sancaga_sikma_province
+		event_target:heir_revolter = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				use_heir_as_leader = yes
+				culture = ROOT
+				religion = ROOT
+			}
+		}
+		define_heir = {
+			dynasty = ROOT
+			age = 15
+			male = yes
+		}
+	}
+}
+country_event = {
+	id = harem_events.6
+	title = harem_events.6.t
+	desc = harem_events.6.d
+	picture = 3_SONS_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		has_ruler_flag = sancaga_cikma
+		NOT = {
+			has_ruler_flag = returned_from_sancaga_sikma_province
+		}
+		any_owned_province = {
+			has_province_modifier = heir_in_training
+		}
+	}
+	mean_time_to_happen = {
+		months = 60
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = heir_in_training
+				}
+				remove_province_modifier = heir_in_training
+				save_event_target_as = heir_governorship_province
+			}
+			random_list = {
+				33 = {
+					set_country_flag = dip_heir_train
+				}
+				33 = {
+					set_country_flag = mil_heir_train
+				}
+				33 = {
+					set_country_flag = adm_heir_train
+				}
+			}
+		}
+	}
+	option = {
+		name = harem_events.6.a
+		set_ruler_flag = returned_from_sancaga_sikma_province
+		trigger_switch = {
+			on_trigger = has_country_flag
+			dip_heir_train = {
+				if = {
+					limit = {
+						NOT = {
+							heir_dip = 6
+						}
+					}
+					change_heir_dip = 1
+				}
+				else = {
+					add_dip_power = 50
+				}
+				clr_country_flag = dip_heir_train
+			}
+			mil_heir_train = {
+				if = {
+					limit = {
+						NOT = {
+							heir_mil = 6
+						}
+					}
+					change_heir_mil = 1
+				}
+				else = {
+					add_mil_power = 50
+				}
+				clr_country_flag = mil_heir_train
+			}
+			adm_heir_train = {
+				if = {
+					limit = {
+						NOT = {
+							heir_adm = 6
+						}
+					}
+					change_heir_adm = 1
+				}
+				else = {
+					add_adm_power = 50
+				}
+				clr_country_flag = adm_heir_train
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.7
+	title = harem_events.7.t
+	desc = harem_events.7.d
+	picture = 3_SONS_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_dlc = "Rights of Man"
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		has_regency = no
+		num_of_cities = 25
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					is_in_capital_area = yes
+				}
+				save_event_target_as = enthronement_or_death
+			}
+		}
+	}
+	option = {
+		name = harem_events.7.a
+		event_target:enthronement_or_death = {
+			spawn_rebels = {
+				type = pretender_rebels
+				culture = ROOT
+				religion = ROOT
+				size = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.8
+	title = harem_events.8.t
+	picture = DEATH_OF_HEIR_eventPicture
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			ruler_age = 50
+		}
+		desc = harem_events.8.da
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			ruler_age = 30
+			NOT = {
+				ruler_age = 50
+			}
+		}
+		desc = harem_events.8.dc
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			NOT = {
+				ruler_age = 30
+			}
+		}
+		desc = harem_events.8.db
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+			ruler_age = 50
+		}
+		desc = harem_events.8.dd
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+			ruler_age = 30
+			NOT = {
+				ruler_age = 50
+			}
+		}
+		desc = harem_events.8.df
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+			NOT = {
+				ruler_age = 30
+			}
+		}
+		desc = harem_events.8.de
+	}
+	trigger = {
+		has_dlc = "Rights of Man"
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		is_female = no
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+		NOT = {
+			ruler_age = 60
+		}
+	}
+	immediate = {
+		set_ruler_flag = death_of_valide_sultan
+	}
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.8
+			ruler_age = 50
+		}
+	}
+	option = {
+		name = harem_events.8.a
+		add_adm_power = -25
+		add_prestige = 5
+	}
+	option = {
+		name = harem_events.8.b
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			any_owned_province = {
+				is_state = yes
+				is_capital = no
+				is_in_capital_area = yes
+				NOT = {
+					has_province_modifier = waqf_for_dead_valide_sultan
+				}
+			}
+		}
+		add_adm_power = -25
+		add_prestige = 10
+		random_owned_province = {
+			limit = {
+				is_state = yes
+				is_capital = no
+				is_in_capital_area = yes
+				NOT = {
+					has_province_modifier = waqf_for_dead_valide_sultan
+				}
+			}
+			add_province_modifier = {
+				name = "waqf_for_dead_valide_sultan"
+				duration = 3650
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.9
+	title = harem_events.9.t
+	desc = harem_events.9.d
+	picture = QUEEN_AND_MALE_HEIR_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		has_heir = yes
+		heir_age = 15
+		is_heir_leader = no
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	option = {
+		name = harem_events.9.a
+		if = {
+			limit = {
+				heir_mil = 1
+				NOT = {
+					heir_mil = 2
+				}
+			}
+			convert_heir_to_general = 10
+		}
+		if = {
+			limit = {
+				heir_mil = 2
+				NOT = {
+					heir_mil = 3
+				}
+			}
+			convert_heir_to_general = 20
+		}
+		if = {
+			limit = {
+				heir_mil = 3
+				NOT = {
+					heir_mil = 4
+				}
+			}
+			convert_heir_to_general = 30
+		}
+		if = {
+			limit = {
+				heir_mil = 4
+				NOT = {
+					heir_mil = 5
+				}
+			}
+			convert_heir_to_general = 40
+		}
+		if = {
+			limit = {
+				heir_mil = 5
+				NOT = {
+					heir_mil = 6
+				}
+			}
+			convert_heir_to_general = 50
+		}
+		if = {
+			limit = {
+				heir_mil = 6
+			}
+			convert_heir_to_general = 70
+		}
+		if = {
+			limit = {
+				NOT = {
+					heir_claim = 100
+				}
+			}
+			add_heir_claim = 5
+		}
+	}
+	option = {
+		name = harem_events.9.b
+		add_heir_claim = -10
+	}
+}
+country_event = {
+	id = harem_events.10
+	title = harem_events.10.t
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		desc = harem_events.10.da
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		desc = harem_events.10.db
+	}
+	picture = SPY_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		has_heir = yes
+		heir_age = 15
+		has_regency = no
+		is_female = no
+		has_consort = yes
+		NOT = {
+			has_ruler_flag = heir_plotting
+		}
+		NOT = {
+			has_ruler_flag = heir_framed_for_plot
+		}
+	}
+	mean_time_to_happen = {
+		months = 600
+	}
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						consort_has_personality = intricate_web_weaver_personality
+						consort_has_personality = malevolent_personality
+						consort_has_personality = cruel_personality
+					}
+					NOT = {
+						heir_has_personality = intricate_web_weaver_personality
+					}
+					NOT = {
+						heir_has_personality = malevolent_personality
+					}
+					NOT = {
+						heir_has_personality = cruel_personality
+					}
+				}
+				random_list = {
+					25 = {
+						set_ruler_flag = heir_plotting
+					}
+					75 = {
+						set_ruler_flag = heir_framed_for_plot
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						consort_has_personality = intricate_web_weaver_personality
+					}
+					NOT = {
+						consort_has_personality = malevolent_personality
+					}
+					NOT = {
+						consort_has_personality = cruel_personality
+					}
+					OR = {
+						heir_has_personality = intricate_web_weaver_personality
+						heir_has_personality = malevolent_personality
+						heir_has_personality = cruel_personality
+					}
+				}
+				random_list = {
+					75 = {
+						set_ruler_flag = heir_plotting
+					}
+					25 = {
+						set_ruler_flag = heir_framed_for_plot
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						consort_has_personality = intricate_web_weaver_personality
+					}
+					NOT = {
+						consort_has_personality = malevolent_personality
+					}
+					NOT = {
+						consort_has_personality = cruel_personality
+					}
+					NOT = {
+						heir_has_personality = intricate_web_weaver_personality
+					}
+					NOT = {
+						heir_has_personality = malevolent_personality
+					}
+					NOT = {
+						heir_has_personality = cruel_personality
+					}
+				}
+				random_list = {
+					50 = {
+						set_ruler_flag = heir_plotting
+					}
+					50 = {
+						set_ruler_flag = heir_framed_for_plot
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = harem_events.10.a
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		custom_tooltip = harem_events.10.d.tt
+		hidden_effect = {
+			random_list = {
+				75 = {
+					country_event = {
+						id = harem_events.14
+					}
+				}
+				25 = {
+					country_event = {
+						id = harem_events.13
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_ruler_flag = heir_plotting
+				}
+				clr_ruler_flag = heir_plotting
+			}
+			if = {
+				limit = {
+					has_ruler_flag = heir_framed_for_plot
+				}
+				clr_ruler_flag = heir_framed_for_plot
+			}
+		}
+	}
+	option = {
+		name = harem_events.10.a
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		custom_tooltip = harem_events.10.a.tt
+		hidden_effect = {
+			random_list = {
+				75 = {
+					country_event = {
+						id = harem_events.14
+					}
+				}
+				25 = {
+					country_event = {
+						id = harem_events.13
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_ruler_flag = heir_plotting
+				}
+				clr_ruler_flag = heir_plotting
+			}
+			if = {
+				limit = {
+					has_ruler_flag = heir_framed_for_plot
+				}
+				clr_ruler_flag = heir_framed_for_plot
+			}
+		}
+	}
+	option = {
+		name = harem_events.10.b
+		custom_tooltip = harem_events.10.b.tt
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_ruler_flag
+				heir_plotting = {
+					country_event = {
+						id = harem_events.12
+						days = 7
+					}
+					clr_ruler_flag = heir_plotting
+				}
+				heir_framed_for_plot = {
+					country_event = {
+						id = harem_events.11
+						days = 7
+					}
+					clr_ruler_flag = heir_framed_for_plot
+				}
+			}
+		}
+	}
+	option = {
+		name = harem_events.10.c
+		custom_tooltip = harem_events.10.c.tt
+		remove_consort = yes
+		hidden_effect = {
+			define_consort = {}
+			trigger_switch = {
+				on_trigger = has_ruler_flag
+				heir_plotting = {
+					country_event = {
+						id = harem_events.12
+						days = 7
+					}
+					clr_ruler_flag = heir_plotting
+				}
+				heir_framed_for_plot = {
+					country_event = {
+						id = harem_events.11
+						days = 7
+					}
+					clr_ruler_flag = heir_framed_for_plot
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.11
+	title = harem_events.11.t
+	desc = harem_events.11.d
+	picture = QUEEN_AND_MALE_HEIR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = harem_events.11.a
+		add_prestige = 5
+		if = {
+			limit = {
+				NOT = {
+					heir_claim = 100
+				}
+			}
+			add_heir_claim = 5
+		}
+	}
+}
+country_event = {
+	id = harem_events.12
+	title = harem_events.12.t
+	desc = harem_events.12.d
+	picture = 3_SONS_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = harem_events.12.a
+		random_owned_province = {
+			limit = {
+				is_state = yes
+				is_capital = no
+				is_in_capital_area = yes
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				culture = ROOT
+				religion = ROOT
+				size = 1.5
+				use_heir_as_leader = yes
+			}
+			random_neighbor_province = {
+				limit = {
+					owned_by = ROOT
+					is_capital = no
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+					culture = ROOT
+					religion = ROOT
+				}
+			}
+		}
+		define_heir = {
+			male = yes
+			age = 15
+			dynasty = ROOT
+		}
+	}
+}
+country_event = {
+	id = harem_events.13
+	title = harem_events.13.t
+	desc = harem_events.13.d
+	picture = DEATH_OF_HEIR_eventPicture
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		desc = harem_events.13.d2
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		desc = harem_events.13.d
+	}
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			kill_heir = yes
+		}
+	}
+	option = {
+		name = harem_events.13.a
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = harem_events.14
+	title = harem_events.14.t
+	desc = harem_events.14.d
+	picture = 3_SONS_eventPicture
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		desc = harem_events.14.d2
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		desc = harem_events.14.d
+	}
+	is_triggered_only = yes
+	option = {
+		name = harem_events.14.a
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				culture = ROOT
+				religion = ROOT
+				size = 0.5
+				use_heir_as_leader = yes
+			}
+		}
+		hidden_effect = {
+			define_heir = {
+				dynasty = ROOT
+				male = yes
+				age = 15
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.15
+	title = harem_events.15.t
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		has_heir = yes
+		heir_age = 15
+		is_at_war = yes
+		any_neighbor_country = {
+			war_with = ROOT
+		}
+		any_owned_province = {
+			controlled_by = ROOT
+			religion = ROOT
+			any_neighbor_province = {
+				owner = {
+					war_with = ROOT
+				}
+			}
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					controlled_by = ROOT
+					religion = ROOT
+					any_neighbor_province = {
+						owner = {
+							war_with = ROOT
+						}
+					}
+				}
+				save_event_target_as = ottoman_prince_here
+				random_neighbor_province = {
+					limit = {
+						owner = {
+							war_with = ROOT
+						}
+					}
+					owner = {
+						save_event_target_as = enemy_neighbor_ottomans
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		trigger = {
+			event_target:enemy_neighbor_ottomans = {
+				NOT = {
+					religion_group = muslim
+				}
+			}
+		}
+		desc = harem_events.15.da
+	}
+	desc = {
+		trigger = {
+			event_target:enemy_neighbor_ottomans = {
+				religion_group = muslim
+			}
+		}
+		desc = harem_events.15.db
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	option = {
+		name = harem_events.15.a
+		define_heir = {
+			dynasty = ROOT
+			age = 25
+			MIL = 1
+			male = yes
+			claim = 65
+		}
+		event_target:ottoman_prince_here = {
+			add_province_modifier = {
+				name = "ottoman_prince_gravity"
+				duration = 3650
+			}
+		}
+		add_yearly_manpower = 0.05
+	}
+	option = {
+		name = harem_events.15.b
+		custom_tooltip = harem_events.15.b.tt
+		add_heir_claim = -5
+		event_target:ottoman_prince_here = {
+			add_province_modifier = {
+				name = "ottoman_prince_gravity"
+				duration = 3650
+			}
+		}
+		add_yearly_manpower = 0.05
+	}
+}
+country_event = {
+	id = harem_events.16
+	title = harem_events.16.t
+	desc = harem_events.16.d
+	picture = COURT_INTRIGUE_eventPicture
+	trigger = {
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		has_dlc = "Rights of Man"
+		has_heir = yes
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+		NOT = {
+			heir_claim = 90
+		}
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	option = {
+		name = harem_events.16.a
+		add_heir_claim = 5
+	}
+}
+country_event = {
+	id = harem_events.17
+	title = harem_events.17.t
+	desc = harem_events.17.d
+	picture = COURT_INTRIGUE_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		NOT = {
+			has_country_flag = primogeniture_succession
+		}
+		has_heir = yes
+		has_regency = no
+		has_consort = yes
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	option = {
+		name = harem_events.17.a
+		custom_tooltip = harem_events.17.a.tt
+		ai_chance = {
+			factor = 100
+		}
+		add_prestige = 5
+		define_consort = {}
+	}
+	option = {
+		name = harem_events.17.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = harem_events.17.b.tt
+		set_ruler_flag = death_of_valide_sultan
+		define_heir = {
+			male = yes
+			claim = 60
+			age = 15
+			dynasty = ROOT
+		}
+	}
+	option = {
+		name = harem_events.17.c
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = harem_events.17.c.tt
+		add_heir_claim = -10
+	}
+}
+country_event = {
+	id = harem_events.18
+	title = harem_events.18.t
+	desc = harem_events.18.d
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+	trigger = {
+		AND = {
+			OR = {
+				has_reform = competitive_inheritance
+				has_reform = ottoman_government_legacy
+			}
+		}
+		religion_group = muslim
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+		has_dlc = "Rights of Man"
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = architectural_work_of_valide_sultan
+			}
+		}
+		stability = 1
+	}
+	mean_time_to_happen = {
+		months = 500
+	}
+	option = {
+		name = harem_events.18.a
+		ai_chance = {
+			factor = 75
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = architectural_work_of_valide_sultan
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = harem_events.18.b
+		ai_chance = {
+			factor = 25
+		}
+		add_adm_power = 50
+	}
+}
+province_event = {
+	id = harem_events.19
+	title = harem_events.19.t
+	desc = harem_events.19.d
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		is_capital = no
+		is_state = yes
+		owner = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+			has_heir = yes
+			has_consort = yes
+			OR = {
+				consort_mil = 4
+				consort_dip = 4
+				consort_adm = 4
+			}
+			NOT = {
+				consort_has_personality = malevolent_personality
+				consort_has_personality = cruel_personality
+				consort_has_personality = greedy_personality
+				consort_has_personality = embezzler_personality
+			}
+		}
+		NOT = {
+			has_province_modifier = charitable_work_of_haseki
+		}
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	is_mtth_scaled_to_size = 1
+	option = {
+		name = harem_events.19.a
+		area = {
+			limit = {
+				owned_by = ROOT
+				is_capital = no
+				NOT = {
+					has_province_modifier = charitable_work_of_haseki
+				}
+			}
+			add_province_modifier = {
+				name = "charitable_work_of_haseki"
+				duration = 3650
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.20
+	title = harem_events.20.t
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		desc = harem_events.20.d
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		desc = harem_events.20.d2
+	}
+	picture = COURT_INTRIGUE_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		has_regency = no
+		has_consort = yes
+	}
+	mean_time_to_happen = {
+		months = 240
+	}
+	option = {
+		name = harem_events.20.a
+		ai_chance = {
+			factor = 50
+		}
+		add_prestige = 5
+	}
+	option = {
+		name = harem_events.20.b
+		ai_chance = {
+			factor = 50
+		}
+		add_adm_power = -25
+		define_consort = {}
+	}
+}
+country_event = {
+	id = harem_events.21
+	title = harem_events.21.t
+	desc = harem_events.21.d
+	picture = COURT_INTRIGUE_eventPicture
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		desc = harem_events.21.d
+	}
+	desc = {
+		trigger = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		desc = harem_events.21.d2
+	}
+	trigger = {
+		has_dlc = "Rights of Man"
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		has_regency = no
+		has_consort = no
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+	}
+	mean_time_to_happen = {
+		months = 240
+	}
+	option = {
+		name = harem_events.21.a
+		ai_chance = {
+			factor = 50
+		}
+		define_consort = {}
+	}
+	option = {
+		name = harem_events.21.b
+		ai_chance = {
+			factor = 50
+		}
+		define_consort = {}
+	}
+	option = {
+		name = harem_events.21.c
+		add_prestige = -5
+	}
+}
+province_event = {
+	id = harem_events.22
+	title = harem_events.22.t
+	desc = harem_events.22.d
+	picture = BABBLING_BAFFOON_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		is_state = yes
+		is_capital = no
+		owner = {
+			has_heir = yes
+			heir_age = 15
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = nobles_loyalty_removed_a
+				value = 5
+			}
+		}
+	}
+	is_mtth_scaled_to_size = 1
+	option = {
+		name = harem_events.22.a
+		ai_chance = {
+			factor = 1
+		}
+		owner = {
+			add_prestige = -10
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_greater_nobles_weight_share
+						value = 0.05
+					}
+					OR = {
+						check_variable = {
+							which = estate_greater_nobles_weight_share
+							which = estate_lesser_nobles_weight_share
+						}
+						check_variable = {
+							which = estate_greater_nobles_weight_share
+							value = 0.10
+						}
+					}
+				}
+				custom_tooltip = t_estate_greater_nobles_loyalty_removed_a
+				hidden_effect = {
+					set_variable = {
+						which = greater_nobles_loyalty_removed
+						value = 0
+					}
+					set_variable = {
+						which = greater_nobles_loyalty_removed
+						which = nobles_loyalty_removed_a
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 64
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -64
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.64
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 64
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 32
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -32
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.32
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 32
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 16
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -16
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.16
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 16
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 8
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -8
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.08
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 4
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -4
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.04
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 2
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -2
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.02
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = greater_nobles_loyalty_removed
+								value = 1
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_greater_nobles
+							loyalty = -1
+						}
+						change_variable = {
+							which = estate_greater_nobles_loyalty
+							value = -0.01
+						}
+						subtract_variable = {
+							which = greater_nobles_loyalty_removed
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = estate_greater_nobles_loyalty
+									value = 0.01
+								}
+							}
+						}
+						set_variable = {
+							which = estate_greater_nobles_loyalty
+							value = 0.01
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_flag = greater_nobles_control_province
+						}
+						hidden_effect = {
+							set_variable = {
+								which = estate_greater_nobles_loyalty
+								which = owner
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								which = EstateProv_Unrest
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = estate_greater_nobles_loyalty
+							}
+							set_variable = {
+								which = estate_greater_nobles_loyalty
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0.6
+									}
+								}
+								set_province_flag = loss
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.6
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_Unrest
+											value = 0.401
+										}
+									}
+								}
+								set_province_flag = gain
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.4
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+							}
+							else = {
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								value = 16.62
+							}
+							set_variable = {
+								which = inp_m_exp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = inp_m_exp
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+								change_variable = {
+									which = err.math.exp.undef
+									value = 1
+								}
+							}
+							else_if = {
+								limit = {
+									is_variable_equal = {
+										which = inp_m_exp
+										value = 0
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = exp_m_exp
+									value = 1.7
+								}
+								set_variable = {
+									which = int_m_exp
+									which = exp_m_exp
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 0.001
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 1000
+								}
+								set_variable = {
+									which = dec_m_exp
+									which = exp_m_exp
+								}
+								subtract_variable = {
+									which = dec_m_exp
+									which = int_m_exp
+								}
+								set_variable = {
+									which = inp
+									which = inp_m_exp
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = inp
+												value = 0.001
+											}
+										}
+									}
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									change_variable = {
+										which = err.math.ln.undef
+										value = 1
+									}
+								}
+								else = {
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									set_variable = {
+										which = scale
+										value = 10000
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										which = scale
+									}
+									while = {
+										limit = {
+											check_variable = {
+												which = inp
+												value = 2.001
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 0.5
+										}
+										change_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = inp
+													value = 1
+												}
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 2
+										}
+										subtract_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									multiply_variable = {
+										which = inp
+										which = scale
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = k
+													value = 10
+												}
+											}
+										}
+										change_variable = {
+											which = k
+											value = 1
+										}
+										multiply_variable = {
+											which = k_div
+											value = 0.5
+										}
+										set_variable = {
+											which = t_m_ln
+											which = scale
+										}
+										change_variable = {
+											which = t_m_ln
+											which = k_div
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = inp
+													which = t_m_ln
+												}
+											}
+											divide_variable = {
+												which = inp
+												which = t_m_ln
+											}
+											multiply_variable = {
+												which = inp
+												which = scale
+											}
+											set_variable = {
+												which = lt_ind
+												which = k
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 6
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 8
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 9
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 10
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 9.761
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 19.512
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 38.986
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 7
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 77.821
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 155.042
+														}
+													}
+												}
+											}
+											else = {
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 3
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 4
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 5
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 307.717
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 606.246
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 1177.83
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 2
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 2231.436
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 4054.651
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = lt_ind
+												value = 0
+											}
+											change_variable = {
+												which = ln_val
+												which = lt_val
+											}
+										}
+										set_variable = {
+											which = t_m_ln
+											value = 0
+										}
+									}
+									divide_variable = {
+										which = ln_val
+										value = 10000
+									}
+									set_variable = {
+										which = scale
+										value = 0
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										value = 0
+									}
+									set_variable = {
+										which = lt_val
+										value = 0
+									}
+								}
+								set_variable = {
+									which = inp
+									value = 0
+								}
+								multiply_variable = {
+									which = dec_m_exp
+									which = ln_val
+								}
+								set_variable = {
+									which = math.e.expnt
+									which = dec_m_exp
+								}
+								set_variable = {
+									which = math.e.return
+									value = 1
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = math.e.expnt
+												value = -6.999
+											}
+										}
+									}
+									set_variable = {
+										which = exp_val
+										value = 0
+									}
+								}
+								else = {
+									while = {
+										limit = {
+											check_variable = {
+												which = math.e.expnt
+												value = 1
+											}
+										}
+										subtract_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										multiply_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										change_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										divide_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 1
+									}
+									if = {
+										limit = {
+											NOT = {
+												is_variable_equal = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										multiply_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.fct
+											value = 2
+										}
+										set_variable = {
+											which = math.e.fctl
+											value = 2
+										}
+										set_variable = {
+											which = math.e.a1
+											which = math.e.sq
+										}
+										set_variable = {
+											which = math.e.a2
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.a3
+											value = 2
+										}
+										set_variable = {
+											which = math.e.tmp
+											which = math.e.a2
+										}
+										multiply_variable = {
+											which = math.e.tmp
+											which = math.e.a3
+										}
+										change_variable = {
+											which = math.e.tmp
+											which = math.e.a1
+										}
+										divide_variable = {
+											which = math.e.tmp
+											which = math.e.fct
+										}
+										change_variable = {
+											which = math.e.sm
+											which = math.e.tmp
+										}
+										set_variable = {
+											which = math.e.prec
+											value = 3
+										}
+										subtract_variable = {
+											which = math.e.prec
+											value = 1
+										}
+										while = {
+											limit = {
+												check_variable = {
+													which = math.e.prec
+													value = 1
+												}
+											}
+											subtract_variable = {
+												which = math.e.prec
+												value = 1
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											multiply_variable = {
+												which = math.e.a1
+												which = math.e.sq
+											}
+											multiply_variable = {
+												which = math.e.a2
+												which = math.e.sq
+											}
+											change_variable = {
+												which = math.e.a3
+												value = 2
+											}
+											set_variable = {
+												which = math.e.tmp
+												which = math.e.a2
+											}
+											multiply_variable = {
+												which = math.e.tmp
+												which = math.e.a3
+											}
+											change_variable = {
+												which = math.e.tmp
+												which = math.e.a1
+											}
+											divide_variable = {
+												which = math.e.tmp
+												which = math.e.fct
+											}
+											change_variable = {
+												which = math.e.sm
+												which = math.e.tmp
+											}
+										}
+									}
+									multiply_variable = {
+										which = math.e.return
+										which = math.e.sm
+									}
+									set_variable = {
+										which = exp_val
+										which = math.e.return
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 0
+									}
+									set_variable = {
+										which = math.e.tmp
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a1
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a2
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a3
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fctl
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fct
+										value = 0
+									}
+									set_variable = {
+										which = math.e.prec
+										value = 0
+									}
+									set_variable = {
+										which = math.e.sq
+										value = 0
+									}
+								}
+								set_variable = {
+									which = math.e.expnt
+									value = 0
+								}
+								set_variable = {
+									which = math.e.return
+									value = 0
+								}
+								while = {
+									limit = {
+										check_variable = {
+											which = int_m_exp
+											value = 1
+										}
+									}
+									subtract_variable = {
+										which = int_m_exp
+										value = 1
+									}
+									multiply_variable = {
+										which = exp_val
+										which = inp_m_exp
+									}
+								}
+								set_variable = {
+									which = exp_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = int_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = dec_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = ln_val
+									value = 0
+								}
+							}
+							set_variable = {
+								which = inp_m_exp
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = exp_val
+							}
+							set_variable = {
+								which = exp_val
+								value = 0
+							}
+							export_to_variable = {
+								which = EstateProv_LA
+								value = local_autonomy
+							}
+							multiply_variable = {
+								which = EstateProv_LA
+								value = 0.008
+							}
+							change_variable = {
+								which = EstateProv_LA
+								value = 0.2
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								which = EstateProv_LA
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									has_province_flag = loss
+								}
+								clr_province_flag = loss
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							else_if = {
+								limit = {
+									has_province_flag = gain
+								}
+								clr_province_flag = gain
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.1
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_UnrestSave
+										value = 0.001
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = EstateProv_Unrest
+												value = 0.001
+											}
+										}
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_25.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_12.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_6.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_3.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_1.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.1
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.1
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_UnrestSave
+											value = 0
+										}
+									}
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_LA
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								value = 0
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = estate_lesser_nobles_weight_share
+						value = 0.15
+					}
+					OR = {
+						check_variable = {
+							which = estate_lesser_nobles_weight_share
+							which = estate_greater_nobles_weight_share
+						}
+						check_variable = {
+							which = estate_lesser_nobles_weight_share
+							value = 0.25
+						}
+					}
+				}
+				custom_tooltip = t_estate_lesser_nobles_loyalty_removed_a
+				hidden_effect = {
+					set_variable = {
+						which = lesser_nobles_loyalty_removed
+						value = 0
+					}
+					set_variable = {
+						which = lesser_nobles_loyalty_removed
+						which = nobles_loyalty_removed_a
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 64
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -64
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.64
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 64
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 32
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -32
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.32
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 32
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 16
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -16
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.16
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 16
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 8
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -8
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.08
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 4
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -4
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.04
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 2
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -2
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.02
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = lesser_nobles_loyalty_removed
+								value = 1
+							}
+						}
+						add_estate_loyalty = {
+							estate = estate_lesser_nobles
+							loyalty = -1
+						}
+						change_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = -0.01
+						}
+						subtract_variable = {
+							which = lesser_nobles_loyalty_removed
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = estate_lesser_nobles_loyalty
+									value = 0.01
+								}
+							}
+						}
+						set_variable = {
+							which = estate_lesser_nobles_loyalty
+							value = 0.01
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_flag = lesser_nobles_control_province
+						}
+						hidden_effect = {
+							set_variable = {
+								which = estate_lesser_nobles_loyalty
+								which = owner
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								which = EstateProv_Unrest
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = estate_lesser_nobles_loyalty
+							}
+							set_variable = {
+								which = estate_lesser_nobles_loyalty
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0.6
+									}
+								}
+								set_province_flag = loss
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.6
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_Unrest
+											value = 0.401
+										}
+									}
+								}
+								set_province_flag = gain
+								subtract_variable = {
+									which = EstateProv_Unrest
+									value = 0.4
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+							}
+							else = {
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								value = 16.62
+							}
+							set_variable = {
+								which = inp_m_exp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = inp_m_exp
+											value = 0
+										}
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+								change_variable = {
+									which = err.math.exp.undef
+									value = 1
+								}
+							}
+							else_if = {
+								limit = {
+									is_variable_equal = {
+										which = inp_m_exp
+										value = 0
+									}
+								}
+								set_variable = {
+									which = exp_val
+									value = 0
+								}
+							}
+							else = {
+								set_variable = {
+									which = exp_m_exp
+									value = 1.7
+								}
+								set_variable = {
+									which = int_m_exp
+									which = exp_m_exp
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 0.001
+								}
+								multiply_variable = {
+									which = int_m_exp
+									value = 1000
+								}
+								set_variable = {
+									which = dec_m_exp
+									which = exp_m_exp
+								}
+								subtract_variable = {
+									which = dec_m_exp
+									which = int_m_exp
+								}
+								set_variable = {
+									which = inp
+									which = inp_m_exp
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = inp
+												value = 0.001
+											}
+										}
+									}
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									change_variable = {
+										which = err.math.ln.undef
+										value = 1
+									}
+								}
+								else = {
+									set_variable = {
+										which = ln_val
+										value = 0
+									}
+									set_variable = {
+										which = scale
+										value = 10000
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										which = scale
+									}
+									while = {
+										limit = {
+											check_variable = {
+												which = inp
+												value = 2.001
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 0.5
+										}
+										change_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = inp
+													value = 1
+												}
+											}
+										}
+										multiply_variable = {
+											which = inp
+											value = 2
+										}
+										subtract_variable = {
+											which = ln_val
+											value = 6931.472
+										}
+									}
+									multiply_variable = {
+										which = inp
+										which = scale
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = k
+													value = 10
+												}
+											}
+										}
+										change_variable = {
+											which = k
+											value = 1
+										}
+										multiply_variable = {
+											which = k_div
+											value = 0.5
+										}
+										set_variable = {
+											which = t_m_ln
+											which = scale
+										}
+										change_variable = {
+											which = t_m_ln
+											which = k_div
+										}
+										if = {
+											limit = {
+												check_variable = {
+													which = inp
+													which = t_m_ln
+												}
+											}
+											divide_variable = {
+												which = inp
+												which = t_m_ln
+											}
+											multiply_variable = {
+												which = inp
+												which = scale
+											}
+											set_variable = {
+												which = lt_ind
+												which = k
+											}
+											if = {
+												limit = {
+													check_variable = {
+														which = lt_ind
+														value = 6
+													}
+												}
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 8
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 9
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 10
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 9.761
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 19.512
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 38.986
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 7
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 77.821
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 155.042
+														}
+													}
+												}
+											}
+											else = {
+												if = {
+													limit = {
+														check_variable = {
+															which = lt_ind
+															value = 3
+														}
+													}
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 4
+															}
+														}
+														if = {
+															limit = {
+																check_variable = {
+																	which = lt_ind
+																	value = 5
+																}
+															}
+															set_variable = {
+																which = lt_val
+																value = 307.717
+															}
+														}
+														else = {
+															set_variable = {
+																which = lt_val
+																value = 606.246
+															}
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 1177.83
+														}
+													}
+												}
+												else = {
+													if = {
+														limit = {
+															check_variable = {
+																which = lt_ind
+																value = 2
+															}
+														}
+														set_variable = {
+															which = lt_val
+															value = 2231.436
+														}
+													}
+													else = {
+														set_variable = {
+															which = lt_val
+															value = 4054.651
+														}
+													}
+												}
+											}
+											set_variable = {
+												which = lt_ind
+												value = 0
+											}
+											change_variable = {
+												which = ln_val
+												which = lt_val
+											}
+										}
+										set_variable = {
+											which = t_m_ln
+											value = 0
+										}
+									}
+									divide_variable = {
+										which = ln_val
+										value = 10000
+									}
+									set_variable = {
+										which = scale
+										value = 0
+									}
+									set_variable = {
+										which = k
+										value = 0
+									}
+									set_variable = {
+										which = k_div
+										value = 0
+									}
+									set_variable = {
+										which = lt_val
+										value = 0
+									}
+								}
+								set_variable = {
+									which = inp
+									value = 0
+								}
+								multiply_variable = {
+									which = dec_m_exp
+									which = ln_val
+								}
+								set_variable = {
+									which = math.e.expnt
+									which = dec_m_exp
+								}
+								set_variable = {
+									which = math.e.return
+									value = 1
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = math.e.expnt
+												value = -6.999
+											}
+										}
+									}
+									set_variable = {
+										which = exp_val
+										value = 0
+									}
+								}
+								else = {
+									while = {
+										limit = {
+											check_variable = {
+												which = math.e.expnt
+												value = 1
+											}
+										}
+										subtract_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										multiply_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									while = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										change_variable = {
+											which = math.e.expnt
+											value = 1
+										}
+										divide_variable = {
+											which = math.e.return
+											value = 2.718
+										}
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 1
+									}
+									if = {
+										limit = {
+											NOT = {
+												is_variable_equal = {
+													which = math.e.expnt
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										multiply_variable = {
+											which = math.e.sq
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.fct
+											value = 2
+										}
+										set_variable = {
+											which = math.e.fctl
+											value = 2
+										}
+										set_variable = {
+											which = math.e.a1
+											which = math.e.sq
+										}
+										set_variable = {
+											which = math.e.a2
+											which = math.e.expnt
+										}
+										set_variable = {
+											which = math.e.a3
+											value = 2
+										}
+										set_variable = {
+											which = math.e.tmp
+											which = math.e.a2
+										}
+										multiply_variable = {
+											which = math.e.tmp
+											which = math.e.a3
+										}
+										change_variable = {
+											which = math.e.tmp
+											which = math.e.a1
+										}
+										divide_variable = {
+											which = math.e.tmp
+											which = math.e.fct
+										}
+										change_variable = {
+											which = math.e.sm
+											which = math.e.tmp
+										}
+										set_variable = {
+											which = math.e.prec
+											value = 3
+										}
+										subtract_variable = {
+											which = math.e.prec
+											value = 1
+										}
+										while = {
+											limit = {
+												check_variable = {
+													which = math.e.prec
+													value = 1
+												}
+											}
+											subtract_variable = {
+												which = math.e.prec
+												value = 1
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											change_variable = {
+												which = math.e.fctl
+												value = 1
+											}
+											multiply_variable = {
+												which = math.e.fct
+												which = math.e.fctl
+											}
+											multiply_variable = {
+												which = math.e.a1
+												which = math.e.sq
+											}
+											multiply_variable = {
+												which = math.e.a2
+												which = math.e.sq
+											}
+											change_variable = {
+												which = math.e.a3
+												value = 2
+											}
+											set_variable = {
+												which = math.e.tmp
+												which = math.e.a2
+											}
+											multiply_variable = {
+												which = math.e.tmp
+												which = math.e.a3
+											}
+											change_variable = {
+												which = math.e.tmp
+												which = math.e.a1
+											}
+											divide_variable = {
+												which = math.e.tmp
+												which = math.e.fct
+											}
+											change_variable = {
+												which = math.e.sm
+												which = math.e.tmp
+											}
+										}
+									}
+									multiply_variable = {
+										which = math.e.return
+										which = math.e.sm
+									}
+									set_variable = {
+										which = exp_val
+										which = math.e.return
+									}
+									set_variable = {
+										which = math.e.sm
+										value = 0
+									}
+									set_variable = {
+										which = math.e.tmp
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a1
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a2
+										value = 0
+									}
+									set_variable = {
+										which = math.e.a3
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fctl
+										value = 0
+									}
+									set_variable = {
+										which = math.e.fct
+										value = 0
+									}
+									set_variable = {
+										which = math.e.prec
+										value = 0
+									}
+									set_variable = {
+										which = math.e.sq
+										value = 0
+									}
+								}
+								set_variable = {
+									which = math.e.expnt
+									value = 0
+								}
+								set_variable = {
+									which = math.e.return
+									value = 0
+								}
+								while = {
+									limit = {
+										check_variable = {
+											which = int_m_exp
+											value = 1
+										}
+									}
+									subtract_variable = {
+										which = int_m_exp
+										value = 1
+									}
+									multiply_variable = {
+										which = exp_val
+										which = inp_m_exp
+									}
+								}
+								set_variable = {
+									which = exp_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = int_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = dec_m_exp
+									value = 0
+								}
+								set_variable = {
+									which = ln_val
+									value = 0
+								}
+							}
+							set_variable = {
+								which = inp_m_exp
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest
+								which = exp_val
+							}
+							set_variable = {
+								which = exp_val
+								value = 0
+							}
+							export_to_variable = {
+								which = EstateProv_LA
+								value = local_autonomy
+							}
+							multiply_variable = {
+								which = EstateProv_LA
+								value = 0.008
+							}
+							change_variable = {
+								which = EstateProv_LA
+								value = 0.2
+							}
+							multiply_variable = {
+								which = EstateProv_Unrest
+								which = EstateProv_LA
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								which = EstateProv_Unrest
+							}
+							if = {
+								limit = {
+									has_province_flag = loss
+								}
+								clr_province_flag = loss
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = -1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestLoss_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestLoss_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							else_if = {
+								limit = {
+									has_province_flag = gain
+								}
+								clr_province_flag = gain
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 0.1
+								}
+								multiply_variable = {
+									which = EstateProv_Unrest
+									value = 10
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 25.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 25.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_25.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_25.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_25.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 12.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 12.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_12.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_12.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_12.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 6.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 6.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_6.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_6.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_6.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 3.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 3.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_3.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_3.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_3.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 1.6
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 1.6
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_1.6
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_1.6
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestGain_1.6
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.8
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.8
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.8
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.8
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.8
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.4
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.4
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.4
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.4
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.4
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.2
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.2
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.2
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.2
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = EstateProv_Unrest_Inp
+											value = 0.1
+										}
+									}
+									subtract_variable = {
+										which = EstateProv_Unrest_Inp
+										value = 0.1
+									}
+									if = {
+										limit = {
+											NOT = {
+												has_province_modifier = EstateProv_UnrestGain_0.1
+											}
+										}
+										add_province_modifier = {
+											name = EstateProv_UnrestGain_0.1
+											duration = -1
+											hidden = yes
+										}
+									}
+								}
+								else_if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestGain_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestGain_0.1
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = EstateProv_UnrestSave
+										value = 0.001
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = EstateProv_Unrest
+												value = 0.001
+											}
+										}
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_25.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_25.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_12.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_12.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_6.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_6.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_3.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_3.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_1.6
+										}
+										remove_province_modifier = EstateProv_UnrestGain_1.6
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.8
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.8
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.4
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.4
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.2
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.2
+									}
+									if = {
+										limit = {
+											has_province_modifier = EstateProv_UnrestGain_0.1
+										}
+										remove_province_modifier = EstateProv_UnrestGain_0.1
+									}
+								}
+							}
+							else_if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = EstateProv_UnrestSave
+											value = 0
+										}
+									}
+									check_variable = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_25.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_25.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_12.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_12.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_6.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_6.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_3.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_3.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_1.6
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_1.6
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.8
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.8
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.4
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.4
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.2
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.2
+								}
+								if = {
+									limit = {
+										has_province_modifier = EstateProv_UnrestLoss_0.1
+									}
+									remove_province_modifier = EstateProv_UnrestLoss_0.1
+								}
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = EstateProv_Unrest
+										value = 0
+									}
+								}
+								set_variable = {
+									which = EstateProv_Unrest
+									value = 0
+								}
+							}
+							set_variable = {
+								which = EstateProv_UnrestSave
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_LA
+								value = 0
+							}
+							set_variable = {
+								which = EstateProv_Unrest_Inp
+								value = 0
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = harem_events.22.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = province_trauma_10
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = province_trauma
+							value = 0.001
+						}
+					}
+				}
+				set_variable = {
+					which = province_trauma
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					which = province_trauma
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = province_trauma
+						value = 6
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = province_trauma
+							value = 8
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = province_trauma
+								value = 10
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_province_modifier = trauma_devastating
+								}
+							}
+							add_devastation = -100
+							trigger_switch = {
+								on_trigger = has_province_modifier
+								trauma_mild = {
+									remove_province_modifier = trauma_mild
+								}
+								trauma_limited = {
+									remove_province_modifier = trauma_limited
+								}
+								trauma_harsh = {
+									remove_province_modifier = trauma_harsh
+								}
+								trauma_terrible = {
+									remove_province_modifier = trauma_terrible
+								}
+								trauma_devastating = {
+									remove_province_modifier = trauma_devastating
+								}
+							}
+							add_permanent_province_modifier = {
+								name = trauma_devastating
+								duration = -1
+							}
+							add_devastation = 100
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								NOT = {
+									has_province_modifier = trauma_terrible
+								}
+							}
+							add_devastation = -100
+							trigger_switch = {
+								on_trigger = has_province_modifier
+								trauma_mild = {
+									remove_province_modifier = trauma_mild
+								}
+								trauma_limited = {
+									remove_province_modifier = trauma_limited
+								}
+								trauma_harsh = {
+									remove_province_modifier = trauma_harsh
+								}
+								trauma_terrible = {
+									remove_province_modifier = trauma_terrible
+								}
+								trauma_devastating = {
+									remove_province_modifier = trauma_devastating
+								}
+							}
+							add_permanent_province_modifier = {
+								name = trauma_terrible
+								duration = -1
+							}
+							add_devastation = 80
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							NOT = {
+								has_province_modifier = trauma_harsh
+							}
+						}
+						add_devastation = -100
+						trigger_switch = {
+							on_trigger = has_province_modifier
+							trauma_mild = {
+								remove_province_modifier = trauma_mild
+							}
+							trauma_limited = {
+								remove_province_modifier = trauma_limited
+							}
+							trauma_harsh = {
+								remove_province_modifier = trauma_harsh
+							}
+							trauma_terrible = {
+								remove_province_modifier = trauma_terrible
+							}
+							trauma_devastating = {
+								remove_province_modifier = trauma_devastating
+							}
+						}
+						add_permanent_province_modifier = {
+							name = trauma_harsh
+							duration = -1
+						}
+						add_devastation = 60
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = province_trauma
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = province_trauma
+								value = 4
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_province_modifier = trauma_limited
+								}
+							}
+							add_devastation = -100
+							trigger_switch = {
+								on_trigger = has_province_modifier
+								trauma_mild = {
+									remove_province_modifier = trauma_mild
+								}
+								trauma_limited = {
+									remove_province_modifier = trauma_limited
+								}
+								trauma_harsh = {
+									remove_province_modifier = trauma_harsh
+								}
+								trauma_terrible = {
+									remove_province_modifier = trauma_terrible
+								}
+								trauma_devastating = {
+									remove_province_modifier = trauma_devastating
+								}
+							}
+							add_permanent_province_modifier = {
+								name = trauma_limited
+								duration = -1
+							}
+							add_devastation = 40
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								NOT = {
+									has_province_modifier = trauma_mild
+								}
+							}
+							add_devastation = -100
+							trigger_switch = {
+								on_trigger = has_province_modifier
+								trauma_mild = {
+									remove_province_modifier = trauma_mild
+								}
+								trauma_limited = {
+									remove_province_modifier = trauma_limited
+								}
+								trauma_harsh = {
+									remove_province_modifier = trauma_harsh
+								}
+								trauma_terrible = {
+									remove_province_modifier = trauma_terrible
+								}
+								trauma_devastating = {
+									remove_province_modifier = trauma_devastating
+								}
+							}
+							add_permanent_province_modifier = {
+								name = trauma_mild
+								duration = -1
+							}
+							add_devastation = 20
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = province_trauma
+							value = 0
+						}
+					}
+				}
+				set_variable = {
+					which = province_trauma
+					value = 0
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = harem_events.23
+	title = harem_events.23.t
+	desc = harem_events.23.d
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		NOT = {
+			has_country_flag = primogeniture_succession
+		}
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_reform = competitive_inheritance
+						has_reform = ottoman_government_legacy
+					}
+				}
+				religion_group = muslim
+			}
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		has_regency = no
+		num_of_cities = 25
+		ruler_age = 60
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					is_in_capital_area = yes
+				}
+				save_event_target_as = revolter_prince
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	option = {
+		name = harem_events.23.a
+		event_target:revolter_prince = {
+			spawn_rebels = {
+				type = pretender_rebels
+				culture = ROOT
+				religion = ROOT
+				size = 1
+			}
+		}
+	}
+}
+province_event = {
+	id = harem_events.24
+	title = harem_events.24.t
+	desc = harem_events.24.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	trigger = {
+		is_state = yes
+		is_capital = no
+		owner = {
+			has_heir = yes
+			heir_age = 15
+			AND = {
+				OR = {
+					has_reform = competitive_inheritance
+					has_reform = ottoman_government_legacy
+				}
+			}
+			religion_group = muslim
+		}
+		has_dlc = "Rights of Man"
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	is_mtth_scaled_to_size = 1
+	option = {
+		name = harem_events.24.a
+		ai_chance = {
+			factor = 50
+		}
+		add_province_modifier = {
+			name = "ottoman_prince_gravity"
+			duration = 3650
+		}
+		owner = {
+			define_heir = {
+				dynasty = ROOT
+				male = yes
+				age = 20
+				ADM = 1
+				claim = 60
+			}
+			set_heir_flag = ottoman_prince_gravity
+		}
+	}
+	option = {
+		name = harem_events.24.b
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = harem_events.24.b.tt
+		owner = {
+			add_heir_claim = -5
+			set_heir_flag = ottoman_prince_gravity
+		}
+		add_province_modifier = {
+			name = "ottoman_prince_gravity"
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = harem_events.25
+	title = harem_events.25.t
+	desc = harem_events.25.d
+	picture = COURT_INTRIGUE_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		AND = {
+			OR = {
+				AND = {
+					OR = {
+						culture_group = chinese_group
+						has_country_flag = barbarian_claimant_china
+					}
+					has_reform = celestial_empire
+				}
+				has_reform = celestial_empire_legacy
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		NOT = {
+			has_country_flag = primogeniture_succession
+		}
+		has_heir = yes
+		has_regency = no
+		has_consort = yes
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+	}
+	option = {
+		name = harem_events.25.a
+		custom_tooltip = harem_events.25.a.tt
+		ai_chance = {
+			factor = 100
+		}
+		add_prestige = 5
+		define_consort = {}
+	}
+	option = {
+		name = harem_events.25.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = harem_events.25.b.tt
+		set_ruler_flag = death_of_valide_sultan
+		define_heir = {
+			male = yes
+			claim = 60
+			age = 15
+			dynasty = ROOT
+		}
+	}
+	option = {
+		name = harem_events.25.c
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = harem_events.25.c.tt
+		add_heir_claim = -10
+	}
+}
+country_event = {
+	id = harem_events.26
+	title = harem_events.26.t
+	desc = harem_events.26.d
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+	trigger = {
+		AND = {
+			OR = {
+				AND = {
+					OR = {
+						culture_group = chinese_group
+						has_country_flag = barbarian_claimant_china
+					}
+					has_reform = celestial_empire
+				}
+				has_reform = celestial_empire_legacy
+			}
+		}
+		NOT = {
+			religion_group = christian
+		}
+		NOT = {
+			has_ruler_flag = death_of_valide_sultan
+		}
+		has_dlc = "Rights of Man"
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = architectural_work_of_valide_sultan
+			}
+		}
+		stability = 1
+	}
+	mean_time_to_happen = {
+		years = 41
+	}
+	option = {
+		name = harem_events.26.a
+		ai_chance = {
+			factor = 75
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = architectural_work_of_valide_sultan
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = harem_events.26.b
+		ai_chance = {
+			factor = 25
+		}
+		add_adm_power = 50
+	}
+}
+province_event = {
+	id = harem_events.27
+	title = harem_events.27.t
+	desc = harem_events.27.d
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+	trigger = {
+		has_dlc = "Rights of Man"
+		is_capital = no
+		is_state = yes
+		owner = {
+			AND = {
+				OR = {
+					AND = {
+						OR = {
+							culture_group = chinese_group
+							has_country_flag = barbarian_claimant_china
+						}
+						has_reform = celestial_empire
+					}
+					has_reform = celestial_empire_legacy
+				}
+			}
+			NOT = {
+				religion_group = christian
+			}
+			has_heir = yes
+			has_consort = yes
+			OR = {
+				consort_mil = 4
+				consort_dip = 4
+				consort_adm = 4
+			}
+			NOT = {
+				consort_has_personality = malevolent_personality
+				consort_has_personality = cruel_personality
+				consort_has_personality = greedy_personality
+				consort_has_personality = embezzler_personality
+			}
+		}
+		NOT = {
+			has_province_modifier = charitable_work_of_haseki
+		}
+	}
+	mean_time_to_happen = {
+		months = 400
+	}
+	is_mtth_scaled_to_size = 1
+	option = {
+		name = harem_events.27.a
+		area = {
+			limit = {
+				owned_by = ROOT
+				is_capital = no
+				NOT = {
+					has_province_modifier = charitable_work_of_haseki
+				}
+			}
+			add_province_modifier = {
+				name = "charitable_work_of_haseki"
+				duration = 3650
+			}
+		}
+	}
+}

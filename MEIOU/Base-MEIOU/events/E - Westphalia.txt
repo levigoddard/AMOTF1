@@ -1,0 +1,44 @@
+country_event = {
+	id = westphalia.1012
+	title = "EVTNAME1012"
+	desc = "EVTDESC1012"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	trigger = {
+		is_revolution_target = yes
+		check_variable = {
+			which = "Demesne_in_Westphalia"
+			value = 6
+		}
+		NOT = {
+			exists = WES
+		}
+		NOT = {
+			has_dlc = "Art of War"
+		}
+	}
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.95
+			owns = 66
+		}
+		modifier = {
+			factor = 0.95
+			owns = 1352
+		}
+		modifier = {
+			factor = 0.95
+			owns = 61
+		}
+		modifier = {
+			factor = 0.95
+			owns = 1367
+		}
+	}
+	option = {
+		name = "EVTOPTA1012"
+		westphalian_circle_region = {
+			add_core = WES
+		}
+	}
+}

@@ -1,0 +1,36 @@
+name = "Afghan-Maratha War"
+war_goal = {
+	type = superiority_punitive
+	casus_belli = cb_super_badboy
+}
+1758.1.1 = {
+	add_attacker = DUR
+	add_defender = MAR
+}
+1761.1.14 = {
+	battle = {
+		name = "Panipat"
+		location = 521
+		attacker = {
+			commander = "Ahmad Shah Durrani"
+			infantry = 38000
+			cavalry = 42000
+			artillery = 200
+			losses = 35
+			country = DUR
+		}
+		defender = {
+			commander = "Sadishivrao Bhau"
+			infantry = 15000
+			cavalry = 55000
+			artillery = 200
+			losses = 65
+			country = MAR
+		}
+		result = yes
+	}
+}
+1761.4.1 = {
+	rem_attacker = DUR
+	rem_defender = MAR
+}

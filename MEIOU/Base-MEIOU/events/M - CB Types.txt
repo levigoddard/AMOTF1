@@ -1,0 +1,4530 @@
+namespace = cb_types
+country_event = {
+	id = cb_types.1
+	title = no_localization
+	desc = no_localization
+	picture = MEIOU_AND_TAXES_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = AAA
+	}
+	immediate = {
+		BYZ = {
+			if = {
+				limit = {
+					exists = yes
+					is_subject = no
+					owns = 1402
+					OR = {
+						ai = yes
+						NOT = {
+							has_global_flag = multiplayer
+						}
+					}
+					NOT = {
+						has_country_flag = heir_to_rome
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_roman_east
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_balkan_region = {
+								owned_by = PREV
+							}
+							north_anatolia_region = {
+								owned_by = PREV
+							}
+							south_anatolia_region = {
+								owned_by = PREV
+							}
+							greece_region = {
+								owned_by = PREV
+							}
+							dulkadir_area = {
+								owned_by = PREV
+							}
+							cilicia_area = {
+								owned_by = PREV
+							}
+							erzurum_area = {
+								owned_by = PREV
+							}
+							crimea_area = {
+								owned_by = PREV
+							}
+							albania_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_roman_east
+					}
+				}
+			}
+		}
+		WAL = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_wallachia
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							owns = 159
+							owns = 2380
+							owns = 3782
+							oltenia_area = {
+								owned_by = PREV
+							}
+							muntenia_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_wallachia
+					}
+				}
+			}
+		}
+		MOL = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_moldavia
+									target = PREV
+								}
+							}
+						}
+						moldavia_area = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_moldavia
+					}
+				}
+			}
+		}
+		HUN = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_hungary
+									target = PREV
+								}
+							}
+						}
+						kingdom_of_hungary_group = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_hungary
+					}
+				}
+			}
+		}
+		BUL = {
+			if = {
+				limit = {
+					exists = yes
+					adm_tech = 12
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_bulgaria
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_bulgaria_area = {
+								owned_by = PREV
+							}
+							west_bulgaria_area = {
+								owned_by = PREV
+							}
+							dobrogea_area = {
+								owned_by = PREV
+							}
+							macedonia_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_bulgaria
+					}
+				}
+			}
+		}
+		SER = {
+			if = {
+				limit = {
+					exists = yes
+					adm_tech = 12
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_serbia
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							north_serbia_area = {
+								owned_by = PREV
+							}
+							south_serbia_area = {
+								owned_by = PREV
+							}
+							owns = 1392
+							owns = 138
+							macedonia_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_serbia
+					}
+				}
+			}
+		}
+		CRO = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_croatia
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							owns = 2389
+							croatia_area = {
+								owned_by = PREV
+							}
+							east_adriatic_coast_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_croatia
+					}
+				}
+			}
+		}
+		BOS = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_bosnia
+									target = PREV
+								}
+							}
+						}
+						bosnia_area = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_bosnia
+					}
+				}
+			}
+		}
+		ALB = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_albania
+									target = PREV
+								}
+							}
+						}
+						albania_area = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_albania
+					}
+				}
+			}
+		}
+		ALC = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_albania
+									target = PREV
+								}
+							}
+						}
+						albania_area = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_albania
+					}
+				}
+			}
+		}
+		RUS = {
+			if = {
+				limit = {
+					exists = yes
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_russian_expansion_east
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							culture_group = tartar_group
+							culture_group = altaic
+							culture_group = tungusic
+							culture_group = uralic_group
+						}
+						OR = {
+							west_siberia_region = {
+								owned_by = PREV
+							}
+							east_siberia_region = {
+								owned_by = PREV
+							}
+							central_asia_superregion = {
+								owned_by = PREV
+							}
+							outer_mongolia_region = {
+								owned_by = PREV
+							}
+							east_manchuria_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_russian_expansion_east
+					}
+				}
+			}
+		}
+		INC = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_inca
+									target = PREV
+								}
+							}
+						}
+						peru_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_inca
+					}
+				}
+			}
+		}
+		CZC = {
+			if = {
+				limit = {
+					exists = yes
+					has_country_flag = inca_civil_war
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_inca
+									target = PREV
+								}
+							}
+						}
+						peru_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_inca
+					}
+				}
+			}
+		}
+		QUI = {
+			if = {
+				limit = {
+					exists = yes
+					has_country_flag = inca_civil_war
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_inca
+									target = PREV
+								}
+							}
+						}
+						peru_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_inca
+					}
+				}
+			}
+		}
+		PER = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_persian_unification
+									target = PREV
+								}
+							}
+						}
+						culture_group = persian_group
+						OR = {
+							khorasan_region = {
+								owned_by = PREV
+							}
+							persia_region = {
+								owned_by = PREV
+							}
+							afghanistan_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_persian_unification
+					}
+				}
+			}
+		}
+		TIM = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_persian_unification
+									target = PREV
+								}
+							}
+						}
+						culture_group = persian_group
+						OR = {
+							khorasan_region = {
+								owned_by = PREV
+							}
+							persia_region = {
+								owned_by = PREV
+							}
+							afghanistan_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_persian_unification
+					}
+				}
+			}
+		}
+		MOR = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_moroccan_unification
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							owns = 1533
+							owns = 334
+							owns = 2971
+							tafilalt_area = {
+								owned_by = PREV
+							}
+							sus_area = {
+								owned_by = PREV
+							}
+							anfa_area = {
+								owned_by = PREV
+							}
+							marrekesh_area = {
+								owned_by = PREV
+							}
+							fez_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_moroccan_unification
+					}
+				}
+			}
+		}
+		FEZ = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_moroccan_unification
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							owns = 1533
+							owns = 334
+							owns = 2971
+							tafilalt_area = {
+								owned_by = PREV
+							}
+							sus_area = {
+								owned_by = PREV
+							}
+							anfa_area = {
+								owned_by = PREV
+							}
+							marrekesh_area = {
+								owned_by = PREV
+							}
+							fez_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_moroccan_unification
+					}
+				}
+			}
+		}
+		TFL = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_moroccan_unification
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							owns = 1533
+							owns = 334
+							owns = 2971
+							tafilalt_area = {
+								owned_by = PREV
+							}
+							sus_area = {
+								owned_by = PREV
+							}
+							anfa_area = {
+								owned_by = PREV
+							}
+							marrekesh_area = {
+								owned_by = PREV
+							}
+							fez_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_moroccan_unification
+					}
+				}
+			}
+		}
+		SOS = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_moroccan_unification
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							owns = 1533
+							owns = 334
+							owns = 2971
+							tafilalt_area = {
+								owned_by = PREV
+							}
+							sus_area = {
+								owned_by = PREV
+							}
+							anfa_area = {
+								owned_by = PREV
+							}
+							marrekesh_area = {
+								owned_by = PREV
+							}
+							fez_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_moroccan_unification
+					}
+				}
+			}
+		}
+		ENG = {
+			if = {
+				limit = {
+					exists = yes
+					exists = FRA
+					OR = {
+						dynasty = "Plantagenet"
+						dynasty = "Lancaster"
+						dynasty = "York"
+					}
+					NOT = {
+						has_casus_belli = {
+							type = cb_plantagenet_french_throne
+							target = FRA
+						}
+					}
+					FRA = {
+						dynasty = "de Valois"
+					}
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				add_casus_belli = {
+					target = FRA
+					type = cb_plantagenet_french_throne
+				}
+			}
+		}
+		FRA = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_france
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_france_region = {
+								owned_by = PREV
+							}
+							ouest_france_region = {
+								owned_by = PREV
+							}
+							aquitaine_region = {
+								owned_by = PREV
+							}
+							languedoc_region = {
+								owned_by = PREV
+							}
+							high_countries_region = {
+								owned_by = PREV
+							}
+							provence_region = {
+								owned_by = PREV
+								NOT = {
+									AND = {
+										province_id = 202
+										owned_by = PAP
+									}
+								}
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_france
+					}
+				}
+			}
+		}
+		ENG = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_england
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							south_england_region = {
+								owned_by = PREV
+							}
+							north_england_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_england
+					}
+				}
+			}
+		}
+		SCO = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_scotland
+									target = PREV
+								}
+							}
+						}
+						scotland_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_scotland
+					}
+				}
+			}
+		}
+		IRE = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_ireland
+									target = PREV
+								}
+							}
+						}
+						ireland_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_ireland
+					}
+				}
+			}
+		}
+		POR = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_portugal
+									target = PREV
+								}
+							}
+						}
+						portugal_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_portugal
+					}
+				}
+			}
+		}
+		CAS = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_castile
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							leon_region = {
+								owned_by = PREV
+							}
+							castille_region = {
+								owned_by = PREV
+							}
+							andalucia_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_castile
+					}
+				}
+			}
+		}
+		ARA = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_aragon
+									target = PREV
+								}
+							}
+						}
+						aragon_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_aragon
+					}
+				}
+			}
+		}
+		SPA = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_spain
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							leon_region = {
+								owned_by = PREV
+							}
+							castille_region = {
+								owned_by = PREV
+							}
+							andalucia_region = {
+								owned_by = PREV
+							}
+							aragon_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_spain
+					}
+				}
+			}
+		}
+		NAV = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_navarre
+									target = PREV
+								}
+							}
+						}
+						euskal_area = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_navarre
+					}
+				}
+			}
+		}
+		NED = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_netherland
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							belgii_region = {
+								owned_by = PREV
+							}
+							low_countries_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_netherland
+					}
+				}
+			}
+		}
+		GER = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_germany
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							germany_superregion = {
+								owned_by = PREV
+							}
+							swabia_bavarian_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_germany
+					}
+				}
+			}
+		}
+		ERG = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_germany
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							germany_superregion = {
+								owned_by = PREV
+							}
+							swabia_bavarian_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_germany
+					}
+				}
+			}
+		}
+		ITA = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_italy
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_italy_region = {
+								owned_by = PREV
+							}
+							west_italy_region = {
+								owned_by = PREV
+							}
+							central_italy_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_italy
+					}
+				}
+			}
+		}
+		ITC = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_italy
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_italy_region = {
+								owned_by = PREV
+							}
+							west_italy_region = {
+								owned_by = PREV
+							}
+							central_italy_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_italy
+					}
+				}
+			}
+		}
+		ITD = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_italy
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_italy_region = {
+								owned_by = PREV
+							}
+							west_italy_region = {
+								owned_by = PREV
+							}
+							central_italy_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_italy
+					}
+				}
+			}
+		}
+		ITE = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_italy
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_italy_region = {
+								owned_by = PREV
+							}
+							west_italy_region = {
+								owned_by = PREV
+							}
+							central_italy_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_italy
+					}
+				}
+			}
+		}
+		PLC = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_plc
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							polonia_major_region = {
+								owned_by = PREV
+							}
+							polonia_minor_region = {
+								owned_by = PREV
+							}
+							ruthenia_region = {
+								owned_by = PREV
+							}
+							lithuania_region = {
+								owned_by = PREV
+							}
+							central_italy_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_plc
+					}
+				}
+			}
+		}
+		SWE = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_sweden
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							scandinavia_region = {
+								owned_by = PREV
+							}
+							finland_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_sweden
+					}
+				}
+			}
+		}
+		DEN = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_denmark
+									target = PREV
+								}
+							}
+						}
+						danish_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_denmark
+					}
+				}
+			}
+		}
+		NOR = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_norway
+									target = PREV
+								}
+							}
+						}
+						norwegian_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_norway
+					}
+				}
+			}
+		}
+		NOR = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_norway
+									target = PREV
+								}
+							}
+						}
+						norwegian_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_norway
+					}
+				}
+			}
+		}
+		DAN = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_denmark_norway
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							norwegian_region = {
+								owned_by = PREV
+							}
+							danish_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_denmark_norway
+					}
+				}
+			}
+		}
+		POL = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_poland
+									target = PREV
+								}
+							}
+						}
+						polonia_major_region = {
+							owned_by = PREV
+						}
+						polonia_minor_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_poland
+					}
+				}
+			}
+		}
+		LIT = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_lithuania
+									target = PREV
+								}
+							}
+						}
+						lithuania_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_lithuania
+					}
+				}
+			}
+		}
+		SIC = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_sicily
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							sicily_region = {
+								owned_by = PREV
+							}
+							naples_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_sicily
+					}
+				}
+			}
+		}
+		KNP = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_sicily
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							sicily_region = {
+								owned_by = PREV
+							}
+							naples_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_sicily
+					}
+				}
+			}
+		}
+		NAP = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_sicily
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							sicily_region = {
+								owned_by = PREV
+							}
+							naples_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_sicily
+					}
+				}
+			}
+		}
+		BOH = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_bohemia
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							royal_bohemia_area = {
+								owned_by = PREV
+							}
+							north_bohemia_area = {
+								owned_by = PREV
+							}
+							moravia_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_bohemia
+					}
+				}
+			}
+		}
+		TUR = {
+			if = {
+				limit = {
+					exists = yes
+					exists = MAM
+					owns = 1402
+					NOT = {
+						has_casus_belli = {
+							type = cb_caliphate
+							target = MAM
+						}
+					}
+					MAM = {
+						OR = {
+							egypt_region = {
+								owned_by = PREV
+							}
+							west_maghreb_region = {
+								owned_by = PREV
+							}
+							central_maghreb_region = {
+								owned_by = PREV
+							}
+							east_maghreb_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				add_casus_belli = {
+					target = MAM
+					type = cb_caliphate
+				}
+			}
+		}
+		DUR = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_afghnistan
+									target = PREV
+								}
+							}
+						}
+						afghanistan_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_afghnistan
+					}
+				}
+			}
+		}
+		KAB = {
+			if = {
+				limit = {
+					exists = yes
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_afghnistan
+									target = PREV
+								}
+							}
+						}
+						afghanistan_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_afghnistan
+					}
+				}
+			}
+		}
+		2530 = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							owned_by = PAP
+							owner = {
+								is_subject_of = PAP
+							}
+							has_province_modifier = independent_vatican
+							AND = {
+								owner = {
+									tag = AVI
+								}
+								owner = {
+									AND = {
+										OR = {
+											has_reform = papacy_reform
+											has_reform = papal_government
+										}
+									}
+								}
+							}
+						}
+					}
+					PAP = {
+						check_variable = {
+							which = papal_authority
+							value = 300
+						}
+					}
+				}
+				owner = {
+					every_known_country = {
+						limit = {
+							religion = catholic
+							NOT = {
+								has_casus_belli = {
+									type = cb_roman_crusade
+									target = PREV
+								}
+							}
+							piety = -0.20
+							is_excommunicated = no
+							NOT = {
+								has_country_flag = excommunicated
+							}
+						}
+						add_casus_belli = {
+							target = PREV
+							type = cb_roman_crusade
+						}
+					}
+				}
+			}
+		}
+		385 = {
+			owner = {
+				if = {
+					limit = {
+						NOT = {
+							AND = {
+								religion_group = muslim
+								OR = {
+									religion = sunni
+									religion = shiite
+									religion = wahhabi
+									religion = ibadi
+								}
+							}
+						}
+					}
+					every_known_country = {
+						limit = {
+							religion_group = muslim
+							piety = -0.20
+							NOT = {
+								has_casus_belli = {
+									type = cb_meccan_jihad
+									target = PREV
+								}
+							}
+							OR = {
+								religion = sunni
+								religion = shiite
+								religion = wahhabi
+								religion = ibadi
+							}
+						}
+						add_casus_belli = {
+							target = PREV
+							type = cb_meccan_jihad
+						}
+					}
+				}
+			}
+		}
+		379 = {
+			owner = {
+				if = {
+					limit = {
+						NOT = {
+							religion = jewish
+						}
+					}
+					every_known_country = {
+						limit = {
+							religion = jewish
+							piety = -0.20
+							NOT = {
+								has_casus_belli = {
+									type = cb_jerusalem_milkhemet
+									target = PREV
+								}
+							}
+						}
+						add_casus_belli = {
+							target = PREV
+							type = cb_jerusalem_milkhemet
+						}
+					}
+				}
+			}
+		}
+		emperor = {
+			if = {
+				limit = {
+					has_dlc = "Art of War"
+					is_in_league_war = no
+				}
+				every_known_country = {
+					limit = {
+						NOT = {
+							has_casus_belli = {
+								type = cb_religious_league_minor
+								target = PREV
+							}
+						}
+						is_league_leader = yes
+						is_in_league_war = no
+						is_league_enemy = PREV
+						is_revolution_target = no
+					}
+					add_casus_belli = {
+						target = PREV
+						type = cb_religious_league_minor
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = catholic_schism
+			}
+			every_country = {
+				limit = {
+					religion = catholic
+					OR = {
+						piety = 0.20
+						is_defender_of_faith = yes
+						is_papal_controller = yes
+						has_country_flag = sponsored_antipope
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = support_antipope
+						NOT = {
+							has_casus_belli = {
+								type = cb_schism
+								target = PAP
+							}
+						}
+					}
+					add_casus_belli = {
+						target = PAP
+						type = cb_schism
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = support_roman_pope
+						NOT = {
+							has_casus_belli = {
+								type = cb_schism
+								target = AVI
+							}
+						}
+					}
+					add_casus_belli = {
+						target = AVI
+						type = cb_schism
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				always = yes
+			}
+			if = {
+				limit = {
+					is_tribal = yes
+				}
+				every_neighbor_country = {
+					limit = {
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_tribal_raid
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_nomad = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							AND = {
+								OR = {
+									has_reform = nomad_reform
+									has_reform = native_council_legacy
+								}
+							}
+						}
+						horde_unity = 80
+						mil = 5
+					}
+					every_neighbor_country = {
+						limit = {
+							is_nomad = yes
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						reverse_add_casus_belli = {
+							target = PREV
+							type = cb_nomadic_submission
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								NOT = {
+									AND = {
+										OR = {
+											has_reform = nomad_reform
+											has_reform = native_council_legacy
+										}
+									}
+								}
+								NOT = {
+									OR = {
+										AND = {
+											horde_unity = 95
+											mil = 5
+										}
+										AND = {
+											horde_unity = 85
+											mil = 6
+										}
+									}
+								}
+								OR = {
+									horde_unity = 50
+									mil = 3
+								}
+							}
+							AND = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								OR = {
+									AND = {
+										horde_unity = 95
+										mil = 4
+									}
+									AND = {
+										horde_unity = 85
+										mil = 6
+									}
+								}
+							}
+						}
+					}
+					every_neighbor_country = {
+						limit = {
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						reverse_add_casus_belli = {
+							target = PREV
+							type = cb_nomadic_conquest
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							AND = {
+								OR = {
+									has_reform = nomad_reform
+									has_reform = native_council_legacy
+								}
+							}
+						}
+						OR = {
+							AND = {
+								horde_unity = 95
+								mil = 5
+							}
+							AND = {
+								horde_unity = 85
+								mil = 6
+							}
+						}
+					}
+					every_neighbor_country = {
+						limit = {
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						reverse_add_casus_belli = {
+							target = PREV
+							type = cb_nomadic_conquest_mil
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								NOT = {
+									AND = {
+										OR = {
+											has_reform = nomad_reform
+											has_reform = native_council_legacy
+										}
+									}
+								}
+								horde_unity = 25
+								mil = 2
+							}
+							AND = {
+								AND = {
+									OR = {
+										has_reform = nomad_reform
+										has_reform = native_council_legacy
+									}
+								}
+								horde_unity = 50
+								OR = {
+									mil = 4
+									horde_unity = 85
+								}
+							}
+						}
+					}
+					every_neighbor_country = {
+						limit = {
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						reverse_add_casus_belli = {
+							target = PREV
+							type = cb_nomadic_tribute
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = heir_to_rome
+					OR = {
+						ai = yes
+						AND = {
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						NOT = {
+							has_casus_belli = {
+								type = cb_crush_rome
+								target = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					add_casus_belli = {
+						target = PREV
+						type = cb_crush_rome
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = pax_romana_declared
+					}
+					every_neighbor_country = {
+						limit = {
+							PREV = {
+								NOT = {
+									has_casus_belli = {
+										type = cb_pax_romana
+										target = PREV
+									}
+								}
+							}
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						reverse_add_casus_belli = {
+							target = PREV
+							type = cb_pax_romana
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_heir_to_rome
+									target = PREV
+								}
+							}
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+						roman_dejure_group = {
+							owned_by = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_heir_to_rome
+					}
+				}
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_heir_to_rome
+									target = PREV
+								}
+							}
+							NOT = {
+								is_subject_of = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+						any_owned_province = {
+							sea_zone = {
+								region = mediterranean_region
+							}
+							NOT = {
+								region = caucasia_region
+							}
+							OR = {
+								area = crimea_area
+								NOT = {
+									region = crimea_region
+								}
+							}
+							NOT = {
+								area = basarabia_area
+							}
+						}
+						NOT = {
+							border_distance = {
+								who = PREV
+								distance = 110
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_heir_to_rome
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						capital_scope = {
+							OR = {
+								superregion = west_india_superregion
+								superregion = north_india_superregion
+								superregion = rajputana_superregion
+								superregion = east_india_superregion
+								region = afghanistan_region
+								region = khorasan_region
+							}
+						}
+						tag = MUG
+						tag = DLH
+					}
+					AND = {
+						religion_group = muslim
+						NOT = {
+							religion = druze
+						}
+					}
+					MIL = 3
+					NOT = {
+						tag = BAL
+					}
+					NOT = {
+						tag = PER
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						any_owned_province = {
+							continent = indian_continent
+							OR = {
+								superregion = west_india_superregion
+								superregion = north_india_superregion
+								superregion = rajputana_superregion
+								superregion = east_india_superregion
+								region = central_india_region
+							}
+							NOT = {
+								area = assam_area
+							}
+						}
+						NOT = {
+							overlord_of = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+						NOT = {
+							tag = BAL
+						}
+						NOT = {
+							tag = PER
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_hindustan
+					}
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						continent = indian_continent
+					}
+					MIL = 3
+					OR = {
+						tag = MUG
+						tag = HYD
+						AND = {
+							religion_group = muslim
+							capital_scope = {
+								OR = {
+									superregion = west_india_superregion
+									superregion = north_india_superregion
+									superregion = rajputana_superregion
+									superregion = east_india_superregion
+									region = central_india_region
+								}
+							}
+							NOT = {
+								religion = druze
+							}
+							MIL = 4
+						}
+						capital_scope = {
+							OR = {
+								superregion = central_india_superregion
+								superregion = south_india_superregion
+							}
+							OR = {
+								region = carnatic_region
+								area = mysore_area
+								region = west_deccan_region
+								region = east_deccan_region
+								region = western_ghats_region
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						any_owned_province = {
+							OR = {
+								superregion = central_india_superregion
+								superregion = south_india_superregion
+							}
+							OR = {
+								region = carnatic_region
+								area = mysore_area
+							}
+						}
+						is_neighbor_of = PREV
+						NOT = {
+							overlord_of = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_carnatic
+					}
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						continent = indian_continent
+					}
+					MIL = 3
+					OR = {
+						tag = MAR
+						tag = MUG
+						AND = {
+							religion_group = muslim
+							capital_scope = {
+								OR = {
+									superregion = west_india_superregion
+									superregion = north_india_superregion
+									superregion = rajputana_superregion
+									superregion = east_india_superregion
+								}
+							}
+							NOT = {
+								religion = druze
+							}
+							MIL = 4
+						}
+						capital_scope = {
+							OR = {
+								superregion = central_india_superregion
+								superregion = south_india_superregion
+							}
+							OR = {
+								region = west_deccan_region
+								region = east_deccan_region
+								region = western_ghats_region
+								region = carnatic_region
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						any_owned_province = {
+							OR = {
+								superregion = central_india_superregion
+								superregion = south_india_superregion
+							}
+							OR = {
+								region = west_deccan_region
+								region = east_deccan_region
+								area = rayalaseema_area
+								area = kanara_area
+								area = tirupati_area
+							}
+						}
+						is_neighbor_of = PREV
+						NOT = {
+							overlord_of = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_deccan
+					}
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = colonial_government
+							has_reform = colonial_government_legacy
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						any_owned_province = {
+							continent = indian_continent
+						}
+						NOT = {
+							is_subject_of = ROOT
+						}
+						NOT = {
+							overlord_of = ROOT
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_unite_the_raj
+					}
+				}
+			}
+			if = {
+				limit = {
+					primary_culture = vietnamese
+					OR = {
+						MIL = 4
+						statesman = 3
+						adm_tech = 44
+					}
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_vietnam
+									target = PREV
+								}
+							}
+						}
+						vietnam_region = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_vietnam
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = king_of_hungary_outside
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_hungary
+									target = PREV
+								}
+							}
+						}
+						kingdom_of_hungary_group = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_hungary
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = rus_formed
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_russian_unification
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							culture_group = east_slavic
+							culture_group = tartar_group
+							culture_group = uralic_group
+						}
+						OR = {
+							north_russia_region = {
+								owned_by = PREV
+							}
+							russia_region = {
+								owned_by = PREV
+							}
+							east_russia_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_russian_unification
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = king_of_bohemia_outside
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_de_jure_bohemia
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							royal_bohemia_area = {
+								owned_by = PREV
+							}
+							north_bohemia_area = {
+								owned_by = PREV
+							}
+							moravia_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_de_jure_bohemia
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = rum_sultanate_claimed
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_rum_sultanate
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							east_balkan_region = {
+								owned_by = PREV
+							}
+							central_balkan_region = {
+								owned_by = PREV
+							}
+							north_anatolia_region = {
+								owned_by = PREV
+							}
+							south_anatolia_region = {
+								owned_by = PREV
+							}
+							dulkadir_area = {
+								owned_by = PREV
+							}
+							cilicia_area = {
+								owned_by = PREV
+							}
+							erzurum_area = {
+								owned_by = PREV
+							}
+							greece_region = {
+								owned_by = PREV
+								NOT = {
+									AND = {
+										province_id = 1402
+										owned_by = BYZ
+									}
+								}
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_rum_sultanate
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = rum_sultanate_claimed
+					}
+					OR = {
+						primary_culture = turkish
+						primary_culture = yorouk
+						primary_culture = turkoman
+					}
+					capital_scope = {
+						OR = {
+							region = north_anatolia_region
+							region = south_anatolia_region
+							province_id = 1333
+						}
+					}
+					AND = {
+						OR = {
+							ai = yes
+							NOT = {
+								calc_true_if = {
+									all_country = {
+										ai = no
+									}
+									amount = 2
+								}
+							}
+						}
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_anatolian_supremacy
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							north_anatolia_region = {
+								owned_by = PREV
+							}
+							south_anatolia_region = {
+								owned_by = PREV
+							}
+							cilicia_area = {
+								owned_by = PREV
+							}
+							dulkadir_area = {
+								owned_by = PREV
+							}
+							erzurum_area = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_anatolian_supremacy
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						is_excommunicated = yes
+						has_country_flag = excommunicated
+					}
+					religion = catholic
+				}
+				every_known_country = {
+					limit = {
+						NOT = {
+							has_casus_belli = {
+								type = cb_excommunication
+								target = PREV
+							}
+						}
+						religion = catholic
+						OR = {
+							is_neighbor_of = PREV
+							claim = PREV
+							core_claim = PREV
+						}
+						piety = -0.20
+						PAP = {
+							check_variable = {
+								which = papal_authority
+								value = 300
+							}
+						}
+						NOT = {
+							OR = {
+								is_excommunicated = yes
+								has_country_flag = excommunicated
+							}
+						}
+					}
+					add_casus_belli = {
+						target = PREV
+						type = cb_excommunication
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = caliph
+					religion_group = muslim
+				}
+				every_known_country = {
+					limit = {
+						has_country_flag = caliph
+						religion_group = muslim
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_rival_caliph
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							is_neighbor_of = PREV
+							is_rival = PREV
+							AND = {
+								NOT = {
+									religion = PREV
+								}
+								culture_group = PREV
+							}
+							PREV = {
+								check_variable = {
+									which = caliph_authority
+									value = 26
+								}
+							}
+							NOT = {
+								capital_distance = {
+									who = PREV
+									distance = 500
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_rival_caliph
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = caliph
+					religion_group = muslim
+				}
+				every_neighbor_country = {
+					limit = {
+						religion_group = muslim
+						piety = -0.20
+						NOT = {
+							has_casus_belli = {
+								type = cb_claim_caliph
+								target = PREV
+							}
+						}
+						NOT = {
+							has_country_flag = caliph
+						}
+						PREV = {
+							NOT = {
+								AND = {
+									army_size = PREV
+									num_of_cities = PREV
+								}
+							}
+						}
+					}
+					add_casus_belli = {
+						target = PREV
+						type = cb_claim_caliph
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = nahuatl
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_flower_war
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							is_enemy = PREV
+							num_of_cities = PREV
+							army_size = PREV
+							NOT = {
+								calc_true_if = {
+									amount = 2
+									all_neighbor_country = {
+										always = yes
+									}
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_flower_war
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							culture_group = chinese_group
+							NOT = {
+								primary_culture = chinese_colonial
+							}
+						}
+						has_country_flag = barbarian_claimant_china
+					}
+				}
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_chinese_civil_war
+									target = PREV
+								}
+							}
+						}
+						OR = {
+							north_china_superregion = {
+								owned_by = PREV
+							}
+							east_china_superregion = {
+								owned_by = PREV
+							}
+							southwest_china_superregion = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+						NOT = {
+							overlord_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_chinese_civil_war
+						months = 60
+					}
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						culture_group = japanese
+						NOT = {
+							primary_culture = japanese_colonial
+						}
+					}
+				}
+				save_event_target_as = cb_japanese_civil_war_ROOT
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_japanese_civil_war
+									target = PREV
+								}
+							}
+						}
+						overlord = {
+							overlord_of = event_target:cb_japanese_civil_war_ROOT
+						}
+						any_owned_province = {
+							OR = {
+								is_claim = event_target:cb_japanese_civil_war_ROOT
+								is_core = event_target:cb_japanese_civil_war_ROOT
+							}
+						}
+						japan_superregion = {
+							owned_by = PREV
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_japanese_civil_war
+						months = 240
+					}
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						culture_group = japanese
+						NOT = {
+							primary_culture = japanese_colonial
+						}
+					}
+				}
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_recover_japan
+									target = PREV
+								}
+							}
+						}
+						NOT = {
+							culture_group = japanese
+						}
+						OR = {
+							west_japan_region = {
+								owned_by = PREV
+							}
+							central_japan_region = {
+								owned_by = PREV
+							}
+							east_japan_region = {
+								owned_by = PREV
+							}
+						}
+						NOT = {
+							is_subject_of = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_recover_japan
+						months = 240
+					}
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						culture_group = japanese
+						NOT = {
+							primary_culture = japanese_colonial
+						}
+					}
+				}
+				save_event_target_as = cb_japanese_sengoku_ROOT
+				every_neighbor_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_japanese_sengoku
+									target = PREV
+								}
+							}
+						}
+						culture_group = japanese
+						NOT = {
+							is_subject_of = event_target:cb_japanese_sengoku_ROOT
+						}
+						NOT = {
+							overlord_of = event_target:cb_japanese_sengoku_ROOT
+						}
+						OR = {
+							is_subject = no
+							AND = {
+								overlord = {
+									NOT = {
+										overlord_of = event_target:cb_japanese_sengoku_ROOT
+									}
+								}
+								event_target:cb_japanese_sengoku_ROOT = {
+									NOT = {
+										num_of_subjects = 1
+									}
+								}
+							}
+						}
+						japan_superregion = {
+							owned_by = PREV
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_japanese_sengoku
+						months = 240
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = no_localization
+	}
+}
+country_event = {
+	id = cb_types.2
+	title = no_localization
+	desc = no_localization
+	picture = MEIOU_AND_TAXES_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = AAA
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				always = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							piety = -0.60
+							OR = {
+								cb_on_religious_enemies = yes
+								patriarch_authority = 0.75
+							}
+						}
+						AND = {
+							cb_on_religious_enemies = yes
+							patriarch_authority = 0.75
+						}
+					}
+				}
+				save_event_target_as = cb_holy_war_defensive_ROOT
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_holy_war_defensive
+									target = PREV
+								}
+							}
+						}
+						NOT = {
+							religion_group = PREV
+						}
+						any_owned_province = {
+							religion = event_target:cb_holy_war_defensive_ROOT
+						}
+						OR = {
+							NOT = {
+								border_distance = {
+									who = PREV
+									distance = 80
+								}
+							}
+							AND = {
+								PREV = {
+									piety = -0.20
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 160
+									}
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 0.20
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 240
+									}
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 0.60
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 320
+									}
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 1.00
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 400
+									}
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_holy_war_defensive
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						piety = -0.20
+						AND = {
+							patriarch_authority = 0.75
+							piety = -0.60
+						}
+					}
+					cb_on_religious_enemies = yes
+					NOT = {
+						religion_group = pagan
+						religion_group = european_pagan
+						religion_group = new_world_pagan
+					}
+				}
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_holy_war_offensive_pagan
+									target = PREV
+								}
+							}
+						}
+						NOT = {
+							religion_group = PREV
+						}
+						OR = {
+							is_neighbor_of = PREV
+							NOT = {
+								border_distance = {
+									who = PREV
+									distance = 80
+								}
+							}
+						}
+						OR = {
+							religion_group = pagan
+							religion_group = european_pagan
+							religion_group = new_world_pagan
+						}
+						NOT = {
+							religion = shinto
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_holy_war_offensive_pagan
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						piety = -0.20
+						AND = {
+							patriarch_authority = 0.75
+							piety = -0.60
+						}
+					}
+					OR = {
+						cb_on_religious_enemies = yes
+						NOT = {
+							OR = {
+								religion = catholic
+								religion = sunni
+								religion = shiite
+							}
+						}
+					}
+				}
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_holy_war_offensive
+									target = PREV
+								}
+							}
+							OR = {
+								cb_on_religious_enemies = yes
+								patriarch_authority = 0.75
+								AND = {
+									has_global_flag = orthodox_pentarchy_restored
+									owns = 2530
+									OR = {
+										religion = orthodox
+										religion = coptic
+									}
+									PREV = {
+										religion = catholic
+									}
+								}
+							}
+						}
+						NOT = {
+							religion_group = PREV
+						}
+						OR = {
+							is_neighbor_of = PREV
+							NOT = {
+								border_distance = {
+									who = PREV
+									distance = 80
+								}
+							}
+						}
+						OR = {
+							PREV = {
+								religion_group = pagan
+							}
+							PREV = {
+								religion_group = european_pagan
+							}
+							PREV = {
+								religion_group = new_world_pagan
+							}
+							AND = {
+								NOT = {
+									religion_group = european_pagan
+								}
+								NOT = {
+									religion_group = new_world_pagan
+								}
+								OR = {
+									religion = shinto
+									NOT = {
+										religion_group = pagan
+									}
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_holy_war_offensive
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						cb_on_religious_enemies = yes
+						patriarch_authority = 0.75
+					}
+					OR = {
+						piety = 0.20
+						AND = {
+							cb_on_religious_enemies = yes
+							patriarch_authority = 0.75
+							piety = -0.20
+						}
+					}
+				}
+				save_event_target_as = cb_holy_war_heretic_defensive_ROOT
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_holy_war_heretic_defensive
+									target = PREV
+								}
+							}
+						}
+						religion_group = PREV
+						NOT = {
+							religion = PREV
+						}
+						any_owned_province = {
+							religion = event_target:cb_holy_war_heretic_defensive_ROOT
+						}
+						OR = {
+							is_neighbor_of = PREV
+							NOT = {
+								border_distance = {
+									who = PREV
+									distance = 80
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 0.60
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 160
+									}
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 1.00
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 240
+									}
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_holy_war_heretic_defensive
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						cb_on_religious_enemies = yes
+						patriarch_authority = 0.75
+					}
+					OR = {
+						piety = 0.60
+						AND = {
+							cb_on_religious_enemies = yes
+							patriarch_authority = 0.75
+							piety = 0.20
+						}
+					}
+				}
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_holy_war_heretic_offensive
+									target = PREV
+								}
+							}
+						}
+						religion_group = PREV
+						NOT = {
+							religion = PREV
+						}
+						OR = {
+							is_neighbor_of = PREV
+							NOT = {
+								border_distance = {
+									who = PREV
+									distance = 80
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_holy_war_heretic_offensive
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_defender_of_faith = yes
+					piety = -0.20
+				}
+				save_event_target_as = cb_fidei_defensor_ROOT
+				every_known_country = {
+					limit = {
+						PREV = {
+							NOT = {
+								has_casus_belli = {
+									type = cb_fidei_defensor
+									target = PREV
+								}
+							}
+						}
+						NOT = {
+							religion = PREV
+						}
+						is_at_war = yes
+						any_known_country = {
+							war_with = PREV
+							religion = event_target:cb_fidei_defensor_ROOT
+						}
+						OR = {
+							is_neighbor_of = PREV
+							NOT = {
+								border_distance = {
+									who = PREV
+									distance = 200
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 0.20
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 400
+									}
+								}
+							}
+							AND = {
+								PREV = {
+									piety = 0.60
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 600
+									}
+								}
+							}
+							AND = {
+								OR = {
+									PREV = {
+										piety = 1.00
+									}
+									cb_on_religious_enemies = yes
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 800
+									}
+								}
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_fidei_defensor
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = crusade_target
+					NOT = {
+						religion = catholic
+					}
+					PAP = {
+						check_variable = {
+							which = papal_authority
+							value = 200
+						}
+					}
+				}
+				every_known_country = {
+					limit = {
+						religion = catholic
+						NOT = {
+							has_casus_belli = {
+								type = cb_catholic_crusade
+								target = PREV
+							}
+						}
+						piety = -0.20
+						NOT = {
+							has_country_flag = excommunicated
+						}
+						OR = {
+							is_neighbor_of = PREV
+							is_papal_controller = yes
+							AND = {
+								OR = {
+									PAP = {
+										check_variable = {
+											which = papal_authority
+											value = 300
+										}
+									}
+									AND = {
+										piety = 0.20
+										PAP = {
+											check_variable = {
+												which = papal_authority
+												value = 200
+											}
+										}
+									}
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 100
+									}
+								}
+							}
+							AND = {
+								OR = {
+									PAP = {
+										check_variable = {
+											which = papal_authority
+											value = 400
+										}
+									}
+									AND = {
+										piety = 0.60
+										PAP = {
+											check_variable = {
+												which = papal_authority
+												value = 300
+											}
+										}
+									}
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 200
+									}
+								}
+							}
+							AND = {
+								OR = {
+									PAP = {
+										check_variable = {
+											which = papal_authority
+											value = 500
+										}
+									}
+									AND = {
+										piety = 1.00
+										PAP = {
+											check_variable = {
+												which = papal_authority
+												value = 400
+											}
+										}
+									}
+								}
+								NOT = {
+									border_distance = {
+										who = PREV
+										distance = 300
+									}
+								}
+							}
+						}
+					}
+					add_casus_belli = {
+						target = PREV
+						type = cb_catholic_crusade
+					}
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = city_state
+							AND = {
+								NOT = {
+									has_reform = free_city
+								}
+								NOT = {
+									has_reform = trade_republic
+								}
+								NOT = {
+									has_reform = colonial_government
+								}
+								NOT = {
+									has_reform = dictator_reform
+								}
+								has_reform = oligarchy_reform
+							}
+							has_reform = oligarchic_republic
+							has_reform = ambrosian_republic_legacy
+						}
+					}
+				}
+				every_known_country = {
+					limit = {
+						AND = {
+							OR = {
+								has_reform = city_state
+								AND = {
+									NOT = {
+										has_reform = free_city
+									}
+									NOT = {
+										has_reform = trade_republic
+									}
+									NOT = {
+										has_reform = colonial_government
+									}
+									NOT = {
+										has_reform = dictator_reform
+									}
+									has_reform = oligarchy_reform
+								}
+								has_reform = oligarchic_republic
+								has_reform = ambrosian_republic_legacy
+							}
+						}
+						any_active_trade_node = {
+							has_merchant = PREV
+							any_trade_node_member_country = {
+								tag = ROOT
+							}
+						}
+					}
+					reverse_add_casus_belli = {
+						target = PREV
+						type = cb_trade_war_triggered
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = no_localization
+	}
+}

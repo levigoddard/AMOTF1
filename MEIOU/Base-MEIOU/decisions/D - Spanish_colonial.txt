@@ -1,0 +1,55 @@
+country_decisions = {
+	implement_ecomienda_system = {
+		potential = {
+			OR = {
+				culture_group = iberian
+				culture_group = portuguese
+				primary_culture = catalan
+			}
+			is_colonial_nation = yes
+			NOT = {
+				has_country_flag = ecomienda_system_implemented
+			}
+		}
+		allow = {
+			OR = {
+				capital_scope = {
+					superregion = central_america_superregion
+				}
+				capital_scope = {
+					continent = south_america
+				}
+			}
+		}
+		effect = {
+			set_country_flag = ecomienda_system_implemented
+			change_government = republic
+			add_government_reform = colonial_government
+			add_government_reform = dictator_reform
+			add_government_reform = vote_nobility
+			set_legacy_government = colonial_government_legacy
+			add_country_modifier = {
+				name = ecomienda_system
+				duration = -1
+			}
+			add_treasury = 500
+			add_manpower = 10
+			custom_tooltip = stability_points_gained_300
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 300
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+			every_owned_province = {
+				add_unrest = -10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

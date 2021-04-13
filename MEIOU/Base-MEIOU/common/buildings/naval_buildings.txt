@@ -1,0 +1,600 @@
+harbour_infrastructure_1 = {
+	cost = 150
+	time = 12
+	trigger = {
+		OR = {
+			AND = {
+				has_province_flag = infra_calc_done
+				has_port = yes
+				owner = {
+					dip_tech = 1
+				}
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_2
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = harbour_infrastructure_1
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_2
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = harbour_infrastructure_1
+			}
+		}
+	}
+	modifier = {
+		naval_forcelimit = 0.5
+		supply_limit_modifier = 0.10
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+harbour_infrastructure_2 = {
+	cost = 225
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = harbour_infrastructure_1
+				has_province_flag = infra_calc_done
+				NOT = {
+					has_province_modifier = lack_of_harbour
+				}
+				owner = {
+					dip_tech = 4
+				}
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = harbour_infrastructure_2
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = harbour_infrastructure_2
+			}
+		}
+	}
+	modifier = {
+		naval_forcelimit = 1
+		supply_limit_modifier = 0.25
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = harbour_infrastructure_1
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+harbour_infrastructure_3x = {
+	cost = 300
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = harbour_infrastructure_2
+				has_province_flag = infra_calc_done
+				AND = {
+					OR = {
+						has_building = town_hall
+						has_building = urban_infrastructure_1
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_province_modifier = lack_of_harbour
+				}
+				NOT = {
+					has_province_flag = has_delta_estuary
+				}
+				owner = {
+					dip_tech = 6
+				}
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = harbour_infrastructure_3x
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = harbour_infrastructure_3x
+			}
+		}
+	}
+	modifier = {
+		naval_forcelimit = 1.5
+		supply_limit_modifier = 0.40
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = harbour_infrastructure_2
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+harbour_infrastructure_4 = {
+	cost = 450
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = harbour_infrastructure_3x
+				has_province_flag = infra_calc_done
+				AND = {
+					OR = {
+						has_building = urban_infrastructure_1
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_province_modifier = lack_of_harbour
+				}
+				NOT = {
+					has_province_flag = has_delta_estuary
+				}
+				owner = {
+					dip_tech = 22
+				}
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = harbour_infrastructure_4
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = harbour_infrastructure_4
+			}
+		}
+	}
+	modifier = {
+		naval_forcelimit = 2
+		supply_limit_modifier = 0.55
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = harbour_infrastructure_3x
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+harbour_infrastructure_5 = {
+	cost = 600
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				has_building = harbour_infrastructure_4
+				has_province_flag = infra_calc_done
+				AND = {
+					OR = {
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = military_harbour_4
+				}
+				has_province_flag = has_natural_harbour
+				owner = {
+					dip_tech = 40
+				}
+				AND = {
+					NOT = {
+						has_building = military_harbour_4
+					}
+				}
+				NOT = {
+					has_building = harbour_infrastructure_5
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = military_harbour_4
+					}
+				}
+				has_building = harbour_infrastructure_5
+			}
+		}
+	}
+	modifier = {
+		naval_forcelimit = 3
+		supply_limit_modifier = 0.75
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = harbour_infrastructure_4
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+military_harbour_1 = {
+	cost = 250
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_building = harbour_infrastructure_1
+						has_building = harbour_infrastructure_2
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_province_flag = infra_calc_done
+				NOT = {
+					has_province_modifier = lack_of_harbour
+				}
+				owner = {
+					dip_tech = 3
+				}
+				AND = {
+					NOT = {
+						has_building = military_harbour_2
+						has_building = military_harbour_3
+						has_building = military_harbour_4
+					}
+				}
+				NOT = {
+					has_building = military_harbour_1
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = military_harbour_2
+						has_building = military_harbour_3
+						has_building = military_harbour_4
+					}
+				}
+				has_building = military_harbour_1
+			}
+		}
+	}
+	modifier = {
+		local_ship_repair = 0.30
+		ship_recruit_speed = -0.35
+		naval_forcelimit = 5
+		local_defensiveness = 0.025
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+military_harbour_2 = {
+	cost = 250
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_building = harbour_infrastructure_1
+						has_building = harbour_infrastructure_2
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = military_harbour_1
+				has_province_flag = infra_calc_done
+				has_province_flag = has_natural_harbour
+				owner = {
+					dip_tech = 6
+				}
+				AND = {
+					NOT = {
+						has_building = military_harbour_3
+						has_building = military_harbour_4
+					}
+				}
+				NOT = {
+					has_building = military_harbour_2
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = military_harbour_3
+						has_building = military_harbour_4
+					}
+				}
+				has_building = military_harbour_2
+			}
+		}
+	}
+	modifier = {
+		local_ship_repair = 0.60
+		ship_recruit_speed = -0.60
+		naval_forcelimit = 10
+		local_defensiveness = 0.05
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = military_harbour_1
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+military_harbour_3 = {
+	cost = 500
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_building = harbour_infrastructure_1
+						has_building = harbour_infrastructure_2
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = military_harbour_2
+				has_province_flag = infra_calc_done
+				has_province_flag = has_natural_harbour
+				owner = {
+					dip_tech = 19
+				}
+				AND = {
+					NOT = {
+						has_building = military_harbour_4
+					}
+				}
+				NOT = {
+					has_building = military_harbour_3
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = military_harbour_4
+					}
+				}
+				has_building = military_harbour_3
+			}
+		}
+	}
+	modifier = {
+		local_ship_repair = 1.0
+		ship_recruit_speed = -0.85
+		naval_forcelimit = 15
+		local_defensiveness = 0.10
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = military_harbour_2
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+military_harbour_4 = {
+	cost = 600
+	time = 36
+	trigger = {
+		OR = {
+			AND = {
+				AND = {
+					OR = {
+						has_building = harbour_infrastructure_1
+						has_building = harbour_infrastructure_2
+						has_building = harbour_infrastructure_3x
+						has_building = harbour_infrastructure_4
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = military_harbour_3
+				has_province_flag = infra_calc_done
+				NOT = {
+					has_building = harbour_infrastructure_5
+				}
+				has_province_flag = has_great_natural_harbour
+				owner = {
+					dip_tech = 40
+				}
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = military_harbour_4
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = harbour_infrastructure_5
+					}
+				}
+				has_building = military_harbour_4
+			}
+		}
+	}
+	modifier = {
+		local_ship_repair = 1.40
+		ship_recruit_speed = -1.10
+		naval_forcelimit = 20
+		local_defensiveness = 0.20
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = military_harbour_3
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}

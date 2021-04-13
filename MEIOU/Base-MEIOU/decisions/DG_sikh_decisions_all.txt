@@ -1,0 +1,273 @@
+country_decisions = {
+	khalsa_order = {
+		potential = {
+			religion = sikhism
+			NOT = {
+				has_country_modifier = khalsa_order
+			}
+			PUN = {
+				has_country_flag = sikhism_militancy
+			}
+			NOT = {
+				government = theocracy
+			}
+			piety = -0.60
+		}
+		allow = {
+			MIL = 3
+			piety = -0.20
+		}
+		effect = {
+			add_country_modifier = {
+				name = "khalsa_order"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	eternal_throne = {
+		potential = {
+			religion = sikhism
+			any_owned_province = {
+				has_province_flag = amritsar
+				is_capital = no
+				controlled_by = ROOT
+				AND = {
+					continent = indian_continent
+					OR = {
+						superregion = west_india_superregion
+						superregion = north_india_superregion
+						superregion = rajputana_superregion
+						superregion = east_india_superregion
+						superregion = central_india_superregion
+						superregion = south_india_superregion
+					}
+				}
+			}
+		}
+		allow = {
+			ADM = 1
+			is_at_war = no
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					has_province_flag = amritsar
+				}
+				owner = {
+					hidden_effect = {
+						capital_scope = {
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5242.88
+								}
+								remove_province_modifier = misc_expenses_5242.88
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2621.44
+								}
+								remove_province_modifier = misc_expenses_2621.44
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1310.72
+								}
+								remove_province_modifier = misc_expenses_1310.72
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_655.36
+								}
+								remove_province_modifier = misc_expenses_655.36
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_327.68
+								}
+								remove_province_modifier = misc_expenses_327.68
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_163.84
+								}
+								remove_province_modifier = misc_expenses_163.84
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_81.92
+								}
+								remove_province_modifier = misc_expenses_81.92
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_40.96
+								}
+								remove_province_modifier = misc_expenses_40.96
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_20.48
+								}
+								remove_province_modifier = misc_expenses_20.48
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_10.24
+								}
+								remove_province_modifier = misc_expenses_10.24
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_5.12
+								}
+								remove_province_modifier = misc_expenses_5.12
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_2.56
+								}
+								remove_province_modifier = misc_expenses_2.56
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_1.28
+								}
+								remove_province_modifier = misc_expenses_1.28
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.64
+								}
+								remove_province_modifier = misc_expenses_0.64
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.32
+								}
+								remove_province_modifier = misc_expenses_0.32
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.16
+								}
+								remove_province_modifier = misc_expenses_0.16
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.08
+								}
+								remove_province_modifier = misc_expenses_0.08
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.04
+								}
+								remove_province_modifier = misc_expenses_0.04
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.02
+								}
+								remove_province_modifier = misc_expenses_0.02
+							}
+							if = {
+								limit = {
+									has_province_modifier = misc_expenses_0.01
+								}
+								remove_province_modifier = misc_expenses_0.01
+							}
+							set_variable = {
+								which = misc_expenses_cache
+								value = 0
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_part_of_hre = yes
+							ROOT = {
+								is_part_of_hre = no
+							}
+						}
+						set_in_empire = no
+						swap_non_generic_missions = yes
+						emperor = {
+							add_opinion = {
+								who = ROOT
+								modifier = hre_province_left
+							}
+						}
+						add_imperial_influence = -1
+					}
+					set_capital = PREV
+					hidden_effect = {
+						country_event = {
+							id = miscexpenses.002
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_legitimacy = 12
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_legitimacy = 9
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_legitimacy = 6
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_legitimacy = 3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 0
+			}
+			modifier = {
+				any_owned_province = {
+					has_province_flag = amritsar
+					NOT = {
+						is_core = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				any_owned_province = {
+					has_province_flag = amritsar
+					NOT = {
+						culture_group = owner
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				any_owned_province = {
+					has_province_flag = amritsar
+					unrest = 1
+				}
+				factor = 0
+			}
+		}
+	}
+}

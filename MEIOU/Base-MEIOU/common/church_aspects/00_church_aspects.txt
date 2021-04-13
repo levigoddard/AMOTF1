@@ -1,0 +1,150 @@
+married_pastors_aspect = {
+	cost = 100
+	modifier = {
+		missionaries = 0.25
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+celibate_priests_aspect = {
+	cost = 100
+	modifier = {
+		prestige = 0.15
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+legal_divorce_aspect = {
+	cost = 100
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+limited_divorce_aspect = {
+	cost = 100
+	modifier = {
+		legitimacy = 0.10
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+civil_unions_aspect = {
+	cost = 100
+	modifier = {
+		legitimacy = -0.10
+		heir_chance = 0.10
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+biblical_inerrancy_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_own = 0.25
+		tolerance_heretic = -0.25
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+individual_interpretation_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_heretic = 0.25
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+guided_interpretation_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_modifier = -0.10
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+infant_baptism_aspect = {
+	cost = 100
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+adult_baptism_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_own = 0.25
+		global_missionary_strength = -0.0025
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+free_will_aspect = {
+	cost = 100
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+predestination_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_own = 0.25
+		global_missionary_strength = -0.0025
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+appointed_bishops_aspect = {
+	cost = 100
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+elected_ministers_aspect = {
+	cost = 100
+	modifier = {
+		global_missionary_strength = 0.0025
+		stability_cost_modifier = 0.05
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+lay_priesthood_aspect = {
+	cost = 100
+	modifier = {
+		missionaries = 0.25
+		stability_cost_modifier = 0.10
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+enforced_membership_aspect = {
+	cost = 100
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}
+free_membership_aspect = {
+	cost = 100
+	modifier = {
+		global_missionary_strength = -0.0025
+		tolerance_own = 0.25
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

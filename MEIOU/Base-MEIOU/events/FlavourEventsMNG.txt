@@ -1,0 +1,272 @@
+country_event = {
+	id = flavor_mng.5
+	title = "flavor_mng.EVTNAME5"
+	desc = "flavor_mng.EVTDESC5"
+	picture = MERCHANTS_TALKING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = mandate_of_heaven_claimed
+		is_year = 1555
+		NOT = {
+			is_year = 1600
+		}
+		any_country = {
+			capital_scope = {
+				continent = europe
+			}
+			any_known_country = {
+				has_country_flag = mandate_of_heaven_claimed
+			}
+			any_active_trade_node = {
+				owned_by = ROOT
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_mng.EVTOPTA5"
+		add_prestige = -1
+	}
+	option = {
+		name = "flavor_mng.EVTOPTB5"
+		add_mercantilism = 40
+		add_legitimacy = 10
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		add_country_modifier = {
+			name = mng_closed_china
+			duration = 36500
+		}
+	}
+	option = {
+		name = "flavor_mng.EVTOPTC5"
+		add_country_modifier = {
+			name = mng_open_china
+			duration = 36500
+		}
+	}
+}
+country_event = {
+	id = flavor_mng.11
+	title = "flavor_mng.EVTNAME11"
+	desc = "flavor_mng.EVTDESC11"
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = mandate_of_heaven_claimed
+		is_year = 1640
+		NOT = {
+			is_year = 1660
+		}
+		num_of_loans = 5
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_mng.EVTOPTA11"
+		add_inflation = 5
+		add_years_of_income = 3
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_mng.EVTOPTB11"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_mng.14
+	title = "flavor_mng.EVTNAME14"
+	desc = "flavor_mng.EVTDESC14"
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = QNG
+		has_country_flag = mandate_of_heaven_claimed
+		is_year = 1770
+		NOT = {
+			is_year = 1800
+		}
+		NOT = {
+			advisor_exists = 380
+		}
+		NOT = {
+			is_advisor_employed = 380
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_mng.EVTOPTA14"
+		define_advisor = {
+			type = statesman
+			location = 708
+			name = "Heshen"
+			skill = 2
+			discount = yes
+		}
+	}
+	option = {
+		name = "flavor_mng.EVTOPTB14"
+		add_prestige = -1
+	}
+}
+country_event = {
+	id = flavor_mng.15
+	title = "flavor_mng.EVTNAME15"
+	desc = "flavor_mng.EVTDESC15"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		owns = 708
+		has_country_flag = mandate_of_heaven_claimed
+		is_year = 1775
+		NOT = {
+			is_year = 1800
+		}
+		any_owned_province = {
+			OR = {
+				is_strongest_trade_power = ENG
+				is_strongest_trade_power = GBR
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_mng.EVTOPTA15"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+	option = {
+		name = "flavor_mng.EVTOPTB15"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		GBR = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_ideas
+			}
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+	}
+}

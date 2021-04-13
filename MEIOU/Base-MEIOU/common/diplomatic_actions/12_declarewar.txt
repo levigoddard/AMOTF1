@@ -1,0 +1,246 @@
+declarewar = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			NOT = {
+				has_country_flag = aiHasAgendaMilitary
+			}
+			has_country_flag = aiHasAgendaEconomy
+			has_country_flag = aiHasAgendaReform
+			has_country_flag = aiHasAgendaCE
+			ai = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			has_country_flag = aiHasAgendaInvasion
+			ai = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			tag = HUN
+			NOT = {
+				is_year = 1420
+			}
+			ai = yes
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					tag = WHI
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = TATARTREATY
+		potential = {
+			has_country_flag = tatar_treaty
+		}
+		allow = {
+			OR = {
+				NOT = {
+					FROM = {
+						has_country_flag = tatar_treaty
+					}
+				}
+				AND = {
+					is_nomad = yes
+					FROM = {
+						is_nomad = yes
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = HUNDREDYEARSWAR_FRA
+		potential = {
+			tag = FRA
+			has_global_flag = hundred_years_war
+		}
+		allow = {
+			FROM = {
+				OR = {
+					tag = ENG
+					is_subject_of = ENG
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = HUNDREDYEARSWAR_ENG
+		potential = {
+			tag = ENG
+			has_global_flag = hundred_years_war
+		}
+		allow = {
+			FROM = {
+				OR = {
+					tag = FRA
+					is_subject_of = FRA
+					tag = SCO
+					is_subject_of = SCO
+					tag = TLI
+					is_subject_of = TLI
+				}
+			}
+		}
+	}
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			has_country_flag = in_good_shape
+		}
+	}
+	condition = {
+		tooltip = SHUGOCLAIM
+		potential = {
+			is_subject_of_type = daimyo_vassal
+			FROM = {
+				is_subject_of_type = daimyo_vassal
+			}
+		}
+		allow = {
+			OR = {
+				claim = FROM
+				core_claim = FROM
+				is_subject_of = FROM
+				is_rival = FROM
+				coalition_target = FROM
+				is_threat = FROM
+				FROM = {
+					overlord = {
+						NOT = {
+							overlord_of = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = JAPANESEEMPIRE
+		potential = {
+			is_subject = no
+			NOT = {
+				overlord_of = FROM
+			}
+			FROM = {
+				AND = {
+					OR = {
+						is_subject_of_type = daimyo_vassal
+						is_subject_of_type = centralised_daimyo_vassal
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			ai = yes
+			NOT = {
+				is_part_of_hre = yes
+			}
+			FROM = {
+				is_part_of_hre = yes
+			}
+		}
+		allow = {
+			check_variable = {
+				which = hre_war_strength
+				which = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = CHINESEVASSAL
+		potential = {
+			FROM = {
+				is_subject_of_type = warlord
+				has_country_flag = imperial_appenage
+			}
+		}
+		allow = {
+			OR = {
+				is_subject_of_type = warlord
+				culture_group = chinese_group
+				has_country_flag = mandate_of_heaven_claimed
+				has_country_flag = barbarian_claimant_china
+			}
+		}
+	}
+	condition = {
+		tooltip = DONTTOUCHTHAT
+		potential = {
+			exists = yes
+		}
+		allow = {
+			NOT = {
+				tag = AAA
+			}
+			NOT = {
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+	}
+	effect = {
+		country_event = {
+			id = privateers.15
+		}
+	}
+}

@@ -1,0 +1,44 @@
+parliamentary_reform = {
+	category = 4
+	allow = {
+		any_owned_province = {
+			has_province_modifier = rotten_borough
+		}
+		stability = 0
+	}
+	effect = {
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		every_owned_province = {
+			limit = {
+				has_province_modifier = rotten_borough
+			}
+			remove_province_modifier = rotten_borough
+		}
+	}
+	modifier = {
+		legitimacy = 0.2
+	}
+	chance = {
+		factor = 1000
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			any_owned_province = {
+				has_province_modifier = rotten_borough
+			}
+		}
+	}
+}

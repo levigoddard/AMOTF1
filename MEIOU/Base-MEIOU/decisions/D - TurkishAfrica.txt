@@ -1,0 +1,1246 @@
+country_decisions = {
+	beylik_of_tripoli = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			NOT = {
+				exists = TRP
+			}
+			NOT = {
+				has_country_flag = beylik_of_tripoli_indp
+			}
+			any_owned_province = {
+				OR = {
+					area = tripolitania_area
+					area = cyrenaica_area
+					area = fezzan_area
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 354
+		}
+		effect = {
+			set_country_flag = beylik_of_tripoli_indp
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = tripolitania_area
+						area = cyrenaica_area
+						area = fezzan_area
+					}
+				}
+				add_core = TRP
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			tripolitania_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = TRP
+			}
+			cyrenaica_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = TRP
+			}
+			fezzan_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = TRP
+			}
+			release = TRP
+			create_subject = {
+				subject_type = decentralized_vassal
+				subject = TRP
+			}
+			if = {
+				limit = {
+					has_dlc = "Art of War"
+				}
+				create_march = TRP
+			}
+			TRP = {
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 354
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+				add_manpower = 10
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 0.3
+						transport = 0.1
+						galley = 0.6
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRP = {
+						technology_group = muslim
+					}
+				}
+				TRP = {
+					change_technology_group = turkishtech
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expand_tripoli = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			TRP = {
+				is_subject_of = ROOT
+			}
+			any_owned_province = {
+				OR = {
+					area = tripolitania_area
+					area = cyrenaica_area
+					area = fezzan_area
+					area = djado_area
+					area = azbin_area
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = tripolitania_area
+						area = cyrenaica_area
+						area = fezzan_area
+						area = djado_area
+						area = azbin_area
+					}
+				}
+				add_core = TRP
+				remove_core = ROOT
+				remove_claim = ROOT
+				cede_province = TRP
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	beylik_of_tunis = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			NOT = {
+				exists = TUN
+			}
+			NOT = {
+				has_country_flag = beylik_of_tunis_indp
+			}
+			any_owned_province = {
+				OR = {
+					area = tunis_area
+					area = kairwan_area
+					area = djerba_area
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 341
+		}
+		effect = {
+			set_country_flag = beylik_of_tunis_indp
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = tunis_area
+						area = kairwan_area
+						area = djerba_area
+					}
+				}
+				add_core = TUN
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			tunis_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = TUN
+			}
+			kairwan_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = TUN
+			}
+			djerba_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = TUN
+			}
+			release = TUN
+			create_subject = {
+				subject_type = decentralized_vassal
+				subject = TUN
+			}
+			if = {
+				limit = {
+					has_dlc = "Art of War"
+				}
+				create_march = TUN
+			}
+			TUN = {
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 341
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+				add_manpower = 10
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 0.3
+						transport = 0.1
+						galley = 0.6
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expand_tunis = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			TUN = {
+				is_subject_of = ROOT
+			}
+			any_owned_province = {
+				OR = {
+					area = tunis_area
+					area = kairwan_area
+					area = djerba_area
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = tunis_area
+						area = kairwan_area
+						area = djerba_area
+					}
+				}
+				add_core = TUN
+				remove_core = ROOT
+				remove_claim = ROOT
+				cede_province = TUN
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	regency_of_algiers = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			NOT = {
+				exists = ALG
+			}
+			NOT = {
+				has_country_flag = regency_of_algiers_indp
+			}
+			any_owned_province = {
+				region = central_maghreb_region
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 350
+		}
+		effect = {
+			set_country_flag = regency_of_algiers_indp
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					region = central_maghreb_region
+				}
+				add_core = ALG
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			central_maghreb_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ALG
+			}
+			release = ALG
+			create_subject = {
+				subject_type = decentralized_vassal
+				subject = ALG
+			}
+			ALG = {
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 350
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+				add_manpower = 10
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 0.3
+						transport = 0.1
+						galley = 0.6
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expand_algiers = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			ALG = {
+				is_subject_of = ROOT
+			}
+			any_owned_province = {
+				region = central_maghreb_region
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					region = central_maghreb_region
+				}
+				add_core = ALG
+				remove_core = ROOT
+				remove_claim = ROOT
+				cede_province = ALG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	regency_of_fes = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			NOT = {
+				exists = FEZ
+			}
+			NOT = {
+				has_country_flag = regency_of_fes_indp
+			}
+			any_owned_province = {
+				OR = {
+					region = west_maghreb_region
+					region = east_maghreb_region
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 343
+		}
+		effect = {
+			set_country_flag = regency_of_fes
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = west_maghreb_region
+						region = east_maghreb_region
+					}
+				}
+				add_core = FEZ
+				remove_core = ROOT
+				remove_claim = ROOT
+			}
+			west_maghreb_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = FEZ
+			}
+			west_sahara_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = FEZ
+			}
+			release = FEZ
+			create_subject = {
+				subject_type = decentralized_vassal
+				subject = FEZ
+			}
+			FEZ = {
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 343
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+				add_manpower = 10
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 0.3
+						transport = 0.1
+						galley = 0.6
+					}
+				}
+			}
+			if = {
+				limit = {
+					FEZ = {
+						technology_group = muslim
+					}
+				}
+				FEZ = {
+					change_technology_group = turkishtech
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	expand_fes = {
+		potential = {
+			culture_group = turko_byzantine
+			religion_group = muslim
+			government = monarchy
+			FEZ = {
+				is_subject_of = ROOT
+			}
+			any_owned_province = {
+				OR = {
+					region = west_maghreb_region
+					region = west_sahara_region
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			add_prestige = 5
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = west_maghreb_region
+						area = western_sahara_area
+						area = arguin_area
+					}
+				}
+				add_core = FEZ
+				remove_core = ROOT
+				remove_claim = ROOT
+				cede_province = FEZ
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	integrate_the_mamlukes = {
+		potential = {
+			religion_group = muslim
+			OR = {
+				has_country_modifier = title_5
+				has_country_modifier = title_6
+			}
+			government = monarchy
+			NOT = {
+				primary_culture = egyptian
+			}
+			NOT = {
+				exists = MAM
+			}
+			capital_scope = {
+				NOT = {
+					region = egypt_region
+				}
+			}
+			any_owned_province = {
+				region = egypt_region
+				NOT = {
+					has_province_modifier = local_mamlukes
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					region = egypt_region
+					NOT = {
+						has_province_modifier = local_mamlukes
+					}
+				}
+				add_permanent_province_modifier = {
+					name = local_mamlukes
+					duration = -1
+				}
+				add_core = ROOT
+				remove_province_modifier = at_cultural_uprising
+				owner = {
+					add_legitimacy = 1
+				}
+			}
+			hidden_effect = {
+				every_country = {
+					every_owned_province = {
+						limit = {
+							region = egypt_region
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 100
+	}
+}

@@ -1,0 +1,103 @@
+weak_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = {
+				ruler_has_personality = strict_personality
+			}
+			NOT = {
+				ruler_has_personality = cruel_personality
+			}
+			NOT = {
+				adm = 3
+			}
+			NOT = {
+				dip = 3
+			}
+			NOT = {
+				mil = 3
+			}
+		}
+		chance = {
+			modifier = {
+				factor = -0.5
+				AND = {
+					has_dlc = "Rights of Man"
+					OR = {
+						ruler_has_personality = weak_personality
+						ruler_has_personality = reckless_personality
+						ruler_has_personality = misguided_warrior_personality
+						ruler_has_personality = aggressive_personality
+						ruler_has_personality = vengeful_personality
+						ruler_has_personality = proud_personality
+						ruler_has_personality = modest_personality
+						ruler_has_personality = arbitrary_personality
+						ruler_has_personality = deceitful_personality
+						ruler_has_personality = naive_puppet_master_personality
+						ruler_has_personality = amateurish_pettifogger_personality
+						ruler_has_personality = trusting_personality
+						ruler_has_personality = indulgent_personality
+						ruler_has_personality = suspicious_personality
+						ruler_has_personality = hopeless_spender_personality
+						ruler_has_personality = selfish_personality
+						ruler_has_personality = lazy_personality
+						ruler_has_personality = coward_personality
+						ruler_has_personality = malevolent_personality
+						ruler_has_personality = obsessive_perfectionist_personality
+						ruler_has_personality = loose_lips_personality
+						ruler_has_personality = craven_personality
+						ruler_has_personality = naive_personality
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = drunkard_personality
+						ruler_has_personality = infertile_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = babbling_buffoon_personality
+					}
+				}
+			}
+		}
+	}
+	heir_allow = {
+		allow = {
+			NOT = {
+				heir_has_personality = strict_personality
+			}
+			NOT = {
+				heir_has_personality = cruel_personality
+			}
+			NOT = {
+				heir_adm = 3
+			}
+			NOT = {
+				heir_dip = 3
+			}
+			NOT = {
+				heir_mil = 3
+			}
+		}
+	}
+	consort_allow = {
+		allow = {
+			NOT = {
+				consort_has_personality = strict_personality
+			}
+			NOT = {
+				consort_has_personality = cruel_personality
+			}
+			NOT = {
+				consort_adm = 3
+			}
+			NOT = {
+				consort_dip = 3
+			}
+			NOT = {
+				consort_mil = 3
+			}
+		}
+	}
+	prestige = -0.10
+	legitimacy = -0.10
+	reduced_liberty_desire = -5
+	nation_designer_cost = 5
+}

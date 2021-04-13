@@ -1,0 +1,521 @@
+country_event = {
+	id = flavor_lit.3
+	title = "flavor_lit.EVTNAME3"
+	desc = "flavor_lit.EVTDESC3"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		is_year = 1600
+		NOT = {
+			is_year = 1620
+		}
+		any_neighbor_country = {
+			OR = {
+				tag = POL
+				tag = SWE
+			}
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		SWE = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		SWE = {
+			num_of_owned_provinces_with = {
+				value = 8
+				is_core = SWE
+			}
+		}
+		NOT = {
+			junior_union_with = POL
+		}
+		NOT = {
+			senior_union_with = POL
+		}
+		NOT = {
+			junior_union_with = SWE
+		}
+		NOT = {
+			senior_union_with = SWE
+		}
+		NOT = {
+			vassal_of = POL
+		}
+		NOT = {
+			religion = catholic
+		}
+		NOT = {
+			has_country_modifier = counter_reformation
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_lit.EVTOPTA3"
+		SWE = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB3"
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		SWE = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_lit.4
+	title = "flavor_lit.EVTNAME4"
+	desc = "flavor_lit.EVTDESC4"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		is_year = 1618
+		any_neighbor_country = {
+			OR = {
+				tag = POL
+				tag = PRU
+			}
+		}
+		NOT = {
+			is_year = 1626
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		NOT = {
+			junior_union_with = POL
+		}
+		NOT = {
+			senior_union_with = POL
+		}
+		NOT = {
+			junior_union_with = PRU
+		}
+		NOT = {
+			senior_union_with = PRU
+		}
+		NOT = {
+			vassal_of = POL
+		}
+		NOT = {
+			religion = catholic
+		}
+		NOT = {
+			has_country_modifier = counter_reformation
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_lit.EVTOPTA3"
+		PRU = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB3"
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		PRU = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_lit.5
+	title = "flavor_lit.EVTNAME5"
+	desc = "flavor_lit.EVTDESC5"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		any_neighbor_country = {
+			OR = {
+				tag = POL
+				tag = HAB
+			}
+		}
+		is_year = 1570
+		NOT = {
+			is_year = 1576
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		NOT = {
+			junior_union_with = POL
+		}
+		NOT = {
+			senior_union_with = POL
+		}
+		NOT = {
+			junior_union_with = HAB
+		}
+		NOT = {
+			senior_union_with = HAB
+		}
+		NOT = {
+			vassal_of = POL
+		}
+		NOT = {
+			religion = catholic
+		}
+		NOT = {
+			has_country_modifier = counter_reformation
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_lit.EVTOPTA3"
+		HAB = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB3"
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		HAB = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_lit.6
+	title = "flavor_lit.EVTNAME6"
+	desc = "flavor_lit.EVTDESC6"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		any_neighbor_country = {
+			OR = {
+				tag = POL
+				tag = HAB
+			}
+		}
+		is_year = 1618
+		NOT = {
+			is_year = 1631
+		}
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		NOT = {
+			junior_union_with = POL
+		}
+		NOT = {
+			senior_union_with = POL
+		}
+		NOT = {
+			junior_union_with = HAB
+		}
+		NOT = {
+			senior_union_with = HAB
+		}
+		NOT = {
+			vassal_of = POL
+		}
+		NOT = {
+			religion = catholic
+		}
+		NOT = {
+			has_country_modifier = counter_reformation
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_lit.EVTOPTA3"
+		HAB = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB3"
+		POL = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_friendliness
+				years = 50
+			}
+		}
+		HAB = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_lit.10
+	title = "flavor_lit.EVTNAME10"
+	desc = "flavor_lit.EVTDESC10"
+	picture = LIBERUM_VETO_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		is_year = 1652
+		NOT = {
+			is_year = 1653
+		}
+		NOT = {
+			vassal_of = POL
+		}
+		OR = {
+			junior_union_with = POL
+			senior_union_with = POL
+		}
+		NOT = {
+			exists = PLC
+		}
+		exists = POL
+		POL = {
+			has_country_flag = librium_veto
+		}
+		NOT = {
+			has_country_flag = librium_veto
+		}
+	}
+	mean_time_to_happen = {
+		years = 166
+	}
+	option = {
+		name = "flavor_lit.EVTOPTA10"
+		country_event = {
+			id = flavor_lit.11
+			days = 14
+			random = 40
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB10"
+		set_country_flag = librium_veto
+		add_country_modifier = {
+			name = pol_nieszawa_privileges
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = flavor_lit.11
+	title = "flavor_lit.EVTNAME11"
+	desc = "flavor_lit.EVTDESC11"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "flavor_lit.EVTOPTA11"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		add_years_of_income = -0.5
+		every_core_province = {
+			limit = {
+				is_core = ROOT
+			}
+			add_province_modifier = {
+				name = "turmoil_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB11"
+		every_core_province = {
+			limit = {
+				is_core = ROOT
+			}
+			add_province_modifier = {
+				name = "turmoil_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}
+country_event = {
+	id = flavor_lit.13
+	title = "flavor_lit.EVTNAME13"
+	desc = "flavor_lit.EVTDESC13"
+	picture = RELIGION_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		NOT = {
+			vassal_of = POL
+		}
+		is_year = 1700
+		NOT = {
+			is_year = 1800
+		}
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_lit.EVTOPTA13"
+		add_stability = -2
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+		add_country_modifier = {
+			name = pietism
+			duration = 18250
+		}
+	}
+	option = {
+		name = "flavor_lit.EVTOPTB13"
+		add_country_modifier = {
+			name = the_conventicle_edict
+			duration = 18250
+		}
+	}
+}

@@ -1,0 +1,233 @@
+trading_post = {
+	cost = 100
+	time = 12
+	trigger = {
+		OR = {
+			AND = {
+				has_province_flag = infra_calc_done
+				NOT = {
+					has_building = trading_company
+				}
+				NOT = {
+					check_variable = {
+						which = urban_pop
+						value = 5
+					}
+				}
+				is_capital = no
+				OR = {
+					has_province_flag = TP_trading_post
+					has_province_modifier = trading_post_province
+					AND = {
+						has_province_flag = ITA_trading_post
+						owner = {
+							culture_group = latin
+						}
+					}
+					AND = {
+						has_province_flag = NOV_trading_post
+						owner = {
+							primary_culture = novgorodian
+						}
+					}
+				}
+				OR = {
+					owner = {
+						capital_scope = {
+							continent = europe
+						}
+					}
+					owner = {
+						capital_scope = {
+							continent = mena
+						}
+					}
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = trading_company
+					}
+					NOT = {
+						check_variable = {
+							which = urban_pop
+							value = 5
+						}
+					}
+					is_capital = no
+					OR = {
+						has_province_flag = TP_trading_post
+						has_province_modifier = trading_post_province
+						AND = {
+							has_province_flag = ITA_trading_post
+							owner = {
+								culture_group = latin
+							}
+						}
+						AND = {
+							has_province_flag = NOV_trading_post
+							owner = {
+								primary_culture = novgorodian
+							}
+						}
+					}
+					OR = {
+						owner = {
+							capital_scope = {
+								continent = europe
+							}
+						}
+						owner = {
+							capital_scope = {
+								continent = mena
+							}
+						}
+					}
+				}
+				has_building = trading_post
+			}
+		}
+	}
+	modifier = {
+		province_trade_power_value = 0.35
+		province_trade_power_modifier = 0.30
+		local_defensiveness = 0.25
+		local_autonomy = 0.25
+		local_unrest = -5
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+}
+trading_company = {
+	cost = 400
+	time = 24
+	trigger = {
+		OR = {
+			AND = {
+				has_building = trading_post
+				has_province_flag = infra_calc_done
+				NOT = {
+					check_variable = {
+						which = urban_pop
+						value = 5
+					}
+				}
+				adm_tech = 20
+				is_capital = no
+				OR = {
+					has_province_flag = TP_trading_post
+					has_province_modifier = trading_post_province
+					AND = {
+						has_province_flag = ITA_trading_post
+						owner = {
+							culture_group = latin
+						}
+					}
+					AND = {
+						has_province_flag = NOV_trading_post
+						owned_by = NOV
+					}
+				}
+				owner = {
+					is_tribal = no
+					capital_scope = {
+						OR = {
+							continent = europe
+							continent = mena
+						}
+					}
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						check_variable = {
+							which = urban_pop
+							value = 5
+						}
+					}
+					is_capital = no
+					OR = {
+						has_province_flag = TP_trading_post
+						has_province_modifier = trading_post_province
+						AND = {
+							has_province_flag = ITA_trading_post
+							owner = {
+								culture_group = latin
+							}
+						}
+						AND = {
+							has_province_flag = NOV_trading_post
+							owned_by = NOV
+						}
+					}
+					owner = {
+						is_tribal = no
+						capital_scope = {
+							OR = {
+								continent = europe
+								continent = mena
+							}
+						}
+					}
+				}
+				has_building = trading_company
+			}
+		}
+	}
+	modifier = {
+		province_trade_power_value = 0.5
+		province_trade_power_modifier = 0.40
+		local_defensiveness = 0.3
+		local_autonomy = 0.25
+		local_unrest = -5
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = trading_post
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+name = "Fulani War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 1554
+}
+1804.1.1 = {
+	add_attacker = SOK
+	add_defender = HAU
+	add_defender = KBO
+}
+1810.1.1 = {
+	rem_attacker = SOK
+	rem_defender = KBO
+	rem_defender = HAU
+}

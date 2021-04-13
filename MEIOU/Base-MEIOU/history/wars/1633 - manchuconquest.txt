@@ -1,0 +1,14 @@
+name = "Manchu Conquest"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2125
+}
+1633.1.1 = {
+	add_attacker = MCH
+	add_defender = MNG
+}
+1644.6.6 = {
+	rem_attacker = MCH
+	rem_defender = MNG
+}

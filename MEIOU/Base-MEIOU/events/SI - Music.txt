@@ -1,0 +1,1065 @@
+country_event = {
+	id = opera_musica.0
+	title = "opera_musica.EVTNAME0"
+	desc = "opera_musica.EVTDESC0"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		has_country_modifier = working_on_opera
+		NOT = {
+			has_country_modifier = opera_perfomance
+		}
+		NOT = {
+			has_global_flag = first_opera
+		}
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 2
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0.8
+			composer = 2
+		}
+		modifier = {
+			factor = 0.7
+			composer = 3
+		}
+		modifier = {
+			factor = 1.1
+			has_country_flag = no_inspiration_music
+		}
+		modifier = {
+			factor = 1.1
+			has_country_flag = no_artistic_freedom_music
+		}
+	}
+	immediate = {
+		set_global_flag = first_opera
+	}
+	option = {
+		name = "opera_musica.EVTOPTA0"
+		add_prestige = 10
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		remove_country_modifier = working_on_opera
+		add_country_modifier = {
+			name = "opera_perfomance"
+			duration = 2000
+		}
+		every_neighbor_country = {
+			limit = {
+				technology_group = western
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_pleased
+			}
+		}
+		clr_country_flag = eccentric_composer_happened
+		clr_country_flag = no_artistic_freedom_music
+		clr_country_flag = no_inspiration_music
+		clr_country_flag = no_inspiration_music_happened
+	}
+}
+country_event = {
+	id = opera_musica.1
+	title = "opera_musica.EVTNAME1"
+	desc = "opera_musica.EVTDESC1"
+	picture = CULTURE_eventPicture
+	trigger = {
+		has_country_modifier = working_on_opera
+		NOT = {
+			has_country_modifier = opera_perfomance
+		}
+		has_global_flag = first_opera
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 2
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0.8
+			composer = 2
+		}
+		modifier = {
+			factor = 0.7
+			composer = 3
+		}
+		modifier = {
+			factor = 1.2
+			has_country_flag = no_inspiration_music
+		}
+		modifier = {
+			factor = 1.2
+			has_country_flag = no_artistic_freedom_music
+		}
+	}
+	option = {
+		name = "opera_musica.EVTOPTA1"
+		random_list = {
+			35 = {
+				add_prestige = 10
+			}
+			50 = {
+				add_prestige = 5
+			}
+			15 = {
+				add_prestige = -5
+			}
+		}
+		remove_country_modifier = working_on_opera
+		add_country_modifier = {
+			name = "opera_perfomance"
+			duration = 1825
+		}
+		clr_country_flag = eccentric_composer_happened
+		clr_country_flag = no_artistic_freedom_music
+		clr_country_flag = no_inspiration_music
+		clr_country_flag = no_inspiration_music_happened
+	}
+}
+country_event = {
+	id = opera_musica.2
+	title = "opera_musica.EVTNAME2"
+	desc = "opera_musica.EVTDESC2"
+	picture = CULTURE_eventPicture
+	trigger = {
+		has_country_modifier = working_on_opera
+		NOT = {
+			advisor = composer
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = "opera_musica.EVTOPTA1"
+		add_prestige = 1
+		remove_country_modifier = working_on_opera
+		clr_country_flag = eccentric_composer_happened
+		clr_country_flag = no_artistic_freedom_music
+		clr_country_flag = no_inspiration_music
+		clr_country_flag = no_inspiration_music_happened
+	}
+}
+country_event = {
+	id = opera_musica.3
+	title = "opera_musica.EVTNAME3"
+	desc = "opera_musica.EVTDESC3"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1495
+		NOT = {
+			is_year = 1530
+		}
+		owns = 2312
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Juan del Encina"
+			location = 2312
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.4
+	title = "opera_musica.EVTNAME4"
+	desc = "opera_musica.EVTDESC4"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1500
+		NOT = {
+			is_year = 1521
+		}
+		owns = 1378
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Josquin de Prez"
+			location = 1378
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.5
+	title = "opera_musica.EVTNAME5"
+	desc = "opera_musica.EVTDESC5"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1545
+		NOT = {
+			is_year = 1590
+		}
+		owns = 118
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 8
+		define_advisor = {
+			type = composer
+			name = "Giovanni Palestrina"
+			location = 118
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.6
+	title = "opera_musica.EVTNAME6"
+	desc = "opera_musica.EVTDESC6"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1523
+		NOT = {
+			is_year = 1553
+		}
+		owns = 2369
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Mateo Flecha"
+			location = 2369
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.7
+	title = "opera_musica.EVTNAME7"
+	desc = "opera_musica.EVTDESC7"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1553
+		NOT = {
+			is_year = 1553
+		}
+		owns = 2312
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Diego Ortiz"
+			location = 2312
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.8
+	title = "opera_musica.EVTNAME8"
+	desc = "opera_musica.EVTDESC8"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1563
+		NOT = {
+			is_year = 1590
+		}
+		owns = 65
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 10
+		define_advisor = {
+			type = composer
+			name = "Orlandus Lassus"
+			location = 65
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.9
+	title = "opera_musica.EVTNAME9"
+	desc = "opera_musica.EVTDESC9"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1560
+		NOT = {
+			is_year = 1580
+		}
+		owns = 2531
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Antonio Valente"
+			location = 2531
+			skill = 1
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.10
+	title = "opera_musica.EVTNAME10"
+	desc = "opera_musica.EVTDESC10"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1565
+		NOT = {
+			is_year = 1609
+		}
+		owns = 1345
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Gasparo da Salo"
+			location = 1345
+			skill = 1
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.11
+	title = "opera_musica.EVTNAME11"
+	desc = "opera_musica.EVTDESC11"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1570
+		NOT = {
+			is_year = 1623
+		}
+		owns = 236
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 8
+		define_advisor = {
+			type = composer
+			name = "William Byrd"
+			location = 236
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.12
+	title = "opera_musica.EVTNAME12"
+	desc = "opera_musica.EVTDESC12"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1580
+		NOT = {
+			is_year = 1643
+		}
+		owns = 109
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 15
+		define_advisor = {
+			type = composer
+			name = "Claudio Monteverdi"
+			location = 109
+			skill = 3
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.13
+	title = "opera_musica.EVTNAME13"
+	desc = "opera_musica.EVTDESC13"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1590
+		NOT = {
+			is_year = 1612
+		}
+		owns = 112
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 8
+		define_advisor = {
+			type = composer
+			name = "Giovanni Gabrieli"
+			location = 112
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.14
+	title = "opera_musica.EVTNAME14"
+	desc = "opera_musica.EVTDESC14"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1582
+		NOT = {
+			is_year = 1611
+		}
+		owns = 217
+		tag = SPA
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 10
+		define_advisor = {
+			type = composer
+			name = "Tomas Luis de Victoria"
+			location = 217
+			skill = 3
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.15
+	title = "opera_musica.EVTNAME15"
+	desc = "opera_musica.EVTDESC15"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1546
+		NOT = {
+			is_year = 1570
+		}
+		owns = 213
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		define_advisor = {
+			type = composer
+			name = "Bartomeu Carceres"
+			location = 213
+			skill = 1
+			discount = yes
+		}
+	}
+	option = {
+		name = opera_musica.EVTOPTA15
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = opera_musica.16
+	title = "opera_musica.EVTNAME16"
+	desc = "opera_musica.EVTDESC16"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1600
+		NOT = {
+			is_year = 1651
+		}
+		owns = 112
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 8
+		define_advisor = {
+			type = composer
+			name = "Giovanni Geronimo Kapsberger"
+			location = 112
+			skill = 1
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.17
+	title = "opera_musica.EVTNAME17"
+	desc = "opera_musica.EVTDESC17"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1639
+		NOT = {
+			is_year = 1656
+		}
+		owns = 2531
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 8
+		define_advisor = {
+			type = composer
+			name = "Andrea Falconiero"
+			location = 2531
+			skill = 1
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.18
+	title = "opera_musica.EVTNAME18"
+	desc = "opera_musica.EVTDESC18"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1676
+		NOT = {
+			is_year = 1700
+		}
+		owns = 183
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 5
+		define_advisor = {
+			type = composer
+			name = "Marin Marais"
+			location = 183
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.19
+	title = "opera_musica.EVTNAME19"
+	desc = "opera_musica.EVTDESC19"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1680
+		NOT = {
+			is_year = 1695
+		}
+		owns = 236
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 10
+		define_advisor = {
+			type = composer
+			name = "Henry Purcell"
+			location = 236
+			skill = 3
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.20
+	title = "opera_musica.EVTNAME20"
+	desc = "opera_musica.EVTDESC20"
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_year = 1678
+		NOT = {
+			is_year = 1700
+		}
+		owns = 71
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = opera_musica.EVTOPTA3
+		add_prestige = 8
+		define_advisor = {
+			type = composer
+			name = "Johann Pachelbel"
+			location = 71
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = opera_musica.41
+	title = "opera_musica.EVTNAME41"
+	desc = "opera_musica.EVTDESC41"
+	picture = ARTWORK_eventPicture
+	major = yes
+	trigger = {
+		NOT = {
+			has_global_flag = madrigal_invented
+		}
+		NOT = {
+			is_year = 1590
+		}
+		technology_group = western
+		OR = {
+			has_idea = patron_of_art
+			any_owned_province = {
+				has_building = fine_arts_academy
+			}
+			advisor = composer
+		}
+		is_year = 1470
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.7
+			culture_group = latin
+		}
+		modifier = {
+			factor = 0.9
+			culture_group = iberian
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				culture_group = langue_d_oc
+				culture_group = langue_d_oil
+			}
+		}
+		modifier = {
+			factor = 0.8
+			composer = 2
+		}
+		modifier = {
+			factor = 0.7
+			composer = 3
+		}
+		modifier = {
+			factor = 0.9
+			is_year = 1500
+		}
+		modifier = {
+			factor = 0.8
+			is_year = 1510
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1520
+		}
+	}
+	option = {
+		name = "opera_musica.EVTOPTA41"
+		add_prestige = 15
+		add_country_modifier = {
+			name = "madrigal_perfomance"
+			duration = 365
+		}
+		set_global_flag = madrigal_invented
+	}
+}
+country_event = {
+	id = opera_musica.42
+	title = "opera_musica.EVTNAME42"
+	desc = "opera_musica.EVTDESC42"
+	picture = CULTURE_eventPicture
+	trigger = {
+		has_country_modifier = working_on_madrigal
+		NOT = {
+			has_country_modifier = madrigal_perfomance
+		}
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 2
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0.8
+			composer = 2
+		}
+		modifier = {
+			factor = 0.7
+			composer = 3
+		}
+		modifier = {
+			factor = 1.2
+			has_country_flag = no_inspiration_music
+		}
+		modifier = {
+			factor = 1.2
+			has_country_flag = no_artistic_freedom_music
+		}
+	}
+	option = {
+		name = "opera_musica.EVTOPTA42"
+		random_list = {
+			35 = {
+				add_prestige = 10
+			}
+			50 = {
+				add_prestige = 5
+			}
+			15 = {
+				add_prestige = -5
+			}
+		}
+		remove_country_modifier = working_on_madrigal
+		add_country_modifier = {
+			name = "madrigal_perfomance"
+			duration = 900
+		}
+		clr_country_flag = eccentric_composer_happened
+		clr_country_flag = no_artistic_freedom_music
+		clr_country_flag = no_inspiration_music
+		clr_country_flag = no_inspiration_music_happened
+	}
+}
+country_event = {
+	id = opera_musica.43
+	title = "opera_musica.EVTNAME2"
+	desc = "opera_musica.EVTDESC2"
+	picture = CULTURE_eventPicture
+	trigger = {
+		has_country_modifier = working_on_madrigal
+		NOT = {
+			advisor = composer
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = "opera_musica.EVTOPTA2"
+		add_prestige = 1
+		remove_country_modifier = working_on_madrigal
+		clr_country_flag = eccentric_composer_happened
+		clr_country_flag = no_artistic_freedom_music
+		clr_country_flag = no_inspiration_music
+		clr_country_flag = no_inspiration_music_happened
+	}
+}
+country_event = {
+	id = opera_musica.47
+	title = "opera_musica.EVTNAME47"
+	desc = "opera_musica.EVTDESC47"
+	picture = CULTURE_eventPicture
+	trigger = {
+		OR = {
+			has_country_modifier = working_on_madrigal
+			has_country_modifier = working_on_opera
+			has_country_modifier = working_on_symphony
+		}
+		NOT = {
+			has_country_flag = ruler_loves_music
+		}
+		adm = 2
+		dip = 2
+		NOT = {
+			dip = 6
+		}
+		advisor = composer
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 2
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 0.8
+			composer = 2
+		}
+		modifier = {
+			factor = 0.7
+			composer = 3
+		}
+	}
+	option = {
+		name = "opera_musica.EVTOPTA47"
+		change_dip = 1
+		set_country_flag = ruler_loves_music
+	}
+}
+country_event = {
+	id = opera_musica.48
+	title = "opera_musica.EVTNAME48"
+	desc = "opera_musica.EVTDESC48"
+	picture = CULTURE_eventPicture
+	trigger = {
+		OR = {
+			has_country_modifier = working_on_madrigal
+			has_country_modifier = working_on_opera
+			has_country_modifier = working_on_symphony
+		}
+		advisor = composer
+		overextension_percentage = 0.25
+		NOT = {
+			has_country_flag = no_inspiration_music_happened
+		}
+	}
+	immediate = {
+		set_country_flag = no_inspiration_music_happened
+	}
+	mean_time_to_happen = {
+		years = 6
+		modifier = {
+			factor = 0.9
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 0.5
+			overextension_percentage = 0.75
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				composer = 2
+			}
+		}
+		modifier = {
+			factor = 1.2
+			NOT = {
+				composer = 3
+			}
+		}
+	}
+	option = {
+		name = "opera_musica.EVTOPTA48"
+		add_years_of_income = -0.2
+	}
+	option = {
+		name = "opera_musica.EVTOPTB48"
+		custom_tooltip = music_delay
+		set_country_flag = no_inspiration_music
+	}
+}
+country_event = {
+	id = opera_musica.49
+	title = "opera_musica.EVTNAME49"
+	desc = "opera_musica.EVTDESC49"
+	picture = CULTURE_eventPicture
+	trigger = {
+		OR = {
+			has_country_modifier = working_on_madrigal
+			has_country_modifier = working_on_opera
+			has_country_modifier = working_on_symphony
+		}
+		advisor = composer
+		OR = {
+			government = monarchy
+			government = theocracy
+		}
+		NOT = {
+			has_country_flag = eccentric_composer_happened
+		}
+	}
+	immediate = {
+		set_country_flag = eccentric_composer_happened
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 0.9
+			overextension_percentage = 0.25
+		}
+		modifier = {
+			factor = 0.8
+			overextension_percentage = 0.50
+		}
+		modifier = {
+			factor = 0.7
+			overextension_percentage = 0.75
+		}
+	}
+	option = {
+		name = "opera_musica.EVTOPTA49"
+		add_prestige = -3
+		add_papal_influence = -3
+		add_legitimacy = -1
+	}
+	option = {
+		name = "opera_musica.EVTOPTB49"
+		custom_tooltip = music_delay
+		set_country_flag = no_artistic_freedom_music
+	}
+	option = {
+		trigger = {
+			dip = 3
+		}
+		name = "opera_musica.EVTOPTC49"
+		add_years_of_income = -0.1
+	}
+}
+country_event = {
+	id = opera_musica.50
+	title = "opera_musica.EVTNAME50"
+	desc = "opera_musica.EVTDESC50"
+	picture = CULTURE_eventPicture
+	trigger = {
+		ai = no
+		NOT = {
+			has_country_flag = music_musical
+		}
+		has_country_modifier = working_on_opera
+		advisor = composer
+		is_year = 1720
+	}
+	immediate = {
+		set_country_flag = music_musical
+	}
+	mean_time_to_happen = {
+		months = 24
+	}
+	option = {
+		name = "opera_musica.EVTOPTA50"
+		add_prestige = 5
+		remove_country_modifier = working_on_opera
+	}
+	option = {
+		name = "opera_musica.EVTOPTB50"
+		add_adm_power = 25
+		remove_country_modifier = working_on_opera
+	}
+	option = {
+		name = "opera_musica.EVTOPTC50"
+	}
+	option = {
+		name = "opera_musica.EVTOPTD50"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		remove_country_modifier = working_on_opera
+	}
+}

@@ -1,0 +1,149 @@
+country_event = {
+	id = meiouelective_monarchy.001
+	title = meiouelective_monarchy.001.t
+	desc = meiouelective_monarchy.001.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_dlc = "Res Publica"
+		has_dlc = "The Cossacks"
+		AND = {
+			OR = {
+				has_reform = elective_monarchy
+				has_reform = elective_monarchy_legacy
+				has_reform = mamluk_government_legacy
+			}
+		}
+	}
+	option = {
+		name = meiouelective_monarchy.001.a
+		add_country_modifier = {
+			name = elective_succession
+			duration = 120
+		}
+	}
+}
+country_event = {
+	id = meiouelective_monarchy.003
+	title = meiouelective_monarchy.003.t
+	desc = meiouelective_monarchy.003.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		has_dlc = "Res Publica"
+		has_dlc = "The Cossacks"
+		AND = {
+			OR = {
+				has_reform = elective_monarchy
+				has_reform = elective_monarchy_legacy
+				has_reform = mamluk_government_legacy
+			}
+		}
+		OR = {
+			has_new_dynasty = yes
+			NOT = {
+				legitimacy = 66
+			}
+			AND = {
+				NOT = {
+					ADM = 3
+				}
+				NOT = {
+					DIP = 3
+				}
+				NOT = {
+					MIL = 3
+				}
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+			AND = {
+				has_regency = yes
+				has_female_heir = yes
+			}
+			is_lesser_in_union = yes
+		}
+	}
+	option = {
+		name = meiouelective_monarchy.001.a
+		set_country_flag = elective_crises_start
+		every_country = {
+			limit = {
+				junior_union_with = ROOT
+			}
+			break_union = ROOT
+		}
+	}
+}
+country_event = {
+	id = meiouelective_monarchy.004
+	title = meiouelective_monarchy.003.t
+	desc = meiouelective_monarchy.004.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_new_dynasty = yes
+			NOT = {
+				legitimacy = 66
+			}
+			AND = {
+				NOT = {
+					ADM = 3
+				}
+				NOT = {
+					DIP = 3
+				}
+				NOT = {
+					MIL = 3
+				}
+			}
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+			AND = {
+				has_regency = yes
+				has_female_heir = yes
+			}
+			is_lesser_in_union = yes
+		}
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = elective_monarchy
+					has_reform = elective_monarchy_legacy
+					has_reform = mamluk_government_legacy
+				}
+			}
+		}
+		any_country = {
+			AND = {
+				OR = {
+					has_reform = elective_monarchy
+					has_reform = elective_monarchy_legacy
+					has_reform = mamluk_government_legacy
+				}
+			}
+			junior_union_with = ROOT
+		}
+	}
+	option = {
+		name = meiouelective_monarchy.003.a
+		every_country = {
+			limit = {
+				AND = {
+					OR = {
+						has_reform = elective_monarchy
+						has_reform = elective_monarchy_legacy
+						has_reform = mamluk_government_legacy
+					}
+				}
+				junior_union_with = ROOT
+			}
+			break_union = ROOT
+		}
+	}
+}

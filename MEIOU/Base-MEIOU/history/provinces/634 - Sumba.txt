@@ -1,0 +1,25 @@
+capital = "Sumba"
+trade_goods = sandal
+culture = moluccan
+religion = polynesian_religion
+hre = no
+base_tax = 2
+base_production = 0
+base_manpower = 0
+native_size = 20
+native_ferocity = 1
+native_hostileness = 5
+discovered_by = chinese
+discovered_by = indian
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 2.5
+	}
+	set_province_flag = melanesian_natives
+	set_province_flag = tribals_control_province
+}
+1515.1.1 = {
+	discovered_by = POR
+}

@@ -1,0 +1,411 @@
+recruitment_drive_act = {
+	monarch_power = MIL
+	potential = {
+		mil_tech = 10
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		OR = {
+			mil = 4
+			advisor = army_reformer
+			advisor = army_organiser
+			advisor = recruitmaster
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	manpower_recovery_speed = 0.10
+	ai_will_do = {
+		factor = 0
+	}
+}
+centralize_the_state = {
+	monarch_power = ADM
+	potential = {
+		always = yes
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = {
+				check_variable = {
+					which = absolutismvar
+					which = max_absolutism
+				}
+			}
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	yearly_absolutism = 0.4
+	ai_will_do = {
+		factor = 0
+	}
+}
+decentralize_the_state = {
+	monarch_power = ADM
+	potential = {
+		always = yes
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			check_variable = {
+				which = absolutismvar
+				value = 0
+			}
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	yearly_absolutism = -0.4
+	ai_will_do = {
+		factor = 0
+	}
+}
+african_migration_act = {
+	monarch_power = MIL
+	potential = {
+		AND = {
+			OR = {
+				primary_culture = egyptian
+				primary_culture = bedouin
+				culture_group = maghreb
+				culture_group = berber_group
+				culture_group = mande_group
+				culture_group = senegambian
+				culture_group = songhai_group
+				culture_group = dogon_group
+				culture_group = senufo_group
+				culture_group = akan_group
+				culture_group = kru_group
+				culture_group = volta_group
+				culture_group = saharan_group
+				culture_group = plateau_group
+				culture_group = chadic_group
+				culture_group = kwa_group
+				culture_group = southern_african
+				culture_group = bantu_group
+				culture_group = great_lakes_group
+				culture_group = swahili_group
+				culture_group = somali_group
+				culture_group = abyssinian_group
+				culture_group = nilotic
+				culture_group = madagascan_group
+			}
+		}
+		NOT = {
+			has_idea = additional_colonists
+		}
+		NOT = {
+			has_idea = colonial_ventures
+		}
+		NOT = {
+			has_idea = promise_of_the_new_world
+		}
+		any_owned_province = {
+			AND = {
+				OR = {
+					superregion = east_africa_superregion
+					superregion = west_africa_superregion
+					superregion = north_africa_superregion
+					region = egypt_region
+				}
+			}
+			has_empty_adjacent_province = yes
+		}
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		OR = {
+			mil = 4
+			advisor = army_reformer
+			advisor = army_organiser
+			advisor = recruitmaster
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	colonists = 1
+	ai_will_do = {
+		factor = 1
+	}
+}
+lappmarken_colonisation_act = {
+	monarch_power = DIP
+	potential = {
+		NOT = {
+			has_idea = additional_colonists
+		}
+		NOT = {
+			has_idea = colonial_ventures
+		}
+		NOT = {
+			has_idea = promise_of_the_new_world
+		}
+		any_owned_province = {
+			OR = {
+				region = scandinavia_region
+				area = finland_inland_area
+				area = finland_coastal_area
+			}
+			has_empty_adjacent_province = yes
+		}
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		dip_tech = 25
+		OR = {
+			dip = 4
+			advisor = natural_scientist
+			advisor = trader
+			advisor = colonial_governor
+			advisor = navigator
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	colonists = 1
+	ai_will_do = {
+		factor = 1
+	}
+}
+karelia_colonisation_act = {
+	monarch_power = DIP
+	potential = {
+		NOT = {
+			has_idea = additional_colonists
+		}
+		NOT = {
+			has_idea = colonial_ventures
+		}
+		NOT = {
+			has_idea = promise_of_the_new_world
+		}
+		any_owned_province = {
+			OR = {
+				area = karelia_area
+				area = beloozero_area
+			}
+			has_empty_adjacent_province = yes
+		}
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		dip_tech = 25
+		OR = {
+			dip = 4
+			advisor = natural_scientist
+			advisor = trader
+			advisor = colonial_governor
+			advisor = navigator
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	colonists = 1
+	ai_will_do = {
+		factor = 1
+	}
+}
+siberia_colonisation_act = {
+	monarch_power = DIP
+	potential = {
+		NOT = {
+			has_idea = additional_colonists
+		}
+		NOT = {
+			has_idea = colonial_ventures
+		}
+		NOT = {
+			has_idea = promise_of_the_new_world
+		}
+		any_owned_province = {
+			OR = {
+				region = north_russia_region
+				region = east_russia_region
+				region = steppes_region
+			}
+			has_empty_adjacent_province = yes
+		}
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		has_institution = legalism
+		dip_tech = 20
+		OR = {
+			dip = 4
+			advisor = natural_scientist
+			advisor = trader
+			advisor = colonial_governor
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	colonists = 1
+	ai_will_do = {
+		factor = 1
+	}
+}
+greenland_colonisation_act = {
+	monarch_power = DIP
+	potential = {
+		capital_scope = {
+			superregion = scandinavian_superregion
+		}
+		NOT = {
+			has_idea = additional_colonists
+		}
+		NOT = {
+			has_idea = colonial_ventures
+		}
+		NOT = {
+			has_idea = promise_of_the_new_world
+		}
+		1104 = {
+			has_discovered = ROOT
+			OR = {
+				is_empty = yes
+				owned_by = ROOT
+			}
+		}
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		dip_tech = 25
+		OR = {
+			dip = 4
+			advisor = natural_scientist
+			advisor = trader
+			advisor = colonial_governor
+			advisor = navigator
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	colonists = 1
+	ai_will_do = {
+		factor = 1
+	}
+}
+hill_subjugation_act = {
+	monarch_power = MIL
+	potential = {
+		OR = {
+			culture_group = assamese_group
+			culture_group = tibetic
+		}
+		NOT = {
+			has_idea = additional_colonists
+		}
+		NOT = {
+			has_idea = colonial_ventures
+		}
+		NOT = {
+			has_idea = promise_of_the_new_world
+		}
+		any_owned_province = {
+			OR = {
+				region = east_bengal_region
+				region = tibet_region
+			}
+			has_empty_adjacent_province = yes
+		}
+		NOT = {
+			has_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			has_idea_group = default_policy_2_ideas
+		}
+	}
+	allow = {
+		OR = {
+			mil = 4
+			advisor = army_reformer
+			advisor = army_organiser
+			advisor = recruitmaster
+		}
+		NOT = {
+			full_idea_group = default_policy_1_ideas
+		}
+		NOT = {
+			full_idea_group = default_policy_2_ideas
+		}
+	}
+	colonists = 1
+	ai_will_do = {
+		factor = 1
+	}
+}

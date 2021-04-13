@@ -1,0 +1,323 @@
+country_decisions = {
+	ask_pope_for_university_charter = {
+		potential = {
+			religion = catholic
+			NOT = {
+				has_country_flag = region_has_papal_charter_university
+			}
+			NOT = {
+				has_ruler_flag = asked_pope_for_university_charter
+			}
+			NOT = {
+				check_variable = {
+					which = university_education_multiplier
+					value = 1.25
+				}
+			}
+			PAP = {
+				exists = yes
+			}
+			check_variable = {
+				which = upper_pop_non_overseas
+				value = 1
+			}
+			NOT = {
+				is_year = 1550
+			}
+			NOT = {
+				AND = {
+					AVI = {
+						num_of_cities = 1
+						AND = {
+							OR = {
+								has_reform = papacy_reform
+								has_reform = papal_government
+							}
+						}
+					}
+					has_country_flag = support_antipope
+				}
+			}
+			NOT = {
+				capital_scope = {
+					any_province = {
+						region = PREV
+						AND = {
+							has_province_flag = university_present
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			treasury = 100
+			is_at_war = no
+		}
+		effect = {
+			set_ruler_flag = asked_pope_for_university_charter
+			add_treasury = -100
+			PAP = {
+				country_event = {
+					id = hre_universities.102
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					treasury = 150
+				}
+			}
+		}
+	}
+	prague_university_germans = {
+		potential = {
+			NOT = {
+				has_global_flag = prague_university_germans_founded
+			}
+			religion = catholic
+			check_variable = {
+				which = upper_pop_non_overseas
+				value = 1
+			}
+			268 = {
+				religion = hussite
+				OR = {
+					has_building = small_university
+					has_building = medium_university
+					has_building = big_university
+				}
+			}
+			capital_scope = {
+				region = upper_saxon_circle_region
+			}
+			any_owned_province = {
+				AND = {
+					OR = {
+						has_building = town_hall
+						has_building = urban_infrastructure_1
+						has_building = urban_infrastructure_2
+						has_building = urban_infrastructure_3
+						has_building = urban_infrastructure_4
+						has_building = urban_infrastructure_5
+					}
+				}
+				NOT = {
+					has_building = small_university
+					has_building = medium_university
+					has_building = big_university
+				}
+				religion = catholic
+			}
+		}
+		allow = {
+			treasury = 100
+			is_at_war = no
+		}
+		effect = {
+			set_global_flag = prague_university_germans_founded
+			add_treasury = -100
+			if = {
+				limit = {
+					any_owned_province = {
+						AND = {
+							OR = {
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						religion = catholic
+					}
+				}
+				random_owned_province = {
+					limit = {
+						AND = {
+							OR = {
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						religion = catholic
+					}
+					hidden_effect = {
+						if = {
+							limit = {
+								check_variable = {
+									which = wealth_urban_fluid
+									value = 50
+								}
+								check_variable = {
+									which = wealth_rural_fluid
+									value = 50
+								}
+							}
+							subtract_variable = {
+								which = wealth_urban_fluid
+								value = 50
+							}
+							subtract_variable = {
+								which = wealth_rural_fluid
+								value = 50
+							}
+						}
+						else_if = {
+							limit = {
+								check_variable = {
+									which = wealth_urban_fluid
+									value = 100
+								}
+							}
+							subtract_variable = {
+								which = wealth_urban_fluid
+								value = 100
+							}
+						}
+						else_if = {
+							limit = {
+								check_variable = {
+									which = wealth_rural_fluid
+									value = 100
+								}
+							}
+							subtract_variable = {
+								which = wealth_rural_fluid
+								value = 100
+							}
+						}
+						else = {
+							subtract_variable = {
+								which = wealth_urban_fluid
+								value = 50
+							}
+							subtract_variable = {
+								which = wealth_rural_fluid
+								value = 50
+							}
+						}
+					}
+					add_building = small_university
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						AND = {
+							OR = {
+								has_building = town_hall
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						religion = catholic
+					}
+				}
+				random_owned_province = {
+					limit = {
+						AND = {
+							OR = {
+								has_building = town_hall
+								has_building = urban_infrastructure_1
+								has_building = urban_infrastructure_2
+								has_building = urban_infrastructure_3
+								has_building = urban_infrastructure_4
+								has_building = urban_infrastructure_5
+							}
+						}
+						NOT = {
+							has_building = small_university
+							has_building = medium_university
+							has_building = big_university
+						}
+						religion = catholic
+					}
+					hidden_effect = {
+						if = {
+							limit = {
+								check_variable = {
+									which = wealth_urban_fluid
+									value = 50
+								}
+								check_variable = {
+									which = wealth_rural_fluid
+									value = 50
+								}
+							}
+							subtract_variable = {
+								which = wealth_urban_fluid
+								value = 50
+							}
+							subtract_variable = {
+								which = wealth_rural_fluid
+								value = 50
+							}
+						}
+						else_if = {
+							limit = {
+								check_variable = {
+									which = wealth_urban_fluid
+									value = 100
+								}
+							}
+							subtract_variable = {
+								which = wealth_urban_fluid
+								value = 100
+							}
+						}
+						else_if = {
+							limit = {
+								check_variable = {
+									which = wealth_rural_fluid
+									value = 100
+								}
+							}
+							subtract_variable = {
+								which = wealth_rural_fluid
+								value = 100
+							}
+						}
+						else = {
+							subtract_variable = {
+								which = wealth_urban_fluid
+								value = 50
+							}
+							subtract_variable = {
+								which = wealth_rural_fluid
+								value = 50
+							}
+						}
+					}
+					add_building = small_university
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

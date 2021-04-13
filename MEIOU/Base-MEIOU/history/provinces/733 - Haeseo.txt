@@ -1,0 +1,55 @@
+owner = KOR
+controller = KOR
+add_core = KOR
+capital = "Haeju"
+trade_goods = fish
+culture = korean
+religion = mahayana
+hre = no
+base_tax = 10
+base_production = 3
+base_manpower = 0
+is_city = yes
+urban_infrastructure_1 = yes
+harbour_infrastructure_2 = yes
+local_fortification_1 = yes
+marketplace = yes
+road_network = yes
+discovered_by = chinese
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 4.5
+	}
+}
+1392.6.5 = {
+	religion = confucianism
+	owner = JOS
+	controller = JOS
+	add_core = JOS
+	remove_core = KOR
+}
+1444.1.1 = {
+	base_tax = 24
+	base_manpower = 1
+}
+1520.5.5 = {
+	base_tax = 40
+}
+1592.8.1 = {
+	controller = ODA
+}
+1593.5.1 = {
+	controller = JOS
+}
+1637.1.1 = {
+	add_core = MNG
+}
+1644.1.1 = {
+	add_core = QNG
+	remove_core = MNG
+}
+1653.1.1 = {
+	discovered_by = NED
+}

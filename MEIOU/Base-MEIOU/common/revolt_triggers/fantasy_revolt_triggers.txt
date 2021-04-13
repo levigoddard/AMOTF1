@@ -1,0 +1,27 @@
+UEF = {
+	always = no
+}
+RHU = {
+	always = no
+}
+ASE = {
+	always = no
+}
+CEL = {
+	always = no
+}
+JBC = {
+	always = no
+}
+ARL = {
+	always = no
+}
+NSE = {
+	always = no
+}
+OCC = {
+	always = no
+}
+GUP = {
+	always = no
+}

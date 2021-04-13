@@ -1,0 +1,4 @@
+discovered_by = mesoamerican
+1521.8.13 = {
+	discovered_by = SPA
+}

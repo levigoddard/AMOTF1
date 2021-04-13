@@ -1,0 +1,78 @@
+israeli_ideas = {
+	start = {
+		land_morale = 0.10
+	}
+	bonus = {
+		legitimacy = 0.5
+		prestige = 0.15
+	}
+	trigger = {
+		tag = ISR
+		religion = jewish
+		always = no
+	}
+	free = yes
+	the_promised_land = {
+		enemy_core_creation = 0.5
+	}
+	right_of_return = {
+		global_manpower_modifier = 0.1
+	}
+	legacy_of_the_ghetto = {
+		trade_efficiency = 0.15
+	}
+	cousins_abroad = {
+		diplomats = 1
+	}
+	crossroads_of_empires = {
+		diplomatic_reputation = 2
+	}
+	never_again = {
+		discipline = 0.05
+	}
+	new_convenant = {
+		tolerance_own = 1
+	}
+}
+persian_alternate_ideas = {
+	start = {
+		technology_cost = -0.05
+		prestige = 0.15
+	}
+	bonus = {
+		max_states = 2
+	}
+	trigger = {
+		OR = {
+			tag = PER
+			tag = SAM
+		}
+		NOT = {
+			religion_group = muslim
+		}
+		always = no
+	}
+	free = yes
+	persian_cultural_legacy = {
+		prestige_decay = -0.005
+	}
+	royal_ceremonies = {
+		diplomatic_reputation = 2
+	}
+	cataphracts = {
+		cavalry_power = 0.20
+	}
+	increased_crown_lands = {
+		global_tax_modifier = 0.10
+	}
+	immortals = {
+		discipline = 0.025
+		land_morale = 0.05
+	}
+	improved_silk_road = {
+		global_trade_power = 0.10
+	}
+	cyrus_cylinder = {
+		tolerance_heathen = 1
+	}
+}

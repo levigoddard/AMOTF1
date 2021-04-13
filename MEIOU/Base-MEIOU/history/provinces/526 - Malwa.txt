@@ -1,0 +1,113 @@
+owner = MLW
+controller = MLW
+add_core = MLW
+capital = "Ujjain"
+trade_goods = livestock
+culture = malvi
+religion = hinduism
+hre = no
+base_tax = 28
+base_production = 2
+base_manpower = 2
+is_city = yes
+urban_infrastructure_1 = yes
+temple = yes
+marketplace = yes
+workshop = yes
+discovered_by = indian
+discovered_by = muslim
+discovered_by = turkishtech
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 6
+	}
+	add_permanent_province_modifier = {
+		name = urban_goods_cloth
+		duration = -1
+	}
+}
+1356.1.1 = {
+	unrest = 3
+}
+1401.1.1 = {
+	owner = MLW
+	controller = MLW
+	remove_core = DLH
+	unrest = 0
+}
+1498.1.1 = {
+	discovered_by = POR
+}
+1511.1.1 = {
+	base_tax = 32
+	base_production = 5
+}
+1530.1.1 = {}
+1530.1.1 = {
+	add_claim = GUJ
+}
+1530.2.3 = {
+	add_permanent_claim = MUG
+}
+1531.1.1 = {
+	controller = GUJ
+}
+1532.1.1 = {
+	owner = GUJ
+}
+1535.1.1 = {
+	controller = MUG
+}
+1537.1.1 = {
+	owner = MLW
+	controller = MLW
+}
+1543.1.1 = {
+	owner = BNG
+	controller = BNG
+}
+1545.5.22 = {
+	owner = MLW
+	controller = MLW
+}
+1561.3.1 = {
+	controller = MUG
+}
+1561.8.1 = {
+	controller = MLW
+}
+1562.5.1 = {
+	controller = MUG
+}
+1562.6.1 = {
+	owner = MUG
+}
+1564.1.1 = {
+	controller = REB
+	revolt = {
+		type = noble_rebels
+	}
+}
+1565.1.1 = {
+	controller = MUG
+	revolt = {}
+}
+1612.6.1 = {
+	add_core = MUG
+}
+1741.1.1 = {
+	controller = MAR
+}
+1743.1.1 = {
+	owner = BHO
+	controller = BHO
+	add_core = BHO
+	remove_core = MUG
+}
+1818.6.3 = {
+	owner = GBR
+	controller = GBR
+	remove_core = MAR
+}

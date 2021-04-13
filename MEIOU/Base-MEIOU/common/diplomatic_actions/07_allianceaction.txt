@@ -1,0 +1,1404 @@
+allianceaction = {
+	condition = {
+		tooltip = COURTSETUP
+		potential = {}
+		allow = {
+			has_global_flag = courtsetup
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = COURTSETUP
+		potential = {
+			OR = {
+				tag = JAI
+				tag = CHU
+				tag = GEN
+				tag = VEN
+				tag = MAM
+			}
+			ai = yes
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					tag = OTT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = COURTSETUP
+		potential = {
+			tag = OTT
+			ai = yes
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					tag = JAI
+				}
+				FROM = {
+					tag = CHU
+				}
+				FROM = {
+					tag = GEN
+				}
+				FROM = {
+					tag = VEN
+				}
+				FROM = {
+					tag = MAM
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = POPEANTIPOPE
+		potential = {
+			OR = {
+				tag = PAP
+				tag = AVI
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					tag = PAP
+					FROM = {
+						NOT = {
+							tag = AVI
+						}
+					}
+				}
+				AND = {
+					tag = AVI
+					FROM = {
+						NOT = {
+							tag = PAP
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = POPESCHISM
+		potential = {
+			tag = PAP
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					has_country_flag = support_antipope
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = ANTIPOPESCHISM
+		potential = {
+			tag = AVI
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					has_country_flag = support_roman_pope
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = POPESCHISM
+		potential = {
+			has_country_flag = support_roman_pope
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					tag = AVI
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = ANTIPOPESCHISM
+		potential = {
+			has_country_flag = support_antipope
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					tag = PAP
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = POPEHEATHEN
+		potential = {
+			tag = PAP
+		}
+		allow = {
+			FROM = {
+				religion = catholic
+			}
+		}
+	}
+	condition = {
+		tooltip = INDIANSTATE
+		potential = {
+			AND = {
+				capital_scope = {
+					continent = indian_continent
+				}
+				OR = {
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = hereditary_elite
+							}
+							has_reform = feudal_monarchy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = military_elite
+							}
+							has_reform = despotic_monarchy
+						}
+					}
+					AND = {
+						OR = {
+							has_reform = tribal_kingdom
+							has_reform = tribal_kingdom_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								capital_scope = {
+									continent = indian_continent
+								}
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = hereditary_elite
+							}
+							has_reform = principality_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								capital_scope = {
+									continent = southeast_asia
+								}
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = appointed_elite
+							}
+							has_reform = tsardom_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					OR = {
+						is_neighbor_of = ROOT
+						any_subject_country = {
+							AND = {
+								is_subject = yes
+								NOT = {
+									is_subject_of_type = tributary_state
+								}
+								NOT = {
+									is_subject_of_type = close_tributary_state
+								}
+							}
+							is_neighbor_of = ROOT
+						}
+						culture_group = ROOT
+					}
+				}
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = INDIANSTATE
+		potential = {
+			FROM = {
+				AND = {
+					capital_scope = {
+						continent = indian_continent
+					}
+					OR = {
+						AND = {
+							OR = {
+								AND = {
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = hereditary_elite
+								}
+								has_reform = feudal_monarchy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = military_elite
+								}
+								has_reform = despotic_monarchy
+							}
+						}
+						AND = {
+							OR = {
+								has_reform = tribal_kingdom
+								has_reform = tribal_kingdom_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									capital_scope = {
+										continent = indian_continent
+									}
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = hereditary_elite
+								}
+								has_reform = principality_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									capital_scope = {
+										continent = southeast_asia
+									}
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = appointed_elite
+								}
+								has_reform = tsardom_legacy
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+				FROM = {
+					any_subject_country = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						is_neighbor_of = ROOT
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = HREPREWESTPHALIA
+		potential = {
+			OR = {
+				AND = {
+					FROM = {
+						is_part_of_hre = no
+						OR = {
+							NOT = {
+								dynasty = ROOT
+							}
+							government = theocracy
+						}
+					}
+					AND = {
+						is_part_of_hre = yes
+						NOT = {
+							capital_scope = {
+								OR = {
+									superregion = italy_superregion
+									region = provence_region
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					FROM = {
+						AND = {
+							is_part_of_hre = yes
+							NOT = {
+								capital_scope = {
+									OR = {
+										superregion = italy_superregion
+										region = provence_region
+									}
+								}
+							}
+						}
+						OR = {
+							NOT = {
+								dynasty = ROOT
+							}
+							government = theocracy
+						}
+					}
+					is_part_of_hre = no
+				}
+			}
+		}
+		allow = {
+			OR = {
+				is_emperor = yes
+				FROM = {
+					is_emperor = yes
+				}
+				has_global_flag = leagues_peace_of_westphalia
+			}
+		}
+	}
+	condition = {
+		tooltip = IMPERIALFREECITY
+		potential = {
+			AND = {
+				OR = {
+					has_reform = free_city
+					has_reform = imperial_city
+					has_reform = trading_city_legacy
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				AND = {
+					OR = {
+						has_reform = free_city
+						has_reform = imperial_city
+						has_reform = trading_city_legacy
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = IMPERIALFREECITY
+		potential = {
+			FROM = {
+				AND = {
+					OR = {
+						has_reform = free_city
+						has_reform = imperial_city
+						has_reform = trading_city_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					has_reform = free_city
+					has_reform = imperial_city
+					has_reform = trading_city_legacy
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = EMPEROROFCHINA
+		potential = {
+			OR = {
+				has_country_flag = mandate_of_heaven_claimed
+				FROM = {
+					has_country_flag = mandate_of_heaven_claimed
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = TURKISHEMPEROR
+		potential = {
+			AND = {
+				technology_group = turkishtech
+				government_rank = 5
+			}
+		}
+		allow = {
+			FROM = {
+				AND = {
+					NOT = {
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = TURKISHEMPEROR
+		potential = {
+			FROM = {
+				AND = {
+					technology_group = turkishtech
+					government_rank = 5
+				}
+			}
+		}
+		allow = {
+			AND = {
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = nomad_reform
+							has_reform = native_council_legacy
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = PERSIANEMPEROR
+		potential = {
+			culture_group = persian_group
+			government_rank = 5
+		}
+		allow = {
+			FROM = {
+				AND = {
+					NOT = {
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = PERSIANEMPEROR
+		potential = {
+			FROM = {
+				culture_group = persian_group
+				government_rank = 5
+			}
+		}
+		allow = {
+			AND = {
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = nomad_reform
+							has_reform = native_council_legacy
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = IRISHCLAN
+		potential = {
+			OR = {
+				primary_culture = irish
+				primary_culture = hiberno_norman
+			}
+			government = tribal
+		}
+		allow = {
+			FROM = {
+				OR = {
+					primary_culture = irish
+					primary_culture = hiberno_norman
+				}
+				government = tribal
+			}
+		}
+	}
+	condition = {
+		tooltip = IRISHCLAN
+		potential = {
+			FROM = {
+				OR = {
+					primary_culture = irish
+					primary_culture = hiberno_norman
+				}
+				government = tribal
+			}
+		}
+		allow = {
+			OR = {
+				primary_culture = irish
+				primary_culture = hiberno_norman
+			}
+			government = tribal
+		}
+	}
+	condition = {
+		tooltip = EMPEROROFINDIA
+		potential = {
+			OR = {
+				AND = {
+					AND = {
+						capital_scope = {
+							continent = indian_continent
+						}
+						OR = {
+							AND = {
+								OR = {
+									AND = {
+										has_reform = divine_right
+										has_reform = delegated_rulers
+										has_reform = hereditary_elite
+									}
+									has_reform = feudal_monarchy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										has_reform = divine_right
+										has_reform = delegated_rulers
+										has_reform = military_elite
+									}
+									has_reform = despotic_monarchy
+								}
+							}
+							AND = {
+								OR = {
+									has_reform = tribal_kingdom
+									has_reform = tribal_kingdom_legacy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										capital_scope = {
+											continent = indian_continent
+										}
+										has_reform = divine_right
+										has_reform = delegated_rulers
+										has_reform = hereditary_elite
+									}
+									has_reform = principality_legacy
+								}
+							}
+							AND = {
+								OR = {
+									AND = {
+										capital_scope = {
+											continent = southeast_asia
+										}
+										has_reform = divine_right
+										has_reform = delegated_rulers
+										has_reform = appointed_elite
+									}
+									has_reform = tsardom_legacy
+								}
+							}
+						}
+					}
+					government_rank = 6
+				}
+				AND = {
+					FROM = {
+						AND = {
+							capital_scope = {
+								continent = indian_continent
+							}
+							OR = {
+								AND = {
+									OR = {
+										AND = {
+											has_reform = divine_right
+											has_reform = delegated_rulers
+											has_reform = hereditary_elite
+										}
+										has_reform = feudal_monarchy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											has_reform = divine_right
+											has_reform = delegated_rulers
+											has_reform = military_elite
+										}
+										has_reform = despotic_monarchy
+									}
+								}
+								AND = {
+									OR = {
+										has_reform = tribal_kingdom
+										has_reform = tribal_kingdom_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											capital_scope = {
+												continent = indian_continent
+											}
+											has_reform = divine_right
+											has_reform = delegated_rulers
+											has_reform = hereditary_elite
+										}
+										has_reform = principality_legacy
+									}
+								}
+								AND = {
+									OR = {
+										AND = {
+											capital_scope = {
+												continent = southeast_asia
+											}
+											has_reform = divine_right
+											has_reform = delegated_rulers
+											has_reform = appointed_elite
+										}
+										has_reform = tsardom_legacy
+									}
+								}
+							}
+						}
+						government_rank = 6
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = RUSSIANPRINCES
+		potential = {
+			culture_group = east_slavic
+			technology_group = eastern
+			NOT = {
+				has_country_flag = relocated_capital_st_petersburg
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					border_distance = {
+						who = FROM
+						distance = 120
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = RUSSIANPRINCES
+		potential = {
+			FROM = {
+				culture_group = east_slavic
+				technology_group = eastern
+				NOT = {
+					has_country_flag = relocated_capital_st_petersburg
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 120
+						}
+					}
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AFRICANSTATE
+		potential = {
+			AND = {
+				capital_scope = {
+					continent = sub_sahara
+				}
+				is_tribal = yes
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = tribal_federation
+							has_reform = tribal_federation_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+				FROM = {
+					any_subject_country = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						is_neighbor_of = ROOT
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = AFRICANSTATE
+		potential = {
+			FROM = {
+				AND = {
+					capital_scope = {
+						continent = sub_sahara
+					}
+					is_tribal = yes
+					NOT = {
+						AND = {
+							OR = {
+								has_reform = tribal_federation
+								has_reform = tribal_federation_legacy
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					OR = {
+						is_neighbor_of = ROOT
+						any_subject_country = {
+							AND = {
+								is_subject = yes
+								NOT = {
+									is_subject_of_type = tributary_state
+								}
+								NOT = {
+									is_subject_of_type = close_tributary_state
+								}
+							}
+							is_neighbor_of = ROOT
+						}
+						culture_group = ROOT
+					}
+				}
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = MANDALASYSTEM
+		potential = {
+			AND = {
+				capital_scope = {
+					continent = southeast_asia
+				}
+				NOT = {
+					technology_group = western
+				}
+				NOT = {
+					technology_group = turkishtech
+				}
+			}
+		}
+		allow = {
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+				FROM = {
+					any_subject_country = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						is_neighbor_of = ROOT
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = MANDALASYSTEM
+		potential = {
+			FROM = {
+				AND = {
+					capital_scope = {
+						continent = southeast_asia
+					}
+					NOT = {
+						technology_group = western
+					}
+					NOT = {
+						technology_group = turkishtech
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					OR = {
+						is_neighbor_of = ROOT
+						any_subject_country = {
+							AND = {
+								is_subject = yes
+								NOT = {
+									is_subject_of_type = tributary_state
+								}
+								NOT = {
+									is_subject_of_type = close_tributary_state
+								}
+							}
+							is_neighbor_of = ROOT
+						}
+						culture_group = ROOT
+					}
+				}
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMERINDSTATE
+		potential = {
+			AND = {
+				OR = {
+					technology_group = south_american
+					technology_group = mesoamerican
+				}
+			}
+		}
+		allow = {
+			OR = {
+				is_neighbor_of = FROM
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+				FROM = {
+					any_subject_country = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						is_neighbor_of = ROOT
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = AMERINDSTATE
+		potential = {
+			FROM = {
+				AND = {
+					OR = {
+						technology_group = south_american
+						technology_group = mesoamerican
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				FROM = {
+					OR = {
+						is_neighbor_of = ROOT
+						any_subject_country = {
+							AND = {
+								is_subject = yes
+								NOT = {
+									is_subject_of_type = tributary_state
+								}
+								NOT = {
+									is_subject_of_type = close_tributary_state
+								}
+							}
+							is_neighbor_of = ROOT
+						}
+						culture_group = ROOT
+					}
+				}
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = POWERFULMAGNATES
+		potential = {
+			has_country_modifier = obstacle_magnates
+		}
+		allow = {
+			NOT = {
+				border_distance = {
+					who = FROM
+					distance = 20
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = POWERFULMAGNATESFROM
+		potential = {
+			FROM = {
+				has_country_modifier = obstacle_magnates
+			}
+		}
+		allow = {
+			FROM = {
+				NOT = {
+					border_distance = {
+						who = ROOT
+						distance = 20
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = YOUNUMBEREXCEDED
+		potential = {
+			NOT = {
+				dip_tech = 48
+			}
+			OR = {
+				is_variable_equal = {
+					which = alliance_limit
+					value = 0
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 1
+					}
+					num_of_allies = 1
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 2
+					}
+					num_of_allies = 2
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 3
+					}
+					num_of_allies = 3
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 4
+					}
+					num_of_allies = 4
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 5
+					}
+					num_of_allies = 5
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 6
+					}
+					num_of_allies = 6
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 7
+					}
+					num_of_allies = 7
+				}
+				AND = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 8
+					}
+					num_of_allies = 8
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = THEMNUMBEREXCEDED
+		potential = {
+			FROM = {
+				NOT = {
+					dip_tech = 48
+				}
+				OR = {
+					is_variable_equal = {
+						which = alliance_limit
+						value = 0
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 1
+						}
+						num_of_allies = 1
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 2
+						}
+						num_of_allies = 2
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 3
+						}
+						num_of_allies = 3
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 4
+						}
+						num_of_allies = 4
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 5
+						}
+						num_of_allies = 5
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 6
+						}
+						num_of_allies = 6
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 7
+						}
+						num_of_allies = 7
+					}
+					AND = {
+						is_variable_equal = {
+							which = alliance_limit
+							value = 8
+						}
+						num_of_allies = 8
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = JAPANSHOGUN
+		potential = {
+			OR = {
+				has_global_flag = nanbokucho
+				has_global_flag = sengoku_jidai
+			}
+			OR = {
+				culture_group = japanese
+				FROM = {
+					culture_group = japanese
+				}
+			}
+		}
+		allow = {
+			OR = {
+				culture_group = FROM
+				is_neighbor_of = FROM
+				any_subject_country = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+					is_neighbor_of = FROM
+				}
+				FROM = {
+					any_subject_country = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						is_neighbor_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = THREEPETERS
+		potential = {
+			OR = {
+				tag = ARA
+				tag = CAS
+			}
+			exists = ENR
+		}
+		allow = {
+			FROM = {
+				OR = {
+					tag = POR
+					tag = ARA
+					tag = CAS
+					tag = ENR
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = on_deaf_years
+		potential = {
+			NOT = {
+				is_year = 1372
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					FROM = {
+						tag = BYZ
+					}
+				}
+				ai = no
+			}
+		}
+	}
+	condition = {
+		tooltip = NANBOKUCHO
+		potential = {
+			OR = {
+				culture_group = japanese
+				has_country_modifier = title_5
+				has_country_modifier = title_6
+			}
+			FROM = {
+				culture_group = japanese
+				OR = {
+					has_country_modifier = title_5
+					has_country_modifier = title_6
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

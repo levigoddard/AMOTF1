@@ -1,0 +1,257 @@
+revolutionary_rebels = {
+	color = { 50 85 210 }
+	area = nation
+	government = republic
+	defection = none
+	independence = none
+	gfx_type = culture_province
+	resilient = yes
+	reinforcing = yes
+	general = yes
+	smart = yes
+	unit_transfer = yes
+	will_relocate = yes
+	artillery = 0.1
+	infantry = 0.6
+	cavalry = 0.3
+	morale = 1.1
+	handle_action_negotiate = no
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = yes
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 2
+			is_year = 1700
+		}
+		modifier = {
+			factor = 2
+			is_year = 1740
+		}
+		modifier = {
+			factor = 2
+			is_year = 1780
+		}
+		modifier = {
+			factor = 0.05
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.25
+			NOT = {
+				is_year = 1600
+			}
+		}
+		modifier = {
+			factor = 5.0
+			owner = {
+				has_disaster = aspiration_for_liberty
+			}
+		}
+		modifier = {
+			factor = 5.0
+			owner = {
+				has_disaster = revolution
+			}
+		}
+		modifier = {
+			factor = 5.0
+			owner = {
+				has_disaster = french_revolution
+			}
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				government = republic
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				NOT = {
+					has_institution = enlightenment
+				}
+			}
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				NOT = {
+					technology_group = western
+				}
+				capital_scope = {
+					superregion = west_india_superregion
+				}
+			}
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				NOT = {
+					technology_group = western
+				}
+				capital_scope = {
+					superregion = north_india_superregion
+				}
+			}
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				NOT = {
+					technology_group = western
+				}
+				capital_scope = {
+					superregion = rajputana_superregion
+				}
+			}
+		}
+		modifier = {
+			factor = 0.0
+			owner = {
+				NOT = {
+					technology_group = western
+				}
+				capital_scope = {
+					superregion = east_india_superregion
+				}
+			}
+		}
+	}
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+	siege_won_trigger = {}
+	siege_won_effect = {}
+	can_negotiate_trigger = {
+		always = no
+	}
+	can_enforce_trigger = {
+		always = yes
+	}
+	demands_description = "revolutionary_rebels_demand"
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						AND = {
+							OR = {
+								has_reform = papacy_reform
+								has_reform = papal_government
+							}
+						}
+						AND = {
+							OR = {
+								has_reform = nomad_reform
+								has_reform = native_council_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = steppe_horde
+									NOT = {
+										has_country_modifier = title_6
+										has_country_flag = title_6
+									}
+								}
+								has_reform = steppe_horde_legacy
+							}
+						}
+						AND = {
+							AND = {
+								OR = {
+									AND = {
+										OR = {
+											culture_group = chinese_group
+											has_country_flag = barbarian_claimant_china
+										}
+										has_reform = celestial_empire
+									}
+									has_reform = celestial_empire_legacy
+								}
+							}
+							government_rank = 6
+						}
+						AND = {
+							religion_group = muslim
+							OR = {
+								has_reform = appointed_elite
+								has_reform = iqta_legacy
+							}
+						}
+						AND = {
+							OR = {
+								has_reform = colonial_government
+								has_reform = colonial_government_legacy
+							}
+						}
+						government = native
+						AND = {
+							OR = {
+								AND = {
+									has_reform = peasants_republic
+									has_reform = assembly_reform
+									has_reform = vote_free
+								}
+								has_reform = revolutionary_republic
+							}
+						}
+					}
+				}
+			}
+			change_government = REB
+		}
+		define_ruler = {
+			rebel = yes
+		}
+		if = {
+			limit = {
+				has_disaster = aspiration_for_liberty
+			}
+			end_disaster = aspiration_for_liberty
+			remove_country_modifier = reduceed_war_expenditures
+			remove_country_modifier = decreased_morale
+		}
+		if = {
+			limit = {
+				has_dlc = "Rights of Man"
+				AND = {
+					OR = {
+						AND = {
+							has_reform = peasants_republic
+							has_reform = assembly_reform
+							has_reform = vote_free
+						}
+						has_reform = revolutionary_republic
+					}
+				}
+			}
+			remove_country_modifier = constitutional_project
+			remove_country_modifier = consolidation_of_power
+		}
+	}
+}

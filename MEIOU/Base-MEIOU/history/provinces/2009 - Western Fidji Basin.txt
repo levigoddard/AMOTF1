@@ -1,0 +1,9 @@
+1606.1.1 = {
+	discovered_by = SPA
+}
+1643.1.1 = {
+	discovered_by = NED
+}
+1775.1.1 = {
+	discovered_by = GBR
+}

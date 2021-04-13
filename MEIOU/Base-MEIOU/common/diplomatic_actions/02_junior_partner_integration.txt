@@ -1,0 +1,71 @@
+integrationaction = {
+	condition = {
+		tooltip = DA_FULL_DECENTRALISED
+		potential = {
+			senior_union_with = ROOT
+			absolutism = 30
+		}
+		allow = {
+			absolutism = 30
+		}
+	}
+	condition = {
+		tooltip = DA_PACTA_CONVENTA_I
+		potential = {
+			senior_union_with = FROM
+			FROM = {
+				has_country_flag = pacta_conventa
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					has_country_flag = pacta_conventa
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = DA_NOT_ASSIMILATED_I
+		potential = {
+			FROM = {
+				junior_union_with = ROOT
+				NOT = {
+					check_variable = {
+						which = Integration_Factor
+						value = 100
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				junior_union_with = ROOT
+				check_variable = {
+					which = Integration_Factor
+					value = 100
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = DA_ASSIMILATED_I
+		potential = {
+			FROM = {
+				junior_union_with = ROOT
+			}
+		}
+		allow = {
+			FROM = {
+				junior_union_with = ROOT
+				NOT = {
+					has_country_flag = pacta_conventa
+				}
+				check_variable = {
+					which = Integration_Factor
+					value = 100
+				}
+			}
+		}
+	}
+}

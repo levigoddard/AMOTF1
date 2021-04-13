@@ -1,0 +1,5001 @@
+country_decisions = {
+	prussian_nation = {
+		major = yes
+		potential = {
+			tag = TEU
+			NOT = {
+				exists = PRU
+			}
+		}
+		provinces_to_highlight = {
+			region = prussia_region
+		}
+		allow = {
+			OR = {
+				AND = {
+					check_variable = {
+						which = "Demesne_in_Prussia"
+						value = 4
+					}
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+				}
+				AND = {
+					check_variable = {
+						which = "Demesne_in_Prussia"
+						value = 6
+					}
+					check_variable = {
+						which = "Cores_on_Prussia"
+						value = 5
+					}
+					AND = {
+						OR = {
+							is_subject = no
+							is_subject_of_type = tributary_state
+							is_subject_of_type = close_tributary_state
+						}
+					}
+				}
+			}
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = hussite
+				government = monarchy
+				government = republic
+			}
+			owns_or_non_sovereign_subject_of = 41
+			is_at_war = no
+		}
+		effect = {
+			prussia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							is_subject = no
+							is_subject_of_type = tributary_state
+							is_subject_of_type = close_tributary_state
+						}
+					}
+				}
+				prussia_region = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+				}
+				prussia_region = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+				overlord = {
+					prussia_region = {
+						limit = {
+							owned_by = PREV
+						}
+						remove_claim = PRU
+					}
+				}
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					adm_tech = 35
+				}
+				change_government = monarchy
+				add_government_reform = divine_right
+				add_government_reform = bureaucracy
+				add_government_reform = appointed_elite
+				set_legacy_government = administrative_monarchy
+			}
+			else = {
+				change_government = monarchy
+				add_government_reform = divine_right
+				add_government_reform = delegated_rulers
+				add_government_reform = military_elite
+				set_legacy_government = despotic_monarchy
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = title_1
+						has_country_modifier = title_2
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+			}
+			change_tag = PRU
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = PRU_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						region = prussia_region
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_historical_rival = PRU
+				ROOT = {
+					add_historical_rival = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	form_greece_kingdom = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = greek
+				tag = ATH
+				tag = ACH
+				tag = MOE
+				tag = EPI
+			}
+			NOT = {
+				exists = GRE
+			}
+			NOT = {
+				tag = ERG
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = BYZ
+			}
+			NOT = {
+				tag = OTT
+			}
+			NOT = {
+				tag = TUR
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = LAT
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			region = greece_region
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			owns = 146
+			is_core = 146
+			is_at_war = no
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Greece"
+					value = 20
+				}
+				check_variable = {
+					which = "Cores_on_Greece"
+					value = 16
+				}
+			}
+		}
+		effect = {
+			greece_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			greece_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = GRE
+			change_primary_culture = greek
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = GRE_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			every_country = {
+				limit = {
+					OR = {
+						primary_culture = greek
+						capital_scope = {
+							region = greece_region
+						}
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_historical_rival = GRE
+				ROOT = {
+					add_historical_rival = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	mughal_nation = {
+		major = yes
+		potential = {
+			religion_group = muslim
+			OR = {
+				culture_group = altaic
+				culture_group = tartar_group
+				culture_group = persian_group
+			}
+			NOT = {
+				exists = MUG
+			}
+			NOT = {
+				tag = PER
+			}
+			NOT = {
+				tag = TUR
+			}
+			OR = {
+				owns_or_non_sovereign_subject_of = 521
+				owns_or_non_sovereign_subject_of = 522
+				owns_or_non_sovereign_subject_of = 524
+				owns_or_non_sovereign_subject_of = 2163
+				owns_or_non_sovereign_subject_of = 2555
+				owns_or_non_sovereign_subject_of = 2705
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			continent = indian_continent
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns_or_non_sovereign_subject_of = 521
+			owns_or_non_sovereign_subject_of = 522
+			owns_or_non_sovereign_subject_of = 524
+			owns_or_non_sovereign_subject_of = 2163
+			owns_or_non_sovereign_subject_of = 2555
+			owns_or_non_sovereign_subject_of = 2705
+			OR = {
+				check_variable = {
+					which = "Cores_on_India"
+					value = 20
+				}
+				check_variable = {
+					which = "Demesne_in_India"
+					value = 30
+				}
+			}
+		}
+		effect = {
+			west_bengal_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			west_bengal_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			east_bengal_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			east_bengal_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_doab_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			upper_doab_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			central_doab_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			central_doab_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			punjab_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			punjab_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			awadh_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			awadh_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			bihar_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			bihar_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			hindusthan_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			hindusthan_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			west_india_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			west_india_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					technology_group = steppestech
+				}
+				change_technology_group = muslim
+			}
+			change_primary_culture = urdu
+			set_country_flag = urdu_state
+			change_tag = MUG
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = military_elite
+			set_legacy_government = despotic_monarchy
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = MUG_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			every_country = {
+				limit = {
+					OR = {
+						capital_scope = {
+							region = east_bengal_region
+						}
+						capital_scope = {
+							region = west_bengal_region
+						}
+						capital_scope = {
+							region = punjab_region
+						}
+						capital_scope = {
+							region = central_doab_region
+						}
+						capital_scope = {
+							region = upper_doab_region
+						}
+						capital_scope = {
+							region = awadh_region
+						}
+						capital_scope = {
+							region = west_india_region
+						}
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_historical_rival = MUG
+				ROOT = {
+					add_historical_rival = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	aztec_empire = {
+		major = yes
+		potential = {
+			primary_culture = nahuatl_c
+			NOT = {
+				exists = AZT
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			region = mexico_region
+		}
+		allow = {
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Nahualt"
+					value = 35
+				}
+				check_variable = {
+					which = "Cores_on_Nahualt"
+					value = 25
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			owns_or_non_sovereign_subject_of = 2200
+			owns_or_non_sovereign_subject_of = 852
+			owns_or_non_sovereign_subject_of = 2406
+			owns_or_non_sovereign_subject_of = 1471
+			owns_or_non_sovereign_subject_of = 851
+			owns_or_non_sovereign_subject_of = 2204
+			owns_or_non_sovereign_subject_of = 2201
+			is_at_war = no
+		}
+		effect = {
+			mexico_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			mexico_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			zacatecas_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			zacatecas_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			zapotec_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			zapotec_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = tribal_federation
+							has_reform = tribal_federation_legacy
+						}
+					}
+				}
+				change_government = tribal
+				add_government_reform = tribal_kingdom
+				set_legacy_government = tribal_kingdom_legacy
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = AZT
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = AZT_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						region = mexico_region
+					}
+					NOT = {
+						tag = ROOT
+					}
+				}
+				add_historical_rival = AZT
+				ROOT = {
+					add_historical_rival = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	mayan_empire = {
+		major = yes
+		potential = {
+			culture_group = mayan_group
+			NOT = {
+				exists = MAY
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			region = central_america_region
+		}
+		allow = {
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Maya"
+					value = 15
+				}
+				check_variable = {
+					which = "Cores_on_Maya"
+					value = 10
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			owns = 840
+			is_core = 840
+			owns = 845
+			is_core = 845
+			owns = 846
+			is_core = 846
+			owns = 2208
+			is_core = 2208
+			is_at_war = no
+		}
+		effect = {
+			guatemala_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			guatemala_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			yucatan_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			yucatan_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			chiapas_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			chiapas_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			belize_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			belize_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			campeche_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			campeche_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = tribal_federation
+							has_reform = tribal_federation_legacy
+						}
+					}
+				}
+				change_government = tribal
+				add_government_reform = tribal_kingdom
+				set_legacy_government = tribal_kingdom_legacy
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = MAY
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = MAY_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	incan_empire = {
+		major = yes
+		potential = {
+			religion = inti
+			NOT = {
+				exists = INC
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			region = peru_region
+			region = bolivia_region
+		}
+		allow = {
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Inca"
+					value = 35
+				}
+				check_variable = {
+					which = "Cores_on_Inca"
+					value = 25
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			owns_core_province = 2068
+			OR = {
+				owns_core_province = 816
+				AND = {
+					816 = {
+						owned_by = CHC
+					}
+					alliance_with = CHC
+				}
+			}
+			OR = {
+				owns_core_province = 820
+				owns_core_province = 3435
+			}
+			OR = {
+				owns_core_province = 811
+				owns_core_province = 3436
+			}
+			is_at_war = no
+		}
+		effect = {
+			peru_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			peru_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			bolivia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			bolivia_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			INC = {
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 2068
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							OR = {
+								has_reform = tribal_kingdom
+								has_reform = tribal_kingdom_legacy
+							}
+						}
+						AND = {
+							OR = {
+								has_reform = tribal_despotism
+								has_reform = tribal_despotism_legacy
+							}
+						}
+						AND = {
+							OR = {
+								has_reform = tribal_federation
+								has_reform = tribal_federation_legacy
+							}
+						}
+					}
+				}
+				change_government = monarchy
+				add_government_reform = divine_right
+				add_government_reform = delegated_rulers
+				add_government_reform = military_elite
+				set_legacy_government = despotic_monarchy
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = INC
+			add_absolutism = 10
+			if = {
+				limit = {
+					AND = {
+						816 = {
+							owned_by = CHC
+						}
+						alliance_with = CHC
+					}
+				}
+				inherit = CHC
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = INC_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	persian_nation = {
+		major = yes
+		potential = {
+			culture_group = persian_group
+			NOT = {
+				exists = PER
+			}
+			NOT = {
+				tag = MUG
+			}
+			OR = {
+				owns = 390
+				owns = 414
+				owns = 1313
+				owns = 1314
+				owns = 2225
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			region = persia_region
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Persia"
+					value = 30
+				}
+				check_variable = {
+					which = "Cores_on_Persia"
+					value = 20
+				}
+			}
+			owns = 390
+			owns = 414
+			owns = 426
+			owns = 1313
+			owns = 1314
+			owns = 2225
+			is_at_war = no
+		}
+		effect = {
+			persia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			persia_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			khorasan_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			khorasan_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			afghanistan_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			afghanistan_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = PER
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = PER_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	form_sardinia_piedmont = {
+		major = yes
+		potential = {
+			culture_group = latin
+			NOT = {
+				exists = SPI
+			}
+			NOT = {
+				exists = ITA
+			}
+			NOT = {
+				tag = ERG
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = LAT
+			}
+			capital_scope = {
+				OR = {
+					area = piedmont_area
+					area = liguria_area
+					area = corsica_sardinia_area
+				}
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = piedmont_area
+				area = liguria_area
+				area = corsica_sardinia_area
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				adm_tech = 35
+				AND = {
+					NOT = {
+						absolutism = 80
+					}
+					stability = 1
+					full_idea_group = diplomatic_ideas
+				}
+				AND = {
+					adm_tech = 19
+					ADM = 5
+					statesman = 1
+				}
+			}
+			owns = 103
+			OR = {
+				AND = {
+					check_variable = {
+						which = "Demesne_in_Liguria_Piedmont"
+						value = 5
+					}
+					check_variable = {
+						which = "Demesne_in_Sardinia"
+						value = 4
+					}
+				}
+				AND = {
+					check_variable = {
+						which = "Cores_on_Liguria_Piedmont"
+						value = 4
+					}
+					check_variable = {
+						which = "Cores_on_Sardinia"
+						value = 3
+					}
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			corsica_sardinia_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			corsica_sardinia_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			piedmont_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			piedmont_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			liguria_area = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			liguria_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					OR = {
+						SAR = {
+							vassal_of = ROOT
+						}
+						SAR = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+				inherit = SAR
+			}
+			change_tag = SPI
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = SPI_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	form_siam = {
+		major = yes
+		potential = {
+			culture_group = thai_group
+			is_year = 1700
+			NOT = {
+				tag = SUV
+			}
+			NOT = {
+				exists = SIA
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = lan_xang_region
+				region = inland_siam_region
+				region = coastal_siam_region
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					check_variable = {
+						which = "Demesne_in_Thai_Plain"
+						value = 10
+					}
+					check_variable = {
+						which = "Demesne_in_Lan_Xang"
+						value = 9
+					}
+				}
+				AND = {
+					check_variable = {
+						which = "Cores_on_Thai_Plain"
+						value = 8
+					}
+					check_variable = {
+						which = "Cores_on_Lan_Xang"
+						value = 7
+					}
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			owns = 600
+			owns = 601
+			owns = 602
+			is_at_war = no
+		}
+		effect = {
+			lan_xang_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			lan_xang_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			inland_siam_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			inland_siam_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			coastal_siam_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			coastal_siam_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			change_tag = SIA
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = AYU_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	form_goldenhorde = {
+		major = yes
+		potential = {
+			OR = {
+				tag = BLU
+				tag = CHU
+				AND = {
+					tag = WHI
+					is_year = 1361
+				}
+			}
+			NOT = {
+				exists = GOL
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = steppes_region
+				region = kazakh_region
+				region = crimea_region
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					tag = BLU
+					OR = {
+						NOT = {
+							exists = WHI
+						}
+						WHI = {
+							junior_union_with = ROOT
+						}
+					}
+					OR = {
+						NOT = {
+							exists = CHU
+						}
+						CHU = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+				AND = {
+					tag = WHI
+					OR = {
+						NOT = {
+							exists = BLU
+						}
+						BLU = {
+							junior_union_with = ROOT
+						}
+					}
+					OR = {
+						NOT = {
+							exists = CHU
+						}
+						CHU = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+				AND = {
+					tag = CHU
+					OR = {
+						NOT = {
+							exists = BLU
+						}
+						BLU = {
+							junior_union_with = ROOT
+						}
+					}
+					OR = {
+						NOT = {
+							exists = WHI
+						}
+						WHI = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Altaic_Throne"
+					value = 28
+				}
+				check_variable = {
+					which = "Cores_on_Altaic_Throne"
+					value = 21
+				}
+			}
+			country_or_vassal_holds = 1293
+			country_or_vassal_holds = 1310
+			country_or_vassal_holds = 2444
+			has_heir = yes
+			is_subject = no
+			has_any_disaster = no
+			is_at_war = no
+		}
+		effect = {
+			steppes_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			steppes_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			kazakh_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			kazakh_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			crimea_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			crimea_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					BLU = {
+						junior_union_with = ROOT
+						ai = yes
+					}
+				}
+				inherit = BLU
+			}
+			if = {
+				limit = {
+					CHU = {
+						junior_union_with = ROOT
+						ai = yes
+					}
+				}
+				inherit = CHU
+			}
+			if = {
+				limit = {
+					WHI = {
+						junior_union_with = ROOT
+						ai = yes
+					}
+				}
+				inherit = WHI
+			}
+			add_prestige = 20
+			change_tag = GOL
+			add_absolutism = 10
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 1310
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	form_celestial_empire = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = chinese_group
+				has_country_flag = barbarian_claimant_china
+			}
+			is_emperor_of_china = no
+			is_colonial_nation = no
+			NOT = {
+				has_country_flag = mandate_of_heaven_claimed
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				superregion = north_china_superregion
+				superregion = east_china_superregion
+				superregion = southwest_china_superregion
+			}
+		}
+		allow = {
+			check_variable = {
+				which = "Demesne_in_the_Mandate_of_Heaven"
+				value = 135
+			}
+			OR = {
+				owns = 701
+				owns = 702
+				owns = 708
+				owns = 2150
+				owns = 2252
+			}
+			is_subject = no
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = mandate_of_heaven_claimed
+			random_country = {
+				limit = {
+					has_country_flag = former_dynasty_china
+				}
+				clr_country_flag = former_dynasty_china
+			}
+			random_country = {
+				limit = {
+					has_country_flag = mandate_of_heaven_claimed
+					NOT = {
+						tag = ROOT
+					}
+				}
+				clr_country_flag = mandate_of_heaven_claimed
+				set_country_flag = former_dynasty_china
+			}
+			set_country_flag = mandate_of_heaven_claimed
+			clr_country_flag = red_turban_reb
+			clr_country_flag = imperial_appenage
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			add_legitimacy = 100
+			custom_tooltip = stability_points_gained_150
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 150
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					culture_group = chinese_group
+				}
+				north_china_superregion = {
+					limit = {
+						culture_group = chinese_group
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+				}
+				north_china_superregion = {
+					limit = {
+						NOT = {
+							culture_group = chinese_group
+						}
+						NOT = {
+							owned_by = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
+						NOT = {
+							province_id = 5266
+						}
+					}
+					add_permanent_claim = ROOTT
+				}
+				east_china_superregion = {
+					limit = {
+						culture_group = chinese_group
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+				}
+				east_china_superregion = {
+					limit = {
+						NOT = {
+							culture_group = chinese_group
+						}
+						NOT = {
+							owned_by = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
+						NOT = {
+							province_id = 5267
+						}
+					}
+					add_permanent_claim = ROOTT
+				}
+				southwest_china_superregion = {
+					limit = {
+						culture_group = chinese_group
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+				}
+				southwest_china_superregion = {
+					limit = {
+						NOT = {
+							culture_group = chinese_group
+						}
+						NOT = {
+							owned_by = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
+						NOT = {
+							province_id = 5268
+						}
+					}
+					add_permanent_claim = ROOTT
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = barbarian_claimant_china
+				}
+				north_china_superregion = {
+					limit = {
+						owned_by = ROOT
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+				}
+				north_china_superregion = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
+						NOT = {
+							province_id = 5266
+						}
+					}
+					add_permanent_claim = ROOTT
+				}
+				east_china_superregion = {
+					limit = {
+						owned_by = ROOT
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+				}
+				east_china_superregion = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
+						NOT = {
+							province_id = 5267
+						}
+					}
+					add_permanent_claim = ROOTT
+				}
+				southwest_china_superregion = {
+					limit = {
+						owned_by = ROOT
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+				}
+				southwest_china_superregion = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						NOT = {
+							is_permanent_claim = ROOT
+						}
+						NOT = {
+							province_id = 5268
+						}
+					}
+					add_permanent_claim = ROOTT
+				}
+			}
+			add_absolutism = 10
+			country_event = {
+				id = chinese_factions.1
+				days = 1
+			}
+			country_event = {
+				id = tianxia.120
+			}
+			if = {
+				limit = {
+					technology_group = steppestech
+				}
+				change_technology_group = chinese
+				change_unit_type = chinese
+			}
+			add_country_modifier = {
+				name = "recently_unified_china"
+				duration = 1825
+			}
+			remove_country_modifier = mongol_xingsheng
+			remove_country_modifier = non_imperial_hegemon
+			set_emperor_of_china = ROOT
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	malaccan_nation = {
+		major = yes
+		potential = {
+			primary_culture = malayan
+			NOT = {
+				exists = MLC
+			}
+			NOT = {
+				tag = MPH
+			}
+			NOT = {
+				tag = SRV
+			}
+			NOT = {
+				tag = IND
+			}
+			check_variable = {
+				which = "Demesne_in_Malaya_Peninsula"
+				value = 1
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			region = malaya_region
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Malaya_Peninsula"
+					value = 12
+				}
+				check_variable = {
+					which = "Cores_on_Malaya_Peninsula"
+					value = 8
+				}
+			}
+			owns = 596
+		}
+		effect = {
+			malaya_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			malaya_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			596 = {
+				add_building = fort_15th
+			}
+			MLC = {
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 596
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+			}
+			add_prestige = 20
+			change_tag = MLC
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = MLC_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	polish_nation = {
+		major = yes
+		potential = {
+			OR = {
+				tag = MAZ
+				AND = {
+					primary_culture = silesian
+					dynasty = "Piast"
+				}
+			}
+			NOT = {
+				exists = POL
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = ERG
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = LAT
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = polonia_major_region
+				region = polonia_minor_region
+			}
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Poland"
+					value = 18
+				}
+				check_variable = {
+					which = "Cores_on_Poland"
+					value = 12
+				}
+			}
+			owns = 262
+		}
+		effect = {
+			polonia_major_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			polonia_major_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			polonia_minor_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			polonia_minor_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = POL
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = POL_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	lithuanian_nation = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = lithuanian
+				AND = {
+					primary_culture = ruthenian
+					dynasty = "Gediminai"
+				}
+			}
+			NOT = {
+				exists = LIT
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = ERG
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = LAT
+			}
+			NOT = {
+				tag = RUS
+			}
+			NOT = {
+				tag = PLC
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = lithuania_region
+				region = ruthenia_region
+			}
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				tag = TRK
+				AND = {
+					check_variable = {
+						which = "Demesne_in_Lithuania"
+						value = 15
+					}
+					owns = 272
+				}
+				AND = {
+					check_variable = {
+						which = "Cores_on_Lithuania"
+						value = 10
+					}
+					owns = 272
+				}
+			}
+		}
+		effect = {
+			lithuania_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = LIT
+			}
+			lithuania_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			ruthenia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = LIT
+			}
+			ruthenia_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = LIT
+			add_absolutism = 5
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = LIT_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	polish_lithuanian_nation_dip = {
+		major = yes
+		potential = {
+			tag = POL
+			NOT = {
+				exists = PLC
+			}
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				adm_tech = 20
+				AND = {
+					ADM = 5
+					statesman = 1
+					full_idea_group = aristocracy_ideas
+				}
+			}
+			LIT = {
+				is_subject_of = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = "flavor_pol.union.1"
+				has_country_flag = 1_union_krewo
+			}
+			custom_trigger_tooltip = {
+				tooltip = "flavor_pol.union.2"
+				has_country_flag = 2_union_horodlo
+			}
+			custom_trigger_tooltip = {
+				tooltip = "flavor_pol.union.3"
+				has_country_flag = 3_union_grodno
+			}
+			custom_trigger_tooltip = {
+				tooltip = "flavor_pol.union.4"
+				has_country_flag = 4_union_krakow
+			}
+			custom_trigger_tooltip = {
+				tooltip = "flavor_pol.union.5"
+				has_country_flag = 5_union_lublin
+			}
+		}
+		effect = {
+			polonia_major_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			polonia_major_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			polonia_minor_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			polonia_minor_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			lithuania_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			lithuania_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			ruthenia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			ruthenia_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					OR = {
+						LIT = {
+							vassal_of = ROOT
+						}
+						LIT = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+				inherit = LIT
+			}
+			change_tag = PLC
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = POL_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	polish_lithuanian_nation = {
+		major = yes
+		potential = {
+			tag = POL
+			NOT = {
+				exists = PLC
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = lithuania_region
+				region = ruthenia_region
+			}
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			OR = {
+				adm_tech = 20
+				AND = {
+					ADM = 5
+					statesman = 1
+					full_idea_group = aristocracy_ideas
+				}
+			}
+			NOT = {
+				exists = LIT
+			}
+			OR = {
+				check_variable = {
+					which = "Demesne_in_Lithuania"
+					value = 30
+				}
+				check_variable = {
+					which = "Cores_on_Lithuania"
+					value = 20
+				}
+			}
+		}
+		effect = {
+			polonia_major_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			polonia_major_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			polonia_minor_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			polonia_minor_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			lithuania_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			lithuania_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			ruthenia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			ruthenia_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					OR = {
+						LIT = {
+							vassal_of = ROOT
+						}
+						LIT = {
+							junior_union_with = ROOT
+						}
+					}
+				}
+				inherit = LIT
+			}
+			change_tag = PLC
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = POL_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	egyptian_nation_foreign = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = egyptian
+				primary_culture = coptic_culture
+			}
+			NOT = {
+				exists = MAM
+			}
+			NOT = {
+				exists = EGY
+			}
+		}
+		provinces_to_highlight = {
+			region = egypt_region
+		}
+		allow = {
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			egypt_region = {
+				owned_by = ROOT
+			}
+			capital_scope = {
+				region = egypt_region
+			}
+		}
+		effect = {
+			egypt_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			egypt_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = elective_monarchy
+							has_reform = elective_monarchy_legacy
+							has_reform = mamluk_government_legacy
+						}
+					}
+				}
+				change_government = monarchy
+				add_government_reform = divine_right
+				add_government_reform = bureaucracy
+				add_government_reform = appointed_elite
+				set_legacy_government = administrative_monarchy
+			}
+			add_prestige = 10
+			change_tag = EGY
+			add_absolutism = 10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	egyptian_nation = {
+		major = yes
+		potential = {
+			tag = MAM
+			NOT = {
+				exists = EGY
+			}
+			OR = {
+				has_institution = banking
+				has_institution = renaissance
+				has_institution = casual_literacy
+				has_institution = global_trade
+			}
+		}
+		provinces_to_highlight = {
+			region = egypt_region
+		}
+		allow = {
+			has_institution = enlightenment
+			is_at_war = no
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			egypt_region = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			egypt_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			egypt_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = elective_monarchy
+							has_reform = elective_monarchy_legacy
+							has_reform = mamluk_government_legacy
+						}
+					}
+				}
+				change_government = monarchy
+				add_government_reform = divine_right
+				add_government_reform = bureaucracy
+				add_government_reform = appointed_elite
+				set_legacy_government = administrative_monarchy
+			}
+			add_prestige = 10
+			change_tag = EGY
+			add_absolutism = 10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	jurchen_nation = {
+		major = yes
+		potential = {
+			primary_culture = jurchen
+			NOT = {
+				exists = MCH
+			}
+			NOT = {
+				tag = QNG
+			}
+		}
+		provinces_to_highlight = {
+			culture = jurchen
+			owner = {
+				primary_culture = jurchen
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			OR = {
+				custom_trigger_tooltip = {
+					num_of_owned_provinces_with = {
+						value = 14
+						culture = jurchen
+					}
+					tooltip = jurchen_nation_claim
+				}
+				custom_trigger_tooltip = {
+					tooltip = jurchen_nations
+					AND = {
+						OR = {
+							tag = MHX
+							NOT = {
+								exists = MHX
+							}
+							MHX = {
+								is_subject_of = ROOT
+							}
+						}
+						OR = {
+							tag = MJZ
+							NOT = {
+								exists = MJZ
+							}
+							MJZ = {
+								is_subject_of = ROOT
+							}
+						}
+						OR = {
+							tag = MHR
+							NOT = {
+								exists = MHR
+							}
+							MHR = {
+								is_subject_of = ROOT
+							}
+						}
+						OR = {
+							tag = MWK
+							NOT = {
+								exists = MWK
+							}
+							MWK = {
+								is_subject_of = ROOT
+							}
+						}
+						OR = {
+							tag = MUD
+							NOT = {
+								exists = MUD
+							}
+							MUD = {
+								is_subject_of = ROOT
+							}
+						}
+						OR = {
+							tag = MNA
+							NOT = {
+								exists = MNA
+							}
+							MNA = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_manpower = 20
+			change_tag = MCH
+			if = {
+				limit = {
+					overlord_of = MHX
+					MHX = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MHX
+			}
+			if = {
+				limit = {
+					overlord_of = MJZ
+					MJZ = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MJZ
+			}
+			if = {
+				limit = {
+					overlord_of = MWK
+					MWK = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MWK
+			}
+			if = {
+				limit = {
+					overlord_of = MHR
+					MHR = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MHR
+			}
+			if = {
+				limit = {
+					overlord_of = MUD
+					MUD = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MUD
+			}
+			if = {
+				limit = {
+					overlord_of = MXI
+					MXI = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MXI
+			}
+			if = {
+				limit = {
+					overlord_of = MNA
+					MNA = {
+						AND = {
+							is_subject = yes
+							NOT = {
+								is_subject_of_type = tributary_state
+							}
+							NOT = {
+								is_subject_of_type = close_tributary_state
+							}
+						}
+					}
+				}
+				inherit = MNA
+			}
+			add_absolutism = 10
+			add_adm_power = 1500
+			add_dip_power = 1500
+			add_mil_power = 1500
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = MCH_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			east_manchuria_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = MCH
+			}
+			east_manchuria_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			west_manchuria_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = MCH
+			}
+			west_manchuria_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	become_sultan_of_delhi = {
+		major = yes
+		potential = {
+			owns_or_non_sovereign_subject_of = 2163
+			religion_group = muslim
+			capital_scope = {
+				AND = {
+					continent = indian_continent
+					OR = {
+						superregion = west_india_superregion
+						superregion = north_india_superregion
+						superregion = rajputana_superregion
+						superregion = east_india_superregion
+						superregion = central_india_superregion
+						superregion = south_india_superregion
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = ruler_of_the_deccan_flag
+			}
+			NOT = {
+				has_country_flag = ruler_of_dravidia_flag
+			}
+			OR = {
+				NOT = {
+					exists = DLH
+				}
+				DLH = {
+					is_subject_of = ROOT
+				}
+			}
+			NOT = {
+				tag = MUG
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			continent = indian_continent
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			OR = {
+				check_variable = {
+					which = "Cores_on_India"
+					value = 5
+				}
+				check_variable = {
+					which = "Demesne_in_India"
+					value = 10
+				}
+			}
+		}
+		effect = {
+			inherit = DLH
+			add_prestige = 20
+			change_tag = DLH
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 2163
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			change_primary_culture = capital
+			remove_country_modifier = blessing_of_god
+			every_owned_province = {
+				limit = {
+					AND = {
+						continent = indian_continent
+						OR = {
+							superregion = west_india_superregion
+							superregion = north_india_superregion
+							superregion = rajputana_superregion
+							superregion = east_india_superregion
+							superregion = central_india_superregion
+							superregion = south_india_superregion
+						}
+					}
+					NOT = {
+						is_core = DLH
+					}
+				}
+				hidden_effect = {
+					remove_core = ROOT
+				}
+				add_core = ROOT
+			}
+			every_owned_province = {
+				limit = {
+					AND = {
+						continent = indian_continent
+						OR = {
+							superregion = west_india_superregion
+							superregion = north_india_superregion
+							superregion = rajputana_superregion
+							superregion = east_india_superregion
+							superregion = central_india_superregion
+							superregion = south_india_superregion
+						}
+					}
+					NOT = {
+						is_core = DLH
+					}
+				}
+				if = {
+					limit = {
+						is_core = ROOT
+					}
+					add_local_autonomy = -10
+				}
+				else = {
+					add_territorial_core = ROOT
+				}
+			}
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				add_country_modifier = {
+					name = title_6
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_reform = tribal_kingdom
+							has_reform = tribal_kingdom_legacy
+						}
+					}
+				}
+				change_government = monarchy
+				add_government_reform = divine_right
+				add_government_reform = delegated_rulers
+				add_government_reform = military_elite
+				set_legacy_government = despotic_monarchy
+			}
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = DLH_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	georgian_nation = {
+		major = yes
+		potential = {
+			primary_culture = georgian
+			NOT = {
+				exists = GEO
+			}
+			NOT = {
+				tag = BYZ
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = ERG
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = LAT
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 422
+				province_id = 423
+				province_id = 1301
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns_core_province = 422
+			owns_core_province = 423
+			owns_core_province = 1301
+		}
+		effect = {
+			2549 = {
+				add_core = GEO
+			}
+			1300 = {
+				add_core = GEO
+			}
+			1449 = {
+				add_core = GEO
+			}
+			2581 = {
+				add_core = GEO
+			}
+			419 = {
+				add_core = GEO
+			}
+			2576 = {
+				add_core = GEO
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					OR = {
+						has_country_modifier = title_1
+						has_country_modifier = title_2
+						has_country_modifier = title_3
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_4
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = GEO
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = GEO_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	assam_nation = {
+		major = yes
+		potential = {
+			culture_group = assamese_group
+			NOT = {
+				exists = ASS
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 570
+				province_id = 571
+				province_id = 3193
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns_core_province = 3193
+			owns_core_province = 571
+			owns_core_province = 570
+		}
+		effect = {
+			3193 = {
+				add_core = ASS
+			}
+			571 = {
+				add_core = ASS
+			}
+			570 = {
+				add_core = ASS
+			}
+			566 = {
+				add_core = ASS
+			}
+			2695 = {
+				add_core = ASS
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_tag = ASS
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = ASS_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	become_brandenburg = {
+		major = yes
+		potential = {
+			OR = {
+				tag = HOH
+				tag = ANS
+				tag = BYR
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 50
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				exists = BRA
+			}
+			owns = 50
+		}
+		effect = {
+			50 = {
+				add_core = BRA
+			}
+			66 = {
+				add_core = BRA
+			}
+			264 = {
+				add_core = BRA
+			}
+			2621 = {
+				add_core = BRA
+			}
+			2835 = {
+				add_core = BRA
+			}
+			4015 = {
+				add_core = BRA
+			}
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 50
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			add_prestige = 20
+			change_tag = BRA
+			change_primary_culture = capital
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = title_1
+						has_country_modifier = title_2
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_4
+				remove_country_modifier = title_5
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_3
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+				set_country_flag = title_3
+			}
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = PRU_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	form_ava = {
+		major = yes
+		potential = {
+			OR = {
+				tag = SAG
+				tag = PIN
+			}
+			NOT = {
+				exists = AVA
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 584
+				province_id = 2429
+			}
+		}
+		allow = {
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			owns_core_province = 584
+			owns_core_province = 2429
+			OR = {
+				AND = {
+					tag = SAG
+					NOT = {
+						exists = PIN
+					}
+				}
+				AND = {
+					tag = PIN
+					NOT = {
+						exists = SAG
+					}
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					OR = {
+						region = inland_burma_region
+						region = coastal_burma_region
+					}
+					is_core = ROOT
+				}
+				add_core = AVA
+			}
+			add_prestige = 20
+			change_tag = AVA
+			add_absolutism = 10
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 584
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			584 = {
+				rename_capital = "Awa"
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	adopt_mamluk_government = {
+		major = yes
+		potential = {
+			religion_group = muslim
+			capital_scope = {
+				continent = mena
+			}
+			NOT = {
+				exists = MAM
+			}
+			NOT = {
+				exists = EGY
+			}
+			any_owned_province = {
+				region = egypt_region
+			}
+			NOT = {
+				has_country_flag = formed_mamluks
+			}
+			NOT = {
+				tag = PAP
+			}
+			NOT = {
+				tag = TUR
+			}
+			NOT = {
+				tag = BYZ
+			}
+			NOT = {
+				tag = ROM
+			}
+			NOT = {
+				tag = OTT
+			}
+			NOT = {
+				tag = ARB
+			}
+			NOT = {
+				has_country_flag = adopted_mamluk_govt
+			}
+			NOT = {
+				has_institution = enlightenment
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 361
+		}
+		allow = {
+			NOT = {
+				exists = MAM
+			}
+			owns_core_province = 361
+		}
+		effect = {
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 361
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			change_tag = MAM
+			if = {
+				limit = {
+					has_regency = no
+				}
+				kill_ruler = yes
+			}
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				kill_heir = yes
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = {
+						has_idea_group = MAM_ideas
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			MAM = {
+				change_government = monarchy
+				add_government_reform = elective_monarchy
+				add_government_reform = delegated_rulers
+				add_government_reform = military_elite
+				hidden_effect = {
+					set_legacy_government = despotic_monarchy
+				}
+				set_legacy_government = elective_monarchy_legacy
+				egypt_region = {
+					limit = {
+						NOT = {
+							is_core = MAM
+						}
+						NOT = {
+							is_claim = MAM
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+				set_country_flag = formed_mamluks
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				adm_tech = 20
+			}
+		}
+	}
+}

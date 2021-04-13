@@ -1,0 +1,207 @@
+owner = NRM
+controller = NRM
+capital = "Mortagne"
+trade_goods = livestock
+culture = normand
+religion = catholic
+hre = no
+base_tax = 7
+base_production = 0
+base_manpower = 0
+is_city = yes
+local_fortification_1 = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+1343.1.1 = {
+	add_permanent_claim = NAV
+	add_permanent_claim = FRA
+	add_core = NRM
+}
+1424.8.17 = {
+	owner = ENG
+	controller = ENG
+}
+1449.7.17 = {
+	owner = NRM
+	controller = NRM
+}
+1475.8.29 = {
+	remove_core = ENG
+}
+1520.5.5 = {
+	base_tax = 12
+}
+1524.1.1 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+}
+1530.1.2 = {
+	road_network = no
+	paved_road_network = yes
+}
+1560.1.1 = {
+	religion = reformed
+}
+1562.3.1 = {
+	unrest = 3
+}
+1563.3.19 = {
+	unrest = 0
+}
+1565.1.1 = {
+	unrest = 8
+}
+1568.9.1 = {
+	unrest = 15
+}
+1570.8.8 = {
+	unrest = 10
+}
+1573.9.1 = {
+	unrest = 15
+}
+1574.5.1 = {
+	unrest = 7
+}
+1584.1.1 = {
+	unrest = 12
+}
+1588.12.1 = {
+	unrest = 15
+}
+1594.1.1 = {
+	unrest = 10
+}
+1598.4.13 = {
+	unrest = 3
+}
+1598.5.2 = {
+	unrest = 0
+}
+1640.1.1 = {
+	fort_14th = no
+	fort_15th = yes
+}
+1650.1.14 = {
+	unrest = 7
+}
+1651.4.1 = {
+	unrest = 4
+}
+1651.12.1 = {
+	unrest = 7
+}
+1652.10.21 = {
+	unrest = 0
+}
+1685.10.18 = {
+	unrest = 8
+}
+1686.1.17 = {
+	religion = catholic
+	unrest = 0
+}
+1710.1.1 = {
+	fort_15th = no
+	fort_16th = yes
+}
+100.1.1 = {
+	set_variable = {
+		which = starting_rural_pop_1300
+		value = 79.692
+	}
+	set_variable = {
+		which = starting_urban_pop_1300
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1350
+		value = 79.692
+	}
+	set_variable = {
+		which = starting_urban_pop_1350
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1400
+		value = 54.788
+	}
+	set_variable = {
+		which = starting_urban_pop_1400
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1450
+		value = 64.750
+	}
+	set_variable = {
+		which = starting_urban_pop_1450
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1500
+		value = 74.711
+	}
+	set_variable = {
+		which = starting_urban_pop_1500
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1550
+		value = 82.182
+	}
+	set_variable = {
+		which = starting_urban_pop_1550
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1600
+		value = 92.144
+	}
+	set_variable = {
+		which = starting_urban_pop_1600
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1650
+		value = 104.596
+	}
+	set_variable = {
+		which = starting_urban_pop_1650
+		value = 0.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1700
+		value = 104.576
+	}
+	set_variable = {
+		which = starting_urban_pop_1700
+		value = 5.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1750
+		value = 105.536
+	}
+	set_variable = {
+		which = starting_urban_pop_1750
+		value = 5.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1800
+		value = 111.688
+	}
+	set_variable = {
+		which = starting_urban_pop_1800
+		value = 11.000
+	}
+	set_variable = {
+		which = starting_rural_pop_1850
+		value = 130.319
+	}
+	set_variable = {
+		which = starting_urban_pop_1850
+		value = 12.000
+	}
+}

@@ -1,0 +1,8398 @@
+namespace = dg_reformed
+country_event = {
+	id = dg_reformed.001
+	title = dg_reformed.001.t
+	desc = dg_reformed.001.d
+	picture = reformed_confession
+	trigger = {
+		has_country_flag = reaction_to_reformation
+		NOT = {
+			has_country_flag = radical_reformer
+		}
+		OR = {
+			religion = catholic
+			religion = protestant
+		}
+		OR = {
+			religion_years = {
+				protestant = 10
+			}
+			has_global_flag = reformation_luther_martyred
+		}
+		OR = {
+			is_colonial_nation = no
+			any_country = {
+				overlord_of = ROOT
+				religion = reformed
+			}
+		}
+		OR = {
+			NOT = {
+				religion_years = {
+					protestant = 70
+				}
+			}
+			NOT = {
+				is_religion_enabled = reformed
+			}
+		}
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = papacy_reform
+					has_reform = papal_government
+				}
+			}
+		}
+		NOT = {
+			check_variable = {
+				which = inquisition
+				value = 2
+			}
+		}
+		any_owned_province = {
+			religion = catholic
+			NOT = {
+				has_province_flag = renaissance_ideas
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 41
+		modifier = {
+			has_saved_event_target = the_vatican
+			event_target:the_vatican = {
+				culture_group = ROOT
+			}
+			factor = 4
+		}
+		modifier = {
+			capital_scope = {
+				has_province_modifier = catholic_archbishopric
+			}
+			factor = 1.4
+		}
+		modifier = {
+			any_owned_province = {
+				has_province_modifier = catholic_archbishopric
+			}
+			factor = 1.4
+		}
+		modifier = {
+			any_neighbor_country = {
+				tag = PAP
+			}
+			factor = 1.4
+		}
+		modifier = {
+			has_global_flag = reformation_luther_martyred
+			factor = 0.5
+		}
+		modifier = {
+			check_variable = {
+				which = inquisition
+				value = 1
+			}
+			factor = 2
+		}
+		modifier = {
+			NOT = {
+				ai = yes
+			}
+			factor = 0.5
+		}
+		modifier = {
+			factor = 2
+			religion = protestant
+		}
+		modifier = {
+			has_country_flag = renaissance
+			factor = 2
+		}
+		modifier = {
+			factor = 0.5
+			num_of_rebel_controlled_provinces = 1
+		}
+		modifier = {
+			factor = 0.7
+			NOT = {
+				stability = 1
+			}
+		}
+		modifier = {
+			factor = 0.7
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 2
+			government = theocracy
+		}
+		modifier = {
+			factor = 0.25
+			government = republic
+			has_saved_event_target = the_vatican
+			NOT = {
+				event_target:the_vatican = {
+					culture_group = ROOT
+				}
+			}
+		}
+		modifier = {
+			factor = 0.7
+			NOT = {
+				any_owned_province = {
+					has_owner_culture = no
+				}
+			}
+		}
+		modifier = {
+			factor = 0.7
+			NOT = {
+				any_owned_province = {
+					NOT = {
+						culture_group = owner
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			has_global_flag = counter_reformation
+		}
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 5
+			}
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 10
+			}
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 25
+			}
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 50
+			}
+			factor = 0.7
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = radical_reformer
+			random_owned_province = {
+				limit = {
+					continent = europe
+					is_city = yes
+					OR = {
+						religion = catholic
+						religion = protestant
+						religion = reformed
+						religion = hussite
+						religion = gnostic
+					}
+					NOT = {
+						has_province_flag = renaissance_ideas
+					}
+				}
+				set_province_flag = reformed_heresy
+			}
+			random_neighbor_country = {
+				limit = {
+					NOT = {
+						has_country_flag = radical_reformer
+					}
+					is_colonial_nation = no
+					OR = {
+						religion = catholic
+						religion = protestant
+						religion = hussite
+						religion = gnostic
+					}
+					any_owned_province = {
+						OR = {
+							religion = catholic
+							religion = protestant
+							religion = hussite
+							religion = gnostic
+						}
+					}
+					has_country_flag = humanism
+					government = republic
+					culture_group = ROOT
+				}
+				set_country_flag = reformer_in_exile
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_neighbor_country = {
+							has_country_flag = reformer_in_exile
+						}
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						NOT = {
+							has_country_flag = radical_reformer
+						}
+						is_colonial_nation = no
+						OR = {
+							religion = catholic
+							religion = protestant
+							religion = hussite
+							religion = gnostic
+						}
+						any_owned_province = {
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+							NOT = {
+								has_province_flag = renaissance_ideas
+							}
+						}
+						OR = {
+							has_country_flag = humanism
+							government = republic
+						}
+						culture_group = ROOT
+					}
+					set_country_flag = reformer_in_exile
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_neighbor_country = {
+							has_country_flag = reformer_in_exile
+						}
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						NOT = {
+							has_country_flag = radical_reformer
+						}
+						is_colonial_nation = no
+						OR = {
+							religion = catholic
+							religion = protestant
+							religion = hussite
+							religion = gnostic
+						}
+						any_owned_province = {
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+						}
+						OR = {
+							has_country_flag = humanism
+							government = republic
+						}
+					}
+					set_country_flag = reformer_in_exile
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_neighbor_country = {
+							has_country_flag = reformer_in_exile
+						}
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						NOT = {
+							has_country_flag = radical_reformer
+						}
+						is_colonial_nation = no
+						OR = {
+							religion = catholic
+							religion = protestant
+							religion = hussite
+							religion = gnostic
+						}
+						any_owned_province = {
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+						}
+					}
+					set_country_flag = reformer_in_exile
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.001.a
+		ai_chance = {
+			factor = 70
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = reformed_heresy
+			}
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 8
+				}
+				change_variable = {
+					which = province_religion
+					value = -8
+				}
+			}
+			custom_tooltip = reformed_40
+			add_province_modifier = {
+				name = religious_nationalism
+				duration = 4000
+			}
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = reformer_in_exile
+			}
+			hidden_effect = {
+				clr_country_flag = reformer_in_exile
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = radical_exile
+			}
+			country_event = {
+				id = dg_reformed.002
+				days = 90
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.001.b
+		trigger = {
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = papacy_reform
+						has_reform = papal_government
+					}
+				}
+			}
+			is_force_converted = no
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 5
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 10
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 25
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 50
+				}
+				factor = 1.4
+			}
+			modifier = {
+				has_global_flag = reformation_luther_martyred
+				factor = 1.4
+			}
+			modifier = {
+				is_lesser_in_union = yes
+				any_country = {
+					overlord_of = ROOT
+					religion = catholic
+					has_country_flag = renaissance
+				}
+				factor = 0
+			}
+			modifier = {
+				factor = 1.4
+				has_country_flag = reformation_maybe
+			}
+			modifier = {
+				factor = 0.5
+				has_country_flag = renaissance
+			}
+			modifier = {
+				num_of_cities = 8
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 16
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 24
+				factor = 0.7
+			}
+			modifier = {
+				factor = 3
+				government = republic
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 2
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 3
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 4
+				}
+				factor = 2
+			}
+			modifier = {
+				any_owned_province = {
+					has_owner_culture = no
+				}
+				factor = 0.7
+			}
+			modifier = {
+				any_owned_province = {
+					NOT = {
+						culture_group = owner
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 8
+				NOT = {
+					any_country = {
+						religion = reformed
+						num_of_cities = 8
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				num_of_cities = 12
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 18
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 24
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 30
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 36
+				factor = 0.7
+			}
+			modifier = {
+				has_country_flag = introduce_reformation
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = spread_reformation
+				factor = 1.4
+			}
+			modifier = {
+				has_country_flag = reformation_maybe
+				factor = 2
+			}
+			modifier = {
+				dominant_religion = protestant
+				factor = 0
+			}
+			modifier = {
+				religion = protestant
+				factor = 0
+			}
+			modifier = {
+				government = theocracy
+				factor = 0
+			}
+		}
+		set_country_flag = useful_reformed
+		hidden_effect = {
+			set_variable = {
+				which = minority_usefulness
+				value = 30
+			}
+		}
+		change_religion = reformed
+		force_converted = yes
+		if = {
+			limit = {
+				check_variable = {
+					which = reformed_population
+					value = 75
+				}
+			}
+			custom_tooltip = convert_population_75
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = reformed_population
+					value = 50
+				}
+			}
+			custom_tooltip = convert_population_50
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = reformed_population
+					value = 25
+				}
+			}
+			custom_tooltip = convert_population_25
+			add_stability = -2
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -10
+			}
+		}
+		else = {
+			custom_tooltip = convert_population_0
+			add_stability = -3
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -15
+			}
+		}
+		if = {
+			limit = {
+				patriarch_authority = 0.75
+			}
+			custom_tooltip = convert_church_strong
+			add_stability = -3
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -15
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.50
+			}
+			custom_tooltip = convert_piety_moderate
+			add_stability = -2
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -10
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.25
+			}
+			custom_tooltip = convert_church_weak
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		else = {
+			custom_tooltip = convert_church_insignificant
+		}
+		if = {
+			limit = {
+				ADM = 5
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						religion = reformed
+					}
+				}
+				custom_tooltip = convert_ruler_strong
+				custom_tooltip = stability_points_gained_150
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 150
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_ruler_moderate
+				custom_tooltip = stability_points_gained_100
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 100
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ADM = 3
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						religion = reformed
+					}
+				}
+				custom_tooltip = convert_ruler_moderate
+				custom_tooltip = stability_points_gained_100
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 100
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_ruler_weak
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					capital_scope = {
+						religion = reformed
+					}
+				}
+				custom_tooltip = convert_ruler_weak
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_ruler_incompetent
+			}
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			custom_tooltip = convert_theologian
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = was_reformed
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = sympathy_to_old_religion
+						value = 1
+					}
+				}
+				custom_tooltip = convert_previous_recent
+				custom_tooltip = stability_points_gained_100
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 100
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_previous_old
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = sympathy_to_old_religion
+						value = 1
+					}
+				}
+				custom_tooltip = convert_recent
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		define_advisor = {
+			religion = reformed
+			type = theologian
+			discount = yes
+		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_flag = reformed_heresy
+				}
+				clr_province_flag = reformed_heresy
+			}
+		}
+		capital_scope = {
+			custom_tooltip = reformed_50
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 12
+				}
+				change_variable = {
+					which = province_religion
+					value = -12
+				}
+			}
+			add_province_modifier = {
+				name = conversion_tensions
+				duration = 2000
+			}
+			every_neighbor_province = {
+				limit = {
+					owned_by = ROOT
+					culture_group = ROOT
+				}
+				custom_tooltip = reformed_20
+				hidden_effect = {
+					change_variable = {
+						which = reformed
+						value = 6
+					}
+					change_variable = {
+						which = province_religion
+						value = -6
+					}
+				}
+				add_province_modifier = {
+					name = conversion_tensions
+					duration = 1000
+				}
+			}
+		}
+		if = {
+			limit = {
+				government = republic
+			}
+			change_government = theocracy
+			add_government_reform = ruling_clergy_reform
+			add_government_reform = council_reform
+			add_government_reform = churchmen_rule
+			set_legacy_government = theocratic_government
+		}
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					has_country_flag = reformer_in_exile
+				}
+				clr_country_flag = reformer_in_exile
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.002
+	title = dg_reformed.002.t
+	desc = dg_reformed.002.d
+	picture = reformed_confession
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = radical_reformer
+	}
+	option = {
+		name = dg_reformed.002.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				NOT = {
+					stability = 0
+				}
+				factor = 1.4
+			}
+			modifier = {
+				has_country_flag = renaissance
+				factor = 0.5
+			}
+			modifier = {
+				has_global_flag = reformation_luther_martyred
+				factor = 2
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 5
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 10
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 25
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 50
+				}
+				factor = 1.4
+			}
+			modifier = {
+				is_lesser_in_union = yes
+				any_country = {
+					overlord_of = ROOT
+					religion = catholic
+					has_country_flag = renaissance
+				}
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = spread_reformation
+				factor = 1.4
+			}
+			modifier = {
+				has_country_flag = reformation_maybe
+				factor = 2
+			}
+			modifier = {
+				factor = 3
+				government = republic
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 2
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 3
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 4
+				}
+				factor = 2
+			}
+			modifier = {
+				any_owned_province = {
+					has_owner_culture = no
+				}
+				factor = 0.7
+			}
+			modifier = {
+				any_owned_province = {
+					NOT = {
+						culture_group = owner
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 8
+				NOT = {
+					any_country = {
+						religion = reformed
+						num_of_cities = 8
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = introduce_reformation
+				factor = 0.5
+			}
+			modifier = {
+				dominant_religion = protestant
+				factor = 0
+			}
+			modifier = {
+				religion = protestant
+				factor = 0
+			}
+			modifier = {
+				government = theocracy
+				factor = 0
+			}
+		}
+		define_advisor = {
+			religion = reformed
+			type = theologian
+			discount = yes
+		}
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					owned_by = FROM
+				}
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = hussite
+					religion = gnostic
+				}
+			}
+			custom_tooltip = reformed_20
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 4
+				}
+				change_variable = {
+					which = province_religion
+					value = -4
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_modifier = religious_nationalism
+				has_owner_religion = yes
+			}
+			custom_tooltip = reformed_40
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 8
+				}
+				change_variable = {
+					which = converts
+					value = -8
+				}
+			}
+			remove_province_modifier = religious_nationalism
+		}
+	}
+	option = {
+		name = dg_reformed.002.b
+		ai_chance = {
+			factor = 55
+		}
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_opinion = {
+				who = FROM
+				modifier = religious_scandal_fanatical
+			}
+			random_list = {
+				50 = {
+					add_prestige = 4
+				}
+				50 = {
+					random_owned_province = {
+						limit = {
+							continent = europe
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = gnostic
+								religion = hussite
+							}
+						}
+						add_province_modifier = {
+							name = religious_nationalism
+							duration = 2000
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							NOT = {
+								has_country_flag = radical_reformer
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+							any_owned_province = {
+								OR = {
+									religion = catholic
+									religion = protestant
+									religion = hussite
+									religion = gnostic
+								}
+							}
+						}
+						country_event = {
+							id = dg_reformed.002
+							days = 90
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_opinion = {
+				who = FROM
+				modifier = religious_scandal_pious
+			}
+			random_list = {
+				50 = {
+					add_prestige = 3
+				}
+				50 = {
+					random_owned_province = {
+						limit = {
+							continent = europe
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = gnostic
+								religion = hussite
+							}
+						}
+						add_province_modifier = {
+							name = religious_nationalism
+							duration = 2000
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							NOT = {
+								has_country_flag = radical_reformer
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+							any_owned_province = {
+								OR = {
+									religion = catholic
+									religion = protestant
+									religion = hussite
+									religion = gnostic
+								}
+							}
+						}
+						country_event = {
+							id = dg_reformed.002
+							days = 90
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_opinion = {
+				who = FROM
+				modifier = religious_scandal_observant
+			}
+			random_list = {
+				50 = {
+					add_prestige = 2
+				}
+				50 = {
+					random_owned_province = {
+						limit = {
+							continent = europe
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = gnostic
+								religion = hussite
+							}
+						}
+						add_province_modifier = {
+							name = religious_nationalism
+							duration = 2000
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							NOT = {
+								has_country_flag = radical_reformer
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+							any_owned_province = {
+								OR = {
+									religion = catholic
+									religion = protestant
+									religion = hussite
+									religion = gnostic
+								}
+							}
+						}
+						country_event = {
+							id = dg_reformed.002
+							days = 90
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_opinion = {
+				who = FROM
+				modifier = religious_scandal_decadent
+			}
+			random_list = {
+				50 = {
+					add_prestige = 1
+				}
+				50 = {
+					random_owned_province = {
+						limit = {
+							continent = europe
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = gnostic
+								religion = hussite
+							}
+						}
+						add_province_modifier = {
+							name = religious_nationalism
+							duration = 2000
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							NOT = {
+								has_country_flag = radical_reformer
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+							any_owned_province = {
+								OR = {
+									religion = catholic
+									religion = protestant
+									religion = hussite
+									religion = gnostic
+								}
+							}
+						}
+						country_event = {
+							id = dg_reformed.002
+							days = 90
+						}
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {}
+				50 = {
+					random_owned_province = {
+						limit = {
+							continent = europe
+							any_neighbor_province = {
+								owned_by = FROM
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = gnostic
+								religion = hussite
+							}
+						}
+						add_province_modifier = {
+							name = religious_nationalism
+							duration = 2000
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							NOT = {
+								has_country_flag = radical_reformer
+							}
+							OR = {
+								religion = catholic
+								religion = protestant
+								religion = hussite
+								religion = gnostic
+							}
+							any_owned_province = {
+								OR = {
+									religion = catholic
+									religion = protestant
+									religion = hussite
+									religion = gnostic
+								}
+							}
+						}
+						country_event = {
+							id = dg_reformed.002
+							days = 90
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.002.c
+		trigger = {
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = papacy_reform
+						has_reform = papal_government
+					}
+				}
+			}
+			is_force_converted = no
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				government = republic
+				factor = 3
+			}
+			modifier = {
+				religion = protestant
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = renaissance
+				factor = 0.5
+			}
+			modifier = {
+				has_global_flag = reformation_luther_martyred
+				factor = 4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 5
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 10
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 25
+				}
+				factor = 1.4
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 50
+				}
+				factor = 1.4
+			}
+			modifier = {
+				is_lesser_in_union = yes
+				any_country = {
+					overlord_of = ROOT
+					religion = catholic
+					has_country_flag = renaissance
+				}
+				factor = 0
+			}
+			modifier = {
+				factor = 3
+				government = republic
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 2
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 3
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					num_of_cities = 4
+				}
+				factor = 2
+			}
+			modifier = {
+				any_owned_province = {
+					has_owner_culture = no
+				}
+				factor = 0.7
+			}
+			modifier = {
+				any_owned_province = {
+					NOT = {
+						culture_group = owner
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				num_of_cities = 8
+				NOT = {
+					any_country = {
+						religion = reformed
+						num_of_cities = 8
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = spread_reformation
+				factor = 1.4
+			}
+			modifier = {
+				has_country_flag = reformation_maybe
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = introduce_reformation
+				factor = 0.5
+			}
+			modifier = {
+				dominant_religion = protestant
+				factor = 0
+			}
+			modifier = {
+				religion = protestant
+				factor = 0
+			}
+			modifier = {
+				government = theocracy
+				factor = 0
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = minority_usefulness
+				value = 30
+			}
+			set_country_flag = useful_reformed
+		}
+		set_country_flag = voluntary_conversion
+		if = {
+			limit = {
+				NOT = {
+					is_religion_enabled = reformed
+				}
+			}
+			custom_tooltip = convert_dangerous_religion
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = reformed_population
+					value = 75
+				}
+			}
+			custom_tooltip = convert_population_75
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = reformed_population
+					value = 50
+				}
+			}
+			custom_tooltip = convert_population_50
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = reformed_population
+					value = 25
+				}
+			}
+			custom_tooltip = convert_population_25
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		else = {
+			custom_tooltip = convert_population_0
+			add_stability = -2
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -10
+			}
+		}
+		if = {
+			limit = {
+				patriarch_authority = 0.75
+			}
+			custom_tooltip = convert_church_strong
+			add_stability = -2
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -10
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.50
+			}
+			custom_tooltip = convert_piety_moderate
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.25
+			}
+			custom_tooltip = convert_church_weak
+		}
+		else = {
+			custom_tooltip = convert_church_insignificant
+		}
+		if = {
+			limit = {
+				ADM = 5
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						religion = reformed
+					}
+				}
+				custom_tooltip = convert_ruler_strong
+				custom_tooltip = stability_points_gained_150
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 150
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_ruler_moderate
+				custom_tooltip = stability_points_gained_100
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 100
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ADM = 3
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						religion = reformed
+					}
+				}
+				custom_tooltip = convert_ruler_moderate
+				custom_tooltip = stability_points_gained_100
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 100
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_ruler_weak
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					capital_scope = {
+						religion = reformed
+					}
+				}
+				custom_tooltip = convert_ruler_weak
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_ruler_incompetent
+			}
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			custom_tooltip = convert_theologian
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = was_reformed
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = sympathy_to_old_religion
+						value = 1
+					}
+				}
+				custom_tooltip = convert_previous_recent
+				custom_tooltip = stability_points_gained_100
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 100
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else = {
+				custom_tooltip = convert_previous_old
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = sympathy_to_old_religion
+						value = 1
+					}
+				}
+				custom_tooltip = convert_recent
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		change_religion = reformed
+		force_converted = yes
+		define_advisor = {
+			religion = reformed
+			type = theologian
+			discount = yes
+		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_flag = reformed_heresy
+				}
+				clr_province_flag = reformed_heresy
+			}
+		}
+		capital_scope = {
+			custom_tooltip = reformed_50
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 12
+				}
+				change_variable = {
+					which = province_religion
+					value = -12
+				}
+			}
+			add_province_modifier = {
+				name = conversion_tensions
+				duration = 2000
+			}
+			every_neighbor_province = {
+				limit = {
+					owned_by = ROOT
+					culture_group = ROOT
+				}
+				custom_tooltip = reformed_20
+				hidden_effect = {
+					change_variable = {
+						which = reformed
+						value = 6
+					}
+					change_variable = {
+						which = province_religion
+						value = -6
+					}
+				}
+				add_province_modifier = {
+					name = conversion_tensions
+					duration = 1000
+				}
+			}
+		}
+		if = {
+			limit = {
+				government = republic
+			}
+			change_government = theocracy
+			add_government_reform = ruling_clergy_reform
+			add_government_reform = council_reform
+			add_government_reform = churchmen_rule
+			set_legacy_government = theocratic_government
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.005
+	title = dg_reformed.005.t
+	desc = dg_reformed.005.d
+	picture = reformed_confession
+	trigger = {
+		capital_scope = {
+			religion = reformed
+		}
+		check_variable = {
+			which = reformed_population
+			value = 10
+		}
+		NOT = {
+			has_global_flag = dg_reformed_enabled
+		}
+		OR = {
+			religion_years = {
+				protestant = 20
+			}
+			has_global_flag = reformation_luther_martyred
+			is_religion_enabled = reformed
+		}
+		NOT = {
+			has_country_flag = religious_turmoil_reformed
+		}
+		religion_group = christian
+		NOT = {
+			religion = orthodox
+		}
+		NOT = {
+			religion = coptic
+		}
+		NOT = {
+			religion = chaldean
+		}
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = papacy_reform
+					has_reform = papal_government
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 50
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 25
+			}
+			factor = 0.5
+		}
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 50
+			}
+			factor = 0.5
+		}
+		modifier = {
+			check_variable = {
+				which = reformed_population
+				value = 75
+			}
+			factor = 0.5
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = enemy_of_pope
+		}
+		modifier = {
+			factor = 0.7
+			has_country_flag = rival_of_pope
+		}
+		modifier = {
+			factor = 2
+			government = theocracy
+		}
+		modifier = {
+			factor = 0.7
+			religion_years = {
+				protestant = 25
+			}
+		}
+		modifier = {
+			factor = 0.7
+			religion_years = {
+				protestant = 30
+			}
+		}
+		modifier = {
+			factor = 0.7
+			religion_years = {
+				protestant = 35
+			}
+		}
+		modifier = {
+			factor = 0.7
+			religion_years = {
+				protestant = 40
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					religion = reformed
+				}
+			}
+			custom_tooltip = dg_reformed.005.reformed
+		}
+	}
+	option = {
+		name = dg_reformed.005.a
+		ai_chance = {
+			factor = 50
+		}
+		set_global_flag = dg_reformed_enabled
+		enable_religion = reformed
+		set_country_flag = translated_confession
+		if = {
+			limit = {
+				religion = reformed
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_prestige = 15
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_prestige = 12
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_prestige = 9
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_prestige = 6
+			}
+			else = {
+				add_prestige = 3
+			}
+		}
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					religion = reformed
+				}
+			}
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = reformed
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = reformed_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = reformed_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = reformed_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_reformed
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = reformed
+		}
+		every_country = {
+			limit = {
+				ai = no
+				NOT = {
+					tag = ROOT
+				}
+				OR = {
+					AND = {
+						has_country_flag = religious_news_major
+						OR = {
+							religion = catholic
+							religion = protestant
+						}
+					}
+					AND = {
+						has_country_flag = religious_news_trivial
+						any_known_country = {
+							OR = {
+								religion = catholic
+								religion = protestant
+							}
+							OR = {
+								marriage_with = ROOT
+								alliance_with = ROOT
+								war_with = ROOT
+								truce_with = ROOT
+								senior_union_with = ROOT
+								junior_union_with = ROOT
+							}
+						}
+					}
+					AND = {
+						has_country_flag = religious_news_all
+						any_known_country = {
+							OR = {
+								religion = catholic
+								religion = protestant
+							}
+						}
+					}
+				}
+			}
+			country_event = {
+				id = dg_reformed.006
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.005.b
+		trigger = {
+			NOT = {
+				religion = reformed
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 25
+				}
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 50
+				}
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = {
+					which = reformed_population
+					value = 10
+				}
+				factor = 0
+			}
+		}
+		set_country_flag = religious_turmoil_reformed
+		add_stability = -1
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_legitimacy = -5
+			add_devotion = -10
+			add_republican_tradition = -2.5
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_legitimacy = -4
+			add_devotion = -8
+			add_republican_tradition = -2
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_legitimacy = -3
+			add_devotion = -6
+			add_republican_tradition = -1.5
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_legitimacy = -2
+			add_devotion = -4
+			add_republican_tradition = -1
+		}
+		else = {
+			add_legitimacy = -1
+			add_devotion = -2
+			add_republican_tradition = -0.5
+		}
+		kill_advisor = random
+		kill_leader = {
+			type = random
+		}
+		add_yearly_manpower = -0.10
+		add_army_tradition = -10
+		capital_scope = {
+			add_province_modifier = {
+				name = expulsion_of_heretics
+				duration = 1500
+			}
+			add_province_modifier = {
+				name = religious_unrest
+				duration = 6000
+			}
+			custom_tooltip = convert_40
+			hidden_effect = {
+				change_variable = {
+					which = province_religion
+					value = -8
+				}
+				change_variable = {
+					which = converts
+					value = 8
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.006
+	title = dg_reformed.006.t
+	desc = dg_reformed.006.d
+	picture = reformed_confession
+	is_triggered_only = yes
+	option = {
+		name = dg_reformed.006.a
+		add_opinion = {
+			who = FROM
+			modifier = shocking_news
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.007
+	title = dg_reformed.007.t
+	desc = dg_reformed.007.d
+	picture = reformed_converts
+	trigger = {
+		any_owned_province = {
+			religion = reformed
+		}
+		NOT = {
+			SCO = {
+				has_country_flag = anabaptist_movement
+			}
+		}
+		NOT = {
+			has_country_modifier = religious_intolerance
+		}
+		NOT = {
+			has_country_modifier = religious_controversy
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			religion = reformed
+			factor = 0.10
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			SCO = {
+				set_country_flag = anabaptist_movement
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.007.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 750
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 500
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 250
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.007.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				piety = 0.60
+				factor = 0.7
+			}
+			modifier = {
+				piety = 0.20
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					piety = -0.60
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					stability = 1
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					stability = 0
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					stability = -1
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					religion = reformed
+				}
+				factor = 0.5
+			}
+		}
+		add_adm_power = 10
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 1000
+			}
+			random = {
+				chance = 80
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 750
+			}
+			random = {
+				chance = 60
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 500
+			}
+			random = {
+				chance = 40
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 250
+			}
+			random = {
+				chance = 20
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_reformed.008
+	title = dg_reformed.008.t
+	desc = dg_reformed.008.d
+	picture = reformed_confession
+	trigger = {
+		religion = reformed
+		NOT = {
+			SCO = {
+				has_country_flag = anabaptist_confession
+			}
+		}
+		has_owner_religion = yes
+		SCO = {
+			has_country_flag = anabaptist_movement
+		}
+		is_capital = no
+		NOT = {
+			owner = {
+				has_country_modifier = religious_intolerance
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 25
+		modifier = {
+			owner = {
+				has_country_modifier = religious_controversy
+			}
+			factor = 0.5
+		}
+		modifier = {
+			owner = {
+				has_country_modifier = religious_tolerance
+			}
+			factor = 0.5
+		}
+	}
+	immediate = {
+		SCO = {
+			set_country_flag = anabaptist_confession
+		}
+	}
+	option = {
+		name = dg_reformed.008.a
+		custom_tooltip = reformed_10
+		hidden_effect = {
+			set_province_flag = anabaptist_church
+			change_variable = {
+				which = reformed
+				value = 2
+			}
+			change_variable = {
+				which = province_religion
+				value = -2
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_reformed.009
+	title = dg_reformed.009.t
+	desc = dg_reformed.009.d
+	picture = reformed_rebellion
+	trigger = {
+		SCO = {
+			has_country_flag = anabaptist_movement
+		}
+		NOT = {
+			religion_years = {
+				reformed = 10
+			}
+		}
+		check_variable = {
+			which = reformed
+			value = 2
+		}
+		NOT = {
+			PAP = {
+				has_country_flag = new_jerusalem
+			}
+		}
+		OR = {
+			religion = catholic
+			religion = protestant
+		}
+		continent = europe
+		owner = {
+			OR = {
+				religion = catholic
+				religion = protestant
+			}
+			NOT = {
+				num_of_cities = 4
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 6
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 12
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				num_of_cities = 24
+			}
+			factor = 1.4
+		}
+		modifier = {
+			check_variable = {
+				which = reformed
+				value = 8
+			}
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = reformed
+				value = 6
+			}
+			factor = 0.7
+		}
+		modifier = {
+			check_variable = {
+				which = reformed
+				value = 4
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				piety = 0.60
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				piety = 0.20
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					piety = -0.20
+				}
+			}
+			factor = 1.4
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					piety = -0.60
+				}
+			}
+			factor = 1.4
+		}
+		modifier = {
+			has_missionary = yes
+			factor = 0.7
+		}
+		modifier = {
+			unrest = 2
+			factor = 0.7
+		}
+		modifier = {
+			unrest = 4
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				war_exhaustion = 5
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				war_exhaustion = 10
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					legitimacy = 100
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					legitimacy = 50
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					manpower_percentage = 0.50
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				NOT = {
+					manpower_percentage = 0.25
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			owner = {
+				government = theocracy
+			}
+			factor = 0.7
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_province_flag = new_jerusalem
+			PAP = {
+				set_country_flag = new_jerusalem
+			}
+			owner = {
+				set_country_flag = new_jerusalem
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.009.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				owner = {
+					NOT = {
+						religious_unity = 0.80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religious_unity = 0.60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religious_unity = 0.40
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						religious_unity = 0.20
+					}
+				}
+				factor = 0
+			}
+		}
+		custom_tooltip = reformed_10
+		hidden_effect = {
+			change_variable = {
+				which = reformed
+				value = 2
+			}
+			change_variable = {
+				which = province_religion
+				value = -2
+			}
+		}
+		spawn_rebels = {
+			type = reformed_rebels
+			size = 2
+		}
+		add_province_modifier = {
+			name = religious_nationalism
+			duration = 1000
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_cities = 3
+				}
+			}
+			change_controller = REB
+		}
+		owner = {
+			kill_advisor = theologian
+			kill_advisor = inquisitor
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = religious_tolerance
+					}
+					NOT = {
+						has_country_modifier = religious_intolerance
+					}
+				}
+				add_piety = 0.20
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 4000
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = religious_tolerance
+				}
+				add_piety = 0.40
+				remove_country_modifier = religious_tolerance
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 4000
+				}
+			}
+			remove_country_modifier = religious_tolerance
+		}
+	}
+	option = {
+		name = dg_reformed.009.b
+		trigger = {
+			owner = {
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = papacy_reform
+							has_reform = papal_government
+						}
+					}
+				}
+			}
+			owner = {
+				is_force_converted = no
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				owner = {
+					NOT = {
+						num_of_cities = 3
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						num_of_cities = 2
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					is_elector = yes
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = republic
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					war_exhaustion = 5
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					war_exhaustion = 10
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						manpower_percentage = 0.50
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						manpower_percentage = 0.25
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						manpower_percentage = 0.10
+					}
+				}
+				factor = 1.4
+			}
+		}
+		change_religion = reformed
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = 10
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_10
+		owner = {
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = reformed
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = reformed_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = reformed_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = reformed_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_reformed
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = reformed
+			force_converted = yes
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = PREV
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			change_government = theocracy
+			add_government_reform = ruling_clergy_reform
+			add_government_reform = council_reform
+			add_government_reform = churchmen_rule
+			set_legacy_government = theocratic_government
+			add_prestige = -50
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = religious_tolerance
+					}
+					NOT = {
+						has_country_modifier = religious_intolerance
+					}
+				}
+				add_piety = 0.20
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 4000
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = religious_tolerance
+				}
+				add_piety = 0.40
+				remove_country_modifier = religious_tolerance
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 4000
+				}
+			}
+			every_neighbor_country = {
+				limit = {
+					religion_group = christian
+					capital_scope = {
+						continent = europe
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = religious_refugees
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.010
+	title = dg_reformed.010.t
+	desc = dg_reformed.010.d
+	picture = reformed_nationalism
+	trigger = {
+		any_owned_province = {
+			check_variable = {
+				which = reformed
+				value = 4
+			}
+		}
+		OR = {
+			religion = catholic
+			religion = protestant
+		}
+		NOT = {
+			government = theocracy
+		}
+		NOT = {
+			religion_years = {
+				protestant = 60
+			}
+		}
+		NOT = {
+			num_of_cities = 8
+		}
+		religion_years = {
+			protestant = 15
+		}
+		OR = {
+			is_at_war = no
+			any_neighbor_country = {
+				war_with = ROOT
+				NOT = {
+					religion = reformed
+				}
+				NOT = {
+					culture_group = ROOT
+				}
+				any_owned_province = {
+					culture_group = ROOT
+					religion = reformed
+				}
+			}
+		}
+		NOT = {
+			has_country_flag = nationalism_and_religion
+		}
+		capital_scope = {
+			any_province = {
+				culture = PREV
+				NOT = {
+					owned_by = ROOT
+				}
+				NOT = {
+					culture_group = owner
+				}
+				owner = {
+					num_of_cities = 12
+					religion = catholic
+					is_force_converted = no
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			piety = 0.60
+			factor = 0.7
+		}
+		modifier = {
+			piety = 0.20
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 1.4
+		}
+		modifier = {
+			NOT = {
+				piety = -0.60
+			}
+			factor = 1.4
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = nationalism_and_religion
+		}
+	}
+	option = {
+		name = dg_reformed.010.a
+		trigger = {
+			is_force_converted = no
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				any_neighbor_country = {
+					is_rival = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				any_neighbor_country = {
+					is_enemy = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				any_neighbor_country = {
+					is_at_war = yes
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				any_neighbor_country = {
+					alliance_with = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				any_neighbor_country = {
+					marriage_with = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				any_neighbor_country = {
+					junior_union_with = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				any_neighbor_country = {
+					senior_union_with = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				any_neighbor_country = {
+					vassal_of = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				any_neighbor_country = {
+					overlord_of = ROOT
+					NOT = {
+						religion = reformed
+					}
+					NOT = {
+						culture_group = ROOT
+					}
+					any_owned_province = {
+						culture_group = ROOT
+						religion = reformed
+					}
+				}
+				factor = 0.5
+			}
+		}
+		change_religion = reformed
+		every_neighbor_country = {
+			limit = {
+				NOT = {
+					religion = reformed
+				}
+				NOT = {
+					culture_group = ROOT
+				}
+				any_owned_province = {
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+					culture_group = ROOT
+					OR = {
+						religion = reformed
+						religion = catholic
+						religion = protestant
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = supporting_religious_rebels
+			}
+			add_casus_belli = {
+				type = cb_insult
+				target = ROOT
+				months = 24
+			}
+			every_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+					culture_group = ROOT
+					OR = {
+						religion = reformed
+						religion = catholic
+						religion = protestant
+					}
+				}
+				add_core = ROOT
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 1
+					friend = ROOT
+				}
+				add_province_modifier = {
+					name = religious_nationalism
+					duration = 2000
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.010.b
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+province_event = {
+	id = dg_reformed.012
+	title = dg_reformed.012.t
+	desc = dg_reformed.012.d
+	picture = protestant_division
+	trigger = {
+		continent = europe
+		owner = {
+			NOT = {
+				religion_group = christian
+			}
+		}
+		NOT = {
+			religion_years = {
+				protestant = 100
+			}
+		}
+		religion_years = {
+			protestant = 15
+		}
+		owner = {
+			NOT = {
+				has_country_flag = reaction_to_reformation
+			}
+		}
+		OR = {
+			NOT = {
+				religion_years = {
+					protestant = 70
+				}
+			}
+			AND = {
+				exists = AVI
+				AVI = {
+					AND = {
+						OR = {
+							has_reform = papacy_reform
+							has_reform = papal_government
+						}
+					}
+				}
+			}
+		}
+		NOT = {
+			OR = {
+				AND = {
+					has_province_flag = radical_reformation
+					has_province_flag = reformed_nationalism
+				}
+				AND = {
+					has_province_flag = magisterial_reformation
+					has_province_flag = populist_reformation
+				}
+			}
+		}
+		OR = {
+			religion = catholic
+			religion = protestant
+		}
+		OR = {
+			any_neighbor_province = {
+				religion = catholic
+			}
+			any_neighbor_province = {
+				religion = reformed
+			}
+			any_neighbor_province = {
+				religion = protestant
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 0.5
+			any_neighbor_province = {
+				religion = reformed
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				government = theocracy
+			}
+		}
+		modifier = {
+			factor = 0.5
+			exists = AVI
+			AVI = {
+				AND = {
+					OR = {
+						has_reform = papacy_reform
+						has_reform = papal_government
+					}
+				}
+			}
+		}
+		modifier = {
+			NOT = {
+				religion_years = {
+					protestant = 5
+				}
+			}
+			factor = 1.5
+		}
+		modifier = {
+			NOT = {
+				religion_years = {
+					protestant = 10
+				}
+			}
+			factor = 1.5
+		}
+		modifier = {
+			religion_years = {
+				protestant = 15
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 20
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 25
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 30
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 35
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 40
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 45
+			}
+			factor = 1.2
+		}
+		modifier = {
+			religion_years = {
+				protestant = 50
+			}
+			factor = 1.2
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_province_flag = radical_reformation
+			owner = {
+				set_country_flag = reaction_to_reformation
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.012.a
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = reformed_40
+		hidden_effect = {
+			change_variable = {
+				which = reformed
+				value = 8
+			}
+			change_variable = {
+				which = province_religion
+				value = -8
+			}
+			owner = {
+				set_country_flag = neutral_to_reformation
+			}
+		}
+		add_province_modifier = {
+			name = conversion_tensions
+			duration = 1500
+		}
+	}
+	option = {
+		name = dg_reformed.012.b
+		ai_chance = {
+			factor = 35
+			modifier = {
+				NOT = {
+					owner = {
+						any_known_country = {
+							religion = reformed
+						}
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				PAP = {
+					check_variable = {
+						which = papal_authority
+						value = 300
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				PAP = {
+					check_variable = {
+						which = papal_authority
+						value = 400
+					}
+				}
+				factor = 1.4
+			}
+		}
+		custom_tooltip = reformed_50
+		hidden_effect = {
+			change_variable = {
+				which = reformed
+				value = 12
+			}
+			change_variable = {
+				which = province_religion
+				value = -12
+			}
+			owner = {
+				set_country_flag = encourage_reformation
+			}
+		}
+		add_province_modifier = {
+			name = conversion_tensions
+			duration = 1000
+		}
+	}
+	option = {
+		name = dg_reformed.012.c
+		ai_chance = {
+			factor = 15
+			modifier = {
+				owner = {
+					any_known_country = {
+						religion = reformed
+						is_rival = ROOT
+					}
+				}
+				factor = 2
+			}
+		}
+		spawn_rebels = {
+			type = reformed_rebels
+			size = 1
+		}
+		custom_tooltip = reformed_20
+		hidden_effect = {
+			change_variable = {
+				which = reformed
+				value = 4
+			}
+			change_variable = {
+				which = province_religion
+				value = -4
+			}
+		}
+		owner = {
+			hidden_effect = {
+				set_country_flag = oppose_reformation
+			}
+			every_owned_province = {
+				limit = {
+					religion = catholic
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = -2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_reformed.013
+	title = dg_reformed.013.t
+	desc = dg_reformed.013.d
+	picture = reformed_converts
+	trigger = {
+		OR = {
+			religion = protestant
+			religion = catholic
+			religion = gnostic
+			religion = hussite
+		}
+		continent = europe
+		NOT = {
+			religion_years = {
+				reformed = 60
+			}
+		}
+		SCO = {
+			has_country_flag = anabaptist_confession
+		}
+		NOT = {
+			check_variable = {
+				which = reformed
+				value = 2
+			}
+		}
+		NOT = {
+			has_province_flag = anabaptist_church
+		}
+		NOT = {
+			any_neighbor_province = {
+				has_province_flag = anabaptist_church
+			}
+		}
+		NOT = {
+			owner = {
+				has_country_flag = protestant_nationalism
+			}
+		}
+		NOT = {
+			owner = {
+				has_country_flag = religious_turmoil_reformed
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 41
+	}
+	immediate = {
+		hidden_effect = {
+			set_province_flag = anabaptist_church
+			set_province_flag = event_target
+			if = {
+				limit = {
+					owner = {
+						num_of_cities = 30
+					}
+				}
+				every_neighbor_province = {
+					every_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+							NOT = {
+								has_province_flag = anabaptist_church
+							}
+							NOT = {
+								any_neighbor_province = {
+									has_province_flag = anabaptist_church
+								}
+							}
+							NOT = {
+								check_variable = {
+									which = reformed
+									value = 2
+								}
+							}
+							OR = {
+								religion = protestant
+								religion = catholic
+								religion = gnostic
+								religion = hussite
+							}
+						}
+						set_province_flag = anabaptist_church
+						set_province_flag = event_target
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.013.a
+		ai_chance = {
+			factor = 40
+		}
+		trigger = {
+			PAP = {
+				has_country_flag = new_jerusalem
+			}
+		}
+		owner = {
+			add_mil_power = -10
+			hidden_effect = {
+				change_variable = {
+					which = reformed_refugees
+					value = 2
+				}
+				set_country_flag = religious_turmoil_happening
+				set_country_flag = religious_turmoil_reformed
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = event_target
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+				hidden_effect = {
+					clr_province_flag = event_target
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.013.b
+		ai_chance = {
+			factor = 30
+		}
+		owner = {
+			add_adm_power = -5
+			hidden_effect = {
+				set_country_flag = religious_turmoil_happening
+				set_country_flag = religious_turmoil_reformed
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = event_target
+				}
+				custom_tooltip = reformed_10
+				hidden_effect = {
+					change_variable = {
+						which = reformed
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+					clr_province_flag = event_target
+				}
+				add_province_modifier = {
+					name = expulsion_of_heretics
+					duration = 1500
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.013.c
+		ai_chance = {
+			factor = 30
+		}
+		owner = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = event_target
+				}
+				custom_tooltip = reformed_10
+				hidden_effect = {
+					change_variable = {
+						which = reformed
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+					clr_province_flag = event_target
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.014
+	title = dg_reformed.014.t
+	desc = dg_reformed.014.d
+	picture = reformed_confession
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+		}
+		any_owned_province = {
+			check_variable = {
+				which = reformed
+				value = 2
+			}
+		}
+		has_global_flag = dg_reformed_enabled
+		NOT = {
+			religion_years = {
+				reformed = 25
+			}
+		}
+		NOT = {
+			has_country_flag = translated_confession
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			advisor = theologian
+			factor = 0.5
+		}
+		modifier = {
+			has_country_flag = refused_reformation
+			factor = 0.5
+		}
+		modifier = {
+			religion = reformed
+			factor = 0.5
+		}
+		modifier = {
+			any_ally = {
+				religion = reformed
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_known_country = {
+				religion = reformed
+				culture_group = ROOT
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_known_country = {
+				religion = reformed
+				primary_culture = ROOT
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_owned_province = {
+				check_variable = {
+					which = reformed
+					value = 6
+				}
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_owned_province = {
+				religion = reformed
+			}
+			factor = 0.7
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = translated_confession
+		}
+	}
+	option = {
+		name = dg_reformed.014.a
+		trigger = {
+			NOT = {
+				religion = reformed
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			kill_advisor = theologian
+			add_patriarch_authority = -0.05
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						check_variable = {
+							which = reformed
+							value = 2
+						}
+					}
+				}
+				country_event = {
+					id = dg_reformed.015
+					days = 90
+				}
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = 2
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = 1.5
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_prestige = 1
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = 0.5
+		}
+	}
+	option = {
+		name = dg_reformed.014.b
+		ai_chance = {
+			factor = 20
+		}
+		if = {
+			limit = {
+				NOT = {
+					religion = reformed
+				}
+				any_owned_province = {
+					check_variable = {
+						which = reformed
+						value = 2
+					}
+				}
+			}
+			hidden_effect = {
+				random = {
+					chance = 25
+					country_event = {
+						id = dg_reformed.015
+						days = 90
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				advisor = theologian
+			}
+			remove_advisor = theologian
+			add_patriarch_authority = -0.05
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					religion = protestant
+					religion = catholic
+					religion = gnostic
+					religion = hussite
+				}
+			}
+			custom_tooltip = reformed_10
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 2
+				}
+				change_variable = {
+					which = province_religion
+					value = -2
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.014.c
+		ai_chance = {
+			factor = 40
+		}
+		trigger = {
+			religion = reformed
+		}
+		define_advisor = {
+			religion = reformed
+			type = inquisitor
+			discount = yes
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = -2
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = -1.5
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_prestige = -1
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = -0.5
+		}
+		every_owned_province = {
+			limit = {
+				has_owner_culture = yes
+				is_core = owner
+				NOT = {
+					religion = reformed
+				}
+			}
+			custom_tooltip = reformed_10
+			hidden_effect = {
+				change_variable = {
+					which = reformed
+					value = 2
+				}
+				change_variable = {
+					which = province_religion
+					value = -2
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.015
+	title = dg_reformed.015.t
+	desc = dg_reformed.015.d
+	picture = reformed_rebellion
+	is_triggered_only = yes
+	immediate = {
+		kill_advisor = random
+		if = {
+			limit = {
+				num_of_cities = 2
+			}
+			random_owned_province = {
+				limit = {
+					has_owner_culture = yes
+					is_capital = no
+					any_neighbor_province = {
+						owned_by = ROOT
+						is_capital = yes
+					}
+				}
+				spawn_rebels = {
+					type = reformed_rebels
+					size = 0
+				}
+				change_controller = REB
+				custom_tooltip = reformed_10
+				hidden_effect = {
+					change_variable = {
+						which = reformed
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.015.a
+	}
+}
+country_event = {
+	id = dg_reformed.016
+	title = dg_reformed.016.t
+	desc = dg_reformed.016.d
+	picture = reformed_nationalism
+	trigger = {
+		has_country_flag = reaction_to_reformation
+		NOT = {
+			has_country_flag = renaissance
+		}
+		NOT = {
+			religion_years = {
+				reformed = 60
+			}
+		}
+		any_owned_province = {
+			check_variable = {
+				which = reformed
+				value = 4
+			}
+		}
+		NOT = {
+			has_country_flag = lords_of_the_congregation
+		}
+		religion_group = christian
+		NOT = {
+			religion = reformed
+		}
+		NOT = {
+			religion = orthodox
+		}
+		NOT = {
+			religion = coptic
+		}
+		NOT = {
+			religion = chaldean
+		}
+		num_of_cities = 5
+		NOT = {
+			has_country_flag = religious_turmoil_happening
+		}
+		NOT = {
+			has_country_modifier = edict_of_tolerance
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			any_owned_province = {
+				controlled_by = REB
+			}
+			factor = 0.7
+		}
+		modifier = {
+			any_owned_province = {
+				religion = reformed
+			}
+			factor = 0.7
+		}
+		modifier = {
+			num_of_owned_provinces_with = {
+				religion = reformed
+				value = 2
+			}
+			factor = 0.7
+		}
+		modifier = {
+			is_at_war = yes
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				stability = 0
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				stability = -1
+			}
+			factor = 0.7
+		}
+		modifier = {
+			war_exhaustion = 5
+			factor = 0.7
+		}
+		modifier = {
+			war_exhaustion = 10
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				manpower_percentage = 0.50
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				manpower_percentage = 0.25
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				years_of_income = 0.10
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				years_of_income = 0.25
+			}
+			factor = 0.7
+		}
+		modifier = {
+			num_of_loans = 1
+			factor = 0.7
+		}
+		modifier = {
+			num_of_loans = 2
+			factor = 0.7
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = lords_of_the_congregation
+			set_variable = {
+				which = religious_civil_war
+				value = 0
+			}
+			set_variable = {
+				which = war_of_religion
+				value = 0
+			}
+			set_variable = {
+				which = religious_uprising
+				value = 0
+			}
+			set_variable = {
+				which = religious_revolt
+				value = 0
+			}
+			set_country_flag = religious_turmoil_reformed
+			set_country_flag = religious_turmoil_happening
+			every_owned_province = {
+				set_variable = {
+					which = religious_uprising
+					value = 0
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_owner_religion = yes
+					is_core = ROOT
+					is_city = yes
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = -1
+					}
+					change_variable = {
+						which = war_of_religion
+						value = -0.75
+					}
+					change_variable = {
+						which = religious_uprising
+						value = -0.5
+					}
+					change_variable = {
+						which = religious_revolt
+						value = -0.25
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 2
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 4
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+				change_variable = {
+					which = religious_uprising
+					value = 1
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.2
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.2
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.2
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.2
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 4
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 6
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+				change_variable = {
+					which = religious_uprising
+					value = 2
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.4
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.4
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.4
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.4
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 6
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 8
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+				change_variable = {
+					which = religious_uprising
+					value = 3
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.6
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.6
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.6
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.6
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 8
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 10
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+				change_variable = {
+					which = religious_uprising
+					value = 4
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.8
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.8
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.8
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.8
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 10
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 12
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 3
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_3
+				change_variable = {
+					which = religious_uprising
+					value = 5
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 12
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 14
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 3
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_3
+				change_variable = {
+					which = religious_uprising
+					value = 6
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.2
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.2
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.2
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.2
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 14
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 16
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 4
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_4
+				change_variable = {
+					which = religious_uprising
+					value = 7
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.4
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.4
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.4
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.4
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 16
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 18
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 4
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_4
+				change_variable = {
+					which = religious_uprising
+					value = 8
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.6
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.6
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.6
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.6
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 18
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 20
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+				change_variable = {
+					which = religious_uprising
+					value = 9
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.8
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.8
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.8
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.8
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 20
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+				change_variable = {
+					which = religious_uprising
+					value = 10
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 2
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 2
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 2
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = protestant
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 2
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 4
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 1
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_1
+					change_variable = {
+						which = religious_uprising
+						value = 1
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.2
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.2
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.2
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.2
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 4
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 6
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 1
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_1
+					change_variable = {
+						which = religious_uprising
+						value = 2
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.4
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.4
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.4
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.4
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 6
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 8
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 2
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_2
+					change_variable = {
+						which = religious_uprising
+						value = 3
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.6
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.6
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.6
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.6
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 8
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 10
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 2
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_2
+					change_variable = {
+						which = religious_uprising
+						value = 4
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.8
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.8
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.8
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.8
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 10
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 12
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 3
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_3
+					change_variable = {
+						which = religious_uprising
+						value = 5
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 12
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 14
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 3
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_3
+					change_variable = {
+						which = religious_uprising
+						value = 6
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.2
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.2
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.2
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.2
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 14
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 16
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 4
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_4
+					change_variable = {
+						which = religious_uprising
+						value = 7
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.4
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.4
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.4
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.4
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 16
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 18
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 4
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_4
+					change_variable = {
+						which = religious_uprising
+						value = 8
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.6
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.6
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.6
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.6
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 18
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 20
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 5
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_5
+					change_variable = {
+						which = religious_uprising
+						value = 9
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.8
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.8
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.8
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.8
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 20
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 5
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_5
+					change_variable = {
+						which = religious_uprising
+						value = 10
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 2
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 2
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 2
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 2
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.016.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				NOT = {
+					years_of_income = 0.10
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					stability = 0
+				}
+				factor = 1.4
+			}
+			modifier = {
+				is_at_war = yes
+				factor = 1.4
+			}
+			modifier = {
+				war_exhaustion = 5
+				factor = 1.4
+			}
+			modifier = {
+				government = monarchy
+				NOT = {
+					legitimacy = 80
+				}
+				factor = 1.4
+			}
+			modifier = {
+				government = republic
+				NOT = {
+					republican_tradition = 80
+				}
+				factor = 1.4
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = religious_civil_war
+					value = 1
+				}
+			}
+			add_legitimacy = 10
+			add_republican_tradition = 10
+			add_war_exhaustion = -2
+			add_yearly_manpower = 0.20
+			add_years_of_income = 0.40
+			custom_tooltip = stability_points_gained_100
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 100
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				check_variable = {
+					which = war_of_religion
+					value = 1
+				}
+			}
+			add_legitimacy = 8
+			add_republican_tradition = 8
+			add_war_exhaustion = -1.6
+			add_yearly_manpower = 0.16
+			add_years_of_income = 0.32
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				check_variable = {
+					which = religious_uprising
+					value = 1
+				}
+			}
+			add_legitimacy = 6
+			add_republican_tradition = 6
+			add_war_exhaustion = -1.2
+			add_yearly_manpower = 0.12
+			add_years_of_income = 0.24
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = religious_uprising
+						value = 1
+					}
+				}
+				check_variable = {
+					which = religious_revolt
+					value = 1
+				}
+			}
+			add_legitimacy = 4
+			add_republican_tradition = 4
+			add_war_exhaustion = -0.8
+			add_yearly_manpower = 0.08
+			add_years_of_income = 0.16
+			random = {
+				chance = 80
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = religious_uprising
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = religious_revolt
+						value = 1
+					}
+				}
+			}
+			add_legitimacy = 2
+			add_republican_tradition = 2
+			add_war_exhaustion = -0.4
+			add_yearly_manpower = 0.04
+			add_years_of_income = 0.08
+			random = {
+				chance = 40
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_owner_culture = yes
+				is_core = owner
+				is_city = yes
+			}
+			change_variable = {
+				which = reformed
+				value = 2
+			}
+			change_variable = {
+				which = province_religion
+				value = -2
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = religious_civil_war
+				value = 0
+			}
+			set_variable = {
+				which = war_of_religion
+				value = 0
+			}
+			set_variable = {
+				which = religious_uprising
+				value = 0
+			}
+			set_variable = {
+				which = religious_revolt
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.016.b
+		ai_chance = {
+			factor = 30
+		}
+		hidden_effect = {
+			set_country_flag = beggars_summons
+		}
+		if = {
+			limit = {
+				piety = -0.20
+				NOT = {
+					piety = 0.20
+				}
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 400
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.20
+				NOT = {
+					piety = 0.60
+				}
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 800
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 1600
+			}
+		}
+		every_owned_province = {
+			limit = {
+				check_variable = {
+					which = reformed
+					value = 2
+				}
+			}
+			add_province_modifier = {
+				name = expulsion_of_heretics
+				duration = 1500
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = religious_civil_war
+					value = 1
+				}
+				num_of_cities = 2
+			}
+			country_event = {
+				id = dg_turmoil.041
+				days = 15
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				check_variable = {
+					which = war_of_religion
+					value = 1
+				}
+				num_of_cities = 2
+			}
+			random_list = {
+				60 = {
+					country_event = {
+						id = dg_turmoil.041
+						days = 30
+					}
+				}
+				40 = {
+					country_event = {
+						id = dg_turmoil.049
+						days = 30
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				check_variable = {
+					which = religious_uprising
+					value = 1
+				}
+				num_of_cities = 2
+			}
+			random_list = {
+				20 = {
+					country_event = {
+						id = dg_turmoil.041
+						days = 45
+					}
+				}
+				80 = {
+					country_event = {
+						id = dg_turmoil.049
+						days = 45
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = religious_uprising
+					value = 1
+				}
+				NOT = {
+					num_of_cities = 2
+				}
+			}
+			country_event = {
+				id = dg_turmoil.049
+				days = 60
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = religious_uprising
+						value = 1
+					}
+				}
+				check_variable = {
+					which = religious_revolt
+					value = 1
+				}
+			}
+			random_list = {
+				50 = {
+					country_event = {
+						id = dg_turmoil.049
+						days = 75
+					}
+				}
+				50 = {
+					country_event = {
+						id = dg_turmoil.031
+						days = 200
+					}
+					every_owned_province = {
+						set_variable = {
+							which = religious_uprising
+							value = 0
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = religious_civil_war
+				value = 0
+			}
+			set_variable = {
+				which = war_of_religion
+				value = 0
+			}
+			set_variable = {
+				which = religious_uprising
+				value = 0
+			}
+			set_variable = {
+				which = religious_revolt
+				value = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.017
+	title = dg_reformed.017.t
+	desc = dg_reformed.017.d
+	picture = protestant_reformation
+	trigger = {
+		has_country_flag = lords_of_the_congregation
+		religion = catholic
+		NOT = {
+			religion_years = {
+				reformed = 60
+			}
+		}
+		any_owned_province = {
+			check_variable = {
+				which = reformed
+				value = 4
+			}
+		}
+		NOT = {
+			has_country_flag = beggars_summons
+		}
+		religion_group = christian
+		NOT = {
+			religion = reformed
+		}
+		NOT = {
+			religion = orthodox
+		}
+		NOT = {
+			religion = coptic
+		}
+		NOT = {
+			religion = chaldean
+		}
+		num_of_cities = 5
+		NOT = {
+			has_country_flag = religious_turmoil_happening
+		}
+		NOT = {
+			has_country_modifier = edict_of_tolerance
+		}
+	}
+	mean_time_to_happen = {
+		months = 25
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = beggars_summons
+			set_variable = {
+				which = religious_civil_war
+				value = 0
+			}
+			set_variable = {
+				which = war_of_religion
+				value = 0
+			}
+			set_variable = {
+				which = religious_uprising
+				value = 0
+			}
+			set_variable = {
+				which = religious_revolt
+				value = 0
+			}
+			every_owned_province = {
+				set_variable = {
+					which = religious_uprising
+					value = 0
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_owner_religion = yes
+					is_core = ROOT
+					is_city = yes
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = -1
+					}
+					change_variable = {
+						which = war_of_religion
+						value = -0.75
+					}
+					change_variable = {
+						which = religious_uprising
+						value = -0.5
+					}
+					change_variable = {
+						which = religious_revolt
+						value = -0.25
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 2
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 4
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+				change_variable = {
+					which = religious_uprising
+					value = 1
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.2
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.2
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.2
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.2
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 4
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 6
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+				change_variable = {
+					which = religious_uprising
+					value = 2
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.4
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.4
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.4
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.4
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 6
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 8
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+				change_variable = {
+					which = religious_uprising
+					value = 3
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.6
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.6
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.6
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.6
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 8
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 10
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 2
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_2
+				change_variable = {
+					which = religious_uprising
+					value = 4
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 0.8
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 0.8
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 0.8
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 0.8
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 10
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 12
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 3
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_3
+				change_variable = {
+					which = religious_uprising
+					value = 5
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 12
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 14
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 3
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_3
+				change_variable = {
+					which = religious_uprising
+					value = 6
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.2
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.2
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.2
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.2
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 14
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 16
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 4
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_4
+				change_variable = {
+					which = religious_uprising
+					value = 7
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.4
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.4
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.4
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.4
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 16
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 18
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 4
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_4
+				change_variable = {
+					which = religious_uprising
+					value = 8
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.6
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.6
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.6
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.6
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 18
+					}
+					NOT = {
+						check_variable = {
+							which = reformed
+							value = 20
+						}
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+				change_variable = {
+					which = religious_uprising
+					value = 9
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 1.8
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 1.8
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 1.8
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 1.8
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					check_variable = {
+						which = reformed
+						value = 20
+					}
+					is_core = ROOT
+					is_city = yes
+					NOT = {
+						has_siege = yes
+					}
+					controlled_by = owner
+					NOT = {
+						has_province_modifier = religious_autonomy
+					}
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+				change_variable = {
+					which = religious_uprising
+					value = 10
+				}
+				owner = {
+					change_variable = {
+						which = religious_civil_war
+						value = 2
+					}
+					change_variable = {
+						which = war_of_religion
+						value = 2
+					}
+					change_variable = {
+						which = religious_uprising
+						value = 2
+					}
+					change_variable = {
+						which = religious_revolt
+						value = 2
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = protestant
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 2
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 4
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 1
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_1
+					change_variable = {
+						which = religious_uprising
+						value = 1
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.2
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.2
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.2
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.2
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 4
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 6
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 1
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_1
+					change_variable = {
+						which = religious_uprising
+						value = 2
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.4
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.4
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.4
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.4
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 6
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 8
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 2
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_2
+					change_variable = {
+						which = religious_uprising
+						value = 3
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.6
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.6
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.6
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.6
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 8
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 10
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 2
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_2
+					change_variable = {
+						which = religious_uprising
+						value = 4
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 0.8
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 0.8
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 0.8
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 0.8
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 10
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 12
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 3
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_3
+					change_variable = {
+						which = religious_uprising
+						value = 5
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 12
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 14
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 3
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_3
+					change_variable = {
+						which = religious_uprising
+						value = 6
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.2
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.2
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.2
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.2
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 14
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 16
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 4
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_4
+					change_variable = {
+						which = religious_uprising
+						value = 7
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.4
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.4
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.4
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.4
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 16
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 18
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 4
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_4
+					change_variable = {
+						which = religious_uprising
+						value = 8
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.6
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.6
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.6
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.6
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 18
+						}
+						NOT = {
+							check_variable = {
+								which = protestant
+								value = 20
+							}
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 5
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_5
+					change_variable = {
+						which = religious_uprising
+						value = 9
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 1.8
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 1.8
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 1.8
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 1.8
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						check_variable = {
+							which = protestant
+							value = 20
+						}
+						is_core = ROOT
+						is_city = yes
+						NOT = {
+							has_siege = yes
+						}
+						controlled_by = owner
+						NOT = {
+							has_province_modifier = religious_autonomy
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							which = added_unrest
+							value = 5
+						}
+						hidden_effect = {
+							province_event = {
+								id = stacking_unrest.002
+							}
+						}
+					}
+					custom_tooltip = added_unrest_5
+					change_variable = {
+						which = religious_uprising
+						value = 10
+					}
+					owner = {
+						change_variable = {
+							which = religious_civil_war
+							value = 2
+						}
+						change_variable = {
+							which = war_of_religion
+							value = 2
+						}
+						change_variable = {
+							which = religious_uprising
+							value = 2
+						}
+						change_variable = {
+							which = religious_revolt
+							value = 2
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.017.b
+		ai_chance = {
+			factor = 70
+		}
+		hidden_effect = {
+			set_country_flag = beggars_summons
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 1600
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 800
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_intolerance
+				duration = 400
+			}
+		}
+		hidden_effect = {
+			set_country_flag = religious_turmoil_reformed
+			set_country_flag = religious_turmoil_happening
+		}
+		every_owned_province = {
+			limit = {
+				check_variable = {
+					which = reformed
+					value = 2
+				}
+			}
+			add_province_modifier = {
+				name = expulsion_of_heretics
+				duration = 1500
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = religious_civil_war
+					value = 1
+				}
+				num_of_cities = 2
+			}
+			country_event = {
+				id = dg_turmoil.041
+				days = 15
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				check_variable = {
+					which = war_of_religion
+					value = 1
+				}
+				num_of_cities = 2
+			}
+			random_list = {
+				60 = {
+					country_event = {
+						id = dg_turmoil.041
+						days = 30
+					}
+				}
+				40 = {
+					country_event = {
+						id = dg_turmoil.049
+						days = 30
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				check_variable = {
+					which = religious_uprising
+					value = 1
+				}
+				num_of_cities = 2
+			}
+			random_list = {
+				20 = {
+					country_event = {
+						id = dg_turmoil.041
+						days = 45
+					}
+				}
+				80 = {
+					country_event = {
+						id = dg_turmoil.049
+						days = 45
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = religious_uprising
+					value = 1
+				}
+				NOT = {
+					num_of_cities = 2
+				}
+			}
+			country_event = {
+				id = dg_turmoil.049
+				days = 60
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = religious_civil_war
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = war_of_religion
+						value = 1
+					}
+				}
+				NOT = {
+					check_variable = {
+						which = religious_uprising
+						value = 1
+					}
+				}
+				check_variable = {
+					which = religious_revolt
+					value = 1
+				}
+			}
+			random_list = {
+				50 = {
+					country_event = {
+						id = dg_turmoil.049
+						days = 75
+					}
+				}
+				50 = {
+					country_event = {
+						id = dg_turmoil.031
+						days = 200
+					}
+					every_owned_province = {
+						set_variable = {
+							which = religious_uprising
+							value = 0
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = religious_civil_war
+				value = 0
+			}
+			set_variable = {
+				which = war_of_religion
+				value = 0
+			}
+			set_variable = {
+				which = religious_uprising
+				value = 0
+			}
+			set_variable = {
+				which = religious_revolt
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = dg_reformed.017.a
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = church_property
+					value = 2
+				}
+			}
+			change_variable = {
+				which = church_property
+				value = -1
+			}
+			add_patriarch_authority = -0.05
+		}
+		if = {
+			limit = {
+				patriarch_authority = 0.80
+			}
+			add_country_modifier = {
+				name = unhappy_church_powerful
+				duration = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.60
+			}
+			add_country_modifier = {
+				name = unhappy_church_strong
+				duration = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.40
+			}
+			add_country_modifier = {
+				name = unhappy_church_moderate
+				duration = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.20
+			}
+			add_country_modifier = {
+				name = unhappy_church_weak
+				duration = 1000
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = unhappy_church_impotent
+				duration = 1000
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = religious_civil_war
+				value = 0
+			}
+			set_variable = {
+				which = war_of_religion
+				value = 0
+			}
+			set_variable = {
+				which = religious_uprising
+				value = 0
+			}
+			set_variable = {
+				which = religious_revolt
+				value = 0
+			}
+			every_owned_province = {
+				limit = {
+					has_owner_culture = yes
+					is_core = owner
+					is_city = yes
+				}
+				change_variable = {
+					which = reformed
+					value = 2
+				}
+				change_variable = {
+					which = province_religion
+					value = -2
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.030
+	title = dg_reformed.030.t
+	desc = dg_reformed.030.d
+	picture = christian_heretic_manuscript_saffron
+	trigger = {
+		religion = reformed
+		advisor = theologian
+		NOT = {
+			has_global_flag = libri_carolini
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+	}
+	immediate = {
+		set_global_flag = libri_carolini
+	}
+	option = {
+		name = dg_reformed.030.a
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = 4
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = 3
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_prestige = 2
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = 1
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.042
+	title = dg_reformed.042.t
+	desc = dg_reformed.042.d
+	picture = protestant_preacher
+	trigger = {
+		OR = {
+			religion = reformed
+			religion = protestant
+		}
+		OR = {
+			advisor = theologian
+			advisor = inquisitor
+		}
+		AND = {
+			adm_tech = 40
+		}
+		NOT = {
+			has_country_flag = great_awakening
+		}
+		NOT = {
+			piety = 0.60
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			religion = reformed
+			factor = 0.5
+		}
+		modifier = {
+			theologian = 2
+			factor = 0.7
+		}
+		modifier = {
+			theologian = 3
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = 0.20
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.60
+			}
+			factor = 0.7
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = great_awakening
+		}
+	}
+	option = {
+		name = dg_reformed.042.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				religion = reformed
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					religion = reformed
+				}
+				factor = 0.5
+			}
+		}
+		hidden_effect = {
+			set_country_flag = revivalist_movement
+		}
+	}
+	option = {
+		name = dg_reformed.042.b
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			set_country_flag = traditionalist_movement
+		}
+	}
+}
+country_event = {
+	id = dg_reformed.043
+	title = dg_reformed.042.t
+	desc = dg_reformed.042.d
+	picture = protestant_preacher
+	trigger = {
+		OR = {
+			religion = reformed
+			any_owned_province = {
+				check_variable = {
+					which = reformed
+					value = 4
+				}
+			}
+		}
+		NOT = {
+			has_country_flag = great_awakening
+		}
+		any_known_country = {
+			has_country_flag = great_awakening
+			OR = {
+				culture_group = ROOT
+				is_neighbor_of = ROOT
+				overlord_of = ROOT
+				alliance_with = ROOT
+				marriage_with = ROOT
+				war_with = ROOT
+				is_rival = ROOT
+				is_enemy = ROOT
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+		modifier = {
+			religion = reformed
+			factor = 0.5
+		}
+		modifier = {
+			advisor = theologian
+			factor = 0.7
+		}
+		modifier = {
+			theologian = 2
+			factor = 0.7
+		}
+		modifier = {
+			theologian = 3
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = 0.20
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.60
+			}
+			factor = 0.7
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = great_awakening
+		}
+	}
+	option = {
+		name = dg_reformed.042.a
+		trigger = {
+			religion = reformed
+		}
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			set_country_flag = revivalist_movement
+		}
+		add_piety = 0.10
+	}
+	option = {
+		name = dg_reformed.042.b
+		trigger = {
+			religion = reformed
+		}
+		ai_chance = {
+			factor = 15
+		}
+		hidden_effect = {
+			set_country_flag = traditionalist_movement
+		}
+	}
+	option = {
+		name = dg_reformed.042.c
+		trigger = {
+			NOT = {
+				religion = reformed
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}

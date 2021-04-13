@@ -1,0 +1,58 @@
+owner = KOR
+controller = KOR
+add_core = KOR
+capital = "Namwon"
+trade_goods = hemp
+culture = korean
+religion = mahayana
+hre = no
+base_tax = 13
+base_production = 0
+base_manpower = 0
+is_city = yes
+discovered_by = chinese
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 4.5
+	}
+}
+1356.1.1 = {
+	set_province_flag = korea_wokou_rebels
+}
+1360.1.1 = {
+	revolt = {}
+	controller = KOR
+	unrest = 0
+	clr_province_flag = korea_wokou_rebels
+}
+1392.6.5 = {
+	religion = confucianism
+	owner = JOS
+	controller = JOS
+	add_core = JOS
+	remove_core = KOR
+}
+1444.1.1 = {
+	base_tax = 27
+}
+1520.5.5 = {
+	base_tax = 45
+}
+1597.9.26 = {
+	controller = ODA
+}
+1598.9.1 = {
+	controller = JOS
+}
+1637.1.1 = {
+	add_core = MNG
+}
+1644.1.1 = {
+	add_core = QNG
+	remove_core = MNG
+}
+1653.1.1 = {
+	discovered_by = NED
+}

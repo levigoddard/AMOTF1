@@ -1,0 +1,86 @@
+owner = NIK
+controller = NIK
+capital = "Miyadu"
+trade_goods = fish
+culture = kansai
+religion = mahayana
+hre = no
+base_tax = 5
+base_production = 0
+base_manpower = 0
+is_city = yes
+harbour_infrastructure_1 = yes
+temple = yes
+discovered_by = chinese
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5
+	}
+	set_province_flag = has_natural_harbour
+	set_province_flag = has_small_natural_harbour
+	set_province_flag = good_natural_place
+	add_permanent_province_modifier = {
+		name = "tajima_natural_harbour"
+		duration = -1
+	}
+}
+1353.1.1 = {
+	add_core = NIK
+}
+1363.1.1 = {
+	controller = JAP
+}
+1364.1.1 = {
+	remove_core = NIK
+	add_core = YMN
+	owner = YMN
+	controller = YMN
+}
+1392.1.1 = {
+	remove_core = YMN
+	add_core = ISK
+	owner = ISK
+	controller = ISK
+}
+1469.1.1 = {
+	add_core = TKD
+	owner = TKD
+	controller = TKD
+}
+1474.1.1 = {
+	remove_core = TKD
+	add_core = ISK
+	owner = ISK
+	controller = ISK
+}
+1501.1.1 = {
+	base_tax = 9
+}
+1506.1.1 = {
+	remove_core = ISK
+	add_core = TKD
+	owner = TKD
+	controller = TKD
+}
+1509.1.1 = {
+	remove_core = TKD
+	add_core = ISK
+	owner = ISK
+	controller = ISK
+}
+1519.1.1 = {
+	remove_core = ISK
+	add_core = TKD
+	owner = TKD
+	controller = TKD
+}
+1521.1.1 = {
+	remove_core = TKD
+	add_core = ISK
+	owner = ISK
+	controller = ISK
+}
+1542.1.1 = {
+	discovered_by = POR
+}

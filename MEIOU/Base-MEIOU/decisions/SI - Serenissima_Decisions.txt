@@ -1,0 +1,498 @@
+country_decisions = {
+	procuratori_reform = {
+		major = yes
+		potential = {
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+			has_country_flag = Serenissima
+			NOT = {
+				has_country_flag = procuratori_reform_done
+			}
+		}
+		allow = {
+			years_of_income = 0.3
+			adm = 3
+			OR = {
+				has_country_modifier = strong_maggior_consiglio
+				has_country_modifier = dominant_maggior_consiglio
+			}
+			NOT = {
+				OR = {
+					has_country_modifier = dominant_consiglio_dieci
+					has_country_modifier = strong_consiglio_dieci
+					has_country_modifier = dominant_consiglio_pregadi
+					has_country_modifier = strong_consiglio_pregadi
+					has_country_modifier = dominant_doge
+					has_country_modifier = strong_doge
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_adm_power = 50
+			add_years_of_income = -0.25
+			set_country_flag = procuratori_reform_done
+			custom_tooltip = venetian_procuratori_reform
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ambasciatori_reform = {
+		major = yes
+		potential = {
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+			has_country_flag = Serenissima
+			NOT = {
+				has_country_flag = ambasciatori_reform_done
+			}
+		}
+		allow = {
+			years_of_income = 0.3
+			dip = 3
+			OR = {
+				has_country_modifier = strong_consiglio_pregadi
+				has_country_modifier = dominant_consiglio_pregadi
+			}
+			NOT = {
+				OR = {
+					has_country_modifier = dominant_consiglio_dieci
+					has_country_modifier = strong_consiglio_dieci
+					has_country_modifier = dominant_maggior_consiglio
+					has_country_modifier = strong_maggior_consiglio
+					has_country_modifier = dominant_doge
+					has_country_modifier = strong_doge
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_dip_power = 50
+			add_years_of_income = -0.25
+			set_country_flag = ambasciatori_reform_done
+			custom_tooltip = venetian_ambasciatori_reform
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	violate_promessione = {
+		major = yes
+		potential = {
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+			has_country_flag = Serenissima
+			NOT = {
+				has_country_modifier = violated_promessione
+			}
+		}
+		allow = {
+			OR = {
+				adm = 3
+				dip = 3
+				mil = 5
+			}
+		}
+		effect = {
+			add_prestige = -5
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+			add_republican_tradition = -20
+			add_adm_power = 25
+			add_dip_power = 25
+			add_country_modifier = {
+				name = "violated_promessione"
+				duration = 7300
+			}
+			custom_tooltip = consiglio_m_sub
+			change_variable = {
+				which = "consiglio_m_power"
+				value = -3
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_m_power"
+						value = 45
+					}
+				}
+				add_country_modifier = {
+					name = "dominant_maggior_consiglio"
+					duration = -1
+				}
+				remove_country_modifier = "strong_maggior_consiglio"
+				remove_country_modifier = "considerable_maggior_consiglio"
+				remove_country_modifier = "weak_maggior_consiglio"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_m_power"
+						value = 30
+					}
+					NOT = {
+						check_variable = {
+							which = "consiglio_m_power"
+							value = 45
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "strong_maggior_consiglio"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_maggior_consiglio"
+				remove_country_modifier = "considerable_maggior_consiglio"
+				remove_country_modifier = "weak_maggior_consiglio"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_m_power"
+						value = 15
+					}
+					NOT = {
+						check_variable = {
+							which = "consiglio_m_power"
+							value = 30
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "considerable_maggior_consiglio"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_maggior_consiglio"
+				remove_country_modifier = "strong_maggior_consiglio"
+				remove_country_modifier = "weak_maggior_consiglio"
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = "consiglio_m_power"
+							value = 15
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "weak_maggior_consiglio"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_maggior_consiglio"
+				remove_country_modifier = "strong_maggior_consiglio"
+				remove_country_modifier = "considerable_maggior_consiglio"
+			}
+			custom_tooltip = consiglio_x_sub
+			change_variable = {
+				which = "consiglio_x_power"
+				value = -3
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_x_power"
+						value = 45
+					}
+				}
+				add_country_modifier = {
+					name = "dominant_consiglio_dieci"
+					duration = -1
+				}
+				remove_country_modifier = "strong_consiglio_dieci"
+				remove_country_modifier = "considerable_consiglio_dieci"
+				remove_country_modifier = "weak_consiglio_dieci"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_x_power"
+						value = 30
+					}
+					NOT = {
+						check_variable = {
+							which = "consiglio_x_power"
+							value = 45
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "strong_consiglio_dieci"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_consiglio_dieci"
+				remove_country_modifier = "considerable_consiglio_dieci"
+				remove_country_modifier = "weak_consiglio_dieci"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_x_power"
+						value = 15
+					}
+					NOT = {
+						check_variable = {
+							which = "consiglio_x_power"
+							value = 30
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "considerable_consiglio_dieci"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_consiglio_dieci"
+				remove_country_modifier = "strong_consiglio_dieci"
+				remove_country_modifier = "weak_consiglio_dieci"
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = "consiglio_x_power"
+							value = 15
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "weak_consiglio_dieci"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_consiglio_dieci"
+				remove_country_modifier = "strong_consiglio_dieci"
+				remove_country_modifier = "considerable_consiglio_dieci"
+			}
+			custom_tooltip = consiglio_p_sub
+			change_variable = {
+				which = "consiglio_p_power"
+				value = -3
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_p_power"
+						value = 45
+					}
+				}
+				add_country_modifier = {
+					name = "dominant_consiglio_pregadi"
+					duration = -1
+				}
+				remove_country_modifier = "strong_consiglio_pregadi"
+				remove_country_modifier = "considerable_consiglio_pregadi"
+				remove_country_modifier = "weak_consiglio_pregadi"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_p_power"
+						value = 30
+					}
+					NOT = {
+						check_variable = {
+							which = "consiglio_p_power"
+							value = 45
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "strong_consiglio_pregadi"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_consiglio_pregadi"
+				remove_country_modifier = "considerable_consiglio_pregadi"
+				remove_country_modifier = "weak_consiglio_pregadi"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "consiglio_p_power"
+						value = 15
+					}
+					NOT = {
+						check_variable = {
+							which = "consiglio_p_power"
+							value = 30
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "considerable_consiglio_pregadi"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_consiglio_pregadi"
+				remove_country_modifier = "strong_consiglio_pregadi"
+				remove_country_modifier = "weak_consiglio_pregadi"
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = "consiglio_p_power"
+							value = 15
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "weak_consiglio_pregadi"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_consiglio_pregadi"
+				remove_country_modifier = "strong_consiglio_pregadi"
+				remove_country_modifier = "considerable_consiglio_pregadi"
+			}
+			custom_tooltip = doge_add
+			change_variable = {
+				which = "doge_power"
+				value = 3
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "doge_power"
+						value = 45
+					}
+				}
+				add_country_modifier = {
+					name = "dominant_doge"
+					duration = -1
+				}
+				remove_country_modifier = "strong_doge"
+				remove_country_modifier = "considerable_doge"
+				remove_country_modifier = "weak_doge"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "doge_power"
+						value = 30
+					}
+					NOT = {
+						check_variable = {
+							which = "doge_power"
+							value = 45
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "strong_doge"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_doge"
+				remove_country_modifier = "considerable_doge"
+				remove_country_modifier = "weak_doge"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "doge_power"
+						value = 15
+					}
+					NOT = {
+						check_variable = {
+							which = "doge_power"
+							value = 30
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "considerable_doge"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_doge"
+				remove_country_modifier = "strong_doge"
+				remove_country_modifier = "weak_doge"
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = "doge_power"
+							value = 15
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "weak_doge"
+					duration = -1
+				}
+				remove_country_modifier = "dominant_doge"
+				remove_country_modifier = "strong_doge"
+				remove_country_modifier = "considerable_doge"
+			}
+			custom_tooltip = doge_against_constitution
+			change_variable = {
+				which = "doge_crimes"
+				value = 1
+			}
+		}
+	}
+	organise_sensa = {
+		major = yes
+		potential = {
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+			has_country_flag = Serenissima
+			NOT = {
+				OR = {
+					has_country_modifier = preparing_sensa
+					has_country_modifier = festivating_sensa
+					has_country_modifier = glorious_sensa
+					has_country_flag = sensa_decision
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			years_of_income = 0.66
+			prestige = 20
+			num_of_total_ports = 4
+			owns = 112
+			is_month = 4
+			NOT = {
+				is_month = 6
+			}
+		}
+		effect = {
+			add_years_of_income = -0.33
+			country_event = {
+				id = festa_sensa.1
+			}
+			set_country_flag = sensa_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

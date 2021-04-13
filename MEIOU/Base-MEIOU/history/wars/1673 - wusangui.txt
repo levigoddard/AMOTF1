@@ -1,0 +1,32 @@
+name = "Rebellion of the Three Feudatories"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2150
+}
+1673.11.1 = {
+	add_attacker = ZOU
+	add_attacker = TNG
+	add_defender = QNG
+	add_defender = YUE
+}
+1674.3.1 = {
+	add_attacker = CMN
+}
+1675.5.1 = {
+	rem_defender = YUE
+	add_attacker = YUE
+}
+1676.6.1 = {
+	rem_attacker = CMN
+}
+1677.1.1 = {
+	rem_attacker = YUE
+}
+1681.10.1 = {
+	rem_attacker = ZOU
+}
+1683.10.1 = {
+	rem_attacker = TNG
+	rem_defender = QNG
+}

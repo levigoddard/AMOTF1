@@ -1,0 +1,46 @@
+owner = LVO
+controller = LVO
+add_core = LVO
+capital = "Jelgava"
+trade_goods = wax
+culture = curonian
+religion = catholic
+hre = no
+base_tax = 4
+base_production = 0
+base_manpower = 0
+is_city = yes
+road_network = yes
+fort_14th = yes
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 3
+	}
+}
+1520.5.5 = {
+	base_tax = 5
+}
+1561.11.18 = {
+	culture = latvian
+	religion = protestant
+	owner = KUR
+	controller = KUR
+	add_core = KUR
+	remove_core = LVO
+}
+1701.7.20 = {
+	controller = SWE
+}
+1705.8.25 = {
+	controller = KUR
+}
+1795.10.24 = {
+	owner = RUS
+	controller = RUS
+	add_core = RUS
+}

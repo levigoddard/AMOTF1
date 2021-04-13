@@ -1,0 +1,424 @@
+support_independence_action = {
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			AND = {
+				capital_scope = {
+					continent = indian_continent
+				}
+				OR = {
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = hereditary_elite
+							}
+							has_reform = feudal_monarchy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = military_elite
+							}
+							has_reform = despotic_monarchy
+						}
+					}
+					AND = {
+						OR = {
+							has_reform = tribal_kingdom
+							has_reform = tribal_kingdom_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								capital_scope = {
+									continent = indian_continent
+								}
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = hereditary_elite
+							}
+							has_reform = principality_legacy
+						}
+					}
+					AND = {
+						OR = {
+							AND = {
+								capital_scope = {
+									continent = southeast_asia
+								}
+								has_reform = divine_right
+								has_reform = delegated_rulers
+								has_reform = appointed_elite
+							}
+							has_reform = tsardom_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					border_distance = {
+						who = FROM
+						distance = 120
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			FROM = {
+				AND = {
+					capital_scope = {
+						continent = indian_continent
+					}
+					OR = {
+						AND = {
+							OR = {
+								AND = {
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = hereditary_elite
+								}
+								has_reform = feudal_monarchy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = military_elite
+								}
+								has_reform = despotic_monarchy
+							}
+						}
+						AND = {
+							OR = {
+								has_reform = tribal_kingdom
+								has_reform = tribal_kingdom_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									capital_scope = {
+										continent = indian_continent
+									}
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = hereditary_elite
+								}
+								has_reform = principality_legacy
+							}
+						}
+						AND = {
+							OR = {
+								AND = {
+									capital_scope = {
+										continent = southeast_asia
+									}
+									has_reform = divine_right
+									has_reform = delegated_rulers
+									has_reform = appointed_elite
+								}
+								has_reform = tsardom_legacy
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 120
+						}
+					}
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			culture_group = east_slavic
+			technology_group = eastern
+			NOT = {
+				has_country_flag = relocated_capital_st_petersburg
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					border_distance = {
+						who = FROM
+						distance = 120
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			FROM = {
+				culture_group = east_slavic
+				technology_group = eastern
+				NOT = {
+					has_country_flag = relocated_capital_st_petersburg
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 120
+						}
+					}
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			AND = {
+				OR = {
+					technology_group = south_american
+					technology_group = mesoamerican
+				}
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					border_distance = {
+						who = FROM
+						distance = 120
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			FROM = {
+				AND = {
+					OR = {
+						technology_group = south_american
+						technology_group = mesoamerican
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 120
+						}
+					}
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			AND = {
+				capital_scope = {
+					continent = sub_sahara
+				}
+				is_tribal = yes
+				NOT = {
+					AND = {
+						OR = {
+							has_reform = tribal_federation
+							has_reform = tribal_federation_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					border_distance = {
+						who = FROM
+						distance = 120
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			FROM = {
+				AND = {
+					capital_scope = {
+						continent = sub_sahara
+					}
+					is_tribal = yes
+					NOT = {
+						AND = {
+							OR = {
+								has_reform = tribal_federation
+								has_reform = tribal_federation_legacy
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 120
+						}
+					}
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			AND = {
+				capital_scope = {
+					continent = southeast_asia
+				}
+				NOT = {
+					technology_group = western
+				}
+				NOT = {
+					technology_group = turkishtech
+				}
+			}
+		}
+		allow = {
+			OR = {
+				NOT = {
+					border_distance = {
+						who = FROM
+						distance = 120
+					}
+				}
+				culture_group = FROM
+			}
+		}
+	}
+	condition = {
+		tooltip = INDSUP
+		potential = {
+			FROM = {
+				AND = {
+					capital_scope = {
+						continent = southeast_asia
+					}
+					NOT = {
+						technology_group = western
+					}
+					NOT = {
+						technology_group = turkishtech
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				OR = {
+					NOT = {
+						border_distance = {
+							who = ROOT
+							distance = 120
+						}
+					}
+					culture_group = ROOT
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = PIZARROBROTHERS
+		potential = {
+			OR = {
+				FROM = {
+					tag = PIZ
+				}
+				tag = PIZ
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

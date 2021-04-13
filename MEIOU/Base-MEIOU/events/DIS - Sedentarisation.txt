@@ -1,0 +1,152 @@
+country_event = {
+	id = sedentarisation.001
+	title = "sedentarisation.001.n"
+	desc = "sedentarisation.001.t"
+	picture = CIVIL_WAR_eventPicture
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "OPT.VERYBAD"
+		hidden_effect = {
+			clr_country_flag = horde_sedentarisation_triggered
+			set_country_flag = horde_sedentarisation_underway
+		}
+	}
+}
+country_event = {
+	id = sedentarisation.101
+	title = "sedentarisation.101.n"
+	desc = "sedentarisation.101.t"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		num_of_cities = 3
+		government = monarchy
+	}
+	option = {
+		name = "OPT.UNFORTUNATE"
+		random_owned_province = {
+			limit = {
+				OR = {
+					is_core = ROOT
+					is_capital = yes
+				}
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "pretender_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}
+country_event = {
+	id = sedentarisation.102
+	title = "sedentarisation.102.n"
+	desc = "sedentarisation.102.t"
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		num_of_cities = 3
+		government = monarchy
+	}
+	option = {
+		name = "OPT.UNFORTUNATE"
+		random_owned_province = {
+			limit = {
+				OR = {
+					is_core = ROOT
+					is_capital = yes
+					NOT = {
+						has_province_modifier = nobles_organizing
+					}
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}
+country_event = {
+	id = sedentarisation.901
+	title = "sedentarisation.901.n"
+	desc = "sedentarisation.901.t"
+	picture = CIVIL_WAR_eventPicture
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = "OPT.EXCELLENT"
+		hidden_effect = {
+			clr_country_flag = horde_sedentarisation_underway
+			set_country_flag = horde_sedentarisation_over
+		}
+		change_government = monarchy
+		add_government_reform = divine_right
+		add_government_reform = delegated_rulers
+		add_government_reform = military_elite
+		set_legacy_government = despotic_monarchy
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = title_5
+				}
+				NOT = {
+					has_country_modifier = title_6
+				}
+			}
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+		}
+		custom_tooltip = stability_points_gained_150
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 150
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}

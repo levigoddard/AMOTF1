@@ -1,0 +1,33 @@
+alliance = {
+	first = CYP
+	second = KNI
+	start_date = 1358.1.1
+	end_date = 1374.1.1
+}
+alliance = {
+	first = SRN
+	second = AYD
+	start_date = 1346.1.1
+	end_date = 1362.1.1
+}
+dependency = {
+	subject_type = "decentralized_vassal"
+	first = MAM
+	second = DUL
+	start_date = 1353.1.1
+	end_date = 1378.1.1
+}
+dependency = {
+	subject_type = "decentralized_vassal"
+	first = MAM
+	second = DUL
+	start_date = 1381.1.1
+	end_date = 1389.1.1
+}
+dependency = {
+	subject_type = "decentralized_vassal"
+	first = MAM
+	second = DUL
+	start_date = 1395.1.1
+	end_date = 1516.1.1
+}

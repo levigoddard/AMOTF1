@@ -1,0 +1,39 @@
+raiders = {
+	color = { 235 115 115 }
+	area = nation
+	government = any
+	defection = none
+	independence = none
+	defect_delay = 24
+	gfx_type = culture_province
+	resilient = no
+	reinforcing = no
+	general = yes
+	smart = no
+	unit_transfer = no
+	will_relocate = no
+	artillery = 0.0
+	infantry = 0.6
+	cavalry = 0.4
+	morale = 1.00
+	handle_action_negotiate = no
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = no
+	spawn_chance = {
+		factor = 0.01
+		modifier = {
+			has_province_modifier = raid_target_selected
+			factor = 10000
+		}
+	}
+	movement_evaluation = {
+		factor = 0
+	}
+	siege_won_trigger = {}
+	siege_won_effect = {}
+	can_negotiate_trigger = {}
+	can_enforce_trigger = {}
+	demands_description = "raiders_demands"
+	demands_enforced_effect = {}
+}

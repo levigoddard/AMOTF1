@@ -1,0 +1,270 @@
+groups = {
+	nomad_group = {
+		start_level = 3
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	western = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	turkishtech = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	eastern = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	muslim = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	chinese = {
+		start_level = 7
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	indian = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	austranesian = {
+		start_level = 5
+	}
+	steppestech = {
+		start_level = 4
+	}
+	soudantech = {
+		start_level = 3
+	}
+	central_african = {
+		start_level = 2
+		nation_designer_unit_type = sub_saharan
+	}
+	east_african = {
+		start_level = 5
+		nation_designer_unit_type = soudantech
+	}
+	malagasy_tech = {
+		start_level = 2
+		nation_designer_unit_type = sub_saharan
+	}
+	sub_saharan = {
+		start_level = 3
+		is_primitive = yes
+	}
+	north_american = {
+		start_level = 2
+		is_primitive = yes
+	}
+	mesoamerican = {
+		start_level = 2
+		is_primitive = yes
+	}
+	south_american = {
+		start_level = 2
+		is_primitive = yes
+	}
+	andean = {
+		start_level = 1
+		nation_designer_unit_type = south_american
+		is_primitive = yes
+	}
+	mongol_tech = {
+		start_level = 2
+		is_primitive = yes
+	}
+	hawaii_tech = {
+		start_level = 1
+		is_primitive = yes
+	}
+	high_american = {
+		start_level = 3
+		nation_designer_unit_type = north_american
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	high_turkishtech = {
+		start_level = 7
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	high_eastern = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	high_muslim = {
+		start_level = 7
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	high_chinese = {
+		start_level = 7
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	high_indian = {
+		start_level = 5
+		nation_designer_cost = {
+			trigger = {
+				capital_scope = {
+					OR = {
+						continent = new_world
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			value = 75
+		}
+	}
+	high_sub_saharan = {
+		start_level = 3
+		nation_designer_unit_type = sub_saharan
+	}
+}
+tables = {
+	adm_tech = "technologies/adm.txt"
+	dip_tech = "technologies/dip.txt"
+	mil_tech = "technologies/mil.txt"
+}

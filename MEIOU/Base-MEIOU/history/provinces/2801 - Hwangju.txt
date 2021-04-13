@@ -1,0 +1,51 @@
+owner = KOR
+controller = KOR
+add_core = KOR
+capital = "Hwangju"
+trade_goods = wheat
+culture = korean
+religion = mahayana
+hre = no
+base_tax = 13
+base_production = 0
+base_manpower = 0
+is_city = yes
+road_network = yes
+canal_level_1 = yes
+discovered_by = chinese
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5
+	}
+}
+1392.6.5 = {
+	religion = confucianism
+	owner = JOS
+	controller = JOS
+	add_core = JOS
+	remove_core = KOR
+}
+1444.1.1 = {
+	base_tax = 27
+}
+1520.5.5 = {
+	base_tax = 45
+}
+1592.6.5 = {
+	controller = ODA
+}
+1593.5.1 = {
+	controller = JOS
+}
+1637.1.1 = {
+	add_core = MNG
+}
+1644.1.1 = {
+	add_core = QNG
+	remove_core = MNG
+}
+1653.1.1 = {
+	discovered_by = NED
+}

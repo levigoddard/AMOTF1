@@ -1,0 +1,77 @@
+owner = ZOU
+controller = ZOU
+capital = "Suzhou"
+trade_goods = fish
+culture = wuhan
+religion = confucianism
+hre = no
+base_tax = 88
+base_production = 10
+base_manpower = 5
+is_city = yes
+harbour_infrastructure_1 = yes
+road_network = yes
+urban_infrastructure_2 = yes
+workshop = yes
+warehouse = yes
+small_university = yes
+art_corporation = yes
+fort_14th = yes
+canal_level_1 = yes
+discovered_by = chinese
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 12
+	}
+	add_permanent_province_modifier = {
+		name = urban_goods_cloth
+		duration = -1
+	}
+}
+1271.12.18 = {
+	add_core = YUA
+}
+1356.1.1 = {
+	owner = ZOU
+	controller = ZOU
+	add_core = ZOU
+	add_core = MNG
+}
+1367.10.1 = {
+	owner = MNG
+	controller = MNG
+	remove_core = ZOU
+}
+1519.1.1 = {
+	discovered_by = POR
+}
+1520.2.2 = {
+	base_tax = 142
+	base_production = 13
+	base_manpower = 6
+}
+1535.1.1 = {
+	fort_14th = yes
+}
+1542.1.1 = {
+	unrest = 5
+}
+1543.1.1 = {
+	unrest = 0
+}
+1630.1.1 = {
+	unrest = 6
+}
+1644.4.1 = {
+	unrest = 8
+}
+1645.6.25 = {
+	owner = QNG
+	controller = QNG
+	add_core = QNG
+}
+1662.1.1 = {
+	remove_core = MNG
+}

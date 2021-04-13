@@ -1,0 +1,32 @@
+temples = {
+	monarch_power = MIL
+	always = yes
+	modifier = {
+		land_morale = 0.10
+		discipline = 0.05
+		global_unrest = 3
+		stability_cost_modifier = 0.15
+		state_maintenance_modifier = 0.20
+	}
+}
+enuchs = {
+	monarch_power = DIP
+	always = yes
+	modifier = {
+		trade_efficiency = 0.15
+		merchants = 1
+		legitimacy = -0.25
+		stability_cost_modifier = 0.10
+	}
+}
+bureaucrats = {
+	monarch_power = ADM
+	always = yes
+	modifier = {
+		stability_cost_modifier = -0.1
+		state_maintenance_modifier = -0.10
+		build_cost = -0.10
+		land_morale = -0.10
+		discipline = -0.05
+	}
+}

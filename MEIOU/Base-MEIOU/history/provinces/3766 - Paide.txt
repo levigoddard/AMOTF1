@@ -1,0 +1,50 @@
+owner = LVO
+controller = LVO
+add_core = LVO
+capital = "Wittenstein"
+trade_goods = lumber
+culture = estonian
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 0
+base_manpower = 0
+is_city = yes
+discovered_by = western
+discovered_by = eastern
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 3.5
+	}
+}
+450.1.1 = {
+	set_province_flag = pocket_province
+}
+1346.1.1 = {
+	add_core = EST
+}
+1356.1.1 = {
+	set_province_flag = add_local_autonomy_25
+}
+1530.1.4 = {
+	farm_estate = yes
+}
+1542.1.1 = {
+	religion = protestant
+}
+1561.11.18 = {
+	owner = SWE
+	controller = SWE
+	add_core = SWE
+	remove_core = LVO
+}
+1710.9.15 = {
+	controller = RUS
+}
+1721.8.30 = {
+	owner = RUS
+	add_core = RUS
+	remove_core = SWE
+}

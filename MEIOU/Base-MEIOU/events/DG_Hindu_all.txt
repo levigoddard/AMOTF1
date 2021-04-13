@@ -1,0 +1,9025 @@
+namespace = dg_hindu
+country_event = {
+	id = dg_hindu.001
+	title = dg_hindu.001.t
+	desc = dg_hindu.001.d
+	picture = hindu_choose_deity_saffron
+	is_triggered_only = yes
+	trigger = {
+		religion = hinduism
+		NOT = {
+			has_country_modifier = universal_hinduism
+		}
+	}
+	option = {
+		name = dg_hindu.001.a
+		trigger = {
+			OR = {
+				ADM = 2
+				advisor = theologian
+				AND = {
+					NOT = {
+						has_country_flag = shaivism
+					}
+					NOT = {
+						has_country_flag = shaktism
+					}
+					NOT = {
+						has_country_flag = smartism
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				has_country_flag = vaishnavism
+				factor = 2
+			}
+			modifier = {
+				has_border_with_religious_enemy = yes
+				factor = 1.4
+			}
+			modifier = {
+				AND = {
+					culture_group = rajput
+				}
+				factor = 3
+			}
+			modifier = {
+				has_country_flag = vaishnavism
+				has_country_flag = patriarch_hostile
+				factor = 0.1
+			}
+			modifier = {
+				has_country_flag = vaishnavism
+				has_country_flag = patriarch_corrupt
+				factor = 0.2
+			}
+			modifier = {
+				has_country_flag = vaishnavism
+				has_country_flag = patriarch_controversial
+				factor = 0.5
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = shaivism
+					has_country_flag = shaktism
+					has_country_flag = smartism
+				}
+			}
+			add_adm_power = -25
+			clr_country_flag = shaivism
+			clr_country_flag = shaktism
+			clr_country_flag = smartism
+			clr_country_flag = clerical_advisor
+			clr_country_flag = patriarch_zealous
+			clr_country_flag = patriarch_theologian
+			clr_country_flag = patriarch_obedient
+			clr_country_flag = patriarch_controversial
+			clr_country_flag = patriarch_corrupt
+			clr_country_flag = patriarch_hostile
+			clr_country_flag = patriarch_appointed
+		}
+		add_ruler_modifier = {
+			name = vaishnavism
+		}
+		every_country = {
+			limit = {
+				religion = hinduism
+				has_ruler_modifier = vaishnavism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_fanatical
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_observant
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = vaishnavism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = 3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = 2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = 1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = shaivism
+					has_country_flag = smartism
+					has_country_flag = shaktism
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = -3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = -2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = -1
+			}
+		}
+		hidden_effect = {
+			set_country_flag = vaishnavism
+			clr_country_flag = shaivism
+			clr_country_flag = shaktism
+			clr_country_flag = smartism
+		}
+	}
+	option = {
+		name = dg_hindu.001.b
+		trigger = {
+			OR = {
+				ADM = 2
+				advisor = theologian
+				AND = {
+					NOT = {
+						has_country_flag = vaishnavism
+					}
+					NOT = {
+						has_country_flag = shaktism
+					}
+					NOT = {
+						has_country_flag = smartism
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				has_country_flag = shaivism
+				factor = 2
+			}
+			modifier = {
+				AND = {
+					OR = {
+						culture_group = hindusthani
+						culture_group = central_indian
+						culture_group = deccan_group
+					}
+				}
+				factor = 3
+			}
+			modifier = {
+				culture_group = dravidian
+				factor = 6
+			}
+			modifier = {
+				has_country_flag = shaivism
+				has_country_flag = patriarch_hostile
+				factor = 0.1
+			}
+			modifier = {
+				has_country_flag = shaivism
+				has_country_flag = patriarch_corrupt
+				factor = 0.2
+			}
+			modifier = {
+				has_country_flag = shaivism
+				has_country_flag = patriarch_controversial
+				factor = 0.5
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = vaishnavism
+					has_country_flag = shaktism
+					has_country_flag = smartism
+				}
+			}
+			add_adm_power = -25
+			clr_country_flag = vaishnavism
+			clr_country_flag = shaktism
+			clr_country_flag = smartism
+			clr_country_flag = clerical_advisor
+			clr_country_flag = patriarch_zealous
+			clr_country_flag = patriarch_theologian
+			clr_country_flag = patriarch_obedient
+			clr_country_flag = patriarch_controversial
+			clr_country_flag = patriarch_corrupt
+			clr_country_flag = patriarch_hostile
+			clr_country_flag = patriarch_appointed
+		}
+		add_ruler_modifier = {
+			name = shaivism
+		}
+		every_country = {
+			limit = {
+				religion = hinduism
+				has_ruler_modifier = shaivism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_fanatical
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_observant
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				religion = confucianism
+				AND = {
+					culture_group = chinese_group
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_observant
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = shaivism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = 3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = 2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = 1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = vaishnavism
+					has_country_flag = smartism
+					has_country_flag = shaktism
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = -3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = -2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = -1
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = vaishnavism
+			set_country_flag = shaivism
+			clr_country_flag = shaktism
+			clr_country_flag = smartism
+		}
+	}
+	option = {
+		name = dg_hindu.001.c
+		trigger = {
+			OR = {
+				ADM = 2
+				advisor = theologian
+				AND = {
+					NOT = {
+						has_country_flag = vaishnavism
+					}
+					NOT = {
+						has_country_flag = shaivism
+					}
+					NOT = {
+						has_country_flag = smartism
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				has_country_flag = shaktism
+				factor = 2
+			}
+			modifier = {
+				culture_group = dravidian
+				factor = 3
+			}
+			modifier = {
+				culture_group = eastern_aryan
+				factor = 6
+			}
+			modifier = {
+				has_country_flag = shaktism
+				has_country_flag = patriarch_hostile
+				factor = 0.1
+			}
+			modifier = {
+				has_country_flag = shaktism
+				has_country_flag = patriarch_corrupt
+				factor = 0.2
+			}
+			modifier = {
+				has_country_flag = shaktism
+				has_country_flag = patriarch_controversial
+				factor = 0.5
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = vaishnavism
+					has_country_flag = shaivism
+					has_country_flag = smartism
+				}
+			}
+			add_adm_power = -25
+			clr_country_flag = shaivism
+			clr_country_flag = vaishnavism
+			clr_country_flag = smartism
+			clr_country_flag = clerical_advisor
+			clr_country_flag = patriarch_zealous
+			clr_country_flag = patriarch_theologian
+			clr_country_flag = patriarch_obedient
+			clr_country_flag = patriarch_controversial
+			clr_country_flag = patriarch_corrupt
+			clr_country_flag = patriarch_hostile
+			clr_country_flag = patriarch_appointed
+		}
+		add_ruler_modifier = {
+			name = shaktism
+		}
+		every_country = {
+			limit = {
+				religion = hinduism
+				has_ruler_modifier = shaktism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_fanatical
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_observant
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = shaktism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = 3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = 2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = 1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = shaivism
+					has_country_flag = smartism
+					has_country_flag = vaishnavism
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = -3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = -2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = -1
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = vaishnavism
+			clr_country_flag = shaivism
+			set_country_flag = shaktism
+			clr_country_flag = smartism
+		}
+	}
+	option = {
+		name = dg_hindu.001.e
+		trigger = {
+			OR = {
+				ADM = 3
+				advisor = theologian
+				AND = {
+					NOT = {
+						has_country_flag = vaishnavism
+					}
+					NOT = {
+						has_country_flag = shaivism
+					}
+					NOT = {
+						has_country_flag = shaktism
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				has_country_flag = smartism
+				factor = 2
+			}
+			modifier = {
+				factor = 3
+				culture_group = dravidian
+			}
+			modifier = {
+				factor = 3
+				AND = {
+					OR = {
+						culture_group = hindusthani
+						culture_group = central_indian
+						culture_group = deccan_group
+					}
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = {
+					piety = -0.20
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = {
+					piety = -0.60
+				}
+			}
+			modifier = {
+				has_country_flag = smartism
+				has_country_flag = patriarch_hostile
+				factor = 0.1
+			}
+			modifier = {
+				has_country_flag = smartism
+				has_country_flag = patriarch_corrupt
+				factor = 0.2
+			}
+			modifier = {
+				has_country_flag = smartism
+				has_country_flag = patriarch_controversial
+				factor = 0.5
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = vaishnavism
+					has_country_flag = shaivism
+					has_country_flag = shaktism
+				}
+			}
+			add_adm_power = -25
+			clr_country_flag = shaivism
+			clr_country_flag = shaktism
+			clr_country_flag = vaishnavism
+			clr_country_flag = clerical_advisor
+			clr_country_flag = patriarch_zealous
+			clr_country_flag = patriarch_theologian
+			clr_country_flag = patriarch_obedient
+			clr_country_flag = patriarch_controversial
+			clr_country_flag = patriarch_corrupt
+			clr_country_flag = patriarch_hostile
+			clr_country_flag = patriarch_appointed
+		}
+		add_ruler_modifier = {
+			name = smartism
+		}
+		every_country = {
+			limit = {
+				religion = hinduism
+				has_ruler_modifier = smartism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_fanatical
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_observant
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = smartism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = 3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = 2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = 1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = shaivism
+					has_country_flag = vaishnavism
+					has_country_flag = shaktism
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_legitimacy = -3
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_legitimacy = -2
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_legitimacy = -1
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = vaishnavism
+			clr_country_flag = shaivism
+			clr_country_flag = shaktism
+			set_country_flag = smartism
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				has_country_flag = patriarch_zealous
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_zealous_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_zealous_observant = {
+							remove_country_modifier = patriarch_zealous_observant
+						}
+						patriarch_zealous_pious = {
+							remove_country_modifier = patriarch_zealous_pious
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_zealous_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_zealous_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_zealous_observant = {
+							remove_country_modifier = patriarch_zealous_observant
+						}
+						patriarch_zealous_fanatical = {
+							remove_country_modifier = patriarch_zealous_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_zealous_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.10
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_zealous_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_zealous_pious = {
+							remove_country_modifier = patriarch_zealous_pious
+						}
+						patriarch_zealous_fanatical = {
+							remove_country_modifier = patriarch_zealous_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_zealous_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					patriarch_zealous_observant = {
+						remove_country_modifier = patriarch_zealous_observant
+					}
+					patriarch_zealous_pious = {
+						remove_country_modifier = patriarch_zealous_pious
+					}
+					patriarch_zealous_fanatical = {
+						remove_country_modifier = patriarch_zealous_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				patriarch_zealous_observant = {
+					remove_country_modifier = patriarch_zealous_observant
+				}
+				patriarch_zealous_pious = {
+					remove_country_modifier = patriarch_zealous_pious
+				}
+				patriarch_zealous_fanatical = {
+					remove_country_modifier = patriarch_zealous_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = patriarch_theologian
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_theologian_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_theologian_observant = {
+							remove_country_modifier = patriarch_theologian_observant
+						}
+						patriarch_theologian_pious = {
+							remove_country_modifier = patriarch_theologian_pious
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_theologian_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_theologian_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_theologian_observant = {
+							remove_country_modifier = patriarch_theologian_observant
+						}
+						patriarch_theologian_fanatical = {
+							remove_country_modifier = patriarch_theologian_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_theologian_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.10
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_theologian_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_theologian_pious = {
+							remove_country_modifier = patriarch_theologian_pious
+						}
+						patriarch_theologian_fanatical = {
+							remove_country_modifier = patriarch_theologian_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_theologian_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					patriarch_theologian_observant = {
+						remove_country_modifier = patriarch_theologian_observant
+					}
+					patriarch_theologian_pious = {
+						remove_country_modifier = patriarch_theologian_pious
+					}
+					patriarch_theologian_fanatical = {
+						remove_country_modifier = patriarch_theologian_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				patriarch_theologian_observant = {
+					remove_country_modifier = patriarch_theologian_observant
+				}
+				patriarch_theologian_pious = {
+					remove_country_modifier = patriarch_theologian_pious
+				}
+				patriarch_theologian_fanatical = {
+					remove_country_modifier = patriarch_theologian_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = patriarch_obedient
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_obedient_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_obedient_observant = {
+							remove_country_modifier = patriarch_obedient_observant
+						}
+						patriarch_obedient_pious = {
+							remove_country_modifier = patriarch_obedient_pious
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_obedient_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_obedient_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_obedient_observant = {
+							remove_country_modifier = patriarch_obedient_observant
+						}
+						patriarch_obedient_fanatical = {
+							remove_country_modifier = patriarch_obedient_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_obedient_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.10
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_obedient_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_obedient_pious = {
+							remove_country_modifier = patriarch_obedient_pious
+						}
+						patriarch_obedient_fanatical = {
+							remove_country_modifier = patriarch_obedient_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_obedient_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					patriarch_obedient_observant = {
+						remove_country_modifier = patriarch_obedient_observant
+					}
+					patriarch_obedient_pious = {
+						remove_country_modifier = patriarch_obedient_pious
+					}
+					patriarch_obedient_fanatical = {
+						remove_country_modifier = patriarch_obedient_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				patriarch_obedient_observant = {
+					remove_country_modifier = patriarch_obedient_observant
+				}
+				patriarch_obedient_pious = {
+					remove_country_modifier = patriarch_obedient_pious
+				}
+				patriarch_obedient_fanatical = {
+					remove_country_modifier = patriarch_obedient_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = patriarch_controversial
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_controversial_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_controversial_observant = {
+							remove_country_modifier = patriarch_controversial_observant
+						}
+						patriarch_controversial_pious = {
+							remove_country_modifier = patriarch_controversial_pious
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_controversial_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_controversial_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_controversial_observant = {
+							remove_country_modifier = patriarch_controversial_observant
+						}
+						patriarch_controversial_fanatical = {
+							remove_country_modifier = patriarch_controversial_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_controversial_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.10
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_controversial_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_controversial_pious = {
+							remove_country_modifier = patriarch_controversial_pious
+						}
+						patriarch_controversial_fanatical = {
+							remove_country_modifier = patriarch_controversial_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_controversial_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					patriarch_controversial_observant = {
+						remove_country_modifier = patriarch_controversial_observant
+					}
+					patriarch_controversial_pious = {
+						remove_country_modifier = patriarch_controversial_pious
+					}
+					patriarch_controversial_fanatical = {
+						remove_country_modifier = patriarch_controversial_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				patriarch_controversial_observant = {
+					remove_country_modifier = patriarch_controversial_observant
+				}
+				patriarch_controversial_pious = {
+					remove_country_modifier = patriarch_controversial_pious
+				}
+				patriarch_controversial_fanatical = {
+					remove_country_modifier = patriarch_controversial_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = patriarch_corrupt
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_corrupt_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_corrupt_observant = {
+							remove_country_modifier = patriarch_corrupt_observant
+						}
+						patriarch_corrupt_pious = {
+							remove_country_modifier = patriarch_corrupt_pious
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_corrupt_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_corrupt_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_corrupt_observant = {
+							remove_country_modifier = patriarch_corrupt_observant
+						}
+						patriarch_corrupt_fanatical = {
+							remove_country_modifier = patriarch_corrupt_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_corrupt_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.10
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_corrupt_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_corrupt_pious = {
+							remove_country_modifier = patriarch_corrupt_pious
+						}
+						patriarch_corrupt_fanatical = {
+							remove_country_modifier = patriarch_corrupt_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_corrupt_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					patriarch_corrupt_observant = {
+						remove_country_modifier = patriarch_corrupt_observant
+					}
+					patriarch_corrupt_pious = {
+						remove_country_modifier = patriarch_corrupt_pious
+					}
+					patriarch_corrupt_fanatical = {
+						remove_country_modifier = patriarch_corrupt_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				patriarch_corrupt_observant = {
+					remove_country_modifier = patriarch_corrupt_observant
+				}
+				patriarch_corrupt_pious = {
+					remove_country_modifier = patriarch_corrupt_pious
+				}
+				patriarch_corrupt_fanatical = {
+					remove_country_modifier = patriarch_corrupt_fanatical
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = patriarch_hostile
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_hostile_fanatical
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_hostile_observant = {
+							remove_country_modifier = patriarch_hostile_observant
+						}
+						patriarch_hostile_pious = {
+							remove_country_modifier = patriarch_hostile_pious
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_hostile_fanatical
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_hostile_pious
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_hostile_observant = {
+							remove_country_modifier = patriarch_hostile_observant
+						}
+						patriarch_hostile_fanatical = {
+							remove_country_modifier = patriarch_hostile_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_hostile_pious
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.10
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_modifier = patriarch_hostile_observant
+						}
+					}
+					trigger_switch = {
+						on_trigger = has_country_modifier
+						patriarch_hostile_pious = {
+							remove_country_modifier = patriarch_hostile_pious
+						}
+						patriarch_hostile_fanatical = {
+							remove_country_modifier = patriarch_hostile_fanatical
+						}
+					}
+					add_country_modifier = {
+						name = patriarch_hostile_observant
+						duration = -1
+					}
+				}
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_country_modifier
+					patriarch_hostile_observant = {
+						remove_country_modifier = patriarch_hostile_observant
+					}
+					patriarch_hostile_pious = {
+						remove_country_modifier = patriarch_hostile_pious
+					}
+					patriarch_hostile_fanatical = {
+						remove_country_modifier = patriarch_hostile_fanatical
+					}
+				}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				patriarch_hostile_observant = {
+					remove_country_modifier = patriarch_hostile_observant
+				}
+				patriarch_hostile_pious = {
+					remove_country_modifier = patriarch_hostile_pious
+				}
+				patriarch_hostile_fanatical = {
+					remove_country_modifier = patriarch_hostile_fanatical
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.002
+	title = dg_hindu.002.t
+	desc = dg_hindu.002.d
+	picture = hindu_court
+	trigger = {
+		religion = hinduism
+		NOT = {
+			has_ruler_modifier = bhakti_movement
+		}
+		NOT = {
+			has_country_flag = brahmin_supported
+		}
+		NOT = {
+			has_country_flag = bhakti_ignored
+		}
+		NOT = {
+			has_country_modifier = smartism
+		}
+		NOT = {
+			advisor = theologian
+		}
+		piety = -0.60
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_major
+		}
+	}
+	mean_time_to_happen = {
+		years = 41
+		modifier = {
+			has_ruler_modifier = vaishnavism
+			factor = 0.5
+		}
+		modifier = {
+			NOT = {
+				is_year = 1500
+			}
+			factor = 2
+		}
+		modifier = {
+			has_border_with_religious_enemy = yes
+			factor = 0.7
+		}
+		modifier = {
+			at_war_with_religious_enemy = yes
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 2
+		}
+		modifier = {
+			piety = 0.20
+			factor = 0.7
+		}
+		modifier = {
+			piety = 0.60
+			factor = 0.7
+		}
+		modifier = {
+			has_country_flag = patriarch_controversial
+			factor = 0.7
+		}
+		modifier = {
+			has_country_flag = patriarch_zealous
+			factor = 0.7
+		}
+	}
+	option = {
+		name = dg_hindu.002.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					stability = 0
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					stability = -1
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					stability = -2
+				}
+				factor = 0.7
+			}
+		}
+		add_ruler_modifier = {
+			name = bhakti_movement
+		}
+		add_piety = 0.20
+		add_patriarch_authority = -0.10
+		define_advisor = {
+			religion = hinduism
+			type = theologian
+			discount = yes
+		}
+	}
+	option = {
+		name = dg_hindu.002.c
+		hidden_effect = {
+			set_country_flag = bhakti_ignored
+		}
+	}
+	option = {
+		name = dg_hindu.002.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					legitimacy = 75
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					legitimacy = 50
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					legitimacy = 25
+				}
+				factor = 1.4
+			}
+		}
+		hidden_effect = {
+			set_country_flag = brahmin_supported
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_legitimacy = 4
+			random_owned_province = {
+				limit = {
+					religion = hinduism
+					is_core = ROOT
+					culture_group = ROOT
+				}
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_legitimacy = 3
+			random_owned_province = {
+				limit = {
+					religion = hinduism
+					is_core = ROOT
+					culture_group = ROOT
+				}
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 1825
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_legitimacy = 2
+			random_owned_province = {
+				limit = {
+					religion = hinduism
+					is_core = ROOT
+					culture_group = ROOT
+				}
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 730
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_legitimacy = 1
+			random_owned_province = {
+				limit = {
+					religion = hinduism
+					is_core = ROOT
+					culture_group = ROOT
+				}
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 365
+				}
+			}
+		}
+		add_piety = -0.10
+	}
+}
+province_event = {
+	id = dg_hindu.003
+	title = dg_hindu.003.t
+	desc = dg_hindu.003.d
+	picture = hindu_temple
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.003.a
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+			add_prestige = 1
+		}
+	}
+	option = {
+		name = dg_hindu.003.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				NOT = {
+					owner = {
+						treasury = 10
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						treasury = 50
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					treasury = 250
+				}
+				factor = 1.4
+			}
+		}
+		add_province_modifier = {
+			name = matha
+			duration = 10000
+		}
+		owner = {
+			add_treasury = -10
+			add_adm_power = 10
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.004
+	title = dg_hindu.004.t
+	desc = dg_hindu.004.d
+	picture = hindu_mob
+	trigger = {
+		has_ruler_modifier = shaktism
+		religion = hinduism
+		NOT = {
+			has_country_flag = tantrism_reined_in
+		}
+		NOT = {
+			has_ruler_modifier = tantrism
+		}
+		piety = -0.60
+	}
+	mean_time_to_happen = {
+		years = 40
+		modifier = {
+			piety = 0.60
+			factor = 0.7
+		}
+		modifier = {
+			piety = 0.20
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 2
+		}
+	}
+	option = {
+		name = dg_hindu.004.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				NOT = {
+					stability = 0
+				}
+				factor = 2
+			}
+			modifier = {
+				piety = 0.60
+				factor = 1.4
+			}
+			modifier = {
+				piety = 0.20
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				any_known_country = {
+					has_ruler_modifier = shaktism
+				}
+				factor = 1.4
+			}
+			modifier = {
+				any_known_country = {
+					religion = hinduism
+					NOT = {
+						has_ruler_modifier = shaktism
+					}
+					overlord_of = ROOT
+				}
+				factor = 0.7
+			}
+		}
+		add_ruler_modifier = {
+			name = tantrism
+		}
+		every_country = {
+			limit = {
+				religion = hinduism
+				has_ruler_modifier = shaktism
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_fanatical
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = same_doctrine_observant
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					religion = hinduism
+					AND = {
+						NOT = {
+							religion = hinduism
+						}
+						is_neighbor_of = ROOT
+					}
+				}
+				NOT = {
+					has_ruler_modifier = shaktism
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.6
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = religious_scandal_pious
+				}
+			}
+			else_if = {
+				limit = {
+					piety = 0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = religious_scandal_observant
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.2
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = religious_scandal_decadent
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.004.b
+		ai_chance = {
+			factor = 60
+		}
+		set_country_flag = tantrism_reined_in
+		if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_scandal_country_strong
+				duration = 400
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_scandal_country
+				duration = 400
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = religious_scandal_country_weak
+				duration = 400
+			}
+		}
+		add_piety = -0.10
+	}
+}
+province_event = {
+	id = dg_hindu.005
+	title = dg_hindu.005.t
+	desc = dg_hindu.005.d
+	picture = hindu_temple
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			add_country_modifier = {
+				name = sadhu_timer
+				duration = 400
+				hidden = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_province_flag = hindu_pilgrimage
+				}
+				NOT = {
+					any_neighbor_province = {
+						has_province_flag = hindu_pilgrimage
+					}
+				}
+			}
+			add_province_modifier = {
+				name = hindu_pilgrimage
+				duration = 10000
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.005.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					monthly_income = 10
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					monthly_income = 20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					monthly_income = 40
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					monthly_income = 80
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					num_of_loans = 1
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_loans = 2
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					is_bankrupt = yes
+				}
+				factor = 0.5
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = 4
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = 3
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = 2
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = 1
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.005.b
+		ai_chance = {
+			factor = 60
+		}
+		owner = {
+			add_treasury = 10
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = -4
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = -3
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = -2
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = -1
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.007
+	title = dg_hindu.007.t
+	desc = dg_hindu.007.d
+	picture = hindu_sati
+	trigger = {
+		religion = hinduism
+		NOT = {
+			has_country_flag = sati_decision
+		}
+		any_owned_province = {
+			religion = hinduism
+		}
+		NOT = {
+			has_country_modifier = religious_controversy
+		}
+		AND = {
+			NOT = {
+				has_country_modifier = religious_scandal_country_strong
+			}
+			NOT = {
+				has_country_modifier = religious_scandal_country
+			}
+			NOT = {
+				has_country_modifier = religious_scandal_country_weak
+			}
+		}
+		piety = -0.60
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_trivial
+		}
+	}
+	mean_time_to_happen = {
+		years = 50
+		modifier = {
+			piety = 0.60
+			factor = 0.7
+		}
+		modifier = {
+			piety = 0.20
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 2
+		}
+		modifier = {
+			has_country_flag = symbolic_sati
+			factor = 3
+		}
+		modifier = {
+			has_country_flag = sati_banned
+			factor = 2
+		}
+		modifier = {
+			has_country_flag = patriarch_controversial
+			factor = 0.7
+		}
+		modifier = {
+			has_country_flag = patriarch_zealous
+			factor = 0.7
+		}
+		modifier = {
+			has_country_flag = patriarch_theologian
+			factor = 1.4
+		}
+	}
+	immediate = {
+		set_country_flag = sati_decision
+	}
+	option = {
+		name = dg_hindu.007.a
+		ai_chance = {
+			factor = 35
+			modifier = {
+				piety = 0.60
+				factor = 1.4
+			}
+			modifier = {
+				piety = 0.20
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				has_country_flag = symbolic_sati
+				factor = 0.7
+			}
+			modifier = {
+				has_country_flag = sati_banned
+				factor = 0.5
+			}
+		}
+		clr_country_flag = symbolic_sati
+		clr_country_flag = sati_banned
+		if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 1000
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 500
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.007.b
+		ai_chance = {
+			factor = 35
+			modifier = {
+				has_country_flag = symbolic_sati
+				factor = 2
+			}
+		}
+		set_country_flag = symbolic_sati
+		clr_country_flag = sati_banned
+		add_adm_power = -10
+		if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_scandal_country_strong
+				duration = 500
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_scandal_country
+				duration = 500
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = religious_scandal_country_weak
+				duration = 500
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.007.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				piety = 0.6
+				factor = 0.7
+			}
+			modifier = {
+				piety = 0.2
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = symbolic_sati
+				factor = 2
+			}
+			modifier = {
+				has_country_flag = sati_banned
+				factor = 2
+			}
+		}
+		clr_country_flag = symbolic_sati
+		set_country_flag = sati_banned
+		add_adm_power = -25
+		if = {
+			limit = {
+				patriarch_authority = 0.80
+			}
+			add_country_modifier = {
+				name = unhappy_church_powerful
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.60
+			}
+			add_country_modifier = {
+				name = unhappy_church_strong
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.40
+			}
+			add_country_modifier = {
+				name = unhappy_church_moderate
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.20
+			}
+			add_country_modifier = {
+				name = unhappy_church_weak
+				duration = 2000
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = unhappy_church_impotent
+				duration = 2000
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.009
+	title = dg_hindu.009.t
+	desc = dg_hindu.009.d
+	picture = hindu_sankirtan
+	trigger = {
+		advisor = artist
+		OR = {
+			religion = hinduism
+			religion = sikhism
+			religion = buddhism
+		}
+		NOT = {
+			has_country_flag = sankirtan_movement
+		}
+		is_year = 1400
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_major
+		}
+	}
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			piety = 0.60
+			factor = 0.7
+		}
+		modifier = {
+			piety = 0.20
+			factor = 0.7
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 1.4
+		}
+		modifier = {
+			NOT = {
+				piety = -0.60
+			}
+			factor = 1.4
+		}
+		modifier = {
+			religion = hinduism
+			NOT = {
+				has_ruler_modifier = bhakti_movement
+			}
+			factor = 2
+		}
+		modifier = {
+			religion = hinduism
+			NOT = {
+				has_ruler_modifier = vaishnavism
+			}
+			factor = 2
+		}
+		modifier = {
+			has_country_flag = patriarch_controversial
+			factor = 0.7
+		}
+		modifier = {
+			has_country_flag = patriarch_zealous
+			factor = 0.7
+		}
+	}
+	immediate = {
+		set_country_flag = sankirtan_movement
+	}
+	option = {
+		name = dg_hindu.009.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				piety = 0.60
+				factor = 1.4
+			}
+			modifier = {
+				piety = 0.20
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					piety = -0.20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					piety = -0.60
+				}
+				factor = 0.7
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = 4
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = 2
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = -2
+		}
+		else = {
+			add_prestige = -4
+		}
+		add_piety = 0.10
+		hidden_effect = {
+			set_country_flag = kirtan_movement
+		}
+	}
+	option = {
+		name = dg_hindu.009.b
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = -4
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = -2
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = 2
+		}
+		else = {
+			add_prestige = 4
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.010
+	title = dg_hindu.010.t
+	desc = dg_hindu.010.d
+	picture = hindu_ruler
+	trigger = {
+		religion = hinduism
+		NOT = {
+			months_of_ruling = 6
+		}
+		NOT = {
+			legitimacy = 95
+		}
+		government = monarchy
+		OR = {
+			has_regency = no
+			has_consort_regency = yes
+		}
+		NOT = {
+			has_country_flag = brahmin_coronation
+		}
+		piety = -0.60
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_major
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		set_country_flag = brahmin_coronation
+	}
+	option = {
+		name = dg_hindu.010.a
+		ai_chance = {
+			factor = 70
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = -10
+			add_legitimacy = 10
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = -8
+			add_legitimacy = 8
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_prestige = -6
+			add_legitimacy = 6
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = -4
+			add_legitimacy = 4
+		}
+		else = {
+			add_prestige = -2
+			add_legitimacy = 2
+		}
+	}
+	option = {
+		name = dg_hindu.010.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				NOT = {
+					legitimacy = 75
+				}
+				factor = 0.5
+			}
+			modifier = {
+				NOT = {
+					legitimacy = 50
+				}
+				factor = 0
+			}
+			modifier = {
+				patriarch_authority = 0.80
+				factor = 0.5
+			}
+			modifier = {
+				patriarch_authority = 0.60
+				factor = 0.5
+			}
+			modifier = {
+				NOT = {
+					patriarch_authority = 0.40
+				}
+				factor = 2
+			}
+			modifier = {
+				NOT = {
+					patriarch_authority = 0.20
+				}
+				factor = 2
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_prestige = 10
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_prestige = 8
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_prestige = 6
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_prestige = 4
+		}
+		else = {
+			add_prestige = 2
+		}
+		if = {
+			limit = {
+				patriarch_authority = 0.80
+			}
+			add_country_modifier = {
+				name = unhappy_church_powerful
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.60
+			}
+			add_country_modifier = {
+				name = unhappy_church_strong
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.40
+			}
+			add_country_modifier = {
+				name = unhappy_church_moderate
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				patriarch_authority = 0.20
+			}
+			add_country_modifier = {
+				name = unhappy_church_weak
+				duration = 2000
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = unhappy_church_impotent
+				duration = 2000
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.021
+	title = dg_hindu.021.t
+	desc = dg_hindu.021.d
+	picture = hindu_sadhu
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.021.b
+		ai_chance = {
+			factor = 40
+		}
+		add_province_modifier = {
+			name = sadhu_sant
+			duration = 5000
+		}
+		random_list = {
+			40 = {
+				add_province_modifier = {
+					name = hindu_pilgrimage
+					duration = 2000
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								owner = {
+									has_country_flag = sampradaya_founded
+								}
+							}
+						}
+						random = {
+							chance = 50
+							set_province_flag = sampradaya
+							owner = {
+								set_country_flag = sampradaya
+							}
+						}
+					}
+				}
+			}
+			30 = {
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 2000
+				}
+			}
+			20 = {
+				custom_tooltip = heretic_10
+				hidden_effect = {
+					change_variable = {
+						which = heretics
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+				}
+			}
+			10 = {
+				add_province_modifier = {
+					name = religious_riots
+					duration = 500
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.021.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				OR = {
+					owner = {
+						has_country_modifier = unhappy_church_impotent
+					}
+					owner = {
+						has_country_modifier = unhappy_church_weak
+					}
+					owner = {
+						has_country_modifier = unhappy_church_moderate
+					}
+					owner = {
+						has_country_modifier = unhappy_church_strong
+					}
+					owner = {
+						has_country_modifier = unhappy_church_powerful
+					}
+				}
+				factor = 3
+			}
+		}
+		owner = {
+			add_adm_power = -5
+			trigger_switch = {
+				on_trigger = has_country_modifier
+				unhappy_church_impotent = {
+					remove_country_modifier = unhappy_church_impotent
+				}
+				unhappy_church_weak = {
+					remove_country_modifier = unhappy_church_weak
+				}
+				unhappy_church_moderate = {
+					remove_country_modifier = unhappy_church_moderate
+				}
+				unhappy_church_strong = {
+					remove_country_modifier = unhappy_church_strong
+				}
+				unhappy_church_powerful = {
+					remove_country_modifier = unhappy_church_powerful
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.021.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				owner = {
+					advisor = theologian
+				}
+				factor = 0
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						DIP = 2
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						DIP = 3
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					DIP = 6
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					DIP = 5
+				}
+				factor = 1.4
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					DIP = 6
+				}
+				define_advisor = {
+					religion = hinduism
+					type = theologian
+					discount = yes
+				}
+				add_prestige = 5
+			}
+			else_if = {
+				limit = {
+					DIP = 5
+				}
+				random_list = {
+					85 = {
+						define_advisor = {
+							religion = hinduism
+							type = theologian
+							discount = yes
+						}
+						add_prestige = 2
+					}
+					15 = {
+						custom_tooltip = sadhu_refuses
+						add_prestige = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					DIP = 4
+				}
+				random_list = {
+					70 = {
+						define_advisor = {
+							religion = hinduism
+							type = theologian
+							discount = yes
+						}
+						add_prestige = 2
+					}
+					30 = {
+						custom_tooltip = sadhu_refuses
+						add_prestige = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					DIP = 3
+				}
+				random_list = {
+					55 = {
+						define_advisor = {
+							religion = hinduism
+							type = theologian
+							discount = yes
+						}
+						add_prestige = 2
+					}
+					45 = {
+						custom_tooltip = sadhu_refuses
+						add_prestige = -5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					DIP = 2
+				}
+				random_list = {
+					40 = {
+						define_advisor = {
+							religion = hinduism
+							type = theologian
+							discount = yes
+						}
+						add_prestige = 2
+					}
+					60 = {
+						custom_tooltip = sadhu_refuses
+						add_prestige = -5
+					}
+				}
+			}
+			else = {
+				random_list = {
+					25 = {
+						define_advisor = {
+							religion = hinduism
+							type = theologian
+							discount = yes
+						}
+						add_prestige = 2
+					}
+					75 = {
+						custom_tooltip = sadhu_refuses
+						add_prestige = -5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.021.e
+		ai_chance = {
+			factor = 10
+			modifier = {
+				owner = {
+					NOT = {
+						prestige = 0
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					piety = -0.20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					patriarch_authority = 0.40
+				}
+				factor = 0.7
+			}
+		}
+		trigger = {
+			owner = {
+				NOT = {
+					piety = 0.20
+				}
+				NOT = {
+					patriarch_authority = 0.60
+				}
+				NOT = {
+					government = theocracy
+				}
+			}
+		}
+		custom_tooltip = never_again_event
+		owner = {
+			add_prestige = -5
+			set_country_flag = unregulated_sadhu
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.022
+	title = dg_hindu.022.t
+	desc = dg_hindu.022.d
+	picture = hindu_ashram
+	trigger = {
+		has_country_flag = sampradaya
+		religion = hinduism
+		NOT = {
+			has_country_flag = sampradaya_founded
+		}
+		NOT = {
+			has_country_modifier = missionary_zeal
+		}
+		piety = -0.60
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_trivial
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_flag = sampradaya
+				}
+				if = {
+					limit = {
+						has_province_modifier = hindu_pilgrimage
+						NOT = {
+							has_province_flag = hinduism_four_drops
+						}
+						NOT = {
+							has_province_flag = hinduism_four_seats
+						}
+						NOT = {
+							has_province_flag = holy_city_of_varanasi
+						}
+					}
+					hidden_effect = {
+						remove_province_modifier = hindu_pilgrimage
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.022.a
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_country_modifier = {
+				name = missionary_zeal
+				duration = 4000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = missionary_zeal
+				duration = 3000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = missionary_zeal
+				duration = 2000
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_country_modifier = {
+				name = missionary_zeal
+				duration = 1000
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = sampradaya
+			}
+			add_province_modifier = {
+				name = hindu_pilgrimage
+				duration = 25000
+			}
+		}
+		clr_country_flag = sampradaya
+		set_country_flag = sampradaya_founded
+		every_owned_province = {
+			clr_province_flag = sampradaya
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.023
+	title = dg_hindu.023.t
+	desc = dg_hindu.023.d
+	picture = hindu_yogi
+	trigger = {
+		has_country_modifier = tantrism
+		NOT = {
+			has_global_flag = aghoris_founded
+		}
+		is_year = 1600
+		religion = hinduism
+		piety = -0.60
+		OR = {
+			ai = yes
+			has_country_flag = religious_news_major
+		}
+	}
+	mean_time_to_happen = {
+		years = 8
+	}
+	immediate = {
+		set_global_flag = aghoris_founded
+	}
+	option = {
+		name = dg_hindu.023.a
+		ai_chance = {
+			factor = 70
+		}
+		random_owned_province = {
+			limit = {
+				religion = hinduism
+				is_in_capital_area = yes
+				NOT = {
+					has_province_modifier = sadhu_sant
+				}
+				NOT = {
+					has_province_modifier = religious_scandal_province
+				}
+			}
+			add_province_modifier = {
+				name = sadhu_sant
+				duration = 5000
+			}
+			add_province_modifier = {
+				name = religious_scandal_province
+				duration = 5000
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.023.b
+		ai_chance = {
+			factor = 30
+		}
+		set_country_flag = aghoris_persecuted
+		add_prestige = 5
+		if = {
+			limit = {
+				piety = 0.20
+			}
+			add_country_modifier = {
+				name = religious_scandal_country_strong
+				duration = 400
+			}
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_country_modifier = {
+				name = religious_scandal_country
+				duration = 400
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = religious_scandal_country_weak
+				duration = 400
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.024
+	title = dg_hindu.024.t
+	desc = dg_hindu.024.d
+	picture = hindu_mob
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.024.a
+		ai_chance = {
+			factor = 50
+		}
+		add_province_modifier = {
+			name = religious_scandal_province
+			duration = 500
+		}
+		owner = {
+			set_country_flag = aghoris_persecuted
+			add_adm_power = -5
+		}
+	}
+	option = {
+		name = dg_hindu.024.b
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			has_country_flag = aghoris_persecuted
+		}
+		add_province_modifier = {
+			name = religious_scandal_province
+			duration = 1000
+		}
+		owner = {
+			set_country_flag = aghoris_banned
+			add_adm_power = -25
+			if = {
+				limit = {
+					piety = 0.20
+				}
+				add_country_modifier = {
+					name = religious_scandal_country_strong
+					duration = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_country_modifier = {
+					name = religious_scandal_country
+					duration = 1000
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = religious_scandal_country_weak
+					duration = 1000
+				}
+			}
+		}
+		custom_tooltip = never_again_event
+	}
+	option = {
+		name = dg_hindu.024.c
+		ai_chance = {
+			factor = 30
+		}
+		add_province_modifier = {
+			name = sadhu_sant
+			duration = 5000
+		}
+		random_list = {
+			25 = {
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 5000
+				}
+			}
+			25 = {
+				custom_tooltip = heretic_10
+				hidden_effect = {
+					change_variable = {
+						which = heretics
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+				}
+			}
+			25 = {
+				owner = {
+					add_country_modifier = {
+						name = religious_controversy
+						duration = 1000
+					}
+				}
+			}
+			25 = {
+				add_province_modifier = {
+					name = religious_riots
+					duration = 1000
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.025
+	title = dg_hindu.025.t
+	desc = dg_hindu.025.d
+	picture = hindu_thuggee
+	trigger = {
+		AND = {
+			continent = indian_continent
+			OR = {
+				superregion = west_india_superregion
+				superregion = north_india_superregion
+				superregion = rajputana_superregion
+				superregion = east_india_superregion
+				superregion = central_india_superregion
+				superregion = south_india_superregion
+			}
+		}
+		NOT = {
+			units_in_province = 1
+		}
+		check_variable = {
+			which = hinduism
+			value = 6
+		}
+		NOT = {
+			has_global_flag = thuggees_eradicated
+		}
+		NOT = {
+			has_province_modifier = thuggee_activity
+		}
+		NOT = {
+			has_province_modifier = militant_sadhus
+		}
+		NOT = {
+			has_province_modifier = gosain_nomads
+		}
+		NOT = {
+			owner = {
+				has_country_modifier = thuggee_defeat
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 416
+		modifier = {
+			any_neighbor_province = {
+				AND = {
+					OR = {
+						has_province_modifier = minor_center_of_trade
+						has_province_modifier = important_center_of_trade
+						has_province_modifier = major_center_of_trade
+						has_province_modifier = dominant_center_of_trade
+					}
+				}
+			}
+			factor = 0.5
+		}
+		modifier = {
+			AND = {
+				base_production = 10
+			}
+			factor = 2
+		}
+		modifier = {
+			has_province_modifier = pilgrimage_route
+			factor = 0.5
+		}
+		modifier = {
+			has_province_modifier = hindu_pilgrimage
+			factor = 0.7
+		}
+	}
+	immediate = {
+		owner = {
+			add_country_modifier = {
+				name = thuggee_defeat
+				duration = 90
+				hidden = yes
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					ai = no
+				}
+			}
+			hidden_effect = {
+				change_variable = {
+					which = thuggee_attacks
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = thuggee_attacks
+							value = 5
+						}
+					}
+				}
+				custom_tooltip = thuggee_explanation
+			}
+		}
+		if = {
+			limit = {
+				has_province_modifier = pilgrimage_route
+			}
+			remove_province_modifier = pilgrimage_route
+		}
+		if = {
+			limit = {
+				has_province_modifier = hindu_pilgrimage
+				NOT = {
+					has_province_flag = hinduism_four_drops
+				}
+				NOT = {
+					has_province_flag = hinduism_four_seats
+				}
+				NOT = {
+					has_province_flag = holy_city_of_varanasi
+				}
+			}
+			remove_province_modifier = hindu_pilgrimage
+		}
+		add_province_modifier = {
+			name = thuggee_activity
+			duration = 500
+		}
+	}
+	option = {
+		name = dg_hindu.025.a
+		trigger = {
+			NOT = {
+				owner = {
+					has_country_flag = thuggee_ambush
+				}
+			}
+			owner = {
+				manpower = 1
+			}
+		}
+		ai_chance = {
+			factor = 7
+			modifier = {
+				owner = {
+					NOT = {
+						manpower_percentage = 0.75
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						manpower_percentage = 0.50
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				owner = {
+					is_at_war = yes
+				}
+				factor = 0
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					max_manpower = 100
+				}
+				add_yearly_manpower = -1
+			}
+			else = {
+				add_yearly_manpower = -0.01
+			}
+			add_legitimacy = 1
+			add_republican_tradition = 1
+			add_devotion = 1
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = {
+						max_manpower = 50
+					}
+				}
+				random_list = {
+					30 = {
+						province_event = {
+							id = dg_hindu.026
+							days = 90
+						}
+					}
+					70 = {
+						province_event = {
+							id = dg_hindu.027
+							days = 90
+						}
+					}
+				}
+			}
+			else = {
+				random_list = {
+					10 = {
+						province_event = {
+							id = dg_hindu.026
+							days = 90
+						}
+					}
+					90 = {
+						province_event = {
+							id = dg_hindu.027
+							days = 90
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.025.b
+		trigger = {
+			NOT = {
+				owner = {
+					has_country_flag = thuggee_ambush
+				}
+			}
+		}
+		ai_chance = {
+			factor = 3
+		}
+		owner = {
+			add_prestige = -1
+		}
+	}
+	option = {
+		name = dg_hindu.025.c
+		trigger = {
+			owner = {
+				AND = {
+					adm_tech = 50
+				}
+			}
+			NOT = {
+				owner = {
+					has_country_flag = thuggee_ambush
+				}
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				owner = {
+					NOT = {
+						num_of_owned_provinces_with = {
+							AND = {
+								continent = indian_continent
+								OR = {
+									superregion = west_india_superregion
+									superregion = north_india_superregion
+									superregion = rajputana_superregion
+									superregion = east_india_superregion
+									superregion = central_india_superregion
+									superregion = south_india_superregion
+								}
+							}
+							value = 3
+						}
+					}
+				}
+				factor = 0.5
+			}
+		}
+		owner = {
+			add_mil_power = -25
+			set_country_flag = thuggee_ambush
+		}
+	}
+	option = {
+		name = dg_hindu.025.e
+		trigger = {
+			owner = {
+				has_country_flag = thuggee_ambush
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+		hidden_effect = {
+			random_list = {
+				75 = {
+					province_event = {
+						id = dg_hindu.026
+						days = 90
+					}
+				}
+				25 = {
+					province_event = {
+						id = dg_hindu.027
+						days = 90
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.026
+	title = dg_hindu.026.t
+	desc = dg_hindu.026.d
+	picture = hindu_thuggees_captured
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.026.a
+		remove_province_modifier = thuggee_activity
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = -2
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_2
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = thuggee_ambush
+				}
+			}
+			owner = {
+				country_event = {
+					id = dg_hindu.028
+					days = 0
+				}
+			}
+		}
+		else = {
+			owner = {
+				add_prestige = 2
+				add_legitimacy = 2
+				add_republican_tradition = 2
+				add_devotion = 2
+				add_country_modifier = {
+					name = thuggee_defeat
+					duration = 8000
+					hidden = yes
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.027
+	title = dg_hindu.027.t
+	desc = dg_hindu.027.d
+	picture = hindu_patrol
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.027.a
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = -1
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_1
+		owner = {
+			clr_country_flag = thuggee_ambush
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.028
+	title = dg_hindu.028.t
+	desc = dg_hindu.028.d
+	picture = hindu_thuggees_captured
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.028.a
+		if = {
+			limit = {
+				capital_scope = {
+					AND = {
+						continent = indian_continent
+						OR = {
+							superregion = west_india_superregion
+							superregion = north_india_superregion
+							superregion = rajputana_superregion
+							superregion = east_india_superregion
+							superregion = central_india_superregion
+							superregion = south_india_superregion
+						}
+					}
+				}
+			}
+			add_legitimacy = 25
+			add_republican_tradition = 25
+			add_devotion = 25
+			add_prestige = 25
+		}
+		else = {
+			add_legitimacy = 5
+			add_republican_tradition = 5
+			add_devotion = 5
+			add_prestige = 10
+		}
+		set_global_flag = thuggees_eradicated
+		every_owned_province = {
+			limit = {
+				AND = {
+					continent = indian_continent
+					OR = {
+						superregion = west_india_superregion
+						superregion = north_india_superregion
+						superregion = rajputana_superregion
+						superregion = east_india_superregion
+						superregion = central_india_superregion
+						superregion = south_india_superregion
+					}
+				}
+				NOT = {
+					is_core = owner
+				}
+			}
+			add_nationalism = -5
+		}
+		every_owned_province = {
+			limit = {
+				has_province_modifier = thuggee_activity
+			}
+			remove_province_modifier = thuggee_activity
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = -2
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_2
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.029
+	title = dg_hindu.029.t
+	desc = dg_hindu.029.d
+	picture = hindu_sadhu
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.029.a
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = regulated_sadhu
+				}
+			}
+			owner = {
+				clr_country_flag = regulated_sadhu
+				add_piety = 0.10
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = 1
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_1
+		add_province_modifier = {
+			name = religious_scandal_province
+			duration = 2000
+		}
+	}
+	option = {
+		name = dg_hindu.029.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 1.4
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					owner = {
+						has_country_flag = regulated_sadhu
+					}
+				}
+			}
+			owner = {
+				set_country_flag = regulated_sadhu
+				add_piety = -0.10
+			}
+		}
+		owner = {
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 500
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.030
+	title = dg_hindu.030.t
+	desc = dg_hindu.030.d
+	picture = hindu_yogi
+	trigger = {
+		religion = hinduism
+		advisor = theologian
+		num_of_cities = 100
+		AND = {
+			adm_tech = 20
+		}
+		NOT = {
+			any_neighbor_country = {
+				num_of_cities = ROOT
+			}
+		}
+		NOT = {
+			has_country_flag = neo_vedanta_movement
+		}
+		NOT = {
+			has_country_modifier = universal_hinduism
+		}
+		piety = -0.20
+	}
+	mean_time_to_happen = {
+		months = 50
+	}
+	option = {
+		name = dg_hindu.030.b
+		ai_chance = {
+			factor = 70
+		}
+		set_country_flag = neo_vedanta_movement
+		remove_advisor = theologian
+		add_piety = 0.10
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_legitimacy = 4
+			add_devotion = 8
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_legitimacy = 3
+			add_devotion = 6
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_legitimacy = 2
+			add_devotion = 4
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_legitimacy = 1
+			add_devotion = 2
+		}
+	}
+	option = {
+		name = dg_hindu.030.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				has_ruler_modifier = smartism
+				factor = 1.4
+			}
+		}
+		remove_country_modifier = vaishnavism
+		remove_country_modifier = shaktism
+		remove_country_modifier = shaivism
+		add_country_modifier = {
+			name = smartism
+			duration = -1
+		}
+		add_country_modifier = {
+			name = universal_hinduism
+			duration = -1
+		}
+		add_country_modifier = {
+			name = religious_controversy
+			duration = 5000
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.031
+	title = dg_hindu.031.t
+	desc = dg_hindu.031.d
+	picture = hindu_militant_sadhus
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.031.a
+		ai_chance = {
+			factor = 70
+		}
+		add_province_modifier = {
+			name = militant_sadhus
+			duration = 5000
+		}
+		owner = {
+			if = {
+				limit = {
+					max_manpower = 50
+				}
+				add_yearly_manpower = -1
+			}
+			else = {
+				add_yearly_manpower = -0.02
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.031.b
+		ai_chance = {
+			factor = 30
+		}
+		owner = {
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_prestige = -4
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_prestige = -3
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_prestige = -2
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_prestige = -1
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.032
+	title = dg_hindu.032.t
+	desc = dg_hindu.032.d
+	picture = hindu_village
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.032.a
+		add_province_modifier = {
+			name = gosain_nomads
+			duration = 500
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.033
+	title = dg_hindu.033.t
+	desc = dg_hindu.033.d
+	picture = hindu_sadhu
+	hidden = yes
+	trigger = {
+		religion = hinduism
+		NOT = {
+			has_country_modifier = sadhu_timer
+		}
+	}
+	mean_time_to_happen = {
+		months = 25
+		modifier = {
+			piety = 0.60
+			factor = 0.5
+		}
+		modifier = {
+			piety = 0.20
+			factor = 0.5
+		}
+		modifier = {
+			NOT = {
+				piety = -0.20
+			}
+			factor = 2
+		}
+	}
+	immediate = {
+		add_country_modifier = {
+			name = sadhu_timer
+			duration = 300
+			hidden = yes
+		}
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_country_flag = possible_caste_event
+				}
+				50 = {
+					if = {
+						limit = {
+							piety = -0.60
+						}
+						set_country_flag = possible_sadhu_event
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = possible_sadhu_event
+				any_owned_province = {
+					religion = hinduism
+					is_city = yes
+					NOT = {
+						has_province_modifier = sadhu_sant
+					}
+					NOT = {
+						has_province_modifier = matha
+					}
+					NOT = {
+						has_province_modifier = militant_sadhus
+					}
+					NOT = {
+						has_province_modifier = religious_scandal_province
+					}
+					NOT = {
+						has_province_modifier = thuggee_activity
+					}
+					NOT = {
+						has_province_modifier = religious_riots
+					}
+					NOT = {
+						has_province_modifier = gosain_nomads
+					}
+					controlled_by = owner
+					has_siege = no
+				}
+			}
+			set_country_flag = sadhu_event
+			every_owned_province = {
+				limit = {
+					religion = hinduism
+					is_city = yes
+					NOT = {
+						has_province_modifier = sadhu_sant
+					}
+					NOT = {
+						has_province_modifier = matha
+					}
+					NOT = {
+						has_province_modifier = militant_sadhus
+					}
+					NOT = {
+						has_province_modifier = religious_scandal_province
+					}
+					NOT = {
+						has_province_modifier = thuggee_activity
+					}
+					NOT = {
+						has_province_modifier = religious_riots
+					}
+					NOT = {
+						has_province_modifier = gosain_nomads
+					}
+					controlled_by = owner
+					has_siege = no
+				}
+				set_province_flag = sadhu_target
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = possible_caste_event
+				any_owned_province = {
+					religion = hinduism
+					is_city = yes
+					NOT = {
+						has_province_modifier = religious_scandal_province
+					}
+				}
+			}
+			set_country_flag = caste_event
+		}
+		clr_country_flag = possible_sadhu_event
+		clr_country_flag = possible_caste_event
+	}
+	option = {
+		name = dg_hindu.033.a
+		if = {
+			limit = {
+				has_country_flag = sadhu_event
+				any_neighbor_country = {
+					NOT = {
+						religion_group = dharmic
+					}
+					has_country_flag = religious_turmoil_hinduism
+				}
+				any_owned_province = {
+					has_province_flag = sadhu_target
+					OR = {
+						has_province_flag = hinduism_four_drops
+						has_province_flag = hinduism_four_seats
+						has_province_flag = holy_city_of_varanasi
+						any_neighbor_province = {
+							owner = {
+								NOT = {
+									religion_group = dharmic
+								}
+							}
+						}
+					}
+				}
+			}
+			random = {
+				chance = 25
+				clr_country_flag = sadhu_event
+				random_owned_province = {
+					limit = {
+						has_province_flag = sadhu_target
+						OR = {
+							has_province_flag = hinduism_four_drops
+							has_province_flag = hinduism_four_seats
+							has_province_flag = holy_city_of_varanasi
+							any_neighbor_province = {
+								owner = {
+									NOT = {
+										religion_group = dharmic
+									}
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							owner = {
+								OR = {
+									ai = yes
+									has_country_flag = religious_news_trivial
+								}
+							}
+						}
+						province_event = {
+							id = dg_hindu.031
+							days = 0
+						}
+					}
+					if = {
+						limit = {
+							owner = {
+								ai = no
+								NOT = {
+									has_country_flag = religious_news_trivial
+								}
+							}
+						}
+						add_province_modifier = {
+							name = militant_sadhus
+							duration = 5000
+						}
+						owner = {
+							if = {
+								limit = {
+									max_manpower = 100
+								}
+								add_yearly_manpower = -1
+							}
+							else = {
+								add_yearly_manpower = -0.01
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = sadhu_event
+				any_owned_province = {
+					OR = {
+						has_province_modifier = sadhu_sant
+						has_province_modifier = matha
+					}
+					NOT = {
+						has_province_modifier = hindu_pilgrimage
+					}
+					NOT = {
+						has_province_modifier = religious_scandal_province
+					}
+					NOT = {
+						has_province_modifier = thuggee_activity
+					}
+					NOT = {
+						has_province_modifier = religious_riots
+					}
+					NOT = {
+						has_province_modifier = gosain_nomads
+					}
+					NOT = {
+						any_neighbor_province = {
+							has_province_flag = hindu_pilgrimage
+						}
+					}
+					NOT = {
+						any_neighbor_province = {
+							any_neighbor_province = {
+								has_province_flag = hindu_pilgrimage
+							}
+						}
+					}
+					religion = hinduism
+					has_siege = no
+					controlled_by = owner
+					is_city = yes
+				}
+			}
+			random = {
+				chance = 10
+				clr_country_flag = sadhu_event
+				random_owned_province = {
+					limit = {
+						OR = {
+							has_province_modifier = sadhu_sant
+							has_province_modifier = matha
+						}
+						NOT = {
+							has_province_modifier = hindu_pilgrimage
+						}
+						NOT = {
+							has_province_modifier = religious_scandal_province
+						}
+						NOT = {
+							has_province_modifier = thuggee_activity
+						}
+						NOT = {
+							has_province_modifier = religious_riots
+						}
+						NOT = {
+							has_province_modifier = gosain_nomads
+						}
+						NOT = {
+							any_neighbor_province = {
+								has_province_flag = hindu_pilgrimage
+							}
+						}
+						NOT = {
+							any_neighbor_province = {
+								any_neighbor_province = {
+									has_province_flag = hindu_pilgrimage
+								}
+							}
+						}
+						religion = hinduism
+						has_siege = no
+						controlled_by = owner
+						is_city = yes
+					}
+					if = {
+						limit = {
+							owner = {
+								OR = {
+									ai = yes
+									has_country_flag = religious_news_trivial
+								}
+							}
+						}
+						province_event = {
+							id = dg_hindu.005
+							days = 0
+						}
+					}
+					if = {
+						limit = {
+							owner = {
+								ai = no
+								NOT = {
+									has_country_flag = religious_news_trivial
+								}
+							}
+						}
+						add_province_modifier = {
+							name = hindu_pilgrimage
+							duration = 10000
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = sadhu_event
+				OR = {
+					has_country_modifier = shaivism
+					has_country_modifier = smartism
+				}
+			}
+			clr_country_flag = sadhu_event
+			random = {
+				chance = 10
+				random_owned_province = {
+					limit = {
+						has_province_flag = sadhu_target
+					}
+					if = {
+						limit = {
+							owner = {
+								OR = {
+									ai = yes
+									has_country_flag = religious_news_trivial
+								}
+							}
+						}
+						province_event = {
+							id = dg_hindu.003
+							days = 0
+						}
+					}
+					if = {
+						limit = {
+							owner = {
+								ai = no
+								NOT = {
+									has_country_flag = religious_news_trivial
+								}
+							}
+						}
+						add_province_modifier = {
+							name = matha
+							duration = 10000
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = sadhu_event
+					OR = {
+						has_country_modifier = shaivism
+						has_country_modifier = vaishnavism
+					}
+				}
+				clr_country_flag = sadhu_event
+				random = {
+					chance = 10
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.021
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							add_province_modifier = {
+								name = sadhu_sant
+								duration = 5000
+							}
+							random_list = {
+								40 = {
+									add_province_modifier = {
+										name = hindu_pilgrimage
+										duration = 2000
+									}
+									hidden_effect = {
+										if = {
+											limit = {
+												NOT = {
+													owner = {
+														has_country_flag = sampradaya_founded
+													}
+												}
+											}
+											random = {
+												chance = 50
+												set_province_flag = sampradaya
+												owner = {
+													set_country_flag = sampradaya
+												}
+											}
+										}
+									}
+								}
+								30 = {
+									add_province_modifier = {
+										name = religious_scandal_province
+										duration = 2000
+									}
+								}
+								20 = {
+									custom_tooltip = heretic_10
+									hidden_effect = {
+										change_variable = {
+											which = heretics
+											value = 2
+										}
+										change_variable = {
+											which = province_religion
+											value = -2
+										}
+									}
+								}
+								10 = {
+									add_province_modifier = {
+										name = religious_riots
+										duration = 500
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = sadhu_event
+					has_country_modifier = shaivism
+				}
+				clr_country_flag = sadhu_event
+				random = {
+					chance = 10
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+							any_neighbor_province = {
+								owner = {
+									NOT = {
+										religion_group = dharmic
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.031
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							add_province_modifier = {
+								name = militant_sadhus
+								duration = 5000
+							}
+							owner = {
+								if = {
+									limit = {
+										max_manpower = 100
+									}
+									add_yearly_manpower = -1
+								}
+								else = {
+									add_yearly_manpower = -0.01
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = sadhu_event
+			}
+			clr_country_flag = sadhu_event
+			random_list = {
+				20 = {
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.003
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							add_province_modifier = {
+								name = matha
+								duration = 10000
+							}
+						}
+					}
+				}
+				20 = {
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.021
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							add_province_modifier = {
+								name = sadhu_sant
+								duration = 5000
+							}
+							random_list = {
+								40 = {
+									add_province_modifier = {
+										name = hindu_pilgrimage
+										duration = 2000
+									}
+									hidden_effect = {
+										if = {
+											limit = {
+												NOT = {
+													owner = {
+														has_country_flag = sampradaya_founded
+													}
+												}
+											}
+											random = {
+												chance = 50
+												set_province_flag = sampradaya
+												owner = {
+													set_country_flag = sampradaya
+												}
+											}
+										}
+									}
+								}
+								30 = {
+									add_province_modifier = {
+										name = religious_scandal_province
+										duration = 2000
+									}
+								}
+								20 = {
+									custom_tooltip = heretic_10
+									hidden_effect = {
+										change_variable = {
+											which = heretics
+											value = 2
+										}
+										change_variable = {
+											which = province_religion
+											value = -2
+										}
+									}
+								}
+								10 = {
+									add_province_modifier = {
+										name = religious_riots
+										duration = 500
+									}
+								}
+							}
+						}
+					}
+				}
+				10 = {
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.032
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							add_province_modifier = {
+								name = gosain_nomads
+								duration = 500
+							}
+						}
+					}
+				}
+				15 = {
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.029
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							hidden_effect = {
+								set_variable = {
+									which = added_unrest
+									value = 1
+								}
+								hidden_effect = {
+									province_event = {
+										id = stacking_unrest.002
+									}
+								}
+							}
+							custom_tooltip = added_unrest_1
+							add_province_modifier = {
+								name = religious_scandal_province
+								duration = 2000
+							}
+						}
+					}
+				}
+				10 = {
+					if = {
+						limit = {
+							has_global_flag = aghoris_founded
+							NOT = {
+								has_country_flag = aghoris_banned
+							}
+						}
+						random_owned_province = {
+							limit = {
+								has_province_flag = sadhu_target
+							}
+							if = {
+								limit = {
+									owner = {
+										OR = {
+											ai = yes
+											has_country_flag = religious_news_trivial
+										}
+									}
+								}
+								province_event = {
+									id = dg_hindu.024
+									days = 0
+								}
+							}
+							if = {
+								limit = {
+									owner = {
+										ai = no
+										NOT = {
+											has_country_flag = religious_news_trivial
+										}
+									}
+								}
+								add_province_modifier = {
+									name = religious_scandal_province
+									duration = 500
+								}
+							}
+						}
+					}
+				}
+				15 = {
+					random_owned_province = {
+						limit = {
+							has_province_flag = sadhu_target
+							any_neighbor_province = {
+								owner = {
+									NOT = {
+										religion_group = dharmic
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									OR = {
+										ai = yes
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							province_event = {
+								id = dg_hindu.031
+								days = 0
+							}
+						}
+						if = {
+							limit = {
+								owner = {
+									ai = no
+									NOT = {
+										has_country_flag = religious_news_trivial
+									}
+								}
+							}
+							add_province_modifier = {
+								name = militant_sadhus
+								duration = 5000
+							}
+							owner = {
+								if = {
+									limit = {
+										max_manpower = 100
+									}
+									add_yearly_manpower = -1
+								}
+								else = {
+									add_yearly_manpower = -0.01
+								}
+							}
+						}
+					}
+				}
+				10 = {
+					if = {
+						limit = {
+							patriarch_authority = 0.50
+							any_owned_province = {
+								has_building = great_temple
+							}
+							NOT = {
+								advisor = artist
+							}
+						}
+						country_event = {
+							id = dg_hindu.036
+							days = 0
+						}
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			clr_province_flag = sadhu_target
+		}
+		if = {
+			limit = {
+				has_country_flag = caste_event
+			}
+			random_list = {
+				35 = {
+					if = {
+						limit = {}
+						random_list = {
+							34 = {
+								set_country_flag = number_1
+							}
+							33 = {
+								set_country_flag = number_2
+							}
+							33 = {
+								set_country_flag = number_3
+							}
+						}
+						random_list = {
+							34 = {
+								set_country_flag = adm_type
+							}
+							33 = {
+								set_country_flag = dip_type
+							}
+							33 = {
+								set_country_flag = mil_type
+							}
+						}
+						random_owned_province = {
+							limit = {
+								religion = hinduism
+								NOT = {
+									has_province_modifier = religious_scandal_province
+								}
+								is_city = yes
+							}
+							province_event = {
+								id = dg_hindu.062
+								days = 0
+							}
+						}
+					}
+				}
+				35 = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = caste_system_loose
+							}
+							NOT = {
+								has_country_modifier = caste_system_relaxed
+							}
+						}
+						random_list = {
+							34 = {
+								set_country_flag = adm_type
+							}
+							33 = {
+								set_country_flag = dip_type
+							}
+							33 = {
+								set_country_flag = mil_type
+							}
+						}
+						country_event = {
+							id = dg_hindu.063
+							days = 0
+						}
+					}
+				}
+				10 = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = hindu_mixed_marriage_allowed
+							}
+						}
+						random_owned_province = {
+							limit = {
+								religion = hinduism
+								NOT = {
+									has_province_modifier = religious_scandal_province
+								}
+								is_city = yes
+							}
+							province_event = {
+								id = dg_hindu.061
+								days = 0
+							}
+						}
+					}
+				}
+				10 = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_modifier = caste_system_relaxed
+							}
+							NOT = {
+								has_country_modifier = caste_system_harsh
+							}
+						}
+						random_list = {
+							40 = {
+								set_country_flag = number_1
+							}
+							40 = {
+								set_country_flag = number_2
+							}
+							10 = {
+								set_country_flag = number_3
+							}
+						}
+						country_event = {
+							id = dg_hindu.064
+							days = 0
+						}
+					}
+				}
+				10 = {
+					if = {
+						limit = {
+							has_country_modifier = bhakti_movement
+							NOT = {
+								has_country_modifier = caste_system_relaxed
+							}
+						}
+						set_country_flag = number_3
+						country_event = {
+							id = dg_hindu.064
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = dg_hindu.036
+	title = dg_hindu.036.t
+	desc = dg_hindu.036.d
+	picture = hindu_devadasi_saffron
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.036.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				DIP = 6
+			}
+			random = {
+				chance = 80
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				DIP = 5
+			}
+			random = {
+				chance = 70
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				DIP = 4
+			}
+			random = {
+				chance = 60
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				DIP = 3
+			}
+			random = {
+				chance = 50
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				DIP = 2
+			}
+			random = {
+				chance = 40
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				DIP = 1
+			}
+			random = {
+				chance = 30
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+		else = {
+			random = {
+				chance = 20
+				if = {
+					limit = {
+						piety = 0.60
+					}
+					add_prestige = 5
+				}
+				else_if = {
+					limit = {
+						piety = 0.20
+					}
+					add_prestige = 4
+				}
+				else_if = {
+					limit = {
+						piety = -0.20
+					}
+					add_prestige = 3
+				}
+				else_if = {
+					limit = {
+						piety = -0.60
+					}
+					add_prestige = 2
+				}
+				else = {
+					add_prestige = 1
+				}
+				define_advisor = {
+					religion = hinduism
+					type = artist
+					female = yes
+					discount = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.036.b
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				piety = 0.60
+			}
+			add_legitimacy = 2.5
+			add_devotion = 5
+			add_republican_tradition = 1.25
+		}
+		else_if = {
+			limit = {
+				piety = 0.20
+			}
+			add_legitimacy = 2
+			add_devotion = 4
+			add_republican_tradition = 1
+		}
+		else_if = {
+			limit = {
+				piety = -0.20
+			}
+			add_legitimacy = 1.5
+			add_devotion = 3
+			add_republican_tradition = 0.75
+		}
+		else_if = {
+			limit = {
+				piety = -0.60
+			}
+			add_legitimacy = 1
+			add_devotion = 2
+			add_republican_tradition = 0.5
+		}
+		else = {
+			add_legitimacy = 0.5
+			add_devotion = 1
+			add_republican_tradition = 0.25
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.041
+	title = dg_hindu.041.t
+	desc = dg_hindu.041.d
+	picture = hindu_sacred_river
+	is_triggered_only = yes
+	immediate = {
+		add_province_modifier = {
+			name = hindu_pilgrimage
+			duration = -1
+		}
+	}
+	option = {
+		name = dg_hindu.041.a
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						check_variable = {
+							which = hinduism_four_drops
+							value = 4
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				owner = {
+					change_variable = {
+						which = hinduism_four_drops
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = hinduism
+					}
+				}
+				custom_tooltip = hinduism_10
+				hidden_effect = {
+					change_variable = {
+						which = hinduism
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+				}
+			}
+			owner = {
+				if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_drops
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 16
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 12
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 8
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 4
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_drops
+							value = 3
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 12
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 9
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 6
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 3
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_drops
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 8
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 6
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 4
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 2
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_drops
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 4
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 3
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 2
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 1
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.042
+	title = dg_hindu.042.t
+	desc = dg_hindu.042.d
+	picture = hindu_pilgrims
+	is_triggered_only = yes
+	immediate = {
+		add_province_modifier = {
+			name = hindu_pilgrimage
+			duration = -1
+		}
+	}
+	option = {
+		name = dg_hindu.041.a
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						check_variable = {
+							which = hinduism_four_seats
+							value = 4
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				owner = {
+					change_variable = {
+						which = hinduism_four_seats
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = hinduism
+					}
+				}
+				custom_tooltip = hinduism_10
+				hidden_effect = {
+					change_variable = {
+						which = hinduism
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+				}
+			}
+			owner = {
+				if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_seats
+							value = 4
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 16
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 12
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 8
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 4
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_seats
+							value = 3
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 12
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 9
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 6
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 3
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_seats
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 8
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 6
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 4
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 2
+					}
+				}
+				else_if = {
+					limit = {
+						num_of_owned_provinces_with = {
+							has_province_flag = hinduism_four_seats
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							piety = 0.60
+						}
+						add_prestige = 4
+					}
+					else_if = {
+						limit = {
+							piety = 0.20
+						}
+						add_prestige = 3
+					}
+					else_if = {
+						limit = {
+							piety = -0.20
+						}
+						add_prestige = 2
+					}
+					else_if = {
+						limit = {
+							piety = -0.60
+						}
+						add_prestige = 1
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.043
+	title = dg_hindu.043.t
+	desc = dg_hindu.043.d
+	picture = hindu_sacred_river
+	is_triggered_only = yes
+	immediate = {
+		add_province_modifier = {
+			name = hindu_pilgrimage
+			duration = -1
+		}
+	}
+	option = {
+		name = dg_hindu.041.a
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = holy_city_of_varanasi
+					}
+				}
+			}
+			set_country_flag = holy_city_of_varanasi
+			if = {
+				limit = {
+					NOT = {
+						religion = hinduism
+					}
+				}
+				custom_tooltip = hinduism_10
+				hidden_effect = {
+					change_variable = {
+						which = hinduism
+						value = 2
+					}
+					change_variable = {
+						which = province_religion
+						value = -2
+					}
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						piety = 0.60
+					}
+				}
+				owner = {
+					add_prestige = 8
+				}
+			}
+			else_if = {
+				limit = {
+					owner = {
+						piety = 0.20
+					}
+				}
+				owner = {
+					add_prestige = 6
+				}
+			}
+			else_if = {
+				limit = {
+					owner = {
+						piety = -0.20
+					}
+				}
+				owner = {
+					add_prestige = 4
+				}
+			}
+			else_if = {
+				limit = {
+					owner = {
+						piety = -0.60
+					}
+				}
+				owner = {
+					add_prestige = 2
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.044
+	title = dg_hindu.044.t
+	desc = dg_hindu.044.d
+	picture = hindu_sacred_river
+	trigger = {
+		has_province_flag = hinduism_four_drops
+		owner = {
+			religion = hinduism
+		}
+		NOT = {
+			has_province_modifier = kumbh_mela_timer
+		}
+		has_province_modifier = hindu_pilgrimage
+		NOT = {
+			any_neighbor_province = {
+				has_province_modifier = pilgrimage_route
+			}
+		}
+		owner = {
+			NOT = {
+				has_country_modifier = kumbh_mela_timer
+			}
+			piety = -0.60
+			OR = {
+				ai = yes
+				has_country_flag = religious_news_major
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	immediate = {
+		hidden_effect = {
+			add_province_modifier = {
+				name = kumbh_mela_timer
+				duration = 4000
+				hidden = yes
+			}
+			owner = {
+				add_country_modifier = {
+					name = kumbh_mela_timer
+					duration = 1000
+					hidden = yes
+				}
+			}
+			random_list = {
+				10 = {
+					province_event = {
+						id = dg_hindu.046
+						days = 30
+					}
+				}
+				10 = {
+					province_event = {
+						id = dg_hindu.047
+						days = 30
+					}
+				}
+				10 = {
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = hinduism
+									value = 20
+								}
+							}
+						}
+						province_event = {
+							id = dg_hindu.048
+							days = 30
+						}
+					}
+				}
+				20 = {
+					if = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = militant_sadhus
+							}
+						}
+						if = {
+							limit = {
+								has_province_flag = divided_kumbh_mela
+							}
+							random = {
+								chance = 50
+								province_event = {
+									id = dg_hindu.049
+									days = 30
+								}
+							}
+						}
+						else = {
+							province_event = {
+								id = dg_hindu.049
+								days = 30
+							}
+						}
+					}
+				}
+				40 = {}
+			}
+			every_neighbor_province = {
+				limit = {
+					religion = hinduism
+					NOT = {
+						has_province_modifier = hindu_pilgrimage
+					}
+				}
+				add_province_modifier = {
+					name = pilgrimage_route
+					duration = 100
+				}
+				every_neighbor_province = {
+					limit = {
+						religion = hinduism
+						NOT = {
+							has_province_modifier = hindu_pilgrimage
+						}
+					}
+					add_province_modifier = {
+						name = pilgrimage_route
+						duration = 100
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.044.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				owner = {
+					num_of_loans = 1
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					num_of_loans = 2
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 90
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					is_bankrupt = yes
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					years_of_income = 0.5
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					years_of_income = 1
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					government = republic
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+				}
+				factor = 2
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					monthly_income = 500
+				}
+				add_treasury = -500
+			}
+			else_if = {
+				limit = {
+					monthly_income = 5
+				}
+				add_years_of_income = -0.08
+			}
+			else = {
+				add_treasury = -5
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = 4
+				add_legitimacy = 4
+				add_devotion = 8
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = 3
+				add_legitimacy = 3
+				add_devotion = 6
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = 2
+				add_legitimacy = 2
+				add_devotion = 4
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = 1
+				add_legitimacy = 1
+				add_devotion = 2
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.044.b
+		ai_chance = {
+			factor = 40
+		}
+	}
+	option = {
+		name = dg_hindu.044.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				owner = {
+					num_of_loans = 1
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					num_of_loans = 2
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 90
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					is_bankrupt = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					years_of_income = 0.5
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					years_of_income = 1
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					government = republic
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+				}
+				factor = 0.5
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					monthly_income = 500
+				}
+				add_treasury = 500
+			}
+			else_if = {
+				limit = {
+					monthly_income = 5
+				}
+				add_years_of_income = 0.08
+			}
+			else = {
+				add_treasury = 5
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = -4
+				add_legitimacy = -4
+				add_devotion = -8
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = -3
+				add_legitimacy = -3
+				add_devotion = -6
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = -2
+				add_legitimacy = -2
+				add_devotion = -4
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = -1
+				add_legitimacy = -1
+				add_devotion = -2
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.046
+	title = dg_hindu.046.t
+	desc = dg_hindu.046.d
+	picture = all_massacre
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.045.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 1.4
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = -4
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = -3
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = -2
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = -1
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.045.b
+		ai_chance = {
+			factor = 30
+		}
+		owner = {
+			add_dip_power = -5
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.047
+	title = dg_hindu.047.t
+	desc = dg_hindu.047.d
+	picture = hindu_people_talking
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.047.a
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = 4
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = 3
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = 2
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = 1
+			}
+		}
+		random_list = {
+			25 = {
+				add_province_modifier = {
+					name = religious_scandal_province
+					duration = 400
+				}
+			}
+			25 = {
+				owner = {
+					add_country_modifier = {
+						name = religious_controversy
+						duration = 400
+					}
+				}
+			}
+			25 = {
+				owner = {
+					define_advisor = {
+						religion = hinduism
+						type = theologian
+						discount = yes
+					}
+				}
+			}
+			25 = {
+				owner = {
+					add_country_modifier = {
+						name = missionary_zeal
+						duration = 400
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.048
+	title = dg_hindu.048.t
+	desc = dg_hindu.048.d
+	picture = all_massacre
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.048.a
+		add_province_modifier = {
+			name = religious_riots
+			duration = 400
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_modifier = religious_tolerance
+				}
+			}
+			owner = {
+				remove_country_modifier = religious_tolerance
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 400
+				}
+				add_piety = 0.40
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_modifier = religious_intolerance
+					}
+				}
+			}
+			owner = {
+				add_country_modifier = {
+					name = religious_intolerance
+					duration = 400
+				}
+				add_piety = 0.20
+			}
+		}
+		random = {
+			chance = 25
+			custom_tooltip = hinduism_10
+			hidden_effect = {
+				change_variable = {
+					which = converted_heathens
+					value = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.048.b
+		owner = {
+			add_mil_power = -10
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_modifier = religious_intolerance
+				}
+			}
+			owner = {
+				remove_country_modifier = religious_intolerance
+				add_piety = -0.20
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_modifier = religious_intolerance
+					}
+				}
+			}
+			owner = {
+				add_country_modifier = {
+					name = religious_tolerance
+					duration = 400
+				}
+				add_piety = -0.20
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.049
+	title = dg_hindu.049.t
+	desc = dg_hindu.049.d
+	picture = hindu_militant_sadhus
+	is_triggered_only = yes
+	option = {
+		name = dg_hindu.049.a
+		ai_chance = {
+			factor = 25
+		}
+		owner = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = militant_sadhus
+				}
+				remove_province_modifier = militant_sadhus
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+			}
+			random_owned_province = {
+				limit = {
+					has_province_modifier = militant_sadhus
+				}
+				remove_province_modifier = militant_sadhus
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 1
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_1
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.049.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 0.7
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						piety = -0.20
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				NOT = {
+					owner = {
+						piety = -0.60
+					}
+				}
+				factor = 1.4
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					piety = 0.60
+				}
+			}
+			owner = {
+				add_prestige = -4
+				add_legitimacy = -2
+				add_devotion = -2
+				add_republican_tradition = -1
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = 0.20
+				}
+			}
+			owner = {
+				add_prestige = -3
+				add_legitimacy = -1.5
+				add_devotion = -2
+				add_republican_tradition = -0.75
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.20
+				}
+			}
+			owner = {
+				add_prestige = -2
+				add_legitimacy = -1
+				add_devotion = -1
+				add_republican_tradition = -0.5
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					piety = -0.60
+				}
+			}
+			owner = {
+				add_prestige = -1
+				add_legitimacy = -0.5
+				add_devotion = -1
+				add_republican_tradition = -0.25
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.049.c
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			owner = {
+				ADM = 5
+			}
+			NOT = {
+				has_province_flag = divided_kumbh_mela
+			}
+			NOT = {
+				owner = {
+					has_country_flag = divided_kumbh_mela
+				}
+			}
+		}
+		owner = {
+			add_adm_power = -25
+			add_prestige = 5
+			set_country_flag = divided_kumbh_mela
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.061
+	title = dg_hindu.061.t
+	desc = dg_hindu.061.d
+	picture = hindu_mixed_marriage_saffron
+	is_triggered_only = yes
+	immediate = {
+		custom_tooltip = dg_hindu.061.d_marriage
+	}
+	option = {
+		name = dg_hindu.061.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 60
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = republic
+					NOT = {
+						republican_tradition = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 60
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_loose
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				factor = 0.5
+			}
+		}
+		trigger = {
+			NOT = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+			}
+		}
+		owner = {
+			add_adm_power = -5
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_harsh
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = stricter_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = 1
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 3
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 6
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 9
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 12
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 15
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = stricter_caste
+						}
+						clr_country_flag = stricter_caste
+						custom_tooltip = stability_points_gained_50
+						hidden_effect = {
+							change_variable = {
+								which = stability_points
+								value = 50
+							}
+							country_event = {
+								id = POP_Stability.002
+							}
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_harsh
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_relaxed
+							}
+							remove_country_modifier = caste_system_relaxed
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_legitimacy = 2.5
+				add_devotion = 5
+				add_republican_tradition = 1.25
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_legitimacy = 2
+				add_devotion = 4
+				add_republican_tradition = 1
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_legitimacy = 1.5
+				add_devotion = 3
+				add_republican_tradition = 0.75
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_legitimacy = 1
+				add_devotion = 2
+				add_republican_tradition = 0.5
+			}
+			else = {
+				add_legitimacy = 0.5
+				add_devotion = 1
+				add_republican_tradition = 0.25
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.061.b
+		ai_chance = {
+			factor = 40
+		}
+		add_province_modifier = {
+			name = religious_scandal_province
+			duration = 2000
+		}
+		owner = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_relaxed
+					}
+					NOT = {
+						has_country_modifier = caste_system_loose
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = looser_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = -1
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -2
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -5
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -8
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -11
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -14
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = looser_caste
+						}
+						clr_country_flag = looser_caste
+						add_stability = -1
+						hidden_effect = {
+							country_event = {
+								id = POP_Stability.003
+							}
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_relaxed
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_harsh
+							}
+							remove_country_modifier = caste_system_harsh
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.061.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = republic
+					NOT = {
+						republican_tradition = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_strict
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				factor = 1.4
+			}
+		}
+		trigger = {
+			NOT = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+			}
+			NOT = {
+				owner = {
+					has_country_modifier = caste_system_strict
+				}
+			}
+		}
+		add_province_modifier = {
+			name = religious_scandal_province
+			duration = 2000
+		}
+		owner = {
+			add_years_of_income = -0.001
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_prestige = 5
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_prestige = 4
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_prestige = 3
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_prestige = 2
+			}
+			else = {
+				add_prestige = 1
+			}
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_legitimacy = -5
+				add_devotion = -10
+				add_republican_tradition = -2.5
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_legitimacy = -4
+				add_devotion = -8
+				add_republican_tradition = -2
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_legitimacy = -3
+				add_devotion = -6
+				add_republican_tradition = -1.5
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_legitimacy = -2
+				add_devotion = -4
+				add_republican_tradition = -1
+			}
+			else = {
+				add_legitimacy = -1
+				add_devotion = -2
+				add_republican_tradition = -0.5
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_relaxed
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = oppose_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = -2
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -2
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -5
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -8
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -11
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -14
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = looser_caste
+						}
+						clr_country_flag = looser_caste
+						add_stability = -2
+						hidden_effect = {
+							country_event = {
+								id = POP_Stability.003
+							}
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -10
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_relaxed
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_harsh
+							}
+							remove_country_modifier = caste_system_harsh
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.062
+	title = dg_hindu.061.t
+	desc = dg_hindu.061.d
+	picture = hindu_raja_petition_saffron
+	is_triggered_only = yes
+	immediate = {
+		custom_tooltip = dg_hindu.062.d_jati
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = adm_type
+				}
+				if = {
+					limit = {
+						has_country_flag = number_1
+					}
+					custom_tooltip = dg_hindu.062.d_adm
+				}
+				if = {
+					limit = {
+						has_country_flag = number_2
+					}
+					custom_tooltip = dg_hindu.062.d_adm_2
+				}
+				if = {
+					limit = {
+						has_country_flag = number_3
+					}
+					custom_tooltip = dg_hindu.062.d_adm_3
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = mil_type
+				}
+				if = {
+					limit = {
+						has_country_flag = number_1
+					}
+					custom_tooltip = dg_hindu.062.d_mil
+				}
+				if = {
+					limit = {
+						has_country_flag = number_2
+					}
+					custom_tooltip = dg_hindu.062.d_mil_2
+				}
+				if = {
+					limit = {
+						has_country_flag = number_3
+					}
+					custom_tooltip = dg_hindu.062.d_mil_3
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = dip_type
+				}
+				if = {
+					limit = {
+						has_country_flag = number_1
+					}
+					custom_tooltip = dg_hindu.062.d_dip
+				}
+				if = {
+					limit = {
+						has_country_flag = number_2
+					}
+					custom_tooltip = dg_hindu.062.d_dip_2
+				}
+				if = {
+					limit = {
+						has_country_flag = number_3
+					}
+					custom_tooltip = dg_hindu.062.d_dip_3
+				}
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.062.a
+		ai_chance = {
+			factor = 50
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = mil_type
+				}
+				add_mil_power = 10
+				add_country_modifier = {
+					name = decreased_morale
+					duration = 1000
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = adm_type
+				}
+				add_adm_power = 10
+				add_country_modifier = {
+					name = religious_controversy
+					duration = 1000
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = dip_type
+				}
+				add_dip_power = 10
+				add_country_modifier = {
+					name = unhappy_merchants
+					duration = 1000
+				}
+			}
+			clr_country_flag = adm_type
+			clr_country_flag = dip_type
+			clr_country_flag = mil_type
+			clr_country_flag = number_1
+			clr_country_flag = number_2
+			clr_country_flag = number_3
+		}
+	}
+	option = {
+		name = dg_hindu.062.b
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			set_variable = {
+				which = added_unrest
+				value = 2
+			}
+			hidden_effect = {
+				province_event = {
+					id = stacking_unrest.002
+				}
+			}
+		}
+		custom_tooltip = added_unrest_2
+		if = {
+			limit = {
+				NOT = {
+					is_core = owner
+				}
+			}
+			add_nationalism = 2
+		}
+		owner = {
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_legitimacy = 2.5
+				add_devotion = 5
+				add_republican_tradition = 1.25
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_legitimacy = 2
+				add_devotion = 4
+				add_republican_tradition = 1
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_legitimacy = 1.5
+				add_devotion = 3
+				add_republican_tradition = 0.75
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_legitimacy = 1
+				add_devotion = 2
+				add_republican_tradition = 0.5
+			}
+			else = {
+				add_legitimacy = 0.5
+				add_devotion = 1
+				add_republican_tradition = 0.25
+			}
+			clr_country_flag = adm_type
+			clr_country_flag = dip_type
+			clr_country_flag = mil_type
+			clr_country_flag = number_1
+			clr_country_flag = number_2
+			clr_country_flag = number_3
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.063
+	title = dg_hindu.063.t
+	desc = dg_hindu.063.d
+	picture = hindu_raja_brahmins_complain_saffron
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = adm_type
+				}
+				custom_tooltip = dg_hindu.063.d_adm
+			}
+			if = {
+				limit = {
+					has_country_flag = dip_type
+				}
+				custom_tooltip = dg_hindu.063.d_dip
+			}
+			if = {
+				limit = {
+					has_country_flag = mil_type
+				}
+				custom_tooltip = dg_hindu.063.d_mil
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.063.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 60
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = republic
+					NOT = {
+						republican_tradition = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 60
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_loose
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				factor = 0.5
+			}
+		}
+		add_local_autonomy = 25
+		if = {
+			limit = {
+				owner = {
+					num_of_cities = 90
+				}
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					region = ROOT
+					NOT = {
+						province_id = ROOT
+					}
+				}
+				add_local_autonomy = 25
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					num_of_cities = 30
+					NOT = {
+						num_of_cities = 90
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					area = ROOT
+					NOT = {
+						province_id = ROOT
+					}
+				}
+				add_local_autonomy = 25
+			}
+		}
+		owner = {
+			add_years_of_income = -0.01
+			clr_country_flag = adm_type
+			clr_country_flag = dip_type
+			clr_country_flag = mil_type
+		}
+	}
+	option = {
+		name = dg_hindu.063.b
+		ai_chance = {
+			factor = 40
+		}
+		owner = {
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_legitimacy = -2.5
+				add_devotion = -5
+				add_republican_tradition = -1.25
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_legitimacy = -2
+				add_devotion = -4
+				add_republican_tradition = -1
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_legitimacy = -1.5
+				add_devotion = -3
+				add_republican_tradition = -0.75
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_legitimacy = -1
+				add_devotion = -2
+				add_republican_tradition = -0.5
+			}
+			else = {
+				add_legitimacy = -0.5
+				add_devotion = -1
+				add_republican_tradition = -0.25
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_relaxed
+					}
+					NOT = {
+						has_country_modifier = caste_system_loose
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = looser_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = -1
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -2
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -5
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -8
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -11
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -14
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = looser_caste
+						}
+						clr_country_flag = looser_caste
+						add_stability = -1
+						hidden_effect = {
+							country_event = {
+								id = POP_Stability.003
+							}
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_relaxed
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_harsh
+							}
+							remove_country_modifier = caste_system_harsh
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+			clr_country_flag = adm_type
+			clr_country_flag = dip_type
+			clr_country_flag = mil_type
+		}
+	}
+	option = {
+		name = dg_hindu.063.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = republic
+					NOT = {
+						republican_tradition = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_strict
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				factor = 1.4
+			}
+		}
+		trigger = {
+			OR = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				owner = {
+					has_country_modifier = bhakti_movement
+				}
+			}
+		}
+		owner = {
+			add_adm_power = -10
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_relaxed
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = oppose_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = -2
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -2
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -5
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -8
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -11
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -14
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = looser_caste
+						}
+						clr_country_flag = looser_caste
+						add_stability = -2
+						hidden_effect = {
+							country_event = {
+								id = POP_Stability.003
+							}
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -10
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_relaxed
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_harsh
+							}
+							remove_country_modifier = caste_system_harsh
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+			clr_country_flag = adm_type
+			clr_country_flag = dip_type
+			clr_country_flag = mil_type
+		}
+	}
+}
+province_event = {
+	id = dg_hindu.064
+	title = dg_hindu.064.t
+	desc = dg_hindu.064.d
+	picture = hindu_mob
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = number_1
+				}
+				custom_tooltip = dg_hindu.064.d_1
+			}
+			if = {
+				limit = {
+					has_country_flag = number_2
+				}
+				custom_tooltip = dg_hindu.064.d_2
+			}
+			if = {
+				limit = {
+					has_country_flag = number_3
+				}
+				custom_tooltip = dg_hindu.064.d_3
+			}
+		}
+	}
+	option = {
+		name = dg_hindu.064.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 60
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = republic
+					NOT = {
+						republican_tradition = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 80
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 60
+					}
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+				factor = 1.4
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_loose
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				factor = 0.5
+			}
+		}
+		owner = {
+			add_mil_power = -5
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_legitimacy = 2.5
+				add_devotion = 5
+				add_republican_tradition = 1.25
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_legitimacy = 2
+				add_devotion = 4
+				add_republican_tradition = 1
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_legitimacy = 1.5
+				add_devotion = 3
+				add_republican_tradition = 0.75
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_legitimacy = 1
+				add_devotion = 2
+				add_republican_tradition = 0.5
+			}
+			else = {
+				add_legitimacy = 0.5
+				add_devotion = 1
+				add_republican_tradition = 0.25
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_harsh
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = stricter_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = 1
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 3
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 6
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 9
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 12
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = caste_strictness
+								value = 15
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = stricter_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = stricter_caste
+						}
+						clr_country_flag = stricter_caste
+						custom_tooltip = stability_points_gained_50
+						hidden_effect = {
+							change_variable = {
+								which = stability_points
+								value = 50
+							}
+							country_event = {
+								id = POP_Stability.002
+							}
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_harsh
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_relaxed
+							}
+							remove_country_modifier = caste_system_relaxed
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+			clr_country_flag = number_1
+			clr_country_flag = number_2
+			clr_country_flag = number_3
+		}
+	}
+	option = {
+		name = dg_hindu.064.b
+		ai_chance = {
+			factor = 40
+		}
+		add_province_modifier = {
+			name = religious_scandal_province
+			duration = 2000
+		}
+		owner = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_relaxed
+					}
+					NOT = {
+						has_country_modifier = caste_system_loose
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = looser_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = -1
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -2
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -5
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -8
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -11
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -14
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = looser_caste
+						}
+						clr_country_flag = looser_caste
+						add_stability = -1
+						hidden_effect = {
+							country_event = {
+								id = POP_Stability.003
+							}
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_relaxed
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_harsh
+							}
+							remove_country_modifier = caste_system_harsh
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+			clr_country_flag = number_1
+			clr_country_flag = number_2
+			clr_country_flag = number_3
+		}
+	}
+	option = {
+		name = dg_hindu.064.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = monarchy
+					NOT = {
+						legitimacy = 60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = republic
+					NOT = {
+						republican_tradition = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 80
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					government = theocracy
+					NOT = {
+						devotion = 60
+					}
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					piety = 0.60
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					piety = 0.20
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.20
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					NOT = {
+						piety = -0.60
+					}
+				}
+				factor = 2
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_harsh
+				}
+				factor = 0.5
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_strict
+				}
+				factor = 0.7
+			}
+			modifier = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				factor = 1.4
+			}
+		}
+		trigger = {
+			OR = {
+				owner = {
+					has_country_modifier = caste_system_relaxed
+				}
+				owner = {
+					has_country_modifier = bhakti_movement
+				}
+				owner = {
+					has_country_modifier = caste_system_loose
+				}
+			}
+		}
+		owner = {
+			add_adm_power = -10
+			if = {
+				limit = {
+					piety = 0.20
+				}
+				add_country_modifier = {
+					name = religious_scandal_country_strong
+					duration = 400
+				}
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_country_modifier = {
+					name = religious_scandal_country
+					duration = 400
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = religious_scandal_country_weak
+					duration = 400
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_modifier = caste_system_relaxed
+					}
+					NOT = {
+						has_country_modifier = caste_system_changing
+					}
+				}
+				custom_tooltip = oppose_caste_system
+				hidden_effect = {
+					change_variable = {
+						which = caste_strictness
+						value = -2
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -2
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -5
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -8
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -11
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = caste_strictness
+									value = -14
+								}
+							}
+						}
+						random = {
+							chance = 10
+							set_variable = {
+								which = caste_strictness
+								value = 0
+							}
+							set_country_flag = looser_caste
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = looser_caste
+						}
+						clr_country_flag = looser_caste
+						add_stability = -2
+						hidden_effect = {
+							country_event = {
+								id = POP_Stability.003
+							}
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -10
+						}
+						add_country_modifier = {
+							name = caste_system_changing
+							duration = 5000
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_loose
+							}
+							remove_country_modifier = caste_system_loose
+							add_country_modifier = {
+								name = caste_system_relaxed
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_modifier = caste_system_relaxed
+								}
+								NOT = {
+									has_country_modifier = caste_system_loose
+								}
+								NOT = {
+									has_country_modifier = caste_system_harsh
+								}
+							}
+							remove_country_modifier = caste_system_strict
+							add_country_modifier = {
+								name = caste_system_loose
+								duration = -1
+							}
+						}
+						if = {
+							limit = {
+								has_country_modifier = caste_system_harsh
+							}
+							remove_country_modifier = caste_system_harsh
+							add_country_modifier = {
+								name = caste_system_strict
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+			clr_country_flag = number_1
+			clr_country_flag = number_2
+			clr_country_flag = number_3
+		}
+	}
+}

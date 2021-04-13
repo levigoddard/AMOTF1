@@ -1,0 +1,315 @@
+country_decisions = {
+	treaty_of_vilnius = {
+		potential = {
+			owns = 1264
+			OR = {
+				tag = LIV
+				tag = LVO
+			}
+			OR = {
+				is_subject_of = LIT
+				is_subject_of = POL
+				is_subject_of = PLC
+			}
+			has_global_flag = livonian_war_decided
+			NOT = {
+				has_global_flag = treaty_of_vilnius
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			set_global_flag = treaty_of_vilnius
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5242.88
+						}
+						remove_province_modifier = misc_expenses_5242.88
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2621.44
+						}
+						remove_province_modifier = misc_expenses_2621.44
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1310.72
+						}
+						remove_province_modifier = misc_expenses_1310.72
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_655.36
+						}
+						remove_province_modifier = misc_expenses_655.36
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_327.68
+						}
+						remove_province_modifier = misc_expenses_327.68
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_163.84
+						}
+						remove_province_modifier = misc_expenses_163.84
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_81.92
+						}
+						remove_province_modifier = misc_expenses_81.92
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_40.96
+						}
+						remove_province_modifier = misc_expenses_40.96
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_20.48
+						}
+						remove_province_modifier = misc_expenses_20.48
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_10.24
+						}
+						remove_province_modifier = misc_expenses_10.24
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_5.12
+						}
+						remove_province_modifier = misc_expenses_5.12
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_2.56
+						}
+						remove_province_modifier = misc_expenses_2.56
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_1.28
+						}
+						remove_province_modifier = misc_expenses_1.28
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.64
+						}
+						remove_province_modifier = misc_expenses_0.64
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.32
+						}
+						remove_province_modifier = misc_expenses_0.32
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.16
+						}
+						remove_province_modifier = misc_expenses_0.16
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.08
+						}
+						remove_province_modifier = misc_expenses_0.08
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.04
+						}
+						remove_province_modifier = misc_expenses_0.04
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.02
+						}
+						remove_province_modifier = misc_expenses_0.02
+					}
+					if = {
+						limit = {
+							has_province_modifier = misc_expenses_0.01
+						}
+						remove_province_modifier = misc_expenses_0.01
+					}
+					set_variable = {
+						which = misc_expenses_cache
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+					ROOT = {
+						is_part_of_hre = no
+					}
+				}
+				set_in_empire = no
+				swap_non_generic_missions = yes
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = hre_province_left
+					}
+				}
+				add_imperial_influence = -1
+			}
+			set_capital = 1264
+			hidden_effect = {
+				country_event = {
+					id = miscexpenses.002
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						is_subject = yes
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+						NOT = {
+							is_subject_of_type = close_tributary_state
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						NOT = {
+							province_id = 39
+						}
+						NOT = {
+							province_id = 1264
+						}
+						owned_by = ROOT
+					}
+					remove_core = ROOT
+					set_province_flag = to_cede_treaty_of_vilnius
+				}
+				overlord = {
+					every_province = {
+						limit = {
+							has_province_flag = to_cede_treaty_of_vilnius
+						}
+						clr_province_flag = to_cede_treaty_of_vilnius
+						cede_province = PREV
+						add_claim = PREV
+						add_local_autonomy = 10
+						if = {
+							limit = {
+								is_core = ROOT
+							}
+							add_local_autonomy = -10
+						}
+						else = {
+							add_territorial_core = ROOT
+						}
+					}
+				}
+			}
+			change_tag = KUR
+			if = {
+				limit = {
+					government = monarchy
+					OR = {
+						has_country_modifier = title_1
+						has_country_modifier = title_2
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			if = {
+				limit = {
+					government = theocracy
+				}
+				if = {
+					limit = {
+						adm_tech = 35
+					}
+					change_government = monarchy
+					add_government_reform = parliamentary_monarchy
+					add_government_reform = bureaucracy
+					add_government_reform = appointed_elite
+					set_legacy_government = administrative_monarchy
+				}
+				else = {
+					change_government = monarchy
+					add_government_reform = divine_right
+					add_government_reform = delegated_rulers
+					add_government_reform = hereditary_elite
+					hidden_effect = {
+						set_legacy_government = despotic_monarchy
+					}
+					set_legacy_government = feudal_monarchy
+				}
+				if = {
+					limit = {
+						religion = catholic
+						exists = PAP
+					}
+					PAP = {
+						add_opinion = {
+							who = ROOT
+							modifier = opinion_displeased
+						}
+					}
+				}
+			}
+			baltic_region = {
+				hidden_effect = {
+					remove_core = LIV
+				}
+				add_core = LIV
+			}
+			LIV = {
+				change_primary_culture = latvian
+			}
+			custom_tooltip = stability_points_gained_100
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 100
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+			add_legitimacy = 100
+			hidden_effect = {
+				country_event = {
+					id = ideagroups.9000
+					days = 1
+				}
+			}
+			custom_tooltip = swap_national_ideas
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,298 @@
+spriteTypes = {
+
+	# Unique
+	spriteType = {
+		name = "GFX_mint_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_mint.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_royal_palace_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_royal_palace.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_treasury_office_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_treasury_office.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_parliament_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_parliament.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_admiralty_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_admiralty.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_superintendence_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_superintendance.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_war_college_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_war_college.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_stock_exchange_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_stock_exchange.dds"
+		loadType = "INGAME"
+	}
+	
+	
+	# Government
+	spriteType = {
+		name = "GFX_bailiff_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_treasury_office.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_town_hall_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_town_hall.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_courthouse_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_courthouse.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_constable_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_constable.dds"
+		loadType = "INGAME"
+	}
+	
+	# Transportation
+	spriteType = {
+		name = "GFX_road_network_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_road_network.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_paved_road_network_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_paved_road.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_road_and_rail_network_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_railway.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_post_system_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_post_office.dds"
+		loadType = "INGAME"
+	}
+	
+	# Education
+	spriteType = {
+		name = "GFX_medieval_university_inuitgfx"
+		texturefile = "gfx//interface//buildings//manufactory_university.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_early_modern_university_inuitgfx"
+		texturefile = "gfx//interface//buildings//court_house.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_modern_university_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_college.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_schools_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_schools.dds"
+		loadType = "INGAME"
+	}
+	
+	# Production
+	spriteType = {
+		name = "GFX_workshop_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_workshop.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_factory_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_factory.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_steam_powered_factory_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_steam_powered_factory.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_mill_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_mill.dds"
+		loadType = "INGAME"
+	}
+	
+	# Army
+	spriteType = {
+		name = "GFX_armory_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_armory.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_training_fields_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_training_fields.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_barracks_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_barracks.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_regimental_camp_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_regimental_camp.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_arsenal_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_arsenal.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_conscription_center_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_conscription_center.dds"
+		loadType = "INGAME"
+	}
+	
+	# Trading Post
+	spriteType = {
+		name = "GFX_trading_post_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_trade_depot.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_trading_company_inuitgfx"
+		texturefile = "gfx//interface//buildings//tp_trading_post.dds"
+		loadType = "INGAME"
+	}
+	
+	
+	# Forts
+	spriteType = {
+		name = "GFX_fort0_inuitgfx"
+		texturefile = "gfx//interface//buildings//fort00.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort_14th_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_fort01.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort_15th_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_fort02.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort_16th_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_fort03.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort_17th_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_fort04.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort_18th_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_fort05.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort_19th_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_fort06.dds"
+		loadType = "INGAME"
+	}
+	
+	#Trade
+	spriteType = {
+		name = "GFX_marketplace_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_marketplace.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_merchant_guild_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_merchant_guild.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_customs_house_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_customs_house.dds"
+		loadType = "INGAME"
+	}
+	
+	#Navy
+	spriteType = {
+		name = "GFX_dock_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_dock.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_drydock_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_drydock.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_shipyard_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_shipyard.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_grand_shipyard_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_grand_shipyard.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_naval_arsenal_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_naval_arsenal.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_naval_base_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_naval_base.dds"
+		loadType = "INGAME"
+	}
+	
+	# Welfare
+	spriteType = {
+		name = "GFX_public_baths_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_public_baths.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_hospital_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_hospital.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_water_works_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_water_works.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_city_watch_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_city_watch.dds"
+		loadType = "INGAME"
+	}
+	
+	# Religion
+	spriteType = {
+		name = "GFX_temple_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_temple.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_great_temple_inuitgfx"
+		texturefile = "gfx//interface//buildings//inuit_cathedral.dds"
+		loadType = "INGAME"
+	}
+}

@@ -1,0 +1,229 @@
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = ARU
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = ATJ
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = BAN
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = BEI
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = BIM
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = BNE
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = KED
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = KEL
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = KUT
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = MKS
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = MNH
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = BKS
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = PAT
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = SLB
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = SKD
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = SRV
+	start_date = 1356.1.1
+	end_date = 1375.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = SIJ
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = TER
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = TID
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "rebellious_decentralized_vassal"
+	first = MPH
+	second = LPG
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = PLB
+	start_date = 1659.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = JMB
+	start_date = 1658.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = SIJ
+	start_date = 1658.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = MKP
+	start_date = 1658.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = NED
+	second = ARU
+	start_date = 1661.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = SKD
+	start_date = 1778.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = BKS
+	start_date = 1787.1.1
+	end_date = 1859.1.1
+}
+alliance = {
+	first = NED
+	second = TER
+	start_date = 1606.1.1
+	end_date = 1663.1.1
+}
+alliance = {
+	first = SPA
+	second = TID
+	start_date = 1590.1.1
+	end_date = 1663.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = TER
+	start_date = 1778.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = TID
+	start_date = 1790.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = BIM
+	start_date = 1792.1.1
+	end_date = 1825.1.1
+}
+dependency = {
+	subject_type = "protectorate"
+	first = NED
+	second = MNH
+	start_date = 1679.1.1
+	end_date = 1825.1.1
+}

@@ -1,0 +1,23 @@
+capital = "Nias"
+trade_goods = unknown
+culture = batak
+religion = hinduism
+hre = no
+base_tax = 1
+base_production = 0
+base_manpower = 0
+native_size = 10
+native_ferocity = 2
+native_hostileness = 5
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 2.5
+	}
+}
+1624.1.1 = {
+	owner = ATJ
+	controller = ATJ
+	add_core = ATJ
+}

@@ -1,0 +1,39 @@
+owner = BEI
+controller = BEI
+add_core = BEI
+capital = "Sabah"
+trade_goods = fish
+culture = malayan
+religion = vajrayana
+hre = no
+base_tax = 1
+base_production = 0
+base_manpower = 0
+is_city = yes
+harbour_infrastructure_1 = yes
+discovered_by = chinese
+discovered_by = austranesian
+discovered_by = indian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 1.5
+	}
+}
+1521.1.1 = {
+	discovered_by = SPA
+}
+1550.1.1 = {
+	religion = sunni
+}
+1672.1.1 = {
+	revolt = {
+		type = revolutionary_rebels
+		size = 1
+	}
+	controller = REB
+}
+1673.1.1 = {
+	revolt = {}
+	controller = BEI
+}

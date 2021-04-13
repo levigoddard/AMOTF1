@@ -1,0 +1,54 @@
+owner = CMN
+controller = CMN
+capital = "Changhua"
+trade_goods = lumber
+culture = wuhan
+religion = confucianism
+hre = no
+base_tax = 52
+base_production = 0
+base_manpower = 3
+is_city = yes
+discovered_by = chinese
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 6.5
+	}
+}
+1276.1.1 = {
+	owner = YUA
+	controller = YUA
+	add_core = YUA
+}
+1351.1.1 = {
+	owner = ZOU
+	controller = ZOU
+	add_core = ZOU
+	add_core = MNG
+}
+1366.1.1 = {
+	owner = MNG
+	controller = MNG
+	remove_core = ZOU
+	remove_core = YUA
+}
+1520.2.2 = {
+	base_tax = 83
+	base_manpower = 4
+}
+1630.1.1 = {
+	unrest = 6
+}
+1645.5.27 = {
+	unrest = 0
+}
+1645.6.25 = {
+	owner = QNG
+	controller = QNG
+	add_core = QNG
+}
+1662.1.1 = {
+	remove_core = MNG
+}

@@ -1,0 +1,14 @@
+name = "Manchurian Conquest of Shun"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2252
+}
+1644.4.29 = {
+	add_attacker = MCH
+	add_defender = DSH
+}
+1644.6.6 = {
+	rem_attacker = MCH
+	rem_defender = DSH
+}

@@ -1,0 +1,91 @@
+owner = MPH
+controller = MPH
+add_core = MPH
+capital = "Mataram"
+trade_goods = rice
+culture = javan
+religion = hinduism
+hre = no
+base_tax = 15
+base_production = 1
+base_manpower = 1
+is_city = yes
+town_hall = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5.5
+	}
+	set_province_flag = mined_goods
+	set_province_flag = tin
+}
+1356.1.1 = {
+	add_core = MTR
+}
+1501.1.1 = {
+	base_tax = 19
+}
+1517.1.1 = {
+	owner = DEM
+	controller = DEM
+	add_core = DEM
+}
+1570.1.1 = {
+	owner = MTR
+	controller = MTR
+	remove_core = MPH
+	religion = sunni
+}
+1613.1.1 = {
+	discovered_by = NED
+}
+1617.1.1 = {
+	unrest = 2
+}
+1630.1.1 = {
+	unrest = 0
+}
+1647.1.1 = {
+	capital = "Plered"
+}
+1657.1.1 = {
+	unrest = 3
+}
+1661.1.1 = {
+	unrest = 5
+}
+1677.7.13 = {
+	unrest = 2
+}
+1680.1.1 = {
+	capital = "Kartosuro"
+}
+1681.12.1 = {
+	unrest = 0
+}
+1719.6.1 = {
+	unrest = 4
+}
+1721.1.1 = {
+	unrest = 1
+}
+1746.5.1 = {
+	unrest = 2
+}
+1755.2.13 = {
+	unrest = 2
+}
+1757.3.1 = {
+	unrest = 0
+}
+1812.7.1 = {
+	owner = GBR
+	controller = GBR
+}
+1816.1.1 = {
+	owner = NED
+	controller = NED
+}

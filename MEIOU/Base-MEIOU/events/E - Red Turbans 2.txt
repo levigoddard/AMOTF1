@@ -1,0 +1,698 @@
+namespace = tianxia
+country_event = {
+	id = "tianxia.1"
+	title = "tianxia.1.t"
+	desc = "tianxia.1.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = QII
+			any_country = {
+				has_country_flag = fall_of_yidu
+			}
+		}
+		NOT = {
+			has_country_flag = red_turban_invasion
+			controls = 2249
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = "tianxia.1a"
+		KOR = {
+			set_country_flag = red_turban_invasion
+		}
+		set_country_flag = red_turban_invasion
+		add_treasury = -50
+		if = {
+			limit = {
+				QII = {
+					owns = 2249
+				}
+			}
+			QII = {
+				2249 = {
+					cede_province = YUA
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = fall_of_yidu
+				owns = 2249
+			}
+			2249 = {
+				cede_province = YUA
+			}
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+	option = {
+		name = "tianxia.1b"
+		set_country_flag = red_turban_invasion
+		if = {
+			limit = {
+				QII = {
+					owns = 2249
+				}
+			}
+			QII = {
+				2249 = {
+					cede_province = YUA
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = fall_of_yidu
+				owns = 2249
+			}
+			2249 = {
+				cede_province = YUA
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = "tianxia.2"
+	title = "tianxia.2.t"
+	desc = "tianxia.2.d"
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = KOR
+		has_country_flag = red_turban_invasion
+		NOT = {
+			has_country_flag = red_turban_incursion
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = "tianxia.2a"
+		set_country_flag = red_turban_incursion
+		if = {
+			limit = {
+				QII = {
+					NOT = {
+						has_country_flag = fall_of_yidu
+					}
+				}
+			}
+			730 = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 2
+					friend = QII
+					leader = "Duo Guan"
+				}
+			}
+		}
+		if = {
+			limit = {
+				SNG = {
+					has_country_flag = fall_of_yidu
+				}
+			}
+			730 = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 2
+					friend = SNG
+					leader = "Duo Guan"
+				}
+			}
+		}
+		if = {
+			limit = {
+				MNG = {
+					has_country_flag = fall_of_yidu
+				}
+			}
+			730 = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 2
+					friend = MNG
+					leader = "Duo Guan"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = "tianxia.4"
+	title = "tianxia.4.t"
+	desc = "tianxia.4.d"
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				remove_province_triggered_modifier = betray_chinese_lord_trigger
+			}
+		}
+	}
+	option = {
+		name = "tianxia.4a"
+		custom_tooltip = coup_planning.tt
+		hidden_effect = {
+			overlord = {
+				country_event = {
+					id = tianxia.5
+					days = 30
+					random = 15
+				}
+			}
+			random_list = {
+				50 = {
+					country_event = {
+						id = tianxia.6
+						days = 30
+						random = 15
+					}
+				}
+				50 = {
+					country_event = {
+						id = tianxia.7
+						days = 30
+						random = 15
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = "tianxia.5"
+	title = "tianxia.5.t"
+	desc = "tianxia.5.d"
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = coup_discovered
+	}
+	option = {
+		name = "tianxia.5a"
+		ai_chance = {
+			factor = 45
+		}
+		custom_tooltip = coup_offer.tt
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = tianxia.8
+					days = 10
+					random = 3
+				}
+			}
+		}
+	}
+	option = {
+		name = "tianxia.5b"
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 0
+				NOT = {
+					army_strength = {
+						who = FROM
+						value = 2
+					}
+				}
+			}
+		}
+		custom_tooltip = coup_war.tt
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = tianxia.9
+				}
+			}
+			FROM = {
+				free_vassal = ROOT
+			}
+		}
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_chinese_civil_war
+		}
+	}
+	option = {
+		name = "tianxia.5c"
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = coup_idiot.tt
+		clr_country_flag = coup_discovered
+	}
+}
+country_event = {
+	id = "tianxia.6"
+	title = "tianxia.6.t"
+	desc = {
+		trigger = {
+			NOT = {
+				overlord = {
+					has_country_flag = coup_discovered
+				}
+			}
+		}
+		desc = tianxia.6.d
+	}
+	desc = {
+		trigger = {
+			overlord = {
+				has_country_flag = coup_discovered
+			}
+		}
+		desc = tianxia.6.db
+	}
+	desc = {
+		trigger = {
+			is_subject = no
+		}
+		desc = tianxia.6.dc
+	}
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.6a"
+		trigger = {
+			is_subject = yes
+			NOT = {
+				overlord = {
+					has_country_flag = coup_discovered
+				}
+			}
+		}
+		custom_tooltip = coup_success.tt
+		clr_country_flag = attempted_coup
+		hidden_effect = {
+			overlord = {
+				country_event = {
+					id = tianxia.10
+				}
+			}
+		}
+		FROM = {
+			clr_country_flag = coup_discovered
+		}
+	}
+	option = {
+		name = "tianxia.6b"
+		trigger = {
+			OR = {
+				overlord = {
+					has_country_flag = coup_discovered
+				}
+				is_subject = no
+			}
+		}
+		custom_tooltip = coup_failure.tt
+		FROM = {
+			clr_country_flag = coup_discovered
+		}
+	}
+}
+country_event = {
+	id = "tianxia.7"
+	title = "tianxia.7.t"
+	desc = {
+		trigger = {
+			NOT = {
+				overlord = {
+					has_country_flag = coup_discovered
+				}
+			}
+		}
+		desc = tianxia.7.d
+	}
+	desc = {
+		trigger = {
+			overlord = {
+				has_country_flag = coup_discovered
+			}
+		}
+		desc = tianxia.7.db
+	}
+	desc = {
+		trigger = {
+			is_subject = no
+		}
+		desc = tianxia.7.dc
+	}
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.7a"
+		trigger = {
+			is_subject = yes
+			NOT = {
+				overlord = {
+					has_country_flag = coup_discovered
+				}
+			}
+		}
+		custom_tooltip = coup_safe.tt
+		clr_country_flag = attempted_coup
+	}
+	option = {
+		name = "tianxia.7b"
+		trigger = {
+			OR = {
+				overlord = {
+					has_country_flag = coup_discovered
+				}
+				is_subject = no
+			}
+		}
+		custom_tooltip = coup_failure.tt
+		FROM = {
+			clr_country_flag = coup_discovered
+		}
+	}
+}
+country_event = {
+	id = "tianxia.8"
+	title = "tianxia.8.t"
+	desc = "tianxia.8.d"
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.8a"
+		custom_tooltip = coup_annexation.tt
+		clr_country_flag = attempted_coup
+		hidden_effect = {
+			overlord = {
+				inherit = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = "tianxia.8b"
+		clr_country_flag = attempted_coup
+		hidden_effect = {
+			FROM = {
+				free_vassal = ROOT
+			}
+		}
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_chinese_civil_war
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					army_strength = {
+						who = FROM
+						value = 2
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = "tianxia.9"
+	title = "tianxia.9.t"
+	desc = "tianxia.9.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.9a"
+		clr_country_flag = attempted_coup
+	}
+}
+country_event = {
+	id = "tianxia.10"
+	title = "tianxia.10.t"
+	desc = "tianxia.10.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.10a"
+		custom_tooltip = coup_annexation.tt
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					NOT = {
+						tag = FROM
+					}
+				}
+				country_event = {
+					id = tianxia.11
+					days = 10
+					random = 3
+				}
+			}
+		}
+		FROM = {
+			inherit = ROOT
+		}
+	}
+	option = {
+		name = "tianxia.10b"
+		trigger = {
+			ai = no
+		}
+		custom_tooltip = coup_continuation.tt
+		hidden_effect = {
+			switch_tag = FROM
+			country_event = {
+				id = tianxia.12
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = "tianxia.11"
+	title = "tianxia.11.t"
+	desc = "tianxia.11.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.11a"
+		ai_chance = {
+			factor = 95
+		}
+		custom_tooltip = coup_independence.tt
+		hidden_effect = {
+			overlord = {
+				free_vassal = ROOT
+				country_event = {
+					id = tianxia.13
+					days = 10
+					random = 3
+				}
+			}
+		}
+	}
+	option = {
+		name = "tianxia.11b"
+		ai_chance = {
+			factor = 5
+		}
+		custom_tooltip = coup_submission.tt
+		add_prestige = -10
+		add_legitimacy = -10
+	}
+}
+country_event = {
+	id = "tianxia.12"
+	title = "tianxia.12.t"
+	desc = {
+		trigger = {
+			num_of_subjects = 1
+		}
+		desc = tianxia.12.d
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				num_of_subjects = 1
+			}
+		}
+		desc = tianxia.12.db
+	}
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.12a"
+		custom_tooltip = coup_vassals.tt
+		hidden_effect = {
+			inherit = FROM
+			every_subject_country = {
+				limit = {
+					NOT = {
+						tag = FROM
+					}
+				}
+				country_event = {
+					id = tianxia.11
+					days = 10
+					random = 3
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = "tianxia.13"
+	title = "tianxia.13.t"
+	desc = "tianxia.13.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.13a"
+	}
+}
+country_event = {
+	id = "tianxia.14"
+	title = "tianxia.14.t"
+	desc = "tianxia.14.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.11a"
+		custom_tooltip = coup_independence.tt
+		hidden_effect = {
+			overlord = {
+				free_vassal = ROOT
+				country_event = {
+					id = tianxia.13
+					days = 10
+					random = 3
+				}
+			}
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+	option = {
+		name = "tianxia.11b"
+		add_prestige = -10
+		add_legitimacy = -10
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = "tianxia.15"
+	title = "tianxia.15.t"
+	desc = "tianxia.15.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.15a"
+		FROM = {
+			every_owned_province = {
+				add_core = ROOT
+				if = {
+					limit = {
+						FROM = {
+							overlord = {
+								is_emperor_of_china = yes
+							}
+						}
+					}
+					FROM = {
+						overlord = {
+							add_mandate = -0.5
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							is_emperor_of_china = yes
+						}
+					}
+					ROOT = {
+						add_mandate = 0.5
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							overlord = {
+								is_emperor_of_china = yes
+							}
+						}
+					}
+					ROOT = {
+						overlord = {
+							add_mandate = 0.5
+						}
+					}
+				}
+			}
+		}
+		inherit = FROM
+		north_china_superregion = {
+			remove_core = FROM
+		}
+		east_china_superregion = {
+			remove_core = FROM
+		}
+		southwest_china_superregion = {
+			remove_core = FROM
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "tianxia.15b"
+		create_subject = {
+			subject_type = warlord
+			who = FROM
+		}
+		FROM = {
+			set_ruler_flag = request_defect
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "tianxia.15c"
+		FROM = {
+			country_event = {
+				id = "tianxia.16"
+				days = 7
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = "tianxia.16"
+	title = "tianxia.16.t"
+	desc = "tianxia.16.d"
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "tianxia.16a"
+		clr_ruler_flag = request_defect
+	}
+}

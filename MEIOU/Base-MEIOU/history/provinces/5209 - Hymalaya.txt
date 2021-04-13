@@ -1,0 +1,5 @@
+culture = tibetan
+religion = vajrayana
+discovered_by = indian
+discovered_by = chinese
+discovered_by = steppestech

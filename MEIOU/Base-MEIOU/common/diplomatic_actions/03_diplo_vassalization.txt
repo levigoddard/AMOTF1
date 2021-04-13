@@ -1,0 +1,76 @@
+vassalaction = {
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = VASSALINVALID
+		potential = {}
+		allow = {
+			OR = {
+				alliance_with = FROM
+				FROM = {
+					guaranteed_by = ROOT
+				}
+			}
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+			FROM = {
+				is_at_war = no
+			}
+		}
+	}
+	condition = {
+		tooltip = IRISHCLAN
+		potential = {
+			FROM = {
+				OR = {
+					primary_culture = irish
+					primary_culture = hiberno_norman
+				}
+				government = tribal
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

@@ -1,0 +1,65 @@
+owner = TER
+controller = TER
+add_core = TER
+capital = "Ternate"
+trade_goods = clove
+culture = halmahera
+religion = polynesian_religion
+hre = no
+base_tax = 1
+base_production = 0
+base_manpower = 0
+is_city = yes
+discovered_by = chinese
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 2.5
+	}
+	set_province_flag = tribals_control_province
+}
+1486.1.1 = {
+	religion = sunni
+}
+1512.1.1 = {
+	discovered_by = POR
+}
+1521.1.1 = {
+	discovered_by = SPA
+}
+1570.1.1 = {
+	unrest = 8
+}
+1600.1.1 = {
+	discovered_by = NED
+}
+1604.1.1 = {
+	discovered_by = ENG
+}
+1606.1.1 = {
+	owner = SPA
+	controller = SPA
+}
+1607.1.1 = {
+	owner = NED
+	controller = NED
+	fort_14th = yes
+}
+1632.1.1 = {
+	add_core = NED
+}
+1680.1.1 = {
+	unrest = 3
+}
+1688.1.1 = {
+	unrest = 0
+}
+1810.1.1 = {
+	owner = GBR
+	controller = GBR
+}
+1816.1.1 = {
+	owner = NED
+	controller = NED
+}

@@ -1,0 +1,32 @@
+namespace = POP_mining
+province_event = {
+	id = POP_mining.013
+	title = "POP_mining.013.t"
+	desc = "POP_mining.013.d"
+	picture = CITY_DEVELOPMENT_AU_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "POP_mining.013.opta"
+	}
+}
+province_event = {
+	id = POP_mining.014
+	title = "POP_mining.014.t"
+	desc = "POP_mining.014.d"
+	picture = CITY_DEVELOPMENT_AU_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "POP_mining.014.opta"
+	}
+}
+province_event = {
+	id = POP_mining.015
+	title = "POP_mining.015.t"
+	desc = "POP_mining.015.d"
+	picture = CITY_DEVELOPMENT_AU_eventPicture
+	is_triggered_only = yes
+	option = {
+		add_building = mines_1
+		name = "POP_mining.015.opta"
+	}
+}

@@ -1,0 +1,32 @@
+name = "Fourth Anglo-Mysore War"
+war_goal = {
+	type = superiority_overseas
+	casus_belli = cb_overseas
+}
+1798.1.1 = {
+	add_attacker = GBR
+	add_defender = MYS
+}
+1799.5.4 = {
+	battle = {
+		name = "Srirangapatna"
+		location = 533
+		attacker = {
+			commander = "George Harris"
+			infantry = 50000
+			losses = 3
+			country = GBR
+		}
+		defender = {
+			commander = "Tipu Sultan"
+			infantry = 30000
+			losses = 20
+			country = MYS
+		}
+		result = yes
+	}
+}
+1799.5.5 = {
+	rem_attacker = GBR
+	rem_defender = MYS
+}

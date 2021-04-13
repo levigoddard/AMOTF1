@@ -1,0 +1,18 @@
+nomad_speed_boost = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		AND = {
+			OR = {
+				owner = {
+					is_nomad = yes
+				}
+				controller = {
+					is_nomad = yes
+				}
+			}
+		}
+	}
+	local_friendly_movement_speed = 0.6
+}

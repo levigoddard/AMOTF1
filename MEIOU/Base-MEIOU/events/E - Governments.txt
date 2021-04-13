@@ -1,0 +1,231 @@
+namespace = government_events
+country_event = {
+	id = governments.9479
+	title = "EVTNAME9479"
+	desc = "EVTDESC9479"
+	picture = COURT_eventPicture
+	trigger = {
+		has_country_flag = separation_of_powers
+		government = monarchy
+		NOT = {
+			AND = {
+				OR = {
+					AND = {
+						has_reform = parliamentary_monarchy
+						has_reform = bureaucracy
+						has_reform = appointed_elite
+					}
+					has_reform = constitutional_monarchy
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = "EVTOPTA9479"
+		clr_country_flag = separation_of_powers
+		add_stability = -2
+		hidden_effect = {
+			country_event = {
+				id = POP_Stability.003
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+	option = {
+		name = "EVTOPTB9479"
+		change_government = monarchy
+		add_government_reform = parliamentary_monarchy
+		add_government_reform = bureaucracy
+		add_government_reform = appointed_elite
+		set_legacy_government = constitutional_monarchy
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}
+country_event = {
+	id = governments.9480
+	title = "EVTNAME9480"
+	desc = "EVTDESC9480"
+	picture = CITY_DEVELOPMENT_eventPicture
+	trigger = {
+		NOT = {
+			AND = {
+				OR = {
+					AND = {
+						has_reform = peasants_republic
+						has_reform = assembly_reform
+						has_reform = vote_free
+					}
+					has_reform = revolutionary_republic
+				}
+			}
+		}
+		has_country_flag = cult_of_reason
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = "EVTOPTA9480"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		clr_country_flag = cult_of_reason
+	}
+}
+country_event = {
+	id = governments.9900
+	title = free_cities.2.t
+	desc = free_cities.2.d
+	picture = HRE_eventPicture
+	trigger = {
+		NOT = {
+			has_dlc = "Common Sense"
+		}
+		num_of_cities = 2
+		government = republic
+		AND = {
+			OR = {
+				has_reform = free_city
+				has_reform = imperial_city
+				has_reform = trading_city_legacy
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = free_cities.2.a
+		change_government = republic
+		add_government_reform = city_state
+		add_government_reform = oligarchy_reform
+		add_government_reform = vote_tax
+		set_legacy_government = oligarchic_republic
+	}
+}
+country_event = {
+	id = government_events.1
+	title = government_events.1.t
+	desc = government_events.1.d
+	picture = COURT_eventPicture
+	trigger = {
+		tag = MAM
+		NOT = {
+			religion_group = muslim
+		}
+		AND = {
+			OR = {
+				has_reform = elective_monarchy
+				has_reform = elective_monarchy_legacy
+				has_reform = mamluk_government_legacy
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = government_events.1.a
+		change_government = monarchy
+		add_government_reform = divine_right
+		add_government_reform = delegated_rulers
+		add_government_reform = military_elite
+		set_legacy_government = despotic_monarchy
+	}
+}

@@ -1,0 +1,1569 @@
+country_decisions = {
+	edict_of_tolerance = {
+		potential = {
+			religion_group = christian
+			NOT = {
+				religious_unity = 0.90
+			}
+			NOT = {
+				has_country_flag = edict_of_tolerance
+			}
+			NOT = {
+				has_country_modifier = edict_of_tolerance
+			}
+			NOT = {
+				piety = 0.60
+			}
+			NOT = {
+				has_country_flag = religious_civil_war
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_catholic
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_protestant
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_reformed
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_orthodox
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_coptic
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_chaldean
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_gnostic
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_hussite
+			}
+			OR = {
+				NOT = {
+					catholic = 1
+				}
+				NOT = {
+					protestant = 1
+				}
+			}
+			OR = {
+				AND = {
+					NOT = {
+						religion = catholic
+					}
+					check_variable = {
+						which = catholic_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = orthodox
+					}
+					check_variable = {
+						which = orthodox_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = protestant
+					}
+					check_variable = {
+						which = protestant_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = reformed
+					}
+					check_variable = {
+						which = reformed_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = coptic
+					}
+					check_variable = {
+						which = coptic_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = chaldean
+					}
+					check_variable = {
+						which = chaldean_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = gnostic
+					}
+					check_variable = {
+						which = gnostic_population
+						value = 20
+					}
+				}
+				AND = {
+					NOT = {
+						religion = hussite
+					}
+					check_variable = {
+						which = hussite_population
+						value = 20
+					}
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			is_force_converted = no
+			OR = {
+				ADM = 4
+				advisor = theologian
+				NOT = {
+					piety = -0.20
+				}
+				NOT = {
+					religious_unity = 0.75
+				}
+			}
+			adm_power = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = edict_of_tolerance
+				duration = -1
+			}
+			hidden_effect = {
+				set_country_flag = edict_of_tolerance
+			}
+			add_adm_power = -100
+			if = {
+				limit = {
+					NOT = {
+						stability = 0
+					}
+				}
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_country_flag = toleration_policy_failed
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					adm_power = 100
+				}
+				factor = 0
+			}
+			modifier = {
+				stability = 2
+				factor = 0
+			}
+			modifier = {
+				factor = 0
+				is_religion_enabled = protestant
+				NOT = {
+					has_global_flag = counter_reformation
+				}
+			}
+		}
+	}
+	revoke_edict_of_tolerance = {
+		potential = {
+			has_country_modifier = edict_of_tolerance
+			piety = -0.20
+			NOT = {
+				has_country_flag = religious_civil_war
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_catholic
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_protestant
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_reformed
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_orthodox
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_coptic
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_chaldean
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_gnostic
+			}
+			NOT = {
+				has_country_flag = religious_turmoil_hussite
+			}
+		}
+		allow = {
+			is_at_war = no
+			OR = {
+				MIL = 4
+				advisor = inquisitor
+				piety = 0.20
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						religious_unity = 0.75
+					}
+				}
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			remove_country_modifier = edict_of_tolerance
+			hidden_effect = {
+				clr_country_flag = edict_of_tolerance
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					had_country_flag = {
+						flag = edict_of_tolerance
+						days = 3650
+					}
+				}
+			}
+			modifier = {
+				NOT = {
+					religious_unity = 0.75
+				}
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					stability = 0
+				}
+				factor = 0
+			}
+			modifier = {
+				war_exhaustion = 4
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					manpower_percentage = 0.50
+				}
+				factor = 0
+			}
+		}
+	}
+	convert_to_chaldean = {
+		potential = {
+			OR = {
+				religion = catholic
+				religion = orthodox
+				religion = coptic
+			}
+			NOT = {
+				capital_scope = {
+					continent = europe
+				}
+			}
+			OR = {
+				has_country_flag = national_church
+				has_country_flag = catholic_pragmatic_sanction
+				has_country_flag = excommunicated
+				NOT = {
+					religion = catholic
+				}
+			}
+			ctesiphon_patriarch_area = {
+				has_province_flag = chaldean_catholicos_of_ctesiphon
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					religion = chaldean
+				}
+			}
+			is_papal_controller = no
+			NOT = {
+				num_of_cardinals = 1
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = orthodox_patriarchate
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = catholic_archbishopric
+				}
+			}
+			ctesiphon_patriarch_area = {
+				has_province_flag = chaldean_catholicos_of_ctesiphon
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = chaldean
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = chaldean_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = chaldean_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = chaldean_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = chaldean
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = chaldean
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = chaldean
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_chaldean
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = chaldean
+			if = {
+				limit = {
+					NOT = {
+						capital = 410
+					}
+					owns = 410
+				}
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 410
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				add_core = 410
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					check_variable = {
+						which = chaldean_population
+						value = 25
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+	convert_to_miaphysite = {
+		potential = {
+			OR = {
+				religion = catholic
+				religion = orthodox
+				religion = chaldean
+			}
+			NOT = {
+				capital_scope = {
+					continent = europe
+				}
+			}
+			OR = {
+				has_country_flag = national_church
+				has_country_flag = catholic_pragmatic_sanction
+				has_country_flag = excommunicated
+				NOT = {
+					religion = catholic
+				}
+			}
+			OR = {
+				antioch_patriarch_area = {
+					has_province_flag = miaphysite_catholicos_of_antioch
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				alexandria_patriarch_area = {
+					has_province_flag = miaphysite_catholicos_of_alexandria
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					religion = coptic
+				}
+			}
+			is_papal_controller = no
+			NOT = {
+				num_of_cardinals = 1
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = orthodox_patriarchate
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = catholic_archbishopric
+				}
+			}
+			OR = {
+				antioch_patriarch_area = {
+					has_province_flag = miaphysite_catholicos_of_antioch
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				alexandria_patriarch_area = {
+					has_province_flag = miaphysite_catholicos_of_alexandria
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = coptic
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = coptic_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = coptic_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = coptic_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = coptic
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = coptic
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = coptic
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_coptic
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = coptic
+			if = {
+				limit = {
+					NOT = {
+						capital = 358
+					}
+					NOT = {
+						capital = 382
+					}
+					owns = 358
+				}
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 358
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				add_core = 358
+			}
+			if = {
+				limit = {
+					NOT = {
+						capital = 358
+					}
+					NOT = {
+						capital = 382
+					}
+					NOT = {
+						owns = 358
+					}
+					owns = 382
+				}
+				hidden_effect = {
+					capital_scope = {
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5242.88
+							}
+							remove_province_modifier = misc_expenses_5242.88
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2621.44
+							}
+							remove_province_modifier = misc_expenses_2621.44
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1310.72
+							}
+							remove_province_modifier = misc_expenses_1310.72
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_655.36
+							}
+							remove_province_modifier = misc_expenses_655.36
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_327.68
+							}
+							remove_province_modifier = misc_expenses_327.68
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_163.84
+							}
+							remove_province_modifier = misc_expenses_163.84
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_81.92
+							}
+							remove_province_modifier = misc_expenses_81.92
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_40.96
+							}
+							remove_province_modifier = misc_expenses_40.96
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_20.48
+							}
+							remove_province_modifier = misc_expenses_20.48
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_10.24
+							}
+							remove_province_modifier = misc_expenses_10.24
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_5.12
+							}
+							remove_province_modifier = misc_expenses_5.12
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_2.56
+							}
+							remove_province_modifier = misc_expenses_2.56
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_1.28
+							}
+							remove_province_modifier = misc_expenses_1.28
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.64
+							}
+							remove_province_modifier = misc_expenses_0.64
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.32
+							}
+							remove_province_modifier = misc_expenses_0.32
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.16
+							}
+							remove_province_modifier = misc_expenses_0.16
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.08
+							}
+							remove_province_modifier = misc_expenses_0.08
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.04
+							}
+							remove_province_modifier = misc_expenses_0.04
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.02
+							}
+							remove_province_modifier = misc_expenses_0.02
+						}
+						if = {
+							limit = {
+								has_province_modifier = misc_expenses_0.01
+							}
+							remove_province_modifier = misc_expenses_0.01
+						}
+						set_variable = {
+							which = misc_expenses_cache
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_part_of_hre = yes
+						ROOT = {
+							is_part_of_hre = no
+						}
+					}
+					set_in_empire = no
+					swap_non_generic_missions = yes
+					emperor = {
+						add_opinion = {
+							who = ROOT
+							modifier = hre_province_left
+						}
+					}
+					add_imperial_influence = -1
+				}
+				set_capital = 382
+				hidden_effect = {
+					country_event = {
+						id = miscexpenses.002
+					}
+				}
+				add_core = 382
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					check_variable = {
+						which = coptic_population
+						value = 25
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+}

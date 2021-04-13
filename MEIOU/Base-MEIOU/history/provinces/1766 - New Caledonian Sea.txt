@@ -1,0 +1,6 @@
+1643.1.1 = {
+	discovered_by = NED
+}
+1769.10.1 = {
+	discovered_by = GBR
+}

@@ -1,0 +1,21 @@
+alliance = {
+	first = FRL
+	second = HAM
+	start_date = 1356.1.1
+	trade_league = 1
+	end_date = 1810.12.13
+}
+alliance = {
+	first = FRL
+	second = FRB
+	trade_league = 1
+	start_date = 1356.1.1
+	end_date = 1563.1.1
+}
+alliance = {
+	first = FRL
+	second = FRB
+	trade_league = 1
+	start_date = 1576.1.1
+	end_date = 1719.9.30
+}

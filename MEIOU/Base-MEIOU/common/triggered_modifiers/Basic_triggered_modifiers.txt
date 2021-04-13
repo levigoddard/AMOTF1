@@ -1,0 +1,21 @@
+resist_the_english = {
+	potential = {
+		NOT = {
+			num_of_cities = 16
+		}
+		OR = {
+			tag = SCO
+			culture_group = brythonic
+			culture_group = gaelic
+		}
+	}
+	trigger = {
+		OR = {
+			defensive_war_with = ENG
+			defensive_war_with = GBR
+		}
+	}
+	hostile_attrition = 1
+	manpower_recovery_speed = 1
+	defensiveness = 0.20
+}

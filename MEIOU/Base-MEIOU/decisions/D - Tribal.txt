@@ -1,0 +1,428 @@
+country_decisions = {
+	tribal_despotism_reform = {
+		major = yes
+		potential = {
+			government = tribal
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_despotism
+						has_reform = tribal_despotism_legacy
+					}
+				}
+				AND = {
+					OR = {
+						has_reform = tribal_kingdom
+						has_reform = tribal_kingdom_legacy
+					}
+				}
+				AND = {
+					OR = {
+						has_reform = tribal_federation
+						has_reform = tribal_federation_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			adm_power = 200
+			legitimacy = 90
+			stability = 3
+			OR = {
+				ADM = 3
+				advisor = statesman
+			}
+			OR = {
+				full_idea_group = economic_ideas
+				full_idea_group = innovativeness_ideas
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = military_elite
+			set_legacy_government = despotic_monarchy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_stability = -5
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -25
+			}
+			add_adm_power = -200
+			if = {
+				limit = {
+					primitives = yes
+					NOT = {
+						technology_group = mesoamerican
+						technology_group = south_american
+					}
+					NOT = {
+						religion = mesoamerican_religion
+						religion = inti
+						religion = nahuatl
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tribal_federation_reform = {
+		major = yes
+		potential = {
+			AND = {
+				OR = {
+					has_reform = tribal_federation
+					has_reform = tribal_federation_legacy
+				}
+			}
+		}
+		allow = {
+			adm_power = 200
+			legitimacy = 90
+			stability = 3
+			OR = {
+				ADM = 3
+				advisor = statesman
+			}
+			OR = {
+				full_idea_group = economic_ideas
+				full_idea_group = innovativeness_ideas
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {
+			change_government = monarchy
+			add_government_reform = elective_monarchy
+			add_government_reform = delegated_rulers
+			add_government_reform = military_elite
+			hidden_effect = {
+				set_legacy_government = despotic_monarchy
+			}
+			set_legacy_government = elective_monarchy_legacy
+			remove_country_modifier = title_1
+			remove_country_modifier = title_2
+			remove_country_modifier = title_3
+			remove_country_modifier = title_4
+			remove_country_modifier = title_6
+			add_country_modifier = {
+				name = title_5
+				duration = -1
+			}
+			clr_country_flag = title_1
+			clr_country_flag = title_2
+			clr_country_flag = title_3
+			clr_country_flag = title_4
+			clr_country_flag = title_5
+			clr_country_flag = title_6
+			add_stability = -5
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -25
+			}
+			add_adm_power = -200
+			if = {
+				limit = {
+					primitives = yes
+					NOT = {
+						technology_group = mesoamerican
+						technology_group = south_american
+					}
+					NOT = {
+						religion = mesoamerican_religion
+						religion = inti
+						religion = nahuatl
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	steppe_horde_reform_persian = {
+		major = yes
+		potential = {
+			government = tribal
+			any_owned_province = {
+				superregion = persia_superregion
+			}
+			adm_tech = 5
+		}
+		allow = {
+			capital_scope = {
+				superregion = persia_superregion
+				base_production = 15
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					culture_group = persian_group
+					culture = iraqi
+				}
+				is_core = ROOT
+				value = 10
+			}
+			adm_power = 200
+			OR = {
+				legitimacy = 90
+				horde_unity = 80
+			}
+			stability = 3
+			OR = {
+				ADM = 3
+				advisor = statesman
+			}
+			full_idea_group = administrative_ideas
+		}
+		effect = {
+			swap_free_idea_group = yes
+			add_adm_power = -200
+			add_stability = -5
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -25
+			}
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = military_elite
+			set_legacy_government = despotic_monarchy
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_technology_group = muslim
+			change_unit_type = muslim
+			if = {
+				limit = {
+					primitives = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	steppe_horde_reform_eastern = {
+		major = yes
+		potential = {
+			government = tribal
+			any_owned_province = {
+				superregion = greater_russia_superregion
+			}
+			adm_tech = 5
+		}
+		allow = {
+			capital_scope = {
+				superregion = greater_russia_superregion
+				base_production = 15
+			}
+			adm_power = 200
+			OR = {
+				legitimacy = 90
+				horde_unity = 80
+			}
+			stability = 3
+			OR = {
+				ADM = 3
+				advisor = statesman
+			}
+			full_idea_group = administrative_ideas
+		}
+		effect = {
+			swap_free_idea_group = yes
+			add_adm_power = -200
+			add_stability = -5
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -25
+			}
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = military_elite
+			set_legacy_government = despotic_monarchy
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_technology_group = eastern
+			change_unit_type = eastern
+			if = {
+				limit = {
+					primitives = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	steppe_horde_reform_hindu = {
+		major = yes
+		potential = {
+			government = tribal
+			any_owned_province = {
+				continent = indian_continent
+			}
+			adm_tech = 5
+		}
+		allow = {
+			capital_scope = {
+				continent = indian_continent
+				base_production = 15
+			}
+			adm_power = 200
+			OR = {
+				legitimacy = 90
+				horde_unity = 80
+			}
+			stability = 3
+			OR = {
+				ADM = 3
+				advisor = statesman
+			}
+			full_idea_group = administrative_ideas
+		}
+		effect = {
+			swap_free_idea_group = yes
+			add_adm_power = -200
+			add_stability = -5
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -25
+			}
+			change_government = monarchy
+			add_government_reform = divine_right
+			add_government_reform = delegated_rulers
+			add_government_reform = military_elite
+			set_legacy_government = despotic_monarchy
+			if = {
+				limit = {
+					government = monarchy
+					NOT = {
+						has_country_modifier = title_5
+						has_country_modifier = title_6
+					}
+				}
+				remove_country_modifier = title_1
+				remove_country_modifier = title_2
+				remove_country_modifier = title_3
+				remove_country_modifier = title_4
+				remove_country_modifier = title_6
+				add_country_modifier = {
+					name = title_5
+					duration = -1
+				}
+				clr_country_flag = title_1
+				clr_country_flag = title_2
+				clr_country_flag = title_3
+				clr_country_flag = title_4
+				clr_country_flag = title_5
+				clr_country_flag = title_6
+			}
+			change_technology_group = indian
+			change_unit_type = indian
+			if = {
+				limit = {
+					primitives = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

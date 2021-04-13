@@ -1,0 +1,6 @@
+discovered_by = turkishtech
+discovered_by = steppestech
+discovered_by = muslim
+1356.1.1 = {
+	discovered_by = KSH
+}

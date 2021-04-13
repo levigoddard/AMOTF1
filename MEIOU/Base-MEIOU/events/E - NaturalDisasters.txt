@@ -1,0 +1,8105 @@
+country_event = {
+	id = naturaldisaster.001
+	title = "naturaldisaster.001.name"
+	desc = "naturaldisaster.001.desc"
+	picture = EARTHQUAKE_eventPicture
+	trigger = {
+		owns = 102
+	}
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.001.opta"
+		random_list = {
+			10 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						AND = {
+							superregion = japan_superregion
+							NOT = {
+								region = korea_region
+							}
+						}
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = japan_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			15 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = north_china_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = china_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			15 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = east_china_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = china_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			15 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = southwest_china_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = china_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			6 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = east_indies_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = archipelago_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = southeast_asia_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = archipelago_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						region = tibet_region
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = himalaya_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						area = kashmir_area
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = himalaya_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			10 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = persia_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = central_asia_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = east_africa_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = east_africa_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			1 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						OR = {
+							superregion = near_east_superregion
+							superregion = anatolia_superregion
+						}
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = near_east_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			3 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = north_africa_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = north_africa_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						continent = europe
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = europe_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = central_america_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = america_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			5 = {
+				random_province = {
+					limit = {
+						province_group = sismic_group
+						superregion = western_south_america_superregion
+						NOT = {
+							is_empty = yes
+						}
+					}
+					province_event = {
+						id = naturaldisaster.002
+						days = 1
+						random = 200
+					}
+					102 = {
+						change_variable = {
+							which = america_earthquakes_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = naturaldisaster.002
+	title = "naturaldisaster.002.name"
+	desc = "naturaldisaster.002.desc"
+	picture = EARTHQUAKE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		save_event_target_as = earthquake_epicenter
+	}
+	option = {
+		name = "naturaldisaster.002.opta"
+		random_list = {
+			60 = {
+				add_province_modifier = {
+					name = sismic_chaos_minor
+					duration = 365
+				}
+				102 = {
+					change_variable = {
+						which = minor_earthquakes_around_the_world
+						value = 1
+					}
+				}
+			}
+			30 = {
+				add_province_modifier = {
+					name = sismic_chaos_mild
+					duration = 365
+				}
+				every_neighbor_province = {
+					add_province_modifier = {
+						name = sismic_chaos_minor
+						duration = 365
+					}
+				}
+				random = {
+					chance = 10
+					set_variable = {
+						which = rural_population_removed
+						value = 0.001
+					}
+					hidden_effect = {
+						set_variable = {
+							which = rural_population_old
+							which = rural_pop
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_pop
+							}
+							multiply_variable = {
+								which = rural_population_removed
+								which = rural_percentage_removed
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									value = 0
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									which = rural_population_removed
+								}
+								multiply_variable = {
+									which = rural_population_fleeing
+									which = percent_rural_transfered
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_base_pop_removed
+							}
+						}
+						multiply_variable = {
+							which = rural_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 100
+						}
+						subtract_variable = {
+							which = InvPopRatio
+							which = urban_ratio
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = InvPopRatio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = rural_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = rural_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = rural_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = rural_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = InvPopRatio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						set_variable = {
+							which = urban_ratio
+							value = 100
+						}
+						subtract_variable = {
+							which = urban_ratio
+							which = InvPopRatio
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_pop
+										value = 0.01
+									}
+								}
+							}
+							set_variable = {
+								which = rural_pop
+								value = 0.01
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = ideal_rural_pop
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = ideal_rural_pop
+								value = 1
+							}
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_density
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_density
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								which = rural_density
+							}
+							multiply_variable = {
+								which = total_pop_compare
+								value = 2
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = ideal_rural_pop
+										which = total_pop_compare
+									}
+									check_variable = {
+										which = rural_density
+										value = 10
+									}
+								}
+								set_variable = {
+									which = ideal_rural_pop
+									which = rural_density
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								value = 0
+							}
+							divide_variable = {
+								which = rural_density
+								which = ideal_rural_pop
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_density
+										value = 0.5
+									}
+								}
+							}
+							set_variable = {
+								which = rural_density
+								value = 0.5
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = tribals_ratio
+									value = 0.001
+								}
+								OR = {
+									check_variable = {
+										which = rural_percentage_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = rural_base_pop_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+							}
+							if = {
+								limit = {
+									OR = {
+										is_city = yes
+										is_colony = yes
+									}
+									has_province_flag = plague_attacked
+									owner = {
+										NOT = {
+											is_tribal = yes
+										}
+									}
+									NOT = {
+										check_variable = {
+											which = province_plague_immunity
+											value = 0
+										}
+									}
+									OR = {
+										continent = north_america
+										continent = south_america
+										superregion = australia_superregion
+									}
+									OR = {
+										AND = {
+											owner = {
+												is_colonial_nation = no
+											}
+											owner = {
+												capital_scope = {
+													continent = europe
+												}
+											}
+										}
+										AND = {
+											owner = {
+												is_colonial_nation = yes
+											}
+											owner = {
+												colonial_parent = {
+													capital_scope = {
+														continent = europe
+													}
+												}
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_pop
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_population_old
+								}
+								change_variable = {
+									which = rural_population_tribal_decrease
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_decrease
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+							else = {
+								set_variable = {
+									which = rural_population_tribal_increase
+									which = rural_population_old
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									which = rural_pop
+								}
+								change_variable = {
+									which = rural_population_tribal_increase
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_increase
+								}
+								set_variable = {
+									which = rural_population_tribal_increase
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+						}
+						set_variable = {
+							which = rural_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = rural_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_rural_transfered
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_old
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+					}
+					set_variable = {
+						which = urban_population_removed
+						value = 0.001
+					}
+					hidden_effect = {
+						set_variable = {
+							which = urban_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								which = urban_pop
+							}
+							multiply_variable = {
+								which = urban_population_removed
+								which = urban_percentage_removed
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								value = 0
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								which = eats_continent_food
+							}
+							multiply_variable = {
+								which = urban_continent_food_loss
+								which = urban_percentage_removed
+							}
+							subtract_variable = {
+								which = eats_continent_food
+								which = urban_continent_food_loss
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								which = urban_base_pop_removed
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								value = 0
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								which = eats_continent_food
+							}
+							set_variable = {
+								which = urban_pop_total
+								value = 0
+							}
+							change_variable = {
+								which = urban_pop_total
+								which = urban_pop
+							}
+							set_variable = {
+								which = urban_pop_loss_percent
+								value = 0
+							}
+							set_variable = {
+								which = urban_pop_loss_percent
+								which = urban_base_pop_removed
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = urban_pop_total
+										value = 0
+									}
+								}
+							}
+							else = {
+								divide_variable = {
+									which = urban_pop_loss_percent
+									which = urban_pop_total
+								}
+							}
+							multiply_variable = {
+								which = urban_continent_food_loss
+								which = urban_pop_loss_percent
+							}
+							subtract_variable = {
+								which = eats_continent_food
+								which = urban_continent_food_loss
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = percent_urban_transfered
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_fleeing
+								value = 0
+							}
+							set_variable = {
+								which = urban_population_fleeing
+								which = urban_population_removed
+							}
+							multiply_variable = {
+								which = urban_population_fleeing
+								which = percent_rural_transfered
+							}
+						}
+						multiply_variable = {
+							which = urban_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = urban_ratio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = urban_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = urban_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = urban_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = urban_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_ratio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = urban_pop
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = urban_pop
+								value = 0.001
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_gravity_total
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_density
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							divide_variable = {
+								which = urban_density
+								which = urban_gravity_total
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = urban_density
+											value = 0.5
+										}
+									}
+								}
+								set_variable = {
+									which = urban_density
+									value = 0.5
+								}
+							}
+						}
+						else = {
+							set_variable = {
+								which = urban_density
+								value = 0
+							}
+						}
+						set_variable = {
+							which = urban_population_removed
+							value = 0
+						}
+						set_variable = {
+							which = urban_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = urban_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_urban_transfered
+							value = 0
+						}
+					}
+				}
+				102 = {
+					change_variable = {
+						which = medium_earthquakes_around_the_world
+						value = 1
+					}
+				}
+			}
+			10 = {
+				add_province_modifier = {
+					name = sismic_chaos_major
+					duration = 365
+				}
+				every_neighbor_province = {
+					limit = {
+						NOT = {
+							has_province_modifier = sismic_chaos_mild
+						}
+						NOT = {
+							has_province_modifier = sismic_chaos_major
+						}
+					}
+					add_province_modifier = {
+						name = sismic_chaos_mild
+						duration = 365
+					}
+					every_neighbor_province = {
+						add_province_modifier = {
+							name = sismic_chaos_minor
+							duration = 365
+						}
+					}
+				}
+				random = {
+					chance = 10
+					set_variable = {
+						which = rural_population_removed
+						value = 0.001
+					}
+					hidden_effect = {
+						set_variable = {
+							which = rural_population_old
+							which = rural_pop
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_pop
+							}
+							multiply_variable = {
+								which = rural_population_removed
+								which = rural_percentage_removed
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									value = 0
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									which = rural_population_removed
+								}
+								multiply_variable = {
+									which = rural_population_fleeing
+									which = percent_rural_transfered
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_base_pop_removed
+							}
+						}
+						multiply_variable = {
+							which = rural_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 100
+						}
+						subtract_variable = {
+							which = InvPopRatio
+							which = urban_ratio
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = InvPopRatio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = rural_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = rural_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = rural_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = rural_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = InvPopRatio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						set_variable = {
+							which = urban_ratio
+							value = 100
+						}
+						subtract_variable = {
+							which = urban_ratio
+							which = InvPopRatio
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_pop
+										value = 0.01
+									}
+								}
+							}
+							set_variable = {
+								which = rural_pop
+								value = 0.01
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = ideal_rural_pop
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = ideal_rural_pop
+								value = 1
+							}
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_density
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_density
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								which = rural_density
+							}
+							multiply_variable = {
+								which = total_pop_compare
+								value = 2
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = ideal_rural_pop
+										which = total_pop_compare
+									}
+									check_variable = {
+										which = rural_density
+										value = 10
+									}
+								}
+								set_variable = {
+									which = ideal_rural_pop
+									which = rural_density
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								value = 0
+							}
+							divide_variable = {
+								which = rural_density
+								which = ideal_rural_pop
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_density
+										value = 0.5
+									}
+								}
+							}
+							set_variable = {
+								which = rural_density
+								value = 0.5
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = tribals_ratio
+									value = 0.001
+								}
+								OR = {
+									check_variable = {
+										which = rural_percentage_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = rural_base_pop_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+							}
+							if = {
+								limit = {
+									OR = {
+										is_city = yes
+										is_colony = yes
+									}
+									has_province_flag = plague_attacked
+									owner = {
+										NOT = {
+											is_tribal = yes
+										}
+									}
+									NOT = {
+										check_variable = {
+											which = province_plague_immunity
+											value = 0
+										}
+									}
+									OR = {
+										continent = north_america
+										continent = south_america
+										superregion = australia_superregion
+									}
+									OR = {
+										AND = {
+											owner = {
+												is_colonial_nation = no
+											}
+											owner = {
+												capital_scope = {
+													continent = europe
+												}
+											}
+										}
+										AND = {
+											owner = {
+												is_colonial_nation = yes
+											}
+											owner = {
+												colonial_parent = {
+													capital_scope = {
+														continent = europe
+													}
+												}
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_pop
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_population_old
+								}
+								change_variable = {
+									which = rural_population_tribal_decrease
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_decrease
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+							else = {
+								set_variable = {
+									which = rural_population_tribal_increase
+									which = rural_population_old
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									which = rural_pop
+								}
+								change_variable = {
+									which = rural_population_tribal_increase
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_increase
+								}
+								set_variable = {
+									which = rural_population_tribal_increase
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+						}
+						set_variable = {
+							which = rural_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = rural_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_rural_transfered
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_old
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+					}
+					set_variable = {
+						which = urban_population_removed
+						value = 0.001
+					}
+					hidden_effect = {
+						set_variable = {
+							which = urban_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								which = urban_pop
+							}
+							multiply_variable = {
+								which = urban_population_removed
+								which = urban_percentage_removed
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								value = 0
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								which = eats_continent_food
+							}
+							multiply_variable = {
+								which = urban_continent_food_loss
+								which = urban_percentage_removed
+							}
+							subtract_variable = {
+								which = eats_continent_food
+								which = urban_continent_food_loss
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								which = urban_base_pop_removed
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								value = 0
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								which = eats_continent_food
+							}
+							set_variable = {
+								which = urban_pop_total
+								value = 0
+							}
+							change_variable = {
+								which = urban_pop_total
+								which = urban_pop
+							}
+							set_variable = {
+								which = urban_pop_loss_percent
+								value = 0
+							}
+							set_variable = {
+								which = urban_pop_loss_percent
+								which = urban_base_pop_removed
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = urban_pop_total
+										value = 0
+									}
+								}
+							}
+							else = {
+								divide_variable = {
+									which = urban_pop_loss_percent
+									which = urban_pop_total
+								}
+							}
+							multiply_variable = {
+								which = urban_continent_food_loss
+								which = urban_pop_loss_percent
+							}
+							subtract_variable = {
+								which = eats_continent_food
+								which = urban_continent_food_loss
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = percent_urban_transfered
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_fleeing
+								value = 0
+							}
+							set_variable = {
+								which = urban_population_fleeing
+								which = urban_population_removed
+							}
+							multiply_variable = {
+								which = urban_population_fleeing
+								which = percent_rural_transfered
+							}
+						}
+						multiply_variable = {
+							which = urban_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = urban_ratio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = urban_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = urban_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = urban_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = urban_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_ratio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = urban_pop
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = urban_pop
+								value = 0.001
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_gravity_total
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_density
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							divide_variable = {
+								which = urban_density
+								which = urban_gravity_total
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = urban_density
+											value = 0.5
+										}
+									}
+								}
+								set_variable = {
+									which = urban_density
+									value = 0.5
+								}
+							}
+						}
+						else = {
+							set_variable = {
+								which = urban_density
+								value = 0
+							}
+						}
+						set_variable = {
+							which = urban_population_removed
+							value = 0
+						}
+						set_variable = {
+							which = urban_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = urban_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_urban_transfered
+							value = 0
+						}
+					}
+				}
+				every_neighbor_province = {
+					limit = {
+						has_province_modifier = sismic_chaos_minor
+					}
+					random = {
+						chance = 10
+						set_variable = {
+							which = rural_population_removed
+							value = 0.001
+						}
+						hidden_effect = {
+							set_variable = {
+								which = rural_population_old
+								which = rural_pop
+							}
+							set_variable = {
+								which = rural_population_removed
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = rural_percentage_removed
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = rural_population_removed
+									which = rural_pop
+								}
+								multiply_variable = {
+									which = rural_population_removed
+									which = rural_percentage_removed
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = percent_rural_transfered
+											value = 0.001
+										}
+									}
+									set_variable = {
+										which = rural_population_fleeing
+										value = 0
+									}
+									set_variable = {
+										which = rural_population_fleeing
+										which = rural_population_removed
+									}
+									multiply_variable = {
+										which = rural_population_fleeing
+										which = percent_rural_transfered
+									}
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = rural_base_pop_removed
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = rural_population_removed
+									which = rural_base_pop_removed
+								}
+							}
+							multiply_variable = {
+								which = rural_population_removed
+								value = -10
+							}
+							set_variable = {
+								which = InvPopRatio
+								value = 100
+							}
+							subtract_variable = {
+								which = InvPopRatio
+								which = urban_ratio
+							}
+							set_variable = {
+								which = PopRealValue
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = PopRealValue
+								which = InvPopRatio
+							}
+							change_variable = {
+								which = total_pop_r
+								which = rural_population_removed
+							}
+							set_variable = {
+								which = PopRealChange
+								which = rural_population_removed
+							}
+							multiply_variable = {
+								which = PopRealChange
+								value = 100
+							}
+							change_variable = {
+								which = PopRealValue
+								which = PopRealChange
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = PopRealValue
+											value = 1
+										}
+									}
+								}
+								set_variable = {
+									which = PopRealValue
+									value = 1
+								}
+							}
+							set_variable = {
+								which = rural_pop
+								which = PopRealValue
+							}
+							multiply_variable = {
+								which = rural_pop
+								value = 0.001
+							}
+							divide_variable = {
+								which = PopRealValue
+								which = total_pop_r
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = PopRealValue
+											value = 0.001
+										}
+									}
+								}
+								set_variable = {
+									which = PopRealValue
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = InvPopRatio
+								which = PopRealValue
+							}
+							set_variable = {
+								which = total_pop
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = total_pop
+								value = 0.1
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0
+							}
+							set_variable = {
+								which = PopRealChange
+								value = 0
+							}
+							set_variable = {
+								which = tempRural
+								which = rural_pop_display
+							}
+							set_variable = {
+								which = tempUrban
+								which = urban_pop_display
+							}
+							set_variable = {
+								which = rural_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = urban_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = upper_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = total_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 100
+							}
+							subtract_variable = {
+								which = t_P_ITV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = t_P_ITV
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_pop_display
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 0
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_pop_display
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							change_variable = {
+								which = upper_pop_display
+								which = upper_pop_r
+							}
+							change_variable = {
+								which = total_pop_display
+								which = total_pop_r
+							}
+							subtract_variable = {
+								which = tempRural
+								which = rural_pop_display
+							}
+							subtract_variable = {
+								which = tempUrban
+								which = urban_pop_display
+							}
+							subtract_variable = {
+								which = rural_change_display
+								which = tempRural
+							}
+							subtract_variable = {
+								which = urban_change_display
+								which = tempUrban
+							}
+							set_variable = {
+								which = tempRural
+								value = 0
+							}
+							set_variable = {
+								which = tempUrban
+								value = 0
+							}
+							set_variable = {
+								which = total_change_display
+								which = rural_change_display
+							}
+							change_variable = {
+								which = total_change_display
+								which = urban_change_display
+							}
+							set_variable = {
+								which = urban_ratio
+								value = 100
+							}
+							subtract_variable = {
+								which = urban_ratio
+								which = InvPopRatio
+							}
+							set_variable = {
+								which = InvPopRatio
+								value = 0
+							}
+							set_variable = {
+								which = tempRural
+								which = rural_pop_display
+							}
+							set_variable = {
+								which = tempUrban
+								which = urban_pop_display
+							}
+							set_variable = {
+								which = rural_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = urban_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = upper_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = total_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 100
+							}
+							subtract_variable = {
+								which = t_P_ITV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = t_P_ITV
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_pop_display
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 0
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_pop_display
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							change_variable = {
+								which = upper_pop_display
+								which = upper_pop_r
+							}
+							change_variable = {
+								which = total_pop_display
+								which = total_pop_r
+							}
+							subtract_variable = {
+								which = tempRural
+								which = rural_pop_display
+							}
+							subtract_variable = {
+								which = tempUrban
+								which = urban_pop_display
+							}
+							subtract_variable = {
+								which = rural_change_display
+								which = tempRural
+							}
+							subtract_variable = {
+								which = urban_change_display
+								which = tempUrban
+							}
+							set_variable = {
+								which = tempRural
+								value = 0
+							}
+							set_variable = {
+								which = tempUrban
+								value = 0
+							}
+							set_variable = {
+								which = total_change_display
+								which = rural_change_display
+							}
+							change_variable = {
+								which = total_change_display
+								which = urban_change_display
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = rural_pop
+											value = 0.01
+										}
+									}
+								}
+								set_variable = {
+									which = rural_pop
+									value = 0.01
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = ideal_rural_pop
+											value = 1
+										}
+									}
+								}
+								set_variable = {
+									which = ideal_rural_pop
+									value = 1
+								}
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 100
+							}
+							subtract_variable = {
+								which = t_P_ITV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = t_P_ITV
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_density
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = rural_density
+										value = 0.01
+									}
+								}
+								set_variable = {
+									which = total_pop_compare
+									which = rural_density
+								}
+								multiply_variable = {
+									which = total_pop_compare
+									value = 2
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = ideal_rural_pop
+											which = total_pop_compare
+										}
+										check_variable = {
+											which = rural_density
+											value = 10
+										}
+									}
+									set_variable = {
+										which = ideal_rural_pop
+										which = rural_density
+									}
+								}
+								set_variable = {
+									which = total_pop_compare
+									value = 0
+								}
+								divide_variable = {
+									which = rural_density
+									which = ideal_rural_pop
+								}
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = rural_density
+											value = 0.5
+										}
+									}
+								}
+								set_variable = {
+									which = rural_density
+									value = 0.5
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = tribals_ratio
+										value = 0.001
+									}
+									OR = {
+										check_variable = {
+											which = rural_percentage_removed
+											value = 0.001
+										}
+										check_variable = {
+											which = rural_base_pop_removed
+											value = 0.001
+										}
+										check_variable = {
+											which = percent_rural_transfered
+											value = 0.001
+										}
+									}
+								}
+								if = {
+									limit = {
+										OR = {
+											is_city = yes
+											is_colony = yes
+										}
+										has_province_flag = plague_attacked
+										owner = {
+											NOT = {
+												is_tribal = yes
+											}
+										}
+										NOT = {
+											check_variable = {
+												which = province_plague_immunity
+												value = 0
+											}
+										}
+										OR = {
+											continent = north_america
+											continent = south_america
+											superregion = australia_superregion
+										}
+										OR = {
+											AND = {
+												owner = {
+													is_colonial_nation = no
+												}
+												owner = {
+													capital_scope = {
+														continent = europe
+													}
+												}
+											}
+											AND = {
+												owner = {
+													is_colonial_nation = yes
+												}
+												owner = {
+													colonial_parent = {
+														capital_scope = {
+															continent = europe
+														}
+													}
+												}
+											}
+										}
+									}
+									set_variable = {
+										which = rural_population_tribal_decrease
+										which = rural_pop
+									}
+									divide_variable = {
+										which = rural_population_tribal_decrease
+										which = rural_population_old
+									}
+									change_variable = {
+										which = rural_population_tribal_decrease
+										value = 0.5
+									}
+									divide_variable = {
+										which = rural_population_tribal_decrease
+										value = 1.5
+									}
+									multiply_variable = {
+										which = tribals_ratio
+										which = rural_population_tribal_decrease
+									}
+									set_variable = {
+										which = rural_population_tribal_decrease
+										value = 0
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = tribals_ratio
+												value = 100
+											}
+										}
+										set_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									if = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = tribals_ratio
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = tribals_ratio
+											value = 0
+										}
+									}
+									set_variable = {
+										which = tribals_ratio_display
+										which = tribals_ratio
+									}
+									multiply_variable = {
+										which = tribals_ratio_display
+										value = 0.01
+									}
+									multiply_variable = {
+										which = tribals_ratio_display
+										value = 100
+									}
+								}
+								else = {
+									set_variable = {
+										which = rural_population_tribal_increase
+										which = rural_population_old
+									}
+									divide_variable = {
+										which = rural_population_tribal_increase
+										which = rural_pop
+									}
+									change_variable = {
+										which = rural_population_tribal_increase
+										value = 0.5
+									}
+									divide_variable = {
+										which = rural_population_tribal_increase
+										value = 1.5
+									}
+									multiply_variable = {
+										which = tribals_ratio
+										which = rural_population_tribal_increase
+									}
+									set_variable = {
+										which = rural_population_tribal_increase
+										value = 0
+									}
+									if = {
+										limit = {
+											check_variable = {
+												which = tribals_ratio
+												value = 100
+											}
+										}
+										set_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									if = {
+										limit = {
+											NOT = {
+												check_variable = {
+													which = tribals_ratio
+													value = 0
+												}
+											}
+										}
+										set_variable = {
+											which = tribals_ratio
+											value = 0
+										}
+									}
+									set_variable = {
+										which = tribals_ratio_display
+										which = tribals_ratio
+									}
+									multiply_variable = {
+										which = tribals_ratio_display
+										value = 0.01
+									}
+									multiply_variable = {
+										which = tribals_ratio_display
+										value = 100
+									}
+								}
+							}
+							set_variable = {
+								which = rural_percentage_removed
+								value = 0
+							}
+							set_variable = {
+								which = rural_base_pop_removed
+								value = 0
+							}
+							set_variable = {
+								which = percent_rural_transfered
+								value = 0
+							}
+							set_variable = {
+								which = rural_population_old
+								value = 0
+							}
+							set_variable = {
+								which = rural_population_removed
+								value = 0
+							}
+						}
+						set_variable = {
+							which = urban_population_removed
+							value = 0.001
+						}
+						hidden_effect = {
+							set_variable = {
+								which = urban_population_removed
+								value = 0
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = urban_percentage_removed
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = urban_population_removed
+									which = urban_pop
+								}
+								multiply_variable = {
+									which = urban_population_removed
+									which = urban_percentage_removed
+								}
+								set_variable = {
+									which = urban_continent_food_loss
+									value = 0
+								}
+								set_variable = {
+									which = urban_continent_food_loss
+									which = eats_continent_food
+								}
+								multiply_variable = {
+									which = urban_continent_food_loss
+									which = urban_percentage_removed
+								}
+								subtract_variable = {
+									which = eats_continent_food
+									which = urban_continent_food_loss
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = urban_base_pop_removed
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = urban_population_removed
+									which = urban_base_pop_removed
+								}
+								set_variable = {
+									which = urban_continent_food_loss
+									value = 0
+								}
+								set_variable = {
+									which = urban_continent_food_loss
+									which = eats_continent_food
+								}
+								set_variable = {
+									which = urban_pop_total
+									value = 0
+								}
+								change_variable = {
+									which = urban_pop_total
+									which = urban_pop
+								}
+								set_variable = {
+									which = urban_pop_loss_percent
+									value = 0
+								}
+								set_variable = {
+									which = urban_pop_loss_percent
+									which = urban_base_pop_removed
+								}
+								if = {
+									limit = {
+										is_variable_equal = {
+											which = urban_pop_total
+											value = 0
+										}
+									}
+								}
+								else = {
+									divide_variable = {
+										which = urban_pop_loss_percent
+										which = urban_pop_total
+									}
+								}
+								multiply_variable = {
+									which = urban_continent_food_loss
+									which = urban_pop_loss_percent
+								}
+								subtract_variable = {
+									which = eats_continent_food
+									which = urban_continent_food_loss
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = percent_urban_transfered
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = urban_population_fleeing
+									value = 0
+								}
+								set_variable = {
+									which = urban_population_fleeing
+									which = urban_population_removed
+								}
+								multiply_variable = {
+									which = urban_population_fleeing
+									which = percent_rural_transfered
+								}
+							}
+							multiply_variable = {
+								which = urban_population_removed
+								value = -10
+							}
+							set_variable = {
+								which = PopRealValue
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = PopRealValue
+								which = urban_ratio
+							}
+							change_variable = {
+								which = total_pop_r
+								which = urban_population_removed
+							}
+							set_variable = {
+								which = PopRealChange
+								which = urban_population_removed
+							}
+							multiply_variable = {
+								which = PopRealChange
+								value = 100
+							}
+							change_variable = {
+								which = PopRealValue
+								which = PopRealChange
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = PopRealValue
+											value = 1
+										}
+									}
+								}
+								set_variable = {
+									which = PopRealValue
+									value = 1
+								}
+							}
+							set_variable = {
+								which = urban_pop
+								which = PopRealValue
+							}
+							multiply_variable = {
+								which = urban_pop
+								value = 0.001
+							}
+							divide_variable = {
+								which = PopRealValue
+								which = total_pop_r
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = PopRealValue
+											value = 0.001
+										}
+									}
+								}
+								set_variable = {
+									which = PopRealValue
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_ratio
+								which = PopRealValue
+							}
+							set_variable = {
+								which = total_pop
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = total_pop
+								value = 0.1
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0
+							}
+							set_variable = {
+								which = PopRealChange
+								value = 0
+							}
+							set_variable = {
+								which = tempRural
+								which = rural_pop_display
+							}
+							set_variable = {
+								which = tempUrban
+								which = urban_pop_display
+							}
+							set_variable = {
+								which = rural_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = urban_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = upper_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = total_pop_display
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 100
+							}
+							subtract_variable = {
+								which = t_P_ITV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = t_P_ITV
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_pop_display
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t_P_ITV
+								value = 0
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_pop_display
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							change_variable = {
+								which = upper_pop_display
+								which = upper_pop_r
+							}
+							change_variable = {
+								which = total_pop_display
+								which = total_pop_r
+							}
+							subtract_variable = {
+								which = tempRural
+								which = rural_pop_display
+							}
+							subtract_variable = {
+								which = tempUrban
+								which = urban_pop_display
+							}
+							subtract_variable = {
+								which = rural_change_display
+								which = tempRural
+							}
+							subtract_variable = {
+								which = urban_change_display
+								which = tempUrban
+							}
+							set_variable = {
+								which = tempRural
+								value = 0
+							}
+							set_variable = {
+								which = tempUrban
+								value = 0
+							}
+							set_variable = {
+								which = total_change_display
+								which = rural_change_display
+							}
+							change_variable = {
+								which = total_change_display
+								which = urban_change_display
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = urban_pop
+											value = 0.001
+										}
+									}
+								}
+								set_variable = {
+									which = urban_pop
+									value = 0.001
+								}
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = urban_gravity_total
+										value = 0.01
+									}
+								}
+								set_variable = {
+									which = t1_P_RTV
+									which = total_pop_r
+								}
+								multiply_variable = {
+									which = t1_P_RTV
+									which = urban_ratio
+								}
+								set_variable = {
+									which = t2_P_RTV
+									which = t1_P_RTV
+								}
+								multiply_variable = {
+									which = t1_P_RTV
+									value = 0.01
+								}
+								set_variable = {
+									which = t3_P_RTV
+									which = t1_P_RTV
+								}
+								multiply_variable = {
+									which = t3_P_RTV
+									value = -100
+								}
+								change_variable = {
+									which = t3_P_RTV
+									which = t2_P_RTV
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = t3_P_RTV
+											value = 0.05
+										}
+									}
+									change_variable = {
+										which = t1_P_RTV
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = urban_density
+									which = t1_P_RTV
+								}
+								set_variable = {
+									which = t1_P_RTV
+									value = 0
+								}
+								set_variable = {
+									which = t2_P_RTV
+									value = 0
+								}
+								set_variable = {
+									which = t3_P_RTV
+									value = 0
+								}
+								divide_variable = {
+									which = urban_density
+									which = urban_gravity_total
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = urban_density
+												value = 0.5
+											}
+										}
+									}
+									set_variable = {
+										which = urban_density
+										value = 0.5
+									}
+								}
+							}
+							else = {
+								set_variable = {
+									which = urban_density
+									value = 0
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								value = 0
+							}
+							set_variable = {
+								which = urban_percentage_removed
+								value = 0
+							}
+							set_variable = {
+								which = urban_base_pop_removed
+								value = 0
+							}
+							set_variable = {
+								which = percent_urban_transfered
+								value = 0
+							}
+						}
+					}
+				}
+				102 = {
+					change_variable = {
+						which = major_earthquakes_around_the_world
+						value = 1
+					}
+				}
+			}
+		}
+		owner = {
+			country_event = {
+				id = naturaldisaster.003
+				days = 0
+			}
+			every_neighbor_country = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							has_province_modifier = sismic_chaos_minor
+							has_province_modifier = sismic_chaos_mild
+							has_province_modifier = sismic_chaos_major
+						}
+					}
+				}
+				country_event = {
+					id = naturaldisaster.003
+					days = 0
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.003
+	title = "naturaldisaster.003.name"
+	desc = "naturaldisaster.003.desc"
+	picture = EARTHQUAKE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "naturaldisaster.003.opta"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					treasury = 200
+				}
+				factor = 0
+			}
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+			add_province_modifier = {
+				name = ruler_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				add_treasury = -25
+			}
+			add_province_modifier = {
+				name = ruler_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				add_treasury = -50
+			}
+			add_province_modifier = {
+				name = ruler_help_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.003.optb"
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.003.optc"
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			adm_tech = 35
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		country_event = {
+			id = naturaldisaster.501
+			days = 5
+		}
+	}
+	option = {
+		name = "naturaldisaster.003.optd"
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			adm_tech = 35
+		}
+	}
+	option = {
+		name = "naturaldisaster.003.opte"
+		trigger = {
+			NOT = {
+				adm_tech = 35
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.101
+	title = "naturaldisaster.101.name"
+	desc = "naturaldisaster.101.desc"
+	picture = EARTHQUAKE_eventPicture
+	trigger = {
+		owns = 2855
+	}
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.101.opta"
+		random_list = {
+			2 = {
+				832 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			3 = {
+				2604 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			4 = {
+				793 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			16 = {
+				3402 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			7 = {
+				796 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			1 = {
+				2205 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			8 = {
+				2207 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			10 = {
+				574 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			4 = {
+				649 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			41 = {
+				2586 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			1 = {
+				2097 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			1 = {
+				633 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			6 = {
+				2106 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			17 = {
+				632 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			5 = {
+				2855 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			12 = {
+				2531 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			15 = {
+				2410 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			1 = {
+				773 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			3 = {
+				2339 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			2 = {
+				1034 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			1 = {
+				1103 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			2 = {
+				5154 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			2 = {
+				3946 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			1 = {
+				2277 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+			3 = {
+				3972 = {
+					province_event = {
+						id = naturaldisaster.102
+						days = 1
+						random = 200
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = naturaldisaster.102
+	title = "naturaldisaster.102.name"
+	desc = "naturaldisaster.102.desc"
+	picture = EARTHQUAKE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "naturaldisaster.102.opta"
+		random_list = {
+			60 = {
+				add_province_modifier = {
+					name = volcanic_chaos_minor
+					duration = 365
+				}
+				change_variable = {
+					which = normal_volcano_eruption
+					value = 1
+				}
+			}
+			20 = {
+				add_province_modifier = {
+					name = volcanic_chaos_minor
+					duration = 730
+				}
+				change_variable = {
+					which = sizable_volcano_eruption
+					value = 1
+				}
+			}
+			10 = {
+				add_province_modifier = {
+					name = volcanic_chaos_minor
+					duration = 1095
+				}
+				change_variable = {
+					which = long_volcano_eruption
+					value = 1
+				}
+			}
+			5 = {
+				add_province_modifier = {
+					name = volcanic_chaos_minor
+					duration = 1825
+				}
+				change_variable = {
+					which = very_long_volcano_eruption
+					value = 1
+				}
+			}
+			4 = {
+				add_province_modifier = {
+					name = volcanic_chaos_mild
+					duration = 365
+				}
+				change_variable = {
+					which = moderate_volcano_eruption
+					value = 1
+				}
+			}
+			1 = {
+				add_province_modifier = {
+					name = volcanic_chaos_major
+					duration = 365
+				}
+				change_variable = {
+					which = major_volcano_eruption
+					value = 1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.201
+	title = "naturaldisaster.201.name"
+	desc = "naturaldisaster.201.desc"
+	picture = STORM_eventPicture
+	trigger = {
+		always = no
+		owns = 90
+	}
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.201.opta"
+		random_list = {
+			10 = {
+				random_province = {
+					limit = {
+						sea_zone = {
+							region = baltic_sea_region
+						}
+						has_port = yes
+						NOT = {
+							is_empty = yes
+						}
+						NOT = {
+							OR = {
+								has_province_modifier = "storm_chaos_major"
+								has_province_modifier = "storm_chaos_mild"
+								has_province_modifier = "storm_chaos_minor"
+							}
+						}
+					}
+					province_event = {
+						id = naturaldisaster.202
+						days = 1
+						random = 200
+					}
+				}
+			}
+			15 = {
+				random_province = {
+					limit = {
+						sea_zone = {
+							region = north_atlantic_region
+						}
+						has_port = yes
+						NOT = {
+							is_empty = yes
+						}
+						NOT = {
+							OR = {
+								has_province_modifier = "storm_chaos_major"
+								has_province_modifier = "storm_chaos_mild"
+								has_province_modifier = "storm_chaos_minor"
+							}
+						}
+					}
+					province_event = {
+						id = naturaldisaster.202
+						days = 1
+						random = 200
+					}
+				}
+			}
+			3 = {
+				random_province = {
+					limit = {
+						sea_zone = {
+							region = south_atlantic_region
+						}
+						has_port = yes
+						NOT = {
+							is_empty = yes
+						}
+						NOT = {
+							OR = {
+								has_province_modifier = "storm_chaos_major"
+								has_province_modifier = "storm_chaos_mild"
+								has_province_modifier = "storm_chaos_minor"
+							}
+						}
+					}
+					province_event = {
+						id = naturaldisaster.202
+						days = 1
+						random = 200
+					}
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = naturaldisaster.202
+	title = "naturaldisaster.202.name"
+	desc = "naturaldisaster.202.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.202.opta"
+		random_list = {
+			80 = {
+				every_province = {
+					limit = {
+						area = ROOT
+						has_port = yes
+					}
+					add_province_modifier = {
+						name = storm_chaos_minor
+						duration = 365
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = minor_storm_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			20 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_mild
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							area = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_mild
+							}
+						}
+						add_province_modifier = {
+							name = storm_chaos_minor
+							duration = 365
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = medium_storm_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			1 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_mild
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_major
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							region = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_major
+							}
+						}
+						remove_province_modifier = storm_chaos_minor
+						add_province_modifier = {
+							name = storm_chaos_mild
+							duration = 365
+						}
+						every_neighbor_province = {
+							limit = {
+								region = ROOT
+								NOT = {
+									has_province_modifier = storm_chaos_major
+								}
+								NOT = {
+									has_province_modifier = storm_chaos_mild
+								}
+							}
+							add_province_modifier = {
+								name = storm_chaos_minor
+								duration = 365
+							}
+						}
+					}
+				}
+				random = {
+					chance = 10
+					set_variable = {
+						which = rural_population_removed
+						value = 0.005
+					}
+					hidden_effect = {
+						set_variable = {
+							which = rural_population_old
+							which = rural_pop
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_pop
+							}
+							multiply_variable = {
+								which = rural_population_removed
+								which = rural_percentage_removed
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									value = 0
+								}
+								set_variable = {
+									which = rural_population_fleeing
+									which = rural_population_removed
+								}
+								multiply_variable = {
+									which = rural_population_fleeing
+									which = percent_rural_transfered
+								}
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = rural_population_removed
+								which = rural_base_pop_removed
+							}
+						}
+						multiply_variable = {
+							which = rural_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 100
+						}
+						subtract_variable = {
+							which = InvPopRatio
+							which = urban_ratio
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = InvPopRatio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = rural_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = rural_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = rural_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = rural_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = InvPopRatio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						set_variable = {
+							which = urban_ratio
+							value = 100
+						}
+						subtract_variable = {
+							which = urban_ratio
+							which = InvPopRatio
+						}
+						set_variable = {
+							which = InvPopRatio
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_pop
+										value = 0.01
+									}
+								}
+							}
+							set_variable = {
+								which = rural_pop
+								value = 0.01
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = ideal_rural_pop
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = ideal_rural_pop
+								value = 1
+							}
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_density
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = rural_density
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								which = rural_density
+							}
+							multiply_variable = {
+								which = total_pop_compare
+								value = 2
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = ideal_rural_pop
+										which = total_pop_compare
+									}
+									check_variable = {
+										which = rural_density
+										value = 10
+									}
+								}
+								set_variable = {
+									which = ideal_rural_pop
+									which = rural_density
+								}
+							}
+							set_variable = {
+								which = total_pop_compare
+								value = 0
+							}
+							divide_variable = {
+								which = rural_density
+								which = ideal_rural_pop
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = rural_density
+										value = 0.5
+									}
+								}
+							}
+							set_variable = {
+								which = rural_density
+								value = 0.5
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = tribals_ratio
+									value = 0.001
+								}
+								OR = {
+									check_variable = {
+										which = rural_percentage_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = rural_base_pop_removed
+										value = 0.001
+									}
+									check_variable = {
+										which = percent_rural_transfered
+										value = 0.001
+									}
+								}
+							}
+							if = {
+								limit = {
+									OR = {
+										is_city = yes
+										is_colony = yes
+									}
+									has_province_flag = plague_attacked
+									owner = {
+										NOT = {
+											is_tribal = yes
+										}
+									}
+									NOT = {
+										check_variable = {
+											which = province_plague_immunity
+											value = 0
+										}
+									}
+									OR = {
+										continent = north_america
+										continent = south_america
+										superregion = australia_superregion
+									}
+									OR = {
+										AND = {
+											owner = {
+												is_colonial_nation = no
+											}
+											owner = {
+												capital_scope = {
+													continent = europe
+												}
+											}
+										}
+										AND = {
+											owner = {
+												is_colonial_nation = yes
+											}
+											owner = {
+												colonial_parent = {
+													capital_scope = {
+														continent = europe
+													}
+												}
+											}
+										}
+									}
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_pop
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									which = rural_population_old
+								}
+								change_variable = {
+									which = rural_population_tribal_decrease
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_decrease
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_decrease
+								}
+								set_variable = {
+									which = rural_population_tribal_decrease
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+							else = {
+								set_variable = {
+									which = rural_population_tribal_increase
+									which = rural_population_old
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									which = rural_pop
+								}
+								change_variable = {
+									which = rural_population_tribal_increase
+									value = 0.5
+								}
+								divide_variable = {
+									which = rural_population_tribal_increase
+									value = 1.5
+								}
+								multiply_variable = {
+									which = tribals_ratio
+									which = rural_population_tribal_increase
+								}
+								set_variable = {
+									which = rural_population_tribal_increase
+									value = 0
+								}
+								if = {
+									limit = {
+										check_variable = {
+											which = tribals_ratio
+											value = 100
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 100
+									}
+								}
+								if = {
+									limit = {
+										NOT = {
+											check_variable = {
+												which = tribals_ratio
+												value = 0
+											}
+										}
+									}
+									set_variable = {
+										which = tribals_ratio
+										value = 0
+									}
+								}
+								set_variable = {
+									which = tribals_ratio_display
+									which = tribals_ratio
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 0.01
+								}
+								multiply_variable = {
+									which = tribals_ratio_display
+									value = 100
+								}
+							}
+						}
+						set_variable = {
+							which = rural_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = rural_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_rural_transfered
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_old
+							value = 0
+						}
+						set_variable = {
+							which = rural_population_removed
+							value = 0
+						}
+					}
+					set_variable = {
+						which = urban_population_removed
+						value = 0.001
+					}
+					hidden_effect = {
+						set_variable = {
+							which = urban_population_removed
+							value = 0
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_percentage_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								which = urban_pop
+							}
+							multiply_variable = {
+								which = urban_population_removed
+								which = urban_percentage_removed
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								value = 0
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								which = eats_continent_food
+							}
+							multiply_variable = {
+								which = urban_continent_food_loss
+								which = urban_percentage_removed
+							}
+							subtract_variable = {
+								which = eats_continent_food
+								which = urban_continent_food_loss
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_base_pop_removed
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_removed
+								which = urban_base_pop_removed
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								value = 0
+							}
+							set_variable = {
+								which = urban_continent_food_loss
+								which = eats_continent_food
+							}
+							set_variable = {
+								which = urban_pop_total
+								value = 0
+							}
+							change_variable = {
+								which = urban_pop_total
+								which = urban_pop
+							}
+							set_variable = {
+								which = urban_pop_loss_percent
+								value = 0
+							}
+							set_variable = {
+								which = urban_pop_loss_percent
+								which = urban_base_pop_removed
+							}
+							if = {
+								limit = {
+									is_variable_equal = {
+										which = urban_pop_total
+										value = 0
+									}
+								}
+							}
+							else = {
+								divide_variable = {
+									which = urban_pop_loss_percent
+									which = urban_pop_total
+								}
+							}
+							multiply_variable = {
+								which = urban_continent_food_loss
+								which = urban_pop_loss_percent
+							}
+							subtract_variable = {
+								which = eats_continent_food
+								which = urban_continent_food_loss
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = percent_urban_transfered
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_population_fleeing
+								value = 0
+							}
+							set_variable = {
+								which = urban_population_fleeing
+								which = urban_population_removed
+							}
+							multiply_variable = {
+								which = urban_population_fleeing
+								which = percent_rural_transfered
+							}
+						}
+						multiply_variable = {
+							which = urban_population_removed
+							value = -10
+						}
+						set_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = PopRealValue
+							which = urban_ratio
+						}
+						change_variable = {
+							which = total_pop_r
+							which = urban_population_removed
+						}
+						set_variable = {
+							which = PopRealChange
+							which = urban_population_removed
+						}
+						multiply_variable = {
+							which = PopRealChange
+							value = 100
+						}
+						change_variable = {
+							which = PopRealValue
+							which = PopRealChange
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 1
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 1
+							}
+						}
+						set_variable = {
+							which = urban_pop
+							which = PopRealValue
+						}
+						multiply_variable = {
+							which = urban_pop
+							value = 0.001
+						}
+						divide_variable = {
+							which = PopRealValue
+							which = total_pop_r
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = PopRealValue
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = PopRealValue
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_ratio
+							which = PopRealValue
+						}
+						set_variable = {
+							which = total_pop
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = total_pop
+							value = 0.1
+						}
+						set_variable = {
+							which = PopRealValue
+							value = 0
+						}
+						set_variable = {
+							which = PopRealChange
+							value = 0
+						}
+						set_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						set_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						set_variable = {
+							which = rural_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = urban_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = upper_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = total_pop_display
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 100
+						}
+						subtract_variable = {
+							which = t_P_ITV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = t_P_ITV
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = rural_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t_P_ITV
+							value = 0
+						}
+						set_variable = {
+							which = t1_P_RTV
+							which = total_pop_r
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							which = urban_ratio
+						}
+						set_variable = {
+							which = t2_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t1_P_RTV
+							value = 0.01
+						}
+						set_variable = {
+							which = t3_P_RTV
+							which = t1_P_RTV
+						}
+						multiply_variable = {
+							which = t3_P_RTV
+							value = -100
+						}
+						change_variable = {
+							which = t3_P_RTV
+							which = t2_P_RTV
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = t3_P_RTV
+									value = 0.05
+								}
+							}
+							change_variable = {
+								which = t1_P_RTV
+								value = 0.001
+							}
+						}
+						set_variable = {
+							which = urban_pop_display
+							which = t1_P_RTV
+						}
+						set_variable = {
+							which = t1_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t2_P_RTV
+							value = 0
+						}
+						set_variable = {
+							which = t3_P_RTV
+							value = 0
+						}
+						change_variable = {
+							which = upper_pop_display
+							which = upper_pop_r
+						}
+						change_variable = {
+							which = total_pop_display
+							which = total_pop_r
+						}
+						subtract_variable = {
+							which = tempRural
+							which = rural_pop_display
+						}
+						subtract_variable = {
+							which = tempUrban
+							which = urban_pop_display
+						}
+						subtract_variable = {
+							which = rural_change_display
+							which = tempRural
+						}
+						subtract_variable = {
+							which = urban_change_display
+							which = tempUrban
+						}
+						set_variable = {
+							which = tempRural
+							value = 0
+						}
+						set_variable = {
+							which = tempUrban
+							value = 0
+						}
+						set_variable = {
+							which = total_change_display
+							which = rural_change_display
+						}
+						change_variable = {
+							which = total_change_display
+							which = urban_change_display
+						}
+						if = {
+							limit = {
+								NOT = {
+									check_variable = {
+										which = urban_pop
+										value = 0.001
+									}
+								}
+							}
+							set_variable = {
+								which = urban_pop
+								value = 0.001
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									which = urban_gravity_total
+									value = 0.01
+								}
+							}
+							set_variable = {
+								which = t1_P_RTV
+								which = total_pop_r
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								which = urban_ratio
+							}
+							set_variable = {
+								which = t2_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t1_P_RTV
+								value = 0.01
+							}
+							set_variable = {
+								which = t3_P_RTV
+								which = t1_P_RTV
+							}
+							multiply_variable = {
+								which = t3_P_RTV
+								value = -100
+							}
+							change_variable = {
+								which = t3_P_RTV
+								which = t2_P_RTV
+							}
+							if = {
+								limit = {
+									check_variable = {
+										which = t3_P_RTV
+										value = 0.05
+									}
+								}
+								change_variable = {
+									which = t1_P_RTV
+									value = 0.001
+								}
+							}
+							set_variable = {
+								which = urban_density
+								which = t1_P_RTV
+							}
+							set_variable = {
+								which = t1_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t2_P_RTV
+								value = 0
+							}
+							set_variable = {
+								which = t3_P_RTV
+								value = 0
+							}
+							divide_variable = {
+								which = urban_density
+								which = urban_gravity_total
+							}
+							if = {
+								limit = {
+									NOT = {
+										check_variable = {
+											which = urban_density
+											value = 0.5
+										}
+									}
+								}
+								set_variable = {
+									which = urban_density
+									value = 0.5
+								}
+							}
+						}
+						else = {
+							set_variable = {
+								which = urban_density
+								value = 0
+							}
+						}
+						set_variable = {
+							which = urban_population_removed
+							value = 0
+						}
+						set_variable = {
+							which = urban_percentage_removed
+							value = 0
+						}
+						set_variable = {
+							which = urban_base_pop_removed
+							value = 0
+						}
+						set_variable = {
+							which = percent_urban_transfered
+							value = 0
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = major_storm_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = storm_chaos_minor
+						has_province_modifier = storm_chaos_mild
+						has_province_modifier = storm_chaos_major
+					}
+				}
+			}
+			country_event = {
+				id = naturaldisaster.206
+				days = 0
+			}
+		}
+	}
+}
+province_event = {
+	id = naturaldisaster.203
+	title = "naturaldisaster.203.name"
+	desc = "naturaldisaster.203.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.202.opta"
+		random_list = {
+			80 = {
+				every_province = {
+					limit = {
+						area = ROOT
+						has_port = yes
+					}
+					add_province_modifier = {
+						name = storm_chaos_minor
+						duration = 365
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = minor_hurricane_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			20 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_mild
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							area = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_mild
+							}
+						}
+						add_province_modifier = {
+							name = storm_chaos_minor
+							duration = 365
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = medium_hurricane_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			1 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_mild
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_major
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							region = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_major
+							}
+						}
+						remove_province_modifier = storm_chaos_minor
+						add_province_modifier = {
+							name = storm_chaos_mild
+							duration = 365
+						}
+						every_neighbor_province = {
+							limit = {
+								region = ROOT
+								NOT = {
+									has_province_modifier = storm_chaos_major
+								}
+								NOT = {
+									has_province_modifier = storm_chaos_mild
+								}
+							}
+							add_province_modifier = {
+								name = storm_chaos_minor
+								duration = 365
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = major_hurricane_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = storm_chaos_minor
+						has_province_modifier = storm_chaos_mild
+						has_province_modifier = storm_chaos_major
+					}
+				}
+			}
+			country_event = {
+				id = naturaldisaster.207
+				days = 0
+			}
+		}
+	}
+}
+province_event = {
+	id = naturaldisaster.204
+	title = "naturaldisaster.204.name"
+	desc = "naturaldisaster.204.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.202.opta"
+		random_list = {
+			80 = {
+				every_province = {
+					limit = {
+						area = ROOT
+						has_port = yes
+					}
+					add_province_modifier = {
+						name = storm_chaos_minor
+						duration = 365
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = minor_cyclone_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			20 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_mild
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							area = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_mild
+							}
+						}
+						add_province_modifier = {
+							name = storm_chaos_minor
+							duration = 365
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = medium_cyclone_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			1 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_mild
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_major
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							region = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_major
+							}
+						}
+						remove_province_modifier = storm_chaos_minor
+						add_province_modifier = {
+							name = storm_chaos_mild
+							duration = 365
+						}
+						every_neighbor_province = {
+							limit = {
+								region = ROOT
+								NOT = {
+									has_province_modifier = storm_chaos_major
+								}
+								NOT = {
+									has_province_modifier = storm_chaos_mild
+								}
+							}
+							add_province_modifier = {
+								name = storm_chaos_minor
+								duration = 365
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = major_cyclone_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = storm_chaos_minor
+						has_province_modifier = storm_chaos_mild
+						has_province_modifier = storm_chaos_major
+					}
+				}
+			}
+			country_event = {
+				id = naturaldisaster.208
+				days = 0
+			}
+		}
+	}
+}
+province_event = {
+	id = naturaldisaster.205
+	title = "naturaldisaster.205.name"
+	desc = "naturaldisaster.205.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = "naturaldisaster.202.opta"
+		random_list = {
+			80 = {
+				every_province = {
+					limit = {
+						area = ROOT
+						has_port = yes
+					}
+					add_province_modifier = {
+						name = storm_chaos_minor
+						duration = 365
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = minor_typhoon_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			20 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_mild
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							area = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_mild
+							}
+						}
+						add_province_modifier = {
+							name = storm_chaos_minor
+							duration = 365
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = medium_typhoon_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+			1 = {
+				every_province = {
+					limit = {
+						region = ROOT
+						has_port = yes
+					}
+					remove_province_modifier = storm_chaos_mild
+					remove_province_modifier = storm_chaos_minor
+					add_province_modifier = {
+						name = storm_chaos_major
+						duration = 365
+					}
+					every_neighbor_province = {
+						limit = {
+							region = ROOT
+							NOT = {
+								has_province_modifier = storm_chaos_major
+							}
+						}
+						remove_province_modifier = storm_chaos_minor
+						add_province_modifier = {
+							name = storm_chaos_mild
+							duration = 365
+						}
+						every_neighbor_province = {
+							limit = {
+								region = ROOT
+								NOT = {
+									has_province_modifier = storm_chaos_major
+								}
+								NOT = {
+									has_province_modifier = storm_chaos_mild
+								}
+							}
+							add_province_modifier = {
+								name = storm_chaos_minor
+								duration = 365
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					90 = {
+						change_variable = {
+							which = major_typhoon_around_the_world
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						has_province_modifier = storm_chaos_minor
+						has_province_modifier = storm_chaos_mild
+						has_province_modifier = storm_chaos_major
+					}
+				}
+			}
+			country_event = {
+				id = naturaldisaster.209
+				days = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.206
+	title = "naturaldisaster.206.name"
+	desc = "naturaldisaster.206.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			90 = {
+				change_variable = {
+					which = total_storms_around_the_world
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opta"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					treasury = 200
+				}
+				factor = 0
+			}
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+			add_province_modifier = {
+				name = ruler_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				add_treasury = -25
+			}
+			add_province_modifier = {
+				name = ruler_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				add_treasury = -50
+			}
+			add_province_modifier = {
+				name = ruler_help_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optb"
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optc"
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			adm_tech = 35
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		country_event = {
+			id = naturaldisaster.501
+			days = 5
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optd"
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			adm_tech = 35
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opte"
+		trigger = {
+			NOT = {
+				adm_tech = 35
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.207
+	title = "naturaldisaster.207.name"
+	desc = "naturaldisaster.207.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			90 = {
+				change_variable = {
+					which = total_storms_around_the_world
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opta"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					treasury = 200
+				}
+				factor = 0
+			}
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+			add_province_modifier = {
+				name = ruler_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				add_treasury = -25
+			}
+			add_province_modifier = {
+				name = ruler_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				add_treasury = -50
+			}
+			add_province_modifier = {
+				name = ruler_help_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optb"
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optc"
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			adm_tech = 35
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		country_event = {
+			id = naturaldisaster.501
+			days = 5
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optd"
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			adm_tech = 35
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opte"
+		trigger = {
+			NOT = {
+				adm_tech = 35
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.208
+	title = "naturaldisaster.208.name"
+	desc = "naturaldisaster.208.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			90 = {
+				change_variable = {
+					which = total_storms_around_the_world
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opta"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					treasury = 200
+				}
+				factor = 0
+			}
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+			add_province_modifier = {
+				name = ruler_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				add_treasury = -25
+			}
+			add_province_modifier = {
+				name = ruler_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				add_treasury = -50
+			}
+			add_province_modifier = {
+				name = ruler_help_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optb"
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optc"
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			adm_tech = 35
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		country_event = {
+			id = naturaldisaster.501
+			days = 5
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optd"
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			adm_tech = 35
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opte"
+		trigger = {
+			NOT = {
+				adm_tech = 35
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.209
+	title = "naturaldisaster.209.name"
+	desc = "naturaldisaster.209.desc"
+	picture = STORM_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			90 = {
+				change_variable = {
+					which = total_sortms_around_the_world
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opta"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				NOT = {
+					treasury = 200
+				}
+				factor = 0
+			}
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+			add_province_modifier = {
+				name = ruler_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				add_treasury = -25
+			}
+			add_province_modifier = {
+				name = ruler_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				add_treasury = -50
+			}
+			add_province_modifier = {
+				name = ruler_help_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optb"
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			adm_tech = 35
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optc"
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			adm_tech = 35
+			AND = {
+				is_subject = yes
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		country_event = {
+			id = naturaldisaster.501
+			days = 5
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.optd"
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			adm_tech = 35
+		}
+	}
+	option = {
+		name = "naturaldisaster.206.opte"
+		trigger = {
+			NOT = {
+				adm_tech = 35
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.501
+	title = "naturaldisaster.501.name"
+	desc = "naturaldisaster.501.desc"
+	picture = BURNING_CITY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "naturaldisaster.501.opta"
+		ai_chance = {
+			factor = 75
+		}
+		FROM = {
+			country_event = {
+				id = naturaldisaster.502
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.501.optb"
+		ai_chance = {
+			factor = 25
+		}
+		FROM = {
+			country_event = {
+				id = naturaldisaster.503
+				days = 5
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.502
+	title = "naturaldisaster.502.name"
+	desc = "naturaldisaster.502.desc"
+	picture = BURNING_CITY_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "naturaldisaster.502.opta"
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				overlord = {
+					add_treasury = -10
+				}
+			}
+			add_province_modifier = {
+				name = overlord_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				overlord = {
+					add_treasury = -25
+				}
+			}
+			add_province_modifier = {
+				name = overlord_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				overlord = {
+					add_treasury = -50
+				}
+			}
+			add_province_modifier = {
+				name = overlord_help_major
+				duration = 365
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = disaster_help
+			}
+		}
+	}
+}
+country_event = {
+	id = naturaldisaster.503
+	title = "naturaldisaster.503.name"
+	desc = "naturaldisaster.503.desc"
+	picture = BURNING_CITY_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = disaster_abandonned
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.503.opta"
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			owner = {
+				add_treasury = -10
+			}
+			add_province_modifier = {
+				name = ruler_help_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			owner = {
+				add_treasury = -25
+			}
+			add_province_modifier = {
+				name = ruler_help_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			owner = {
+				add_treasury = -50
+			}
+			add_province_modifier = {
+				name = ruler_help_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.503.optb"
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_minor
+					has_province_modifier = storm_chaos_minor
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_minor
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_mild
+					has_province_modifier = storm_chaos_mild
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_medium
+				duration = 365
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = sismic_chaos_major
+					has_province_modifier = storm_chaos_major
+				}
+			}
+			add_province_modifier = {
+				name = tax_relief_major
+				duration = 365
+			}
+		}
+	}
+	option = {
+		name = "naturaldisaster.503.optc"
+	}
+}

@@ -1,0 +1,15 @@
+expand_the_army = {
+	category = 1
+	allow = {
+		always = yes
+	}
+	effect = {
+		add_mil_power = -100
+	}
+	modifier = {
+		army_tradition = 0.15
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

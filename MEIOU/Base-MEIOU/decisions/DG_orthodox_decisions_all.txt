@@ -1,0 +1,2228 @@
+country_decisions = {
+	union_of_florence = {
+		potential = {
+			religion = orthodox
+			NOT = {
+				has_country_flag = union_of_florence
+			}
+			NOT = {
+				government = theocracy
+			}
+			NOT = {
+				is_religion_enabled = protestant
+			}
+		}
+		allow = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					religion = catholic
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = papal_authority_400
+				PAP = {
+					check_variable = {
+						which = papal_authority
+						value = 400
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = church_council_happening
+				PAP = {
+					has_country_flag = church_council
+				}
+			}
+			is_defender_of_faith = no
+			is_force_converted = no
+		}
+		effect = {
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_prestige = -15
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_prestige = -12
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_prestige = -9
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_prestige = -6
+			}
+			else = {
+				add_prestige = -3
+			}
+			if = {
+				limit = {
+					at_war_with_religious_enemy = yes
+				}
+				hidden_effect = {
+					PAP = {
+						set_country_flag = crusade_called
+					}
+					set_country_flag = crusade_sponsor
+					capital_scope = {
+						set_province_flag = crusade_goal
+					}
+				}
+				country_event = {
+					id = dg_catholic.044
+					days = 0
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							at_war_with_religious_enemy = yes
+						}
+					}
+					set_country_flag = crusade_promised
+				}
+			}
+			custom_tooltip = promise_to_convert_catholic
+			set_country_flag = union_of_florence
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				num_of_cities = 5
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					any_neighbor_country = {
+						NOT = {
+							religion_group = christian
+						}
+						num_of_cities = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				war_score = 10
+				factor = 0
+			}
+			modifier = {
+				any_neighbor_country = {
+					religion = orthodox
+				}
+				factor = 0
+			}
+		}
+	}
+	union_of_florence_promise = {
+		potential = {
+			has_country_flag = union_of_florence
+			religion = orthodox
+		}
+		allow = {
+			NOT = {
+				is_force_converted = yes
+			}
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					religion = catholic
+				}
+			}
+		}
+		effect = {
+			clr_country_flag = union_of_florence
+			set_country_flag = voluntary_conversion
+			if = {
+				limit = {
+					NOT = {
+						is_religion_enabled = catholic
+					}
+				}
+				custom_tooltip = convert_dangerous_religion
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = catholic_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = catholic_population
+						value = 50
+					}
+				}
+				custom_tooltip = convert_population_50
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = catholic_population
+						value = 25
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_population_0
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = catholic
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = catholic
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = catholic
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_catholic
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					if = {
+						limit = {
+							religion = orthodox
+						}
+						change_variable = {
+							which = province_religion
+							value = -8
+						}
+						change_variable = {
+							which = catholic
+							value = 8
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = orthodox
+								value = 8
+							}
+						}
+						change_variable = {
+							which = orthodox
+							value = -4
+						}
+						change_variable = {
+							which = catholic
+							value = 4
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = orthodox
+								value = 6
+							}
+						}
+						change_variable = {
+							which = orthodox
+							value = -2
+						}
+						change_variable = {
+							which = catholic
+							value = 2
+						}
+					}
+				}
+			}
+			custom_tooltip = catholic_40
+			change_religion = catholic
+			add_country_modifier = {
+				name = religious_controversy
+				duration = 4000
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	request_autonomy = {
+		potential = {
+			OR = {
+				religion = orthodox
+				religion = coptic
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = orthodox_patriarchate
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = coptic_patriarchate
+				}
+			}
+			NOT = {
+				has_country_flag = religious_autonomy
+			}
+			is_force_converted = no
+			any_country = {
+				overlord_of = ROOT
+				OR = {
+					religion = orthodox
+					religion = coptic
+				}
+				OR = {
+					any_owned_province = {
+						has_province_modifier = orthodox_patriarchate
+					}
+					any_owned_province = {
+						has_province_modifier = coptic_patriarchate
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = autonomy_attempt
+			}
+		}
+		allow = {
+			is_at_war = no
+			OR = {
+				advisor = theologian
+				DIP = 4
+			}
+			adm_power = 25
+		}
+		effect = {
+			add_adm_power = -25
+			hidden_effect = {
+				set_country_flag = autonomy_attempt
+			}
+			random_country = {
+				limit = {
+					overlord_of = ROOT
+				}
+				country_event = {
+					id = dg_orthodox.031
+					days = 90
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				religious_unity = 1.00
+				factor = 0
+			}
+		}
+	}
+	seek_elders_blessing = {
+		potential = {
+			religion = orthodox
+			any_owned_province = {
+				has_province_modifier = anchorite_hermitage
+			}
+			NOT = {
+				has_country_flag = elders_blessing_sought
+			}
+			piety = -0.60
+		}
+		allow = {
+			has_regency = no
+			is_at_war = no
+			any_owned_province = {
+				has_province_modifier = anchorite_hermitage
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ruler_pilgrimage
+				duration = 50
+			}
+			hidden_effect = {
+				set_country_flag = seeking_elders_blessing
+				set_country_flag = elders_blessing_sought
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				num_of_revolts = 1
+				factor = 0
+			}
+			modifier = {
+				stability = 1
+				legitimacy = 100
+				prestige = 25
+				NOT = {
+					war_exhaustion = 2
+				}
+				factor = 0
+			}
+		}
+	}
+	replace_patriarch = {
+		potential = {
+			OR = {
+				religion = orthodox
+				religion = coptic
+			}
+			any_owned_province = {
+				OR = {
+					has_province_modifier = orthodox_patriarchate
+					has_province_modifier = coptic_patriarchate
+				}
+			}
+			has_country_flag = patriarch_appointed
+			had_country_flag = {
+				flag = patriarch_appointed
+				days = 1000
+			}
+			NOT = {
+				has_country_flag = holy_synod
+			}
+		}
+		allow = {
+			adm_power = 10
+		}
+		effect = {
+			clr_country_flag = clerical_advisor
+			clr_country_flag = patriarch_zealous
+			clr_country_flag = patriarch_theologian
+			clr_country_flag = patriarch_obedient
+			clr_country_flag = patriarch_controversial
+			clr_country_flag = patriarch_corrupt
+			clr_country_flag = patriarch_hostile
+			clr_country_flag = patriarch_appointed
+			remove_country_modifier = patriarch_zealous_fanatical
+			remove_country_modifier = patriarch_zealous_pious
+			remove_country_modifier = patriarch_zealous_observant
+			remove_country_modifier = patriarch_theologian_fanatical
+			remove_country_modifier = patriarch_theologian_pious
+			remove_country_modifier = patriarch_theologian_observant
+			remove_country_modifier = patriarch_obedient_fanatical
+			remove_country_modifier = patriarch_obedient_pious
+			remove_country_modifier = patriarch_obedient_observant
+			remove_country_modifier = patriarch_controversial_fanatical
+			remove_country_modifier = patriarch_controversial_pious
+			remove_country_modifier = patriarch_controversial_observant
+			remove_country_modifier = patriarch_corrupt_fanatical
+			remove_country_modifier = patriarch_corrupt_pious
+			remove_country_modifier = patriarch_corrupt_observant
+			remove_country_modifier = patriarch_hostile_fanatical
+			remove_country_modifier = patriarch_hostile_pious
+			remove_country_modifier = patriarch_hostile_observant
+			add_adm_power = -10
+			if = {
+				limit = {
+					patriarch_authority = 0.80
+				}
+				add_country_modifier = {
+					name = unhappy_church_powerful
+					duration = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.60
+				}
+				add_country_modifier = {
+					name = unhappy_church_strong
+					duration = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.40
+				}
+				add_country_modifier = {
+					name = unhappy_church_moderate
+					duration = 1000
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.20
+				}
+				add_country_modifier = {
+					name = unhappy_church_weak
+					duration = 1000
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = unhappy_church_impotent
+					duration = 1000
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = orthodox_patriarchate
+						has_province_modifier = coptic_patriarchate
+					}
+				}
+				province_event = {
+					id = dg_orthodox.026
+					days = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_country_flag = patriarch_theologian
+					has_country_flag = patriarch_zealous
+					has_country_flag = patriarch_obedient
+					has_country_flag = patriarch_controversial
+				}
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_country_flag = patriarch_hostile
+					has_country_flag = patriarch_corrupt
+				}
+				NOT = {
+					piety = -0.20
+				}
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = patriarchate_vacant
+				NOT = {
+					piety = 0.20
+				}
+				factor = 0
+			}
+		}
+	}
+	holy_synod = {
+		potential = {
+			has_country_flag = patriarchate_vacant
+			NOT = {
+				has_country_flag = holy_synod
+			}
+			religion = orthodox
+			any_owned_province = {
+				OR = {
+					has_province_modifier = orthodox_patriarchate
+					has_province_modifier = coptic_patriarchate
+				}
+			}
+		}
+		allow = {
+			adm_power = 50
+		}
+		effect = {
+			custom_tooltip = holy_synod_explained
+			set_country_flag = holy_synod
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				add_adm_power = -25
+			}
+			else = {
+				add_adm_power = -50
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	uniate_church = {
+		potential = {
+			religion = catholic
+			any_known_country = {
+				has_country_flag = uniate_church
+			}
+			check_variable = {
+				which = jesuit_support
+				value = 1
+			}
+			any_owned_province = {
+				check_variable = {
+					which = orthodox
+					value = 4
+				}
+				is_core = owner
+				NOT = {
+					has_missionary = yes
+				}
+			}
+			NOT = {
+				has_country_flag = uniate_church_proposed
+			}
+			NOT = {
+				has_country_flag = uniate_church
+			}
+		}
+		allow = {
+			orthodox = 1
+			adm_power = 100
+		}
+		effect = {
+			add_adm_power = -100
+			set_country_flag = uniate_church
+			custom_tooltip = uniate_church_explained
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					check_variable = {
+						which = orthodox_population
+						value = 20
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+	hundred_chapter_synod = {
+		potential = {
+			religion = orthodox
+			NOT = {
+				has_country_flag = religious_courts
+			}
+			num_of_cities = 10
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				OR = {
+					has_country_flag = patriarch_obedient
+					has_country_flag = patriarch_theologian
+					has_country_flag = patriarch_zealous
+					has_country_flag = patriarch_corrupt
+				}
+				tooltip = cooperative_patriarch
+			}
+			OR = {
+				advisor = theologian
+				DIP = 5
+			}
+		}
+		effect = {
+			set_country_flag = religious_courts
+			add_patriarch_authority = 0.10
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				religious_unity = 0.80
+				factor = 0
+			}
+		}
+	}
+	request_autocephaly = {
+		potential = {
+			OR = {
+				religion = orthodox
+				religion = coptic
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_flag = orthodox_patriarchate
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = orthodox_patriarchate
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_flag = coptic_patriarchate
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = coptic_patriarchate
+				}
+			}
+			is_force_converted = no
+			NOT = {
+				has_country_flag = autonomy_attempt
+			}
+			NOT = {
+				any_country = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = denied_autocephaly
+					}
+				}
+			}
+		}
+		allow = {
+			government_rank = 2
+			total_development = 150
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			is_at_war = no
+			prestige = 25
+			stability = 1
+			OR = {
+				advisor = theologian
+				DIP = 4
+				total_development = 600
+				government_rank = 3
+			}
+		}
+		effect = {
+			set_country_flag = autonomy_attempt
+			add_treasury = -50
+			if = {
+				limit = {
+					religion = orthodox
+					capital_scope = {
+						NOT = {
+							AND = {
+								OR = {
+									continent = southeast_asia
+									continent = indian_continent
+									continent = east_asia
+									continent = central_asia
+									continent = north_asia
+								}
+							}
+						}
+						NOT = {
+							AND = {
+								OR = {
+									superregion = east_africa_superregion
+									superregion = west_africa_superregion
+									superregion = north_africa_superregion
+									region = egypt_region
+								}
+							}
+						}
+						NOT = {
+							AND = {
+								continent = europe
+								OR = {
+									superregion = france_superregion
+									superregion = iberia_superregion
+									superregion = italy_superregion
+									superregion = british_isles_superregion
+									AND = {
+										superregion = scandinavian_superregion
+										NOT = {
+											region = finland_region
+										}
+									}
+									superregion = germany_superregion
+									region = swabia_bavarian_region
+									region = switzerland_region
+									region = west_balkan_region
+									region = east_balkan_region
+									region = greece_region
+									region = magyar_plains_region
+									region = north_carpathia_region
+									region = south_carpathia_region
+								}
+							}
+						}
+					}
+				}
+				constantinople_patriarch_area = {
+					limit = {
+						has_province_flag = orthodox_patriarch_of_constantinople
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+						owner = {
+							country_event = {
+								id = dg_orthodox.034
+								days = 60
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							constantinople_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_constantinople
+								owned_by = PREV
+							}
+						}
+						any_owned_province = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+					}
+					country_event = {
+						id = dg_orthodox.034
+						days = 120
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = orthodox
+					capital_scope = {
+						continent = europe
+						AND = {
+							continent = europe
+							OR = {
+								superregion = france_superregion
+								superregion = iberia_superregion
+								superregion = italy_superregion
+								superregion = british_isles_superregion
+								AND = {
+									superregion = scandinavian_superregion
+									NOT = {
+										region = finland_region
+									}
+								}
+								superregion = germany_superregion
+								region = swabia_bavarian_region
+								region = switzerland_region
+								region = west_balkan_region
+								region = east_balkan_region
+								region = greece_region
+								region = magyar_plains_region
+								region = north_carpathia_region
+								region = south_carpathia_region
+							}
+						}
+					}
+				}
+				rome_patriarch_area = {
+					limit = {
+						has_province_flag = orthodox_patriarch_of_rome
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+						owner = {
+							country_event = {
+								id = dg_orthodox.034
+								days = 60
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							rome_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_rome
+								owned_by = PREV
+							}
+						}
+						any_owned_province = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+					}
+					country_event = {
+						id = dg_orthodox.034
+						days = 120
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = orthodox
+					capital_scope = {
+						AND = {
+							OR = {
+								continent = southeast_asia
+								continent = indian_continent
+								continent = east_asia
+								continent = central_asia
+								continent = north_asia
+							}
+						}
+					}
+				}
+				antioch_patriarch_area = {
+					limit = {
+						has_province_flag = orthodox_patriarch_of_antioch
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+						owner = {
+							country_event = {
+								id = dg_orthodox.034
+								days = 60
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							antioch_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_antioch
+								owned_by = PREV
+							}
+						}
+						any_owned_province = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+					}
+					country_event = {
+						id = dg_orthodox.034
+						days = 120
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = orthodox
+					capital_scope = {
+						AND = {
+							OR = {
+								superregion = east_africa_superregion
+								superregion = west_africa_superregion
+								superregion = north_africa_superregion
+								region = egypt_region
+							}
+						}
+					}
+				}
+				alexandria_patriarch_area = {
+					limit = {
+						has_province_flag = orthodox_patriarch_of_alexandria
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+						owner = {
+							country_event = {
+								id = dg_orthodox.034
+								days = 60
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							alexandria_patriarch_area = {
+								has_province_flag = orthodox_patriarch_of_alexandria
+								owned_by = PREV
+							}
+						}
+						any_owned_province = {
+							OR = {
+								has_province_modifier = orthodox_patriarchate
+								has_province_modifier = orthodox_pentarchy
+								has_province_modifier = orthodox_archbishopric
+								has_province_modifier = orthodox_patriarchate_captive
+							}
+						}
+					}
+					country_event = {
+						id = dg_orthodox.034
+						days = 120
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = coptic
+					capital_scope = {
+						NOT = {
+							continent = europe
+						}
+						NOT = {
+							continent = mena
+						}
+					}
+				}
+				alexandria_patriarch_area = {
+					limit = {
+						has_province_flag = miaphysite_catholicos_of_alexandria
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_modifier = coptic_patriarchate
+								has_province_modifier = coptic_pentarchy
+								has_province_modifier = coptic_archbishopric
+								has_province_modifier = coptic_patriarchate_captive
+							}
+						}
+						owner = {
+							country_event = {
+								id = dg_orthodox.034
+								days = 60
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							alexandria_patriarch_area = {
+								has_province_flag = miaphysite_catholicos_of_alexandria
+								owned_by = PREV
+							}
+						}
+						any_owned_province = {
+							OR = {
+								has_province_modifier = coptic_patriarchate
+								has_province_modifier = coptic_pentarchy
+								has_province_modifier = coptic_archbishopric
+								has_province_modifier = coptic_patriarchate_captive
+							}
+						}
+					}
+					country_event = {
+						id = dg_orthodox.034
+						days = 120
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = coptic
+					capital_scope = {
+						continent = europe
+					}
+				}
+				antioch_patriarch_area = {
+					limit = {
+						has_province_flag = miaphysite_catholicos_of_antioch
+					}
+					if = {
+						limit = {
+							OR = {
+								has_province_modifier = coptic_patriarchate
+								has_province_modifier = coptic_pentarchy
+								has_province_modifier = coptic_archbishopric
+								has_province_modifier = coptic_patriarchate_captive
+							}
+						}
+						owner = {
+							country_event = {
+								id = dg_orthodox.034
+								days = 60
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = {
+							antioch_patriarch_area = {
+								has_province_flag = miaphysite_catholicos_of_antioch
+								owned_by = PREV
+							}
+						}
+						any_owned_province = {
+							OR = {
+								has_province_modifier = coptic_patriarchate
+								has_province_modifier = coptic_pentarchy
+								has_province_modifier = coptic_archbishopric
+								has_province_modifier = coptic_patriarchate_captive
+							}
+						}
+					}
+					country_event = {
+						id = dg_orthodox.034
+						days = 120
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					treasury = 100
+				}
+				factor = 0
+			}
+			modifier = {
+				religion = orthodox
+				capital_scope = {
+					AND = {
+						OR = {
+							superregion = east_africa_superregion
+							superregion = west_africa_superregion
+							superregion = north_africa_superregion
+							region = egypt_region
+						}
+					}
+				}
+				alexandria_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_alexandria
+					owner = {
+						religion = orthodox
+						army_size = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				religion = orthodox
+				capital_scope = {
+					AND = {
+						OR = {
+							continent = southeast_asia
+							continent = indian_continent
+							continent = east_asia
+							continent = central_asia
+							continent = north_asia
+						}
+					}
+				}
+				antioch_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_antioch
+					owner = {
+						religion = orthodox
+						army_size = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				religion = orthodox
+				capital_scope = {
+					AND = {
+						continent = europe
+						OR = {
+							superregion = france_superregion
+							superregion = iberia_superregion
+							superregion = italy_superregion
+							superregion = british_isles_superregion
+							AND = {
+								superregion = scandinavian_superregion
+								NOT = {
+									region = finland_region
+								}
+							}
+							superregion = germany_superregion
+							region = swabia_bavarian_region
+							region = switzerland_region
+							region = west_balkan_region
+							region = east_balkan_region
+							region = greece_region
+							region = magyar_plains_region
+							region = north_carpathia_region
+							region = south_carpathia_region
+						}
+					}
+				}
+				rome_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_rome
+					owner = {
+						religion = orthodox
+						army_size = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				religion = orthodox
+				capital_scope = {
+					NOT = {
+						AND = {
+							OR = {
+								superregion = east_africa_superregion
+								superregion = west_africa_superregion
+								superregion = north_africa_superregion
+								region = egypt_region
+							}
+						}
+						AND = {
+							OR = {
+								continent = southeast_asia
+								continent = indian_continent
+								continent = east_asia
+								continent = central_asia
+								continent = north_asia
+							}
+						}
+						AND = {
+							continent = europe
+							OR = {
+								superregion = france_superregion
+								superregion = iberia_superregion
+								superregion = italy_superregion
+								superregion = british_isles_superregion
+								AND = {
+									superregion = scandinavian_superregion
+									NOT = {
+										region = finland_region
+									}
+								}
+								superregion = germany_superregion
+								region = swabia_bavarian_region
+								region = switzerland_region
+								region = west_balkan_region
+								region = east_balkan_region
+								region = greece_region
+								region = magyar_plains_region
+								region = north_carpathia_region
+								region = south_carpathia_region
+							}
+						}
+					}
+				}
+				constantinople_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_constantinople
+					owner = {
+						religion = orthodox
+						army_size = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				religion = coptic
+				capital_scope = {
+					continent = europe
+				}
+				antioch_patriarch_area = {
+					has_province_flag = miaphysite_catholicos_of_antioch
+					owner = {
+						religion = coptic
+						army_size = ROOT
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				religion = coptic
+				capital_scope = {
+					NOT = {
+						continent = europe
+					}
+					NOT = {
+						continent = mena
+					}
+				}
+				alexandria_patriarch_area = {
+					has_province_flag = miaphysite_catholicos_of_alexandria
+					owner = {
+						religion = coptic
+						army_size = ROOT
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+	accept_patriarch_authority = {
+		potential = {
+			OR = {
+				religion = catholic
+				religion = gnostic
+			}
+			is_force_converted = no
+			any_neighbor_country = {
+				religion = orthodox
+				total_base_tax = ROOT
+				military_strength = {
+					who = ROOT
+					value = 2
+				}
+				any_owned_province = {
+					any_neighbor_province = {
+						owned_by = ROOT
+						is_in_capital_area = yes
+					}
+				}
+			}
+			NOT = {
+				any_neighbor_country = {
+					religion = ROOT
+					OR = {
+						total_base_tax = ROOT
+						military_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				government = theocracy
+			}
+			OR = {
+				AND = {
+					capital_scope = {
+						AND = {
+							continent = europe
+							OR = {
+								superregion = france_superregion
+								superregion = iberia_superregion
+								superregion = italy_superregion
+								superregion = british_isles_superregion
+								AND = {
+									superregion = scandinavian_superregion
+									NOT = {
+										region = finland_region
+									}
+								}
+								superregion = germany_superregion
+								region = swabia_bavarian_region
+								region = switzerland_region
+								region = west_balkan_region
+								region = east_balkan_region
+								region = greece_region
+								region = magyar_plains_region
+								region = north_carpathia_region
+								region = south_carpathia_region
+							}
+						}
+					}
+					AND = {
+						2530 = {
+							owner = {
+								religion = orthodox
+							}
+						}
+					}
+				}
+				AND = {
+					capital_scope = {
+						continent = europe
+						NOT = {
+							AND = {
+								continent = europe
+								OR = {
+									superregion = france_superregion
+									superregion = iberia_superregion
+									superregion = italy_superregion
+									superregion = british_isles_superregion
+									AND = {
+										superregion = scandinavian_superregion
+										NOT = {
+											region = finland_region
+										}
+									}
+									superregion = germany_superregion
+									region = swabia_bavarian_region
+									region = switzerland_region
+									region = west_balkan_region
+									region = east_balkan_region
+									region = greece_region
+									region = magyar_plains_region
+									region = north_carpathia_region
+									region = south_carpathia_region
+								}
+							}
+						}
+					}
+					AND = {
+						1402 = {
+							owner = {
+								religion = orthodox
+							}
+						}
+					}
+				}
+				AND = {
+					capital_scope = {
+						AND = {
+							OR = {
+								superregion = east_africa_superregion
+								superregion = west_africa_superregion
+								superregion = north_africa_superregion
+								region = egypt_region
+							}
+						}
+					}
+					358 = {
+						owner = {
+							religion = orthodox
+						}
+					}
+				}
+				AND = {
+					capital_scope = {
+						AND = {
+							OR = {
+								continent = southeast_asia
+								continent = indian_continent
+								continent = east_asia
+								continent = central_asia
+								continent = north_asia
+							}
+						}
+					}
+					382 = {
+						owner = {
+							religion = orthodox
+						}
+					}
+				}
+				overlord = {
+					religion = orthodox
+					any_owned_province = {
+						has_province_modifier = orthodox_patriarchate
+					}
+				}
+			}
+			has_regency = no
+			is_at_war = no
+			NOT = {
+				patriarch_authority = 0.80
+			}
+			NOT = {
+				piety = 0.60
+			}
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+						is_subject_of_type = close_tributary_state
+					}
+				}
+				overlord = {
+					religion = orthodox
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = orthodox_population
+							value = 25
+						}
+					}
+				}
+				custom_tooltip = convert_population_0
+				add_stability = -3
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -15
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = orthodox_population
+						value = 25
+					}
+					NOT = {
+						dominant_religion = orthodox
+					}
+				}
+				custom_tooltip = convert_population_25
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			if = {
+				limit = {
+					dominant_religion = orthodox
+					NOT = {
+						check_variable = {
+							which = orthodox_population
+							value = 75
+						}
+					}
+				}
+				custom_tooltip = convert_population_50
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			if = {
+				limit = {
+					dominant_religion = orthodox
+					check_variable = {
+						which = orthodox_population
+						value = 75
+					}
+				}
+				custom_tooltip = convert_population_75
+			}
+			if = {
+				limit = {
+					patriarch_authority = 0.75
+				}
+				custom_tooltip = convert_church_strong
+				add_stability = -3
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -15
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.50
+				}
+				custom_tooltip = convert_piety_moderate
+				add_stability = -2
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -10
+				}
+			}
+			else_if = {
+				limit = {
+					patriarch_authority = 0.25
+				}
+				custom_tooltip = convert_church_weak
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+			else = {
+				custom_tooltip = convert_church_insignificant
+			}
+			if = {
+				limit = {
+					ADM = 5
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = orthodox
+						}
+					}
+					custom_tooltip = convert_ruler_strong
+					custom_tooltip = stability_points_gained_150
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 150
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ADM = 3
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = orthodox
+						}
+					}
+					custom_tooltip = convert_ruler_moderate
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						capital_scope = {
+							religion = orthodox
+						}
+					}
+					custom_tooltip = convert_ruler_weak
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_ruler_incompetent
+				}
+			}
+			if = {
+				limit = {
+					advisor = theologian
+				}
+				custom_tooltip = convert_theologian
+				custom_tooltip = stability_points_gained_50
+				hidden_effect = {
+					change_variable = {
+						which = stability_points
+						value = 50
+					}
+					country_event = {
+						id = POP_Stability.002
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = was_catholic
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_previous_recent
+					custom_tooltip = stability_points_gained_100
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 100
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+				else = {
+					custom_tooltip = convert_previous_old
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							which = sympathy_to_old_religion
+							value = 1
+						}
+					}
+					custom_tooltip = convert_recent
+					custom_tooltip = stability_points_gained_50
+					hidden_effect = {
+						change_variable = {
+							which = stability_points
+							value = 50
+						}
+						country_event = {
+							id = POP_Stability.002
+						}
+					}
+				}
+			}
+			change_religion = orthodox
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				religion = catholic
+				PAP = {
+					check_variable = {
+						which = papal_authority
+						value = 400
+					}
+				}
+				NOT = {
+					overlord = {
+						religion = orthodox
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				NOT = {
+					OR = {
+						has_country_flag = excommunicated
+						has_country_flag = enemy_of_pope
+						check_variable = {
+							which = orthodox_population
+							value = 20
+						}
+						has_country_flag = was_orthodox
+						any_province = {
+							AND = {
+								province_id = 2530
+							}
+							owner = {
+								religion = orthodox
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				num_of_cardinals = 1
+				factor = 0
+			}
+			modifier = {
+				is_papal_controller = yes
+				factor = 0
+			}
+		}
+	}
+	heal_the_schism_pentarchy = {
+		major = yes
+		potential = {
+			religion = orthodox
+			OR = {
+				antioch_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_antioch
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				alexandria_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_alexandria
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				constantinople_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_constantinople
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				jerusalem_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_jerusalem
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				rome_patriarch_area = {
+					has_province_flag = orthodox_patriarch_of_rome
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+			NOT = {
+				has_global_flag = orthodox_pentarchy_restored
+			}
+		}
+		allow = {
+			antioch_patriarch_area = {
+				has_province_flag = orthodox_patriarch_of_antioch
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			alexandria_patriarch_area = {
+				has_province_flag = orthodox_patriarch_of_alexandria
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			constantinople_patriarch_area = {
+				has_province_flag = orthodox_patriarch_of_constantinople
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			jerusalem_patriarch_area = {
+				has_province_flag = orthodox_patriarch_of_jerusalem
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			rome_patriarch_area = {
+				has_province_flag = orthodox_patriarch_of_rome
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = orthodox_pentarchy_restored
+			if = {
+				limit = {
+					piety = 0.60
+				}
+				add_prestige = 10
+			}
+			else_if = {
+				limit = {
+					piety = 0.20
+				}
+				add_prestige = 8
+			}
+			else_if = {
+				limit = {
+					piety = -0.20
+				}
+				add_prestige = 6
+			}
+			else_if = {
+				limit = {
+					piety = -0.60
+				}
+				add_prestige = 4
+			}
+			else = {
+				add_prestige = 2
+			}
+			every_known_country = {
+				limit = {
+					religion = catholic
+					OR = {
+						AND = {
+							OR = {
+								is_subject = no
+								is_subject_of_type = tributary_state
+								is_subject_of_type = close_tributary_state
+							}
+						}
+						overlord = {
+							religion = ROOT
+						}
+					}
+					is_force_converted = no
+				}
+				country_event = {
+					id = dg_orthodox.046
+					days = 30
+					random = 100
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

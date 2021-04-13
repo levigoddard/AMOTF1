@@ -1,0 +1,55 @@
+jewish_financier = {
+	monarch_power = ADM
+	interest = -0.025
+	land_maintenance_modifier = -0.10
+	land_attrition = -0.10
+	legitimacy = -0.50
+	republican_tradition = -0.25
+	devotion = -1
+	stability_cost_modifier = 0.10
+	global_unrest = 1
+	skill_scaled_modifier = {
+		meritocracy = 0.5
+	}
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					check_variable = {
+						which = jewish
+						value = 2
+					}
+					OR = {
+						has_province_modifier = jewish_minority_2_accepted
+						has_province_modifier = jewish_minority_2_tolerated
+						has_province_modifier = jewish_minority_4_accepted
+						has_province_modifier = jewish_minority_4_tolerated
+						has_province_modifier = jewish_minority_6_accepted
+						has_province_modifier = jewish_minority_6_tolerated
+						has_province_modifier = jewish_minority_8_accepted
+						has_province_modifier = jewish_minority_8_tolerated
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			AND = {
+				OR = {
+					has_province_modifier = minor_center_of_trade
+					has_province_modifier = important_center_of_trade
+					has_province_modifier = major_center_of_trade
+					has_province_modifier = dominant_center_of_trade
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				advisor = jewish_financier
+			}
+		}
+	}
+}

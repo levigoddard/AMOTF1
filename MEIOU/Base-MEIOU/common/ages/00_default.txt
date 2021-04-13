@@ -1,0 +1,74 @@
+age_of_discovery = {
+	start = 1400
+	can_start = {
+		always = yes
+	}
+	absolutism = {
+		harsh_treatment = 0
+		stability = 0
+		decrease_autonomy_command = 0
+		increase_autonomy_command = -1
+		debase_currency = 0
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -1
+		war_exhaustion = 0
+	}
+	religious_conflicts = yes
+	objectives = {}
+	abilities = {}
+}
+age_of_reformation = {
+	start = 1530
+	can_start = {
+		is_religion_enabled = protestant
+	}
+	absolutism = {
+		harsh_treatment = 0
+		stability = 0
+		decrease_autonomy_command = 0
+		increase_autonomy_command = -1
+		debase_currency = 0
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -1
+		war_exhaustion = 0
+	}
+	religious_conflicts = yes
+	objectives = {}
+	abilities = {}
+}
+age_of_absolutism = {
+	start = 1620
+	can_start = {
+		is_institution_enabled = global_trade
+	}
+	absolutism = {
+		harsh_treatment = 0
+		stability = 0
+		decrease_autonomy_command = 0
+		increase_autonomy_command = -1
+		debase_currency = 0
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -1
+		war_exhaustion = 0
+	}
+	objectives = {}
+	abilities = {}
+}
+age_of_revolutions = {
+	start = 1710
+	can_start = {
+		is_institution_enabled = enlightenment
+	}
+	absolutism = {
+		harsh_treatment = 0
+		stability = 0
+		decrease_autonomy_command = 0
+		increase_autonomy_command = -1
+		debase_currency = 0
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -1
+		war_exhaustion = 0
+	}
+	objectives = {}
+	abilities = {}
+}

@@ -1,0 +1,1223 @@
+country_event = {
+	id = republics.24
+	title = "EVTNAME9560"
+	desc = "EVTDESC9560"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = bad_relations_timer
+		}
+		OR = {
+			AND = {
+				OR = {
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = city_state
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = vote_nobility
+					}
+					has_reform = noble_republic
+				}
+			}
+			AND = {
+				OR = {
+					has_reform = city_state
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = oligarchy_reform
+					}
+					has_reform = oligarchic_republic
+					has_reform = ambrosian_republic_legacy
+				}
+			}
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+		}
+		any_neighbor_country = {
+			NOT = {
+				has_opinion = {
+					who = ROOT
+					value = 0
+				}
+			}
+			OR = {
+				advisor = spymaster
+				advisor = inquisitor
+				advisor = diplomat
+				advisor = acardinal
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA9560"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = bad_relations_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random_country = {
+			limit = {
+				is_neighbor_of = ROOT
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_traitor
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB9560"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = bad_relations_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_prestige = -10
+	}
+}
+country_event = {
+	id = republics.25
+	title = "EVTNAME9561"
+	desc = "EVTDESC9561"
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = political_chaos_timer
+		}
+		OR = {
+			AND = {
+				OR = {
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = city_state
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = vote_nobility
+					}
+					has_reform = noble_republic
+				}
+			}
+			AND = {
+				OR = {
+					has_reform = city_state
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = oligarchy_reform
+					}
+					has_reform = oligarchic_republic
+					has_reform = ambrosian_republic_legacy
+				}
+			}
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+		}
+		NOT = {
+			adm = 3
+		}
+	}
+	option = {
+		name = "EVTOPTA9561"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = political_chaos_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		capital_scope = {
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 4
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_4
+		}
+	}
+	option = {
+		name = "EVTOPTB9561"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = political_chaos_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_years_of_income = -0.20
+		random = {
+			chance = 40
+			custom_tooltip = stability_points_gained_50
+			hidden_effect = {
+				change_variable = {
+					which = stability_points
+					value = 50
+				}
+				country_event = {
+					id = POP_Stability.002
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = republics.26
+	title = "EVTNAME9562"
+	desc = "EVTDESC9562"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = influenced_decisions_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					NOT = {
+						has_reform = free_city
+					}
+					NOT = {
+						has_reform = city_state
+					}
+					NOT = {
+						has_reform = trade_republic
+					}
+					NOT = {
+						has_reform = colonial_government
+					}
+					NOT = {
+						has_reform = dictator_reform
+					}
+					has_reform = vote_nobility
+				}
+				has_reform = noble_republic
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA9562"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = influenced_decisions_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB9562"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = influenced_decisions_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = republics.27
+	title = "EVTNAME9563"
+	desc = "EVTDESC9563"
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = financial_disagreements_timer
+		}
+		OR = {
+			AND = {
+				OR = {
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = city_state
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = vote_nobility
+					}
+					has_reform = noble_republic
+				}
+			}
+			AND = {
+				OR = {
+					has_reform = city_state
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = oligarchy_reform
+					}
+					has_reform = oligarchic_republic
+					has_reform = ambrosian_republic_legacy
+				}
+			}
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+		}
+		num_of_loans = 1
+	}
+	option = {
+		name = "EVTOPTA9563"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = financial_disagreements_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_years_of_income = 0.25
+		add_inflation = 4
+	}
+	option = {
+		name = "EVTOPTB9563"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = financial_disagreements_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_years_of_income = 0.25
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = republics.30
+	title = "EVTNAME9566"
+	desc = "EVTDESC9566"
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = foreign_control_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					has_reform = peasants_republic
+					has_reform = assembly_reform
+					has_reform = vote_tax
+				}
+				has_reform = constitutional_republic
+			}
+		}
+		is_at_war = no
+		any_core_province = {
+			is_core = ROOT
+			any_neighbor_province = {
+				NOT = {
+					owned_by = ROOT
+				}
+				is_core = ROOT
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA9566"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = foreign_control_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_prestige = -5
+		add_republican_tradition = -2
+	}
+	option = {
+		name = "EVTOPTB9566"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = foreign_control_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		add_republican_tradition = 1
+	}
+}
+country_event = {
+	id = republics.31
+	title = "EVTNAME9567"
+	desc = "EVTDESC9567"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = too_many_liberties_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					has_reform = peasants_republic
+					has_reform = assembly_reform
+					has_reform = vote_tax
+				}
+				has_reform = constitutional_republic
+			}
+		}
+		has_regency = no
+	}
+	option = {
+		name = "EVTOPTA9567"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = too_many_liberties_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_prestige = -2
+		add_republican_tradition = 1
+	}
+	option = {
+		name = "EVTOPTB9567"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = too_many_liberties_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		capital_scope = {
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 2
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_2
+		}
+		add_republican_tradition = -1
+	}
+}
+country_event = {
+	id = republics.34
+	title = "EVTNAME9570"
+	desc = "EVTDESC9570"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = sympathisers_of_old_government_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					has_reform = peasants_republic
+					has_reform = assembly_reform
+					has_reform = vote_free
+				}
+				has_reform = revolutionary_republic
+			}
+		}
+		NOT = {
+			mil = 2
+		}
+	}
+	option = {
+		name = "EVTOPTA9570"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = sympathisers_of_old_government_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		capital_scope = {
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		add_republican_tradition = 1
+	}
+	option = {
+		name = "EVTOPTB9570"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = sympathisers_of_old_government_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_years_of_income = -0.20
+		add_republican_tradition = -1
+	}
+}
+country_event = {
+	id = republics.35
+	title = "EVTNAME9571"
+	desc = "EVTDESC9571"
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = a_new_constitution_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					has_reform = peasants_republic
+					has_reform = assembly_reform
+					has_reform = vote_free
+				}
+				has_reform = revolutionary_republic
+			}
+		}
+		NOT = {
+			economic_ideas = 4
+		}
+	}
+	option = {
+		name = "EVTOPTA9571"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = a_new_constitution_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		add_republican_tradition = 2
+	}
+	option = {
+		name = "EVTOPTB9571"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = a_new_constitution_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_years_of_income = -0.3
+		define_advisor = {
+			type = statesman
+			skill = 3
+		}
+		add_republican_tradition = 1
+	}
+}
+country_event = {
+	id = republics.40
+	title = "EVTNAME9576"
+	desc = "EVTDESC9576"
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = over_budget_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					NOT = {
+						has_reform = free_city
+					}
+					NOT = {
+						has_reform = city_state
+					}
+					NOT = {
+						has_reform = trade_republic
+					}
+					NOT = {
+						has_reform = colonial_government
+					}
+					has_reform = dictator_reform
+				}
+				has_reform = republican_dictatorship
+			}
+		}
+		stability = -2
+		advisor = treasurer
+	}
+	option = {
+		name = "EVTOPTA9576"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = over_budget_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_years_of_income = -0.10
+	}
+	option = {
+		name = "EVTOPTB9576"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = over_budget_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = republics.41
+	title = "EVTNAME9577"
+	desc = "EVTDESC9577"
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = embezzlement_timer
+		}
+		AND = {
+			OR = {
+				AND = {
+					NOT = {
+						has_reform = free_city
+					}
+					NOT = {
+						has_reform = city_state
+					}
+					NOT = {
+						has_reform = trade_republic
+					}
+					NOT = {
+						has_reform = colonial_government
+					}
+					has_reform = dictator_reform
+				}
+				has_reform = republican_dictatorship
+			}
+		}
+		has_advisor = yes
+	}
+	option = {
+		name = "EVTOPTA9577"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = embezzlement_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		add_prestige = -5
+		add_republican_tradition = -1
+	}
+	option = {
+		name = "EVTOPTB9577"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = embezzlement_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random = {
+			chance = 50
+			capital_scope = {
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+			}
+		}
+		add_republican_tradition = 1
+	}
+}
+country_event = {
+	id = republics.42
+	title = "EVTNAME9578"
+	desc = "EVTDESC9578"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = planned_coup_timer
+		}
+		NOT = {
+			has_country_modifier = spies_investigate
+		}
+		AND = {
+			OR = {
+				AND = {
+					NOT = {
+						has_reform = free_city
+					}
+					NOT = {
+						has_reform = city_state
+					}
+					NOT = {
+						has_reform = trade_republic
+					}
+					NOT = {
+						has_reform = colonial_government
+					}
+					has_reform = dictator_reform
+				}
+				has_reform = republican_dictatorship
+			}
+		}
+		has_regency = no
+		OR = {
+			army_reformer = 3
+			grand_captain = 3
+			commandant = 3
+			overextension_percentage = 0.25
+			NOT = {
+				prestige = 1
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA9578"
+		ai_chance = {
+			factor = 55
+		}
+		set_country_flag = planned_coup
+		add_years_of_income = -0.30
+		add_country_modifier = {
+			name = spies_investigate
+			duration = 1825
+		}
+		random = {
+			chance = 30
+			capital_scope = {
+				add_province_modifier = {
+					name = "pretender_organizing"
+					duration = 5475
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 15
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_15
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB9578"
+		ai_chance = {
+			factor = 45
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = planned_coup_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random = {
+			chance = 80
+			capital_scope = {
+				add_province_modifier = {
+					name = "pretender_organizing"
+					duration = 5475
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 15
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_15
+			}
+		}
+	}
+}
+country_event = {
+	id = republics.43
+	title = "EVTNAME9579"
+	desc = "EVTDESC9579"
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_country_modifier = possible_traitors_timer
+		}
+		NOT = {
+			has_country_modifier = counter_espionage
+		}
+		AND = {
+			OR = {
+				AND = {
+					NOT = {
+						has_reform = free_city
+					}
+					NOT = {
+						has_reform = city_state
+					}
+					NOT = {
+						has_reform = trade_republic
+					}
+					NOT = {
+						has_reform = colonial_government
+					}
+					has_reform = dictator_reform
+				}
+				has_reform = republican_dictatorship
+			}
+		}
+		any_neighbor_country = {
+			mil = 3
+			NOT = {
+				alliance_with = ROOT
+			}
+			NOT = {
+				marriage_with = ROOT
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA9579"
+		ai_chance = {
+			factor = 55
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = possible_traitors_timer
+				duration = 1825
+				hidden = yes
+			}
+		}
+		random_country = {
+			limit = {
+				is_neighbor_of = ROOT
+				mil = 3
+				NOT = {
+					alliance_with = ROOT
+				}
+				NOT = {
+					marriage_with = ROOT
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_confront_spies
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB9579"
+		ai_chance = {
+			factor = 45
+		}
+		set_country_flag = possible_traitors
+		add_country_modifier = {
+			name = counter_espionage
+			duration = 1825
+		}
+		add_prestige = -10
+	}
+}

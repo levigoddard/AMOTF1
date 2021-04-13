@@ -1,0 +1,14 @@
+name = "Hundred Years War - The Caroline War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 174
+}
+1369.5.1 = {
+	add_attacker = FRA
+	add_defender = ENG
+}
+1389.7.1 = {
+	rem_attacker = FRA
+	rem_defender = ENG
+}

@@ -1,0 +1,64 @@
+owner = MNK
+controller = MNK
+add_core = MNK
+capital = "Mutare"
+trade_goods = lumber
+culture = shona
+religion = animism
+hre = no
+base_tax = 4
+base_production = 0
+base_manpower = 0
+is_city = yes
+discovered_by = central_african
+discovered_by = east_african
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 2
+	}
+	set_province_flag = tribals_control_province
+	set_province_flag = mined_goods
+	set_province_flag = gold
+}
+1493.1.1 = {
+	unrest = 8
+}
+1495.1.1 = {
+	unrest = 2
+}
+1506.1.1 = {
+	unrest = 7
+}
+1512.1.1 = {
+	unrest = 0
+}
+1520.1.1 = {
+	base_tax = 5
+}
+1572.1.1 = {
+	owner = POR
+	controller = POR
+}
+1597.1.1 = {
+	add_core = POR
+	unrest = 0
+}
+1683.1.1 = {
+	unrest = 7
+}
+1688.1.1 = {
+	unrest = 0
+}
+1691.1.1 = {
+	unrest = 5
+}
+1692.1.1 = {
+	unrest = 0
+}
+1697.1.1 = {
+	unrest = 5
+}
+1698.1.1 = {
+	unrest = 0
+}

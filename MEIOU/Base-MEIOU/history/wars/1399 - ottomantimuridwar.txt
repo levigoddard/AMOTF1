@@ -1,0 +1,41 @@
+name = "Ottoman-Timurid War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 323
+}
+1399.9.12 = {
+	add_attacker = TIM
+	add_attacker = DUL
+	add_attacker = RAM
+	add_attacker = KAR
+	add_defender = TUR
+	add_defender = SER
+}
+1402.7.20 = {
+	battle = {
+		name = "Ankara"
+		location = 326
+		attacker = {
+			commander = "Timur"
+			infantry = 135000
+			losses = 14
+			country = TIM
+		}
+		defender = {
+			commander = "Beyazid I"
+			infantry = 75000
+			losses = 35
+			country = TUR
+		}
+		result = yes
+	}
+}
+1402.8.1 = {
+	rem_attacker = KAR
+	rem_attacker = RAM
+	rem_attacker = DUL
+	rem_attacker = TIM
+	rem_defender = SER
+	rem_defender = TUR
+}

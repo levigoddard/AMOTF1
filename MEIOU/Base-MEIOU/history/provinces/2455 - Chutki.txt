@@ -1,0 +1,5 @@
+culture = yukaghir
+religion = tengri_pagan_reformed
+1750.1.1 = {
+	discovered_by = RUS
+}

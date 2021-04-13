@@ -1,0 +1,90 @@
+country_event = {
+	id = flavor_vie.1
+	title = "flavor_vie.EVTNAME1"
+	desc = "flavor_vie.EVTDESC1"
+	picture = ANGRY_MOB_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = VIE
+		owns = 615
+		NOT = {
+			exists = LUA
+		}
+		is_year = 1700
+		NOT = {
+			is_year = 1750
+		}
+	}
+	mean_time_to_happen = {
+		years = 16
+	}
+	option = {
+		name = "flavor_vie.EVTOPTA1"
+		every_owned_province = {
+			limit = {
+				or = {
+					province_id = 615
+					province_id = 2729
+					province_id = 2730
+					province_id = 2731
+				}
+			}
+			add_province_modifier = {
+				name = "nationalists_organizing"
+				duration = 3650
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 10
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_10
+		}
+	}
+	option = {
+		name = "flavor_vie.EVTOPTB1"
+		random_list = {
+			30 = {}
+			40 = {
+				subtract_variable = {
+					which = stability_points
+					value = 50
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		every_owned_province = {
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}

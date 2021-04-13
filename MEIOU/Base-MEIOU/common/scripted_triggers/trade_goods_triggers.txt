@@ -1,0 +1,116 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = SWE
+#		ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+grain_province_trigger = {
+	OR = {
+		trade_goods = wheat
+		trade_goods = rice
+		trade_goods = millet
+		trade_goods = maize
+	}
+}
+
+spice_province_trigger = {
+	OR = {
+		trade_goods = pepper
+		trade_goods = clove
+		trade_goods = nutmeg
+		trade_goods = cinnamon
+	}
+}
+
+naval_supplies_province_trigger = {
+	OR = {
+		has_province_flag = urban_goods_naval_supplies
+		trade_goods = lumber
+		trade_goods = hemp
+	}
+}
+
+sails_province_trigger = {
+	OR = {
+		trade_goods = cotton
+		trade_goods = hemp
+	}
+}
+
+cloth_province_trigger = {
+	OR = {
+		trade_goods = cotton
+		trade_goods = hemp
+		#trade_goods = silk
+		trade_goods = wool
+	}
+}
+
+cotton_area_trigger = {
+	OR = {
+		region = southeast_america_region
+		region = mississippi_region
+		region = carribeans_region
+		region = texas_region
+		area = central_valley_area
+		area = sao_paolo_area
+	}
+}
+
+tobacco_area_trigger = {
+	OR = {
+		region = southeast_america_region
+		region = northeast_america_region
+		#region = mississippi_region
+		area = cuba_area
+	}
+}
+
+mining_province_trigger = {
+	OR = {
+		trade_goods = gems
+		trade_goods = obsidian
+		trade_goods = salt
+		trade_goods = alum
+		trade_goods = iron
+		trade_goods = copper
+		trade_goods = lead
+		trade_goods = tin
+		trade_goods = marble
+		trade_goods = sulphur
+		trade_goods = coal
+		trade_goods = silver
+		trade_goods = gold
+	}
+}
+
+prominence_terrain_trigger = {
+	OR = {
+		has_terrain = grass_hills
+		has_terrain = shrub_hills
+		has_terrain = wood_hills
+		has_terrain = forest_hills
+		has_terrain = desert_hills
+		has_terrain = jungle_hills
+		has_terrain = forest_mountains
+		has_terrain = wood_mountains
+		has_terrain = shrub_mountains
+		has_terrain = grass_mountains
+		has_terrain = desert_mountains
+		has_terrain = alpine_tundra
+		has_terrain = forest_highlands
+		has_terrain = wood_highlands
+		has_terrain = shrub_highlands
+		has_terrain = grass_highlands
+		has_terrain = desert_highlands
+	}
+}

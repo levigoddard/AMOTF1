@@ -1,0 +1,14 @@
+name = "Ottoman-Albanian War"
+war_goal = {
+	type = take_rum_sultanate
+	casus_belli = cb_rum_sultanate
+	province = 2374
+}
+1443.3.4 = {
+	add_attacker = TUR
+	add_defender = ALB
+}
+1463.4.2 = {
+	rem_attacker = TUR
+	rem_defender = ALB
+}

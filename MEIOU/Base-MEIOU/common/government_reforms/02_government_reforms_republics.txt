@@ -1,0 +1,249 @@
+city_state = {
+	icon = "free_city"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	legacy_equivalent = trading_city_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	factions = { mr_aristocrats mr_traders mr_guilds }
+	modifiers = {
+		stability_cost_modifier = -0.30
+		max_states = -4
+		trade_efficiency = 0.05
+		global_autonomy = -0.05
+	}
+	fixed_rank = 1
+	conditional = {
+		allow = {
+			has_country_flag = luebeck_merchant_city
+			has_dlc = "Mare Nostrum"
+		}
+		can_form_trade_league = yes
+		can_use_trade_post = yes
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+free_city = {
+	icon = "free_city"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	legacy_equivalent = imperial_city
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	free_city = yes
+	factions = { mr_aristocrats mr_traders mr_guilds }
+	modifiers = {
+		stability_cost_modifier = -0.30
+		max_states = -4
+		trade_efficiency = 0.05
+		global_autonomy = -0.05
+	}
+	fixed_rank = 1
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+colonial_government = {
+	icon = "merchant_ship"
+	valid_for_nation_designer = no
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		is_colonial_nation = yes
+	}
+	legacy_equivalent = colonial_government_legacy
+	modifiers = {
+		num_accepted_cultures = 2
+		global_trade_power = 0.25
+		max_absolutism = -20
+		global_autonomy = 0.10
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+trade_republic = {
+	icon = "trading_city"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	legacy_equivalent = merchant_republic
+	potential = {
+		always = yes
+	}
+	boost_income = yes
+	factions = { mr_aristocrats mr_traders mr_guilds }
+	modifiers = {
+		global_trade_power = 0.20
+		merchants = 2
+		max_states = -2
+		global_autonomy = 0.15
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = {
+				has_dlc = "Mare Nostrum"
+			}
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = {
+				has_dlc = "Res Publica"
+			}
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	custom_attributes = {
+		lottery_election = yes
+		is_merchant_republic = yes
+	}
+}
+peasants_republic = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	icon = "peasant_republic"
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	legacy_equivalent = peasants_republic_legacy
+	modifiers = {
+		production_efficiency = 0.20
+		land_morale = 0.20
+		stability_cost_modifier = 0.20
+		max_absolutism = -20
+	}
+}
+federal_republic = {
+	icon = "parliament"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		has_dlc = "American Dream"
+	}
+	legacy_equivalent = federal_republic_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	nation_designer_trigger = {
+		has_dlc = "American Dream"
+	}
+	modifiers = {
+		global_prov_trade_power_modifier = 0.20
+		global_unrest = -4
+		min_autonomy = 0.20
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+		}
+		has_parliament = yes
+	}
+}
+oligarchy_reform = {
+	icon = "politician"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	legacy_equivalent = oligarchic_republic
+	modifiers = {
+		advisor_cost = -0.3
+		state_maintenance_modifier = -0.2
+		yearly_corruption = 0.5
+	}
+	duration = 8
+}
+dictator_reform = {
+	icon = "nobleman"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	legacy_equivalent = republican_dictatorship
+	modifiers = {
+		all_power_cost = -0.1
+		max_absolutism = 10
+		republican_tradition = -0.5
+		global_unrest = 5
+	}
+	duration = 12
+}
+assembly_reform = {
+	icon = "people_walking"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	legacy_equivalent = noble_republic
+	modifiers = {
+		stability_cost_modifier = -0.15
+		republican_tradition = 0.3
+		max_absolutism = -5
+	}
+	duration = 6
+}
+checks_and_balances = {
+	icon = "constitution"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_tax_modifier = 0.1
+		republican_tradition = 0.5
+		global_autonomy = 0.20
+		max_absolutism = -10
+	}
+	duration = 4
+}
+vote_nobility = {
+	icon = "man_on_podium"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		land_forcelimit_modifier = 0.10
+		land_maintenance_modifier = -0.05
+	}
+}
+vote_landowners = {
+	icon = "parliament_hall"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		state_maintenance_modifier = -0.10
+		core_creation = -0.10
+	}
+}
+vote_tax = {
+	icon = "assembly_hall"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_trade_goods_size_modifier = 0.10
+	}
+}
+vote_free = {
+	icon = "ballot_box"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_unrest = -4
+		defensiveness = 0.10
+		global_autonomy = 0.10
+	}
+}

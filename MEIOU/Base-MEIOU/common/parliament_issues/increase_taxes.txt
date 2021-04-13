@@ -1,0 +1,19 @@
+increase_taxes = {
+	category = 3
+	allow = {
+		always = yes
+	}
+	effect = {
+		add_years_of_income = 1
+	}
+	modifier = {
+		global_unrest = 5
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			num_of_loans = 1
+		}
+	}
+}

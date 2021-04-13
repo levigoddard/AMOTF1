@@ -1,0 +1,86 @@
+country_event = {
+	id = hee_POR.1
+	title = hee_POR.1.t
+	desc = hee_POR.1.d
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = POR
+		is_year = 1530
+		NOT = {
+			is_year = 1580
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+	}
+	option = {
+		name = hee_POR.1.a
+		add_prestige = 15
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		add_navy_tradition = 5
+	}
+}
+country_event = {
+	id = hee_POR.2
+	title = hee_POR.2.t
+	desc = hee_POR.2.d
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = POR
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		is_year = 1580
+		NOT = {
+			is_year = 1680
+		}
+		OR = {
+			AND = {
+				has_heir = no
+				NOT = {
+					dynasty = "de Avis"
+				}
+			}
+			has_regency = yes
+			ruler_is_foreigner = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = hee_POR.2.a
+		define_ruler = {
+			name = "Sebastian"
+			dynasty = "de Avis"
+			mil = 2
+			dip = 3
+			adm = 3
+			age = 28
+			claim = 30
+		}
+	}
+	option = {
+		name = hee_POR.2.b
+		add_legitimacy = 5
+		add_country_modifier = {
+			name = hee_sebastianism
+			duration = 1825
+		}
+	}
+}

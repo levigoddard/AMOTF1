@@ -1,0 +1,16 @@
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+1497.6.24 = {
+	discovered_by = ENG
+}
+1502.1.1 = {
+	discovered_by = POR
+}
+1534.1.1 = {
+	discovered_by = FRA
+}
+1550.1.1 = {
+	discovered_by = western
+	discovered_by = eastern
+}

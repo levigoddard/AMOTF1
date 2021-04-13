@@ -1,0 +1,14 @@
+name = "Portuguese Conquest of Tangiers"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 334
+}
+1471.1.1 = {
+	add_attacker = POR
+	add_defender = FEZ
+}
+1471.12.30 = {
+	rem_attacker = POR
+	rem_defender = FEZ
+}

@@ -1,0 +1,304 @@
+monarch_power = ADM
+ahead_of_time = {
+	production_efficiency = 0.20
+}
+technology = {
+	year = 1300
+	native_earthwork = yes
+	native_palisade = yes
+	native_fortified_house = yes
+	native_three_sisters_field = yes
+	native_irrigation = yes
+	native_storehouse = yes
+	native_longhouse = yes
+	native_sweat_lodge = yes
+	native_great_trail = yes
+	native_ceremonial_fire_pit = yes
+	upgrade_roads_build = yes
+	upgrade_canal_build = yes
+	interact_with_province_build = yes
+	local_fortification_1 = yes
+	local_fortification_2 = yes
+	local_fortification_3 = yes
+	rural_infrastructure_1 = yes
+	rural_infrastructure_2 = yes
+	rural_infrastructure_3 = yes
+	rural_infrastructure_4 = yes
+	rural_infrastructure_5 = yes
+	rural_infrastructure_6 = yes
+	rural_infrastructure_7 = yes
+	mines_1 = yes
+	regional_capital = yes
+	constable = yes
+	bailiff = yes
+	royal_palace = yes
+	courthouse = yes
+	superintendent = yes
+}
+technology = {
+	year = 1310
+	temple = yes
+	town_hall = yes
+	urban_infrastructure_1 = yes
+	urban_infrastructure_2 = yes
+	small_university = yes
+	medium_university = yes
+	big_university = yes
+	bureaucracy_1 = yes
+	bureaucracy_2 = yes
+}
+technology = {
+	year = 1320
+	feudal_monarchy = yes
+}
+technology = {
+	year = 1330
+	allowed_idea_groups = 1
+	max_states = 1
+}
+technology = {
+	year = 1340
+	workshop = yes
+}
+technology = {
+	year = 1350
+	canal_level_1 = yes
+	prussian_monarchy_legacy = yes
+	oligarchic_republic = yes
+	noble_republic = yes
+	corporation_guild = yes
+	art_corporation = yes
+	max_states = 1
+}
+technology = {
+	year = 1360
+	mines_2 = yes
+	max_states = 1
+}
+technology = {
+	year = 1370
+	merchant_republic = yes
+	urban_infrastructure_3 = yes
+}
+technology = {
+	year = 1380
+	allowed_idea_groups = 2
+}
+technology = {
+	year = 1390
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1400
+	max_states = 1
+	urban_manufactory = yes
+}
+technology = {
+	year = 1410
+	administrative_efficiency = 0.05
+	mines_3 = yes
+}
+technology = {
+	year = 1420
+	allowed_idea_groups = 3
+}
+technology = {
+	year = 1430
+	max_states = 1
+}
+technology = {
+	year = 1440
+	bureaucracy_3 = yes
+	bureaucracy_4 = yes
+}
+technology = {
+	year = 1450
+	max_states = 1
+}
+technology = {
+	year = 1460
+	canal_level_2 = yes
+	allowed_idea_groups = 4
+}
+technology = {
+	year = 1470
+	may_support_rebels = yes
+	max_states = 1
+}
+technology = {
+	year = 1480
+	urban_infrastructure_4 = yes
+}
+technology = {
+	year = 1490
+	fine_arts_academy = yes
+	may_force_march = yes
+}
+technology = {
+	year = 1500
+	allowed_idea_groups = 5
+}
+technology = {
+	year = 1510
+	max_states = 1
+}
+technology = {
+	year = 1520
+	administrative_efficiency = 0.05
+	mines_4 = yes
+}
+technology = {
+	year = 1530
+	administrative_monarchy = yes
+	administrative_republic = yes
+	bureaucracy_5 = yes
+}
+technology = {
+	year = 1540
+	allowed_idea_groups = 6
+}
+technology = {
+	year = 1550
+}
+technology = {
+	year = 1560
+	max_states = 2
+}
+technology = {
+	year = 1570
+	urban_infrastructure_5 = yes
+}
+technology = {
+	year = 1580
+	allowed_idea_groups = 7
+}
+technology = {
+	year = 1590
+	opera = yes
+}
+technology = {
+	year = 1600
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1610
+	great_temple = yes
+}
+technology = {
+	year = 1620
+	allowed_idea_groups = 8
+	max_states = 2
+}
+technology = {
+	year = 1630
+	factory = yes
+}
+technology = {
+	year = 1640
+	republican_dictatorship = yes
+}
+technology = {
+	year = 1650
+}
+technology = {
+	year = 1660
+	allowed_idea_groups = 9
+	max_states = 2
+}
+technology = {
+	year = 1670
+	mines_5 = yes
+}
+technology = {
+	year = 1680
+}
+technology = {
+	year = 1690
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1700
+	canal_level_3 = yes
+	allowed_idea_groups = 10
+}
+technology = {
+	year = 1710
+	max_states = 2
+}
+technology = {
+	year = 1720
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1730
+}
+technology = {
+	year = 1740
+	allowed_idea_groups = 11
+}
+technology = {
+	year = 1750
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1760
+	constitutional_republic = yes
+	max_states = 2
+}
+technology = {
+	year = 1770
+	steam_powered_factory = yes
+	enlightened_despotism = yes
+	bureaucratic_despotism = yes
+}
+technology = {
+	year = 1780
+	allowed_idea_groups = 12
+}
+technology = {
+	year = 1790
+	administrative_efficiency = 0.05
+	revolutionary_republic = yes
+}
+technology = {
+	year = 1800
+	revolutionary_empire = yes
+}
+technology = {
+	year = 1810
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1820
+	allowed_idea_groups = 13
+}
+technology = {
+	year = 1830
+	max_states = 2
+}
+technology = {
+	year = 1840
+}
+technology = {
+	year = 1850
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1860
+	allowed_idea_groups = 14
+}
+technology = {
+	year = 1870
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1880
+}
+technology = {
+	year = 1890
+	administrative_efficiency = 0.05
+}
+technology = {
+	year = 1900
+	max_states = 2
+}

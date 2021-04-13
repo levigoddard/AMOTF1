@@ -1,0 +1,19 @@
+alliance = {
+	first = HAB
+	second = TNT
+	start_date = 1363.1.1
+	end_date = 1568.1.1
+}
+dependency = {
+	subject_type = "vassal"
+	first = HAB
+	second = TNT
+	start_date = 1659.2.7
+	end_date = 1803.2.9
+}
+alliance = {
+	first = HAB
+	second = TNT
+	start_date = 1579.6.13
+	end_date = 1659.2.6
+}

@@ -1,0 +1,198 @@
+reactionary_rebels = {
+	color = { 179 100 100 }
+	area = nation
+	government = any
+	defection = none
+	independence = none
+	gfx_type = culture_province
+	resilient = yes
+	reinforcing = no
+	general = yes
+	smart = yes
+	unit_transfer = no
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	morale = 0.8
+	handle_action_negotiate = yes
+	handle_action_stability = no
+	handle_action_build_core = no
+	handle_action_send_missionary = yes
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.0
+			owner = {
+				always = yes
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_core = owner
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				primary_culture = ROOT
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				NOT = {
+					num_of_cities = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			owner = {
+				num_of_cities = 12
+			}
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				num_of_cities = 24
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				num_of_cities = 48
+			}
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				AND = {
+					OR = {
+						has_reform = nomad_reform
+						has_reform = native_council_legacy
+					}
+				}
+			}
+		}
+		modifier = {
+			has_province_modifier = reactionaries_organizing
+			factor = 3
+		}
+	}
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 2.0
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 8
+		}
+	}
+	siege_won_effect = {}
+	can_negotiate_trigger = {
+		always = yes
+	}
+	can_enforce_trigger = {
+		always = yes
+	}
+	demands_description = "reactionary_rebels_demand"
+	demands_enforced_effect = {
+		add_prestige = -50
+		custom_tooltip = stopping_reforms_or_reverting_reforms_tooltip
+		if = {
+			limit = {
+				has_country_flag = started_modernising_administration
+			}
+			clr_country_flag = modernisation_provinces
+			clr_country_flag = modernisation_overhauled_clerk_recruitement
+			clr_country_flag = modernisation_overhauled_government_positions
+			clr_country_flag = modernisation_established_ministeries
+			clr_country_flag = modernisation_capital_moved
+			remove_country_modifier = modernised_province_setup
+			remove_country_modifier = modernised_clerk_recruitement
+			remove_country_modifier = senate_established
+			remove_country_modifier = established_ministeries
+		}
+		if = {
+			limit = {
+				has_country_flag = started_modernising_military
+			}
+			clr_country_flag = modernisation_introduced_western_officer_training
+			clr_country_flag = modernisation_founded_guard_regiment
+			clr_country_flag = modernisation_non_noble_cavalry_and_officers
+			clr_country_flag = modernisation_army_abandons_levies
+			clr_country_flag = modernisation_war_college_founded_notified
+			clr_country_flag = modernisation_war_college_founded
+			remove_country_modifier = western_officer_training
+			remove_country_modifier = founded_guard_regiment
+			remove_country_modifier = cavalry_and_officercorps_non_noble_exclusive
+			remove_country_modifier = nobles_now_regular_soldiers
+		}
+		if = {
+			limit = {
+				has_country_flag = started_modernising_navy
+			}
+			clr_country_flag = modernisation_western_ship_designs
+			clr_country_flag = modernisation_western_naval_training
+			clr_country_flag = modernisation_modernisation_admiralty_founded_notified
+			clr_country_flag = modernisation_admiralty_founded
+			remove_country_modifier = western_ship_designs
+			remove_country_modifier = western_naval_training
+		}
+		if = {
+			limit = {
+				has_country_flag = started_modernising_society
+			}
+			clr_country_flag = modernisation_education_reform_schools
+			clr_country_flag = modernisation_education_reform_academy_of_science
+			clr_country_flag = modernisation_tax_reform
+			clr_country_flag = modernisation_formal_organisation_of_nobility
+			clr_country_flag = modernisation_education_reform_universities_notified
+			clr_country_flag = modernisation_education_reform_universities
+			remove_country_modifier = education_reform_schools
+			remove_country_modifier = education_academy_of_science
+			remove_country_modifier = modernisation_tax_reform
+			remove_country_modifier = formal_organisation_of_nobility
+		}
+		if = {
+			limit = {
+				has_country_flag = started_modernising_economy_and_trade
+			}
+			clr_country_flag = modernisation_implemented_mercantilistic_restrictions
+			clr_country_flag = modernisation_overhaul_production_methods_farming
+			clr_country_flag = modernisation_manufactories_founded
+			clr_country_flag = modernisation_manufactories_founded_notified
+			clr_country_flag = modernisation_overhaul_production_methods_craftsmen
+			remove_country_modifier = modernisation_mercantilistic_restrictions
+			remove_country_modifier = modernised_farming_methods
+			remove_country_modifier = modernised_production_methods
+		}
+		clr_country_flag = modernisation_stopped
+		set_country_flag = modernisation_stopped
+	}
+}

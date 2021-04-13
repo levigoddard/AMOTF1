@@ -1,0 +1,96 @@
+owner = MPH
+controller = MPH
+add_core = MPH
+capital = "Rembang"
+trade_goods = rice
+culture = javan
+religion = hinduism
+hre = no
+base_tax = 17
+base_production = 1
+base_manpower = 1
+is_city = yes
+town_hall = yes
+marketplace = yes
+temple = yes
+canal_level_1 = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = austranesian
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5
+	}
+}
+1450.1.1 = {
+	religion = sunni
+}
+1490.1.1 = {
+	owner = DEM
+	controller = DEM
+	add_core = DEM
+}
+1501.1.1 = {
+	base_tax = 22
+}
+1512.1.1 = {
+	discovered_by = POR
+}
+1523.1.1 = {
+	owner = DEM
+	controller = DEM
+	add_core = DEM
+}
+1613.1.1 = {
+	discovered_by = NED
+}
+1625.1.1 = {
+	owner = MTR
+	controller = MTR
+	add_core = MTR
+	add_core = SBT
+	remove_core = MPH
+	remove_core = DEM
+	unrest = 2
+}
+1650.1.1 = {
+	unrest = 1
+}
+1676.10.15 = {
+	controller = REB
+}
+1677.7.13 = {
+	controller = MTR
+	unrest = 2
+}
+1700.1.1 = {
+	unrest = 1
+}
+1717.1.1 = {
+	controller = REB
+}
+1721.1.1 = {
+	controller = MTR
+	unrest = 2
+}
+1743.11.1 = {
+	owner = NED
+	controller = NED
+	unrest = 1
+}
+1746.5.1 = {
+	unrest = 2
+}
+1800.1.1 = {
+	add_core = NED
+	unrest = 0
+}
+1811.9.1 = {
+	owner = GBR
+	controller = GBR
+}
+1816.1.1 = {
+	owner = NED
+	controller = NED
+}

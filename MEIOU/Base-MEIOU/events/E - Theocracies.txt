@@ -1,0 +1,339 @@
+country_event = {
+	id = theocracies.1
+	title = theocracy.1.t
+	desc = theocracy.1.desc
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = papacy_reform
+					has_reform = papal_government
+				}
+			}
+		}
+		NOT = {
+			has_country_flag = in_theocracy_heir_selection
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = in_theocracy_heir_selection
+			clr_country_flag = theo_local_noble_flag
+			clr_country_flag = theo_foreign_noble_flag
+			clr_country_flag = theo_merchants_son_flag
+			clr_country_flag = theo_talented_theologian_flag
+			clr_country_flag = theo_local_preacher_flag
+			clr_country_flag = theo_papal_protege_flag
+			clr_country_flag = theo_imam_khatib_flag
+		}
+	}
+	option = {
+		name = theocracy.1.a
+		set_country_flag = theo_local_noble_flag
+		define_heir = {
+			age = 35
+			hidden = yes
+		}
+		add_devotion = -5
+		add_prestige = 10
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+	option = {
+		name = theocracy.1.b
+		trigger = {
+			any_country = {
+				government = monarchy
+				religion = ROOT
+				OR = {
+					has_regency = no
+					has_consort_regency = yes
+				}
+				NOT = {
+					capital_distance = {
+						who = ROOT
+						distance = 100
+					}
+				}
+			}
+		}
+		set_country_flag = theo_foreign_noble_flag
+		random_country = {
+			limit = {
+				government = monarchy
+				religion = ROOT
+				OR = {
+					has_regency = no
+					has_consort_regency = yes
+				}
+				NOT = {
+					capital_distance = {
+						who = ROOT
+						distance = 100
+					}
+				}
+			}
+			ROOT = {
+				define_heir = {
+					dynasty = PREV
+					age = 35
+					hidden = yes
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_theocracy_noble
+			}
+		}
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+	option = {
+		name = theocracy.1.c
+		set_country_flag = theo_merchants_son_flag
+		define_heir = {
+			age = 35
+			hidden = yes
+		}
+		add_years_of_income = 0.25
+		add_devotion = -10
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+	option = {
+		name = theocracy.1.e
+		set_country_flag = theo_talented_theologian_flag
+		define_heir = {
+			age = 35
+			hidden = yes
+		}
+		add_devotion = 5
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+	option = {
+		name = theocracy.1.f
+		trigger = {
+			NOT = {
+				religion_group = muslim
+			}
+		}
+		set_country_flag = theo_local_preacher_flag
+		define_heir = {
+			age = 35
+			hidden = yes
+		}
+		add_devotion = 10
+		add_prestige = -5
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+	option = {
+		name = theocracy.1.d
+		trigger = {
+			religion = catholic
+		}
+		set_country_flag = theo_papal_protege_flag
+		define_heir = {
+			age = 35
+			hidden = yes
+		}
+		add_papal_influence = 10
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+	option = {
+		name = theocracy.1.g
+		trigger = {
+			religion_group = muslim
+		}
+		set_country_flag = theo_imam_khatib_flag
+		define_heir = {
+			age = 35
+			hidden = yes
+		}
+		add_devotion = 5
+		add_prestige = -10
+		clr_country_flag = in_theocracy_heir_selection
+		custom_tooltip = theocracy.1.tt
+	}
+}
+country_event = {
+	id = theocracies.1090
+	title = "EVTNAME1090"
+	desc = "EVTDESC1090"
+	picture = RELIGION_eventPicture
+	trigger = {
+		government = theocracy
+		any_owned_province = {
+			has_owner_religion = no
+		}
+		NOT = {
+			has_country_flag = religious_restrictions
+		}
+		NOT = {
+			any_owned_province = {
+				has_missionary = yes
+			}
+		}
+		NOT = {
+			has_country_modifier = religious_tolerance
+		}
+		NOT = {
+			has_country_modifier = religious_intolerance
+		}
+	}
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.9
+			is_defender_of_faith = yes
+		}
+		modifier = {
+			factor = 0.9
+			advisor = theologian
+		}
+		modifier = {
+			factor = 0.9
+			theologian = 3
+		}
+	}
+	option = {
+		name = "EVTOPTA1090"
+		ai_chance = {
+			factor = 55
+		}
+		set_country_flag = religious_restrictions
+		add_country_modifier = {
+			name = "religious_restriction"
+			duration = 730
+		}
+	}
+	option = {
+		name = "EVTOPTB1090"
+		ai_chance = {
+			factor = 45
+		}
+		set_country_flag = religious_restrictions
+		random = {
+			chance = 40
+			random_owned_province = {
+				limit = {
+					has_owner_religion = no
+					NOT = {
+						has_province_modifier = turmoil_organizing
+					}
+				}
+				add_province_modifier = {
+					name = "turmoil_organizing"
+					duration = 1825
+				}
+				hidden_effect = {
+					set_variable = {
+						which = added_unrest
+						value = 5
+					}
+					hidden_effect = {
+						province_event = {
+							id = stacking_unrest.002
+						}
+					}
+				}
+				custom_tooltip = added_unrest_5
+			}
+		}
+	}
+}
+country_event = {
+	id = theocracies.1091
+	title = "EVTNAME1091"
+	desc = "EVTDESC1091"
+	picture = DIPLOMACY_eventPicture
+	trigger = {
+		government = theocracy
+		any_neighbor_country = {
+			NOT = {
+				has_opinion = {
+					who = ROOT
+					value = -50
+				}
+			}
+			NOT = {
+				religion = ROOT
+			}
+		}
+		NOT = {
+			has_country_flag = problematic_relations
+		}
+	}
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.9
+			is_defender_of_faith = yes
+		}
+		modifier = {
+			factor = 0.9
+			advisor = theologian
+		}
+		modifier = {
+			factor = 0.9
+			theologian = 3
+		}
+		modifier = {
+			factor = 0.9
+			mil = 7
+		}
+		modifier = {
+			factor = 0.9
+			mil = 8
+		}
+		modifier = {
+			factor = 0.9
+			mil = 9
+		}
+		modifier = {
+			factor = 1.2
+			NOT = {
+				mil = 4
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA1091"
+		ai_chance = {
+			factor = 45
+		}
+		set_country_flag = problematic_relations
+		random_country = {
+			limit = {
+				is_neighbor_of = ROOT
+				NOT = {
+					religion = ROOT
+				}
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = -50
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_forceful_conversion
+			}
+		}
+		add_papal_influence = -10
+	}
+	option = {
+		name = "EVTOPTB1091"
+		ai_chance = {
+			factor = 55
+		}
+		set_country_flag = problematic_relations
+		add_army_tradition = 10
+		add_treasury = -40
+	}
+}

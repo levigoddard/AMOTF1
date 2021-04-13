@@ -1,0 +1,13 @@
+test_modifier = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		owner = {
+			stability = 0
+		}
+	}
+	local_build_cost = 0.05
+	on_activation = {}
+	on_deactivation = {}
+}

@@ -1,0 +1,307 @@
+bureaucracy_1 = {
+	cost = 99999
+	time = 30
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = {
+					which = urban_pop
+					value = 2
+				}
+				owner = {
+					adm_tech = 1
+				}
+				AND = {
+					NOT = {
+						has_building = bureaucracy_2
+						has_building = bureaucracy_3
+						has_building = bureaucracy_4
+						has_building = bureaucracy_5
+					}
+				}
+				NOT = {
+					has_building = bureaucracy_1
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = bureaucracy_2
+						has_building = bureaucracy_3
+						has_building = bureaucracy_4
+						has_building = bureaucracy_5
+					}
+				}
+				has_building = bureaucracy_1
+			}
+		}
+	}
+	modifier = {
+		max_states = 1
+		local_autonomy = -0.10
+		local_build_cost = 0.20
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+bureaucracy_2 = {
+	cost = 99999
+	time = 30
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = {
+					which = urban_pop
+					value = 4
+				}
+				has_building = bureaucracy_1
+				owner = {
+					adm_tech = 1
+				}
+				AND = {
+					NOT = {
+						has_building = bureaucracy_3
+						has_building = bureaucracy_4
+						has_building = bureaucracy_5
+					}
+				}
+				NOT = {
+					has_building = bureaucracy_2
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = bureaucracy_3
+						has_building = bureaucracy_4
+						has_building = bureaucracy_5
+					}
+				}
+				has_building = bureaucracy_2
+			}
+		}
+	}
+	modifier = {
+		max_states = 2
+		local_autonomy = -0.125
+		local_build_cost = 0.25
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = bureaucracy_1
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+bureaucracy_3 = {
+	cost = 99999
+	time = 30
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = {
+					which = urban_pop
+					value = 6
+				}
+				has_building = bureaucracy_2
+				owner = {
+					adm_tech = 14
+				}
+				AND = {
+					NOT = {
+						has_building = bureaucracy_4
+						has_building = bureaucracy_5
+					}
+				}
+				NOT = {
+					has_building = bureaucracy_3
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = bureaucracy_4
+						has_building = bureaucracy_5
+					}
+				}
+				has_building = bureaucracy_3
+			}
+		}
+	}
+	modifier = {
+		max_states = 3
+		local_autonomy = -0.15
+		local_build_cost = 0.30
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = bureaucracy_2
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+bureaucracy_4 = {
+	cost = 99999
+	time = 30
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = {
+					which = urban_pop
+					value = 8
+				}
+				has_building = bureaucracy_3
+				owner = {
+					adm_tech = 14
+				}
+				AND = {
+					NOT = {
+						has_building = bureaucracy_5
+					}
+				}
+				NOT = {
+					has_building = bureaucracy_4
+				}
+			}
+			AND = {
+				AND = {
+					NOT = {
+						has_building = bureaucracy_5
+					}
+				}
+				has_building = bureaucracy_4
+			}
+		}
+	}
+	modifier = {
+		max_states = 4
+		local_autonomy = -0.2
+		local_build_cost = 0.40
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = bureaucracy_3
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+bureaucracy_5 = {
+	cost = 99999
+	time = 30
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = {
+					which = urban_pop
+					value = 10
+				}
+				has_building = bureaucracy_4
+				owner = {
+					adm_tech = 23
+				}
+				AND = {
+					always = yes
+				}
+				NOT = {
+					has_building = bureaucracy_5
+				}
+			}
+			AND = {
+				AND = {
+					always = yes
+				}
+				has_building = bureaucracy_5
+			}
+		}
+	}
+	modifier = {
+		max_states = 5
+		local_autonomy = -0.3
+		local_build_cost = 0.50
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	on_built = {
+		hidden_effect = {
+			remove_building = bureaucracy_4
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_destroyed = {
+		hidden_effect = {
+			province_event = {
+				id = MT_general_fixes.300
+			}
+		}
+	}
+	on_obsolete = {}
+}
+interact_with_province_build = {
+	cost = 0
+	time = 1
+	trigger = {
+		is_city = yes
+	}
+	modifier = {}
+	ai_will_do = {
+		factor = 0
+	}
+}

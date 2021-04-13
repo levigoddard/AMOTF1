@@ -1,0 +1,75 @@
+milaccess = {
+	condition = {
+		tooltip = MILACCESS
+		potential = {
+			NOT = {
+				army_strength = {
+					who = FROM
+					value = 2.0
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 30
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				tag = AAA
+				FROM = {
+					tag = AAA
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = AMALGAMATION
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = tribal_amalgamation
+						has_reform = tribal_democracy_legacy
+					}
+				}
+				FROM = {
+					AND = {
+						OR = {
+							has_reform = tribal_amalgamation
+							has_reform = tribal_democracy_legacy
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = CIR
+			}
+			NOT = {
+				tag = GAZ
+			}
+			FROM = {
+				NOT = {
+					tag = GAZ
+				}
+			}
+			FROM = {
+				NOT = {
+					tag = CIR
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}

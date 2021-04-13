@@ -1,0 +1,45 @@
+eastern_haram_trigger = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		always = yes
+	}
+	on_activation = {
+		owner = {
+			country_event = {
+				id = eastern_haram.10
+			}
+		}
+	}
+}
+betray_chinese_lord_trigger = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		always = yes
+	}
+	on_activation = {
+		owner = {
+			country_event = {
+				id = tianxia.4
+			}
+		}
+	}
+}
+request_clerical_advisor_trigger = {
+	potential = {
+		always = yes
+	}
+	trigger = {
+		always = yes
+	}
+	on_activation = {
+		owner = {
+			country_event = {
+				id = dg_church_influence.052
+			}
+		}
+	}
+}

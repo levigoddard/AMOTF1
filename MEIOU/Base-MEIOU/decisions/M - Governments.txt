@@ -1,0 +1,1064 @@
+country_decisions = {
+	plutocratic_administration = {
+		potential = {
+			OR = {
+				technology_group = western
+				technology_group = eastern
+				technology_group = turkishtech
+				technology_group = high_turkishtech
+				technology_group = muslim
+			}
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							NOT = {
+								has_reform = free_city
+							}
+							NOT = {
+								has_reform = city_state
+							}
+							NOT = {
+								has_reform = trade_republic
+							}
+							NOT = {
+								has_reform = colonial_government
+							}
+							NOT = {
+								has_reform = dictator_reform
+							}
+							has_reform = vote_nobility
+						}
+						has_reform = noble_republic
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = peasants_republic
+							has_reform = assembly_reform
+							has_reform = vote_landowners
+						}
+						has_reform = administrative_republic
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							NOT = {
+								has_reform = free_city
+							}
+							NOT = {
+								has_reform = city_state
+							}
+							NOT = {
+								has_reform = trade_republic
+							}
+							NOT = {
+								has_reform = colonial_government
+							}
+							has_reform = dictator_reform
+						}
+						has_reform = republican_dictatorship
+					}
+				}
+				AND = {
+					OR = {
+						has_reform = city_state
+						AND = {
+							NOT = {
+								has_reform = free_city
+							}
+							NOT = {
+								has_reform = trade_republic
+							}
+							NOT = {
+								has_reform = colonial_government
+							}
+							NOT = {
+								has_reform = dictator_reform
+							}
+							has_reform = oligarchy_reform
+						}
+						has_reform = oligarchic_republic
+						has_reform = ambrosian_republic_legacy
+					}
+				}
+				tag = FRL
+				tag = GEN
+				tag = VEN
+				tag = HSA
+			}
+			NOT = {
+				num_of_provinces_in_states = 21
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = trade_republic
+						has_reform = merchant_republic
+						has_reform = venetian_merchant_republic
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = free_city
+						has_reform = imperial_city
+						has_reform = trading_city_legacy
+					}
+				}
+			}
+		}
+		allow = {
+			stability = 1
+			adm_tech = 5
+			full_idea_group = trade_ideas
+			NOT = {
+				num_of_provinces_in_states = 21
+			}
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+			num_of_ports = 1
+			is_at_war = no
+		}
+		effect = {
+			change_government = republic
+			add_government_reform = trade_republic
+			add_government_reform = oligarchy_reform
+			add_government_reform = vote_tax
+			set_legacy_government = merchant_republic
+			add_stability = -2
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_cities = 3
+			}
+		}
+	}
+	changegov_altaic_despotic_monarchy = {
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = steppe_horde
+							NOT = {
+								has_country_modifier = title_6
+								has_country_flag = title_6
+							}
+						}
+						has_reform = steppe_horde_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = steppe_horde
+							OR = {
+								has_country_modifier = title_6
+								has_country_flag = title_6
+							}
+						}
+						has_reform = great_mongol_state_legacy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 5
+			stability = 1
+			adm_power = 100
+			OR = {
+				culture_group = altaic
+				culture_group = tartar_group
+				culture_group = tungusic
+			}
+			OR = {
+				adm = 5
+				mil = 5
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			change_government = tribal
+			add_government_reform = tribal_kingdom
+			set_legacy_government = tribal_kingdom_legacy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	changegov_despotic_monarchy = {
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = hereditary_elite
+						}
+						has_reform = feudal_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = bureaucracy
+							has_reform = appointed_elite
+						}
+						has_reform = administrative_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = appointed_elite
+						}
+						has_reform = prussian_monarchy_legacy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 5
+			absolutism = 30
+			stability = 1
+			adm_power = 100
+			OR = {
+				has_country_modifier = "arbitrary"
+				has_country_modifier = "cruel"
+				has_country_modifier = "flamboyant_schemer"
+				has_country_modifier = "energetic"
+				has_country_modifier = "selfish"
+				adm = 5
+				mil = 5
+			}
+			NOT = {
+				OR = {
+					tag = ITA
+					tag = SPI
+					tag = GER
+					tag = ERG
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = despotic_monarchy
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_feudal_monarchy = {
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = military_elite
+						}
+						has_reform = despotic_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = bureaucracy
+							has_reform = appointed_elite
+						}
+						has_reform = administrative_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = appointed_elite
+						}
+						has_reform = prussian_monarchy_legacy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			NOT = {
+				absolutism = 25
+			}
+			adm_tech = 5
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = feudal_monarchy
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_administrative_monarchy = {
+		potential = {
+			adm_tech = 18
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = military_elite
+						}
+						has_reform = despotic_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = hereditary_elite
+						}
+						has_reform = feudal_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = parliamentary_monarchy
+							has_reform = bureaucracy
+							has_reform = appointed_elite
+						}
+						has_reform = constitutional_monarchy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 23
+			stability = 0
+			adm_power = 100
+			NOT = {
+				OR = {
+					tag = ITA
+					tag = SPI
+					tag = GER
+					tag = ERG
+				}
+			}
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = administrative_monarchy
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						AND = {
+							has_reform = parliamentary_monarchy
+							has_reform = bureaucracy
+							has_reform = appointed_elite
+						}
+						has_reform = constitutional_monarchy
+					}
+				}
+			}
+		}
+	}
+	changegov_absolute_monarchy = {
+		potential = {
+			adm_tech = 30
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = military_elite
+						}
+						has_reform = despotic_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = hereditary_elite
+						}
+						has_reform = feudal_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = bureaucracy
+							has_reform = appointed_elite
+						}
+						has_reform = administrative_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = bureaucracy
+							has_reform = military_elite
+						}
+						has_reform = enlightened_despotism
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = parliamentary_monarchy
+							has_reform = delegated_rulers
+						}
+						has_reform = english_monarchy_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = wealthy_elite
+						}
+						has_reform = portuguese_monarchy_legacy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 35
+			stability = 0
+			adm = 3
+			OR = {
+				adm_power = 100
+				AND = {
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = bureaucracy
+								has_reform = appointed_elite
+							}
+							has_reform = administrative_monarchy
+						}
+					}
+					adm_power = 250
+				}
+			}
+			absolutism = 80
+			is_at_war = no
+		}
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							AND = {
+								has_reform = divine_right
+								has_reform = bureaucracy
+								has_reform = appointed_elite
+							}
+							has_reform = administrative_monarchy
+						}
+					}
+				}
+				add_adm_power = -250
+			}
+			if = {
+				limit = {
+					NOT = {
+						AND = {
+							OR = {
+								AND = {
+									has_reform = divine_right
+									has_reform = bureaucracy
+									has_reform = appointed_elite
+								}
+								has_reform = administrative_monarchy
+							}
+						}
+					}
+				}
+				add_adm_power = -100
+			}
+			set_legacy_government = absolute_monarchy
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = bureaucracy
+							has_reform = military_elite
+						}
+						has_reform = enlightened_despotism
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						AND = {
+							has_reform = parliamentary_monarchy
+							has_reform = delegated_rulers
+						}
+						has_reform = english_monarchy_legacy
+					}
+				}
+			}
+		}
+	}
+	changegov_constitutional_monarchy = {
+		potential = {
+			adm_tech = 34
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = bureaucracy
+							has_reform = appointed_elite
+						}
+						has_reform = administrative_monarchy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = wealthy_elite
+						}
+						has_reform = portuguese_monarchy_legacy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 39
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = constitutional_monarchy
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					absolutism = 60
+				}
+			}
+		}
+	}
+	changegov_enlightened_despotism = {
+		potential = {
+			adm_tech = 42
+			AND = {
+				OR = {
+					AND = {
+						has_reform = divine_right
+						has_reform = delegated_rulers
+						has_reform = appointed_elite
+					}
+					has_reform = prussian_monarchy_legacy
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 47
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = enlightened_despotism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	changegov_religious_order = {
+		potential = {
+			AND = {
+				OR = {
+					has_reform = ruling_clergy_reform
+					has_reform = theocratic_government
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 7
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = monastic_order_government
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_theocracy = {
+		potential = {
+			AND = {
+				OR = {
+					has_reform = monastic_order_reform
+					has_reform = monastic_order_government
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 7
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = theocratic_government
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_eastern_thalassocracy = {
+		potential = {
+			AND = {
+				OR = {
+					AND = {
+						has_reform = divine_right
+						has_reform = delegated_rulers
+						has_reform = wealthy_elite
+					}
+					has_reform = portuguese_monarchy_legacy
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			absolutism = 25
+			adm_tech = 5
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = tsardom_legacy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	changegov_administrative_republic = {
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						has_reform = city_state
+						AND = {
+							NOT = {
+								has_reform = free_city
+							}
+							NOT = {
+								has_reform = trade_republic
+							}
+							NOT = {
+								has_reform = colonial_government
+							}
+							NOT = {
+								has_reform = dictator_reform
+							}
+							has_reform = oligarchy_reform
+						}
+						has_reform = oligarchic_republic
+						has_reform = ambrosian_republic_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							NOT = {
+								has_reform = free_city
+							}
+							NOT = {
+								has_reform = city_state
+							}
+							NOT = {
+								has_reform = trade_republic
+							}
+							NOT = {
+								has_reform = colonial_government
+							}
+							NOT = {
+								has_reform = dictator_reform
+							}
+							has_reform = vote_nobility
+						}
+						has_reform = noble_republic
+					}
+				}
+				AND = {
+					OR = {
+						has_reform = trade_republic
+						has_reform = merchant_republic
+						has_reform = venetian_merchant_republic
+					}
+				}
+			}
+			adm_tech = 18
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			adm_tech = 23
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = administrative_republic
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						has_reform = trade_republic
+						has_reform = merchant_republic
+						has_reform = venetian_merchant_republic
+					}
+				}
+			}
+		}
+	}
+	changegov_noble_republic = {
+		potential = {
+			AND = {
+				OR = {
+					has_reform = trade_republic
+					has_reform = merchant_republic
+					has_reform = venetian_merchant_republic
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			absolutism = 30
+			adm_tech = 5
+			stability = 1
+			adm_power = 100
+			faction_in_power = mr_aristocrats
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			add_stability = -1
+			hidden_effect = {
+				country_event = {
+					id = POP_Stability.003
+				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				add_mandate = -5
+			}
+			set_legacy_government = noble_republic
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_oligarchic_republic = {
+		potential = {
+			AND = {
+				OR = {
+					AND = {
+						NOT = {
+							has_reform = free_city
+						}
+						NOT = {
+							has_reform = city_state
+						}
+						NOT = {
+							has_reform = trade_republic
+						}
+						NOT = {
+							has_reform = colonial_government
+						}
+						NOT = {
+							has_reform = dictator_reform
+						}
+						has_reform = vote_nobility
+					}
+					has_reform = noble_republic
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			absolutism = 20
+			adm_tech = 5
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = oligarchic_republic
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_republican_dictatorship = {
+		potential = {
+			adm_tech = 29
+			government = republic
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = free_city
+						has_reform = imperial_city
+						has_reform = trading_city_legacy
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					OR = {
+						AND = {
+							NOT = {
+								has_reform = free_city
+							}
+							NOT = {
+								has_reform = city_state
+							}
+							NOT = {
+								has_reform = trade_republic
+							}
+							NOT = {
+								has_reform = colonial_government
+							}
+							has_reform = dictator_reform
+						}
+						has_reform = republican_dictatorship
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			absolutism = 70
+			adm_tech = 34
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = republican_dictatorship
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	changegov_constitutional_republic = {
+		potential = {
+			adm_tech = 41
+			government = republic
+			NOT = {
+				AND = {
+					OR = {
+						has_reform = free_city
+						has_reform = imperial_city
+						has_reform = trading_city_legacy
+					}
+				}
+			}
+			NOT = {
+				AND = {
+					OR = {
+						AND = {
+							has_reform = peasants_republic
+							has_reform = assembly_reform
+							has_reform = vote_tax
+						}
+						has_reform = constitutional_republic
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			absolutism = 70
+			adm_tech = 46
+			stability = 0
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = constitutional_republic
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	changegov_asia_despotic_monarchy = {
+		potential = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							capital_scope = {
+								continent = indian_continent
+							}
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = hereditary_elite
+						}
+						has_reform = principality_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							capital_scope = {
+								continent = southeast_asia
+							}
+							has_reform = divine_right
+							has_reform = delegated_rulers
+							has_reform = appointed_elite
+						}
+						has_reform = tsardom_legacy
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							OR = {
+								culture_group = chinese_group
+								has_country_flag = barbarian_claimant_china
+							}
+							has_reform = celestial_empire
+						}
+						has_reform = celestial_empire_legacy
+					}
+				}
+			}
+			NOT = {
+				has_dlc = "Dharma"
+			}
+		}
+		allow = {
+			has_institution = enlightenment
+			adm_tech = 5
+			stability = 1
+			adm_power = 100
+			OR = {
+				adm = 5
+				mil = 5
+			}
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = -100
+			set_legacy_government = despotic_monarchy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

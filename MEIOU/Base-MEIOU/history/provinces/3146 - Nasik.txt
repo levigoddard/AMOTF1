@@ -1,0 +1,82 @@
+owner = BAH
+controller = BAH
+add_core = BAH
+capital = "Nasik"
+trade_goods = millet
+culture = marathi
+religion = hinduism
+hre = no
+base_tax = 28
+base_production = 1
+base_manpower = 2
+is_city = yes
+town_hall = yes
+discovered_by = indian
+discovered_by = muslim
+discovered_by = turkishtech
+discovered_by = steppestech
+450.1.1 = {
+	set_variable = {
+		which = pop_level
+		value = 5.5
+	}
+}
+1356.1.1 = {
+	add_core = BAS
+}
+1490.1.1 = {
+	remove_core = GUJ
+	remove_core = BAH
+	add_core = BAS
+	controller = BAS
+	owner = BAS
+}
+1498.1.1 = {
+	discovered_by = POR
+}
+1511.1.1 = {
+	base_tax = 36
+}
+1530.2.3 = {
+	add_permanent_claim = MUG
+}
+1530.3.17 = {
+	marketplace = yes
+}
+1595.1.1 = {
+	controller = MUG
+}
+1596.1.1 = {
+	owner = MUG
+}
+1615.1.1 = {
+	controller = BAS
+}
+1622.1.1 = {
+	controller = MUG
+}
+1633.7.27 = {
+	owner = MUG
+	controller = MUG
+	add_core = MUG
+}
+1650.4.8 = {
+	add_core = MUG
+}
+1712.1.1 = {
+	add_core = HYD
+}
+1724.1.1 = {
+	owner = HYD
+	controller = HYD
+	remove_core = MUG
+}
+1752.1.1 = {
+	owner = MAR
+	controller = MAR
+	add_core = MAR
+}
+1818.6.3 = {
+	owner = GBR
+	controller = GBR
+}

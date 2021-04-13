@@ -1,0 +1,14 @@
+name = "Second Polish-Teutonic War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 1391
+}
+1431.1.1 = {
+	add_attacker = TEU
+	add_defender = POL
+}
+1435.12.1 = {
+	rem_attacker = TEU
+	rem_defender = POL
+}

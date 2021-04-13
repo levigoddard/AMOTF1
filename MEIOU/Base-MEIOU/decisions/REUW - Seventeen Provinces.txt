@@ -1,0 +1,651 @@
+country_decisions = {
+	svp_creation = {
+		major = yes
+		potential = {
+			OR = {
+				has_country_flag = bur_inheritor
+				any_subject_country = {
+					capital_scope = {
+						OR = {
+							region = low_countries_region
+							region = belgii_region
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = BUR
+			}
+			NOT = {
+				exists = SVP
+			}
+			NOT = {
+				exists = NED
+			}
+			NOT = {
+				has_country_flag = svp_estates_general
+			}
+			NOT = {
+				culture_group = low_frankish
+			}
+		}
+		allow = {
+			check_variable = {
+				which = "Demesne_in_the_Netherlands"
+				value = 17
+			}
+			NOT = {
+				check_variable = {
+					which = "Cores_on_the_Netherlands"
+					value = 8
+				}
+			}
+			92 = {
+				country_or_vassal_holds = ROOT
+			}
+		}
+		effect = {
+			set_global_flag = dutch_rebellion_start
+			REB = {
+				set_variable = {
+					which = dutch_rebellion_desire
+					value = 10
+				}
+				country_event = {
+					id = flavor_svp.99
+					days = 3650
+				}
+			}
+			if = {
+				limit = {
+					BUR = {
+						is_subject_of = ROOT
+						any_owned_province = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+						}
+					}
+				}
+				BUR = {
+					change_tag = SVP
+				}
+			}
+			else_if = {
+				limit = {
+					any_subject_country = {
+						capital_scope = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+						}
+					}
+				}
+				random_subject_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+						}
+					}
+					change_tag = SVP
+				}
+			}
+			create_union = SVP
+			every_subject_country = {
+				limit = {
+					NOT = {
+						tag = SVP
+					}
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = low_countries_region
+							region = belgii_region
+						}
+					}
+					add_core = SVP
+					cede_province = SVP
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = belgii_region
+					}
+				}
+				add_core = SVP
+				cede_province = SVP
+			}
+			SVP = {
+				every_owned_province = {
+					limit = {
+						NOT = {
+							OR = {
+								region = low_countries_region
+								region = belgii_region
+							}
+						}
+					}
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			SVP = {
+				inherit = FLA
+				inherit = HAI
+			}
+			SVP = {
+				every_owned_province = {
+					set_local_autonomy = 50
+				}
+			}
+			SVP = {
+				change_primary_culture = brabantian
+				add_accepted_culture = flemish
+				add_accepted_culture = dutch
+				add_accepted_culture = wallonian
+			}
+			SVP = {
+				hidden_effect = {
+					country_event = {
+						id = ideagroups.9000
+						days = 1
+					}
+				}
+				custom_tooltip = swap_national_ideas
+			}
+			SVP = {
+				every_owned_province = {
+					add_province_modifier = {
+						name = estates_general_1
+						duration = -1
+					}
+				}
+			}
+			SVP = {
+				every_core_province = {
+					limit = {
+						NOT = {
+							region = low_countries_region
+						}
+						NOT = {
+							region = belgii_region
+						}
+					}
+					remove_core = SVP
+					remove_claim = SVP
+				}
+			}
+			low_countries_region = {
+				limit = {
+					NOT = {
+						owned_by = SVP
+					}
+				}
+				add_permanent_claim = SVP
+			}
+			belgii_region = {
+				limit = {
+					NOT = {
+						owned_by = SVP
+					}
+				}
+				add_permanent_claim = SVP
+			}
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				SVP = {
+					set_in_empire = yes
+					swap_non_generic_missions = yes
+				}
+			}
+			set_country_flag = svp_creator
+			add_country_modifier = {
+				name = svp_centralized_recently
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = svp_demanded_tax_recently
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = svp_demanded_manpower_recently
+				duration = 3650
+			}
+			hidden_effect = {
+				country_event = {
+					id = flavor_svp.200
+					days = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	svp_information = {
+		potential = {
+			ai = no
+			OR = {
+				AND = {
+					has_country_flag = svp_creator
+					SVP = {
+						is_subject_of = ROOT
+					}
+				}
+				AND = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						OR = {
+							has_province_modifier = estates_general_1
+							has_province_modifier = estates_general_2
+							has_province_modifier = estates_general_3
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			country_event = {
+				id = flavor_svp.200
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	svp_demand_taxes = {
+		potential = {
+			OR = {
+				AND = {
+					has_country_flag = svp_creator
+					SVP = {
+						is_subject_of = ROOT
+					}
+				}
+				AND = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						OR = {
+							has_province_modifier = estates_general_1
+							has_province_modifier = estates_general_2
+							has_province_modifier = estates_general_3
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = SVP
+			}
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = svp_demanded_tax_recently
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = svp_demanded_tax_recently
+				duration = 1825
+			}
+			hidden_effect = {
+				AAA = {
+					country_event = {
+						id = flavor_svp.2
+					}
+				}
+			}
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = dutch_rebellion_desire
+						value = 1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	svp_demand_manpower = {
+		potential = {
+			OR = {
+				AND = {
+					has_country_flag = svp_creator
+					SVP = {
+						is_subject_of = ROOT
+					}
+				}
+				AND = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						OR = {
+							has_province_modifier = estates_general_1
+							has_province_modifier = estates_general_2
+							has_province_modifier = estates_general_3
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = SVP
+			}
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = svp_demanded_manpower_recently
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = svp_demanded_manpower_recently
+				duration = 3650
+			}
+			hidden_effect = {
+				AAA = {
+					country_event = {
+						id = flavor_svp.9
+					}
+				}
+			}
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = dutch_rebellion_desire
+						value = 1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	svp_increase_centralization = {
+		potential = {
+			OR = {
+				AND = {
+					has_country_flag = svp_creator
+					SVP = {
+						is_subject_of = ROOT
+						any_owned_province = {
+							OR = {
+								has_province_modifier = estates_general_1
+								has_province_modifier = estates_general_2
+							}
+						}
+					}
+				}
+				AND = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						OR = {
+							has_province_modifier = estates_general_1
+							has_province_modifier = estates_general_2
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = SVP
+			}
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = svp_centralized_recently
+			}
+			is_at_war = no
+			stability = 1
+		}
+		effect = {
+			add_stability = -1
+			hidden_effect = {
+				add_country_modifier = {
+					name = svp_centralized_recently
+					duration = 18250
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						has_province_modifier = estates_general_1
+					}
+				}
+				every_owned_province = {
+					limit = {
+						has_province_modifier = estates_general_1
+					}
+					remove_province_modifier = estates_general_1
+					add_province_modifier = {
+						name = estates_general_2
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						has_province_modifier = estates_general_2
+					}
+				}
+				every_owned_province = {
+					limit = {
+						has_province_modifier = estates_general_2
+					}
+					remove_province_modifier = estates_general_2
+					add_province_modifier = {
+						name = estates_general_3
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = svp_creator
+					SVP = {
+						any_owned_province = {
+							has_province_modifier = estates_general_1
+						}
+					}
+				}
+				SVP = {
+					every_owned_province = {
+						limit = {
+							has_province_modifier = estates_general_1
+						}
+						remove_province_modifier = estates_general_1
+						add_province_modifier = {
+							name = estates_general_2
+							duration = -1
+						}
+					}
+				}
+			}
+			else = {
+				SVP = {
+					every_owned_province = {
+						limit = {
+							has_province_modifier = estates_general_2
+						}
+						remove_province_modifier = estates_general_2
+						add_province_modifier = {
+							name = estates_general_3
+							duration = -1
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = dutch_rebellion_desire
+						value = 3
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	svp_create_inquisition = {
+		potential = {
+			OR = {
+				AND = {
+					has_country_flag = svp_creator
+					SVP = {
+						is_subject_of = ROOT
+						any_owned_province = {
+							OR = {
+								religion = protestant
+								religion = reformed
+							}
+						}
+					}
+				}
+				AND = {
+					has_country_flag = svp_estates_general
+					any_owned_province = {
+						OR = {
+							has_province_modifier = estates_general_1
+							has_province_modifier = estates_general_2
+							has_province_modifier = estates_general_3
+						}
+						OR = {
+							religion = protestant
+							religion = reformed
+						}
+					}
+				}
+			}
+			NOT = {
+				tag = SVP
+			}
+			NOT = {
+				has_country_flag = svp_inquisition
+			}
+		}
+		allow = {
+			is_at_war = no
+			treasury = 100
+		}
+		effect = {
+			set_country_flag = svp_inquisition
+			add_treasury = -100
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = svp_estates_general
+					}
+					change_variable = {
+						which = inquisition
+						value = 2
+					}
+				}
+				else = {
+					change_variable = {
+						which = inquisition
+						value = 1
+					}
+					SVP = {
+						change_variable = {
+							which = inquisition
+							value = 2
+						}
+					}
+				}
+				REB = {
+					change_variable = {
+						which = dutch_rebellion_desire
+						value = 3
+					}
+				}
+			}
+		}
+	}
+	svp_cancel_inquisition = {
+		potential = {
+			has_country_flag = svp_inquisition
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = svp_estates_general
+					}
+					set_variable = {
+						which = inquisition
+						value = 0
+					}
+				}
+				else = {
+					set_variable = {
+						which = inquisition
+						value = 0
+					}
+					SVP = {
+						set_variable = {
+							which = inquisition
+							value = 0
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = svp_inquisition
+				REB = {
+					subtract_variable = {
+						which = dutch_rebellion_desire
+						value = 2
+					}
+				}
+			}
+		}
+	}
+	svp_turn_ned = {
+		potential = {
+			tag = SVP
+			NOT = {
+				exists = NED
+			}
+			ai = yes
+			AND = {
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = close_tributary_state
+				}
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			change_tag = NED
+			clr_global_flag = dutch_rebellion_start
+			set_global_flag = dutch_rebellion_end
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 1000
+	}
+}

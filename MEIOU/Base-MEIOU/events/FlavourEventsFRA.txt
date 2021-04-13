@@ -1,0 +1,1674 @@
+country_event = {
+	id = flavor_fra.3106
+	title = "flavor_fra.EVTNAME3106"
+	desc = "flavor_fra.EVTDESC3106"
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1450
+		NOT = {
+			is_year = 1550
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3106"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		add_years_of_income = 0.5
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3106"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTC3106"
+		add_adm_power = 20
+	}
+}
+country_event = {
+	id = flavor_fra.3108
+	title = "flavor_fra.EVTNAME3108"
+	desc = "flavor_fra.EVTDESC3108"
+	picture = DIPLOMACY_eventPicture
+	trigger = {
+		tag = FRA
+		italy_superregion = {
+			is_claim = FRA
+		}
+		NOT = {
+			italy_superregion = {
+				owned_by = FRA
+			}
+		}
+		is_year = 1500
+		NOT = {
+			is_year = 1550
+		}
+		NOT = {
+			has_country_flag = FRA_had_event_3108
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			factor = 0.75
+			had_country_flag = {
+				flag = claimed_naples
+				days = 3650
+			}
+		}
+		modifier = {
+			factor = 0.5
+			had_country_flag = {
+				flag = claimed_naples
+				days = 7300
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = FRA_had_event_3108
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3106"
+		custom_tooltip = stability_points_gained_100
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 100
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		every_known_country = {
+			limit = {
+				italy_superregion = {
+					owned_by = PREV
+					is_claim = FRA
+				}
+			}
+			add_opinion = {
+				who = FRA
+				modifier = renounced_italian_claims
+			}
+		}
+		italy_superregion = {
+			limit = {
+				is_claim = FRA
+			}
+			remove_claim = FRA
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3106"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = 3114
+	title = "flavor_fra.EVTNAME3114"
+	desc = "flavor_fra.EVTDESC3114"
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+			AND = {
+				is_year = 1643
+				NOT = {
+					is_year = 1685
+				}
+			}
+			AND = {
+				is_year = 1666
+				NOT = {
+					is_year = 1693
+				}
+				NOT = {
+					advisor_exists = 453
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3114"
+		trigger = {
+			NOT = {
+				is_year = 1666
+			}
+		}
+		add_adm_power = 25
+		define_advisor = {
+			type = army_reformer
+			culture = francien
+			name = "Le Tellier"
+			skill = 2
+			discount = yes
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3114"
+		trigger = {
+			is_year = 1666
+		}
+		add_adm_power = 25
+		define_advisor = {
+			type = army_reformer
+			culture = francien
+			name = "Louvois"
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3115
+	title = "flavor_fra.EVTNAME3115"
+	desc = "flavor_fra.EVTDESC3115"
+	picture = MERCHANTS_TALKING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		north_america = {
+			country_or_vassal_holds = FRA
+		}
+		exists = HUR
+		exists = IRO
+		HUR = {
+			capital_scope = {
+				has_discovered = FRA
+			}
+		}
+		IRO = {
+			capital_scope = {
+				has_discovered = FRA
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 100
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3115"
+		HUR = {
+			add_opinion = {
+				who = FRA
+				modifier = samuel_de_champlain
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3115"
+		IRO = {
+			add_opinion = {
+				who = FRA
+				modifier = samuel_de_champlain
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3118
+	title = "flavor_fra.EVTNAME3118"
+	desc = "flavor_fra.EVTDESC3118"
+	picture = ANGRY_MOB_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		OR = {
+			has_regency = yes
+			NOT = {
+				legitimacy = 50
+			}
+		}
+		is_year = 1600
+		NOT = {
+			is_year = 1650
+		}
+	}
+	mean_time_to_happen = {
+		years = 83
+		modifier = {
+			factor = 0.95
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 0.95
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 0.95
+			NOT = {
+				stability = -2
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3118"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_core = FRA
+				is_capital = no
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3118"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		add_years_of_income = 0.5
+		random_owned_province = {
+			limit = {
+				is_core = FRA
+				is_capital = no
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				is_core = FRA
+				is_capital = no
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+		random_owned_province = {
+			limit = {
+				is_core = FRA
+				is_capital = no
+				NOT = {
+					has_province_modifier = nobles_organizing
+				}
+			}
+			add_province_modifier = {
+				name = "nobles_organizing"
+				duration = 1825
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 5
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_5
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3119
+	title = "flavor_fra.EVTNAME3119"
+	desc = "flavor_fra.EVTDESC3119"
+	picture = ANGRY_MOB_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		owns = 176
+		176 = {
+			has_owner_religion = no
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		is_year = 1600
+		NOT = {
+			is_year = 1650
+		}
+	}
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.95
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 0.95
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 0.95
+			NOT = {
+				stability = -2
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3119"
+		176 = {
+			add_province_modifier = {
+				name = "fanatics_organizing"
+				duration = 3650
+			}
+			hidden_effect = {
+				set_variable = {
+					which = added_unrest
+					value = 10
+				}
+				hidden_effect = {
+					province_event = {
+						id = stacking_unrest.002
+					}
+				}
+			}
+			custom_tooltip = added_unrest_10
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3120
+	title = "flavor_fra.EVTNAME3120"
+	desc = "flavor_fra.EVTDESC3120"
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1621
+		NOT = {
+			is_year = 1642
+		}
+		NOT = {
+			advisor_exists = 429
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+	}
+	option = {
+		name = "EXCELLENTCMNISTER"
+		add_adm_power = 50
+		define_advisor = {
+			type = statesman
+			name = "Armand Jean Richelieu"
+			culture = francien
+			religion = catholic
+			skill = 3
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3123
+	title = "flavor_fra.EVTNAME3123"
+	desc = "flavor_fra.EVTDESC3123"
+	picture = UNIVERSITY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1600
+		NOT = {
+			is_year = 1650
+		}
+	}
+	mean_time_to_happen = {
+		years = 12
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3123"
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = academie_francaise
+			duration = -1
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3123"
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = flavor_fra.3125
+	title = "flavor_fra.EVTNAME3125"
+	desc = "flavor_fra.EVTDESC3125"
+	picture = UNIVERSITY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1650
+		NOT = {
+			is_year = 1700
+		}
+		government = monarchy
+		OR = {
+			has_regency = no
+			has_consort_regency = yes
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+		modifier = {
+			factor = 0.75
+			prestige = 100
+		}
+		modifier = {
+			factor = 0.85
+			ADM = 4
+		}
+		modifier = {
+			factor = 0.85
+			ADM = 5
+		}
+		modifier = {
+			factor = 0.85
+			ADM = 6
+		}
+		modifier = {
+			factor = 0.95
+			stability = 1
+		}
+		modifier = {
+			factor = 0.95
+			stability = 2
+		}
+		modifier = {
+			factor = 0.95
+			stability = 3
+		}
+		modifier = {
+			factor = 1.25
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 1.25
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 1.25
+			NOT = {
+				stability = -2
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3125"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = construction_of_versailles
+			duration = 1825
+		}
+		set_country_flag = construction_of_versailles
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3125"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3126
+	title = "flavor_fra.EVTNAME3126"
+	desc = "flavor_fra.EVTDESC3126"
+	picture = GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = construction_of_versailles
+		tag = FRA
+		NOT = {
+			has_country_modifier = construction_of_versailles
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3126"
+		add_country_modifier = {
+			name = versailles
+			duration = -1
+		}
+		clr_country_flag = construction_of_versailles
+	}
+}
+country_event = {
+	id = flavor_fra.3127
+	title = "flavor_fra.EVTNAME3127"
+	desc = "flavor_fra.EVTDESC3127"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1650
+		NOT = {
+			is_year = 1750
+		}
+		any_neighbor_country = {
+			NOT = {
+				is_subject_of = FRA
+			}
+			any_owned_province = {
+				OR = {
+					culture_group = langue_d_oil
+					culture_group = langue_d_oc
+				}
+				any_neighbor_province = {
+					owned_by = FRA
+				}
+			}
+		}
+		OR = {
+			has_regency = no
+			has_consort_regency = yes
+		}
+	}
+	mean_time_to_happen = {
+		years = 150
+		modifier = {
+			factor = 0.95
+			stability = 1
+		}
+		modifier = {
+			factor = 0.95
+			stability = 2
+		}
+		modifier = {
+			factor = 0.95
+			stability = 3
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3127"
+		every_neighbor_country = {
+			limit = {
+				NOT = {
+					is_subject_of = FRA
+				}
+				any_owned_province = {
+					OR = {
+						culture_group = langue_d_oil
+						culture_group = langue_d_oc
+					}
+					any_neighbor_province = {
+						owned_by = FRA
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = claims_through_chambers_of_union
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture_group = langue_d_oil
+						culture_group = langue_d_oc
+					}
+					any_neighbor_province = {
+						owned_by = FRA
+					}
+				}
+				add_claim = FRA
+			}
+		}
+		set_country_flag = FRA_chambers_of_union
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3127"
+		every_neighbor_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						culture_group = langue_d_oil
+						culture_group = langue_d_oc
+					}
+					any_neighbor_province = {
+						owned_by = FRA
+					}
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = did_not_form_chambers_of_union
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3132
+	title = "flavor_fra.EVTNAME3132"
+	desc = "flavor_fra.EVTDESC3132"
+	picture = MERCHANTS_TALKING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		north_america = {
+			owned_by = FRA
+		}
+		NOT = {
+			num_of_owned_provinces_with = {
+				value = 16
+				continent = north_america
+			}
+		}
+		is_year = 1700
+		NOT = {
+			is_year = 1750
+		}
+	}
+	mean_time_to_happen = {
+		years = 12
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3132"
+		add_years_of_income = 0.5
+		set_country_flag = mississippi_trade_company
+		set_country_flag = north_america_1
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 5
+					continent = north_america
+				}
+			}
+			clr_country_flag = north_america_1
+			set_country_flag = north_america_5
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 10
+					continent = north_america
+				}
+			}
+			clr_country_flag = north_america_5
+			set_country_flag = north_america_10
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 15
+					continent = north_america
+				}
+			}
+			clr_country_flag = north_america_10
+			set_country_flag = north_america_15
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3132"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3133
+	title = "flavor_fra.EVTNAME3133"
+	desc = "flavor_fra.EVTDESC3133"
+	picture = BANKRUPTCY_eventPicture
+	trigger = {
+		had_country_flag = {
+			flag = mississippi_trade_company
+			days = 1825
+		}
+		tag = FRA
+		OR = {
+			AND = {
+				has_country_flag = north_america_1
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 5
+						continent = north_america
+					}
+				}
+			}
+			AND = {
+				has_country_flag = north_america_5
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						continent = north_america
+					}
+				}
+			}
+			AND = {
+				has_country_flag = north_america_10
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 15
+						continent = north_america
+					}
+				}
+			}
+			AND = {
+				has_country_flag = north_america_15
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 20
+						continent = north_america
+					}
+				}
+			}
+		}
+		is_year = 1650
+		NOT = {
+			is_year = 1750
+		}
+		NOT = {
+			has_country_flag = FRA_had_event_3133
+		}
+		NOT = {
+			has_country_flag = FRA_had_event_3134
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+	}
+	immediate = {
+		set_country_flag = FRA_had_event_3133
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3133"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		add_years_of_income = -1.0
+		add_inflation = 5
+	}
+}
+country_event = {
+	id = flavor_fra.3134
+	title = "flavor_fra.EVTNAME3134"
+	desc = "flavor_fra.EVTDESC3134"
+	picture = COLONIZATION_eventPicture
+	trigger = {
+		had_country_flag = {
+			flag = mississippi_trade_company
+			days = 1825
+		}
+		tag = FRA
+		OR = {
+			AND = {
+				has_country_flag = north_america_1
+				num_of_owned_provinces_with = {
+					value = 5
+					continent = north_america
+				}
+			}
+			AND = {
+				has_country_flag = north_america_5
+				num_of_owned_provinces_with = {
+					value = 10
+					continent = north_america
+				}
+			}
+			AND = {
+				has_country_flag = north_america_10
+				num_of_owned_provinces_with = {
+					value = 15
+					continent = north_america
+				}
+			}
+			AND = {
+				has_country_flag = north_america_15
+				num_of_owned_provinces_with = {
+					value = 20
+					continent = north_america
+				}
+			}
+		}
+		is_year = 1650
+		NOT = {
+			is_year = 1750
+		}
+		NOT = {
+			has_country_flag = FRA_had_event_3134
+		}
+		NOT = {
+			has_country_flag = FRA_had_event_3133
+		}
+	}
+	mean_time_to_happen = {
+		years = 25
+	}
+	immediate = {
+		set_country_flag = FRA_had_event_3134
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3134"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3135
+	title = "flavor_fra.EVTNAME3135"
+	desc = "flavor_fra.EVTDESC3135"
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1749
+		NOT = {
+			is_year = 1781
+		}
+	}
+	mean_time_to_happen = {
+		months = 90
+	}
+	option = {
+		name = "EXCELLENTCMNISTER"
+		add_adm_power = 25
+		define_advisor = {
+			type = statesman
+			name = "Charles François de Broglie"
+			culture = gascon
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3137
+	title = "flavor_fra.EVTNAME3137"
+	desc = "flavor_fra.EVTDESC3137"
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1683
+		NOT = {
+			is_year = 1743
+		}
+	}
+	mean_time_to_happen = {
+		years = 12
+	}
+	option = {
+		name = "EXCELLENTCMNISTER"
+		add_adm_power = 25
+		define_advisor = {
+			type = statesman
+			name = "de Fleury"
+			culture = occitain
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.3143
+	title = "flavor_fra.EVTNAME3143"
+	desc = "flavor_fra.EVTDESC3143"
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1700
+		OR = {
+			AND = {
+				exists = ENG
+				NOT = {
+					exists = GBR
+				}
+			}
+			AND = {
+				exists = GBR
+				NOT = {
+					exists = ENG
+				}
+			}
+		}
+		NOT = {
+			war_with = ENG
+		}
+		NOT = {
+			war_with = GBR
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA3143"
+		random_list = {
+			30 = {}
+			40 = {
+				custom_tooltip = stability_points_lost_50
+				hidden_effect = {
+					subtract_variable = {
+						which = stability_points
+						value = 50
+					}
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									which = stability_points
+									value = 0
+								}
+							}
+						}
+						add_stability = -1
+						country_event = {
+							id = POP_Stability.003
+						}
+						if = {
+							limit = {
+								is_emperor_of_china = yes
+							}
+							add_mandate = -5
+						}
+					}
+				}
+			}
+			30 = {
+				add_stability = -1
+				hidden_effect = {
+					country_event = {
+						id = POP_Stability.003
+					}
+				}
+				if = {
+					limit = {
+						is_emperor_of_china = yes
+					}
+					add_mandate = -5
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ENG
+			}
+			ENG = {
+				add_opinion = {
+					who = ROOT
+					modifier = the_eden_agreement
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = GBR
+			}
+			GBR = {
+				add_opinion = {
+					who = ROOT
+					modifier = the_eden_agreement
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB3143"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		if = {
+			limit = {
+				exists = ENG
+			}
+			ENG = {
+				add_opinion = {
+					who = ROOT
+					modifier = refusal_of_the_eden_agreement
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = GBR
+			}
+			GBR = {
+				add_opinion = {
+					who = ROOT
+					modifier = refusal_of_the_eden_agreement
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.5000
+	title = "flavor_fra.EVTNAME5000"
+	desc = "flavor_fra.EVTDESC5000"
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1762
+		NOT = {
+			is_year = 1780
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "EXCELLENT"
+		add_dip_power = 25
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = flavor_fra.5001
+	title = "flavor_fra.EVTNAME5001"
+	desc = "flavor_fra.EVTDESC5001"
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1732
+		NOT = {
+			is_year = 1750
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "EXCELLENT"
+		add_adm_power = 25
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = flavor_fra.5002
+	title = "flavor_fra.EVTNAME5002"
+	desc = "flavor_fra.EVTDESC5002"
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1750
+		NOT = {
+			is_year = 1770
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "EXCELLENT"
+		custom_tooltip = stability_points_gained_50
+		hidden_effect = {
+			change_variable = {
+				which = stability_points
+				value = 50
+			}
+			country_event = {
+				id = POP_Stability.002
+			}
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = flavor_fra.5003
+	title = "flavor_fra.EVTNAME5003"
+	desc = "flavor_fra.EVTDESC5003"
+	picture = INVENTION_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1637
+		NOT = {
+			is_year = 1660
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "EXCELLENT"
+		add_adm_power = 25
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = flavor_fra.5004
+	title = "flavor_fra.EVTNAME5004"
+	desc = "flavor_fra.EVTDESC5004"
+	picture = INVENTION_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1681
+		NOT = {
+			is_year = 1700
+		}
+	}
+	mean_time_to_happen = {
+		years = 5
+	}
+	option = {
+		name = "EXCELLENT"
+		add_mil_power = 25
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = flavor_fra.5005
+	title = "flavor_fra.EVTNAME5005"
+	desc = "flavor_fra.EVTDESC5005"
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		is_year = 1510
+		has_idea_group = exploration_ideas
+	}
+	mean_time_to_happen = {
+		years = 12
+		modifier = {
+			factor = 0.80
+			has_opinion = {
+				who = FIR
+				value = 50
+			}
+		}
+		modifier = {
+			factor = 0.70
+			full_idea_group = naval_ideas
+		}
+	}
+	option = {
+		name = "EXCELLENT"
+		ai_chance = {
+			factor = 100
+		}
+		add_years_of_income = -0.10
+		add_navy_tradition = 5
+		define_explorer = {
+			name = "J. de Verazzane"
+			fire = 1
+			shock = 1
+			manuever = 5
+			siege = 0
+		}
+	}
+}
+country_event = {
+	id = flavor_fra.5
+	title = "flavor_fra.EVTNAME5"
+	desc = "flavor_fra.EVTDESC5"
+	picture = LAND_MILITARY_eventPicture
+	trigger = {
+		tag = FRA
+		government = monarchy
+		183 = {
+			controlled_by = FRA
+			owned_by = FRA
+			is_capital = yes
+			has_siege = no
+			NOT = {
+				has_province_modifier = mousquetaires_du_roi
+			}
+		}
+		treasury = 300
+		OR = {
+			has_regency = no
+			has_consort_regency = yes
+		}
+		mil = 6
+		adm_tech = 37
+		is_year = 1600
+		AND = {
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = close_tributary_state
+			}
+		}
+		NOT = {
+			has_country_modifier = fra_musketeers_timer
+		}
+	}
+	mean_time_to_happen = {
+		years = 20
+	}
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = fra_musketeers_timer
+				duration = 18250
+				hidden = yes
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTA5"
+		add_treasury = -300
+		add_army_professionalism = 0.05
+		183 = {
+			add_province_modifier = {
+				name = mousquetaires_du_roi
+				duration = 36500
+			}
+		}
+	}
+	option = {
+		name = "flavor_fra.EVTOPTB5"
+	}
+}
+country_event = {
+	id = flavor_fra.1001
+	title = "flavor_fra.1001.n"
+	desc = "flavor_fra.1001.t"
+	picture = COURT_eventPicture
+	mean_time_to_happen = {
+		months = 12
+	}
+	trigger = {
+		is_subject_of_type = appanage_subject
+		exists = FRA
+		FRA = {
+			dynasty = "de Valois"
+		}
+		OR = {
+			AND = {
+				is_female = yes
+				has_consort_regency = no
+			}
+			has_new_dynasty = yes
+		}
+		is_at_war = no
+		NOT = {
+			has_country_flag = autonomy_garanteed
+		}
+		ai = yes
+	}
+	option = {
+		name = "flavor_fra.1001.a"
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				tag = ANJ
+			}
+			FRA = {
+				country_event = {
+					id = flavor_anj.3
+				}
+			}
+		}
+		FRA = {
+			inherit = ROOT
+		}
+	}
+}

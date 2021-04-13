@@ -1,0 +1,22 @@
+siberian_tribe = {
+	icon = "shaman"
+	allow_normal_conversion = no
+	potential = {
+		AND = {
+			primary_culture = siberian
+			OR = {
+				has_reform = nomad_reform
+				has_reform = native_council_legacy
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = -10
+	native_mechanic = no
+	allow_migration = no
+	lock_level_when_selected = yes
+	modifiers = {
+		stability_cost_modifier = -0.33
+		global_institution_spread = -0.2
+	}
+}

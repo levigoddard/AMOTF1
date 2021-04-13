@@ -1,0 +1,461 @@
+namespace = POP_weather
+country_event = {
+	id = POP_weather.001
+	title = POP_weather.001.t
+	desc = POP_weather.001.d
+	picture = REFORM_eventPicture
+	hidden = no
+	trigger = {
+		has_country_flag = center_of_universe
+		NOT = {
+			has_country_modifier = drought_assignment
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		add_country_modifier = {
+			name = drought_assignment
+			duration = 1825
+			hidden = yes
+		}
+		every_province = {
+			set_variable = {
+				which = local_weather_factor
+				value = 1
+			}
+			set_variable = {
+				which = local_weather_multiplier
+				value = 1
+			}
+		}
+		srgroup = {
+			random_list = {
+				5 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 1.25
+					}
+				}
+				10 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 1.111
+					}
+				}
+				20 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 1.052
+					}
+				}
+				30 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 1
+					}
+				}
+				20 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 0.95
+					}
+				}
+				10 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 0.90
+					}
+				}
+				5 = {
+					set_variable = {
+						which = local_weather_factor
+						value = 0.80
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					has_province_flag = part_of_@PREV
+				}
+				set_variable = {
+					which = local_weather_factor
+					which = PREV
+				}
+			}
+			set_variable = {
+				which = local_weather_factor
+				value = 0
+			}
+		}
+		contgroup = {
+			set_variable = {
+				which = local_weather_multiplier
+				value = 1
+			}
+			trigger_switch = {
+				on_trigger = has_province_flag
+				excellent_climate = {
+					clr_province_flag = excellent_climate
+					random_list = {
+						20 = {
+							set_province_flag = excellent_climate
+						}
+						30 = {
+							set_province_flag = good_climate
+						}
+						50 = {
+							set_province_flag = fair_climate
+						}
+					}
+				}
+				good_climate = {
+					clr_province_flag = good_climate
+					random_list = {
+						15 = {
+							set_province_flag = excellent_climate
+						}
+						25 = {
+							set_province_flag = good_climate
+						}
+						35 = {
+							set_province_flag = fair_climate
+						}
+						25 = {
+							set_province_flag = average_climate
+						}
+					}
+				}
+				fair_climate = {
+					clr_province_flag = fair_climate
+					random_list = {
+						5 = {
+							set_province_flag = excellent_climate
+						}
+						20 = {
+							set_province_flag = good_climate
+						}
+						25 = {
+							set_province_flag = fair_climate
+						}
+						35 = {
+							set_province_flag = average_climate
+						}
+						15 = {
+							set_province_flag = poor_climate
+						}
+					}
+				}
+				average_climate = {
+					clr_province_flag = average_climate
+					random_list = {
+						10 = {
+							set_province_flag = good_climate
+						}
+						20 = {
+							set_province_flag = fair_climate
+						}
+						40 = {
+							set_province_flag = average_climate
+						}
+						20 = {
+							set_province_flag = poor_climate
+						}
+						10 = {
+							set_province_flag = bad_climate
+						}
+					}
+				}
+				poor_climate = {
+					clr_province_flag = poor_climate
+					random_list = {
+						15 = {
+							set_province_flag = fair_climate
+						}
+						35 = {
+							set_province_flag = average_climate
+						}
+						25 = {
+							set_province_flag = poor_climate
+						}
+						20 = {
+							set_province_flag = bad_climate
+						}
+						5 = {
+							set_province_flag = terrible_climate
+						}
+					}
+				}
+				bad_climate = {
+					clr_province_flag = bad_climate
+					random_list = {
+						25 = {
+							set_province_flag = average_climate
+						}
+						35 = {
+							set_province_flag = poor_climate
+						}
+						25 = {
+							set_province_flag = bad_climate
+						}
+						15 = {
+							set_province_flag = terrible_climate
+						}
+					}
+				}
+				terrible_climate = {
+					clr_province_flag = terrible_climate
+					random_list = {
+						50 = {
+							set_province_flag = poor_climate
+						}
+						30 = {
+							set_province_flag = bad_climate
+						}
+						20 = {
+							set_province_flag = terrible_climate
+						}
+					}
+				}
+			}
+			trigger_switch = {
+				on_trigger = has_province_flag
+				excellent_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 1.2
+					}
+				}
+				good_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 1.125
+					}
+				}
+				fair_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 1.05
+					}
+				}
+				average_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 1
+					}
+				}
+				poor_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 0.9
+					}
+				}
+				bad_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 0.8
+					}
+				}
+				terrible_climate = {
+					set_variable = {
+						which = local_weather_multiplier
+						value = 0.7
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					has_province_flag = part_cont_of_@PREV
+				}
+				set_variable = {
+					which = local_weather_multiplier
+					which = PREV
+				}
+				multiply_variable = {
+					which = local_weather_factor
+					which = local_weather_multiplier
+				}
+				set_variable = {
+					which = local_weather_multiplier
+					value = 0
+				}
+			}
+			set_variable = {
+				which = local_weather_multiplier
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = "POP_weather.001.a"
+	}
+}
+country_event = {
+	id = POP_weather.002
+	title = POP_weather.002.t
+	desc = POP_weather.002.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		every_province = {
+			set_variable = {
+				which = innate_rural_pop
+				value = 0
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							OR = {
+								has_terrain = shrub_flats
+								has_terrain = shrub_hills
+								has_terrain = shrub_mountains
+								has_terrain = shrub_highlands
+							}
+						}
+						AND = {
+							OR = {
+								has_terrain = grass_flats
+								has_terrain = grass_hills
+								has_terrain = grass_mountains
+								has_terrain = grass_highlands
+							}
+						}
+					}
+				}
+				set_variable = {
+					which = innate_rural_pop
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							OR = {
+								has_terrain = wood_flats
+								has_terrain = wood_hills
+								has_terrain = wood_mountains
+								has_terrain = wood_highlands
+							}
+						}
+						AND = {
+							has_terrain = marsh
+							has_province_flag = marsh_developed
+						}
+					}
+				}
+				set_variable = {
+					which = innate_rural_pop
+					value = 0.8
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_port = yes
+						AND = {
+							OR = {
+								has_terrain = grass_hills
+								has_terrain = shrub_hills
+								has_terrain = wood_hills
+								has_terrain = forest_hills
+								has_terrain = desert_hills
+								has_terrain = jungle_hills
+							}
+						}
+						has_terrain = taiga
+						AND = {
+							has_terrain = marsh
+							NOT = {
+								has_province_flag = marsh_developed
+							}
+						}
+						AND = {
+							OR = {
+								has_terrain = forest_flats
+								has_terrain = forest_hills
+								has_terrain = forest_mountains
+								has_terrain = forest_highlands
+							}
+						}
+					}
+				}
+				set_variable = {
+					which = innate_rural_pop
+					value = 0.6
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							OR = {
+								has_terrain = desert_flats
+								has_terrain = desert_hills
+								has_terrain = desert_mountains
+								has_terrain = desert_highlands
+							}
+						}
+						AND = {
+							OR = {
+								has_terrain = jungle_flats
+								has_terrain = jungle_hills
+							}
+						}
+						AND = {
+							OR = {
+								has_terrain = forest_highlands
+								has_terrain = wood_highlands
+								has_terrain = shrub_highlands
+								has_terrain = grass_highlands
+								has_terrain = desert_highlands
+							}
+						}
+					}
+				}
+				set_variable = {
+					which = innate_rural_pop
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_terrain = desert_flats
+							has_terrain = desert_hills
+							has_terrain = desert_mountains
+							has_terrain = desert_highlands
+						}
+					}
+				}
+				set_variable = {
+					which = innate_rural_pop
+					value = 0.4
+				}
+			}
+			set_variable = {
+				which = innate_rural_pop_tech
+				which = owner
+			}
+			multiply_variable = {
+				which = innate_rural_pop
+				which = innate_rural_pop_tech
+			}
+			multiply_variable = {
+				which = innate_rural_pop
+				which = innate_rural_pop_base
+			}
+			set_variable = {
+				which = innate_rural_pop_tech
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = "POP_weather.002.a"
+	}
+}

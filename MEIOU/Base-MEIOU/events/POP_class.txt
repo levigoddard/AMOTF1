@@ -1,0 +1,22 @@
+namespace = POP_class
+country_event = {
+	id = POP_class.001
+	title = "POP_class.001.t"
+	desc = "POP_class.001.d"
+	picture = CITY_DEVELOPMENT_AU_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		every_province = {
+			limit = {
+				is_city = yes
+			}
+		}
+	}
+	option = {
+		name = "POP_class.001.a"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

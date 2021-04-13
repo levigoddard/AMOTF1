@@ -1,0 +1,2675 @@
+province_event = {
+	id = colonial.12
+	title = "colonial.EVTNAME12"
+	desc = "colonial.EVTDESC12"
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		any_empty_neighbor_province = {
+			NOT = {
+				has_province_modifier = fur_low
+				has_province_modifier = fur_medium
+				has_province_modifier = fur_large
+			}
+			native_size = 1000
+			OR = {
+				culture_group = west_algonquian
+				culture_group = east_algonquian
+				culture_group = athabascan_group
+				culture_group = caddoan
+				culture_group = plain_indians
+			}
+		}
+		OR = {
+			owner = {
+				has_country_flag = NF_ruthless
+			}
+			owner = {
+				has_country_flag = NF_peacenik
+			}
+			AND = {
+				owner = {
+					has_country_flag = NF_trader
+				}
+				has_port = yes
+			}
+		}
+		NOT = {
+			owned_by = AAA
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTA12"
+		add_province_modifier = {
+			name = colonial_influx
+			duration = 3650
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTB12"
+		create_advisor = colonial_governor
+	}
+	option = {
+		name = "colonial.EVTOPTC12"
+		add_permanent_province_modifier = {
+			name = fur_low
+			duration = -1
+		}
+	}
+}
+province_event = {
+	id = colonial.13
+	title = "colonial.EVTNAME13"
+	desc = "colonial.EVTDESC13"
+	picture = MERCHANTS_TALKING_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_province_modifier = fur_low
+			has_province_modifier = fur_medium
+			has_province_modifier = fur_large
+		}
+		check_variable = {
+			which = urban_production_power
+			value = 0.25
+		}
+		NOT = {
+			any_neighbor_province = {
+				OR = {
+					culture_group = west_algonquian
+					culture_group = east_algonquian
+					culture_group = athabascan_group
+					culture_group = caddoan
+					culture_group = plain_indians
+				}
+			}
+		}
+		NOT = {
+			any_neighbor_province = {
+				is_empty = yes
+			}
+		}
+		NOT = {
+			any_neighbor_province = {
+				owner = {
+					AND = {
+						OR = {
+							has_reform = nomad_reform
+							has_reform = native_council_legacy
+						}
+					}
+				}
+				controller = {
+					AND = {
+						OR = {
+							has_reform = nomad_reform
+							has_reform = native_council_legacy
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTA13"
+		trigger_switch = {
+			on_trigger = has_province_flag
+			urban_goods_rank_1 = {
+				if = {
+					limit = {
+						has_province_modifier = mundane_1
+					}
+					remove_province_modifier = mundane_1
+				}
+				set_variable = {
+					which = urban_good_mundane_quantity
+					value = 0
+				}
+				clr_province_flag = urban_goods_mundane
+				clr_province_flag = urban_goods_rank_1
+			}
+			urban_goods_rank_2 = {
+				trigger_switch = {
+					on_trigger = has_province_flag
+					urban_goods_linen = {
+						if = {
+							limit = {
+								has_province_modifier = linen_1
+							}
+							remove_province_modifier = linen_1
+						}
+						set_variable = {
+							which = urban_good_linen_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_linen
+					}
+					urban_goods_metalwork = {
+						if = {
+							limit = {
+								has_province_modifier = metalwork_1
+							}
+							remove_province_modifier = metalwork_1
+						}
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_metalwork
+					}
+					urban_goods_cloth = {
+						if = {
+							limit = {
+								has_province_modifier = cloth_1
+							}
+							remove_province_modifier = cloth_1
+						}
+						set_variable = {
+							which = urban_good_cloth_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_cloth
+					}
+				}
+				clr_province_flag = urban_goods_rank_2
+			}
+			urban_goods_rank_3 = {
+				trigger_switch = {
+					on_trigger = has_province_flag
+					urban_goods_glassware = {
+						if = {
+							limit = {
+								has_province_modifier = glassware_1
+							}
+							remove_province_modifier = glassware_1
+						}
+						set_variable = {
+							which = urban_good_glassware_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_glassware
+					}
+					urban_goods_leather = {
+						if = {
+							limit = {
+								has_province_modifier = leather_1
+							}
+							remove_province_modifier = leather_1
+						}
+						set_variable = {
+							which = urban_good_leather_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_leather
+					}
+					urban_goods_silk = {
+						if = {
+							limit = {
+								has_province_modifier = silk_1
+							}
+							remove_province_modifier = silk_1
+						}
+						set_variable = {
+							which = urban_good_silk_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_silk
+					}
+					urban_goods_steel = {
+						if = {
+							limit = {
+								has_province_modifier = steel_1
+							}
+							remove_province_modifier = steel_1
+						}
+						set_variable = {
+							which = urban_good_steel_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_steel
+					}
+					urban_goods_naval_supplies = {
+						if = {
+							limit = {
+								has_province_modifier = naval_supplies_1
+							}
+							remove_province_modifier = naval_supplies_1
+						}
+						set_variable = {
+							which = urban_good_naval_supplies_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_naval_supplies
+					}
+					urban_goods_paper = {
+						if = {
+							limit = {
+								has_province_modifier = paper_1
+							}
+							remove_province_modifier = paper_1
+						}
+						set_variable = {
+							which = urban_good_paper_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_paper
+					}
+					urban_goods_carpet = {
+						if = {
+							limit = {
+								has_province_modifier = carpet_1
+							}
+							remove_province_modifier = carpet_1
+						}
+						set_variable = {
+							which = urban_good_carpet_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_carpet
+					}
+					urban_goods_chinaware = {
+						if = {
+							limit = {
+								has_province_modifier = chinaware_1
+							}
+							remove_province_modifier = chinaware_1
+						}
+						set_variable = {
+							which = urban_good_chinaware_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_chinaware
+					}
+					urban_goods_jewelry = {
+						if = {
+							limit = {
+								has_province_modifier = jewelry_1
+							}
+							remove_province_modifier = jewelry_1
+						}
+						set_variable = {
+							which = urban_good_jewelry_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_jewelry
+					}
+					urban_goods_luxury_cloth = {
+						if = {
+							limit = {
+								has_province_modifier = luxury_cloth_1
+							}
+							remove_province_modifier = luxury_cloth_1
+						}
+						set_variable = {
+							which = urban_good_luxury_cloth_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_luxury_cloth
+					}
+				}
+				clr_province_flag = urban_goods_rank_3
+			}
+		}
+		set_province_flag = urban_goods_rank_3
+		set_province_flag = urban_goods_naval_supplies
+		if = {
+			limit = {
+				has_province_flag = urban_goods_rank_3
+			}
+			set_variable = {
+				which = urban_good_naval_supplies_quantity
+				value = 0
+			}
+			set_variable = {
+				which = urban_good_naval_supplies_quantity
+				which = urban_production_power
+			}
+		}
+		else = {
+			set_variable = {
+				which = urban_good_naval_supplies_quantity
+				value = 0
+			}
+		}
+		add_permanent_province_modifier = {
+			name = naval_supplies_1
+			duration = -1
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTC13"
+		if = {
+			limit = {
+				owner = {
+					capital_scope = {
+						continent = europe
+					}
+				}
+			}
+			change_trade_goods = wheat
+			hidden_effect = {
+				set_variable = {
+					which = price_of_rural_good
+					value = 0
+				}
+				if = {
+					limit = {
+						trade_goods = wheat
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = millet
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = rice
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = maize
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wax
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wool
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pearls
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = hemp
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fish
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fur
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ivory
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tea
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cinnamon
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = clove
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pepper
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = coffee
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cotton
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = sugar
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tobacco
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = opium
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cacao
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cheese
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = carmine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = lumber
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.7
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = livestock
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = olive
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.9
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = brazil
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = nutmeg
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 4
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ebony
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = indigo
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = potatoes
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm_date
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = incense
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = slaves
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				clr_province_flag = grain_province
+				clr_province_flag = plantation_goods
+				if = {
+					limit = {
+						OR = {
+							trade_goods = wheat
+							trade_goods = millet
+							trade_goods = rice
+							trade_goods = maize
+							trade_goods = fish
+							trade_goods = potatoes
+							trade_goods = livestock
+						}
+					}
+					set_province_flag = grain_province
+				}
+				if = {
+					limit = {
+						OR = {
+							trade_goods = cheese
+							trade_goods = olive
+							trade_goods = palm
+							trade_goods = palm_date
+							trade_goods = wax
+							trade_goods = wine
+							trade_goods = tea
+							trade_goods = cinnamon
+							trade_goods = clove
+							trade_goods = pepper
+							trade_goods = coffee
+							trade_goods = cotton
+							trade_goods = sugar
+							trade_goods = tobacco
+							trade_goods = opium
+							trade_goods = cacao
+							trade_goods = carmine
+							trade_goods = nutmeg
+							trade_goods = hemp
+							trade_goods = indigo
+							trade_goods = lumber
+							trade_goods = ebony
+							trade_goods = incense
+						}
+					}
+					set_province_flag = plantation_goods
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					capital_scope = {
+						AND = {
+							OR = {
+								superregion = east_africa_superregion
+								superregion = west_africa_superregion
+								superregion = north_africa_superregion
+								region = egypt_region
+							}
+						}
+					}
+				}
+			}
+			change_trade_goods = millet
+			hidden_effect = {
+				set_variable = {
+					which = price_of_rural_good
+					value = 0
+				}
+				if = {
+					limit = {
+						trade_goods = wheat
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = millet
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = rice
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = maize
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wax
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wool
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pearls
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = hemp
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fish
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fur
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ivory
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tea
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cinnamon
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = clove
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pepper
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = coffee
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cotton
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = sugar
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tobacco
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = opium
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cacao
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cheese
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = carmine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = lumber
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.7
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = livestock
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = olive
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.9
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = brazil
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = nutmeg
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 4
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ebony
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = indigo
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = potatoes
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm_date
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = incense
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = slaves
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				clr_province_flag = grain_province
+				clr_province_flag = plantation_goods
+				if = {
+					limit = {
+						OR = {
+							trade_goods = wheat
+							trade_goods = millet
+							trade_goods = rice
+							trade_goods = maize
+							trade_goods = fish
+							trade_goods = potatoes
+							trade_goods = livestock
+						}
+					}
+					set_province_flag = grain_province
+				}
+				if = {
+					limit = {
+						OR = {
+							trade_goods = cheese
+							trade_goods = olive
+							trade_goods = palm
+							trade_goods = palm_date
+							trade_goods = wax
+							trade_goods = wine
+							trade_goods = tea
+							trade_goods = cinnamon
+							trade_goods = clove
+							trade_goods = pepper
+							trade_goods = coffee
+							trade_goods = cotton
+							trade_goods = sugar
+							trade_goods = tobacco
+							trade_goods = opium
+							trade_goods = cacao
+							trade_goods = carmine
+							trade_goods = nutmeg
+							trade_goods = hemp
+							trade_goods = indigo
+							trade_goods = lumber
+							trade_goods = ebony
+							trade_goods = incense
+						}
+					}
+					set_province_flag = plantation_goods
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					capital_scope = {
+						AND = {
+							OR = {
+								continent = southeast_asia
+								continent = indian_continent
+								continent = east_asia
+								continent = central_asia
+								continent = north_asia
+							}
+						}
+					}
+				}
+			}
+			change_trade_goods = rice
+			hidden_effect = {
+				set_variable = {
+					which = price_of_rural_good
+					value = 0
+				}
+				if = {
+					limit = {
+						trade_goods = wheat
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = millet
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = rice
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = maize
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wax
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wool
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pearls
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = hemp
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fish
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fur
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ivory
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tea
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cinnamon
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = clove
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pepper
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = coffee
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cotton
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = sugar
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tobacco
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = opium
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cacao
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cheese
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = carmine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = lumber
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.7
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = livestock
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = olive
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.9
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = brazil
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = nutmeg
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 4
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ebony
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = indigo
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = potatoes
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm_date
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = incense
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = slaves
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				clr_province_flag = grain_province
+				clr_province_flag = plantation_goods
+				if = {
+					limit = {
+						OR = {
+							trade_goods = wheat
+							trade_goods = millet
+							trade_goods = rice
+							trade_goods = maize
+							trade_goods = fish
+							trade_goods = potatoes
+							trade_goods = livestock
+						}
+					}
+					set_province_flag = grain_province
+				}
+				if = {
+					limit = {
+						OR = {
+							trade_goods = cheese
+							trade_goods = olive
+							trade_goods = palm
+							trade_goods = palm_date
+							trade_goods = wax
+							trade_goods = wine
+							trade_goods = tea
+							trade_goods = cinnamon
+							trade_goods = clove
+							trade_goods = pepper
+							trade_goods = coffee
+							trade_goods = cotton
+							trade_goods = sugar
+							trade_goods = tobacco
+							trade_goods = opium
+							trade_goods = cacao
+							trade_goods = carmine
+							trade_goods = nutmeg
+							trade_goods = hemp
+							trade_goods = indigo
+							trade_goods = lumber
+							trade_goods = ebony
+							trade_goods = incense
+						}
+					}
+					set_province_flag = plantation_goods
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					capital_scope = {
+						OR = {
+							continent = north_america
+							continent = south_america
+						}
+					}
+				}
+			}
+			change_trade_goods = maize
+			hidden_effect = {
+				set_variable = {
+					which = price_of_rural_good
+					value = 0
+				}
+				if = {
+					limit = {
+						trade_goods = wheat
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = millet
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = rice
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = maize
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wax
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = wool
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pearls
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = hemp
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fish
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = fur
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ivory
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tea
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.6
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cinnamon
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = clove
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = pepper
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = coffee
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cotton
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = sugar
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = tobacco
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = opium
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cacao
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = cheese
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = carmine
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = lumber
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.7
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = livestock
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.8
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = olive
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.9
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = brazil
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = nutmeg
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 4
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = ebony
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 2.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = indigo
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = potatoes
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 0.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = palm_date
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = incense
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 3
+					}
+				}
+				if = {
+					limit = {
+						trade_goods = slaves
+					}
+					set_variable = {
+						which = price_of_rural_good
+						value = 1.5
+					}
+				}
+				clr_province_flag = grain_province
+				clr_province_flag = plantation_goods
+				if = {
+					limit = {
+						OR = {
+							trade_goods = wheat
+							trade_goods = millet
+							trade_goods = rice
+							trade_goods = maize
+							trade_goods = fish
+							trade_goods = potatoes
+							trade_goods = livestock
+						}
+					}
+					set_province_flag = grain_province
+				}
+				if = {
+					limit = {
+						OR = {
+							trade_goods = cheese
+							trade_goods = olive
+							trade_goods = palm
+							trade_goods = palm_date
+							trade_goods = wax
+							trade_goods = wine
+							trade_goods = tea
+							trade_goods = cinnamon
+							trade_goods = clove
+							trade_goods = pepper
+							trade_goods = coffee
+							trade_goods = cotton
+							trade_goods = sugar
+							trade_goods = tobacco
+							trade_goods = opium
+							trade_goods = cacao
+							trade_goods = carmine
+							trade_goods = nutmeg
+							trade_goods = hemp
+							trade_goods = indigo
+							trade_goods = lumber
+							trade_goods = ebony
+							trade_goods = incense
+						}
+					}
+					set_province_flag = plantation_goods
+				}
+			}
+		}
+	}
+}
+province_event = {
+	id = colonial.14
+	title = "colonial.EVTNAME14"
+	desc = "colonial.EVTDESC14"
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		is_colony = yes
+		OR = {
+			continent = north_america
+			continent = south_america
+		}
+		owner = {
+			has_country_modifier = the_societas_jesu
+			religion = catholic
+		}
+		is_religion_enabled = protestant
+		NOT = {
+			is_year = 1650
+		}
+		NOT = {
+			has_province_modifier = jesuit_mission
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTA14"
+		add_province_modifier = {
+			name = jesuit_mission
+			duration = -1
+		}
+	}
+}
+province_event = {
+	id = colonial.17
+	title = "EVTNAME6401"
+	desc = "EVTDESC6401"
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		colonysize = 300
+		NOT = {
+			colonysize = 500
+		}
+		owner = {
+			any_owned_province = {
+				is_colony = yes
+				colonysize = 500
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA6401"
+		add_colonysize = -200
+		owner = {
+			random_owned_province = {
+				limit = {
+					is_colony = yes
+					colonysize = 500
+				}
+				add_colonysize = 200
+			}
+		}
+	}
+}
+province_event = {
+	id = colonial.18
+	title = "colonial.EVTNAME18"
+	desc = "colonial.EVTDESC18"
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		is_year = 1650
+		OR = {
+			region = la_plata_region
+			region = peru_region
+			province_group = amazonia_group
+			region = carribeans_region
+			AND = {
+				superregion = central_america_superregion
+				OR = {
+					region = central_america_region
+					region = mexico_region
+				}
+			}
+			province_group = the_spanish_main_group
+		}
+		OR = {
+			AND = {
+				has_province_flag = grain_province
+			}
+			trade_goods = fish
+			trade_goods = wool
+		}
+		NOT = {
+			any_neighbor_province = {
+				is_empty = yes
+			}
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTA18"
+		ai_chance = {
+			factor = 90
+		}
+		change_trade_goods = coffee
+		hidden_effect = {
+			set_variable = {
+				which = price_of_rural_good
+				value = 0
+			}
+			if = {
+				limit = {
+					trade_goods = wheat
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = millet
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = rice
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = maize
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = wine
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.6
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = wax
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = wool
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = pearls
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = hemp
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = fish
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = fur
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = ivory
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = tea
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.6
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = cinnamon
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = clove
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = pepper
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = coffee
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = cotton
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = sugar
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = tobacco
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = opium
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = cacao
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = cheese
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.8
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = carmine
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = lumber
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.7
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = livestock
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.8
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = olive
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.9
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = brazil
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = palm
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = nutmeg
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 4
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = ebony
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 2.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = indigo
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = potatoes
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 0.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = palm_date
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.5
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = incense
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = slaves
+				}
+				set_variable = {
+					which = price_of_rural_good
+					value = 1.5
+				}
+			}
+			clr_province_flag = grain_province
+			clr_province_flag = plantation_goods
+			if = {
+				limit = {
+					OR = {
+						trade_goods = wheat
+						trade_goods = millet
+						trade_goods = rice
+						trade_goods = maize
+						trade_goods = fish
+						trade_goods = potatoes
+						trade_goods = livestock
+					}
+				}
+				set_province_flag = grain_province
+			}
+			if = {
+				limit = {
+					OR = {
+						trade_goods = cheese
+						trade_goods = olive
+						trade_goods = palm
+						trade_goods = palm_date
+						trade_goods = wax
+						trade_goods = wine
+						trade_goods = tea
+						trade_goods = cinnamon
+						trade_goods = clove
+						trade_goods = pepper
+						trade_goods = coffee
+						trade_goods = cotton
+						trade_goods = sugar
+						trade_goods = tobacco
+						trade_goods = opium
+						trade_goods = cacao
+						trade_goods = carmine
+						trade_goods = nutmeg
+						trade_goods = hemp
+						trade_goods = indigo
+						trade_goods = lumber
+						trade_goods = ebony
+						trade_goods = incense
+					}
+				}
+				set_province_flag = plantation_goods
+			}
+		}
+		trigger_switch = {
+			on_trigger = has_province_flag
+			urban_goods_rank_1 = {
+				if = {
+					limit = {
+						has_province_modifier = mundane_1
+					}
+					remove_province_modifier = mundane_1
+				}
+				set_variable = {
+					which = urban_good_mundane_quantity
+					value = 0
+				}
+				clr_province_flag = urban_goods_mundane
+				clr_province_flag = urban_goods_rank_1
+			}
+			urban_goods_rank_2 = {
+				trigger_switch = {
+					on_trigger = has_province_flag
+					urban_goods_linen = {
+						if = {
+							limit = {
+								has_province_modifier = linen_1
+							}
+							remove_province_modifier = linen_1
+						}
+						set_variable = {
+							which = urban_good_linen_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_linen
+					}
+					urban_goods_metalwork = {
+						if = {
+							limit = {
+								has_province_modifier = metalwork_1
+							}
+							remove_province_modifier = metalwork_1
+						}
+						set_variable = {
+							which = urban_good_metalwork_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_metalwork
+					}
+					urban_goods_cloth = {
+						if = {
+							limit = {
+								has_province_modifier = cloth_1
+							}
+							remove_province_modifier = cloth_1
+						}
+						set_variable = {
+							which = urban_good_cloth_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_cloth
+					}
+				}
+				clr_province_flag = urban_goods_rank_2
+			}
+			urban_goods_rank_3 = {
+				trigger_switch = {
+					on_trigger = has_province_flag
+					urban_goods_glassware = {
+						if = {
+							limit = {
+								has_province_modifier = glassware_1
+							}
+							remove_province_modifier = glassware_1
+						}
+						set_variable = {
+							which = urban_good_glassware_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_glassware
+					}
+					urban_goods_leather = {
+						if = {
+							limit = {
+								has_province_modifier = leather_1
+							}
+							remove_province_modifier = leather_1
+						}
+						set_variable = {
+							which = urban_good_leather_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_leather
+					}
+					urban_goods_silk = {
+						if = {
+							limit = {
+								has_province_modifier = silk_1
+							}
+							remove_province_modifier = silk_1
+						}
+						set_variable = {
+							which = urban_good_silk_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_silk
+					}
+					urban_goods_steel = {
+						if = {
+							limit = {
+								has_province_modifier = steel_1
+							}
+							remove_province_modifier = steel_1
+						}
+						set_variable = {
+							which = urban_good_steel_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_steel
+					}
+					urban_goods_naval_supplies = {
+						if = {
+							limit = {
+								has_province_modifier = naval_supplies_1
+							}
+							remove_province_modifier = naval_supplies_1
+						}
+						set_variable = {
+							which = urban_good_naval_supplies_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_naval_supplies
+					}
+					urban_goods_paper = {
+						if = {
+							limit = {
+								has_province_modifier = paper_1
+							}
+							remove_province_modifier = paper_1
+						}
+						set_variable = {
+							which = urban_good_paper_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_paper
+					}
+					urban_goods_carpet = {
+						if = {
+							limit = {
+								has_province_modifier = carpet_1
+							}
+							remove_province_modifier = carpet_1
+						}
+						set_variable = {
+							which = urban_good_carpet_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_carpet
+					}
+					urban_goods_chinaware = {
+						if = {
+							limit = {
+								has_province_modifier = chinaware_1
+							}
+							remove_province_modifier = chinaware_1
+						}
+						set_variable = {
+							which = urban_good_chinaware_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_chinaware
+					}
+					urban_goods_jewelry = {
+						if = {
+							limit = {
+								has_province_modifier = jewelry_1
+							}
+							remove_province_modifier = jewelry_1
+						}
+						set_variable = {
+							which = urban_good_jewelry_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_jewelry
+					}
+					urban_goods_luxury_cloth = {
+						if = {
+							limit = {
+								has_province_modifier = luxury_cloth_1
+							}
+							remove_province_modifier = luxury_cloth_1
+						}
+						set_variable = {
+							which = urban_good_luxury_cloth_quantity
+							value = 0
+						}
+						clr_province_flag = urban_goods_luxury_cloth
+					}
+				}
+				clr_province_flag = urban_goods_rank_3
+			}
+		}
+	}
+	option = {
+		name = "colonial.EVTOPTC18"
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = colonial.27
+	title = "colonial.27.t"
+	desc = "colonial.27.n"
+	picture = SHIP_SAILING_eventPicture
+	trigger = {
+		has_country_modifier = early_exploration
+		has_country_flag = early_exploration
+		NOT = {
+			has_idea_group = exploration_ideas
+		}
+		NOT = {
+			num_of_explorers = 1
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	option = {
+		name = "colonial.27.a"
+		ai_chance = {
+			factor = 100
+		}
+		add_treasury = -20
+		create_explorer = 10
+	}
+}
+country_event = {
+	id = colonial.28
+	title = "colonial.28.t"
+	desc = "colonial.28.n"
+	picture = SHIP_SAILING_eventPicture
+	trigger = {
+		has_country_modifier = early_exploration
+		has_country_flag = early_exploration
+		has_idea_group = exploration_ideas
+		NOT = {
+			has_country_flag = end_early_exploration
+		}
+	}
+	mean_time_to_happen = {
+		months = 2
+	}
+	immediate = {
+		set_country_flag = end_early_exploration
+	}
+	option = {
+		name = "colonial.28.a"
+		ai_chance = {
+			factor = 100
+		}
+		add_prestige = 3
+		add_navy_tradition = 3
+		remove_country_modifier = early_exploration
+	}
+}
+country_event = {
+	id = colonial.29
+	title = "colonial.29.t"
+	desc = "colonial.29.n"
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	trigger = {
+		has_country_modifier = early_exploration
+		has_country_flag = early_exploration
+		NOT = {
+			has_idea_group = exploration_ideas
+		}
+		owns = 368
+		is_core = 368
+	}
+	mean_time_to_happen = {
+		months = 24
+	}
+	option = {
+		name = "colonial.29.a"
+		ai_chance = {
+			factor = 100
+		}
+		discover_province = 1668
+		discover_province = 1669
+		discover_province = 367
+	}
+}

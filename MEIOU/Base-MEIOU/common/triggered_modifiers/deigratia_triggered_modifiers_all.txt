@@ -1,0 +1,270 @@
+pressure_for_heir = {
+	potential = {
+		government = monarchy
+		has_regency = no
+		has_heir = no
+		NOT = {
+			AND = {
+				religion_group = muslim
+				AND = {
+					OR = {
+						has_reform = elective_monarchy
+						has_reform = elective_monarchy_legacy
+						has_reform = mamluk_government_legacy
+					}
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				OR = {
+					has_reform = tribal_kingdom
+					has_reform = tribal_kingdom_legacy
+				}
+			}
+		}
+	}
+	trigger = {
+		has_heir = no
+	}
+	legitimacy = -0.50
+	horde_unity = -0.25
+}
+war_of_religion_peace_talks = {
+	potential = {
+		has_country_flag = religious_civil_war
+	}
+	trigger = {
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = church_bastion
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = heretic_bastion
+			}
+		}
+	}
+	tolerance_own = -1
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+}
+war_of_religion = {
+	potential = {
+		has_country_flag = religious_civil_war
+		NOT = {
+			has_disaster = religious_civil_war
+		}
+	}
+	trigger = {
+		any_owned_province = {
+			has_province_modifier = heretic_bastion
+		}
+	}
+	tolerance_own = 2
+	tolerance_heretic = -2
+	tolerance_heathen = -2
+	stability_cost_modifier = 0.50
+	global_unrest = 10
+}
+general_council = {
+	potential = {
+		religion = catholic
+		OR = {
+			is_papal_controller = yes
+			tag = PAP
+		}
+		PAP = {
+			check_variable = {
+				which = papal_authority
+				value = 200
+			}
+		}
+		NOT = {
+			AND = {
+				PAP = {
+					has_country_flag = concordat_signed
+				}
+				NOT = {
+					exists = PAP
+				}
+			}
+		}
+	}
+	trigger = {
+		PAP = {
+			has_country_flag = church_council
+		}
+	}
+	stability_cost_modifier = 0.10
+	diplomatic_upkeep = -1
+	prestige = 1
+}
+pragmatic_sanction = {
+	potential = {
+		religion = catholic
+		has_country_flag = catholic_pragmatic_sanction
+		NOT = {
+			has_country_flag = concordat_of_bologna
+		}
+	}
+	trigger = {}
+	papal_influence = -3
+	global_tax_modifier = 0.03
+}
+catholic_alienation = {
+	potential = {
+		religion = catholic
+		PAP = {
+			NOT = {
+				check_variable = {
+					which = traditional_doctrine
+					value = -3
+				}
+			}
+		}
+		NOT = {
+			PAP = {
+				has_country_flag = absolute_submission
+			}
+		}
+	}
+	trigger = {
+		NOT = {
+			PAP = {
+				check_variable = {
+					which = papal_authority
+					value = 300
+				}
+			}
+		}
+		NOT = {
+			religion_years = {
+				protestant = 80
+			}
+		}
+	}
+	global_missionary_strength = -0.005
+	tolerance_own = -1
+}
+counter_reformation = {
+	potential = {
+		religion = catholic
+		PAP = {
+			has_country_flag = counter_reformation
+		}
+		piety = -0.60
+		PAP = {
+			check_variable = {
+				which = papal_authority
+				value = 200
+			}
+		}
+	}
+	trigger = {
+		NOT = {
+			religion_years = {
+				protestant = 80
+			}
+		}
+		OR = {
+			PAP = {
+				check_variable = {
+					which = papal_authority
+					value = 300
+				}
+			}
+			piety = -0.20
+			advisor = inquisitor
+			advisor = theologian
+		}
+	}
+	missionaries = 1
+	global_heretic_missionary_strength = 0.01
+	tolerance_own = 1
+}
+inquisition_a = {
+	potential = {
+		religion = catholic
+		check_variable = {
+			which = inquisition
+			value = 2
+		}
+	}
+	trigger = {
+		NOT = {
+			has_country_flag = excommunicated
+		}
+	}
+	global_missionary_strength = 0.01
+	stability_cost_modifier = -0.20
+	legitimacy = 0.20
+	global_spy_defence = 0.10
+	tolerance_heretic = -2
+	tolerance_heathen = -1
+	technology_cost = 0.05
+}
+inquisition_b = {
+	potential = {
+		religion = catholic
+		check_variable = {
+			which = inquisition
+			value = 1
+		}
+		NOT = {
+			check_variable = {
+				which = inquisition
+				value = 2
+			}
+		}
+	}
+	trigger = {
+		NOT = {
+			has_country_flag = excommunicated
+		}
+	}
+	global_missionary_strength = 0.005
+	stability_cost_modifier = -0.10
+	legitimacy = 0.10
+	global_spy_defence = 0.05
+	tolerance_heretic = -1
+	tolerance_heathen = -0.5
+	technology_cost = 0.025
+}
+protestant_sympathies = {
+	potential = {
+		religion = catholic
+		OR = {
+			has_country_flag = introduce_reformation
+			has_country_flag = spread_reformation
+			AND = {
+				check_variable = {
+					which = support_for_reform
+					value = 2
+				}
+				NOT = {
+					has_country_flag = renaissance
+				}
+				NOT = {
+					has_country_flag = refused_reformation
+				}
+			}
+		}
+	}
+	trigger = {
+		NOT = {
+			religion_years = {
+				protestant = 30
+			}
+		}
+		NOT = {
+			PAP = {
+				has_country_flag = counter_reformation
+			}
+		}
+	}
+	global_heretic_missionary_strength = -0.02
+	tolerance_own = -2
+	tolerance_heretic = 2
+}

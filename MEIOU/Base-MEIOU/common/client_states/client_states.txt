@@ -1,0 +1,70 @@
+westphalia = {
+	region = westphalian_circle_region
+	name = {
+		name = "KINGDOM_OF_WESTPHALIA"
+		trigger = {
+			from = {
+				government = monarchy
+			}
+		}
+	}
+	name = {
+		name = "REPUBLIC_OF_WESTPHALIA"
+		trigger = {
+			from = {
+				government = republic
+			}
+		}
+	}
+}
+two_sicilies = {
+	AND = {
+		superregion = italy_superregion
+		OR = {
+			region = sicily_region
+			region = naples_region
+		}
+	}
+	name = {
+		name = "KINGDOM_OF_NAPLES"
+		trigger = {
+			from = {
+				government = monarchy
+			}
+		}
+	}
+	name = {
+		name = "REPUBLICS_OF_NAPLES"
+		trigger = {
+			from = {
+				government = republic
+			}
+		}
+	}
+}
+italy = {
+	AND = {
+		superregion = italy_superregion
+		OR = {
+			region = east_italy_region
+			region = west_italy_region
+			region = central_italy_region
+		}
+	}
+	name = {
+		name = "KINGDOM_OF_ITALY"
+		trigger = {
+			from = {
+				government = monarchy
+			}
+		}
+	}
+	name = {
+		name = "SUBALPINE_REPUBLIC"
+		trigger = {
+			from = {
+				government = republic
+			}
+		}
+	}
+}

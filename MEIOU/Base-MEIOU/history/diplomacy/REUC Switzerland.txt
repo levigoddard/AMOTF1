@@ -1,0 +1,20 @@
+dependency = {
+	subject_type = "vassal"
+	first = SWI
+	second = BSI
+	start_date = 1450.1.1
+	end_date = 1798.3.5
+}
+dependency = {
+	subject_type = "vassal"
+	first = SWI
+	second = GNV
+	start_date = 1530.1.1
+	end_date = 1798.4.12
+}
+alliance = {
+	first = SWI
+	second = GBN
+	start_date = 1356.1.1
+	end_date = 1803.2.19
+}
